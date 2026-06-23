@@ -13,5 +13,11 @@ export {
   type StackedCategoryBarChartProps,
   type StackedCategorySeries,
 } from "./StackedCategoryBarChart";
+export {
+  ComboBarLineChart,
+  type ComboBarLineChartProps,
+  type ComboBar,
+  type ComboLine,
+} from "./ComboBarLineChart";
 export { useChartTheme, type ChartTheme } from "./use-chart-theme";
 export { seriesToRows, type ChartRow } from "./series";
