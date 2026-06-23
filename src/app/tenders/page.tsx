@@ -10,12 +10,16 @@ import { CategoryBarChart } from "@/components/charts/CategoryBarChart";
 import { getTendersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
-import { TENDER_TYPE_LABELS } from "./tender-types";
+import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import { LeaderboardTable } from "./LeaderboardTable";
 import { RecentAwardsTable } from "./RecentAwardsTable";
 
 export const dynamic = "force-static";
-export const metadata = { title: "Tenders & Auctions" };
+export const metadata = {
+  title: "Tenders & Auctions",
+  description:
+    "Central & state solar / renewable auction results — awarded capacity, winning tariffs, the tender-type mix, and the developer leaderboard.",
+};
 
 function kpiValue(value: number | string): string {
   if (typeof value === "string") return value;

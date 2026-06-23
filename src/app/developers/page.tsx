@@ -8,12 +8,16 @@ import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { getDevelopersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
-import { TENDER_TYPE_LABELS } from "@/app/tenders/tender-types";
+import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import { RosterTable } from "./RosterTable";
 import { PpaTrackerTable } from "./PpaTrackerTable";
 
 export const dynamic = "force-static";
-export const metadata = { title: "Developers / IPPs" };
+export const metadata = {
+  title: "Developers / IPPs",
+  description:
+    "India's solar IPPs — operational, under-construction and pipeline capacity, the national PPA funnel, portfolio mix, and PPA signings.",
+};
 
 // Stage colours for the capacity funnel — solid → lighter brand shades
 // (these are stages, not energy sources, so not ENERGY_COLORS).

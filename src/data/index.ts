@@ -1,5 +1,6 @@
-import type { Snapshot } from "./types/core";
+import type { Cadence, Snapshot, SourceRef } from "./types/core";
 import type { OverviewData } from "./types/overview";
+import type { ReferenceData } from "./types/reference";
 import type { TendersData } from "./types/tenders";
 import type { DevelopersData } from "./types/developers";
 import type { ManufacturingData } from "./types/manufacturing";
@@ -13,6 +14,7 @@ import manufacturingValueChain from "./snapshots/manufacturing/value-chain.json"
 import capacityGrid from "./snapshots/capacity/grid.json";
 import demandPower from "./snapshots/demand/power-demand.json";
 import policyPolicy from "./snapshots/policy/policy.json";
+import referenceGlossary from "./snapshots/reference/glossary.json";
 import companiesRegistry from "./snapshots/companies/registry.json";
 import detailWaaree from "./snapshots/companies/detail/waaree-energies.json";
 import detailPremier from "./snapshots/companies/detail/premier-energies.json";
@@ -139,4 +141,54 @@ export function getCompanyDetail(slug: string): Snapshot<CompanyDetail> | null {
 /** All company slugs in registry order (for generateStaticParams in Prompt 8). */
 export function getCompanySlugs(): string[] {
   return getCompaniesSnapshot().data.companies.map((c) => c.slug);
+}
+
+/** Reference glossary snapshot. */
+export function getReferenceSnapshot(): Snapshot<ReferenceData> {
+  return assertSnapshot(
+    referenceGlossary as unknown as Snapshot<ReferenceData>,
+    "reference/glossary",
+  );
+}
+
+/** Sector glossary terms. */
+export function getGlossary() {
+  return getReferenceSnapshot().data.glossary;
+}
+
+/** One provenance row per committed snapshot envelope. */
+export interface ProvenanceRow {
+  section: string;
+  dataset: string;
+  cadence: Cadence;
+  asOf: string;
+  updatedAt: string;
+  sources: SourceRef[];
+}
+
+/**
+ * Flat provenance across every section snapshot — self-maintaining: it reflects
+ * whatever each loader currently reads, so it updates automatically when feeds
+ * (and thus snapshots) change.
+ */
+export function getProvenance(): ProvenanceRow[] {
+  const snapshots: Snapshot<unknown>[] = [
+    getOverviewSnapshot(),
+    getTendersSnapshot(),
+    getDevelopersSnapshot(),
+    getManufacturingSnapshot(),
+    getCapacitySnapshot(),
+    getDemandSnapshot(),
+    getCompaniesSnapshot(),
+    getPolicySnapshot(),
+    getReferenceSnapshot(),
+  ];
+  return snapshots.map((s) => ({
+    section: s.section,
+    dataset: s.dataset,
+    cadence: s.cadence,
+    asOf: s.asOf,
+    updatedAt: s.updatedAt,
+    sources: s.sources,
+  }));
 }

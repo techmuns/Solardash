@@ -13,7 +13,11 @@ import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
 import { CellCapacityTable } from "./CellCapacityTable";
 
 export const dynamic = "force-static";
-export const metadata = { title: "Manufacturing" };
+export const metadata = {
+  title: "Manufacturing",
+  description:
+    "India's solar PV supply chain — player-wise cell & module capacity, modelled production, DCR demand, and the wafer-to-module value chain.",
+};
 
 const round2 = (n: number) => Math.round(n * 100) / 100;
 

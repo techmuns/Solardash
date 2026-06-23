@@ -14,7 +14,11 @@ import type { PmSuryaGharMetric } from "@/data/types/policy";
 import { SchemesTable } from "./SchemesTable";
 
 export const dynamic = "force-static";
-export const metadata = { title: "Policy & Pricing" };
+export const metadata = {
+  title: "Policy & Pricing",
+  description:
+    "India's solar policy & pricing — schemes & incentives, flagship-scheme progress, the localisation roadmap, the BESS cost curve, and manufacturing TAM.",
+};
 
 function suryaValue(m: PmSuryaGharMetric): { value: string; unit?: string } {
   if (m.unit === "count") {

@@ -1,0 +1,94 @@
+{
+  "asOf": "2026-04-01",
+  "cadence": "adhoc",
+  "coverage": "India · solar / renewable sector glossary",
+  "data": {
+    "glossary": [
+      {
+        "definition": "Domestic Content Requirement — projects must use India-made cells & modules",
+        "term": "DCR"
+      },
+      {
+        "definition": "Approved List of Models & Manufacturers (List-I modules / List-II cells / List-III wafers)",
+        "term": "ALMM"
+      },
+      {
+        "definition": "Firm & Dispatchable Renewable Energy — RE plus storage delivering firm supply",
+        "term": "FDRE"
+      },
+      {
+        "definition": "Round-the-Clock renewable power",
+        "term": "RTC"
+      },
+      {
+        "definition": "Battery Energy Storage System",
+        "term": "BESS"
+      },
+      {
+        "definition": "Capacity Utilisation Factor — actual vs nameplate generation",
+        "term": "CUF"
+      },
+      {
+        "definition": "Production-Linked Incentive scheme",
+        "term": "PLI"
+      },
+      {
+        "definition": "Basic Customs Duty (40% modules / 27.5% cells)",
+        "term": "BCD"
+      },
+      {
+        "definition": "Letter of Award",
+        "term": "LOA"
+      },
+      {
+        "definition": "Power Purchase Agreement",
+        "term": "PPA"
+      },
+      {
+        "definition": "Solar Energy Corporation of India",
+        "term": "SECI"
+      },
+      {
+        "definition": "Central Electricity Authority",
+        "term": "CEA"
+      },
+      {
+        "definition": "Ministry of New & Renewable Energy",
+        "term": "MNRE"
+      },
+      {
+        "definition": "Watt-peak (₹/Wp = price per watt-peak)",
+        "term": "Wp"
+      },
+      {
+        "definition": "C&I consumers sourcing power directly from generators",
+        "term": "Open Access"
+      },
+      {
+        "definition": "Tunnel Oxide Passivated Contact solar-cell technology",
+        "term": "TOPCon"
+      },
+      {
+        "definition": "Total Addressable Market",
+        "term": "TAM"
+      },
+      {
+        "definition": "Independent Power Producer",
+        "term": "IPP"
+      }
+    ]
+  },
+  "dataset": "glossary",
+  "notes": [
+    "Reference glossary of sector terms used across Solardash."
+  ],
+  "section": "reference",
+  "sources": [
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "Solardash glossary"
+    }
+  ],
+  "updatedAt": "2026-04-01"
+}

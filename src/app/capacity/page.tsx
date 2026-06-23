@@ -12,7 +12,11 @@ import { ENERGY_LABELS, OTHERS_COLOR, energyColor, type EnergySource } from "@/l
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
 
 export const dynamic = "force-static";
-export const metadata = { title: "Capacity & Generation" };
+export const metadata = {
+  title: "Capacity & Generation",
+  description:
+    "All-India installed capacity and quarterly commissioning by source, the solar build-out, state leaders, and the generation mix.",
+};
 
 function kpiValue(value: number | string): string {
   if (typeof value === "string") return value;

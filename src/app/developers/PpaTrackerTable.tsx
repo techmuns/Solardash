@@ -7,7 +7,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber } from "@/lib/utils";
 import type { PpaRecord } from "@/data/types/developers";
-import { TENDER_TYPE_LABELS, TENDER_TYPE_ORDER } from "@/app/tenders/tender-types";
+import { TENDER_TYPE_LABELS, TENDER_TYPE_ORDER } from "@/lib/tender-types";
 
 const dash = <span className="text-muted-foreground/50">—</span>;
 

@@ -5,7 +5,7 @@ import { ConfidenceBadge } from "@/components/ui/Badge";
 import { energyColor } from "@/lib/colors";
 import type { Developer } from "@/data/types/developers";
 import type { TenderType } from "@/data/types/tenders";
-import { TENDER_TYPE_LABELS } from "@/app/tenders/tender-types";
+import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 
 function primaryTech(mix: Developer["mix"]): TenderType {
   const entries: [TenderType, number][] = [

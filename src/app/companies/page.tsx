@@ -11,7 +11,11 @@ import { formatDate, formatNumber } from "@/lib/utils";
 import { ScreenerTable } from "./ScreenerTable";
 
 export const dynamic = "force-static";
-export const metadata = { title: "Listed Companies" };
+export const metadata = {
+  title: "Listed Companies",
+  description:
+    "A screener of India's listed solar & renewable names — capacity, order books, profitability and valuation, side by side.",
+};
 
 const round1 = (n: number) => Math.round(n * 10) / 10;
 

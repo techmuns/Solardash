@@ -11,7 +11,11 @@ import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
 import { GrowthTable } from "./GrowthTable";
 
 export const dynamic = "force-static";
-export const metadata = { title: "Power Demand" };
+export const metadata = {
+  title: "Power Demand",
+  description:
+    "All-India peak demand and energy met — monthly trends, year-on-year growth across grains, and the forces driving future load.",
+};
 
 function kpiValue(value: number | string): string {
   if (typeof value === "string") return value;

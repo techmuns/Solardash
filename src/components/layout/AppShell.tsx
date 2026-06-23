@@ -36,7 +36,13 @@ function setCollapse(next: boolean) {
   collapseListeners.forEach((l) => l());
 }
 
-export function AppShell({ children }: { children: React.ReactNode }) {
+export function AppShell({
+  children,
+  footer,
+}: {
+  children: React.ReactNode;
+  footer?: React.ReactNode;
+}) {
   const collapsed = React.useSyncExternalStore(
     subscribeCollapse,
     getCollapse,
@@ -113,6 +119,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             {children}
           </div>
         </main>
+        {footer}
       </div>
     </div>
   );

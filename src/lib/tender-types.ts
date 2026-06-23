@@ -12,7 +12,7 @@ export const TENDER_TYPE_LABELS: Record<TenderType, string> = {
   peak: "Peak Power",
 };
 
-/** Canonical display/stack order (mirrors ENERGY_ORDER subset). */
+/** Canonical display/stack order (mirrors the ENERGY_ORDER subset). */
 export const TENDER_TYPE_ORDER: TenderType[] = [
   "solar",
   "solar-bess",

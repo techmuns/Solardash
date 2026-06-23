@@ -21,7 +21,11 @@ import { NAV_ITEMS } from "@/components/layout/nav";
 import type { Kpi } from "@/data/types/core";
 
 export const dynamic = "force-static";
-export const metadata = { title: "Overview" };
+export const metadata = {
+  title: "Overview",
+  description:
+    "A tenders-led synthesis of India's solar sector — cross-section KPIs, curated insights, and a section navigator.",
+};
 
 function kpiVal(k?: Kpi): string {
   if (!k) return "—";
