@@ -1,0 +1,7 @@
+key,label,value,unit,source,url,asOf,confidence
+solar_installed,Cumulative solar installed,110,GW,MNRE,https://mnre.gov.in,2026-03-31,medium
+peak_demand,Peak demand met (record),256,GW,CEA,https://cea.nic.in,2026-04-25,high
+re_gen_share,RE share of generation,15,%,CEA / Ember,,2026-03-31,medium
+seci_awarded_fy26,SECI RE awarded (FY26 Q1–Q3),19.9,GW,SECI,https://seci.co.in,2026-03-31,medium
+almm1_modules,ALMM-I module capacity,145,GW,MNRE ALMM List-I,https://mnre.gov.in,2025-12-22,high
+low_solar_tariff,Lowest solar tariff (mfg-linked FY26),2.42,Rs/kWh,SECI,,2026-02-28,medium

@@ -59,3 +59,18 @@ export function humanizeSlug(slug: string): string {
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
 }
+
+// Display labels for storage-friendly unit codes (data keeps ASCII units).
+const UNIT_LABELS: Record<string, string> = {
+  "Rs/kWh": "₹/kWh",
+  "Rs/Wp": "₹/Wp",
+  Rs_cr: "₹ cr",
+  "USD/Wp": "$/Wp",
+  "USD/kWh": "$/kWh",
+};
+
+/** Map a unit code to its display form, e.g. `Rs/kWh` -> `₹/kWh`. */
+export function formatUnit(unit?: string): string {
+  if (!unit) return "";
+  return UNIT_LABELS[unit] ?? unit;
+}

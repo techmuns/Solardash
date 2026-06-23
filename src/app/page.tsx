@@ -1,25 +1,29 @@
 import Link from "next/link";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
-import { EmptyState } from "@/components/ui/EmptyState";
-import { Badge } from "@/components/ui/Badge";
+import { ChartFrame } from "@/components/ui/ChartFrame";
+import { Badge, ConfidenceBadge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
-import { cn } from "@/lib/utils";
+import { BarSeriesChart } from "@/components/charts/BarSeriesChart";
+import { getOverviewSnapshot } from "@/data";
+import { cn, formatDate, formatNumber, formatUnit } from "@/lib/utils";
 import { NAV_ITEMS } from "@/components/layout/nav";
 
 export const dynamic = "force-static";
 export const metadata = { title: "Overview" };
 
-const PREVIEW_KPIS = [
-  { label: "Tenders tracked", unit: "" },
-  { label: "Capacity auctioned", unit: "GW" },
-  { label: "Avg. winning tariff", unit: "₹/kWh" },
-  { label: "Listed companies", unit: "" },
-];
+/** Integers grouped; small decimals to 2dp, larger to 1dp. */
+function kpiValue(v: number): string {
+  if (Number.isInteger(v)) return formatNumber(v);
+  return v.toFixed(v < 5 ? 2 : 1);
+}
 
 export default function OverviewPage() {
+  const snapshot = getOverviewSnapshot();
+  const { kpis, reAdditions } = snapshot.data;
+  const reSource = reAdditions[0]?.source;
   const modules = NAV_ITEMS.filter((item) => item.href !== "/");
 
   return (
@@ -27,26 +31,53 @@ export default function OverviewPage() {
       <PageHeader
         title="Overview"
         subtitle="A buy-side terminal for India's solar & renewable-energy value chain — tenders, developers, manufacturing, capacity, demand, listed companies, and policy."
-        asOf={<Badge variant="outline">Foundation build</Badge>}
+        asOf={`As of ${formatDate(snapshot.updatedAt)}`}
       />
 
-      {/* Headline metrics — component preview, no data wired yet. */}
+      {/* Headline metrics — live from the overview snapshot. */}
       <section className="space-y-3">
         <SectionHeader
           title="Headline metrics"
-          subtitle="Placeholders — wired to live snapshots in a later phase."
+          subtitle="India aggregates across the solar & renewables complex."
         />
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {PREVIEW_KPIS.map((kpi) => (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {kpis.map((kpi) => (
             <StatCard
-              key={kpi.label}
+              key={kpi.key}
               label={kpi.label}
-              value="—"
-              unit={kpi.unit}
-              hint="Awaiting data"
+              value={kpiValue(kpi.value)}
+              unit={formatUnit(kpi.unit)}
+              footer={
+                <div className="flex items-center justify-between gap-2">
+                  <span
+                    className="truncate text-2xs text-muted-foreground"
+                    title={kpi.source.name}
+                  >
+                    {kpi.source.name}
+                  </span>
+                  <ConfidenceBadge level={kpi.source.confidence} />
+                </div>
+              }
             />
           ))}
         </div>
+      </section>
+
+      {/* Example provenance-stamped chart. */}
+      <section className="space-y-3">
+        <SectionHeader
+          title="Quarterly RE additions"
+          subtitle="Capacity added by source."
+        />
+        <ChartFrame
+          title="RE capacity additions by source"
+          subtitle="Quarterly · GW · stacked"
+          source={reSource?.name}
+          asOf={reSource ? formatDate(reSource.asOf) : undefined}
+          confidence={reSource?.confidence}
+        >
+          <BarSeriesChart series={reAdditions} stacked unit="GW" height={300} />
+        </ChartFrame>
       </section>
 
       {/* Module directory. */}
@@ -97,12 +128,6 @@ export default function OverviewPage() {
           })}
         </div>
       </section>
-
-      <EmptyState
-        icon={Sparkles}
-        title="Live data & charts coming soon"
-        description="This is the foundation shell. Tender, capacity, manufacturing, and financial datasets — plus interactive charts — are built in later phases."
-      />
     </div>
   );
 }

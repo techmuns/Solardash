@@ -202,3 +202,123 @@ Cloudflare config: `next.config.ts` (`output: "standalone"` +
 `initOpenNextCloudflareForDev`), `open-next.config.ts` (static-assets
 incremental cache), `wrangler.jsonc` (Worker name `solardash`,
 `nodejs_compat`, `ASSETS` binding).
+
+## 8. Data layer (finalized contract)
+
+Static-first: offline `tsx` pipelines read curated/manual (and later, fetched)
+inputs and write **committed JSON snapshots** that prerendered pages `import`.
+No runtime DB, no client fetches.
+
+### Directory layout
+
+| Path                                          | Role                                                  |
+| --------------------------------------------- | ----------------------------------------------------- |
+| `manual-data/<section>/<dataset>.(csv\|json)` | Human-editable curated inputs (the hard-to-source 🔴) |
+| `src/data/snapshots/<section>/<dataset>.json` | Generated, committed, typed; imported by pages        |
+| `src/data/types/*.ts`                         | Shared contract (`core.ts`) + per-section payloads    |
+| `src/data/index.ts`                           | Typed loaders (`getOverviewSnapshot()`, …) + guard    |
+| `scripts/pipelines/<name>.ts`                 | One pipeline: `{ name, section, cadence, run() }`      |
+| `scripts/lib/io.ts`                           | `readManualCsv/Json`, `fetchText/Json`, `writeSnapshot`|
+| `scripts/lib/pipeline.ts`                     | `Pipeline` type + `definePipeline()`                  |
+| `scripts/lib/registry.ts`                     | Collects all pipelines + lookup helpers               |
+| `scripts/run.ts`                              | CLI (`<name>`, `--all`, `--cadence <c>`)              |
+
+### The `Snapshot<T>` envelope
+
+```ts
+interface Snapshot<T> {
+  dataset: string;        // e.g. "summary"
+  section: string;        // e.g. "overview"
+  asOf: string;           // ISO YYYY-MM-DD (nominal snapshot date)
+  updatedAt: string;      // = max(sources.asOf); build-stable, NOT wall-clock
+  cadence: "monthly" | "quarterly" | "annual" | "adhoc";
+  coverage?: string;
+  sources: SourceRef[];   // non-empty
+  notes?: string[];
+  data: T;                // section payload, e.g. OverviewSummary
+}
+
+interface SourceRef {
+  name: string; url?: string;
+  asOf: string;                                  // ISO YYYY-MM-DD
+  confidence: "high" | "medium" | "modelled";
+  note?: string;
+}
+// Series for charts:
+interface SeriesPoint { period: string; value: number; confidence?: Confidence; modelled?: boolean }
+interface Series { key: string; label: string; unit?: Unit; source?: SourceRef; points: SeriesPoint[] }
+```
+
+`Unit` is a union of common units with a `(string & {})` fallback, so codes
+stay autocompleted but extensible. Data files store ASCII unit codes
+(`Rs/kWh`); `formatUnit()` renders display forms (`₹/kWh`).
+
+### Provenance granularity
+
+- **Snapshot level** by default (`Snapshot.sources`).
+- **Per series** override (`Series.source`) when a chart mixes feeds.
+- **Per point** confidence override (`SeriesPoint.confidence` / `modelled`) for
+  modelled values mixed with public ones (e.g. DCR production estimates).
+
+`ChartFrame` reads `source · asOf · confidence`; `ConfidenceBadge` renders the
+level. KPI cards carry per-metric `source` for their badge + footnote.
+
+### Cadence model
+
+Pipelines declare a `cadence`. The CLI runs by name, `--all`, or `--cadence`:
+
+| Script                         | Runs                          |
+| ------------------------------ | ----------------------------- |
+| `npm run data -- <name>`       | one pipeline by name          |
+| `npm run data:build`           | `--all`                       |
+| `npm run data:build:monthly`   | `--cadence monthly`           |
+| `npm run data:build:quarterly` | `--cadence quarterly`         |
+
+### Determinism rule (important)
+
+Snapshots must be **build-stable** so rebuilds are diff-free:
+
+1. `writeSnapshot` **sorts object keys recursively** (arrays keep order).
+2. `updatedAt` is set to **`max(sources.asOf)`** — the data's effective date,
+   never `Date.now()`.
+3. Output is `JSON.stringify(…, null, 2)` + trailing newline.
+
+Re-running `npm run data:build` produces byte-identical output (verified: 3
+runs, identical SHA-256).
+
+### Charts foundation (`src/components/charts/`)
+
+- `ChartContainer` — responsive, fixed-height wrapper; renders Recharts
+  client-side only (hydration-safe) so SSR doesn't warn about 0-size.
+- `BarSeriesChart` / `LineSeriesChart` — generic, take our `Series[]`, pivot via
+  `seriesToRows`, colour category keys through `ENERGY_COLORS`, and render
+  **inside** a `ChartFrame`.
+- `useChartTheme` — dark-mode-aware axis/grid/tooltip colours (SVG can't read
+  CSS vars; HTML tooltips theme via Tailwind classes).
+
+## 9. How to add a section pipeline (the recipe)
+
+Every later section follows this template:
+
+1. **Curate inputs** → `manual-data/<section>/<dataset>.csv` (or `.json`).
+2. **Type the payload** → add `interface <Section>… {}` in
+   `src/data/types/<section>.ts` (reuse `Series`, `SourceRef`, `Unit`).
+3. **Write the pipeline** → `scripts/pipelines/<name>.ts`:
+   ```ts
+   export const xPipeline = definePipeline({
+     name, section, cadence,
+     run() {
+       const rows = readManualCsv("<section>/<dataset>.csv");
+       const sources: SourceRef[] = [/* … */];
+       writeSnapshot<Payload>(section, dataset, {
+         asOf: maxAsOf(sources), cadence, sources, data: { /* … */ },
+       });
+     },
+   });
+   ```
+4. **Register** it in `scripts/lib/registry.ts`.
+5. **Add a loader** in `src/data/index.ts` (`get<Section>Snapshot()` + guard).
+6. **Build** → `npm run data:build`; **commit** the generated snapshot.
+7. **Render** the page from the loader using `StatCard` / `ChartFrame` +
+   `BarSeriesChart` / `LineSeriesChart`, passing `source · asOf · confidence`.
+8. Verify `typecheck` · `lint` · `build` green and the rebuild is diff-free.

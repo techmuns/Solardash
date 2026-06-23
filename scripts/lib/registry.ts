@@ -1,0 +1,18 @@
+import type { Cadence } from "../../src/data/types/core";
+import type { Pipeline } from "./pipeline";
+import { overviewPipeline } from "../pipelines/overview";
+
+/** Every registered pipeline. New section pipelines are added here. */
+export const pipelines: Pipeline[] = [overviewPipeline];
+
+export function getPipeline(name: string): Pipeline | undefined {
+  return pipelines.find((p) => p.name === name);
+}
+
+export function getPipelinesByCadence(cadence: Cadence): Pipeline[] {
+  return pipelines.filter((p) => p.cadence === cadence);
+}
+
+export function pipelineNames(): string[] {
+  return pipelines.map((p) => p.name);
+}
