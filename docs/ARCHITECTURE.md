@@ -203,6 +203,20 @@ Cloudflare config: `next.config.ts` (`output: "standalone"` +
 incremental cache), `wrangler.jsonc` (Worker name `solardash`,
 `nodejs_compat`, `ASSETS` binding).
 
+### Deploy flow
+
+`preview` → `deploy` are the same OpenNext build; `preview` runs it on local
+`workerd`, `deploy` uploads it. The build is fully static (`force-static` +
+the static-assets incremental cache), so heavy pages are served from
+Cloudflare's asset storage and the Worker carries **no runtime secrets or DB**.
+The only requirement is Cloudflare auth (`wrangler login` **or**
+`CLOUDFLARE_API_TOKEN` with *Workers Scripts: Edit*; set `account_id` /
+`CLOUDFLARE_ACCOUNT_ID` if more than one account resolves). Validated build:
+all routes 200 on `workerd`, unknown slug 404, ≈1.73 MB gzipped Worker (under
+the 3 MB free-tier limit). Data refresh is a rebuild-commit-deploy loop:
+`npm run data:build` → commit `src/data/snapshots` → `npm run deploy`. Full
+runbook in [`README.md` → Deploy](../README.md#deploy).
+
 ## 8. Data layer (finalized contract)
 
 Static-first: offline `tsx` pipelines read curated/manual (and later, fetched)
