@@ -1,5 +1,5 @@
 import type { Snapshot } from "./types/core";
-import type { OverviewSummary } from "./types/overview";
+import type { OverviewData } from "./types/overview";
 import type { TendersData } from "./types/tenders";
 import type { DevelopersData } from "./types/developers";
 import type { ManufacturingData } from "./types/manufacturing";
@@ -63,9 +63,9 @@ function assertSnapshot<T>(snapshot: Snapshot<T>, id: string): Snapshot<T> {
 }
 
 /** Overview headline KPIs + quarterly RE additions. */
-export function getOverviewSnapshot(): Snapshot<OverviewSummary> {
+export function getOverviewSnapshot(): Snapshot<OverviewData> {
   return assertSnapshot(
-    overviewSummary as unknown as Snapshot<OverviewSummary>,
+    overviewSummary as unknown as Snapshot<OverviewData>,
     "overview/summary",
   );
 }

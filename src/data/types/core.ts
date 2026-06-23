@@ -76,7 +76,7 @@ export type Cadence = "monthly" | "quarterly" | "annual" | "adhoc";
 
 /**
  * The envelope every committed snapshot is wrapped in. `T` is the dataset's
- * payload shape (e.g. `OverviewSummary`).
+ * payload shape (e.g. `OverviewData`).
  */
 export interface Snapshot<T> {
   /** Dataset id, e.g. `summary`. */

@@ -1,18 +1,19 @@
-import type { Series, SourceRef, Unit } from "./core";
+import type { Confidence } from "./core";
 
-/** A single headline KPI on the Overview page (per-metric provenance). */
-export interface OverviewKpi {
-  key: string;
-  label: string;
-  value: number;
-  unit: Unit;
-  /** Per-KPI source — drives the card's source label + ConfidenceBadge. */
-  source: SourceRef;
+/** A landing-page editorial insight, linked to its section. */
+export interface Insight {
+  text: string;
+  /** Section route id (e.g. `tenders`) the insight links to. */
+  section: string;
+  confidence: Confidence;
 }
 
-/** Payload of the Overview `summary` snapshot. */
-export interface OverviewSummary {
-  kpis: OverviewKpi[];
-  /** Quarterly RE capacity additions, one Series per source (stacked). */
-  reAdditions: Series[];
+/**
+ * Payload of the Overview `summary` snapshot — an editorial digest only.
+ * Real cross-section metrics are read live from each section's snapshot at
+ * render time, not stored here.
+ */
+export interface OverviewData {
+  insights: Insight[];
+  asOf: string;
 }

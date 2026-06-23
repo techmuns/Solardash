@@ -1,297 +1,108 @@
 {
-  "asOf": "2026-04-25",
+  "asOf": "2026-04-01",
   "cadence": "quarterly",
-  "coverage": "India · all-India aggregates",
+  "coverage": "India · cross-section editorial digest",
   "data": {
-    "kpis": [
+    "asOf": "2026-04-01",
+    "insights": [
       {
-        "key": "solar_installed",
-        "label": "Cumulative solar installed",
-        "source": {
-          "asOf": "2026-03-31",
-          "confidence": "medium",
-          "name": "MNRE",
-          "url": "https://mnre.gov.in"
-        },
-        "unit": "GW",
-        "value": 110
+        "confidence": "high",
+        "section": "tenders",
+        "text": "Solar+BESS tariffs at ₹2.86/unit are now competitive with coal"
       },
       {
-        "key": "peak_demand",
-        "label": "Peak demand met (record)",
-        "source": {
-          "asOf": "2026-04-25",
-          "confidence": "high",
-          "name": "CEA",
-          "url": "https://cea.nic.in"
-        },
-        "unit": "GW",
-        "value": 256
+        "confidence": "medium",
+        "section": "tenders",
+        "text": "FY26 RE awards ~19.9 GW; FDRE & Solar+BESS rising in the tender mix"
       },
       {
-        "key": "re_gen_share",
-        "label": "RE share of generation",
-        "source": {
-          "asOf": "2026-03-31",
-          "confidence": "medium",
-          "name": "CEA / Ember"
-        },
-        "unit": "%",
-        "value": 15
+        "confidence": "medium",
+        "section": "manufacturing",
+        "text": "DCR module demand set to triple from 18 to 55 GW by FY28E"
       },
       {
-        "key": "seci_awarded_fy26",
-        "label": "SECI RE awarded (FY26 Q1–Q3)",
-        "source": {
-          "asOf": "2026-03-31",
-          "confidence": "medium",
-          "name": "SECI",
-          "url": "https://seci.co.in"
-        },
-        "unit": "GW",
-        "value": 19.9
+        "confidence": "medium",
+        "section": "manufacturing",
+        "text": "Module overcapacity: ~145 GW capacity vs ~58 GW demand (~2.5×)"
       },
       {
-        "key": "almm1_modules",
-        "label": "ALMM-I module capacity",
-        "source": {
-          "asOf": "2025-12-22",
-          "confidence": "high",
-          "name": "MNRE ALMM List-I",
-          "url": "https://mnre.gov.in"
-        },
-        "unit": "GW",
-        "value": 145
+        "confidence": "medium",
+        "section": "developers",
+        "text": "Top IPPs target ~186 GW by FY30, from ~76 GW operational today"
       },
       {
-        "key": "low_solar_tariff",
-        "label": "Lowest solar tariff (mfg-linked FY26)",
-        "source": {
-          "asOf": "2026-02-28",
-          "confidence": "medium",
-          "name": "SECI"
-        },
-        "unit": "Rs/kWh",
-        "value": 2.42
-      }
-    ],
-    "reAdditions": [
-      {
-        "key": "solar",
-        "label": "Solar",
-        "points": [
-          {
-            "modelled": true,
-            "period": "Q1FY25",
-            "value": 4.8
-          },
-          {
-            "modelled": true,
-            "period": "Q2FY25",
-            "value": 5.6
-          },
-          {
-            "modelled": true,
-            "period": "Q3FY25",
-            "value": 6.1
-          },
-          {
-            "modelled": true,
-            "period": "Q4FY25",
-            "value": 8.2
-          },
-          {
-            "modelled": true,
-            "period": "Q1FY26",
-            "value": 7.4
-          },
-          {
-            "modelled": true,
-            "period": "Q2FY26",
-            "value": 9
-          }
-        ],
-        "source": {
-          "asOf": "2026-03-31",
-          "confidence": "modelled",
-          "name": "Solardash seed (verify in Prompt 6)"
-        },
-        "unit": "GW"
+        "confidence": "high",
+        "section": "demand",
+        "text": "Peak demand hit a record 256 GW (Apr 2026), ~+5% YoY"
       },
       {
-        "key": "wind",
-        "label": "Wind",
-        "points": [
-          {
-            "modelled": true,
-            "period": "Q1FY25",
-            "value": 1.1
-          },
-          {
-            "modelled": true,
-            "period": "Q2FY25",
-            "value": 1
-          },
-          {
-            "modelled": true,
-            "period": "Q3FY25",
-            "value": 1.3
-          },
-          {
-            "modelled": true,
-            "period": "Q4FY25",
-            "value": 1.6
-          },
-          {
-            "modelled": true,
-            "period": "Q1FY26",
-            "value": 1.2
-          },
-          {
-            "modelled": true,
-            "period": "Q2FY26",
-            "value": 1.5
-          }
-        ],
-        "source": {
-          "asOf": "2026-03-31",
-          "confidence": "modelled",
-          "name": "Solardash seed (verify in Prompt 6)"
-        },
-        "unit": "GW"
+        "confidence": "medium",
+        "section": "policy",
+        "text": "PM Surya Ghar at ~30% of its 1-crore-rooftop target; 11.5 GW pipeline"
       },
       {
-        "key": "hybrid",
-        "label": "Hybrid",
-        "points": [
-          {
-            "modelled": true,
-            "period": "Q1FY25",
-            "value": 0.6
-          },
-          {
-            "modelled": true,
-            "period": "Q2FY25",
-            "value": 0.8
-          },
-          {
-            "modelled": true,
-            "period": "Q3FY25",
-            "value": 0.9
-          },
-          {
-            "modelled": true,
-            "period": "Q4FY25",
-            "value": 1.2
-          },
-          {
-            "modelled": true,
-            "period": "Q1FY26",
-            "value": 1.1
-          },
-          {
-            "modelled": true,
-            "period": "Q2FY26",
-            "value": 1.4
-          }
-        ],
-        "source": {
-          "asOf": "2026-03-31",
-          "confidence": "modelled",
-          "name": "Solardash seed (verify in Prompt 6)"
-        },
-        "unit": "GW"
+        "confidence": "medium",
+        "section": "policy",
+        "text": "BESS cost down ~90% since 2014 to ~$55/kWh; heading to $32 by 2030"
       },
       {
-        "key": "bess",
-        "label": "BESS",
-        "points": [
-          {
-            "modelled": true,
-            "period": "Q1FY25",
-            "value": 0.2
-          },
-          {
-            "modelled": true,
-            "period": "Q2FY25",
-            "value": 0.3
-          },
-          {
-            "modelled": true,
-            "period": "Q3FY25",
-            "value": 0.4
-          },
-          {
-            "modelled": true,
-            "period": "Q4FY25",
-            "value": 0.6
-          },
-          {
-            "modelled": true,
-            "period": "Q1FY26",
-            "value": 0.7
-          },
-          {
-            "modelled": true,
-            "period": "Q2FY26",
-            "value": 0.9
-          }
-        ],
-        "source": {
-          "asOf": "2026-03-31",
-          "confidence": "modelled",
-          "name": "Solardash seed (verify in Prompt 6)"
-        },
-        "unit": "GW"
+        "confidence": "medium",
+        "section": "companies",
+        "text": "Listed module makers' EBITDA margins span 19–41%; Vikram cheapest at ~14× P/E"
       }
     ]
   },
   "dataset": "summary",
   "notes": [
-    "Provisional seed values to prove the data pipeline end-to-end; replaced by section pipelines in later phases.",
-    "RE additions are illustrative and modelled — verify in Prompt 6."
+    "Editorial digest only — the landing page reads real metrics live from each section's snapshot at render time; only the curated insights live here."
   ],
   "section": "overview",
   "sources": [
     {
-      "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "MNRE",
-      "url": "https://mnre.gov.in"
-    },
-    {
-      "asOf": "2026-04-25",
+      "asOf": "2026-04-01",
       "confidence": "high",
-      "name": "CEA",
-      "url": "https://cea.nic.in"
+      "name": "CEA"
     },
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-04-01",
       "confidence": "medium",
-      "name": "CEA / Ember"
+      "name": "ICRA / VQ Research"
     },
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-04-01",
       "confidence": "medium",
-      "name": "SECI",
-      "url": "https://seci.co.in"
+      "name": "MNRE"
     },
     {
-      "asOf": "2025-12-22",
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "PL Capital / Screener"
+    },
+    {
+      "asOf": "2026-04-01",
       "confidence": "high",
-      "name": "MNRE ALMM List-I",
-      "url": "https://mnre.gov.in"
-    },
-    {
-      "asOf": "2026-02-28",
-      "confidence": "medium",
       "name": "SECI"
     },
     {
-      "asOf": "2026-03-31",
-      "confidence": "modelled",
-      "name": "Solardash seed (verify in Prompt 6)"
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "SECI / VQ Research"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "VQ Research"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "VQ Research / BNEF"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "VQ Research / Investor Presentations"
     }
   ],
-  "updatedAt": "2026-04-25"
+  "updatedAt": "2026-04-01"
 }
