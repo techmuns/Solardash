@@ -1,19 +1,15 @@
-id,period,date,agency,tender_type,capacity_mw,storage_mwh,tariff_rs,ceiling_rs,winners,state,status,confidence,source,note
-T-001,Q1FY25,2024-05-15,SECI,solar,1200,,2.57,2.61,NTPC:600;Adani:600,,awarded,medium,SECI,
-T-002,Q1FY25,2024-06-20,GUVNL,solar,750,,2.65,2.70,Juniper:500;Torrent:250,Gujarat,awarded,medium,GUVNL,
-T-003,Q2FY25,2024-08-10,SECI,hybrid,1500,,3.40,3.50,ReNew:1000;ACME:500,,awarded,medium,SECI,
-T-004,Q2FY25,2024-09-05,NTPC,solar,1000,,2.62,2.68,Tata Power:1000,,awarded,medium,NTPC,
-T-005,Q3FY25,2024-11-12,SECI,fdre,1500,,4.64,4.95,Avaada:900;Sembcorp:600,,awarded,medium,SECI,
-T-006,Q3FY25,2024-12-18,SJVN,solar,1000,,2.60,2.65,Adani:1000,,awarded,modelled,SJVN,
-T-007,Q4FY25,2025-02-22,SECI,solar-bess,2000,4000,2.86,3.00,ReNew:1000;NTPC:1000,,awarded,high,SECI,2-hr storage
-T-008,Q4FY25,2025-03-15,SECI,wind,1200,,3.55,3.70,Juniper:600;Adani:600,,awarded,medium,SECI,
-T-009,Q1FY26,2025-05-20,SECI,solar,2366,,2.42,2.55,Waaree:1000;Premier:766;ReNew:600,,awarded,medium,SECI,manufacturing-linked
-T-010,Q1FY26,2025-06-10,MSEDCL,solar,1500,,2.70,2.75,Tata Power:800;Avaada:700,Maharashtra,awarded,medium,MSEDCL,
-T-011,Q2FY26,2025-08-14,SECI,hybrid,900,,3.25,3.40,ACME:500;ReNew:400,,awarded,medium,SECI,Tranche VIII
-T-012,Q2FY26,2025-09-02,SECI,hybrid,900,,3.46,3.55,Sembcorp:500;Juniper:400,,awarded,medium,SECI,Tranche IX
-T-013,Q2FY26,2025-09-25,SECI,solar-bess,1200,2400,3.12,3.25,NTPC:600;Adani:600,,awarded,high,SECI,Tranche XXI
-T-014,Q3FY26,2025-10-30,SECI,fdre,300,,4.98,5.20,JSW Neo:300,,awarded,medium,SECI,Tranche VII PPA
-T-015,Q3FY26,2025-11-18,SECI,bess,125,500,,,JSW:125,,awarded,medium,SECI,standalone BESS — capacity charge ₹/MW/month not ₹/unit
-T-016,Q3FY26,2025-11-28,NHPC,solar,1000,,2.55,2.62,Adani:600;ReNew:400,,awarded,modelled,NHPC,
-T-017,Q3FY26,2025-12-10,SECI,rtc,500,,4.20,4.50,ReNew:500,,awarded,modelled,SECI,round-the-clock
-T-018,Q3FY26,2025-12-20,GUVNL,solar,1000,,2.68,2.74,Torrent:600;NTPC:400,Gujarat,awarded,modelled,GUVNL,
+id,period,date,agency,tender_type,capacity_mw,storage_mwh,tariff_rs,ceiling_rs,winners,state,status,confidence,source,source_url,note
+T-01,Q2FY25,2024-07-15,SECI,solar-bess,1200,1200,3.41,,Pace Digitek:100;JSW Neo:500;ACME Solar:350;Hero Solar:250,,awarded,high,SECI / Mercom,,ISTS Tranche-XV
+T-02,Q3FY25,2024-11-15,SJVN,solar,1200,,2.52,,ACME Solar:300;SAEL:300;Essar:300;Onward:100;NTPC REL:200,,awarded,high,SJVN / Mercom,https://www.mercomindia.com/daily-news-sjvns-1-2-gw-solar-auction-winners-announced,date approx (FY25)
+T-03,Q3FY25,2024-12-23,NTPC,solar,720,,2.55,,BPCL:150;ReNew:300;Mahindra Susten:120;Adyant Enersol:100;Onward Solar:50,,awarded,high,NTPC / pv-magazine,https://www.pv-magazine.com/2024/12/24/bharat-petroleum-wins-150-mw-of-solar-in-ntpc-auction-with-inr-2-55-kwh-bid/,720 MW allocated
+T-04,Q4FY25,2025-02-15,SECI,fdre,630,,4.98,,JSW Neo:230;Hero Solar:100;Vena Energy:100;Hexa Climate:100;Serentica:100,,awarded,high,SECI / Mercom,https://www.mercomindia.com/daily-news-wrap-up-seci-announces-winners,Tranche IV; date approx
+T-05,Q1FY26,2025-05-28,SECI,rtc,540,,5.06,,Hero Solar:120;Hexa Climate:100;Sembcorp Green Infra:50;Jindal India Power:150;ABC Cleantech:120,,awarded,high,SECI / Renewable Watch,https://renewablewatch.in/2025/05/28/seci-announces-auction-results-for-1-2-gw-rtc-renewable-projects/,540 MW of 1.2 GW awarded
+T-06,Q1FY26,2025-06-20,SECI,solar,2366,,2.42,,,,awarded,medium,SECI,,manufacturing-linked
+T-07,Q2FY26,2025-08-15,SECI,solar,1785,,2.17,,,,awarded,medium,SECI / Mercom,https://www.mercomindia.com/secis-solar-auction-gets-lowest-tariff,record-low L1; date approx
+T-08,Q2FY26,2025-09-10,SECI,hybrid,1800,,3.25,,,,awarded,medium,SECI / SolarQuarter,,Tranche VIII/IX
+T-09,Q3FY26,2025-10-16,SECI,solar-bess,2000,4000,2.86,,Shivalaya Construction:600;Purvah Green Power:300;Welspun Renewable:200;MB Power:150;Banyan Insolation:100;Stockwell Solar:80;LC Infra:50;Oswal Cables:50;SAEL:300;GH2 Solar:50,,awarded,high,SECI / SolarQuarter,https://www.mercomindia.com/purvah-sael-among-winners-of-secis-2-gw-solar-4-gwh-energy-storage-auction,ISTS Tranche-XX; winners partial
+T-10,Q3FY26,2025-10-30,SECI,fdre,1200,4800,6.27,,Adyant Enersol:100;Serentica:600;AMPIN Energy:199;ACME Solar:301,,awarded,high,SECI / Mercom,https://www.mercomindia.com/daily-news-wrap-up-seci-announces-winners-for-4-8-gwh-fdre-auction,Tranche VII
+T-11,Q3FY26,2025-12-15,SECI,solar,1200,,2.54,2.65,,,awarded,medium,SECI / Mercom,https://www.mercomindia.com/seci-solar-auction-1-2-gw,date approx
+T-12,Q4FY26,2026-02-05,SECI,wind,1200,,3.67,,KP Energy:100;Ganeko Three:180;Waaree Renewable:300;Opera Energy:50;Purvah Green:250;Vena Energy:124;Refex Holding:196,,awarded,high,SECI / WindInsider,https://www.mercomindia.com/kp-energy-waaree-and-vena-energy-among-winners-of-secis-1-2-gw-wind-auction,ISTS Tranche-XIX
+T-13,Q4FY26,2026-02-20,SECI,solar-bess,1200,3600,3.12,,NLC India:600;Engie:200;RPIL Power:300;Oriana Power:100,,awarded,high,SECI / Mercom,https://www.mercomindia.com/engie-nlc-india-rays-power-among-winners-of-secis-1-2-gw-solar-plus-3-6-gwh-storage-auction,ISTS Tranche-XXI
+T-14,Q4FY26,2026-03-02,SECI,bess,125,500,,,,,awarded,medium,SECI / Renewable Watch,https://renewablewatch.in/2026/03/02/seci-announces-results-of-125-mw-500-standalone-bess-auction/,standalone BESS — capacity charge ₹/MW/month not ₹/unit

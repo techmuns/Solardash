@@ -113,16 +113,18 @@ export function toCsv(columns: ColumnDef[], rows: ExportRow[]): string {
   return [head, ...body].join("\r\n");
 }
 
-/** The provenance lines that precede a CSV / fill the Excel "Provenance" sheet. */
+/** The provenance rows that fill the Excel "Provenance" sheet. */
 function provenanceRows(meta: ExportMeta): string[][] {
-  const out: string[][] = [["Dataset", "Source", "As of", "Confidence", "Note"]];
+  const out: string[][] = [
+    ["Dataset", "Source", "Source URL", "As of", "Confidence", "Note"],
+  ];
   const label = `${meta.section} / ${meta.dataset}`;
   if (meta.sources && meta.sources.length > 0) {
     for (const s of meta.sources) {
-      out.push([label, s.name, s.asOf, s.confidence, s.note ?? ""]);
+      out.push([label, s.name, s.url ?? "", s.asOf, s.confidence, s.note ?? ""]);
     }
   } else {
-    out.push([label, meta.source ?? "—", meta.asOf, meta.confidence ?? "", ""]);
+    out.push([label, meta.source ?? "—", "", meta.asOf, meta.confidence ?? "", ""]);
   }
   return out;
 }
@@ -160,7 +162,9 @@ export function exportCsv(opts: {
   ];
   if (meta.sources && meta.sources.length > 0) {
     for (const s of meta.sources) {
-      header.push(`Source: ${s.name} (as of ${s.asOf}, ${s.confidence})`);
+      header.push(
+        `Source: ${s.name}${s.url ? ` <${s.url}>` : ""} (as of ${s.asOf}, ${s.confidence})`,
+      );
     }
   } else {
     if (meta.source) header.push(`Source: ${meta.source}`);

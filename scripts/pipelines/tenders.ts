@@ -269,7 +269,7 @@ export const tendersPipeline = definePipeline({
         key: "top_developer",
         label: "Top developer by MW",
         value: topDev ? topDev.developer : "—",
-        confidence: "modelled",
+        confidence: "high",
         hint: topDev ? `${topDev.mw} MW` : undefined,
       },
     ];
@@ -279,20 +279,39 @@ export const tendersPipeline = definePipeline({
       (a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id),
     );
 
-    // --- Provenance: distinct (source, confidence) pairs ---
-    const srcMap = new Map<string, { name: string; confidence: Confidence; asOf: string }>();
+    // --- Provenance: distinct (source, url, confidence) triples ---
+    const srcMap = new Map<
+      string,
+      { name: string; url?: string; confidence: Confidence; asOf: string }
+    >();
     for (const r of rows) {
       const conf = r.confidence as Confidence;
-      const key = `${r.source}|${conf}`;
+      const url = r.source_url?.trim() || undefined;
+      const key = `${r.source}|${url ?? ""}|${conf}`;
       const ex = srcMap.get(key);
-      if (!ex) srcMap.set(key, { name: r.source, confidence: conf, asOf: r.date });
-      else if (r.date > ex.asOf) ex.asOf = r.date;
+      if (!ex) {
+        srcMap.set(key, {
+          name: r.source,
+          ...(url ? { url } : {}),
+          confidence: conf,
+          asOf: r.date,
+        });
+      } else if (r.date > ex.asOf) {
+        ex.asOf = r.date;
+      }
     }
     const sources: SourceRef[] = [...srcMap.values()]
-      .map((s) => ({ name: s.name, asOf: s.asOf, confidence: s.confidence }))
+      .map((s) => ({
+        name: s.name,
+        ...(s.url ? { url: s.url } : {}),
+        asOf: s.asOf,
+        confidence: s.confidence,
+      }))
       .sort(
         (a, b) =>
-          a.name.localeCompare(b.name) || a.confidence.localeCompare(b.confidence),
+          a.name.localeCompare(b.name) ||
+          (a.url ?? "").localeCompare(b.url ?? "") ||
+          a.confidence.localeCompare(b.confidence),
       );
 
     // --- Reconciliation: Σ(quarter × type MW) must equal Σ(records MW) ---
@@ -324,8 +343,8 @@ export const tendersPipeline = definePipeline({
       coverage: "India · central & state RE auctions (maintained feed)",
       sources,
       notes: [
-        "Atomic awarded-auction feed maintained in manual-data/tenders/auctions.csv; per-row confidence is honoured.",
-        "Winner (developer) attribution in this seed is illustrative and modelled — user-maintained over time.",
+        "Curated set of major Indian RE auctions (SECI/NTPC/SJVN); not every auction in the market — figures sourced from SECI results and trade press. Capacities are awarded MW.",
+        "Winners are listed where publicly disclosed (some auctions' winner splits are not yet public); per-row confidence is honoured.",
         "Standalone BESS (capacity charge, ₹/MW/month) is excluded from ₹/unit tariff aggregations.",
         "KPIs, type-mix and leaderboard cover FY26-to-date (Apr 2025 – Mar 2026); awardsByQuarter & agencySplit cover the whole feed.",
       ],

@@ -57,10 +57,33 @@ export function ProvenanceTable({
       header: "Sources",
       exportValue: (r) => [...new Set(r.sources.map((s) => s.name))].join("; "),
       render: (r) => {
-        const names = [...new Set(r.sources.map((s) => s.name))];
+        // Distinct source names, each linked to its first available URL (a name
+        // may appear with several per-auction URLs; prefer any non-empty one).
+        const byName = new Map<string, string | undefined>();
+        for (const s of r.sources) {
+          if (!byName.has(s.name)) byName.set(s.name, s.url || undefined);
+          else if (!byName.get(s.name) && s.url) byName.set(s.name, s.url);
+        }
+        const entries = [...byName.entries()];
         return (
           <span className="block max-w-[22rem] text-muted-foreground">
-            {names.join(" · ")}
+            {entries.map(([name, url], i) => (
+              <span key={name}>
+                {i > 0 && " · "}
+                {url ? (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline-offset-2 hover:text-brand hover:underline"
+                  >
+                    {name}
+                  </a>
+                ) : (
+                  name
+                )}
+              </span>
+            ))}
           </span>
         );
       },

@@ -35,11 +35,6 @@ const MODELLED = [
     path: "manual-data/developers/developers.csv",
   },
   {
-    title: "Tender winner attribution",
-    body: "Developer-level MW within each auction is illustrative and user-maintained; aggregate awarded capacity is from official results.",
-    path: "manual-data/tenders/auctions.csv",
-  },
-  {
     title: "BESS cost curve (forward)",
     body: "The 2026 and 2030 points on the BESS $/kWh curve are modelled projections; historical points are sourced.",
     path: "manual-data/policy/bess-cost-curve.csv",

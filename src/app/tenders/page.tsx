@@ -172,14 +172,14 @@ export default function TendersPage() {
       <section className="space-y-3">
         <SectionHeader
           title="Developer leaderboard"
-          subtitle="MW won FY26-to-date — winner attribution is modelled."
+          subtitle="MW won FY26-to-date — winners sourced from auction results (curated major auctions, not exhaustive)."
         />
         <ChartFrame
           title="Top developers by MW won"
-          subtitle="FY26-to-date · sortable"
+          subtitle="FY26-to-date · sortable · winners where disclosed"
           source={source}
           asOf={asOf}
-          confidence="modelled"
+          confidence="high"
         >
           <LeaderboardTable
             rows={d.developerLeaderboard}
