@@ -8,6 +8,7 @@ import { CategoryBarChart } from "@/components/charts/CategoryBarChart";
 import { getDemandSnapshot } from "@/data";
 import { categoricalColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { snapshotMeta } from "@/lib/export";
 import { GrowthTable } from "./GrowthTable";
 
 export const dynamic = "force-static";
@@ -83,6 +84,25 @@ export default function DemandPage() {
     color: categoricalColor(i),
   }));
 
+  // Full monthly series in one export (peak, energy, and both YoY growths).
+  const monthlyExport = {
+    columns: [
+      { key: "month", label: "Month" },
+      { key: "peakGw", label: "Peak demand (GW)" },
+      { key: "energyBu", label: "Energy met (BU)" },
+      { key: "peakYoy", label: "Peak YoY (%)" },
+      { key: "energyYoy", label: "Energy YoY (%)" },
+    ],
+    rows: d.months.map((m, i) => ({
+      month: m,
+      peakGw: d.peakGw[i],
+      energyBu: d.energyBu[i],
+      peakYoy: d.peakGrowthYoy[i] ?? null,
+      energyYoy: d.energyGrowthYoy[i] ?? null,
+    })),
+    meta: snapshotMeta(snapshot, { dataset: "monthly-demand" }),
+  };
+
   return (
     <div className="space-y-8">
       <PageHeader
@@ -127,6 +147,7 @@ export default function DemandPage() {
           source={source}
           asOf={asOf}
           confidence="high"
+          exportData={monthlyExport}
         >
           <LineSeriesChart
             series={peakSeries}

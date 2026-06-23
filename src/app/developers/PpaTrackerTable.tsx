@@ -6,12 +6,19 @@ import { ConfidenceBadge } from "@/components/ui/Badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber } from "@/lib/utils";
+import type { ExportMeta } from "@/lib/export";
 import type { PpaRecord } from "@/data/types/developers";
 import { TENDER_TYPE_LABELS, TENDER_TYPE_ORDER } from "@/lib/tender-types";
 
 const dash = <span className="text-muted-foreground/50">—</span>;
 
-export function PpaTrackerTable({ ppas }: { ppas: PpaRecord[] }) {
+export function PpaTrackerTable({
+  ppas,
+  exportMeta,
+}: {
+  ppas: PpaRecord[];
+  exportMeta?: ExportMeta;
+}) {
   const [type, setType] = React.useState<string>("all");
 
   const presentTypes = TENDER_TYPE_ORDER.filter((t) =>
@@ -37,6 +44,7 @@ export function PpaTrackerTable({ ppas }: { ppas: PpaRecord[] }) {
       header: "Type",
       sortable: true,
       accessor: (r) => TENDER_TYPE_LABELS[r.tenderType],
+      exportValue: (r) => TENDER_TYPE_LABELS[r.tenderType],
       render: (r) => (
         <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
           <span
@@ -95,6 +103,8 @@ export function PpaTrackerTable({ ppas }: { ppas: PpaRecord[] }) {
         getRowKey={(r) => r.id}
         dense
         emptyMessage="No PPAs for this type."
+        exportable
+        exportMeta={exportMeta}
       />
     </div>
   );

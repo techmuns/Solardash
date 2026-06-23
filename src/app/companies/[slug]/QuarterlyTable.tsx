@@ -2,13 +2,20 @@
 
 import { DataTable, type Column } from "@/components/ui/DataTable";
 import { formatNumber } from "@/lib/utils";
+import type { ExportMeta } from "@/lib/export";
 import type { QuarterRow } from "@/data/types/companies";
 
 const dash = <span className="text-muted-foreground/50">—</span>;
 const cr = (v?: number) => (v == null ? dash : formatNumber(Math.round(v)));
 const pct = (v?: number) => (v == null ? dash : `${v.toFixed(1)}%`);
 
-export function QuarterlyTable({ rows }: { rows: QuarterRow[] }) {
+export function QuarterlyTable({
+  rows,
+  exportMeta,
+}: {
+  rows: QuarterRow[];
+  exportMeta?: ExportMeta;
+}) {
   const columns: Column<QuarterRow>[] = [
     {
       key: "period",
@@ -29,6 +36,8 @@ export function QuarterlyTable({ rows }: { rows: QuarterRow[] }) {
       getRowKey={(r) => r.period}
       dense
       emptyMessage="No quarterly data."
+      exportable
+      exportMeta={exportMeta}
     />
   );
 }

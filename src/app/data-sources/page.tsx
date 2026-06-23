@@ -113,7 +113,17 @@ export default function DataSourcesPage() {
           source="Solardash data layer"
           asOf={formatDate(asOf)}
         >
-          <ProvenanceTable rows={provenance} />
+          <ProvenanceTable
+            rows={provenance}
+            exportMeta={{
+              section: "data-sources",
+              dataset: "provenance",
+              asOf,
+              source: "Solardash data layer (all snapshots)",
+              confidence: "high",
+              notes: ["Per-dataset sources and confidence levels are in the table rows."],
+            }}
+          />
         </ChartFrame>
       </section>
 

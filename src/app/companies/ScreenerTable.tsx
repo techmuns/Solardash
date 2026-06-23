@@ -6,6 +6,7 @@ import { DataTable, type Column } from "@/components/ui/DataTable";
 import { ConfidenceBadge } from "@/components/ui/Badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { cn, formatNumber } from "@/lib/utils";
+import type { ExportMeta } from "@/lib/export";
 import type { CompanyIdentity } from "@/data/types/companies";
 import { RatingBadge, TYPE_LABELS, TypeBadge, upsidePct } from "./company-ui";
 
@@ -22,7 +23,13 @@ function orderBook(c: CompanyIdentity): React.ReactNode {
   return dash;
 }
 
-export function ScreenerTable({ companies }: { companies: CompanyIdentity[] }) {
+export function ScreenerTable({
+  companies,
+  exportMeta,
+}: {
+  companies: CompanyIdentity[];
+  exportMeta?: ExportMeta;
+}) {
   const [type, setType] = React.useState<string>("all");
   const filtered =
     type === "all" ? companies : companies.filter((c) => c.type === type);
@@ -47,6 +54,7 @@ export function ScreenerTable({ companies }: { companies: CompanyIdentity[] }) {
       header: "Type",
       sortable: true,
       accessor: (r) => TYPE_LABELS[r.type],
+      exportValue: (r) => TYPE_LABELS[r.type],
       render: (r) => <TypeBadge type={r.type} />,
     },
     { key: "moduleGw", header: "Module GW", align: "right", sortable: true, accessor: (r) => r.moduleGw ?? -1, render: (r) => gw(r.moduleGw) },
@@ -54,9 +62,11 @@ export function ScreenerTable({ companies }: { companies: CompanyIdentity[] }) {
     {
       key: "orderBook",
       header: "Order book",
+      exportLabel: "Order book (₹cr/GW)",
       align: "right",
       sortable: true,
       accessor: (r) => r.orderBookCr ?? -1,
+      exportValue: (r) => r.orderBookCr ?? r.orderBookGw ?? null,
       render: (r) => <span className="whitespace-nowrap">{orderBook(r)}</span>,
     },
     { key: "revenueFy26Cr", header: "Rev FY26", align: "right", sortable: true, accessor: (r) => r.revenueFy26Cr ?? -1, render: (r) => cr(r.revenueFy26Cr) },
@@ -68,9 +78,11 @@ export function ScreenerTable({ companies }: { companies: CompanyIdentity[] }) {
     {
       key: "upside",
       header: "Upside",
+      exportLabel: "Upside (%)",
       align: "right",
       sortable: true,
       accessor: (r) => upsidePct(r.targetPrice, r.cmp) ?? -Infinity,
+      exportValue: (r) => upsidePct(r.targetPrice, r.cmp) ?? null,
       render: (r) => {
         const up = upsidePct(r.targetPrice, r.cmp);
         if (up == null) return dash;
@@ -107,6 +119,8 @@ export function ScreenerTable({ companies }: { companies: CompanyIdentity[] }) {
         getRowKey={(r) => r.slug}
         dense
         emptyMessage="No companies of this type."
+        exportable
+        exportMeta={exportMeta}
       />
     </div>
   );

@@ -8,6 +8,7 @@ import { StackedCategoryBarChart } from "@/components/charts/StackedCategoryBarC
 import { getCompaniesSnapshot } from "@/data";
 import { categoricalColor } from "@/lib/colors";
 import { formatDate, formatNumber } from "@/lib/utils";
+import { snapshotMeta } from "@/lib/export";
 import { ScreenerTable } from "./ScreenerTable";
 
 export const dynamic = "force-static";
@@ -151,7 +152,10 @@ export default function CompaniesPage() {
           source={source}
           asOf={asOf}
         >
-          <ScreenerTable companies={companies} />
+          <ScreenerTable
+            companies={companies}
+            exportMeta={snapshotMeta(snapshot, { dataset: "screener" })}
+          />
         </ChartFrame>
       </section>
     </div>

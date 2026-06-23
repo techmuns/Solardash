@@ -10,6 +10,8 @@ import { LineSeriesChart } from "@/components/charts/LineSeriesChart";
 import { getCapacitySnapshot } from "@/data";
 import { ENERGY_LABELS, OTHERS_COLOR, energyColor, type EnergySource } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { categoryToExport, snapshotMeta } from "@/lib/export";
+import { seriesToExport } from "@/components/charts/series";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -102,6 +104,10 @@ export default function CapacityPage() {
           source={source}
           asOf={asOf}
           confidence="medium"
+          exportData={{
+            ...seriesToExport(commSeries, quarters, "Quarter"),
+            meta: snapshotMeta(snapshot, { dataset: "commissioning-quarterly" }),
+          }}
         >
           <BarSeriesChart
             series={commSeries}
@@ -121,6 +127,10 @@ export default function CapacityPage() {
           source="CEA"
           asOf={asOf}
           confidence="medium"
+          exportData={{
+            ...categoryToExport(mixData, "Source", "Capacity (GW)"),
+            meta: snapshotMeta(snapshot, { dataset: "installed-mix" }),
+          }}
         >
           <PieSeriesChart data={mixData} unit="GW" height={300} />
         </ChartFrame>

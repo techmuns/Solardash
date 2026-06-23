@@ -2,11 +2,18 @@
 
 import { DataTable, type Column } from "@/components/ui/DataTable";
 import { ConfidenceBadge } from "@/components/ui/Badge";
+import type { ExportMeta } from "@/lib/export";
 import type { CellPlayer } from "@/data/types/manufacturing";
 
 const dash = <span className="text-muted-foreground/50">—</span>;
 
-export function CellCapacityTable({ rows }: { rows: CellPlayer[] }) {
+export function CellCapacityTable({
+  rows,
+  exportMeta,
+}: {
+  rows: CellPlayer[];
+  exportMeta?: ExportMeta;
+}) {
   const columns: Column<CellPlayer>[] = [
     {
       key: "player",
@@ -83,6 +90,8 @@ export function CellCapacityTable({ rows }: { rows: CellPlayer[] }) {
       getRowKey={(r) => r.player}
       dense
       emptyMessage="No manufacturers."
+      exportable
+      exportMeta={exportMeta}
     />
   );
 }

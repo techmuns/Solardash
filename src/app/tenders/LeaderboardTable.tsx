@@ -2,9 +2,16 @@
 
 import { DataTable, type Column } from "@/components/ui/DataTable";
 import { formatNumber } from "@/lib/utils";
+import type { ExportMeta } from "@/lib/export";
 import type { DeveloperStanding } from "@/data/types/tenders";
 
-export function LeaderboardTable({ rows }: { rows: DeveloperStanding[] }) {
+export function LeaderboardTable({
+  rows,
+  exportMeta,
+}: {
+  rows: DeveloperStanding[];
+  exportMeta?: ExportMeta;
+}) {
   const maxMw = Math.max(1, ...rows.map((r) => r.mw));
 
   const columns: Column<DeveloperStanding>[] = [
@@ -55,6 +62,8 @@ export function LeaderboardTable({ rows }: { rows: DeveloperStanding[] }) {
       getRowKey={(r) => r.developer}
       dense
       emptyMessage="No developer standings."
+      exportable
+      exportMeta={exportMeta}
     />
   );
 }

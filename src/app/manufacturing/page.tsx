@@ -10,6 +10,8 @@ import { BarSeriesChart } from "@/components/charts/BarSeriesChart";
 import { getManufacturingSnapshot } from "@/data";
 import { OTHERS_COLOR, categoricalColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { snapshotMeta } from "@/lib/export";
+import { seriesToExport } from "@/components/charts/series";
 import { CellCapacityTable } from "./CellCapacityTable";
 
 export const dynamic = "force-static";
@@ -144,7 +146,10 @@ export default function ManufacturingPage() {
           asOf={asOf}
           confidence="high"
         >
-          <CellCapacityTable rows={d.cellPlayers} />
+          <CellCapacityTable
+            rows={d.cellPlayers}
+            exportMeta={snapshotMeta(snapshot, { dataset: "cell-capacity" })}
+          />
         </ChartFrame>
 
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -169,6 +174,13 @@ export default function ManufacturingPage() {
             source={source}
             asOf={asOf}
             confidence="modelled"
+            exportData={{
+              ...seriesToExport(cellQuarterlySeries, d.cellQuarterly.categories, "Quarter"),
+              meta: snapshotMeta(snapshot, {
+                dataset: "cell-production-quarterly",
+                notes: ["Quarterly split is modelled (annual ÷ fixed ramp) — see methodology."],
+              }),
+            }}
           >
             <BarSeriesChart
               series={cellQuarterlySeries}
@@ -194,6 +206,10 @@ export default function ManufacturingPage() {
             source="VQ Research"
             asOf={asOf}
             confidence="medium"
+            exportData={{
+              ...seriesToExport(d.moduleDemand, ["FY26E", "FY27E", "FY28E"], "Period"),
+              meta: snapshotMeta(snapshot, { dataset: "module-demand" }),
+            }}
           >
             <BarSeriesChart
               series={d.moduleDemand}

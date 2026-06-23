@@ -14,6 +14,8 @@ import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { getCompanyDetail, getCompanySlugs } from "@/data";
 import { categoricalColor } from "@/lib/colors";
 import { cn, formatDate, formatNumber } from "@/lib/utils";
+import { snapshotMeta } from "@/lib/export";
+import type { Snapshot } from "@/data/types/core";
 import type { CompanyDetail } from "@/data/types/companies";
 import { RatingBadge, TYPE_LABELS, TypeBadge, upsidePct } from "../company-ui";
 import { FinancialsTable } from "./FinancialsTable";
@@ -136,7 +138,7 @@ export default async function CompanyPage({
       </PageHeader>
 
       {c.hasDetail ? (
-        <RichDetail c={c} asOf={asOf} source={source} />
+        <RichDetail c={c} snap={snap} asOf={asOf} source={source} />
       ) : (
         <HeadlineOnly c={c} />
       )}
@@ -149,10 +151,12 @@ export default async function CompanyPage({
 // ---------------------------------------------------------------------------
 function RichDetail({
   c,
+  snap,
   asOf,
   source,
 }: {
   c: CompanyDetail;
+  snap: Snapshot<CompanyDetail>;
   asOf: string;
   source: string;
 }) {
@@ -240,7 +244,10 @@ function RichDetail({
       <section className="space-y-3">
         <SectionHeader title="Financials" subtitle="Annual · ₹ crore · E = estimate." />
         <ChartFrame title="Annual financials" subtitle="₹ crore · FY25 → FY28E" source={source} asOf={asOf} confidence={c.confidence}>
-          <FinancialsTable rows={annual} />
+          <FinancialsTable
+            rows={annual}
+            exportMeta={snapshotMeta(snap, { dataset: `${c.slug}-financials-annual` })}
+          />
         </ChartFrame>
         <ChartFrame title="Revenue, EBITDA & margin" subtitle="Bars ₹cr (left) · margin % (right)" source={source} asOf={asOf} confidence={c.confidence}>
           <ComboBarLineChart
@@ -262,7 +269,10 @@ function RichDetail({
         <SectionHeader title="Quarterly" subtitle="₹ crore · recent quarters." />
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <ChartFrame title="Quarterly financials" subtitle="₹ crore" source={source} asOf={asOf} confidence={c.confidence}>
-            <QuarterlyTable rows={quarterly} />
+            <QuarterlyTable
+              rows={quarterly}
+              exportMeta={snapshotMeta(snap, { dataset: `${c.slug}-financials-quarterly` })}
+            />
           </ChartFrame>
           <ChartFrame title="Revenue & margin trend" subtitle="Bars ₹cr (left) · margin % (right)" source={source} asOf={asOf} confidence={c.confidence}>
             <ComboBarLineChart

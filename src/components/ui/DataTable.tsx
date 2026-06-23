@@ -3,6 +3,8 @@
 import * as React from "react";
 import { ChevronDown, ChevronsUpDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ExportMenu } from "./ExportMenu";
+import type { ColumnDef, ExportMeta, ExportRow, ExportValue } from "@/lib/export";
 
 type Align = "left" | "right" | "center";
 
@@ -17,6 +19,14 @@ export interface Column<T> {
   accessor?: (row: T) => string | number | null | undefined;
   /** Custom cell renderer; defaults to the raw `row[key]` value. */
   render?: (row: T) => React.ReactNode;
+  /** Raw value for CSV/Excel export; defaults to `row[key]`. Use for synthetic
+   *  columns (joined arrays, derived values) so exports stay unformatted. */
+  exportValue?: (row: T) => ExportValue;
+  /** Export header when `header` isn't plain text; defaults to `header` (if a
+   *  string) or `key`. */
+  exportLabel?: string;
+  /** Omit this column from exports (e.g. purely-visual columns). */
+  exportExclude?: boolean;
 }
 
 export interface DataTableProps<T> {
@@ -28,6 +38,12 @@ export interface DataTableProps<T> {
   dense?: boolean;
   className?: string;
   emptyMessage?: string;
+  /** Show a Download (CSV / Excel) control in a toolbar above the table. */
+  exportable?: boolean;
+  /** Provenance + identity for the export (required when `exportable`). */
+  exportMeta?: ExportMeta;
+  /** Optional filename override for the export. */
+  exportFilename?: string;
 }
 
 const alignClass = (a?: Align) =>
@@ -42,6 +58,9 @@ export function DataTable<T>({
   dense = false,
   className,
   emptyMessage = "No data available.",
+  exportable = false,
+  exportMeta,
+  exportFilename,
 }: DataTableProps<T>) {
   const [sort, setSort] = React.useState<{
     key: string;
@@ -86,7 +105,36 @@ export function DataTable<T>({
     );
   }
 
-  return (
+  // Derive raw export columns/rows from the table's own columns over the FULL
+  // data set (not the visible sort). Synthetic columns supply `exportValue`.
+  const exportColumns: ColumnDef[] = React.useMemo(
+    () =>
+      columns
+        .filter((c) => !c.exportExclude)
+        .map((c) => ({
+          key: c.key,
+          label:
+            c.exportLabel ??
+            (typeof c.header === "string" ? c.header : c.key),
+        })),
+    [columns],
+  );
+  const exportRows: ExportRow[] = React.useMemo(
+    () =>
+      data.map((row) => {
+        const out: ExportRow = {};
+        for (const c of columns) {
+          if (c.exportExclude) continue;
+          out[c.key] = c.exportValue
+            ? c.exportValue(row)
+            : ((row as Record<string, unknown>)[c.key] as ExportValue);
+        }
+        return out;
+      }),
+    [columns, data],
+  );
+
+  const table = (
     <div
       className={cn(
         "relative w-full overflow-auto rounded-lg border border-border scrollbar-thin",
@@ -189,6 +237,22 @@ export function DataTable<T>({
           )}
         </tbody>
       </table>
+    </div>
+  );
+
+  if (!exportable || !exportMeta) return table;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex justify-end">
+        <ExportMenu
+          columns={exportColumns}
+          rows={exportRows}
+          meta={exportMeta}
+          filename={exportFilename}
+        />
+      </div>
+      {table}
     </div>
   );
 }

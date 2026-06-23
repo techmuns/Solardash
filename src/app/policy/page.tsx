@@ -10,6 +10,8 @@ import { StackedCategoryBarChart } from "@/components/charts/StackedCategoryBarC
 import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { getPolicySnapshot, getManufacturingSnapshot } from "@/data";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { snapshotMeta } from "@/lib/export";
+import { seriesToExport } from "@/components/charts/series";
 import type { PmSuryaGharMetric } from "@/data/types/policy";
 import { SchemesTable } from "./SchemesTable";
 
@@ -190,6 +192,17 @@ export default function PolicyPage() {
             source="VQ Research / BNEF"
             asOf={asOf}
             confidence="medium"
+            exportData={{
+              ...seriesToExport(
+                d.bessCostCurve,
+                d.bessCostCurve[0]?.points.map((p) => p.period),
+                "Year",
+              ),
+              meta: snapshotMeta(snapshot, {
+                dataset: "bess-cost-curve",
+                notes: ["Forward (2026, 2030) points are modelled projections."],
+              }),
+            }}
           >
             <LineSeriesChart
               series={d.bessCostCurve}
@@ -241,6 +254,10 @@ export default function PolicyPage() {
           source="VQ Research"
           asOf={asOf}
           confidence="medium"
+          exportData={{
+            ...seriesToExport(d.tam, ["FY25", "FY27", "FY30", "FY35"], "Period"),
+            meta: snapshotMeta(snapshot, { dataset: "manufacturing-tam" }),
+          }}
         >
           <BarSeriesChart
             series={d.tam}

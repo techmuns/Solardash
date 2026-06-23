@@ -3,11 +3,18 @@
 import { DataTable, type Column } from "@/components/ui/DataTable";
 import { Badge, ConfidenceBadge, type ConfidenceLevel } from "@/components/ui/Badge";
 import { formatDate } from "@/lib/utils";
+import type { ExportMeta } from "@/lib/export";
 import type { ProvenanceRow } from "@/data";
 
 const CONF_ORDER: ConfidenceLevel[] = ["high", "medium", "modelled"];
 
-export function ProvenanceTable({ rows }: { rows: ProvenanceRow[] }) {
+export function ProvenanceTable({
+  rows,
+  exportMeta,
+}: {
+  rows: ProvenanceRow[];
+  exportMeta?: ExportMeta;
+}) {
   const columns: Column<ProvenanceRow>[] = [
     {
       key: "section",
@@ -48,6 +55,7 @@ export function ProvenanceTable({ rows }: { rows: ProvenanceRow[] }) {
     {
       key: "sources",
       header: "Sources",
+      exportValue: (r) => [...new Set(r.sources.map((s) => s.name))].join("; "),
       render: (r) => {
         const names = [...new Set(r.sources.map((s) => s.name))];
         return (
@@ -60,6 +68,8 @@ export function ProvenanceTable({ rows }: { rows: ProvenanceRow[] }) {
     {
       key: "confidence",
       header: "Confidence",
+      exportValue: (r) =>
+        CONF_ORDER.filter((l) => r.sources.some((s) => s.confidence === l)).join(", "),
       render: (r) => {
         const levels = CONF_ORDER.filter((l) =>
           r.sources.some((s) => s.confidence === l),
@@ -82,6 +92,8 @@ export function ProvenanceTable({ rows }: { rows: ProvenanceRow[] }) {
       getRowKey={(r) => `${r.section}/${r.dataset}`}
       dense
       emptyMessage="No datasets."
+      exportable
+      exportMeta={exportMeta}
     />
   );
 }

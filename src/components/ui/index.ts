@@ -20,6 +20,7 @@ export { SectionHeader, type SectionHeaderProps } from "./SectionHeader";
 export { StatCard, KpiCard, type StatCardProps, type Trend } from "./StatCard";
 export { ChartFrame, type ChartFrameProps } from "./ChartFrame";
 export { DataTable, type Column, type DataTableProps } from "./DataTable";
+export { ExportMenu, type ExportMenuProps } from "./ExportMenu";
 export { Tabs, TabsList, TabsTrigger, TabsContent, type TabsProps } from "./Tabs";
 export { EmptyState, type EmptyStateProps } from "./EmptyState";
 export { Skeleton } from "./Skeleton";

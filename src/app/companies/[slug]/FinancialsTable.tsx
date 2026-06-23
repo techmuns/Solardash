@@ -2,6 +2,7 @@
 
 import { DataTable, type Column } from "@/components/ui/DataTable";
 import { formatNumber } from "@/lib/utils";
+import type { ExportMeta } from "@/lib/export";
 import type { AnnualRow } from "@/data/types/companies";
 
 const dash = <span className="text-muted-foreground/50">—</span>;
@@ -9,7 +10,13 @@ const cr = (v?: number) => (v == null ? dash : formatNumber(Math.round(v)));
 const pct = (v?: number) => (v == null ? dash : `${v.toFixed(1)}%`);
 const rs = (v?: number) => (v == null ? dash : v.toFixed(1));
 
-export function FinancialsTable({ rows }: { rows: AnnualRow[] }) {
+export function FinancialsTable({
+  rows,
+  exportMeta,
+}: {
+  rows: AnnualRow[];
+  exportMeta?: ExportMeta;
+}) {
   const columns: Column<AnnualRow>[] = [
     {
       key: "period",
@@ -36,6 +43,8 @@ export function FinancialsTable({ rows }: { rows: AnnualRow[] }) {
       getRowKey={(r) => r.period}
       dense
       emptyMessage="No annual data."
+      exportable
+      exportMeta={exportMeta}
     />
   );
 }

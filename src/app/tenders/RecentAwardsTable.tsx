@@ -6,12 +6,19 @@ import { ConfidenceBadge } from "@/components/ui/Badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber } from "@/lib/utils";
+import type { ExportMeta } from "@/lib/export";
 import type { AwardRecord } from "@/data/types/tenders";
 import { TENDER_TYPE_LABELS, TENDER_TYPE_ORDER } from "@/lib/tender-types";
 
 const dash = <span className="text-muted-foreground/50">—</span>;
 
-export function RecentAwardsTable({ awards }: { awards: AwardRecord[] }) {
+export function RecentAwardsTable({
+  awards,
+  exportMeta,
+}: {
+  awards: AwardRecord[];
+  exportMeta?: ExportMeta;
+}) {
   const [type, setType] = React.useState<string>("all");
 
   const presentTypes = TENDER_TYPE_ORDER.filter((t) =>
@@ -36,6 +43,7 @@ export function RecentAwardsTable({ awards }: { awards: AwardRecord[] }) {
       header: "Type",
       sortable: true,
       accessor: (r) => TENDER_TYPE_LABELS[r.tenderType],
+      exportValue: (r) => TENDER_TYPE_LABELS[r.tenderType],
       render: (r) => (
         <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
           <span
@@ -75,6 +83,10 @@ export function RecentAwardsTable({ awards }: { awards: AwardRecord[] }) {
     {
       key: "winners",
       header: "Winners",
+      exportValue: (r) =>
+        (r.winners ?? [])
+          .map((w) => (w.mw != null ? `${w.developer} (${w.mw})` : w.developer))
+          .join("; ") || null,
       render: (r) => {
         const text =
           (r.winners ?? [])
@@ -93,6 +105,7 @@ export function RecentAwardsTable({ awards }: { awards: AwardRecord[] }) {
     {
       key: "state",
       header: "State",
+      exportValue: (r) => r.state ?? "Central",
       render: (r) =>
         r.state ? r.state : <span className="text-muted-foreground/60">Central</span>,
     },
@@ -128,6 +141,8 @@ export function RecentAwardsTable({ awards }: { awards: AwardRecord[] }) {
         dense
         className="max-h-[28rem]"
         emptyMessage="No awards for this type."
+        exportable
+        exportMeta={exportMeta}
       />
     </div>
   );

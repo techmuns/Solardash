@@ -10,6 +10,8 @@ import { CategoryBarChart } from "@/components/charts/CategoryBarChart";
 import { getTendersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { categoryToExport, snapshotMeta } from "@/lib/export";
+import { seriesToExport } from "@/components/charts/series";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import { LeaderboardTable } from "./LeaderboardTable";
 import { RecentAwardsTable } from "./RecentAwardsTable";
@@ -90,6 +92,10 @@ export default function TendersPage() {
           source={source}
           asOf={asOf}
           confidence="medium"
+          exportData={{
+            ...seriesToExport(d.awardsByQuarter, quarters, "Quarter"),
+            meta: snapshotMeta(snapshot, { dataset: "awards-by-quarter" }),
+          }}
         >
           <BarSeriesChart
             series={d.awardsByQuarter}
@@ -109,6 +115,10 @@ export default function TendersPage() {
           source={source}
           asOf={asOf}
           confidence="medium"
+          exportData={{
+            ...categoryToExport(typeMixData, "Tender type", "MW"),
+            meta: snapshotMeta(snapshot, { dataset: "type-mix" }),
+          }}
         >
           <PieSeriesChart data={typeMixData} unit="MW" height={300} />
         </ChartFrame>
@@ -118,6 +128,10 @@ export default function TendersPage() {
           source={source}
           asOf={asOf}
           confidence="medium"
+          exportData={{
+            ...categoryToExport(agencyData, "Agency", "MW"),
+            meta: snapshotMeta(snapshot, { dataset: "agency-split" }),
+          }}
         >
           <CategoryBarChart
             data={agencyData}
@@ -140,6 +154,10 @@ export default function TendersPage() {
           source={source}
           asOf={asOf}
           confidence="medium"
+          exportData={{
+            ...seriesToExport(d.tariffByType, quarters, "Quarter"),
+            meta: snapshotMeta(snapshot, { dataset: "tariff-by-type" }),
+          }}
         >
           <LineSeriesChart
             series={d.tariffByType}
@@ -163,7 +181,10 @@ export default function TendersPage() {
           asOf={asOf}
           confidence="modelled"
         >
-          <LeaderboardTable rows={d.developerLeaderboard} />
+          <LeaderboardTable
+            rows={d.developerLeaderboard}
+            exportMeta={snapshotMeta(snapshot, { dataset: "developer-leaderboard" })}
+          />
         </ChartFrame>
       </section>
 
@@ -179,7 +200,10 @@ export default function TendersPage() {
           source={source}
           asOf={asOf}
         >
-          <RecentAwardsTable awards={d.recentAwards} />
+          <RecentAwardsTable
+            awards={d.recentAwards}
+            exportMeta={snapshotMeta(snapshot, { dataset: "recent-awards" })}
+          />
         </ChartFrame>
       </section>
     </div>

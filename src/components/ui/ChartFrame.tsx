@@ -2,6 +2,8 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Card } from "./Card";
 import { ConfidenceBadge, type ConfidenceLevel } from "./Badge";
+import { ExportMenu } from "./ExportMenu";
+import type { ColumnDef, ExportMeta, ExportRow } from "@/lib/export";
 
 export interface ChartFrameProps {
   title: string;
@@ -14,6 +16,14 @@ export interface ChartFrameProps {
   confidence?: ConfidenceLevel;
   /** Controls rendered top-right (toggles, legends, export, etc.). */
   actions?: React.ReactNode;
+  /** When set, renders a Download (CSV / Excel) control in the header so the
+   *  chart's underlying series can be exported with provenance. */
+  exportData?: {
+    columns: ColumnDef[];
+    rows: ExportRow[];
+    meta: ExportMeta;
+    filename?: string;
+  };
   className?: string;
   bodyClassName?: string;
   /** The chart itself (added in later phases). */
@@ -27,6 +37,7 @@ export function ChartFrame({
   asOf,
   confidence,
   actions,
+  exportData,
   className,
   bodyClassName,
   children,
@@ -44,7 +55,19 @@ export function ChartFrame({
             <p className="text-xs text-muted-foreground">{subtitle}</p>
           )}
         </div>
-        {actions && <div className="shrink-0">{actions}</div>}
+        {(actions || exportData) && (
+          <div className="flex shrink-0 items-center gap-2">
+            {actions}
+            {exportData && (
+              <ExportMenu
+                columns={exportData.columns}
+                rows={exportData.rows}
+                meta={exportData.meta}
+                filename={exportData.filename}
+              />
+            )}
+          </div>
+        )}
       </div>
 
       <div className={cn("min-h-[16rem] flex-1 px-3 py-2", bodyClassName)}>

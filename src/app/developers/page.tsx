@@ -8,6 +8,7 @@ import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { getDevelopersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { categoriesToExport, snapshotMeta } from "@/lib/export";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import { RosterTable } from "./RosterTable";
 import { PpaTrackerTable } from "./PpaTrackerTable";
@@ -91,6 +92,18 @@ export default function DevelopersPage() {
           source={source}
           asOf={asOf}
           confidence="medium"
+          exportData={{
+            ...categoriesToExport(
+              cf.categories,
+              [
+                { key: "operational", label: "Operational", unit: "GW", values: cf.operational },
+                { key: "underConstruction", label: "Under construction", unit: "GW", values: cf.underConstruction },
+                { key: "pipeline", label: "Pipeline", unit: "GW", values: cf.pipeline },
+              ],
+              "Developer",
+            ),
+            meta: snapshotMeta(snapshot, { dataset: "capacity-funnel" }),
+          }}
         >
           <StackedCategoryBarChart
             categories={cf.categories}
@@ -150,7 +163,10 @@ export default function DevelopersPage() {
           asOf={asOf}
           confidence="medium"
         >
-          <RosterTable rows={d.roster} />
+          <RosterTable
+            rows={d.roster}
+            exportMeta={snapshotMeta(snapshot, { dataset: "roster" })}
+          />
         </ChartFrame>
       </section>
 
@@ -166,7 +182,10 @@ export default function DevelopersPage() {
           source="SECI / state DISCOMs (maintained)"
           asOf={asOf}
         >
-          <PpaTrackerTable ppas={d.ppaTracker} />
+          <PpaTrackerTable
+            ppas={d.ppaTracker}
+            exportMeta={snapshotMeta(snapshot, { dataset: "ppa-tracker" })}
+          />
         </ChartFrame>
       </section>
     </div>

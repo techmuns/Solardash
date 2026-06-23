@@ -3,6 +3,7 @@
 import { DataTable, type Column } from "@/components/ui/DataTable";
 import { ConfidenceBadge } from "@/components/ui/Badge";
 import { energyColor } from "@/lib/colors";
+import type { ExportMeta } from "@/lib/export";
 import type { Developer } from "@/data/types/developers";
 import type { TenderType } from "@/data/types/tenders";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
@@ -17,7 +18,13 @@ function primaryTech(mix: Developer["mix"]): TenderType {
   return entries.reduce((best, e) => (e[1] > best[1] ? e : best), entries[0])[0];
 }
 
-export function RosterTable({ rows }: { rows: Developer[] }) {
+export function RosterTable({
+  rows,
+  exportMeta,
+}: {
+  rows: Developer[];
+  exportMeta?: ExportMeta;
+}) {
   const maxOp = Math.max(1, ...rows.map((r) => r.operationalGw));
 
   const columns: Column<Developer>[] = [
@@ -73,6 +80,7 @@ export function RosterTable({ rows }: { rows: Developer[] }) {
       header: "Primary",
       sortable: true,
       accessor: (r) => TENDER_TYPE_LABELS[primaryTech(r.mix)],
+      exportValue: (r) => TENDER_TYPE_LABELS[primaryTech(r.mix)],
       render: (r) => {
         const t = primaryTech(r.mix);
         return (
@@ -115,6 +123,8 @@ export function RosterTable({ rows }: { rows: Developer[] }) {
       getRowKey={(r) => r.name}
       dense
       emptyMessage="No developers."
+      exportable
+      exportMeta={exportMeta}
     />
   );
 }
