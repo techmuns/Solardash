@@ -14,6 +14,7 @@ import type {
   CompanyType,
   QuarterRow,
 } from "../../src/data/types/companies";
+import type { ScreenerFeed } from "../ingest/screener";
 
 const FALLBACK_AS_OF = "2026-03-31";
 const round1 = (n: number) => Math.round(n * 10) / 10;
@@ -102,19 +103,35 @@ export const companiesPipeline = definePipeline({
       slugSet.add(c.slug);
     }
 
-    // Merge each identity with its optional rich detail JSON.
+    // Merge each identity with its optional rich detail. Precedence is
+    //   registry identity → screener feed → manual override  (manual wins),
+    // so a fetched screener feed supplies financials while a hand-authored
+    // <slug>.json (forward estimates / valuation Screener lacks) overrides it.
     const built = companies.map((identity) => {
-      const detail = readManualJsonIfExists<Partial<CompanyDetail>>(
+      const screener = readManualJsonIfExists<ScreenerFeed>(
+        `companies/screener/${identity.slug}.json`,
+      );
+      const manual = readManualJsonIfExists<Partial<CompanyDetail>>(
         `companies/${identity.slug}.json`,
       );
-      const hasDetail = detail != null;
+      const hasDetail = screener != null || manual != null;
+      const screenerDetail: Partial<CompanyDetail> = screener
+        ? {
+            ...(screener.annual?.length ? { annual: screener.annual } : {}),
+            ...(screener.quarterly?.length ? { quarterly: screener.quarterly } : {}),
+            ...(screener.shareholding ? { shareholding: screener.shareholding } : {}),
+          }
+        : {};
       const companyDetail = {
         ...identity,
-        ...(detail ?? {}),
+        ...screenerDetail,
+        ...(manual ?? {}),
         hasDetail,
       } as CompanyDetail;
       const detailAsOf =
-        companyDetail.valuation?.asOf ?? companyDetail.shareholding?.asOf;
+        companyDetail.valuation?.asOf ??
+        companyDetail.shareholding?.asOf ??
+        screener?.asOf;
       checkMargins(companyDetail.slug, companyDetail.annual);
       checkMargins(companyDetail.slug, companyDetail.quarterly);
       return { companyDetail, detailAsOf };
