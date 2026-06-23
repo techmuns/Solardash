@@ -1,8 +1,10 @@
 import type { Snapshot } from "./types/core";
 import type { OverviewSummary } from "./types/overview";
 import type { TendersData } from "./types/tenders";
+import type { DevelopersData } from "./types/developers";
 import overviewSummary from "./snapshots/overview/summary.json";
 import tendersAwards from "./snapshots/tenders/awards.json";
+import developersPortfolio from "./snapshots/developers/portfolio.json";
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -46,5 +48,13 @@ export function getTendersSnapshot(): Snapshot<TendersData> {
   return assertSnapshot(
     tendersAwards as unknown as Snapshot<TendersData>,
     "tenders/awards",
+  );
+}
+
+/** Developers / IPPs — capacity funnel, portfolio mix, PPA funnel & tracker. */
+export function getDevelopersSnapshot(): Snapshot<DevelopersData> {
+  return assertSnapshot(
+    developersPortfolio as unknown as Snapshot<DevelopersData>,
+    "developers/portfolio",
   );
 }

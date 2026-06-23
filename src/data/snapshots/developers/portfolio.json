@@ -1,0 +1,499 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "India · large & listed IPPs / developers",
+  "data": {
+    "bessGwh": 2,
+    "capacityFunnel": {
+      "categories": [
+        "Adani Green",
+        "NTPC Green",
+        "Avaada",
+        "ReNew",
+        "JSW Neo",
+        "Tata Power RE",
+        "Greenko",
+        "ACME Solar",
+        "Torrent Power",
+        "Juniper Green",
+        "Sembcorp Green"
+      ],
+      "operational": [
+        17.2,
+        9,
+        7.2,
+        11.5,
+        5.7,
+        6.1,
+        7.5,
+        2.9,
+        2,
+        3,
+        3.5
+      ],
+      "pipeline": [
+        20.8,
+        8,
+        4.5,
+        3.2,
+        5.8,
+        5.9,
+        3,
+        3.6,
+        3,
+        2,
+        2
+      ],
+      "underConstruction": [
+        12,
+        7,
+        6,
+        3,
+        5,
+        4,
+        2,
+        3.5,
+        3,
+        2,
+        1.5
+      ]
+    },
+    "kpis": [
+      {
+        "confidence": "medium",
+        "hint": "11 developers",
+        "key": "operational_gw",
+        "label": "Operational capacity",
+        "unit": "GW",
+        "value": 75.6
+      },
+      {
+        "confidence": "medium",
+        "hint": "near-term build-out",
+        "key": "buildout_gw",
+        "label": "Under-construction + pipeline",
+        "unit": "GW",
+        "value": 110.8
+      },
+      {
+        "confidence": "modelled",
+        "hint": "sum of stated targets",
+        "key": "target_gw",
+        "label": "FY30 target (aggregate)",
+        "unit": "GW",
+        "value": 186.2
+      },
+      {
+        "confidence": "high",
+        "hint": "listed & large IPPs",
+        "key": "developers",
+        "label": "Developers tracked",
+        "value": 11
+      },
+      {
+        "confidence": "medium",
+        "hint": "17.2 GW operational",
+        "key": "largest",
+        "label": "Largest by operational",
+        "value": "Adani Green"
+      },
+      {
+        "confidence": "medium",
+        "hint": "LOA awaiting PPA (solar + wind)",
+        "key": "balance_pipeline",
+        "label": "National balance pipeline",
+        "unit": "GW",
+        "value": 68
+      }
+    ],
+    "nationalFunnel": [
+      {
+        "solarGw": 174,
+        "stage": "LOA",
+        "windGw": 41
+      },
+      {
+        "solarGw": 116,
+        "stage": "PPA",
+        "windGw": 29
+      },
+      {
+        "solarGw": 60,
+        "stage": "Executed",
+        "windGw": 17
+      },
+      {
+        "solarGw": 56,
+        "stage": "Balance",
+        "windGw": 12
+      }
+    ],
+    "portfolioMix": [
+      {
+        "gw": 51,
+        "key": "solar",
+        "share": 0.67
+      },
+      {
+        "gw": 13.8,
+        "key": "wind",
+        "share": 0.18
+      },
+      {
+        "gw": 10.8,
+        "key": "hybrid",
+        "share": 0.14
+      }
+    ],
+    "ppaTracker": [
+      {
+        "agency": "SECI",
+        "capacityMw": 300,
+        "confidence": "medium",
+        "date": "2026-02-10",
+        "developer": "JSW Neo",
+        "id": "P-01",
+        "period": "Q4FY26",
+        "sourceNote": "25-yr PPA",
+        "tariffRs": 4.98,
+        "tenderType": "fdre"
+      },
+      {
+        "agency": "NTPC",
+        "capacityMw": 700,
+        "confidence": "medium",
+        "date": "2026-01-15",
+        "developer": "JSW Energy",
+        "id": "P-02",
+        "period": "Q4FY26",
+        "tenderType": "solar"
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 1000,
+        "confidence": "medium",
+        "date": "2025-12-05",
+        "developer": "Adani Green",
+        "id": "P-03",
+        "period": "Q3FY26",
+        "tariffRs": 3.12,
+        "tenderType": "solar-bess"
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 400,
+        "confidence": "medium",
+        "date": "2025-11-20",
+        "developer": "ReNew",
+        "id": "P-04",
+        "period": "Q3FY26",
+        "tariffRs": 3.46,
+        "tenderType": "hybrid"
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 1000,
+        "confidence": "modelled",
+        "date": "2025-10-18",
+        "developer": "NTPC Green",
+        "id": "P-05",
+        "period": "Q3FY26",
+        "tariffRs": 2.55,
+        "tenderType": "solar"
+      },
+      {
+        "agency": "GUVNL",
+        "capacityMw": 800,
+        "confidence": "modelled",
+        "date": "2025-09-12",
+        "developer": "Tata Power RE",
+        "id": "P-06",
+        "period": "Q2FY26",
+        "tariffRs": 2.7,
+        "tenderType": "solar"
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 500,
+        "confidence": "modelled",
+        "date": "2025-08-22",
+        "developer": "ACME Solar",
+        "id": "P-07",
+        "period": "Q2FY26",
+        "tariffRs": 4.64,
+        "tenderType": "fdre"
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 700,
+        "confidence": "modelled",
+        "date": "2025-07-15",
+        "developer": "Avaada",
+        "id": "P-08",
+        "period": "Q1FY26",
+        "sourceNote": "mfg-linked",
+        "tariffRs": 2.42,
+        "tenderType": "solar"
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 500,
+        "confidence": "modelled",
+        "date": "2025-06-10",
+        "developer": "Sembcorp Green",
+        "id": "P-09",
+        "period": "Q1FY26",
+        "tariffRs": 3.4,
+        "tenderType": "hybrid"
+      },
+      {
+        "agency": "MSEDCL",
+        "capacityMw": 500,
+        "confidence": "modelled",
+        "date": "2025-05-08",
+        "developer": "Juniper Green",
+        "id": "P-10",
+        "period": "Q1FY26",
+        "tariffRs": 2.68,
+        "tenderType": "solar"
+      }
+    ],
+    "roster": [
+      {
+        "confidence": "medium",
+        "mix": {
+          "bessGwh": 1,
+          "fdre": 0,
+          "hybrid": 2.7,
+          "solar": 11,
+          "wind": 3.5
+        },
+        "name": "Adani Green",
+        "operationalGw": 17.2,
+        "pipelineGw": 20.8,
+        "ppaSignedGw": 1,
+        "targetGw": 50,
+        "targetYear": "FY30",
+        "underConstructionGw": 12
+      },
+      {
+        "confidence": "medium",
+        "mix": {
+          "bessGwh": 0.5,
+          "fdre": 0,
+          "hybrid": 1,
+          "solar": 7,
+          "wind": 3.5
+        },
+        "name": "ReNew",
+        "operationalGw": 11.5,
+        "pipelineGw": 3.2,
+        "ppaSignedGw": 0.4,
+        "targetGw": 17.7,
+        "targetYear": "FY30",
+        "underConstructionGw": 3
+      },
+      {
+        "confidence": "medium",
+        "mix": {
+          "bessGwh": 0.5,
+          "fdre": 0,
+          "hybrid": 1.5,
+          "solar": 6.5,
+          "wind": 1
+        },
+        "name": "NTPC Green",
+        "operationalGw": 9,
+        "pipelineGw": 8,
+        "ppaSignedGw": 1,
+        "targetGw": 24,
+        "targetYear": "FY30",
+        "underConstructionGw": 7
+      },
+      {
+        "confidence": "modelled",
+        "mix": {
+          "bessGwh": 0,
+          "fdre": 0,
+          "hybrid": 2,
+          "solar": 3.5,
+          "wind": 2
+        },
+        "name": "Greenko",
+        "operationalGw": 7.5,
+        "pipelineGw": 3,
+        "targetGw": 12,
+        "targetYear": "FY30",
+        "underConstructionGw": 2
+      },
+      {
+        "confidence": "modelled",
+        "mix": {
+          "bessGwh": 0,
+          "fdre": 0,
+          "hybrid": 0.7,
+          "solar": 6,
+          "wind": 0.5
+        },
+        "name": "Avaada",
+        "operationalGw": 7.2,
+        "pipelineGw": 4.5,
+        "ppaSignedGw": 0.7,
+        "targetGw": 18,
+        "targetYear": "FY30",
+        "underConstructionGw": 6
+      },
+      {
+        "confidence": "medium",
+        "mix": {
+          "bessGwh": 0,
+          "fdre": 0,
+          "hybrid": 0.5,
+          "solar": 5,
+          "wind": 0.6
+        },
+        "name": "Tata Power RE",
+        "operationalGw": 6.1,
+        "pipelineGw": 5.9,
+        "ppaSignedGw": 0.8,
+        "targetGw": 16,
+        "targetYear": "FY30",
+        "underConstructionGw": 4
+      },
+      {
+        "confidence": "medium",
+        "mix": {
+          "bessGwh": 0,
+          "fdre": 0,
+          "hybrid": 0.7,
+          "solar": 3.5,
+          "wind": 1.5
+        },
+        "name": "JSW Neo",
+        "operationalGw": 5.7,
+        "pipelineGw": 5.8,
+        "ppaSignedGw": 0.3,
+        "targetGw": 16.5,
+        "targetYear": "FY30",
+        "underConstructionGw": 5
+      },
+      {
+        "confidence": "modelled",
+        "mix": {
+          "bessGwh": 0,
+          "fdre": 0,
+          "hybrid": 0.5,
+          "solar": 2.5,
+          "wind": 0.5
+        },
+        "name": "Sembcorp Green",
+        "operationalGw": 3.5,
+        "pipelineGw": 2,
+        "ppaSignedGw": 0.5,
+        "targetGw": 7,
+        "targetYear": "FY30",
+        "underConstructionGw": 1.5
+      },
+      {
+        "confidence": "modelled",
+        "mix": {
+          "bessGwh": 0,
+          "fdre": 0,
+          "hybrid": 0.5,
+          "solar": 2,
+          "wind": 0.5
+        },
+        "name": "Juniper Green",
+        "operationalGw": 3,
+        "pipelineGw": 2,
+        "ppaSignedGw": 0.5,
+        "targetGw": 7,
+        "targetYear": "FY30",
+        "underConstructionGw": 2
+      },
+      {
+        "confidence": "medium",
+        "mix": {
+          "bessGwh": 0,
+          "fdre": 0,
+          "hybrid": 0.4,
+          "solar": 2.5,
+          "wind": 0
+        },
+        "name": "ACME Solar",
+        "operationalGw": 2.9,
+        "pipelineGw": 3.6,
+        "ppaSignedGw": 0.5,
+        "targetGw": 10,
+        "targetYear": "FY30",
+        "underConstructionGw": 3.5
+      },
+      {
+        "confidence": "modelled",
+        "mix": {
+          "bessGwh": 0,
+          "fdre": 0,
+          "hybrid": 0.3,
+          "solar": 1.5,
+          "wind": 0.2
+        },
+        "name": "Torrent Power",
+        "operationalGw": 2,
+        "pipelineGw": 3,
+        "targetGw": 8,
+        "targetYear": "FY30",
+        "underConstructionGw": 3
+      }
+    ]
+  },
+  "dataset": "portfolio",
+  "notes": [
+    "Roster, capacity funnel and tech mix are as-of FY26 investor disclosures / VQ Research and are partly modelled & user-maintained.",
+    "Funnel splits, FY30 targets and tech mix are estimates; PPA-signed GW is derived from the PPA tracker.",
+    "BESS is tracked in GWh and excluded from the GW-share portfolio donut."
+  ],
+  "section": "developers",
+  "sources": [
+    {
+      "asOf": "2025-09-12",
+      "confidence": "modelled",
+      "name": "GUVNL"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "Investor Presentation"
+    },
+    {
+      "asOf": "2025-05-08",
+      "confidence": "modelled",
+      "name": "MSEDCL"
+    },
+    {
+      "asOf": "2026-01-15",
+      "confidence": "medium",
+      "name": "NTPC"
+    },
+    {
+      "asOf": "2026-02-10",
+      "confidence": "medium",
+      "name": "SECI"
+    },
+    {
+      "asOf": "2025-10-18",
+      "confidence": "modelled",
+      "name": "SECI"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "VQ Research"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "VQ Research / Investor Presentation"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

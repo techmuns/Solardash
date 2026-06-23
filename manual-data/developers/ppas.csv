@@ -1,0 +1,11 @@
+id,date,period,developer,agency,tender_type,capacity_mw,tariff_rs,confidence,source,note
+P-01,2026-02-10,Q4FY26,JSW Neo,SECI,fdre,300,4.98,medium,SECI,25-yr PPA
+P-02,2026-01-15,Q4FY26,JSW Energy,NTPC,solar,700,,medium,NTPC,
+P-03,2025-12-05,Q3FY26,Adani Green,SECI,solar-bess,1000,3.12,medium,SECI,
+P-04,2025-11-20,Q3FY26,ReNew,SECI,hybrid,400,3.46,medium,SECI,
+P-05,2025-10-18,Q3FY26,NTPC Green,SECI,solar,1000,2.55,modelled,SECI,
+P-06,2025-09-12,Q2FY26,Tata Power RE,GUVNL,solar,800,2.70,modelled,GUVNL,
+P-07,2025-08-22,Q2FY26,ACME Solar,SECI,fdre,500,4.64,modelled,SECI,
+P-08,2025-07-15,Q1FY26,Avaada,SECI,solar,700,2.42,modelled,SECI,mfg-linked
+P-09,2025-06-10,Q1FY26,Sembcorp Green,SECI,hybrid,500,3.40,modelled,SECI,
+P-10,2025-05-08,Q1FY26,Juniper Green,MSEDCL,solar,500,2.68,modelled,MSEDCL,

@@ -95,3 +95,16 @@ export interface Snapshot<T> {
   notes?: string[];
   data: T;
 }
+
+/**
+ * A headline KPI rendered as a `StatCard` (+ `ConfidenceBadge`). Shared across
+ * sections; `value` is a string for textual KPIs (e.g. "leading developer").
+ */
+export interface Kpi {
+  key: string;
+  label: string;
+  value: number | string;
+  unit?: Unit;
+  confidence: Confidence;
+  hint?: string;
+}

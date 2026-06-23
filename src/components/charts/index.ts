@@ -8,5 +8,10 @@ export {
   type CategoryBarChartProps,
   type CategoryDatum,
 } from "./CategoryBarChart";
+export {
+  StackedCategoryBarChart,
+  type StackedCategoryBarChartProps,
+  type StackedCategorySeries,
+} from "./StackedCategoryBarChart";
 export { useChartTheme, type ChartTheme } from "./use-chart-theme";
 export { seriesToRows, type ChartRow } from "./series";
