@@ -94,6 +94,7 @@ const config: Config = {
           nuclear: "#A855F7",
           hydro: "#3B82F6",
           gas: "#FB923C",
+          peak: "#EC4899",
         },
       },
 

@@ -1,6 +1,8 @@
 import type { Snapshot } from "./types/core";
 import type { OverviewSummary } from "./types/overview";
+import type { TendersData } from "./types/tenders";
 import overviewSummary from "./snapshots/overview/summary.json";
+import tendersAwards from "./snapshots/tenders/awards.json";
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -36,5 +38,13 @@ export function getOverviewSnapshot(): Snapshot<OverviewSummary> {
   return assertSnapshot(
     overviewSummary as unknown as Snapshot<OverviewSummary>,
     "overview/summary",
+  );
+}
+
+/** Tenders & auctions — awarded MW, tariffs, mix, leaderboard, recent awards. */
+export function getTendersSnapshot(): Snapshot<TendersData> {
+  return assertSnapshot(
+    tendersAwards as unknown as Snapshot<TendersData>,
+    "tenders/awards",
   );
 }

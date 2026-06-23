@@ -1,9 +1,10 @@
 import type { Cadence } from "../../src/data/types/core";
 import type { Pipeline } from "./pipeline";
 import { overviewPipeline } from "../pipelines/overview";
+import { tendersPipeline } from "../pipelines/tenders";
 
 /** Every registered pipeline. New section pipelines are added here. */
-export const pipelines: Pipeline[] = [overviewPipeline];
+export const pipelines: Pipeline[] = [overviewPipeline, tendersPipeline];
 
 export function getPipeline(name: string): Pipeline | undefined {
   return pipelines.find((p) => p.name === name);

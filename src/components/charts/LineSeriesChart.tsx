@@ -20,6 +20,8 @@ export interface LineSeriesChartProps {
   height?: number;
   /** Unit suffix shown in the tooltip, e.g. `Rs/kWh`. */
   unit?: string;
+  /** Explicit x-axis order; otherwise first-appearance order. */
+  periodOrder?: string[];
 }
 
 /** Generic line chart over our typed Series, coloured via ENERGY_COLORS. */
@@ -27,9 +29,10 @@ export function LineSeriesChart({
   series,
   height = 288,
   unit,
+  periodOrder,
 }: LineSeriesChartProps) {
   const theme = useChartTheme();
-  const rows = seriesToRows(series);
+  const rows = seriesToRows(series, periodOrder);
 
   return (
     <ChartContainer height={height}>
@@ -71,8 +74,9 @@ export function LineSeriesChart({
             name={s.label}
             stroke={energyColor(s.key)}
             strokeWidth={2}
-            dot={false}
+            dot={{ r: 2.5, strokeWidth: 0, fill: energyColor(s.key) }}
             activeDot={{ r: 4 }}
+            connectNulls
           />
         ))}
       </LineChart>

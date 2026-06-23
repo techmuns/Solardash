@@ -22,6 +22,8 @@ export interface BarSeriesChartProps {
   height?: number;
   /** Unit suffix shown in the tooltip, e.g. `GW`. */
   unit?: string;
+  /** Explicit category (x-axis) order; otherwise first-appearance order. */
+  periodOrder?: string[];
 }
 
 /** Generic bar chart over our typed Series, coloured via ENERGY_COLORS. */
@@ -30,9 +32,10 @@ export function BarSeriesChart({
   stacked = false,
   height = 288,
   unit,
+  periodOrder,
 }: BarSeriesChartProps) {
   const theme = useChartTheme();
-  const rows = seriesToRows(series);
+  const rows = seriesToRows(series, periodOrder);
 
   return (
     <ChartContainer height={height}>

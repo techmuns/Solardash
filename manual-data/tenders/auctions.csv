@@ -1,0 +1,19 @@
+id,period,date,agency,tender_type,capacity_mw,storage_mwh,tariff_rs,ceiling_rs,winners,state,status,confidence,source,note
+T-001,Q1FY25,2024-05-15,SECI,solar,1200,,2.57,2.61,NTPC:600;Adani:600,,awarded,medium,SECI,
+T-002,Q1FY25,2024-06-20,GUVNL,solar,750,,2.65,2.70,Juniper:500;Torrent:250,Gujarat,awarded,medium,GUVNL,
+T-003,Q2FY25,2024-08-10,SECI,hybrid,1500,,3.40,3.50,ReNew:1000;ACME:500,,awarded,medium,SECI,
+T-004,Q2FY25,2024-09-05,NTPC,solar,1000,,2.62,2.68,Tata Power:1000,,awarded,medium,NTPC,
+T-005,Q3FY25,2024-11-12,SECI,fdre,1500,,4.64,4.95,Avaada:900;Sembcorp:600,,awarded,medium,SECI,
+T-006,Q3FY25,2024-12-18,SJVN,solar,1000,,2.60,2.65,Adani:1000,,awarded,modelled,SJVN,
+T-007,Q4FY25,2025-02-22,SECI,solar-bess,2000,4000,2.86,3.00,ReNew:1000;NTPC:1000,,awarded,high,SECI,2-hr storage
+T-008,Q4FY25,2025-03-15,SECI,wind,1200,,3.55,3.70,Juniper:600;Adani:600,,awarded,medium,SECI,
+T-009,Q1FY26,2025-05-20,SECI,solar,2366,,2.42,2.55,Waaree:1000;Premier:766;ReNew:600,,awarded,medium,SECI,manufacturing-linked
+T-010,Q1FY26,2025-06-10,MSEDCL,solar,1500,,2.70,2.75,Tata Power:800;Avaada:700,Maharashtra,awarded,medium,MSEDCL,
+T-011,Q2FY26,2025-08-14,SECI,hybrid,900,,3.25,3.40,ACME:500;ReNew:400,,awarded,medium,SECI,Tranche VIII
+T-012,Q2FY26,2025-09-02,SECI,hybrid,900,,3.46,3.55,Sembcorp:500;Juniper:400,,awarded,medium,SECI,Tranche IX
+T-013,Q2FY26,2025-09-25,SECI,solar-bess,1200,2400,3.12,3.25,NTPC:600;Adani:600,,awarded,high,SECI,Tranche XXI
+T-014,Q3FY26,2025-10-30,SECI,fdre,300,,4.98,5.20,JSW Neo:300,,awarded,medium,SECI,Tranche VII PPA
+T-015,Q3FY26,2025-11-18,SECI,bess,125,500,,,JSW:125,,awarded,medium,SECI,standalone BESS — capacity charge ₹/MW/month not ₹/unit
+T-016,Q3FY26,2025-11-28,NHPC,solar,1000,,2.55,2.62,Adani:600;ReNew:400,,awarded,modelled,NHPC,
+T-017,Q3FY26,2025-12-10,SECI,rtc,500,,4.20,4.50,ReNew:500,,awarded,modelled,SECI,round-the-clock
+T-018,Q3FY26,2025-12-20,GUVNL,solar,1000,,2.68,2.74,Torrent:600;NTPC:400,Gujarat,awarded,modelled,GUVNL,

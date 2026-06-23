@@ -1,0 +1,985 @@
+{
+  "asOf": "2025-12-20",
+  "cadence": "quarterly",
+  "coverage": "India · central & state RE auctions (maintained feed)",
+  "data": {
+    "agencySplit": [
+      {
+        "agency": "SECI",
+        "mw": 13691
+      },
+      {
+        "agency": "GUVNL",
+        "mw": 1750
+      },
+      {
+        "agency": "MSEDCL",
+        "mw": 1500
+      },
+      {
+        "agency": "NHPC",
+        "mw": 1000
+      },
+      {
+        "agency": "NTPC",
+        "mw": 1000
+      },
+      {
+        "agency": "SJVN",
+        "mw": 1000
+      }
+    ],
+    "asOfPeriod": "Q3FY26",
+    "awardsByQuarter": [
+      {
+        "key": "solar",
+        "label": "Solar",
+        "points": [
+          {
+            "period": "Q1FY25",
+            "value": 1950
+          },
+          {
+            "period": "Q2FY25",
+            "value": 1000
+          },
+          {
+            "period": "Q3FY25",
+            "value": 1000
+          },
+          {
+            "period": "Q4FY25",
+            "value": 0
+          },
+          {
+            "period": "Q1FY26",
+            "value": 3866
+          },
+          {
+            "period": "Q2FY26",
+            "value": 0
+          },
+          {
+            "period": "Q3FY26",
+            "value": 2000
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "solar-bess",
+        "label": "Solar + BESS",
+        "points": [
+          {
+            "period": "Q1FY25",
+            "value": 0
+          },
+          {
+            "period": "Q2FY25",
+            "value": 0
+          },
+          {
+            "period": "Q3FY25",
+            "value": 0
+          },
+          {
+            "period": "Q4FY25",
+            "value": 2000
+          },
+          {
+            "period": "Q1FY26",
+            "value": 0
+          },
+          {
+            "period": "Q2FY26",
+            "value": 1200
+          },
+          {
+            "period": "Q3FY26",
+            "value": 0
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "bess",
+        "label": "BESS",
+        "points": [
+          {
+            "period": "Q1FY25",
+            "value": 0
+          },
+          {
+            "period": "Q2FY25",
+            "value": 0
+          },
+          {
+            "period": "Q3FY25",
+            "value": 0
+          },
+          {
+            "period": "Q4FY25",
+            "value": 0
+          },
+          {
+            "period": "Q1FY26",
+            "value": 0
+          },
+          {
+            "period": "Q2FY26",
+            "value": 0
+          },
+          {
+            "period": "Q3FY26",
+            "value": 125
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "wind",
+        "label": "Wind",
+        "points": [
+          {
+            "period": "Q1FY25",
+            "value": 0
+          },
+          {
+            "period": "Q2FY25",
+            "value": 0
+          },
+          {
+            "period": "Q3FY25",
+            "value": 0
+          },
+          {
+            "period": "Q4FY25",
+            "value": 1200
+          },
+          {
+            "period": "Q1FY26",
+            "value": 0
+          },
+          {
+            "period": "Q2FY26",
+            "value": 0
+          },
+          {
+            "period": "Q3FY26",
+            "value": 0
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "hybrid",
+        "label": "Hybrid",
+        "points": [
+          {
+            "period": "Q1FY25",
+            "value": 0
+          },
+          {
+            "period": "Q2FY25",
+            "value": 1500
+          },
+          {
+            "period": "Q3FY25",
+            "value": 0
+          },
+          {
+            "period": "Q4FY25",
+            "value": 0
+          },
+          {
+            "period": "Q1FY26",
+            "value": 0
+          },
+          {
+            "period": "Q2FY26",
+            "value": 1800
+          },
+          {
+            "period": "Q3FY26",
+            "value": 0
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "fdre",
+        "label": "FDRE",
+        "points": [
+          {
+            "period": "Q1FY25",
+            "value": 0
+          },
+          {
+            "period": "Q2FY25",
+            "value": 0
+          },
+          {
+            "period": "Q3FY25",
+            "value": 1500
+          },
+          {
+            "period": "Q4FY25",
+            "value": 0
+          },
+          {
+            "period": "Q1FY26",
+            "value": 0
+          },
+          {
+            "period": "Q2FY26",
+            "value": 0
+          },
+          {
+            "period": "Q3FY26",
+            "value": 300
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "rtc",
+        "label": "RTC",
+        "points": [
+          {
+            "period": "Q1FY25",
+            "value": 0
+          },
+          {
+            "period": "Q2FY25",
+            "value": 0
+          },
+          {
+            "period": "Q3FY25",
+            "value": 0
+          },
+          {
+            "period": "Q4FY25",
+            "value": 0
+          },
+          {
+            "period": "Q1FY26",
+            "value": 0
+          },
+          {
+            "period": "Q2FY26",
+            "value": 0
+          },
+          {
+            "period": "Q3FY26",
+            "value": 500
+          }
+        ],
+        "unit": "MW"
+      }
+    ],
+    "developerLeaderboard": [
+      {
+        "auctions": 4,
+        "avgTariffRs": 3.09,
+        "developer": "ReNew",
+        "mw": 1900
+      },
+      {
+        "auctions": 2,
+        "avgTariffRs": 2.84,
+        "developer": "Adani",
+        "mw": 1200
+      },
+      {
+        "auctions": 2,
+        "avgTariffRs": 2.94,
+        "developer": "NTPC",
+        "mw": 1000
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 2.42,
+        "developer": "Waaree",
+        "mw": 1000
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 2.7,
+        "developer": "Tata Power",
+        "mw": 800
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 2.42,
+        "developer": "Premier",
+        "mw": 766
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 2.7,
+        "developer": "Avaada",
+        "mw": 700
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 2.68,
+        "developer": "Torrent",
+        "mw": 600
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.25,
+        "developer": "ACME",
+        "mw": 500
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.46,
+        "developer": "Sembcorp",
+        "mw": 500
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.46,
+        "developer": "Juniper",
+        "mw": 400
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 4.98,
+        "developer": "JSW Neo",
+        "mw": 300
+      },
+      {
+        "auctions": 1,
+        "developer": "JSW",
+        "mw": 125
+      }
+    ],
+    "kpis": [
+      {
+        "confidence": "medium",
+        "hint": "Apr 2025 – Mar 2026",
+        "key": "awarded_fy26",
+        "label": "Awarded (FY26-to-date)",
+        "unit": "GW",
+        "value": 9.79
+      },
+      {
+        "confidence": "high",
+        "hint": "FY26-to-date",
+        "key": "auctions_fy26",
+        "label": "Auctions concluded",
+        "value": 10
+      },
+      {
+        "confidence": "medium",
+        "hint": "SECI · Solar",
+        "key": "lowest_tariff",
+        "label": "Lowest tariff",
+        "unit": "Rs/kWh",
+        "value": 2.42
+      },
+      {
+        "confidence": "medium",
+        "hint": "excl. standalone BESS",
+        "key": "avg_tariff",
+        "label": "Avg tariff (cap-wtd)",
+        "unit": "Rs/kWh",
+        "value": 2.94
+      },
+      {
+        "confidence": "high",
+        "hint": "60% of FY26 MW",
+        "key": "leading_type",
+        "label": "Leading type by MW",
+        "value": "Solar"
+      },
+      {
+        "confidence": "modelled",
+        "hint": "1900 MW",
+        "key": "top_developer",
+        "label": "Top developer by MW",
+        "value": "ReNew"
+      }
+    ],
+    "recentAwards": [
+      {
+        "agency": "GUVNL",
+        "capacityMw": 1000,
+        "ceilingRs": 2.74,
+        "confidence": "modelled",
+        "date": "2025-12-20",
+        "id": "T-018",
+        "period": "Q3FY26",
+        "state": "Gujarat",
+        "status": "awarded",
+        "tariffRs": 2.68,
+        "tenderType": "solar",
+        "winners": [
+          {
+            "developer": "Torrent",
+            "mw": 600
+          },
+          {
+            "developer": "NTPC",
+            "mw": 400
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 500,
+        "ceilingRs": 4.5,
+        "confidence": "modelled",
+        "date": "2025-12-10",
+        "id": "T-017",
+        "period": "Q3FY26",
+        "sourceNote": "round-the-clock",
+        "status": "awarded",
+        "tariffRs": 4.2,
+        "tenderType": "rtc",
+        "winners": [
+          {
+            "developer": "ReNew",
+            "mw": 500
+          }
+        ]
+      },
+      {
+        "agency": "NHPC",
+        "capacityMw": 1000,
+        "ceilingRs": 2.62,
+        "confidence": "modelled",
+        "date": "2025-11-28",
+        "id": "T-016",
+        "period": "Q3FY26",
+        "status": "awarded",
+        "tariffRs": 2.55,
+        "tenderType": "solar",
+        "winners": [
+          {
+            "developer": "Adani",
+            "mw": 600
+          },
+          {
+            "developer": "ReNew",
+            "mw": 400
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 125,
+        "confidence": "medium",
+        "date": "2025-11-18",
+        "id": "T-015",
+        "period": "Q3FY26",
+        "sourceNote": "standalone BESS — capacity charge ₹/MW/month not ₹/unit",
+        "status": "awarded",
+        "storageMwh": 500,
+        "tenderType": "bess",
+        "winners": [
+          {
+            "developer": "JSW",
+            "mw": 125
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 300,
+        "ceilingRs": 5.2,
+        "confidence": "medium",
+        "date": "2025-10-30",
+        "id": "T-014",
+        "period": "Q3FY26",
+        "sourceNote": "Tranche VII PPA",
+        "status": "awarded",
+        "tariffRs": 4.98,
+        "tenderType": "fdre",
+        "winners": [
+          {
+            "developer": "JSW Neo",
+            "mw": 300
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 1200,
+        "ceilingRs": 3.25,
+        "confidence": "high",
+        "date": "2025-09-25",
+        "id": "T-013",
+        "period": "Q2FY26",
+        "sourceNote": "Tranche XXI",
+        "status": "awarded",
+        "storageMwh": 2400,
+        "tariffRs": 3.12,
+        "tenderType": "solar-bess",
+        "winners": [
+          {
+            "developer": "NTPC",
+            "mw": 600
+          },
+          {
+            "developer": "Adani",
+            "mw": 600
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 900,
+        "ceilingRs": 3.55,
+        "confidence": "medium",
+        "date": "2025-09-02",
+        "id": "T-012",
+        "period": "Q2FY26",
+        "sourceNote": "Tranche IX",
+        "status": "awarded",
+        "tariffRs": 3.46,
+        "tenderType": "hybrid",
+        "winners": [
+          {
+            "developer": "Sembcorp",
+            "mw": 500
+          },
+          {
+            "developer": "Juniper",
+            "mw": 400
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 900,
+        "ceilingRs": 3.4,
+        "confidence": "medium",
+        "date": "2025-08-14",
+        "id": "T-011",
+        "period": "Q2FY26",
+        "sourceNote": "Tranche VIII",
+        "status": "awarded",
+        "tariffRs": 3.25,
+        "tenderType": "hybrid",
+        "winners": [
+          {
+            "developer": "ACME",
+            "mw": 500
+          },
+          {
+            "developer": "ReNew",
+            "mw": 400
+          }
+        ]
+      },
+      {
+        "agency": "MSEDCL",
+        "capacityMw": 1500,
+        "ceilingRs": 2.75,
+        "confidence": "medium",
+        "date": "2025-06-10",
+        "id": "T-010",
+        "period": "Q1FY26",
+        "state": "Maharashtra",
+        "status": "awarded",
+        "tariffRs": 2.7,
+        "tenderType": "solar",
+        "winners": [
+          {
+            "developer": "Tata Power",
+            "mw": 800
+          },
+          {
+            "developer": "Avaada",
+            "mw": 700
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 2366,
+        "ceilingRs": 2.55,
+        "confidence": "medium",
+        "date": "2025-05-20",
+        "id": "T-009",
+        "period": "Q1FY26",
+        "sourceNote": "manufacturing-linked",
+        "status": "awarded",
+        "tariffRs": 2.42,
+        "tenderType": "solar",
+        "winners": [
+          {
+            "developer": "Waaree",
+            "mw": 1000
+          },
+          {
+            "developer": "Premier",
+            "mw": 766
+          },
+          {
+            "developer": "ReNew",
+            "mw": 600
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 1200,
+        "ceilingRs": 3.7,
+        "confidence": "medium",
+        "date": "2025-03-15",
+        "id": "T-008",
+        "period": "Q4FY25",
+        "status": "awarded",
+        "tariffRs": 3.55,
+        "tenderType": "wind",
+        "winners": [
+          {
+            "developer": "Juniper",
+            "mw": 600
+          },
+          {
+            "developer": "Adani",
+            "mw": 600
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 2000,
+        "ceilingRs": 3,
+        "confidence": "high",
+        "date": "2025-02-22",
+        "id": "T-007",
+        "period": "Q4FY25",
+        "sourceNote": "2-hr storage",
+        "status": "awarded",
+        "storageMwh": 4000,
+        "tariffRs": 2.86,
+        "tenderType": "solar-bess",
+        "winners": [
+          {
+            "developer": "ReNew",
+            "mw": 1000
+          },
+          {
+            "developer": "NTPC",
+            "mw": 1000
+          }
+        ]
+      },
+      {
+        "agency": "SJVN",
+        "capacityMw": 1000,
+        "ceilingRs": 2.65,
+        "confidence": "modelled",
+        "date": "2024-12-18",
+        "id": "T-006",
+        "period": "Q3FY25",
+        "status": "awarded",
+        "tariffRs": 2.6,
+        "tenderType": "solar",
+        "winners": [
+          {
+            "developer": "Adani",
+            "mw": 1000
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 1500,
+        "ceilingRs": 4.95,
+        "confidence": "medium",
+        "date": "2024-11-12",
+        "id": "T-005",
+        "period": "Q3FY25",
+        "status": "awarded",
+        "tariffRs": 4.64,
+        "tenderType": "fdre",
+        "winners": [
+          {
+            "developer": "Avaada",
+            "mw": 900
+          },
+          {
+            "developer": "Sembcorp",
+            "mw": 600
+          }
+        ]
+      },
+      {
+        "agency": "NTPC",
+        "capacityMw": 1000,
+        "ceilingRs": 2.68,
+        "confidence": "medium",
+        "date": "2024-09-05",
+        "id": "T-004",
+        "period": "Q2FY25",
+        "status": "awarded",
+        "tariffRs": 2.62,
+        "tenderType": "solar",
+        "winners": [
+          {
+            "developer": "Tata Power",
+            "mw": 1000
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 1500,
+        "ceilingRs": 3.5,
+        "confidence": "medium",
+        "date": "2024-08-10",
+        "id": "T-003",
+        "period": "Q2FY25",
+        "status": "awarded",
+        "tariffRs": 3.4,
+        "tenderType": "hybrid",
+        "winners": [
+          {
+            "developer": "ReNew",
+            "mw": 1000
+          },
+          {
+            "developer": "ACME",
+            "mw": 500
+          }
+        ]
+      },
+      {
+        "agency": "GUVNL",
+        "capacityMw": 750,
+        "ceilingRs": 2.7,
+        "confidence": "medium",
+        "date": "2024-06-20",
+        "id": "T-002",
+        "period": "Q1FY25",
+        "state": "Gujarat",
+        "status": "awarded",
+        "tariffRs": 2.65,
+        "tenderType": "solar",
+        "winners": [
+          {
+            "developer": "Juniper",
+            "mw": 500
+          },
+          {
+            "developer": "Torrent",
+            "mw": 250
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 1200,
+        "ceilingRs": 2.61,
+        "confidence": "medium",
+        "date": "2024-05-15",
+        "id": "T-001",
+        "period": "Q1FY25",
+        "status": "awarded",
+        "tariffRs": 2.57,
+        "tenderType": "solar",
+        "winners": [
+          {
+            "developer": "NTPC",
+            "mw": 600
+          },
+          {
+            "developer": "Adani",
+            "mw": 600
+          }
+        ]
+      }
+    ],
+    "tariffByType": [
+      {
+        "key": "solar",
+        "label": "Solar",
+        "points": [
+          {
+            "period": "Q1FY25",
+            "value": 2.6
+          },
+          {
+            "period": "Q2FY25",
+            "value": 2.62
+          },
+          {
+            "period": "Q3FY25",
+            "value": 2.6
+          },
+          {
+            "period": "Q1FY26",
+            "value": 2.53
+          },
+          {
+            "period": "Q3FY26",
+            "value": 2.62
+          }
+        ],
+        "unit": "Rs/kWh"
+      },
+      {
+        "key": "solar-bess",
+        "label": "Solar + BESS",
+        "points": [
+          {
+            "period": "Q4FY25",
+            "value": 2.86
+          },
+          {
+            "period": "Q2FY26",
+            "value": 3.12
+          }
+        ],
+        "unit": "Rs/kWh"
+      },
+      {
+        "key": "wind",
+        "label": "Wind",
+        "points": [
+          {
+            "period": "Q4FY25",
+            "value": 3.55
+          }
+        ],
+        "unit": "Rs/kWh"
+      },
+      {
+        "key": "hybrid",
+        "label": "Hybrid",
+        "points": [
+          {
+            "period": "Q2FY25",
+            "value": 3.4
+          },
+          {
+            "period": "Q2FY26",
+            "value": 3.36
+          }
+        ],
+        "unit": "Rs/kWh"
+      },
+      {
+        "key": "fdre",
+        "label": "FDRE",
+        "points": [
+          {
+            "period": "Q3FY25",
+            "value": 4.64
+          },
+          {
+            "period": "Q3FY26",
+            "value": 4.98
+          }
+        ],
+        "unit": "Rs/kWh"
+      },
+      {
+        "key": "rtc",
+        "label": "RTC",
+        "points": [
+          {
+            "period": "Q3FY26",
+            "value": 4.2
+          }
+        ],
+        "unit": "Rs/kWh"
+      }
+    ],
+    "typeMix": [
+      {
+        "mw": 5866,
+        "share": 0.6,
+        "type": "solar"
+      },
+      {
+        "mw": 1800,
+        "share": 0.18,
+        "type": "hybrid"
+      },
+      {
+        "mw": 1200,
+        "share": 0.12,
+        "type": "solar-bess"
+      },
+      {
+        "mw": 500,
+        "share": 0.05,
+        "type": "rtc"
+      },
+      {
+        "mw": 300,
+        "share": 0.03,
+        "type": "fdre"
+      },
+      {
+        "mw": 125,
+        "share": 0.01,
+        "type": "bess"
+      }
+    ]
+  },
+  "dataset": "awards",
+  "notes": [
+    "Atomic awarded-auction feed maintained in manual-data/tenders/auctions.csv; per-row confidence is honoured.",
+    "Winner (developer) attribution in this seed is illustrative and modelled — user-maintained over time.",
+    "Standalone BESS (capacity charge, ₹/MW/month) is excluded from ₹/unit tariff aggregations.",
+    "KPIs, type-mix and leaderboard cover FY26-to-date (Apr 2025 – Mar 2026); awardsByQuarter & agencySplit cover the whole feed."
+  ],
+  "section": "tenders",
+  "sources": [
+    {
+      "asOf": "2024-06-20",
+      "confidence": "medium",
+      "name": "GUVNL"
+    },
+    {
+      "asOf": "2025-12-20",
+      "confidence": "modelled",
+      "name": "GUVNL"
+    },
+    {
+      "asOf": "2025-06-10",
+      "confidence": "medium",
+      "name": "MSEDCL"
+    },
+    {
+      "asOf": "2025-11-28",
+      "confidence": "modelled",
+      "name": "NHPC"
+    },
+    {
+      "asOf": "2024-09-05",
+      "confidence": "medium",
+      "name": "NTPC"
+    },
+    {
+      "asOf": "2025-09-25",
+      "confidence": "high",
+      "name": "SECI"
+    },
+    {
+      "asOf": "2025-11-18",
+      "confidence": "medium",
+      "name": "SECI"
+    },
+    {
+      "asOf": "2025-12-10",
+      "confidence": "modelled",
+      "name": "SECI"
+    },
+    {
+      "asOf": "2024-12-18",
+      "confidence": "modelled",
+      "name": "SJVN"
+    }
+  ],
+  "updatedAt": "2025-12-20"
+}

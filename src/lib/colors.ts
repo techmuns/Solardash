@@ -18,6 +18,7 @@ export const ENERGY_COLORS = {
   nuclear: "#A855F7",
   hydro: "#3B82F6",
   gas: "#FB923C",
+  peak: "#EC4899",
 } as const;
 
 export type EnergySource = keyof typeof ENERGY_COLORS;
@@ -35,6 +36,7 @@ export const ENERGY_LABELS: Record<EnergySource, string> = {
   nuclear: "Nuclear",
   hydro: "Hydro",
   gas: "Gas",
+  peak: "Peak Power",
 };
 
 /** Stable display order for stacked charts / legends. */
@@ -46,6 +48,7 @@ export const ENERGY_ORDER: EnergySource[] = [
   "hybrid",
   "fdre",
   "rtc",
+  "peak",
   "hydro",
   "nuclear",
   "gas",
