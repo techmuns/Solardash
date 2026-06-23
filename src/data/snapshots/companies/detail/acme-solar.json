@@ -1,0 +1,27 @@
+{
+  "asOf": "2026-03-27",
+  "cadence": "quarterly",
+  "coverage": "ACME Solar Holdings",
+  "data": {
+    "confidence": "medium",
+    "hasDetail": false,
+    "name": "ACME Solar Holdings",
+    "slug": "acme-solar",
+    "sourceNote": "Company / Investor Presentation",
+    "tickerNse": "ACMESOLAR",
+    "type": "ipp"
+  },
+  "dataset": "detail/acme-solar",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-27",
+      "confidence": "medium",
+      "name": "Company / Investor Presentation"
+    }
+  ],
+  "updatedAt": "2026-03-27"
+}

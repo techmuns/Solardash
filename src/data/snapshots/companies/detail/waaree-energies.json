@@ -1,0 +1,36 @@
+{
+  "asOf": "2026-03-27",
+  "cadence": "quarterly",
+  "coverage": "Waaree Energies",
+  "data": {
+    "cellGw": 5.4,
+    "cmp": 2599,
+    "confidence": "medium",
+    "ebitdaMarginPct": 22.3,
+    "hasDetail": false,
+    "moduleGw": 15,
+    "name": "Waaree Energies",
+    "orderBookCr": 53000,
+    "peX": 46,
+    "rating": "BUY",
+    "revenueFy26Cr": 26540,
+    "slug": "waaree-energies",
+    "sourceNote": "Company / Screener",
+    "targetPrice": 3600,
+    "tickerNse": "WAAREEENER",
+    "type": "integrated"
+  },
+  "dataset": "detail/waaree-energies",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-27",
+      "confidence": "medium",
+      "name": "Company / Screener"
+    }
+  ],
+  "updatedAt": "2026-03-27"
+}

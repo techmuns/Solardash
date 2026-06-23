@@ -6,6 +6,7 @@ import { developersPipeline } from "../pipelines/developers";
 import { manufacturingPipeline } from "../pipelines/manufacturing";
 import { capacityPipeline } from "../pipelines/capacity";
 import { demandPipeline } from "../pipelines/demand";
+import { companiesPipeline } from "../pipelines/companies";
 
 /** Every registered pipeline. New section pipelines are added here. */
 export const pipelines: Pipeline[] = [
@@ -15,6 +16,7 @@ export const pipelines: Pipeline[] = [
   manufacturingPipeline,
   capacityPipeline,
   demandPipeline,
+  companiesPipeline,
 ];
 
 export function getPipeline(name: string): Pipeline | undefined {

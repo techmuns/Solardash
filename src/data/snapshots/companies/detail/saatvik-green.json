@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-27",
+  "cadence": "quarterly",
+  "coverage": "Saatvik Green Energy",
+  "data": {
+    "confidence": "modelled",
+    "hasDetail": false,
+    "moduleGw": 3.8,
+    "name": "Saatvik Green Energy",
+    "slug": "saatvik-green",
+    "sourceNote": "Company",
+    "tickerNse": "SAATVIK",
+    "type": "manufacturer"
+  },
+  "dataset": "detail/saatvik-green",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-27",
+      "confidence": "modelled",
+      "name": "Company"
+    }
+  ],
+  "updatedAt": "2026-03-27"
+}

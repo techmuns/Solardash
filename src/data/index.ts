@@ -4,12 +4,32 @@ import type { TendersData } from "./types/tenders";
 import type { DevelopersData } from "./types/developers";
 import type { ManufacturingData } from "./types/manufacturing";
 import type { CapacityData, DemandData } from "./types/power";
+import type { CompaniesData, CompanyDetail } from "./types/companies";
 import overviewSummary from "./snapshots/overview/summary.json";
 import tendersAwards from "./snapshots/tenders/awards.json";
 import developersPortfolio from "./snapshots/developers/portfolio.json";
 import manufacturingValueChain from "./snapshots/manufacturing/value-chain.json";
 import capacityGrid from "./snapshots/capacity/grid.json";
 import demandPower from "./snapshots/demand/power-demand.json";
+import companiesRegistry from "./snapshots/companies/registry.json";
+import detailWaaree from "./snapshots/companies/detail/waaree-energies.json";
+import detailPremier from "./snapshots/companies/detail/premier-energies.json";
+import detailVikram from "./snapshots/companies/detail/vikram-solar.json";
+import detailWebsol from "./snapshots/companies/detail/websol-energy.json";
+import detailSaatvik from "./snapshots/companies/detail/saatvik-green.json";
+import detailAcme from "./snapshots/companies/detail/acme-solar.json";
+import detailInsolation from "./snapshots/companies/detail/insolation-energy.json";
+
+// Static map of per-company detail snapshots (add an entry per new company).
+const COMPANY_DETAILS: Record<string, unknown> = {
+  "waaree-energies": detailWaaree,
+  "premier-energies": detailPremier,
+  "vikram-solar": detailVikram,
+  "websol-energy": detailWebsol,
+  "saatvik-green": detailSaatvik,
+  "acme-solar": detailAcme,
+  "insolation-energy": detailInsolation,
+};
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -86,4 +106,27 @@ export function getDemandSnapshot(): Snapshot<DemandData> {
     demandPower as unknown as Snapshot<DemandData>,
     "demand/power-demand",
   );
+}
+
+/** Listed-company screener registry (all companies). */
+export function getCompaniesSnapshot(): Snapshot<CompaniesData> {
+  return assertSnapshot(
+    companiesRegistry as unknown as Snapshot<CompaniesData>,
+    "companies/registry",
+  );
+}
+
+/** Full per-company model, or null when the slug is unknown. */
+export function getCompanyDetail(slug: string): Snapshot<CompanyDetail> | null {
+  const raw = COMPANY_DETAILS[slug];
+  if (!raw) return null;
+  return assertSnapshot(
+    raw as unknown as Snapshot<CompanyDetail>,
+    `companies/detail/${slug}`,
+  );
+}
+
+/** All company slugs in registry order (for generateStaticParams in Prompt 8). */
+export function getCompanySlugs(): string[] {
+  return getCompaniesSnapshot().data.companies.map((c) => c.slug);
 }

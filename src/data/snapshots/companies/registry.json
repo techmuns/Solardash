@@ -1,0 +1,138 @@
+{
+  "asOf": "2026-03-27",
+  "cadence": "quarterly",
+  "coverage": "India · listed solar & renewable companies",
+  "data": {
+    "asOf": "2026-03-27",
+    "companies": [
+      {
+        "cellGw": 5.4,
+        "cmp": 2599,
+        "confidence": "medium",
+        "ebitdaMarginPct": 22.3,
+        "moduleGw": 15,
+        "name": "Waaree Energies",
+        "orderBookCr": 53000,
+        "peX": 46,
+        "rating": "BUY",
+        "revenueFy26Cr": 26540,
+        "slug": "waaree-energies",
+        "sourceNote": "Company / Screener",
+        "targetPrice": 3600,
+        "tickerNse": "WAAREEENER",
+        "type": "integrated"
+      },
+      {
+        "cellGw": 3.6,
+        "cmp": 683,
+        "confidence": "medium",
+        "ebitdaMarginPct": 27,
+        "moduleGw": 5,
+        "name": "Premier Energies",
+        "orderBookCr": 13720,
+        "orderBookGw": 9.4,
+        "peX": 47,
+        "rating": "BUY",
+        "revenueFy26Cr": 7550,
+        "slug": "premier-energies",
+        "sourceNote": "Company / Brokers",
+        "targetPrice": 892,
+        "tickerNse": "PREMIERENE",
+        "type": "integrated"
+      },
+      {
+        "cellGw": 0,
+        "cmp": 190,
+        "confidence": "high",
+        "ebitdaMarginPct": 19.6,
+        "evEbitdaX": 5.5,
+        "moduleGw": 9.5,
+        "name": "Vikram Solar",
+        "orderBookGw": 10.34,
+        "patFy26Cr": 489,
+        "peX": 14,
+        "rating": "BUY",
+        "revenueFy26Cr": 4673,
+        "slug": "vikram-solar",
+        "sourceNote": "PL Capital",
+        "targetPrice": 226,
+        "tickerNse": "VIKRAMSOLR",
+        "type": "manufacturer"
+      },
+      {
+        "cellGw": 1.2,
+        "confidence": "medium",
+        "ebitdaMarginPct": 41,
+        "moduleGw": 0.55,
+        "name": "Websol Energy Systems",
+        "orderBookCr": 1160,
+        "peX": 40,
+        "revenueFy26Cr": 1050,
+        "slug": "websol-energy",
+        "sourceNote": "Company / Screener",
+        "tickerNse": "WEBELSOLAR",
+        "type": "manufacturer"
+      },
+      {
+        "confidence": "medium",
+        "name": "ACME Solar Holdings",
+        "slug": "acme-solar",
+        "sourceNote": "Company / Investor Presentation",
+        "tickerNse": "ACMESOLAR",
+        "type": "ipp"
+      },
+      {
+        "confidence": "modelled",
+        "moduleGw": 2,
+        "name": "Insolation Energy",
+        "slug": "insolation-energy",
+        "sourceNote": "Company",
+        "tickerNse": "INSOLATION",
+        "type": "manufacturer"
+      },
+      {
+        "confidence": "modelled",
+        "moduleGw": 3.8,
+        "name": "Saatvik Green Energy",
+        "slug": "saatvik-green",
+        "sourceNote": "Company",
+        "tickerNse": "SAATVIK",
+        "type": "manufacturer"
+      }
+    ]
+  },
+  "dataset": "registry",
+  "notes": [
+    "Screener registry of listed solar / renewable names (model + manual). Headline metrics are company filings / broker estimates; per-row confidence is honoured.",
+    "Rich detail (financials, valuation, operating, shareholding) is added per company as <slug>.json; Vikram Solar is the seeded exemplar."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-27",
+      "confidence": "modelled",
+      "name": "Company"
+    },
+    {
+      "asOf": "2026-03-27",
+      "confidence": "medium",
+      "name": "Company / Brokers"
+    },
+    {
+      "asOf": "2026-03-27",
+      "confidence": "medium",
+      "name": "Company / Investor Presentation"
+    },
+    {
+      "asOf": "2026-03-27",
+      "confidence": "medium",
+      "name": "Company / Screener"
+    },
+    {
+      "asOf": "2026-03-27",
+      "confidence": "high",
+      "name": "PL Capital"
+    }
+  ],
+  "updatedAt": "2026-03-27"
+}

@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import type { Cadence, SourceRef, Snapshot } from "../../src/data/types/core";
 
@@ -70,6 +70,13 @@ export function readManualCsv(relPath: string): Record<string, string>[] {
 /** Read `manual-data/<relPath>` as JSON. */
 export function readManualJson<T = unknown>(relPath: string): T {
   return JSON.parse(readFileSync(join(MANUAL_DIR, relPath), "utf8")) as T;
+}
+
+/** Read `manual-data/<relPath>` as JSON, or return null if the file is absent. */
+export function readManualJsonIfExists<T = unknown>(relPath: string): T | null {
+  const p = join(MANUAL_DIR, relPath);
+  if (!existsSync(p)) return null;
+  return JSON.parse(readFileSync(p, "utf8")) as T;
 }
 
 // ---------------------------------------------------------------------------

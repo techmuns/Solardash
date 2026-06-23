@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-27",
+  "cadence": "quarterly",
+  "coverage": "Insolation Energy",
+  "data": {
+    "confidence": "modelled",
+    "hasDetail": false,
+    "moduleGw": 2,
+    "name": "Insolation Energy",
+    "slug": "insolation-energy",
+    "sourceNote": "Company",
+    "tickerNse": "INSOLATION",
+    "type": "manufacturer"
+  },
+  "dataset": "detail/insolation-energy",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-27",
+      "confidence": "modelled",
+      "name": "Company"
+    }
+  ],
+  "updatedAt": "2026-03-27"
+}

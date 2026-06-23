@@ -1,0 +1,37 @@
+{
+  "asOf": "2026-03-27",
+  "cadence": "quarterly",
+  "coverage": "Premier Energies",
+  "data": {
+    "cellGw": 3.6,
+    "cmp": 683,
+    "confidence": "medium",
+    "ebitdaMarginPct": 27,
+    "hasDetail": false,
+    "moduleGw": 5,
+    "name": "Premier Energies",
+    "orderBookCr": 13720,
+    "orderBookGw": 9.4,
+    "peX": 47,
+    "rating": "BUY",
+    "revenueFy26Cr": 7550,
+    "slug": "premier-energies",
+    "sourceNote": "Company / Brokers",
+    "targetPrice": 892,
+    "tickerNse": "PREMIERENE",
+    "type": "integrated"
+  },
+  "dataset": "detail/premier-energies",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-27",
+      "confidence": "medium",
+      "name": "Company / Brokers"
+    }
+  ],
+  "updatedAt": "2026-03-27"
+}

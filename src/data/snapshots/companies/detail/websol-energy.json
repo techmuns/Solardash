@@ -1,0 +1,33 @@
+{
+  "asOf": "2026-03-27",
+  "cadence": "quarterly",
+  "coverage": "Websol Energy Systems",
+  "data": {
+    "cellGw": 1.2,
+    "confidence": "medium",
+    "ebitdaMarginPct": 41,
+    "hasDetail": false,
+    "moduleGw": 0.55,
+    "name": "Websol Energy Systems",
+    "orderBookCr": 1160,
+    "peX": 40,
+    "revenueFy26Cr": 1050,
+    "slug": "websol-energy",
+    "sourceNote": "Company / Screener",
+    "tickerNse": "WEBELSOLAR",
+    "type": "manufacturer"
+  },
+  "dataset": "detail/websol-energy",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-27",
+      "confidence": "medium",
+      "name": "Company / Screener"
+    }
+  ],
+  "updatedAt": "2026-03-27"
+}
