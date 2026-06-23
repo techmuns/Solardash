@@ -72,9 +72,9 @@ export function LineSeriesChart({
             type="monotone"
             dataKey={s.key}
             name={s.label}
-            stroke={energyColor(s.key)}
+            stroke={s.color ?? energyColor(s.key)}
             strokeWidth={2}
-            dot={{ r: 2.5, strokeWidth: 0, fill: energyColor(s.key) }}
+            dot={{ r: 2.5, strokeWidth: 0, fill: s.color ?? energyColor(s.key) }}
             activeDot={{ r: 4 }}
             connectNulls
           />

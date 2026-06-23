@@ -3,12 +3,14 @@ import type { Pipeline } from "./pipeline";
 import { overviewPipeline } from "../pipelines/overview";
 import { tendersPipeline } from "../pipelines/tenders";
 import { developersPipeline } from "../pipelines/developers";
+import { manufacturingPipeline } from "../pipelines/manufacturing";
 
 /** Every registered pipeline. New section pipelines are added here. */
 export const pipelines: Pipeline[] = [
   overviewPipeline,
   tendersPipeline,
   developersPipeline,
+  manufacturingPipeline,
 ];
 
 export function getPipeline(name: string): Pipeline | undefined {

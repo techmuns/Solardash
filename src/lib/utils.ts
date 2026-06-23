@@ -65,8 +65,10 @@ const UNIT_LABELS: Record<string, string> = {
   "Rs/kWh": "₹/kWh",
   "Rs/Wp": "₹/Wp",
   Rs_cr: "₹ cr",
+  "Rs_cr/GW": "₹ cr/GW",
   "USD/Wp": "$/Wp",
   "USD/kWh": "$/kWh",
+  x: "×",
 };
 
 /** Map a unit code to its display form, e.g. `Rs/kWh` -> `₹/kWh`. */

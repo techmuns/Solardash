@@ -1,0 +1,4 @@
+phase,scope,effective_date,status,confidence,source
+ALMM-I,Modules,2021-04-01,Active,high,MNRE
+ALMM-II,Cells,2026-06-01,Effective Jun 2026,high,MNRE
+ALMM-III,Wafers,2028-06-01,Announced,medium,MNRE

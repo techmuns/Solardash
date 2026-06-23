@@ -63,6 +63,9 @@ export interface Series {
   key: string;
   label: string;
   unit?: Unit;
+  /** Explicit colour (e.g. a player from CATEGORICAL_COLORS); otherwise the
+   *  chart falls back to ENERGY_COLORS by `key`. */
+  color?: string;
   /** Series-level provenance override (otherwise inherits the snapshot). */
   source?: SourceRef;
   points: SeriesPoint[];

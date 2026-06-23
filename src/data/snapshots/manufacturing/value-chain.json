@@ -1,0 +1,536 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "India · solar PV manufacturing value chain (cells, modules, wafers)",
+  "data": {
+    "almmTimeline": [
+      {
+        "confidence": "high",
+        "effectiveDate": "2021-04-01",
+        "phase": "ALMM-I",
+        "scope": "Modules",
+        "status": "Active"
+      },
+      {
+        "confidence": "high",
+        "effectiveDate": "2026-06-01",
+        "phase": "ALMM-II",
+        "scope": "Cells",
+        "status": "Effective Jun 2026"
+      },
+      {
+        "confidence": "medium",
+        "effectiveDate": "2028-06-01",
+        "phase": "ALMM-III",
+        "scope": "Wafers",
+        "status": "Announced"
+      }
+    ],
+    "cellPlayers": [
+      {
+        "almm2Gw": 5.251,
+        "confidence": "high",
+        "nameplateGw": 5.4,
+        "player": "Waaree",
+        "productionGw": 2.283,
+        "utilizationPct": 44
+      },
+      {
+        "almm2Gw": 4.813,
+        "confidence": "high",
+        "nameplateGw": 4.813,
+        "player": "Tata Power",
+        "productionGw": 3.683,
+        "utilizationPct": 76
+      },
+      {
+        "almm2Gw": 4.237,
+        "confidence": "high",
+        "nameplateGw": 4,
+        "player": "Mundra (Adani)",
+        "productionGw": 2.693,
+        "utilizationPct": 62
+      },
+      {
+        "almm2Gw": 3.283,
+        "confidence": "high",
+        "nameplateGw": 3.6,
+        "player": "Premier",
+        "productionGw": 2.235,
+        "utilizationPct": 80
+      },
+      {
+        "almm2Gw": 3.433,
+        "confidence": "high",
+        "nameplateGw": 3.433,
+        "player": "First Solar",
+        "productionGw": 2.84,
+        "utilizationPct": 83
+      },
+      {
+        "almm2Gw": 1.553,
+        "confidence": "high",
+        "nameplateGw": 2.9,
+        "note": "not yet DCR-enlisted",
+        "player": "Emmvee",
+        "productionGw": 1.6,
+        "utilizationPct": 103
+      },
+      {
+        "almm2Gw": 1.766,
+        "confidence": "high",
+        "nameplateGw": 2.5,
+        "note": "not yet DCR-enlisted",
+        "player": "ReNew",
+        "productionGw": 1.845,
+        "utilizationPct": 105
+      },
+      {
+        "almm2Gw": 1.77,
+        "confidence": "high",
+        "nameplateGw": 2,
+        "player": "Jupiter",
+        "productionGw": 0.726,
+        "utilizationPct": 80
+      },
+      {
+        "almm2Gw": 1.238,
+        "confidence": "medium",
+        "nameplateGw": 1.24,
+        "note": "not yet producing",
+        "player": "Reliance"
+      },
+      {
+        "almm2Gw": 1.074,
+        "confidence": "high",
+        "nameplateGw": 1.2,
+        "player": "Evervolt",
+        "productionGw": 0.382,
+        "utilizationPct": 34
+      },
+      {
+        "almm2Gw": 1.202,
+        "confidence": "high",
+        "nameplateGw": 1.2,
+        "player": "Websol",
+        "productionGw": 0.699,
+        "utilizationPct": 77
+      },
+      {
+        "almm2Gw": 0.437,
+        "confidence": "high",
+        "nameplateGw": 1,
+        "player": "UTL Solar",
+        "productionGw": 0.11,
+        "utilizationPct": 44
+      }
+    ],
+    "cellQuarterly": {
+      "categories": [
+        "Q1FY26",
+        "Q2FY26",
+        "Q3FY26",
+        "Q4FY26"
+      ],
+      "series": [
+        {
+          "color": "#2563EB",
+          "key": "tata-power",
+          "label": "Tata Power",
+          "values": [
+            0.81,
+            0.884,
+            0.958,
+            1.031
+          ]
+        },
+        {
+          "color": "#F59E0B",
+          "key": "first-solar",
+          "label": "First Solar",
+          "values": [
+            0.625,
+            0.682,
+            0.738,
+            0.795
+          ]
+        },
+        {
+          "color": "#10B981",
+          "key": "mundra-adani",
+          "label": "Mundra (Adani)",
+          "values": [
+            0.592,
+            0.646,
+            0.7,
+            0.754
+          ]
+        },
+        {
+          "color": "#8B5CF6",
+          "key": "waaree",
+          "label": "Waaree",
+          "values": [
+            0.502,
+            0.548,
+            0.594,
+            0.639
+          ]
+        },
+        {
+          "color": "#EC4899",
+          "key": "premier",
+          "label": "Premier",
+          "values": [
+            0.492,
+            0.536,
+            0.581,
+            0.626
+          ]
+        },
+        {
+          "color": "#94A3B8",
+          "key": "others",
+          "label": "Others",
+          "values": [
+            1.18,
+            1.287,
+            1.394,
+            1.501
+          ]
+        }
+      ]
+    },
+    "cellTrajectory": [
+      {
+        "color": "#64748B",
+        "key": "existing",
+        "label": "Existing",
+        "points": [
+          {
+            "period": "FY26E",
+            "value": 19
+          },
+          {
+            "period": "FY27E",
+            "value": 32
+          },
+          {
+            "period": "FY28E",
+            "value": 50
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#F59E0B",
+        "key": "new",
+        "label": "New",
+        "points": [
+          {
+            "period": "FY26E",
+            "value": 0
+          },
+          {
+            "period": "FY27E",
+            "value": 6
+          },
+          {
+            "period": "FY28E",
+            "value": 14
+          }
+        ],
+        "unit": "GW"
+      }
+    ],
+    "economics": [
+      {
+        "confidence": "medium",
+        "metric": "Cell realisation (current)",
+        "unit": "USD/Wp",
+        "value": 0.14
+      },
+      {
+        "confidence": "medium",
+        "metric": "Cell realisation (forecast)",
+        "unit": "USD/Wp",
+        "value": 0.1
+      },
+      {
+        "confidence": "medium",
+        "metric": "Cell EBITDA/Wp",
+        "unit": "USD/Wp",
+        "value": 0.07
+      },
+      {
+        "confidence": "medium",
+        "metric": "DCR cell premium vs China (now)",
+        "note": "domestic cell cost premium",
+        "unit": "%",
+        "value": 75
+      },
+      {
+        "confidence": "medium",
+        "metric": "DCR cell premium vs China (FY28E)",
+        "unit": "%",
+        "value": 40
+      },
+      {
+        "confidence": "medium",
+        "metric": "Cell capex intensity",
+        "unit": "Rs_cr/GW",
+        "value": 600
+      },
+      {
+        "confidence": "medium",
+        "metric": "Wafer+cell capex intensity",
+        "unit": "Rs_cr/GW",
+        "value": 1200
+      }
+    ],
+    "kpis": [
+      {
+        "confidence": "medium",
+        "hint": "Σ across manufacturers",
+        "key": "module_capacity",
+        "label": "Module capacity (ALMM-I)",
+        "unit": "GW",
+        "value": 145
+      },
+      {
+        "confidence": "high",
+        "hint": "Σ across manufacturers",
+        "key": "cell_capacity",
+        "label": "Cell capacity (ALMM-II)",
+        "unit": "GW",
+        "value": 30.1
+      },
+      {
+        "confidence": "high",
+        "hint": "modelled quarterly split",
+        "key": "cell_production",
+        "label": "Cell production FY26E",
+        "unit": "GW",
+        "value": 19.1
+      },
+      {
+        "confidence": "high",
+        "hint": "production ÷ ALMM-II",
+        "key": "utilization",
+        "label": "Avg cell utilisation",
+        "unit": "%",
+        "value": 66.3
+      },
+      {
+        "confidence": "medium",
+        "hint": "domestic-content",
+        "key": "dcr_demand",
+        "label": "DCR module demand FY26E",
+        "unit": "GW",
+        "value": 18
+      },
+      {
+        "confidence": "medium",
+        "hint": "capacity ÷ FY26 demand",
+        "key": "overcapacity",
+        "label": "Module overcapacity",
+        "unit": "x",
+        "value": 2.5
+      }
+    ],
+    "moduleDemand": [
+      {
+        "color": "#64748B",
+        "key": "non-dcr",
+        "label": "Non-DCR",
+        "points": [
+          {
+            "period": "FY26E",
+            "value": 40
+          },
+          {
+            "period": "FY27E",
+            "value": 35
+          },
+          {
+            "period": "FY28E",
+            "value": 32
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#F59E0B",
+        "key": "dcr",
+        "label": "DCR",
+        "points": [
+          {
+            "period": "FY26E",
+            "value": 18
+          },
+          {
+            "period": "FY27E",
+            "value": 32
+          },
+          {
+            "period": "FY28E",
+            "value": 55
+          }
+        ],
+        "unit": "GW"
+      }
+    ],
+    "modulePlayers": [
+      {
+        "almm1Gw": 13.3,
+        "confidence": "medium",
+        "player": "Waaree"
+      },
+      {
+        "almm1Gw": 4.5,
+        "confidence": "medium",
+        "player": "Vikram Solar"
+      },
+      {
+        "almm1Gw": 4,
+        "confidence": "medium",
+        "player": "Adani Solar"
+      },
+      {
+        "almm1Gw": 3.8,
+        "confidence": "modelled",
+        "player": "Saatvik"
+      },
+      {
+        "almm1Gw": 2.6,
+        "confidence": "medium",
+        "player": "Emmvee"
+      },
+      {
+        "almm1Gw": 2.5,
+        "confidence": "medium",
+        "player": "Premier Energies"
+      },
+      {
+        "almm1Gw": 2.5,
+        "confidence": "medium",
+        "player": "ReNew"
+      },
+      {
+        "almm1Gw": 2.4,
+        "confidence": "medium",
+        "player": "Goldi Solar"
+      },
+      {
+        "almm1Gw": 1.5,
+        "confidence": "modelled",
+        "player": "Tata Power Solar"
+      },
+      {
+        "almm1Gw": 107.9,
+        "confidence": "modelled",
+        "note": "long tail to ~145 GW total",
+        "player": "Others (90+ mfrs)"
+      }
+    ],
+    "supplyDemand": [
+      {
+        "capacityFy26": 145,
+        "capacityFy28": 200,
+        "demandFy26": 58,
+        "demandFy28": 87,
+        "segment": "module"
+      },
+      {
+        "capacityFy26": 30,
+        "capacityFy28": 100,
+        "demandFy26": 58,
+        "demandFy28": 87,
+        "segment": "cell"
+      }
+    ],
+    "wafer": [
+      {
+        "demandGw": 35,
+        "period": "FY29E",
+        "supplyGw": 25
+      },
+      {
+        "demandGw": 50,
+        "period": "FY30E",
+        "supplyGw": 35
+      },
+      {
+        "demandGw": 70,
+        "period": "FY31E",
+        "supplyGw": 50
+      }
+    ]
+  },
+  "dataset": "value-chain",
+  "notes": [
+    "Quarterly cell production is MODELLED: each producer's FY26E annual output is split across Q1FY26/Q2FY26/Q3FY26/Q4FY26 with a ramp [0.22, 0.24, 0.26, 0.28]; drop real (player, quarter) actuals into manufacturing/cell-production-quarterly-override.csv to override a cell.",
+    "Cell capacity & production are MNRE / DCR-portal actuals; the ALMM-I module tail is bucketed as Others to reconcile to ~145 GW; demand, trajectory, wafer and economics are VQ Research estimates.",
+    "Basic Customs Duty (BCD): modules 40% / cells 27.5%.",
+    "Player palette: 10-colour qualitative set (CATEGORICAL_COLORS); \"Others\" is neutral grey."
+  ],
+  "section": "manufacturing",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "ICRA / MNRE / VQ Research"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "MNRE"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "MNRE"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "MNRE / DCR Portal"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "MNRE / DCR Portal"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "MNRE / VQ Research"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "MNRE ALMM List-I"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "MNRE ALMM List-I"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "MNRE ALMM List-I / Company"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "VQ / PL Capital"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "VQ Research"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

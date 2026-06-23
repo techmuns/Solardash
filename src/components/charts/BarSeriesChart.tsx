@@ -75,7 +75,7 @@ export function BarSeriesChart({
             dataKey={s.key}
             name={s.label}
             stackId={stacked ? "a" : undefined}
-            fill={energyColor(s.key)}
+            fill={s.color ?? energyColor(s.key)}
             radius={stacked ? [0, 0, 0, 0] : [3, 3, 0, 0]}
             maxBarSize={56}
           />

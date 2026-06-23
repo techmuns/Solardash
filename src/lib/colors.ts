@@ -59,3 +59,29 @@ export const ENERGY_ORDER: EnergySource[] = [
 export function energyColor(source: string): string {
   return (ENERGY_COLORS as Record<string, string>)[source] ?? "#94A3B8";
 }
+
+/**
+ * Qualitative palette for NON-energy categories (players, agencies, …) where
+ * the ENERGY_COLORS mapping doesn't apply. Pipelines assign each player a
+ * stable colour by index and pass it through as the series `color`.
+ */
+export const CATEGORICAL_COLORS = [
+  "#2563EB", // blue
+  "#F59E0B", // amber
+  "#10B981", // emerald
+  "#8B5CF6", // violet
+  "#EC4899", // pink
+  "#06B6D4", // cyan
+  "#F97316", // orange
+  "#6366F1", // indigo
+  "#84CC16", // lime
+  "#14B8A6", // teal
+] as const;
+
+/** Neutral colour for "Others" / long-tail buckets. */
+export const OTHERS_COLOR = "#94A3B8";
+
+/** Pick a stable categorical colour by index (wraps around the palette). */
+export function categoricalColor(index: number): string {
+  return CATEGORICAL_COLORS[index % CATEGORICAL_COLORS.length];
+}
