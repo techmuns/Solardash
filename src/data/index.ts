@@ -5,12 +5,14 @@ import type { DevelopersData } from "./types/developers";
 import type { ManufacturingData } from "./types/manufacturing";
 import type { CapacityData, DemandData } from "./types/power";
 import type { CompaniesData, CompanyDetail } from "./types/companies";
+import type { PolicyData } from "./types/policy";
 import overviewSummary from "./snapshots/overview/summary.json";
 import tendersAwards from "./snapshots/tenders/awards.json";
 import developersPortfolio from "./snapshots/developers/portfolio.json";
 import manufacturingValueChain from "./snapshots/manufacturing/value-chain.json";
 import capacityGrid from "./snapshots/capacity/grid.json";
 import demandPower from "./snapshots/demand/power-demand.json";
+import policyPolicy from "./snapshots/policy/policy.json";
 import companiesRegistry from "./snapshots/companies/registry.json";
 import detailWaaree from "./snapshots/companies/detail/waaree-energies.json";
 import detailPremier from "./snapshots/companies/detail/premier-energies.json";
@@ -105,6 +107,14 @@ export function getDemandSnapshot(): Snapshot<DemandData> {
   return assertSnapshot(
     demandPower as unknown as Snapshot<DemandData>,
     "demand/power-demand",
+  );
+}
+
+/** Policy & Pricing — schemes, flagship progress, localisation, BESS curve, TAM. */
+export function getPolicySnapshot(): Snapshot<PolicyData> {
+  return assertSnapshot(
+    policyPolicy as unknown as Snapshot<PolicyData>,
+    "policy/policy",
   );
 }
 

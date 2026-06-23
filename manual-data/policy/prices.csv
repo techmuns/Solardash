@@ -1,0 +1,6 @@
+item,value,unit,confidence,source,note
+Polysilicon,0.06,USD/Wp,modelled,PVInsights,spot proxy
+Wafer,0.03,USD/Wp,modelled,PVInsights,
+Cell,0.10,USD/Wp,medium,VQ Research,
+Module,0.18,USD/Wp,modelled,PVInsights,
+Solar+BESS LCOE,5.06,Rs/kWh,medium,Ember,$56/MWh

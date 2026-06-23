@@ -1,0 +1,13 @@
+scheme,category,target,status,allocation_cr,key_metric,confidence,source,note
+ALMM List-I,Manufacturing,Modules (active 2021),Active,,~145 GW enlisted,high,MNRE,
+ALMM List-II,Manufacturing,Cells (Jun 2026),Effective,,~30 GW enlisted,high,MNRE,
+ALMM List-III,Manufacturing,Wafers (Jun 2028),Announced,,trigger >15 GW,medium,MNRE,
+BCD,Trade,40% modules / 27.5% cells,Active,,protects domestic mfg,high,CBIC,
+PLI (Solar PV),Manufacturing,48.3 GW supported,Active,24000,36.5% established,medium,MNRE,
+DCR,Demand,Domestic content (govt schemes),Active,,~11 GW KUSUM DCR,medium,MNRE,
+PM Surya Ghar,Rooftop,1 Cr households,Active,75021,~30L installed; 11.5 GW pipeline,medium,MNRE,
+PM-KUSUM,Agri,~35 GW,Active,,~14 GW executed,medium,MNRE,
+RPO / RGO,Demand,Trajectory to 2030,Active,,rising RGO,medium,Ministry of Power,
+ISTS Waiver,Demand,Transmission-charge waiver,Active,,extended for RE,medium,MNRE,
+National Green H2 Mission,Demand,5 MT/yr by 2030,Active,19744,~20 GW solar per MT,medium,NGHM,
+CPSU,Demand,SECI/NTPC procurement,Active,,manufacturing-linked,medium,MNRE,

@@ -1,0 +1,4 @@
+component,scope,target_gw,executed_gw,confidence,source
+Component A,Decentralised ground-mount,15,5,medium,MNRE
+Component B,Standalone solar pumps,10,3,medium,MNRE
+Component C,Feeder/pump solarisation,10,6,medium,MNRE

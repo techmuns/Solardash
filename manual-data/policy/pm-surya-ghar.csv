@@ -1,0 +1,6 @@
+metric,value,unit,confidence,source
+Installations,3000000,count,medium,MNRE
+Target,10000000,count,high,MNRE
+Application pipeline,11.5,GW,medium,MNRE
+FY27 allocation,22000,Rs_cr,medium,MNRE
+Pending applications,4000000,count,modelled,MNRE
