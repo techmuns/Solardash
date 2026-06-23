@@ -1,0 +1,11 @@
+state,solar_gw,confidence,source
+Rajasthan,28,medium,MNRE
+Gujarat,22,medium,MNRE
+Karnataka,12,medium,MNRE
+Tamil Nadu,11,medium,MNRE
+Maharashtra,9,medium,MNRE
+Andhra Pradesh,8,medium,MNRE
+Madhya Pradesh,7,medium,MNRE
+Telangana,5,medium,MNRE
+Uttar Pradesh,5,medium,MNRE
+Others,3,modelled,MNRE

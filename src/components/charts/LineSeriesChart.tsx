@@ -22,6 +22,8 @@ export interface LineSeriesChartProps {
   unit?: string;
   /** Explicit x-axis order; otherwise first-appearance order. */
   periodOrder?: string[];
+  /** X-axis tick interval (Recharts) — thins labels on dense series. */
+  xInterval?: number | "preserveStart" | "preserveEnd" | "preserveStartEnd";
 }
 
 /** Generic line chart over our typed Series, coloured via ENERGY_COLORS. */
@@ -30,6 +32,7 @@ export function LineSeriesChart({
   height = 288,
   unit,
   periodOrder,
+  xInterval,
 }: LineSeriesChartProps) {
   const theme = useChartTheme();
   const rows = seriesToRows(series, periodOrder);
@@ -43,6 +46,7 @@ export function LineSeriesChart({
           stroke={theme.axis}
           tickLine={false}
           tick={{ fill: theme.tick, fontSize: 12 }}
+          interval={xInterval}
         />
         <YAxis
           stroke={theme.axis}

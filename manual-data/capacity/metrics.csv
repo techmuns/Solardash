@@ -1,0 +1,4 @@
+metric,value,unit,confidence,source,note
+Solar CUF,20,%,medium,CEA,national avg
+Curtailment (Q4FY26),5,%,medium,CREA / Ember,solar curtailed
+RE share of generation,15,%,medium,CEA / Ember,FY26

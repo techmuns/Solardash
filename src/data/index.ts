@@ -3,10 +3,13 @@ import type { OverviewSummary } from "./types/overview";
 import type { TendersData } from "./types/tenders";
 import type { DevelopersData } from "./types/developers";
 import type { ManufacturingData } from "./types/manufacturing";
+import type { CapacityData, DemandData } from "./types/power";
 import overviewSummary from "./snapshots/overview/summary.json";
 import tendersAwards from "./snapshots/tenders/awards.json";
 import developersPortfolio from "./snapshots/developers/portfolio.json";
 import manufacturingValueChain from "./snapshots/manufacturing/value-chain.json";
+import capacityGrid from "./snapshots/capacity/grid.json";
+import demandPower from "./snapshots/demand/power-demand.json";
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -66,5 +69,21 @@ export function getManufacturingSnapshot(): Snapshot<ManufacturingData> {
   return assertSnapshot(
     manufacturingValueChain as unknown as Snapshot<ManufacturingData>,
     "manufacturing/value-chain",
+  );
+}
+
+/** Capacity & Generation — commissioning, installed mix, solar segments, states. */
+export function getCapacitySnapshot(): Snapshot<CapacityData> {
+  return assertSnapshot(
+    capacityGrid as unknown as Snapshot<CapacityData>,
+    "capacity/grid",
+  );
+}
+
+/** Power Demand — monthly peak & energy, m/q/y YoY growth, demand drivers. */
+export function getDemandSnapshot(): Snapshot<DemandData> {
+  return assertSnapshot(
+    demandPower as unknown as Snapshot<DemandData>,
+    "demand/power-demand",
   );
 }

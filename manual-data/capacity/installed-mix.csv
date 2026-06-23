@@ -1,0 +1,8 @@
+source,capacity_gw,confidence,source_ref
+solar,110,medium,CEA / MNRE
+wind,48,medium,CEA
+hydro,47,medium,CEA
+thermal,240,medium,CEA
+nuclear,8,high,CEA
+bess,5,medium,CEA / MNRE
+gas,25,medium,CEA

@@ -24,6 +24,8 @@ export interface BarSeriesChartProps {
   unit?: string;
   /** Explicit category (x-axis) order; otherwise first-appearance order. */
   periodOrder?: string[];
+  /** X-axis tick interval (Recharts) — thins labels on dense series. */
+  xInterval?: number | "preserveStart" | "preserveEnd" | "preserveStartEnd";
 }
 
 /** Generic bar chart over our typed Series, coloured via ENERGY_COLORS. */
@@ -33,6 +35,7 @@ export function BarSeriesChart({
   height = 288,
   unit,
   periodOrder,
+  xInterval,
 }: BarSeriesChartProps) {
   const theme = useChartTheme();
   const rows = seriesToRows(series, periodOrder);
@@ -46,6 +49,7 @@ export function BarSeriesChart({
           stroke={theme.axis}
           tickLine={false}
           tick={{ fill: theme.tick, fontSize: 12 }}
+          interval={xInterval}
         />
         <YAxis
           stroke={theme.axis}
