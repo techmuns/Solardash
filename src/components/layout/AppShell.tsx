@@ -4,6 +4,8 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Sidebar } from "./Sidebar";
 import { TopBar } from "./TopBar";
+import { CommandPalette } from "@/components/search/CommandPalette";
+import type { SearchEntry } from "@/data/search";
 
 // Persisted sidebar-collapse preference, modelled as an external store so the
 // component reads it without setState-in-effect.
@@ -39,9 +41,11 @@ function setCollapse(next: boolean) {
 export function AppShell({
   children,
   footer,
+  searchIndex = [],
 }: {
   children: React.ReactNode;
   footer?: React.ReactNode;
+  searchIndex?: SearchEntry[];
 }) {
   const collapsed = React.useSyncExternalStore(
     subscribeCollapse,
@@ -49,6 +53,7 @@ export function AppShell({
     () => false,
   );
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [searchOpen, setSearchOpen] = React.useState(false);
 
   const toggleCollapsed = React.useCallback(
     () => setCollapse(!getCollapse()),
@@ -113,6 +118,7 @@ export function AppShell({
           collapsed={collapsed}
           onToggleSidebar={toggleCollapsed}
           onOpenMobile={() => setMobileOpen(true)}
+          onOpenSearch={() => setSearchOpen(true)}
         />
         <main className="flex-1">
           <div className="mx-auto w-full max-w-[1600px] px-4 py-6 sm:px-6 lg:px-8">
@@ -121,6 +127,15 @@ export function AppShell({
         </main>
         {footer}
       </div>
+
+      {/* Global ⌘K command palette (index built server-side, passed in). The
+          `key` gives each open a fresh query/highlight without setState-in-effect. */}
+      <CommandPalette
+        key={searchOpen ? "search-open" : "search-closed"}
+        entries={searchIndex}
+        open={searchOpen}
+        onOpenChange={setSearchOpen}
+      />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import "./globals.css";
 import { AppShell } from "@/components/layout/AppShell";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeScript } from "@/components/theme/theme-script";
+import { getSearchIndex } from "@/data/search";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,6 +45,9 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // Build the command-palette index once at build time (server) and hand it to
+  // the client shell as a prop — same server→client pattern as the footer.
+  const searchIndex = getSearchIndex();
   return (
     <html
       lang="en"
@@ -52,7 +56,9 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased">
         <ThemeScript />
-        <AppShell footer={<Footer />}>{children}</AppShell>
+        <AppShell footer={<Footer />} searchIndex={searchIndex}>
+          {children}
+        </AppShell>
       </body>
     </html>
   );

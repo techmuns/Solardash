@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { Clock, Menu, PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { Clock, Menu, PanelLeftClose, PanelLeftOpen, Search } from "lucide-react";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { NAV_ITEMS } from "./nav";
 
@@ -26,12 +26,14 @@ export interface TopBarProps {
   collapsed: boolean;
   onToggleSidebar: () => void;
   onOpenMobile: () => void;
+  onOpenSearch: () => void;
 }
 
 export function TopBar({
   collapsed,
   onToggleSidebar,
   onOpenMobile,
+  onOpenSearch,
 }: TopBarProps) {
   const title = useCurrentTitle();
 
@@ -66,6 +68,20 @@ export function TopBar({
       <h2 className="truncate text-sm font-semibold text-foreground">{title}</h2>
 
       <div className="ml-auto flex items-center gap-2">
+        {/* Command-palette trigger (⌘K). */}
+        <button
+          type="button"
+          onClick={onOpenSearch}
+          aria-label="Search"
+          className="inline-flex h-9 items-center gap-2 rounded-md border border-border bg-card px-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+        >
+          <Search className="h-4 w-4" aria-hidden />
+          <span className="hidden sm:inline">Search…</span>
+          <kbd className="hidden items-center rounded border border-border bg-background px-1.5 py-0.5 font-sans text-2xs text-muted-foreground sm:inline-flex">
+            ⌘K
+          </kbd>
+        </button>
+
         {/* Global "as-of / last-updated" slot — wired to data in a later phase. */}
         <span
           className="hidden items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1.5 text-xs text-muted-foreground sm:inline-flex"
