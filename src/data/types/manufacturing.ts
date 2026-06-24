@@ -1,4 +1,4 @@
-import type { Confidence, Kpi, Series, Unit } from "./core";
+import type { Confidence, Kpi } from "./core";
 
 /** A cell manufacturer (capacity + modelled production). */
 export interface CellPlayer {
@@ -41,26 +41,12 @@ export interface SupplyDemandSegment {
   demandFy28: number;
 }
 
-export interface WaferPoint {
-  period: string;
-  demandGw: number;
-  supplyGw: number;
-}
-
 export interface AlmmPhase {
   phase: string;
   scope: string;
   effectiveDate: string;
   status: string;
   confidence: Confidence;
-}
-
-export interface EconomicsMetric {
-  metric: string;
-  value: number;
-  unit: Unit;
-  confidence: Confidence;
-  note?: string;
 }
 
 /** A PLI (Production-Linked Incentive) awardee — supported solar capacity. */
@@ -77,14 +63,8 @@ export interface ManufacturingData {
   modulePlayers: ModulePlayer[];
   /** Modelled quarterly cell production (top players + Others). */
   cellQuarterly: CellQuarterly;
-  /** Module demand split DCR vs non-DCR (FY26–28). */
-  moduleDemand: Series[];
-  /** Cell production trajectory: existing + new (FY26–28). */
-  cellTrajectory: Series[];
   supplyDemand: SupplyDemandSegment[];
-  wafer: WaferPoint[];
   almmTimeline: AlmmPhase[];
-  economics: EconomicsMetric[];
   /** PLI Tranche I+II awardees (GW of supported capacity). */
   pliAwardees: PliAwardee[];
 }

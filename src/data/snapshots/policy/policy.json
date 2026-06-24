@@ -3,46 +3,6 @@
   "cadence": "quarterly",
   "coverage": "India · solar / renewable policy, incentives & value-chain pricing",
   "data": {
-    "bessCostCurve": [
-      {
-        "color": "#059669",
-        "key": "bess-cost",
-        "label": "BESS pack cost",
-        "points": [
-          {
-            "period": "2014",
-            "value": 700
-          },
-          {
-            "period": "2018",
-            "value": 300
-          },
-          {
-            "period": "2020",
-            "value": 180
-          },
-          {
-            "period": "2022",
-            "value": 150
-          },
-          {
-            "period": "2024",
-            "value": 75
-          },
-          {
-            "modelled": true,
-            "period": "2026",
-            "value": 55
-          },
-          {
-            "modelled": true,
-            "period": "2030",
-            "value": 32
-          }
-        ],
-        "unit": "USD/kWh"
-      }
-    ],
     "kpis": [
       {
         "confidence": "medium",
@@ -82,13 +42,6 @@
         "label": "Green-H₂ target",
         "unit": "MT/yr",
         "value": 5
-      },
-      {
-        "confidence": "medium",
-        "hint": "all segments",
-        "key": "tam_fy35",
-        "label": "Manufacturing TAM (FY35)",
-        "value": "₹4.5L cr"
       }
     ],
     "kusum": [
@@ -112,32 +65,6 @@
         "executedGw": 6,
         "scope": "Feeder/pump solarisation",
         "targetGw": 10
-      }
-    ],
-    "localisationWaves": [
-      {
-        "confidence": "medium",
-        "period": "2020–25",
-        "scope": "Modules & BOS",
-        "wave": "Wave 1"
-      },
-      {
-        "confidence": "medium",
-        "period": "2025–30",
-        "scope": "Cells & BESS",
-        "wave": "Wave 2"
-      },
-      {
-        "confidence": "medium",
-        "period": "2028–33",
-        "scope": "Wafers / Ingots / Transformers",
-        "wave": "Wave 3"
-      },
-      {
-        "confidence": "medium",
-        "period": "2031–36",
-        "scope": "Polysilicon / Electrolyser / Green-H2",
-        "wave": "Wave 4"
       }
     ],
     "pmSuryaGhar": [
@@ -306,129 +233,12 @@
         "status": "Active",
         "target": "SECI/NTPC procurement"
       }
-    ],
-    "tam": [
-      {
-        "color": "#2563EB",
-        "key": "modules",
-        "label": "Modules",
-        "points": [
-          {
-            "period": "FY25",
-            "value": 20
-          },
-          {
-            "period": "FY27",
-            "value": 30
-          },
-          {
-            "period": "FY30",
-            "value": 45
-          },
-          {
-            "period": "FY35",
-            "value": 80
-          }
-        ]
-      },
-      {
-        "color": "#F59E0B",
-        "key": "cells",
-        "label": "Cells",
-        "points": [
-          {
-            "period": "FY25",
-            "value": 10
-          },
-          {
-            "period": "FY27",
-            "value": 25
-          },
-          {
-            "period": "FY30",
-            "value": 40
-          },
-          {
-            "period": "FY35",
-            "value": 90
-          }
-        ]
-      },
-      {
-        "color": "#10B981",
-        "key": "bess",
-        "label": "BESS",
-        "points": [
-          {
-            "period": "FY25",
-            "value": 8
-          },
-          {
-            "period": "FY27",
-            "value": 20
-          },
-          {
-            "period": "FY30",
-            "value": 60
-          },
-          {
-            "period": "FY35",
-            "value": 120
-          }
-        ]
-      },
-      {
-        "color": "#8B5CF6",
-        "key": "wafer-ingot-glass",
-        "label": "Wafer / Ingot / Glass",
-        "points": [
-          {
-            "period": "FY25",
-            "value": 8
-          },
-          {
-            "period": "FY27",
-            "value": 15
-          },
-          {
-            "period": "FY30",
-            "value": 45
-          },
-          {
-            "period": "FY35",
-            "value": 90
-          }
-        ]
-      },
-      {
-        "color": "#EC4899",
-        "key": "transformers-inverters",
-        "label": "Transformers / Inverters",
-        "points": [
-          {
-            "period": "FY25",
-            "value": 5
-          },
-          {
-            "period": "FY27",
-            "value": 10
-          },
-          {
-            "period": "FY30",
-            "value": 30
-          },
-          {
-            "period": "FY35",
-            "value": 70
-          }
-        ]
-      }
     ]
   },
   "dataset": "policy",
   "notes": [
     "Scheme tracker spans manufacturing (ALMM/PLI/BCD), demand (DCR/CPSU/RPO/ISTS/Green-H2) and consumer (PM Surya Ghar/KUSUM) policy.",
-    "BESS cost curve, value-chain prices and manufacturing TAM are VQ Research / BNEF / PVInsights estimates; later years are modelled.",
+    "Value-chain spot prices are PVInsights / industry estimates; the cell-price line is a maintained estimate pending a live feed.",
     "ALMM I/II/III milestones are sourced from the manufacturing snapshot (not duplicated here)."
   ],
   "section": "policy",
@@ -477,16 +287,6 @@
       "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "VQ Research"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "modelled",
-      "name": "VQ Research"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "VQ Research / BNEF"
     }
   ],
   "updatedAt": "2026-03-31"

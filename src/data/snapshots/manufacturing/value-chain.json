@@ -201,110 +201,6 @@
         }
       ]
     },
-    "cellTrajectory": [
-      {
-        "color": "#64748B",
-        "key": "existing",
-        "label": "Existing",
-        "points": [
-          {
-            "period": "FY26E",
-            "value": 19
-          },
-          {
-            "period": "FY27E",
-            "value": 32
-          },
-          {
-            "period": "FY28E",
-            "value": 50
-          }
-        ],
-        "unit": "GW"
-      },
-      {
-        "color": "#F59E0B",
-        "key": "new",
-        "label": "New",
-        "points": [
-          {
-            "period": "FY26E",
-            "value": 0
-          },
-          {
-            "period": "FY27E",
-            "value": 6
-          },
-          {
-            "period": "FY28E",
-            "value": 14
-          }
-        ],
-        "unit": "GW"
-      }
-    ],
-    "economics": [
-      {
-        "confidence": "medium",
-        "metric": "Cell realisation (current)",
-        "unit": "USD/Wp",
-        "value": 0.14
-      },
-      {
-        "confidence": "medium",
-        "metric": "Cell realisation (forecast)",
-        "unit": "USD/Wp",
-        "value": 0.1
-      },
-      {
-        "confidence": "medium",
-        "metric": "Cell EBITDA/Wp",
-        "unit": "USD/Wp",
-        "value": 0.07
-      },
-      {
-        "confidence": "medium",
-        "metric": "DCR cell premium vs China (now)",
-        "unit": "%",
-        "value": 75
-      },
-      {
-        "confidence": "medium",
-        "metric": "DCR cell premium vs China (FY28E)",
-        "unit": "%",
-        "value": 40
-      },
-      {
-        "confidence": "medium",
-        "metric": "Cell capex intensity",
-        "unit": "Rs_cr/GW",
-        "value": 600
-      },
-      {
-        "confidence": "medium",
-        "metric": "Wafer+cell capex intensity",
-        "unit": "Rs_cr/GW",
-        "value": 1200
-      },
-      {
-        "confidence": "medium",
-        "metric": "TOPCon module price",
-        "unit": "Rs/Wp",
-        "value": 22
-      },
-      {
-        "confidence": "medium",
-        "metric": "DCR premium over non-DCR",
-        "unit": "Rs/Wp",
-        "value": 4
-      },
-      {
-        "confidence": "medium",
-        "metric": "Polysilicon (China mono)",
-        "unit": "USD/kg",
-        "value": 4.99
-      }
-    ],
     "kpis": [
       {
         "confidence": "high",
@@ -324,7 +220,7 @@
       },
       {
         "confidence": "high",
-        "hint": "VQ · modelled quarterly split",
+        "hint": "modelled quarterly split",
         "key": "cell_production",
         "label": "Cell production FY26E",
         "unit": "GW",
@@ -332,19 +228,11 @@
       },
       {
         "confidence": "high",
-        "hint": "VQ · production ÷ ALMM-II",
+        "hint": "production ÷ ALMM-II",
         "key": "utilization",
         "label": "Avg cell utilisation",
         "unit": "%",
         "value": 66.3
-      },
-      {
-        "confidence": "medium",
-        "hint": "VQ · domestic-content",
-        "key": "dcr_demand",
-        "label": "DCR module demand FY26E",
-        "unit": "GW",
-        "value": 18
       },
       {
         "confidence": "high",
@@ -353,48 +241,6 @@
         "label": "Module overcapacity",
         "unit": "x",
         "value": 3
-      }
-    ],
-    "moduleDemand": [
-      {
-        "color": "#64748B",
-        "key": "non-dcr",
-        "label": "Non-DCR",
-        "points": [
-          {
-            "period": "FY26E",
-            "value": 40
-          },
-          {
-            "period": "FY27E",
-            "value": 35
-          },
-          {
-            "period": "FY28E",
-            "value": 32
-          }
-        ],
-        "unit": "GW"
-      },
-      {
-        "color": "#F59E0B",
-        "key": "dcr",
-        "label": "DCR",
-        "points": [
-          {
-            "period": "FY26E",
-            "value": 18
-          },
-          {
-            "period": "FY27E",
-            "value": 32
-          },
-          {
-            "period": "FY28E",
-            "value": 55
-          }
-        ],
-        "unit": "GW"
       }
     ],
     "modulePlayers": [
@@ -511,30 +357,13 @@
         "demandFy28": 87,
         "segment": "cell"
       }
-    ],
-    "wafer": [
-      {
-        "demandGw": 35,
-        "period": "FY29E",
-        "supplyGw": 25
-      },
-      {
-        "demandGw": 50,
-        "period": "FY30E",
-        "supplyGw": 35
-      },
-      {
-        "demandGw": 70,
-        "period": "FY31E",
-        "supplyGw": 50
-      }
     ]
   },
   "dataset": "value-chain",
   "notes": [
     "Quarterly cell production is MODELLED: each producer's FY26E annual output is split across Q1FY26/Q2FY26/Q3FY26/Q4FY26 with a ramp [0.22, 0.24, 0.26, 0.28]; drop real (player, quarter) actuals into manufacturing/cell-production-quarterly-override.csv to override a cell.",
     "Module capacity is 173 GW enlisted under ALMM-I (MNRE Mar 2026; long tail bucketed as Others); the cell headline is ~27 GW ALMM-II (MNRE Feb 2026).",
-    "The player-wise cell-capacity, module-demand, cell-trajectory and wafer tables are VQ Research (early 2026); PLI Tranche I+II awardees total ~48 GW (PIB / JMK).",
+    "Player-wise cell-capacity is MNRE / DCR Portal; PLI Tranche I+II awardees total ~48 GW (PIB / JMK).",
     "Basic Customs Duty (BCD): modules 40% / cells 27.5%."
   ],
   "section": "manufacturing",
@@ -548,11 +377,6 @@
       "asOf": "2026-03-31",
       "confidence": "high",
       "name": "Company FY26"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "Market 2026"
     },
     {
       "asOf": "2026-03-31",
@@ -610,21 +434,6 @@
       "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "PIB / JMK"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "PVInsights Apr 2026"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "VQ / PL Capital"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "VQ Research"
     }
   ],
   "updatedAt": "2026-03-31"

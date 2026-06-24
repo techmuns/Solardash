@@ -18,11 +18,6 @@
       {
         "confidence": "medium",
         "section": "manufacturing",
-        "text": "DCR module demand set to triple from 18 to 55 GW by FY28E"
-      },
-      {
-        "confidence": "medium",
-        "section": "manufacturing",
         "text": "Module overcapacity: ~145 GW capacity vs ~58 GW demand (~2.5×)"
       },
       {
@@ -39,11 +34,6 @@
         "confidence": "medium",
         "section": "policy",
         "text": "PM Surya Ghar at ~30% of its 1-crore-rooftop target; 11.5 GW pipeline"
-      },
-      {
-        "confidence": "medium",
-        "section": "policy",
-        "text": "BESS cost down ~90% since 2014 to ~$55/kWh; heading to $32 by 2030"
       },
       {
         "confidence": "medium",
@@ -66,17 +56,22 @@
     {
       "asOf": "2026-04-01",
       "confidence": "medium",
-      "name": "ICRA / VQ Research"
+      "name": "Company filings (aggregated)"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "ICRA"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "Investor Presentations"
     },
     {
       "asOf": "2026-04-01",
       "confidence": "medium",
       "name": "MNRE"
-    },
-    {
-      "asOf": "2026-04-01",
-      "confidence": "medium",
-      "name": "PL Capital / Company filings (aggregated)"
     },
     {
       "asOf": "2026-04-01",
@@ -86,22 +81,7 @@
     {
       "asOf": "2026-04-01",
       "confidence": "medium",
-      "name": "SECI / VQ Research"
-    },
-    {
-      "asOf": "2026-04-01",
-      "confidence": "medium",
-      "name": "VQ Research"
-    },
-    {
-      "asOf": "2026-04-01",
-      "confidence": "medium",
-      "name": "VQ Research / BNEF"
-    },
-    {
-      "asOf": "2026-04-01",
-      "confidence": "medium",
-      "name": "VQ Research / Investor Presentations"
+      "name": "SECI"
     }
   ],
   "updatedAt": "2026-04-01"

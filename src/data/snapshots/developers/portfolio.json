@@ -96,36 +96,6 @@
         "key": "largest",
         "label": "Largest by operational",
         "value": "Adani Green"
-      },
-      {
-        "confidence": "medium",
-        "hint": "LOA awaiting PPA (solar + wind)",
-        "key": "balance_pipeline",
-        "label": "National balance pipeline",
-        "unit": "GW",
-        "value": 68
-      }
-    ],
-    "nationalFunnel": [
-      {
-        "solarGw": 174,
-        "stage": "LOA",
-        "windGw": 41
-      },
-      {
-        "solarGw": 116,
-        "stage": "PPA",
-        "windGw": 29
-      },
-      {
-        "solarGw": 60,
-        "stage": "Executed",
-        "windGw": 17
-      },
-      {
-        "solarGw": 56,
-        "stage": "Balance",
-        "windGw": 12
       }
     ],
     "portfolioMix": [
@@ -459,7 +429,7 @@
   "dataset": "portfolio",
   "notes": [
     "Roster operational/UC/pipeline capacities are FY26 company disclosures & investor presentations; lower-confidence rows are user-maintained estimates.",
-    "The national LOA→PPA→Executed→Balance funnel, FY30 targets and tech-mix splits are VQ Research estimates; PPA-signed GW is derived from the PPA tracker.",
+    "FY30 targets and tech-mix splits are company disclosures / investor presentations; PPA-signed GW is derived from the PPA tracker.",
     "The PPA tracker lists real SECI / NTPC / SJVN auction signings (awarded MW, ₹/kWh) sourced from SECI results & trade press.",
     "BESS is tracked in GWh and excluded from the GW-share portfolio donut."
   ],
@@ -549,11 +519,6 @@
       "confidence": "high",
       "name": "SJVN / Mercom",
       "url": "https://www.mercomindia.com/daily-news-sjvns-1-2-gw-solar-auction-winners-announced"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "VQ Research"
     }
   ],
   "updatedAt": "2026-03-31"

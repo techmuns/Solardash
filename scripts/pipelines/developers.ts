@@ -6,7 +6,6 @@ import type {
   CapacityFunnel,
   Developer,
   DevelopersData,
-  NationalFunnelStage,
   PortfolioMixEntry,
   PpaRecord,
 } from "../../src/data/types/developers";
@@ -32,7 +31,6 @@ export const developersPipeline = definePipeline({
   cadence: "quarterly",
   run() {
     const devRows = readManualCsv("developers/developers.csv");
-    const funnelRows = readManualCsv("developers/national-funnel.csv");
     const ppaRows = readManualCsv("developers/ppas.csv");
 
     // --- PPA tracker (newest first) ---
@@ -120,13 +118,6 @@ export const developersPipeline = definePipeline({
       .sort((a, b) => b.gw - a.gw || a.key.localeCompare(b.key));
     bessGwh = round1(bessGwh);
 
-    // --- National funnel ---
-    const nationalFunnel: NationalFunnelStage[] = funnelRows.map((r) => ({
-      stage: r.stage,
-      solarGw: n0(r.solar_gw),
-      windGw: n0(r.wind_gw),
-    }));
-
     // --- KPIs ---
     const sumOperational = round1(roster.reduce((s, d) => s + d.operationalGw, 0));
     const sumBuildout = round1(
@@ -134,8 +125,6 @@ export const developersPipeline = definePipeline({
     );
     const sumTarget = round1(roster.reduce((s, d) => s + d.targetGw, 0));
     const largest = roster[0];
-    const balance = nationalFunnel.find((s) => s.stage === "Balance");
-    const balanceGw = balance ? round1(balance.solarGw + balance.windGw) : 0;
 
     const kpis: Kpi[] = [
       {
@@ -176,14 +165,6 @@ export const developersPipeline = definePipeline({
         confidence: "medium",
         hint: largest ? `${largest.operationalGw} GW operational` : undefined,
       },
-      {
-        key: "balance_pipeline",
-        label: "National balance pipeline",
-        value: balanceGw,
-        unit: "GW",
-        confidence: "medium",
-        hint: "LOA awaiting PPA (solar + wind)",
-      },
     ];
 
     // --- Light sanity checks (warn, never throw — data is partly modelled) ---
@@ -196,16 +177,6 @@ export const developersPipeline = definePipeline({
         console.warn(
           `[developers] ${d.name}: mix sum ${round1(mixSum)} ≉ operational ${d.operationalGw} GW`,
         );
-      }
-    }
-    for (const tech of ["solarGw", "windGw"] as const) {
-      const seq = nationalFunnel.map((s) => s[tech]);
-      for (let i = 1; i < seq.length; i++) {
-        if (seq[i] > seq[i - 1]) {
-          console.warn(
-            `[developers] national funnel not monotonic for ${tech}: ${nationalFunnel[i - 1].stage}→${nationalFunnel[i].stage}`,
-          );
-        }
       }
     }
 
@@ -227,7 +198,6 @@ export const developersPipeline = definePipeline({
       else if (asOf > ex.asOf) ex.asOf = asOf;
     };
     for (const r of devRows) addSource(r.source, r.confidence as Confidence, ROSTER_AS_OF, r.source_url);
-    for (const r of funnelRows) addSource(r.source, r.confidence as Confidence, ROSTER_AS_OF, r.source_url);
     for (const r of ppaRows) addSource(r.source, r.confidence as Confidence, r.date, r.source_url);
     const sources: SourceRef[] = [...srcMap.values()]
       .map((s) => ({
@@ -247,7 +217,6 @@ export const developersPipeline = definePipeline({
       kpis,
       roster,
       capacityFunnel,
-      nationalFunnel,
       portfolioMix,
       bessGwh,
       ppaTracker,
@@ -260,7 +229,7 @@ export const developersPipeline = definePipeline({
       sources,
       notes: [
         "Roster operational/UC/pipeline capacities are FY26 company disclosures & investor presentations; lower-confidence rows are user-maintained estimates.",
-        "The national LOA→PPA→Executed→Balance funnel, FY30 targets and tech-mix splits are VQ Research estimates; PPA-signed GW is derived from the PPA tracker.",
+        "FY30 targets and tech-mix splits are company disclosures / investor presentations; PPA-signed GW is derived from the PPA tracker.",
         "The PPA tracker lists real SECI / NTPC / SJVN auction signings (awarded MW, ₹/kWh) sourced from SECI results & trade press.",
         "BESS is tracked in GWh and excluded from the GW-share portfolio donut.",
       ],

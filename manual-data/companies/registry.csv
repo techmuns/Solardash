@@ -1,7 +1,7 @@
 slug,name,ticker_nse,type,module_gw,cell_gw,order_book_cr,order_book_gw,revenue_fy26_cr,ebitda_margin_pct,pat_fy26_cr,pe_x,ev_ebitda_x,target_price,cmp,rating,confidence,source
 waaree-energies,Waaree Energies,WAAREEENER,integrated,15.0,5.4,53000,,26540,22.3,,46,,3600,2599,BUY,medium,Company filings (aggregated)
 premier-energies,Premier Energies,PREMIERENE,integrated,5.0,3.6,13720,9.4,7550,27.0,,47,,892,683,BUY,medium,Company filings (aggregated)
-vikram-solar,Vikram Solar,VIKRAMSOLR,manufacturer,9.5,0,,10.34,4673,19.6,489,14,5.5,226,190,BUY,high,PL Capital
+vikram-solar,Vikram Solar,VIKRAMSOLR,manufacturer,9.5,0,,10.34,4673,19.6,489,14,,,190,,high,Company filings (aggregated)
 websol-energy,Websol Energy Systems,WEBELSOLAR,manufacturer,0.55,1.2,1160,,1050,41.0,,40,,,,,medium,Company filings (aggregated)
 saatvik-green,Saatvik Green Energy,SAATVIK,manufacturer,3.8,,,,,,,,,,,,modelled,Company filings (aggregated)
 acme-solar,ACME Solar Holdings,ACMESOLAR,ipp,,,,,,,,,,,,,medium,Company filings (aggregated)

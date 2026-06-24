@@ -3,14 +3,10 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { ChartFrame } from "@/components/ui/ChartFrame";
 import { Card } from "@/components/ui/Card";
-import { LineSeriesChart } from "@/components/charts/LineSeriesChart";
-import { BarSeriesChart } from "@/components/charts/BarSeriesChart";
 import { StackedCategoryBarChart } from "@/components/charts/StackedCategoryBarChart";
 import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { getPolicySnapshot, getManufacturingSnapshot } from "@/data";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
-import { snapshotMeta } from "@/lib/export";
-import { seriesToExport } from "@/components/charts/series";
 import type { PmSuryaGharMetric } from "@/data/types/policy";
 import { SchemesTable } from "./SchemesTable";
 
@@ -18,7 +14,7 @@ export const dynamic = "force-static";
 export const metadata = {
   title: "Policy & Pricing",
   description:
-    "India's solar policy & pricing — schemes & incentives, flagship-scheme progress, the localisation roadmap, the BESS cost curve, and manufacturing TAM.",
+    "India's solar policy & pricing — schemes & incentives, flagship-scheme progress, the ALMM manufacturing roadmap, and value-chain prices.",
 };
 
 function suryaValue(m: PmSuryaGharMetric): { value: string; unit?: string } {
@@ -35,7 +31,7 @@ export default function PolicyPage() {
   const snapshot = getPolicySnapshot();
   const d = snapshot.data;
   const asOf = formatDate(snapshot.updatedAt);
-  const source = "MNRE / CBIC / VQ Research";
+  const source = "MNRE / CBIC";
   const almm = getManufacturingSnapshot().data.almmTimeline;
 
   const install = d.pmSuryaGhar.find((m) => /install/i.test(m.metric))?.value ?? 0;
@@ -52,7 +48,7 @@ export default function PolicyPage() {
     <div className="space-y-8">
       <PageHeader
         title="Policy & Pricing"
-        subtitle="The rules and prices that move the sector — schemes & incentives, flagship-scheme progress, the localisation roadmap, the BESS cost curve, and manufacturing TAM."
+        subtitle="The rules and prices that move the sector — schemes & incentives, flagship-scheme progress, the ALMM manufacturing roadmap, and value-chain prices."
         asOf={`As of ${asOf}`}
       />
 
@@ -138,7 +134,7 @@ export default function PolicyPage() {
 
       {/* § Manufacturing roadmap */}
       <section className="space-y-4">
-        <SectionHeader title="Manufacturing roadmap" subtitle="ALMM rollout and the 4-wave localisation path." />
+        <SectionHeader title="ALMM roadmap" subtitle="The ALMM enlistment rollout." />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {almm.map((ph) => (
             <Card key={ph.phase} className="p-4">
@@ -153,101 +149,35 @@ export default function PolicyPage() {
             </Card>
           ))}
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {d.localisationWaves.map((w) => (
-            <Card key={w.wave} className="p-4">
-              <div className="flex items-center justify-between gap-2">
-                <span className="text-sm font-semibold text-foreground">{w.wave}</span>
-                <span className="rounded-md bg-muted px-2 py-0.5 text-2xs font-medium text-muted-foreground">
-                  {w.period}
-                </span>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground">{w.scope}</p>
-            </Card>
+      </section>
+
+      {/* § Value-chain prices */}
+      <section className="space-y-4">
+        <SectionHeader title="Value-chain prices" subtitle="Spot prices across the PV value chain (USD/Wp)." />
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {wpPrices.map((p) => (
+            <StatCard
+              key={p.item}
+              label={p.item}
+              value={`$${p.value.toFixed(2)}`}
+              unit="/Wp"
+              hint={p.note}
+            />
           ))}
         </div>
-      </section>
-
-      {/* § Pricing & Economics */}
-      <section className="space-y-4">
-        <SectionHeader title="Pricing & economics" subtitle="BESS cost decline and value-chain prices." />
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <ChartFrame
-            title="BESS pack cost curve"
-            subtitle="$/kWh · ~90% decline since 2014"
-            source="VQ Research / BNEF"
-            asOf={asOf}
-            confidence="medium"
-            exportData={{
-              ...seriesToExport(
-                d.bessCostCurve,
-                d.bessCostCurve[0]?.points.map((p) => p.period),
-                "Year",
-              ),
-              meta: snapshotMeta(snapshot, {
-                dataset: "bess-cost-curve",
-                notes: ["Forward (2026, 2030) points are modelled projections."],
-              }),
-            }}
-          >
-            <LineSeriesChart
-              series={d.bessCostCurve}
-              unit="$/kWh"
-              periodOrder={d.bessCostCurve[0]?.points.map((p) => p.period)}
-              height={300}
-            />
-          </ChartFrame>
-          <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              {wpPrices.map((p) => (
-                <StatCard
-                  key={p.item}
-                  label={p.item}
-                  value={`$${p.value.toFixed(2)}`}
-                  unit="/Wp"
-                  hint={p.note}
-                />
-              ))}
-            </div>
-            {lcoe && (
-              <Card className="p-4">
-                <p className="text-sm">
-                  <span className="font-semibold text-foreground">Solar + BESS LCOE</span>{" "}
-                  <span className="tabular-nums font-semibold text-brand">
-                    ₹{lcoe.value.toFixed(2)}/kWh
-                  </span>{" "}
-                  <span className="text-muted-foreground">
-                    ({lcoe.note}) — approaching new-coal tariffs, making round-the-clock RE competitive.
-                  </span>
-                </p>
-              </Card>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* § Manufacturing TAM */}
-      <section className="space-y-3">
-        <SectionHeader title="Manufacturing TAM" subtitle="Total addressable market by segment, ₹'000 cr." />
-        <ChartFrame
-          title="Manufacturing TAM by segment"
-          subtitle="₹'000 cr · stacked · FY25 → FY35"
-          source="VQ Research"
-          asOf={asOf}
-          confidence="medium"
-          exportData={{
-            ...seriesToExport(d.tam, ["FY25", "FY27", "FY30", "FY35"], "Period"),
-            meta: snapshotMeta(snapshot, { dataset: "manufacturing-tam" }),
-          }}
-        >
-          <BarSeriesChart
-            series={d.tam}
-            stacked
-            unit="₹'000 cr"
-            periodOrder={["FY25", "FY27", "FY30", "FY35"]}
-            height={320}
-          />
-        </ChartFrame>
+        {lcoe && (
+          <Card className="p-4">
+            <p className="text-sm">
+              <span className="font-semibold text-foreground">Solar + BESS LCOE</span>{" "}
+              <span className="tabular-nums font-semibold text-brand">
+                ₹{lcoe.value.toFixed(2)}/kWh
+              </span>{" "}
+              <span className="text-muted-foreground">
+                ({lcoe.note}) — approaching new-coal tariffs, making round-the-clock RE competitive.
+              </span>
+            </p>
+          </Card>
+        )}
       </section>
     </div>
   );

@@ -130,6 +130,11 @@
     },
     {
       "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "Industry"
+    },
+    {
+      "asOf": "2026-04-01",
       "confidence": "modelled",
       "name": "Industry"
     },
@@ -149,11 +154,6 @@
       "confidence": "high",
       "name": "PIB / CEA",
       "url": "https://www.pib.gov.in/PressReleseDetail.aspx?PRID=2135450"
-    },
-    {
-      "asOf": "2026-04-01",
-      "confidence": "medium",
-      "name": "VQ Research / Industry"
     }
   ],
   "updatedAt": "2026-04-01"

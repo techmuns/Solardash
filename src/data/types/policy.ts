@@ -1,4 +1,4 @@
-import type { Confidence, Kpi, Series, Unit } from "./core";
+import type { Confidence, Kpi, Unit } from "./core";
 
 export interface Scheme {
   scheme: string;
@@ -26,13 +26,6 @@ export interface KusumComponent {
   confidence: Confidence;
 }
 
-export interface LocalisationWave {
-  wave: string;
-  period: string;
-  scope: string;
-  confidence: Confidence;
-}
-
 export interface PriceItem {
   item: string;
   value: number;
@@ -46,10 +39,5 @@ export interface PolicyData {
   schemes: Scheme[];
   pmSuryaGhar: PmSuryaGharMetric[];
   kusum: KusumComponent[];
-  localisationWaves: LocalisationWave[];
-  /** BESS pack cost curve, $/kWh by year (one Series). */
-  bessCostCurve: Series[];
   prices: PriceItem[];
-  /** Manufacturing TAM, one Series per segment (₹'000 cr), stacked by period. */
-  tam: Series[];
 }

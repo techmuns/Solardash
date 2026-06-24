@@ -47,13 +47,6 @@ export interface CapacityFunnel {
   pipeline: number[];
 }
 
-/** National PPA funnel: one row per stage, split by tech. */
-export interface NationalFunnelStage {
-  stage: string;
-  solarGw: number;
-  windGw: number;
-}
-
 /** Aggregate portfolio-mix entry (GW + share across all developers). */
 export interface PortfolioMixEntry {
   key: TenderType;
@@ -69,8 +62,6 @@ export interface DevelopersData {
   roster: Developer[];
   /** Per-developer operational / UC / pipeline funnel (by total portfolio). */
   capacityFunnel: CapacityFunnel;
-  /** National LOA → PPA → Executed → Balance funnel. */
-  nationalFunnel: NationalFunnelStage[];
   /** Aggregate tech mix across all developers (BESS excluded — it's GWh). */
   portfolioMix: PortfolioMixEntry[];
   /** Total BESS across portfolios, GWh (shown separately from the GW mix). */

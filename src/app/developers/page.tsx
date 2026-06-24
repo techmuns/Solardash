@@ -16,7 +16,7 @@ export const dynamic = "force-static";
 export const metadata = {
   title: "Developers / IPPs",
   description:
-    "India's solar IPPs — operational, under-construction and pipeline capacity, the national PPA funnel, portfolio mix, and PPA signings.",
+    "India's solar IPPs — operational, under-construction and pipeline capacity, portfolio mix, and PPA signings.",
 };
 
 // Stage colours for the capacity funnel — solid → lighter brand shades
@@ -37,7 +37,7 @@ export default function DevelopersPage() {
   const d = snapshot.data;
   const cf = d.capacityFunnel;
 
-  const source = "VQ Research / investor disclosures (maintained)";
+  const source = "Investor disclosures (maintained)";
   const asOf = formatDate(snapshot.updatedAt);
 
   const mixData = d.portfolioMix.map((m) => ({
@@ -51,7 +51,7 @@ export default function DevelopersPage() {
     <div className="space-y-8">
       <PageHeader
         title="Developers / IPPs"
-        subtitle="Independent power producers — operational, under-construction and pipeline capacity, the national PPA funnel, portfolio mix, and PPA signings."
+        subtitle="Independent power producers — operational, under-construction and pipeline capacity, portfolio mix, and PPA signings."
         asOf={`As of ${asOf}`}
       />
 
@@ -113,26 +113,12 @@ export default function DevelopersPage() {
         </ChartFrame>
       </section>
 
-      {/* Two-up — national PPA funnel + portfolio mix */}
-      <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <ChartFrame
-          title="National PPA funnel"
-          subtitle="LOA → PPA → Executed → Balance · GW by tech"
-          source="VQ Research (national)"
-          asOf={asOf}
-          confidence="medium"
-        >
-          <StackedCategoryBarChart
-            categories={d.nationalFunnel.map((s) => s.stage)}
-            series={[
-              { key: "solar", label: "Solar", color: energyColor("solar"), values: d.nationalFunnel.map((s) => s.solarGw) },
-              { key: "wind", label: "Wind", color: energyColor("wind"), values: d.nationalFunnel.map((s) => s.windGw) },
-            ]}
-            unit="GW"
-            height={280}
-            categoryWidth={80}
-          />
-        </ChartFrame>
+      {/* Portfolio mix */}
+      <section className="space-y-3">
+        <SectionHeader
+          title="Portfolio mix"
+          subtitle="Aggregate operational capacity by technology."
+        />
         <ChartFrame
           title="Aggregate portfolio mix"
           subtitle={`Operational GW by tech · + ${d.bessGwh} GWh BESS (excl.)`}

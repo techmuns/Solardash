@@ -17,7 +17,7 @@ export const dynamic = "force-static";
 export const metadata = {
   title: "Manufacturing",
   description:
-    "India's solar PV supply chain — player-wise cell & module capacity, modelled production, DCR demand, and the wafer-to-module value chain.",
+    "India's solar PV supply chain — player-wise cell & module capacity, modelled production, and the manufacturing value chain.",
 };
 
 const round2 = (n: number) => Math.round(n * 100) / 100;
@@ -27,15 +27,11 @@ function kpiValue(value: number | string): string {
   return Number.isInteger(value) ? formatNumber(value) : value.toFixed(1);
 }
 
-function ecoValue(value: number): string {
-  return Number.isInteger(value) ? formatNumber(value) : value.toString();
-}
-
 export default function ManufacturingPage() {
   const snapshot = getManufacturingSnapshot();
   const d = snapshot.data;
   const asOf = formatDate(snapshot.updatedAt);
-  const source = "MNRE / DCR Portal · VQ Research (maintained)";
+  const source = "MNRE / DCR Portal (maintained)";
 
   // Modelled quarterly cell production → Series[] (player colours pass through).
   const cellQuarterlySeries = d.cellQuarterly.series.map((s) => ({
@@ -63,23 +59,6 @@ export default function ManufacturingPage() {
     color: /^others/i.test(p.player) ? OTHERS_COLOR : categoricalColor(i),
   }));
 
-  const waferSeries = [
-    {
-      key: "demand",
-      label: "Demand",
-      unit: "GW" as const,
-      color: "#64748B",
-      points: d.wafer.map((w) => ({ period: w.period, value: w.demandGw })),
-    },
-    {
-      key: "supply",
-      label: "Supply (domestic)",
-      unit: "GW" as const,
-      color: "#F59E0B",
-      points: d.wafer.map((w) => ({ period: w.period, value: w.supplyGw })),
-    },
-  ];
-
   const pliData = d.pliAwardees.map((p, i) => ({
     key: p.company.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
     label: p.company,
@@ -92,7 +71,7 @@ export default function ManufacturingPage() {
     <div className="space-y-8">
       <PageHeader
         title="Manufacturing & Value Chain"
-        subtitle="India's solar PV supply chain — player-wise cell & module capacity, modelled cell production, DCR demand, and the wafer-to-module value chain."
+        subtitle="India's solar PV supply chain — player-wise cell & module capacity, modelled cell production, and the manufacturing value chain."
         asOf={`As of ${asOf}`}
       />
 
@@ -144,7 +123,7 @@ export default function ManufacturingPage() {
         <ChartFrame
           title="Cell manufacturers"
           subtitle="Nameplate / ALMM-II / production / utilisation · sortable"
-          source="VQ Research, early 2026"
+          source="MNRE / DCR Portal"
           asOf={asOf}
           confidence="high"
         >
@@ -195,111 +174,50 @@ export default function ManufacturingPage() {
         </div>
       </section>
 
-      {/* § Demand & DCR */}
+      {/* § Supply–demand */}
       <section className="space-y-4">
         <SectionHeader
-          title="Demand & DCR"
-          subtitle="Module demand split and the cell-capacity ramp."
+          title="Supply–demand"
+          subtitle="Module &amp; cell overcapacity (FY26 → FY28)."
         />
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <ChartFrame
-            title="Module demand: DCR vs non-DCR"
-            subtitle="GW · FY26–28E"
-            source="VQ Research"
-            asOf={asOf}
-            confidence="medium"
-            exportData={{
-              ...seriesToExport(d.moduleDemand, ["FY26E", "FY27E", "FY28E"], "Period"),
-              meta: snapshotMeta(snapshot, { dataset: "module-demand" }),
-            }}
-          >
-            <BarSeriesChart
-              series={d.moduleDemand}
-              stacked
-              unit="GW"
-              periodOrder={["FY26E", "FY27E", "FY28E"]}
-              height={300}
-            />
-          </ChartFrame>
-          <ChartFrame
-            title="Cell capacity trajectory"
-            subtitle="Existing + new · GW · FY26–28E"
-            source="VQ Research"
-            asOf={asOf}
-            confidence="medium"
-          >
-            <BarSeriesChart
-              series={d.cellTrajectory}
-              stacked
-              unit="GW"
-              periodOrder={["FY26E", "FY27E", "FY28E"]}
-              height={300}
-            />
-          </ChartFrame>
-        </div>
-      </section>
-
-      {/* § Supply–Demand & Value Chain */}
-      <section className="space-y-4">
-        <SectionHeader
-          title="Supply–demand & value chain"
-          subtitle="Overcapacity today, wafer dependence tomorrow."
-        />
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {d.supplyDemand.map((s) => {
-              const ratio = s.demandFy26 ? round2(s.capacityFy26 / s.demandFy26) : 0;
-              return (
-                <Card key={s.segment} className="p-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold capitalize text-foreground">
-                      {s.segment}
-                    </span>
-                    <span className="rounded-md bg-brand/10 px-2 py-0.5 text-xs font-medium text-brand">
-                      {ratio}× cap.
-                    </span>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {d.supplyDemand.map((s) => {
+            const ratio = s.demandFy26 ? round2(s.capacityFy26 / s.demandFy26) : 0;
+            return (
+              <Card key={s.segment} className="p-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold capitalize text-foreground">
+                    {s.segment}
+                  </span>
+                  <span className="rounded-md bg-brand/10 px-2 py-0.5 text-xs font-medium text-brand">
+                    {ratio}× cap.
+                  </span>
+                </div>
+                <dl className="mt-3 space-y-1.5 text-sm">
+                  <div className="flex items-center justify-between gap-2">
+                    <dt className="text-muted-foreground">Capacity (FY26→28)</dt>
+                    <dd className="tabular-nums font-medium">
+                      {s.capacityFy26}→{s.capacityFy28} GW
+                    </dd>
                   </div>
-                  <dl className="mt-3 space-y-1.5 text-sm">
-                    <div className="flex items-center justify-between gap-2">
-                      <dt className="text-muted-foreground">Capacity (FY26→28)</dt>
-                      <dd className="tabular-nums font-medium">
-                        {s.capacityFy26}→{s.capacityFy28} GW
-                      </dd>
-                    </div>
-                    <div className="flex items-center justify-between gap-2">
-                      <dt className="text-muted-foreground">Demand (FY26→28)</dt>
-                      <dd className="tabular-nums font-medium">
-                        {s.demandFy26}→{s.demandFy28} GW
-                      </dd>
-                    </div>
-                  </dl>
-                </Card>
-              );
-            })}
-          </div>
-
-          <ChartFrame
-            title="Wafer demand vs domestic supply"
-            subtitle="GW · FY29–31E · gap met by imports (China)"
-            source="VQ Research"
-            asOf={asOf}
-            confidence="medium"
-          >
-            <BarSeriesChart
-              series={waferSeries}
-              unit="GW"
-              periodOrder={d.wafer.map((w) => w.period)}
-              height={300}
-            />
-          </ChartFrame>
+                  <div className="flex items-center justify-between gap-2">
+                    <dt className="text-muted-foreground">Demand (FY26→28)</dt>
+                    <dd className="tabular-nums font-medium">
+                      {s.demandFy26}→{s.demandFy28} GW
+                    </dd>
+                  </div>
+                </dl>
+              </Card>
+            );
+          })}
         </div>
       </section>
 
-      {/* § Policy & Economics */}
+      {/* § ALMM & PLI */}
       <section className="space-y-4">
         <SectionHeader
-          title="Policy & economics"
-          subtitle="ALMM rollout and cell-manufacturing unit economics."
+          title="ALMM &amp; PLI"
+          subtitle="Manufacturing localisation timeline and PLI-supported capacity."
         />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -334,31 +252,6 @@ export default function ManufacturingPage() {
           />
         </ChartFrame>
 
-        <ChartFrame
-          title="Cell manufacturing unit economics"
-          subtitle="Realisation, margins, DCR premium & capex intensity"
-          source="VQ Research / PL Capital"
-          asOf={asOf}
-          confidence="medium"
-          bodyClassName="px-5 py-4"
-        >
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {d.economics.map((e) => (
-              <StatCard
-                key={e.metric}
-                label={e.metric}
-                value={ecoValue(e.value)}
-                unit={formatUnit(e.unit)}
-                hint={e.note}
-              />
-            ))}
-          </div>
-          <p className="mt-4 text-xs text-muted-foreground">
-            Basic Customs Duty:{" "}
-            <span className="font-medium text-foreground">modules 40%</span> ·{" "}
-            <span className="font-medium text-foreground">cells 27.5%</span>.
-          </p>
-        </ChartFrame>
       </section>
     </div>
   );

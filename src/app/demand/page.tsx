@@ -172,7 +172,7 @@ export default function DemandPage() {
         <ChartFrame
           title="Future demand drivers"
           subtitle="Incremental GW by ~FY30"
-          source="VQ Research / industry"
+          source="Industry / NGHM"
           asOf={asOf}
           confidence="medium"
         >

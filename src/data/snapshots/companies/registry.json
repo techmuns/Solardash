@@ -83,20 +83,17 @@
       },
       {
         "cellGw": 0,
-        "cmp": 190,
+        "cmp": 193,
         "confidence": "high",
-        "ebitdaMarginPct": 19.6,
-        "evEbitdaX": 5.5,
+        "ebitdaMarginPct": 19,
         "moduleGw": 9.5,
         "name": "Vikram Solar",
         "orderBookGw": 10.34,
-        "patFy26Cr": 489,
-        "peX": 14,
-        "rating": "BUY",
-        "revenueFy26Cr": 4673,
+        "patFy26Cr": 470,
+        "peX": 14.8,
+        "revenueFy26Cr": 4802,
         "slug": "vikram-solar",
-        "sourceNote": "PL Capital",
-        "targetPrice": 226,
+        "sourceNote": "Company filings (aggregated)",
         "tickerNse": "VIKRAMSOLR",
         "type": "manufacturer"
       },
@@ -181,6 +178,11 @@
   "sources": [
     {
       "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Company filings (aggregated)"
+    },
+    {
+      "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     },
@@ -188,11 +190,6 @@
       "asOf": "2026-03-31",
       "confidence": "modelled",
       "name": "Company filings (aggregated)"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "high",
-      "name": "PL Capital"
     }
   ],
   "updatedAt": "2026-03-31"

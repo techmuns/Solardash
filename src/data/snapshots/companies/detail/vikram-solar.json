@@ -1,173 +1,158 @@
 {
-  "asOf": "2026-03-27",
+  "asOf": "2026-03-31",
   "cadence": "quarterly",
   "coverage": "Vikram Solar",
   "data": {
     "annual": [
       {
-        "capex": 146,
+        "ebitda": 140,
+        "ebitdaMarginPct": 9,
+        "epsRs": 8.06,
+        "pat": 22,
+        "period": "FY20",
+        "revenue": 1640
+      },
+      {
+        "ebitda": 177,
+        "ebitdaMarginPct": 11,
+        "epsRs": 16.23,
+        "pat": 38,
+        "period": "FY21",
+        "revenue": 1610
+      },
+      {
+        "ebitda": 59,
+        "ebitdaMarginPct": 3,
+        "epsRs": -2.43,
+        "pat": -63,
+        "period": "FY22",
+        "revenue": 1730
+      },
+      {
+        "ebitda": 187,
+        "ebitdaMarginPct": 9,
+        "epsRs": 0.56,
+        "pat": 14,
+        "period": "FY23",
+        "revenue": 2073
+      },
+      {
+        "ebitda": 399,
+        "ebitdaMarginPct": 16,
+        "epsRs": 3.08,
+        "pat": 80,
+        "period": "FY24",
+        "revenue": 2511
+      },
+      {
         "ebitda": 492,
-        "ebitdaMarginPct": 14.4,
-        "epsRs": 4.4,
-        "grossMarginPct": 25.4,
-        "netDebt": 192,
+        "ebitdaMarginPct": 14,
+        "epsRs": 4.42,
         "pat": 140,
         "period": "FY25",
-        "revenue": 3424,
-        "rocePct": 27.3,
-        "roePct": 16.6,
-        "wcDays": 58
+        "revenue": 3423
       },
       {
-        "capex": 430,
         "ebitda": 917,
-        "ebitdaMarginPct": 19.6,
-        "epsRs": 13.5,
-        "grossMarginPct": 31.6,
-        "netDebt": -1654,
-        "pat": 489,
-        "period": "FY26E",
-        "revenue": 4673,
-        "rocePct": 34.6,
-        "roePct": 21.9,
-        "wcDays": 53
-      },
-      {
-        "capex": 4898,
-        "ebitda": 1550,
-        "ebitdaMarginPct": 18.1,
-        "epsRs": 15.6,
-        "grossMarginPct": 30,
-        "netDebt": 1979,
-        "pat": 563,
-        "period": "FY27E",
-        "revenue": 8540,
-        "rocePct": 21.8,
-        "roePct": 16.1,
-        "wcDays": 53
-      },
-      {
-        "capex": 3061,
-        "ebitda": 2363,
-        "ebitdaMarginPct": 18.5,
-        "epsRs": 19.2,
-        "grossMarginPct": 30,
-        "netDebt": 3847,
-        "pat": 693,
-        "period": "FY28E",
-        "revenue": 12740,
-        "rocePct": 20.5,
-        "roePct": 16.8,
-        "wcDays": 52
+        "ebitdaMarginPct": 19,
+        "epsRs": 12.98,
+        "pat": 470,
+        "period": "FY26",
+        "revenue": 4802
       }
     ],
     "cellGw": 0,
-    "cmp": 190,
+    "cmp": 193,
     "confidence": "high",
-    "description": "Integrating module manufacturer scaling into cells, wafers and BESS; full integration targeted by FY30E.",
-    "ebitdaMarginPct": 19.6,
-    "evEbitdaX": 5.5,
+    "ebitdaMarginPct": 19,
     "hasDetail": true,
-    "highlights": [
-      "Module capacity 9.5 GW → 15.5 GW (Vallam 5 GW commissioned Dec'25)",
-      "9 GW TOPCon cell facility → ~70% backward integration by FY27E",
-      "Order book 10.34 GW, ~2× installed capacity",
-      "Module realisation ₹13.75/Wp (−21% YoY); EBITDA ₹2.5/Wp",
-      "BUY, TP ₹226 (cut from ₹326) on 5.0× EV/FY28E EBITDA"
-    ],
     "moduleGw": 9.5,
     "name": "Vikram Solar",
-    "operating": {
-      "dcrSharePct": 20,
-      "ebitdaRsPerWp": 2.5,
-      "exportSharePct": 16,
-      "orderBookGw": 10.34,
-      "orderMix": [
-        {
-          "segment": "IPP",
-          "sharePct": 55
-        },
-        {
-          "segment": "C&I",
-          "sharePct": 21
-        },
-        {
-          "segment": "Distribution",
-          "sharePct": 13
-        },
-        {
-          "segment": "Government",
-          "sharePct": 6
-        },
-        {
-          "segment": "EPC",
-          "sharePct": 5
-        }
-      ],
-      "realisationRsPerWp": 13.75,
-      "utilizationPct": 88
-    },
     "orderBookGw": 10.34,
-    "patFy26Cr": 489,
-    "peX": 14,
+    "patFy26Cr": 470,
+    "peX": 14.8,
     "quarterly": [
       {
+        "ebitda": 111,
+        "ebitdaMarginPct": 18,
+        "pat": 23,
+        "patMarginPct": 3.65,
+        "period": "Q1FY25",
+        "revenue": 631
+      },
+      {
+        "ebitda": 72,
+        "ebitdaMarginPct": 13,
+        "pat": 7,
+        "patMarginPct": 1.22,
+        "period": "Q2FY25",
+        "revenue": 573
+      },
+      {
+        "ebitda": 85,
+        "ebitdaMarginPct": 8,
+        "pat": 19,
+        "patMarginPct": 1.85,
+        "period": "Q3FY25",
+        "revenue": 1026
+      },
+      {
         "ebitda": 224,
-        "ebitdaMarginPct": 18.7,
+        "ebitdaMarginPct": 19,
         "pat": 91,
-        "patMarginPct": 7.6,
+        "patMarginPct": 7.62,
         "period": "Q4FY25",
         "revenue": 1194
       },
       {
         "ebitda": 242,
-        "ebitdaMarginPct": 21.4,
+        "ebitdaMarginPct": 21,
         "pat": 133,
-        "patMarginPct": 11.8,
+        "patMarginPct": 11.73,
         "period": "Q1FY26",
         "revenue": 1134
       },
       {
         "ebitda": 235,
-        "ebitdaMarginPct": 21.2,
-        "pat": 129,
-        "patMarginPct": 11.6,
+        "ebitdaMarginPct": 21,
+        "pat": 128,
+        "patMarginPct": 11.53,
         "period": "Q2FY26",
         "revenue": 1110
       },
       {
         "ebitda": 205,
-        "ebitdaMarginPct": 18.5,
-        "pat": 104,
-        "patMarginPct": 9.4,
+        "ebitdaMarginPct": 19,
+        "pat": 98,
+        "patMarginPct": 8.86,
         "period": "Q3FY26",
         "revenue": 1106
+      },
+      {
+        "ebitda": 234,
+        "ebitdaMarginPct": 16,
+        "pat": 110,
+        "patMarginPct": 7.57,
+        "period": "Q4FY26",
+        "revenue": 1453
       }
     ],
-    "rating": "BUY",
-    "revenueFy26Cr": 4673,
+    "revenueFy26Cr": 4802,
     "shareholding": {
-      "asOf": "2026-03-27",
-      "diiPct": 1.26,
-      "fiiPct": 1.82,
-      "mfPct": 3.46,
+      "asOf": "2026-03-31",
+      "diiPct": 4.8,
+      "fiiPct": 2.94,
       "promoterPct": 63.01,
-      "publicPct": 30.45
+      "publicPct": 29.25
     },
     "slug": "vikram-solar",
-    "sourceNote": "PL Capital",
-    "targetPrice": 226,
+    "sourceNote": "Company filings (aggregated)",
     "tickerNse": "VIKRAMSOLR",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-03-27",
-      "evEbitdaX": 5.5,
-      "methodology": "5.0x EV/Mar'28E EBITDA",
-      "pbX": 2.1,
-      "peX": 14.1,
-      "rating": "BUY",
-      "targetPrice": 226,
-      "upsidePct": 19
+      "asOf": "2026-03-31",
+      "pbX": 2.21,
+      "peX": 14.8
     }
   },
   "dataset": "detail/vikram-solar",
@@ -177,10 +162,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-03-27",
+      "asOf": "2026-03-31",
       "confidence": "high",
-      "name": "PL Capital"
+      "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-03-27"
+  "updatedAt": "2026-03-31"
 }
