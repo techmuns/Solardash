@@ -1,0 +1,142 @@
+{
+  "slug": "vikram-solar",
+  "annual": [
+    {
+      "period": "FY20",
+      "revenue": 1640,
+      "ebitda": 140,
+      "ebitdaMarginPct": 9,
+      "pat": 22,
+      "epsRs": 8.06
+    },
+    {
+      "period": "FY21",
+      "revenue": 1610,
+      "ebitda": 177,
+      "ebitdaMarginPct": 11,
+      "pat": 38,
+      "epsRs": 16.23
+    },
+    {
+      "period": "FY22",
+      "revenue": 1730,
+      "ebitda": 59,
+      "ebitdaMarginPct": 3,
+      "pat": -63,
+      "epsRs": -2.43
+    },
+    {
+      "period": "FY23",
+      "revenue": 2073,
+      "ebitda": 187,
+      "ebitdaMarginPct": 9,
+      "pat": 14,
+      "epsRs": 0.56
+    },
+    {
+      "period": "FY24",
+      "revenue": 2511,
+      "ebitda": 399,
+      "ebitdaMarginPct": 16,
+      "pat": 80,
+      "epsRs": 3.08
+    },
+    {
+      "period": "FY25",
+      "revenue": 3423,
+      "ebitda": 492,
+      "ebitdaMarginPct": 14,
+      "pat": 140,
+      "epsRs": 4.42
+    },
+    {
+      "period": "FY26",
+      "revenue": 4802,
+      "ebitda": 917,
+      "ebitdaMarginPct": 19,
+      "pat": 470,
+      "epsRs": 12.98
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY25",
+      "revenue": 631,
+      "ebitda": 111,
+      "ebitdaMarginPct": 18,
+      "pat": 23,
+      "patMarginPct": 3.65
+    },
+    {
+      "period": "Q2FY25",
+      "revenue": 573,
+      "ebitda": 72,
+      "ebitdaMarginPct": 13,
+      "pat": 7,
+      "patMarginPct": 1.22
+    },
+    {
+      "period": "Q3FY25",
+      "revenue": 1026,
+      "ebitda": 85,
+      "ebitdaMarginPct": 8,
+      "pat": 19,
+      "patMarginPct": 1.85
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 1194,
+      "ebitda": 224,
+      "ebitdaMarginPct": 19,
+      "pat": 91,
+      "patMarginPct": 7.62
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 1134,
+      "ebitda": 242,
+      "ebitdaMarginPct": 21,
+      "pat": 133,
+      "patMarginPct": 11.73
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 1110,
+      "ebitda": 235,
+      "ebitdaMarginPct": 21,
+      "pat": 128,
+      "patMarginPct": 11.53
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 1106,
+      "ebitda": 205,
+      "ebitdaMarginPct": 19,
+      "pat": 98,
+      "patMarginPct": 8.86
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 1453,
+      "ebitda": 234,
+      "ebitdaMarginPct": 16,
+      "pat": 110,
+      "patMarginPct": 7.57
+    }
+  ],
+  "valuation": {
+    "peX": 14.2,
+    "pbX": 2.13,
+    "cmp": 186
+  },
+  "rocePct": 30.5,
+  "roePct": 21.5,
+  "shareholding": {
+    "promoterPct": 63.01,
+    "fiiPct": 2.94,
+    "diiPct": 4.8,
+    "publicPct": 29.25,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

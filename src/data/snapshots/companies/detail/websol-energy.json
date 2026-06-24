@@ -1,33 +1,107 @@
 {
-  "asOf": "2026-03-27",
+  "asOf": "2026-03-31",
   "cadence": "quarterly",
   "coverage": "Websol Energy Systems",
   "data": {
+    "annual": [
+      {
+        "ebitda": 253,
+        "ebitdaMarginPct": 44,
+        "epsRs": 3.67,
+        "pat": 155,
+        "period": "FY25",
+        "revenue": 575
+      },
+      {
+        "ebitda": 429,
+        "ebitdaMarginPct": 41,
+        "epsRs": 6.98,
+        "pat": 303,
+        "period": "FY26",
+        "revenue": 1049
+      }
+    ],
     "cellGw": 1.2,
+    "cmp": 103,
     "confidence": "medium",
     "ebitdaMarginPct": 41,
-    "hasDetail": false,
+    "hasDetail": true,
     "moduleGw": 0.55,
     "name": "Websol Energy Systems",
     "orderBookCr": 1160,
-    "peX": 40,
-    "revenueFy26Cr": 1050,
+    "patFy26Cr": 303,
+    "peX": 14.7,
+    "quarterly": [
+      {
+        "ebitda": 68,
+        "ebitdaMarginPct": 46,
+        "pat": 42,
+        "patMarginPct": 28.57,
+        "period": "Q3FY25",
+        "revenue": 147
+      },
+      {
+        "ebitda": 78,
+        "ebitdaMarginPct": 45,
+        "pat": 48,
+        "patMarginPct": 27.75,
+        "period": "Q4FY25",
+        "revenue": 173
+      },
+      {
+        "ebitda": 72,
+        "ebitdaMarginPct": 43,
+        "pat": 46,
+        "patMarginPct": 27.38,
+        "period": "Q2FY26",
+        "revenue": 168
+      },
+      {
+        "ebitda": 106,
+        "ebitdaMarginPct": 41,
+        "pat": 65,
+        "patMarginPct": 24.9,
+        "period": "Q3FY26",
+        "revenue": 261
+      },
+      {
+        "ebitda": 146,
+        "ebitdaMarginPct": 36,
+        "pat": 124,
+        "patMarginPct": 30.92,
+        "period": "Q4FY26",
+        "revenue": 401
+      }
+    ],
+    "revenueFy26Cr": 1049,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.32,
+      "fiiPct": 4.12,
+      "promoterPct": 29.72,
+      "publicPct": 65.85
+    },
     "slug": "websol-energy",
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "WEBELSOLAR",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 7.1,
+      "peX": 14.7
+    }
   },
   "dataset": "detail/websol-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-03-27",
+      "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-03-27"
+  "updatedAt": "2026-03-31"
 }

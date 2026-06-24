@@ -1,21 +1,22 @@
 {
-  "asOf": "2026-03-27",
+  "asOf": "2026-03-31",
   "cadence": "quarterly",
   "coverage": "India · listed solar & renewable companies",
   "data": {
-    "asOf": "2026-03-27",
+    "asOf": "2026-03-31",
     "companies": [
       {
         "cellGw": 5.4,
-        "cmp": 2599,
+        "cmp": 3038,
         "confidence": "medium",
-        "ebitdaMarginPct": 22.3,
+        "ebitdaMarginPct": 22,
         "moduleGw": 15,
         "name": "Waaree Energies",
         "orderBookCr": 53000,
-        "peX": 46,
+        "patFy26Cr": 3884,
+        "peX": 22.3,
         "rating": "BUY",
-        "revenueFy26Cr": 26540,
+        "revenueFy26Cr": 26537,
         "slug": "waaree-energies",
         "sourceNote": "Company filings (aggregated)",
         "targetPrice": 3600,
@@ -24,16 +25,17 @@
       },
       {
         "cellGw": 3.6,
-        "cmp": 683,
+        "cmp": 1048,
         "confidence": "medium",
-        "ebitdaMarginPct": 27,
+        "ebitdaMarginPct": 30,
         "moduleGw": 5,
         "name": "Premier Energies",
         "orderBookCr": 13720,
         "orderBookGw": 9.4,
-        "peX": 47,
+        "patFy26Cr": 1510,
+        "peX": 31.5,
         "rating": "BUY",
-        "revenueFy26Cr": 7550,
+        "revenueFy26Cr": 7824,
         "slug": "premier-energies",
         "sourceNote": "Company filings (aggregated)",
         "targetPrice": 892,
@@ -60,26 +62,33 @@
         "type": "manufacturer"
       },
       {
+        "cmp": 359,
+        "confidence": "medium",
+        "ebitdaMarginPct": 88,
+        "name": "ACME Solar Holdings",
+        "patFy26Cr": 498,
+        "peX": 51,
+        "revenueFy26Cr": 2023,
+        "slug": "acme-solar",
+        "sourceNote": "Company filings (aggregated)",
+        "tickerNse": "ACMESOLAR",
+        "type": "ipp"
+      },
+      {
         "cellGw": 1.2,
+        "cmp": 103,
         "confidence": "medium",
         "ebitdaMarginPct": 41,
         "moduleGw": 0.55,
         "name": "Websol Energy Systems",
         "orderBookCr": 1160,
-        "peX": 40,
-        "revenueFy26Cr": 1050,
+        "patFy26Cr": 303,
+        "peX": 14.7,
+        "revenueFy26Cr": 1049,
         "slug": "websol-energy",
         "sourceNote": "Company filings (aggregated)",
         "tickerNse": "WEBELSOLAR",
         "type": "manufacturer"
-      },
-      {
-        "confidence": "medium",
-        "name": "ACME Solar Holdings",
-        "slug": "acme-solar",
-        "sourceNote": "Company filings (aggregated)",
-        "tickerNse": "ACMESOLAR",
-        "type": "ipp"
       },
       {
         "confidence": "modelled",
@@ -109,20 +118,20 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-03-27",
+      "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     },
     {
-      "asOf": "2026-03-27",
+      "asOf": "2026-03-31",
       "confidence": "modelled",
       "name": "Company filings (aggregated)"
     },
     {
-      "asOf": "2026-03-27",
+      "asOf": "2026-03-31",
       "confidence": "high",
       "name": "PL Capital"
     }
   ],
-  "updatedAt": "2026-03-27"
+  "updatedAt": "2026-03-31"
 }

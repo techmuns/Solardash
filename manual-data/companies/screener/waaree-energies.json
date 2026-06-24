@@ -1,0 +1,174 @@
+{
+  "slug": "waaree-energies",
+  "annual": [
+    {
+      "period": "FY20",
+      "revenue": 1996,
+      "ebitda": 93,
+      "ebitdaMarginPct": 5,
+      "pat": 39,
+      "epsRs": 2.12
+    },
+    {
+      "period": "FY21",
+      "revenue": 1953,
+      "ebitda": 85,
+      "ebitdaMarginPct": 4,
+      "pat": 48,
+      "epsRs": 2.5
+    },
+    {
+      "period": "FY22",
+      "revenue": 2854,
+      "ebitda": 106,
+      "ebitdaMarginPct": 4,
+      "pat": 80,
+      "epsRs": 3.84
+    },
+    {
+      "period": "FY23",
+      "revenue": 6751,
+      "ebitda": 836,
+      "ebitdaMarginPct": 12,
+      "pat": 500,
+      "epsRs": 24.49
+    },
+    {
+      "period": "FY24",
+      "revenue": 11398,
+      "ebitda": 1574,
+      "ebitdaMarginPct": 14,
+      "pat": 1274,
+      "epsRs": 62.76
+    },
+    {
+      "period": "FY25",
+      "revenue": 14444,
+      "ebitda": 2722,
+      "ebitdaMarginPct": 19,
+      "pat": 1928,
+      "epsRs": 65
+    },
+    {
+      "period": "FY26",
+      "revenue": 26537,
+      "ebitda": 5909,
+      "ebitdaMarginPct": 22,
+      "pat": 3884,
+      "epsRs": 129.02
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY24",
+      "revenue": 3328,
+      "ebitda": 468,
+      "ebitdaMarginPct": 14,
+      "pat": 338,
+      "patMarginPct": 10.16
+    },
+    {
+      "period": "Q2FY24",
+      "revenue": 3537,
+      "ebitda": 517,
+      "ebitdaMarginPct": 15,
+      "pat": 320,
+      "patMarginPct": 9.05
+    },
+    {
+      "period": "Q3FY24",
+      "revenue": 1596,
+      "ebitda": 171,
+      "ebitdaMarginPct": 11,
+      "pat": 141,
+      "patMarginPct": 8.83
+    },
+    {
+      "period": "Q4FY24",
+      "revenue": 2936,
+      "ebitda": 418,
+      "ebitdaMarginPct": 14,
+      "pat": 475,
+      "patMarginPct": 16.18
+    },
+    {
+      "period": "Q1FY25",
+      "revenue": 3409,
+      "ebitda": 552,
+      "ebitdaMarginPct": 16,
+      "pat": 401,
+      "patMarginPct": 11.76
+    },
+    {
+      "period": "Q2FY25",
+      "revenue": 3574,
+      "ebitda": 525,
+      "ebitdaMarginPct": 15,
+      "pat": 376,
+      "patMarginPct": 10.52
+    },
+    {
+      "period": "Q3FY25",
+      "revenue": 3457,
+      "ebitda": 722,
+      "ebitdaMarginPct": 21,
+      "pat": 507,
+      "patMarginPct": 14.67
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 4004,
+      "ebitda": 923,
+      "ebitdaMarginPct": 23,
+      "pat": 644,
+      "patMarginPct": 16.08
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 4426,
+      "ebitda": 997,
+      "ebitdaMarginPct": 23,
+      "pat": 773,
+      "patMarginPct": 17.46
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 6066,
+      "ebitda": 1406,
+      "ebitdaMarginPct": 23,
+      "pat": 878,
+      "patMarginPct": 14.47
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 7565,
+      "ebitda": 1928,
+      "ebitdaMarginPct": 25,
+      "pat": 1107,
+      "patMarginPct": 14.63
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 8480,
+      "ebitda": 1577,
+      "ebitdaMarginPct": 19,
+      "pat": 1126,
+      "patMarginPct": 13.28
+    }
+  ],
+  "valuation": {
+    "peX": 22.3,
+    "pbX": 6.05,
+    "cmp": 3038
+  },
+  "rocePct": 38.8,
+  "roePct": 32.8,
+  "shareholding": {
+    "promoterPct": 64.19,
+    "fiiPct": 7.06,
+    "diiPct": 4.32,
+    "publicPct": 24.44,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

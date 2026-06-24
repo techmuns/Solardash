@@ -1,0 +1,78 @@
+{
+  "slug": "websol-energy",
+  "annual": [
+    {
+      "period": "FY25",
+      "revenue": 575,
+      "ebitda": 253,
+      "ebitdaMarginPct": 44,
+      "pat": 155,
+      "epsRs": 3.67
+    },
+    {
+      "period": "FY26",
+      "revenue": 1049,
+      "ebitda": 429,
+      "ebitdaMarginPct": 41,
+      "pat": 303,
+      "epsRs": 6.98
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 147,
+      "ebitda": 68,
+      "ebitdaMarginPct": 46,
+      "pat": 42,
+      "patMarginPct": 28.57
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 173,
+      "ebitda": 78,
+      "ebitdaMarginPct": 45,
+      "pat": 48,
+      "patMarginPct": 27.75
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 168,
+      "ebitda": 72,
+      "ebitdaMarginPct": 43,
+      "pat": 46,
+      "patMarginPct": 27.38
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 261,
+      "ebitda": 106,
+      "ebitdaMarginPct": 41,
+      "pat": 65,
+      "patMarginPct": 24.9
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 401,
+      "ebitda": 146,
+      "ebitdaMarginPct": 36,
+      "pat": 124,
+      "patMarginPct": 30.92
+    }
+  ],
+  "valuation": {
+    "peX": 14.7,
+    "pbX": 7.1,
+    "cmp": 103
+  },
+  "rocePct": 63.2,
+  "roePct": 66.9,
+  "shareholding": {
+    "promoterPct": 29.72,
+    "fiiPct": 4.12,
+    "diiPct": 0.32,
+    "publicPct": 65.85,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

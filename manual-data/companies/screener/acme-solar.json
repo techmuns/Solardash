@@ -1,0 +1,174 @@
+{
+  "slug": "acme-solar",
+  "annual": [
+    {
+      "period": "FY20",
+      "revenue": 1777,
+      "ebitda": 1649,
+      "ebitdaMarginPct": 93,
+      "pat": 86,
+      "epsRs": 8.2
+    },
+    {
+      "period": "FY21",
+      "revenue": 1692,
+      "ebitda": 1553,
+      "ebitdaMarginPct": 92,
+      "pat": 15,
+      "epsRs": 1.46
+    },
+    {
+      "period": "FY22",
+      "revenue": 1488,
+      "ebitda": 1240,
+      "ebitdaMarginPct": 83,
+      "pat": 62,
+      "epsRs": 5.94
+    },
+    {
+      "period": "FY23",
+      "revenue": 1295,
+      "ebitda": 1173,
+      "ebitdaMarginPct": 91,
+      "pat": -3,
+      "epsRs": -0.3
+    },
+    {
+      "period": "FY24",
+      "revenue": 1319,
+      "ebitda": 1094,
+      "ebitdaMarginPct": 83,
+      "pat": 698,
+      "epsRs": 66.81
+    },
+    {
+      "period": "FY25",
+      "revenue": 1405,
+      "ebitda": 1237,
+      "ebitdaMarginPct": 88,
+      "pat": 251,
+      "epsRs": 4.17
+    },
+    {
+      "period": "FY26",
+      "revenue": 2023,
+      "ebitda": 1781,
+      "ebitdaMarginPct": 88,
+      "pat": 498,
+      "epsRs": 8.23
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY24",
+      "revenue": 369,
+      "ebitda": 322,
+      "ebitdaMarginPct": 87,
+      "pat": 82,
+      "patMarginPct": 22.22
+    },
+    {
+      "period": "Q2FY24",
+      "revenue": 323,
+      "ebitda": 290,
+      "ebitdaMarginPct": 90,
+      "pat": 39,
+      "patMarginPct": 12.07
+    },
+    {
+      "period": "Q3FY24",
+      "revenue": 332,
+      "ebitda": 277,
+      "ebitdaMarginPct": 84,
+      "pat": 44,
+      "patMarginPct": 13.25
+    },
+    {
+      "period": "Q4FY24",
+      "revenue": 295,
+      "ebitda": 201,
+      "ebitdaMarginPct": 68,
+      "pat": 532,
+      "patMarginPct": 180.34
+    },
+    {
+      "period": "Q1FY25",
+      "revenue": 310,
+      "ebitda": 272,
+      "ebitdaMarginPct": 88,
+      "pat": 1,
+      "patMarginPct": 0.32
+    },
+    {
+      "period": "Q2FY25",
+      "revenue": 260,
+      "ebitda": 221,
+      "ebitdaMarginPct": 85,
+      "pat": 15,
+      "patMarginPct": 5.77
+    },
+    {
+      "period": "Q3FY25",
+      "revenue": 349,
+      "ebitda": 307,
+      "ebitdaMarginPct": 88,
+      "pat": 112,
+      "patMarginPct": 32.09
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 487,
+      "ebitda": 436,
+      "ebitdaMarginPct": 90,
+      "pat": 122,
+      "patMarginPct": 25.05
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 511,
+      "ebitda": 458,
+      "ebitdaMarginPct": 90,
+      "pat": 131,
+      "patMarginPct": 25.64
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 468,
+      "ebitda": 400,
+      "ebitdaMarginPct": 86,
+      "pat": 115,
+      "patMarginPct": 24.57
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 497,
+      "ebitda": 444,
+      "ebitdaMarginPct": 89,
+      "pat": 114,
+      "patMarginPct": 22.94
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 548,
+      "ebitda": 479,
+      "ebitdaMarginPct": 87,
+      "pat": 138,
+      "patMarginPct": 25.18
+    }
+  ],
+  "valuation": {
+    "peX": 51,
+    "pbX": 4.3,
+    "cmp": 359
+  },
+  "rocePct": 8.89,
+  "roePct": 10.4,
+  "shareholding": {
+    "promoterPct": 71.48,
+    "fiiPct": 3.93,
+    "diiPct": 19.07,
+    "publicPct": 5.42,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

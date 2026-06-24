@@ -1,37 +1,206 @@
 {
-  "asOf": "2026-03-27",
+  "asOf": "2026-03-31",
   "cadence": "quarterly",
   "coverage": "Premier Energies",
   "data": {
+    "annual": [
+      {
+        "ebitda": 94,
+        "ebitdaMarginPct": 10,
+        "epsRs": 1.5,
+        "pat": 45,
+        "period": "FY20",
+        "revenue": 947
+      },
+      {
+        "ebitda": 54,
+        "ebitdaMarginPct": 8,
+        "epsRs": 0.94,
+        "pat": 26,
+        "period": "FY21",
+        "revenue": 701
+      },
+      {
+        "ebitda": 30,
+        "ebitdaMarginPct": 4,
+        "epsRs": -0.55,
+        "pat": -14,
+        "period": "FY22",
+        "revenue": 743
+      },
+      {
+        "ebitda": 78,
+        "ebitdaMarginPct": 5,
+        "epsRs": -0.49,
+        "pat": -13,
+        "period": "FY23",
+        "revenue": 1429
+      },
+      {
+        "ebitda": 478,
+        "ebitdaMarginPct": 15,
+        "epsRs": 8.78,
+        "pat": 231,
+        "period": "FY24",
+        "revenue": 3144
+      },
+      {
+        "ebitda": 1781,
+        "ebitdaMarginPct": 27,
+        "epsRs": 20.79,
+        "pat": 937,
+        "period": "FY25",
+        "revenue": 6519
+      },
+      {
+        "ebitda": 2377,
+        "ebitdaMarginPct": 30,
+        "epsRs": 33.33,
+        "pat": 1510,
+        "period": "FY26",
+        "revenue": 7824
+      }
+    ],
     "cellGw": 3.6,
-    "cmp": 683,
+    "cmp": 1048,
     "confidence": "medium",
-    "ebitdaMarginPct": 27,
-    "hasDetail": false,
+    "ebitdaMarginPct": 30,
+    "hasDetail": true,
     "moduleGw": 5,
     "name": "Premier Energies",
     "orderBookCr": 13720,
     "orderBookGw": 9.4,
-    "peX": 47,
+    "patFy26Cr": 1510,
+    "peX": 31.5,
+    "quarterly": [
+      {
+        "ebitda": 71,
+        "ebitdaMarginPct": 12,
+        "pat": 31,
+        "patMarginPct": 5.07,
+        "period": "Q1FY24",
+        "revenue": 611
+      },
+      {
+        "ebitda": 99,
+        "ebitdaMarginPct": 14,
+        "pat": 53,
+        "patMarginPct": 7.64,
+        "period": "Q2FY24",
+        "revenue": 694
+      },
+      {
+        "ebitda": 123,
+        "ebitdaMarginPct": 17,
+        "pat": 43,
+        "patMarginPct": 6.04,
+        "period": "Q3FY24",
+        "revenue": 712
+      },
+      {
+        "ebitda": 184,
+        "ebitdaMarginPct": 16,
+        "pat": 104,
+        "patMarginPct": 9.23,
+        "period": "Q4FY24",
+        "revenue": 1127
+      },
+      {
+        "ebitda": 358,
+        "ebitdaMarginPct": 22,
+        "pat": 198,
+        "patMarginPct": 11.95,
+        "period": "Q1FY25",
+        "revenue": 1657
+      },
+      {
+        "ebitda": 381,
+        "ebitdaMarginPct": 25,
+        "pat": 206,
+        "patMarginPct": 13.49,
+        "period": "Q2FY25",
+        "revenue": 1527
+      },
+      {
+        "ebitda": 514,
+        "ebitdaMarginPct": 30,
+        "pat": 255,
+        "patMarginPct": 14.89,
+        "period": "Q3FY25",
+        "revenue": 1713
+      },
+      {
+        "ebitda": 528,
+        "ebitdaMarginPct": 33,
+        "pat": 278,
+        "patMarginPct": 17.15,
+        "period": "Q4FY25",
+        "revenue": 1621
+      },
+      {
+        "ebitda": 548,
+        "ebitdaMarginPct": 30,
+        "pat": 308,
+        "patMarginPct": 16.91,
+        "period": "Q1FY26",
+        "revenue": 1821
+      },
+      {
+        "ebitda": 561,
+        "ebitdaMarginPct": 31,
+        "pat": 353,
+        "patMarginPct": 19.22,
+        "period": "Q2FY26",
+        "revenue": 1837
+      },
+      {
+        "ebitda": 593,
+        "ebitdaMarginPct": 31,
+        "pat": 392,
+        "patMarginPct": 20.25,
+        "period": "Q3FY26",
+        "revenue": 1936
+      },
+      {
+        "ebitda": 675,
+        "ebitdaMarginPct": 30,
+        "pat": 457,
+        "patMarginPct": 20.49,
+        "period": "Q4FY26",
+        "revenue": 2230
+      }
+    ],
     "rating": "BUY",
-    "revenueFy26Cr": 7550,
+    "revenueFy26Cr": 7824,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 13.69,
+      "fiiPct": 5.72,
+      "promoterPct": 63.94,
+      "publicPct": 16.28
+    },
     "slug": "premier-energies",
     "sourceNote": "Company filings (aggregated)",
     "targetPrice": 892,
     "tickerNse": "PREMIERENE",
-    "type": "integrated"
+    "type": "integrated",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 11.02,
+      "peX": 31.5
+    }
   },
   "dataset": "detail/premier-energies",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-03-27",
+      "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-03-27"
+  "updatedAt": "2026-03-31"
 }

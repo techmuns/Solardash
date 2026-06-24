@@ -1,27 +1,200 @@
 {
-  "asOf": "2026-03-27",
+  "asOf": "2026-03-31",
   "cadence": "quarterly",
   "coverage": "ACME Solar Holdings",
   "data": {
+    "annual": [
+      {
+        "ebitda": 1649,
+        "ebitdaMarginPct": 93,
+        "epsRs": 8.2,
+        "pat": 86,
+        "period": "FY20",
+        "revenue": 1777
+      },
+      {
+        "ebitda": 1553,
+        "ebitdaMarginPct": 92,
+        "epsRs": 1.46,
+        "pat": 15,
+        "period": "FY21",
+        "revenue": 1692
+      },
+      {
+        "ebitda": 1240,
+        "ebitdaMarginPct": 83,
+        "epsRs": 5.94,
+        "pat": 62,
+        "period": "FY22",
+        "revenue": 1488
+      },
+      {
+        "ebitda": 1173,
+        "ebitdaMarginPct": 91,
+        "epsRs": -0.3,
+        "pat": -3,
+        "period": "FY23",
+        "revenue": 1295
+      },
+      {
+        "ebitda": 1094,
+        "ebitdaMarginPct": 83,
+        "epsRs": 66.81,
+        "pat": 698,
+        "period": "FY24",
+        "revenue": 1319
+      },
+      {
+        "ebitda": 1237,
+        "ebitdaMarginPct": 88,
+        "epsRs": 4.17,
+        "pat": 251,
+        "period": "FY25",
+        "revenue": 1405
+      },
+      {
+        "ebitda": 1781,
+        "ebitdaMarginPct": 88,
+        "epsRs": 8.23,
+        "pat": 498,
+        "period": "FY26",
+        "revenue": 2023
+      }
+    ],
+    "cmp": 359,
     "confidence": "medium",
-    "hasDetail": false,
+    "ebitdaMarginPct": 88,
+    "hasDetail": true,
     "name": "ACME Solar Holdings",
+    "patFy26Cr": 498,
+    "peX": 51,
+    "quarterly": [
+      {
+        "ebitda": 322,
+        "ebitdaMarginPct": 87,
+        "pat": 82,
+        "patMarginPct": 22.22,
+        "period": "Q1FY24",
+        "revenue": 369
+      },
+      {
+        "ebitda": 290,
+        "ebitdaMarginPct": 90,
+        "pat": 39,
+        "patMarginPct": 12.07,
+        "period": "Q2FY24",
+        "revenue": 323
+      },
+      {
+        "ebitda": 277,
+        "ebitdaMarginPct": 84,
+        "pat": 44,
+        "patMarginPct": 13.25,
+        "period": "Q3FY24",
+        "revenue": 332
+      },
+      {
+        "ebitda": 201,
+        "ebitdaMarginPct": 68,
+        "pat": 532,
+        "patMarginPct": 180.34,
+        "period": "Q4FY24",
+        "revenue": 295
+      },
+      {
+        "ebitda": 272,
+        "ebitdaMarginPct": 88,
+        "pat": 1,
+        "patMarginPct": 0.32,
+        "period": "Q1FY25",
+        "revenue": 310
+      },
+      {
+        "ebitda": 221,
+        "ebitdaMarginPct": 85,
+        "pat": 15,
+        "patMarginPct": 5.77,
+        "period": "Q2FY25",
+        "revenue": 260
+      },
+      {
+        "ebitda": 307,
+        "ebitdaMarginPct": 88,
+        "pat": 112,
+        "patMarginPct": 32.09,
+        "period": "Q3FY25",
+        "revenue": 349
+      },
+      {
+        "ebitda": 436,
+        "ebitdaMarginPct": 90,
+        "pat": 122,
+        "patMarginPct": 25.05,
+        "period": "Q4FY25",
+        "revenue": 487
+      },
+      {
+        "ebitda": 458,
+        "ebitdaMarginPct": 90,
+        "pat": 131,
+        "patMarginPct": 25.64,
+        "period": "Q1FY26",
+        "revenue": 511
+      },
+      {
+        "ebitda": 400,
+        "ebitdaMarginPct": 86,
+        "pat": 115,
+        "patMarginPct": 24.57,
+        "period": "Q2FY26",
+        "revenue": 468
+      },
+      {
+        "ebitda": 444,
+        "ebitdaMarginPct": 89,
+        "pat": 114,
+        "patMarginPct": 22.94,
+        "period": "Q3FY26",
+        "revenue": 497
+      },
+      {
+        "ebitda": 479,
+        "ebitdaMarginPct": 87,
+        "pat": 138,
+        "patMarginPct": 25.18,
+        "period": "Q4FY26",
+        "revenue": 548
+      }
+    ],
+    "revenueFy26Cr": 2023,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 19.07,
+      "fiiPct": 3.93,
+      "promoterPct": 71.48,
+      "publicPct": 5.42
+    },
     "slug": "acme-solar",
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "ACMESOLAR",
-    "type": "ipp"
+    "type": "ipp",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 4.3,
+      "peX": 51
+    }
   },
   "dataset": "detail/acme-solar",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-03-27",
+      "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-03-27"
+  "updatedAt": "2026-03-31"
 }
