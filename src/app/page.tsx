@@ -16,8 +16,10 @@ import {
   getPolicySnapshot,
   getTendersSnapshot,
 } from "@/data";
+import { getWhatsNewFeed } from "@/data/whats-new";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
 import { NAV_ITEMS } from "@/components/layout/nav";
+import { CATEGORY_META } from "./whats-new/category-meta";
 import type { Kpi } from "@/data/types/core";
 
 export const dynamic = "force-static";
@@ -47,6 +49,7 @@ export default function LandingPage() {
   const companiesSnap = getCompaniesSnapshot();
   const policy = getPolicySnapshot();
   const companies = companiesSnap.data.companies;
+  const recentActivity = getWhatsNewFeed().slice(0, 4);
 
   // Landing as-of = the freshest section snapshot.
   const asOf = [
@@ -123,6 +126,7 @@ export default function LandingPage() {
     "/companies": `${companies.length} listed names`,
     "/policy": `${kpiVal(findKpi(policy.data.kpis, "active_schemes"))} active schemes`,
     "/data-sources": "Sources & methodology",
+    "/whats-new": "Latest sector activity",
   };
 
   return (
@@ -226,6 +230,49 @@ export default function LandingPage() {
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* Recent activity teaser → /whats-new */}
+      <section className="space-y-3">
+        <div className="flex items-center justify-between gap-3">
+          <SectionHeader
+            title="Recent activity"
+            subtitle="Latest dated events across the sector."
+          />
+          <Link
+            href="/whats-new"
+            className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-brand hover:underline"
+          >
+            View all <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
+        </div>
+        <Card className="divide-y divide-border/70">
+          {recentActivity.map((e) => {
+            const meta = CATEGORY_META[e.category];
+            const Icon = meta.icon;
+            return (
+              <Link
+                key={e.id}
+                href={e.href}
+                className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-muted/40"
+              >
+                <span
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md"
+                  style={{ background: `${meta.color}1a`, color: meta.color }}
+                  aria-hidden
+                >
+                  <Icon className="h-4 w-4" />
+                </span>
+                <span className="min-w-0 flex-1 truncate text-sm font-medium text-foreground">
+                  {e.title}
+                </span>
+                <span className="shrink-0 text-xs tabular-nums text-muted-foreground">
+                  {formatDate(e.date)}
+                </span>
+              </Link>
+            );
+          })}
+        </Card>
       </section>
 
       {/* What's notable — insights */}

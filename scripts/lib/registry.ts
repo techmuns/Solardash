@@ -9,6 +9,7 @@ import { demandPipeline } from "../pipelines/demand";
 import { companiesPipeline } from "../pipelines/companies";
 import { policyPipeline } from "../pipelines/policy";
 import { referencePipeline } from "../pipelines/reference";
+import { whatsNewPipeline } from "../pipelines/whats-new";
 
 /** Every registered pipeline. New section pipelines are added here. */
 export const pipelines: Pipeline[] = [
@@ -21,6 +22,7 @@ export const pipelines: Pipeline[] = [
   companiesPipeline,
   policyPipeline,
   referencePipeline,
+  whatsNewPipeline,
 ];
 
 export function getPipeline(name: string): Pipeline | undefined {

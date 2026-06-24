@@ -1,0 +1,90 @@
+{
+  "asOf": "2026-05-16",
+  "cadence": "adhoc",
+  "coverage": "India · curated solar-sector milestones (company results, capacity records, policy)",
+  "data": {
+    "milestones": [
+      {
+        "category": "company",
+        "date": "2026-05-16",
+        "detail": "Revenue ₹8026 cr; PAT +61% to ₹1510 cr",
+        "href": "/companies/premier-energies",
+        "title": "Premier Energies FY26 results"
+      },
+      {
+        "category": "company",
+        "date": "2026-04-30",
+        "detail": "Revenue ₹26537 cr (+84%); PAT doubled to ₹3884 cr",
+        "href": "/companies/waaree-energies",
+        "title": "Waaree FY26 results"
+      },
+      {
+        "category": "company",
+        "date": "2026-04-29",
+        "detail": "Revenue ₹1049 cr (+82%); ~41% EBITDA margin",
+        "href": "/companies/websol-energy",
+        "title": "Websol FY26 results"
+      },
+      {
+        "category": "demand",
+        "date": "2026-04-25",
+        "detail": "All-time high met with zero shortage amid heatwave",
+        "href": "/demand",
+        "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2256313",
+        "title": "Record peak demand of 256 GW"
+      },
+      {
+        "category": "developer",
+        "date": "2026-04-01",
+        "detail": "Added a record 5 GW of RE in FY26",
+        "href": "/developers",
+        "sourceUrl": "https://www.pv-magazine-india.com/2026/04/24/adani-greens-operational-re-capacity-grows-35-yoy-to-19-3-gw/",
+        "title": "Adani Green reaches 19.3 GW"
+      },
+      {
+        "category": "developer",
+        "date": "2026-04-01",
+        "detail": "Added 4.2 GW in FY26",
+        "href": "/developers",
+        "sourceUrl": "https://renewablewatch.in/2026/04/01/ntpc-green-energy-limited-surpasses-10-gw-installed-capacity/",
+        "title": "NTPC Green crosses 10 GW"
+      },
+      {
+        "category": "manufacturing",
+        "date": "2026-03-31",
+        "detail": "Module capacity enlisted; ALMM-II for cells effective Jun 2026",
+        "href": "/manufacturing",
+        "title": "ALMM-I surpasses 173 GW"
+      },
+      {
+        "category": "capacity",
+        "date": "2026-03-31",
+        "detail": "Total RE 274.7 GW; non-fossil 53.2% of capacity",
+        "href": "/capacity",
+        "sourceUrl": "https://cea.nic.in/installed-capacity-report/?lang=en",
+        "title": "India crosses 150 GW solar"
+      },
+      {
+        "category": "capacity",
+        "date": "2026-03-31",
+        "detail": "44.6 GW solar + 6.05 GW wind — both all-time highs",
+        "href": "/capacity",
+        "sourceUrl": "https://jmkresearch.com/india-installs-record-44-gw-solar-and-6-gw-wind-capacity-in-fy2026/",
+        "title": "Record FY26 capacity additions"
+      }
+    ]
+  },
+  "dataset": "milestones",
+  "notes": [
+    "Curated milestones (company results, capacity records, policy). The /whats-new feed merges these with auction awards and PPA signings from the tenders & developers snapshots."
+  ],
+  "section": "whats-new",
+  "sources": [
+    {
+      "asOf": "2026-05-16",
+      "confidence": "high",
+      "name": "Solardash editorial + linked sources"
+    }
+  ],
+  "updatedAt": "2026-05-16"
+}

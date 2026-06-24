@@ -7,6 +7,7 @@ import type { ManufacturingData } from "./types/manufacturing";
 import type { CapacityData, DemandData } from "./types/power";
 import type { CompaniesData, CompanyDetail } from "./types/companies";
 import type { PolicyData } from "./types/policy";
+import type { WhatsNewData } from "./types/whats-new";
 import overviewSummary from "./snapshots/overview/summary.json";
 import tendersAwards from "./snapshots/tenders/awards.json";
 import developersPortfolio from "./snapshots/developers/portfolio.json";
@@ -15,6 +16,7 @@ import capacityGrid from "./snapshots/capacity/grid.json";
 import demandPower from "./snapshots/demand/power-demand.json";
 import policyPolicy from "./snapshots/policy/policy.json";
 import referenceGlossary from "./snapshots/reference/glossary.json";
+import whatsNewMilestones from "./snapshots/whats-new/milestones.json";
 import companiesRegistry from "./snapshots/companies/registry.json";
 import detailWaaree from "./snapshots/companies/detail/waaree-energies.json";
 import detailPremier from "./snapshots/companies/detail/premier-energies.json";
@@ -154,6 +156,14 @@ export function getReferenceSnapshot(): Snapshot<ReferenceData> {
 /** Sector glossary terms. */
 export function getGlossary() {
   return getReferenceSnapshot().data.glossary;
+}
+
+/** Curated "What's New" milestones snapshot. */
+export function getWhatsNewSnapshot(): Snapshot<WhatsNewData> {
+  return assertSnapshot(
+    whatsNewMilestones as unknown as Snapshot<WhatsNewData>,
+    "whats-new/milestones",
+  );
 }
 
 /** One provenance row per committed snapshot envelope. */

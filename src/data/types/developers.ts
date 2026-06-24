@@ -35,6 +35,8 @@ export interface PpaRecord {
   tariffRs?: number;
   confidence: Confidence;
   sourceNote?: string;
+  /** Per-signing source link (from the feed's `source_url`). */
+  sourceUrl?: string;
 }
 
 /** Per-developer capacity funnel, arrays aligned to `categories`. */

@@ -95,6 +95,7 @@ export const tendersPipeline = definePipeline({
         status: r.status,
         confidence: r.confidence as Confidence,
         ...(r.note ? { sourceNote: r.note } : {}),
+        ...(r.source_url?.trim() ? { sourceUrl: r.source_url.trim() } : {}),
       };
     });
 

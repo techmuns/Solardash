@@ -57,6 +57,7 @@ function slug(value: string): string {
  */
 const SECTION_KEYWORDS: Record<string, string[]> = {
   "/": ["overview", "summary", "dashboard", "home"],
+  "/whats-new": ["activity", "feed", "recent", "news", "latest", "updates", "timeline"],
   "/tenders": ["tariff", "auction", "bid", "seci", "ntpc", "ppa", "pipeline"],
   "/developers": ["ipp", "developer", "portfolio", "pipeline", "operational"],
   "/capacity": ["rooftop", "utility", "installed", "plf", "cuf", "generation", "grid"],

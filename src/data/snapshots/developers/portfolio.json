@@ -159,6 +159,7 @@
         "developer": "NLC India",
         "id": "P-01",
         "period": "Q4FY26",
+        "sourceUrl": "https://www.mercomindia.com/engie-nlc-india-rays-power-among-winners-of-secis-1-2-gw-solar-plus-3-6-gwh-storage-auction",
         "tariffRs": 3.12,
         "tenderType": "solar-bess"
       },
@@ -170,6 +171,7 @@
         "developer": "Waaree Renewable",
         "id": "P-02",
         "period": "Q4FY26",
+        "sourceUrl": "https://www.mercomindia.com/kp-energy-waaree-and-vena-energy-among-winners-of-secis-1-2-gw-wind-auction",
         "tariffRs": 3.68,
         "tenderType": "wind"
       },
@@ -181,6 +183,7 @@
         "developer": "Serentica",
         "id": "P-03",
         "period": "Q3FY26",
+        "sourceUrl": "https://www.mercomindia.com/daily-news-wrap-up-seci-announces-winners-for-4-8-gwh-fdre-auction",
         "tariffRs": 6.28,
         "tenderType": "fdre"
       },
@@ -192,6 +195,7 @@
         "developer": "ACME Solar",
         "id": "P-04",
         "period": "Q3FY26",
+        "sourceUrl": "https://www.mercomindia.com/daily-news-wrap-up-seci-announces-winners-for-4-8-gwh-fdre-auction",
         "tariffRs": 6.28,
         "tenderType": "fdre"
       },
@@ -203,6 +207,7 @@
         "developer": "SAEL",
         "id": "P-05",
         "period": "Q3FY26",
+        "sourceUrl": "https://www.mercomindia.com/purvah-sael-among-winners-of-secis-2-gw-solar-4-gwh-energy-storage-auction",
         "tariffRs": 2.86,
         "tenderType": "solar-bess"
       },
@@ -214,6 +219,7 @@
         "developer": "Sembcorp Green",
         "id": "P-06",
         "period": "Q1FY26",
+        "sourceUrl": "https://renewablewatch.in/2025/05/28/seci-announces-auction-results-for-1-2-gw-rtc-renewable-projects/",
         "tariffRs": 5.07,
         "tenderType": "rtc"
       },
@@ -225,6 +231,7 @@
         "developer": "JSW Neo",
         "id": "P-07",
         "period": "Q4FY25",
+        "sourceUrl": "https://www.mercomindia.com/daily-news-wrap-up-seci-announces-winners",
         "tariffRs": 4.98,
         "tenderType": "fdre"
       },
@@ -236,6 +243,7 @@
         "developer": "ReNew",
         "id": "P-08",
         "period": "Q3FY25",
+        "sourceUrl": "https://www.pv-magazine.com/2024/12/24/bharat-petroleum-wins-150-mw-of-solar-in-ntpc-auction-with-inr-2-55-kwh-bid/",
         "tariffRs": 2.55,
         "tenderType": "solar"
       },
@@ -247,6 +255,7 @@
         "developer": "BPCL",
         "id": "P-09",
         "period": "Q3FY25",
+        "sourceUrl": "https://www.pv-magazine.com/2024/12/24/bharat-petroleum-wins-150-mw-of-solar-in-ntpc-auction-with-inr-2-55-kwh-bid/",
         "tariffRs": 2.55,
         "tenderType": "solar"
       },
@@ -258,6 +267,7 @@
         "developer": "ACME Solar",
         "id": "P-10",
         "period": "Q3FY25",
+        "sourceUrl": "https://www.mercomindia.com/daily-news-sjvns-1-2-gw-solar-auction-winners-announced",
         "tariffRs": 2.52,
         "tenderType": "solar"
       }

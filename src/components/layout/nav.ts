@@ -7,6 +7,7 @@ import {
   LayoutDashboard,
   LineChart,
   ScrollText,
+  Sparkles,
   Zap,
   type LucideIcon,
 } from "lucide-react";
@@ -35,6 +36,13 @@ export const NAV_GROUPS: NavGroup[] = [
         label: "Overview",
         icon: LayoutDashboard,
         description: "Cross-sector snapshot and entry point.",
+      },
+      {
+        href: "/whats-new",
+        label: "What's New",
+        icon: Sparkles,
+        description:
+          "Recent activity — auction awards, PPA signings, results, and records.",
       },
       {
         href: "/tenders",

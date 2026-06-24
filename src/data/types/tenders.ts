@@ -40,6 +40,8 @@ export interface AwardRecord {
   status: string;
   confidence: Confidence;
   sourceNote?: string;
+  /** Per-award source link (from the feed's `source_url`). */
+  sourceUrl?: string;
 }
 
 /** A headline KPI for the tenders page. */

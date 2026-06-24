@@ -50,6 +50,7 @@ export const developersPipeline = definePipeline({
           ...(tariffRs != null ? { tariffRs } : {}),
           confidence: r.confidence as Confidence,
           ...(r.note ? { sourceNote: r.note } : {}),
+          ...(r.source_url?.trim() ? { sourceUrl: r.source_url.trim() } : {}),
         };
       })
       .sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id));
