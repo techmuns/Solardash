@@ -3,7 +3,12 @@ name: Refresh CEA demand
 on:
   schedule:
     - cron: '0 6 12 * *'     # 12th of each month, 06:00 UTC (CEA publishes ~mid-month)
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: "Verbose fetch diagnostics (per-URL status, content-type, magic bytes)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -23,7 +28,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Fetch CEA Executive Summaries
-        run: npx tsx scripts/ingest/cea.ts
+        run: npx tsx scripts/ingest/cea.ts ${{ inputs.debug && '--debug' || '' }}
       - name: Rebuild snapshots
         run: npm run data:build
       - name: Commit & push if changed

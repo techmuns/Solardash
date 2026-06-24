@@ -3,7 +3,12 @@ name: Refresh PV prices
 on:
   schedule:
     - cron: '0 6 * * 3'      # Wednesday 06:00 UTC (staggered off the Monday Screener run)
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: "Verbose fetch diagnostics (status, content-type, body head)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -23,7 +28,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Fetch PV value-chain spot prices
-        run: npx tsx scripts/ingest/prices.ts
+        run: npx tsx scripts/ingest/prices.ts ${{ inputs.debug && '--debug' || '' }}
       - name: Rebuild snapshots
         run: npm run data:build
       - name: Commit & push if changed

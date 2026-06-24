@@ -165,17 +165,32 @@ export function parsePrices(html: string, source = "pvinsights"): PricesParse | 
 // ---------------------------------------------------------------------------
 // Fetch (live; offline path uses --file so the parser stays testable)
 // ---------------------------------------------------------------------------
-async function fetchPrices(source: string): Promise<string | null> {
+async function fetchPrices(source: string, debug = false): Promise<string | null> {
   const url = SOURCES[source]?.url;
   if (!url) return null;
   try {
     const res = await fetch(url, {
-      headers: { "User-Agent": USER_AGENT, Accept: "text/html,*/*" },
+      headers: {
+        "User-Agent": USER_AGENT,
+        Accept: "text/html,application/xhtml+xml,*/*",
+        "Accept-Language": "en-US,en;q=0.9",
+      },
+      redirect: "follow",
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
-    if (!res.ok) return null;
-    return await res.text();
-  } catch {
+    const type = res.headers.get("content-type") ?? "?";
+    if (!res.ok) {
+      console.warn(`[prices] ${url} -> HTTP ${res.status} ${res.statusText} (${type})`);
+      return null;
+    }
+    const body = await res.text();
+    if (debug) {
+      console.log(`[prices] ${url} -> 200 (${type}; ${body.length} bytes)`);
+      console.log(`[prices] --- first 1800 chars ---\n${body.slice(0, 1800)}\n[prices] --- end ---`);
+    }
+    return body;
+  } catch (err) {
+    console.warn(`[prices] ${url} -> fetch threw: ${(err as Error)?.message ?? String(err)}`);
     return null;
   }
 }
@@ -249,6 +264,7 @@ function flag(args: string[], name: string): string | undefined {
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const dryRun = args.includes("--dry-run");
+  const debug = args.includes("--debug");
   const fileArg = flag(args, "file");
   const source = (flag(args, "source") ?? "pvinsights").toLowerCase();
   const meta = SOURCES[source];
@@ -259,7 +275,7 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  const html = fileArg ? readFileSync(fileArg, "utf8") : await fetchPrices(source);
+  const html = fileArg ? readFileSync(fileArg, "utf8") : await fetchPrices(source, debug);
   // keep-last-good: any failure writes NOTHING and exits 0 (a quiet weekly run).
   if (!html) {
     console.warn(`[prices] ${meta.name}: fetch failed — kept existing rows.`);

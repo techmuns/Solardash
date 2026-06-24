@@ -119,19 +119,38 @@ export async function pdfToText(buffer: Buffer): Promise<string> {
 async function fetchMonthPdf(
   year: number,
   month: number,
+  debug = false,
 ): Promise<{ buffer: Buffer; url: string } | null> {
   for (const url of ceaUrls(year, month)) {
     try {
       const res = await fetch(url, {
-        headers: { "User-Agent": USER_AGENT, Accept: "application/pdf,*/*" },
+        headers: {
+          "User-Agent": USER_AGENT,
+          Accept: "application/pdf,*/*",
+          "Accept-Language": "en-US,en;q=0.9",
+        },
+        redirect: "follow",
         signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
       });
-      const type = res.headers.get("content-type") ?? "";
-      if (res.ok && type.toLowerCase().includes("pdf")) {
-        return { buffer: Buffer.from(await res.arrayBuffer()), url };
+      const type = (res.headers.get("content-type") ?? "").toLowerCase();
+      if (!res.ok) {
+        if (debug) console.log(`[cea] ${url} -> ${res.status} ${res.statusText} (${type || "?"})`);
+        continue;
       }
-    } catch {
-      // try the next suffix variant
+      // Accept a PDF by content-type OR the %PDF- magic header — cea.nic.in
+      // serves some Executive Summaries as application/octet-stream, which the
+      // strict content-type check used to reject.
+      const buffer = Buffer.from(await res.arrayBuffer());
+      const magic = buffer.subarray(0, 5).toString("latin1");
+      const isPdf = type.includes("pdf") || magic === "%PDF-";
+      if (debug) {
+        console.log(
+          `[cea] ${url} -> 200 (${type || "?"}; ${buffer.length}b; magic="${magic.replace(/[^\x20-\x7e]/g, ".")}") ${isPdf ? "PDF" : "not-pdf"}`,
+        );
+      }
+      if (isPdf) return { buffer, url };
+    } catch (err) {
+      if (debug) console.log(`[cea] ${url} threw: ${(err as Error)?.message ?? String(err)}`);
     }
   }
   return null;
@@ -223,6 +242,7 @@ async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const fileArg = flag(args, "file");
   const dryRun = args.includes("--dry-run");
+  const debug = args.includes("--debug");
   const months = Number(flag(args, "months") ?? 12);
 
   // --file: parse a local PDF (offline tuning), print the reading, no fetch.
@@ -245,7 +265,7 @@ async function main(): Promise<void> {
   for (const [i, { year, month }] of targets.entries()) {
     const label = `${year}-${String(month).padStart(2, "0")}`;
     try {
-      const pdf = await fetchMonthPdf(year, month);
+      const pdf = await fetchMonthPdf(year, month, debug);
       if (!pdf) {
         failed++;
         console.warn(`[skip] ${label}: no PDF found (not yet published?) — kept existing`);
