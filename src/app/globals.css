@@ -27,11 +27,11 @@
     --input: 214 32% 91%;
     --ring: 38 92% 50%;
 
-    /* Deep-slate nav chrome (kept dark in both themes). */
-    --sidebar: 222 47% 11%;
-    --sidebar-foreground: 213 27% 84%;
-    --sidebar-muted: 215 20% 55%;
-    --sidebar-border: 217 33% 20%;
+    /* Nav chrome — theme-aware (light surface here, dark in `.dark`). */
+    --sidebar: 210 40% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-muted: 215 16% 47%;
+    --sidebar-border: 214 32% 91%;
     --sidebar-accent: 38 92% 50%;
 
     --radius: 0.5rem;

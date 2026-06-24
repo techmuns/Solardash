@@ -27,6 +27,8 @@ export interface TopBarProps {
   onToggleSidebar: () => void;
   onOpenMobile: () => void;
   onOpenSearch: () => void;
+  /** Pre-formatted data-as-of date (e.g. `1 Apr 2026`), from the server layout. */
+  dataAsOf?: string;
 }
 
 export function TopBar({
@@ -34,6 +36,7 @@ export function TopBar({
   onToggleSidebar,
   onOpenMobile,
   onOpenSearch,
+  dataAsOf,
 }: TopBarProps) {
   const title = useCurrentTitle();
 
@@ -82,15 +85,18 @@ export function TopBar({
           </kbd>
         </button>
 
-        {/* Global "as-of / last-updated" slot — wired to data in a later phase. */}
-        <span
-          className="hidden items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1.5 text-xs text-muted-foreground sm:inline-flex"
-          title="Data snapshots arrive in a later phase"
-        >
+        {/* Global "data as-of" slot — max updatedAt across snapshots. */}
+        <span className="hidden items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1.5 text-xs text-muted-foreground sm:inline-flex">
           <Clock className="h-3.5 w-3.5" aria-hidden />
           <span>As of</span>
-          <span className="font-medium text-foreground/70">—</span>
-          <span className="text-muted-foreground/60">· no data yet</span>
+          {dataAsOf ? (
+            <span className="font-medium text-foreground/80">{dataAsOf}</span>
+          ) : (
+            <>
+              <span className="font-medium text-foreground/70">—</span>
+              <span className="text-muted-foreground/60">· no data yet</span>
+            </>
+          )}
         </span>
         <ThemeToggle />
       </div>

@@ -5,6 +5,8 @@ import { AppShell } from "@/components/layout/AppShell";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeScript } from "@/components/theme/theme-script";
 import { getSearchIndex } from "@/data/search";
+import { getProvenance } from "@/data";
+import { formatDate } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,6 +49,14 @@ export default function RootLayout({
   // Build the command-palette index once at build time (server) and hand it to
   // the client shell as a prop — same server→client pattern as the footer.
   const searchIndex = getSearchIndex();
+  // Real data-as-of = max updatedAt across every snapshot (same source the
+  // footer/overview use). Format server-side so the client TopBar renders a
+  // fixed string — no timezone-dependent re-format, no hydration drift.
+  const updatedAt = getProvenance().reduce(
+    (m, p) => (p.updatedAt > m ? p.updatedAt : m),
+    "",
+  );
+  const dataAsOf = updatedAt ? formatDate(updatedAt) : undefined;
   return (
     <html
       lang="en"
@@ -55,7 +65,7 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased">
         <ThemeScript />
-        <AppShell footer={<Footer />} searchIndex={searchIndex}>
+        <AppShell footer={<Footer />} searchIndex={searchIndex} dataAsOf={dataAsOf}>
           {children}
         </AppShell>
       </body>

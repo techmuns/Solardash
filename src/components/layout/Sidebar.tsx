@@ -39,7 +39,7 @@ export function Sidebar({ collapsed = false, onNavigate }: SidebarProps) {
           <BrandMark size="sm" />
           {!collapsed && (
             <span className="flex min-w-0 flex-col leading-tight">
-              <span className="truncate text-sm font-semibold tracking-tight text-white">
+              <span className="truncate text-sm font-semibold tracking-tight text-sidebar-foreground">
                 Solar Sector Dashboard
               </span>
               <span className="truncate text-2xs font-medium text-sidebar-muted">
@@ -76,8 +76,8 @@ export function Sidebar({ collapsed = false, onNavigate }: SidebarProps) {
                         "group relative flex items-center gap-3 rounded-md py-2 text-sm font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-sidebar-accent",
                         collapsed ? "justify-center px-2" : "px-3",
                         active
-                          ? "bg-white/10 text-white"
-                          : "text-sidebar-foreground hover:bg-white/5 hover:text-white",
+                          ? "bg-sidebar-foreground/10 text-sidebar-foreground"
+                          : "text-sidebar-foreground/80 hover:bg-sidebar-foreground/[0.06] hover:text-sidebar-foreground",
                         item.hero && !active && "bg-brand/10",
                       )}
                     >
@@ -98,7 +98,7 @@ export function Sidebar({ collapsed = false, onNavigate }: SidebarProps) {
                           "h-[1.1rem] w-[1.1rem] shrink-0 transition-colors",
                           active || item.hero
                             ? "text-brand"
-                            : "text-sidebar-muted group-hover:text-white",
+                            : "text-sidebar-muted group-hover:text-sidebar-foreground",
                         )}
                         aria-hidden
                       />
@@ -124,10 +124,10 @@ export function Sidebar({ collapsed = false, onNavigate }: SidebarProps) {
       {!collapsed && (
         <div className="border-t border-sidebar-border px-4 py-3">
           <p className="text-2xs leading-relaxed text-sidebar-muted">
-            India solar & renewables
+            India solar &amp; renewables
             <br />
-            <span className="text-sidebar-muted/70">
-              Foundation build · static preview
+            <span className="font-medium text-sidebar-foreground/70">
+              Powered by Munshot
             </span>
           </p>
         </div>

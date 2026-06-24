@@ -42,10 +42,13 @@ export function AppShell({
   children,
   footer,
   searchIndex = [],
+  dataAsOf,
 }: {
   children: React.ReactNode;
   footer?: React.ReactNode;
   searchIndex?: SearchEntry[];
+  /** Pre-formatted "data as of" date (e.g. `1 Apr 2026`) for the TopBar slot. */
+  dataAsOf?: string;
 }) {
   const collapsed = React.useSyncExternalStore(
     subscribeCollapse,
@@ -119,6 +122,7 @@ export function AppShell({
           onToggleSidebar={toggleCollapsed}
           onOpenMobile={() => setMobileOpen(true)}
           onOpenSearch={() => setSearchOpen(true)}
+          dataAsOf={dataAsOf}
         />
         <main className="flex-1">
           <div className="mx-auto w-full max-w-[1600px] px-4 py-6 sm:px-6 lg:px-8">
