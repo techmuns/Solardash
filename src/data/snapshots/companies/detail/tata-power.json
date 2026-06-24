@@ -1,0 +1,27 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "Tata Power",
+  "data": {
+    "confidence": "medium",
+    "hasDetail": false,
+    "name": "Tata Power",
+    "slug": "tata-power",
+    "sourceNote": "Company filings (aggregated)",
+    "tickerNse": "TATAPOWER",
+    "type": "ipp"
+  },
+  "dataset": "detail/tata-power",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Company filings (aggregated)"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

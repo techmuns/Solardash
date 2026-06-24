@@ -25,6 +25,10 @@ import detailWebsol from "./snapshots/companies/detail/websol-energy.json";
 import detailSaatvik from "./snapshots/companies/detail/saatvik-green.json";
 import detailAcme from "./snapshots/companies/detail/acme-solar.json";
 import detailInsolation from "./snapshots/companies/detail/insolation-energy.json";
+import detailAdaniGreen from "./snapshots/companies/detail/adani-green.json";
+import detailNtpcGreen from "./snapshots/companies/detail/ntpc-green.json";
+import detailJswEnergy from "./snapshots/companies/detail/jsw-energy.json";
+import detailTataPower from "./snapshots/companies/detail/tata-power.json";
 
 // Static map of per-company detail snapshots (add an entry per new company).
 const COMPANY_DETAILS: Record<string, unknown> = {
@@ -35,6 +39,10 @@ const COMPANY_DETAILS: Record<string, unknown> = {
   "saatvik-green": detailSaatvik,
   "acme-solar": detailAcme,
   "insolation-energy": detailInsolation,
+  "adani-green": detailAdaniGreen,
+  "ntpc-green": detailNtpcGreen,
+  "jsw-energy": detailJswEnergy,
+  "tata-power": detailTataPower,
 };
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;

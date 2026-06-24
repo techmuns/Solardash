@@ -1,0 +1,27 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "JSW Energy",
+  "data": {
+    "confidence": "medium",
+    "hasDetail": false,
+    "name": "JSW Energy",
+    "slug": "jsw-energy",
+    "sourceNote": "Company filings (aggregated)",
+    "tickerNse": "JSWENERGY",
+    "type": "ipp"
+  },
+  "dataset": "detail/jsw-energy",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Company filings (aggregated)"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

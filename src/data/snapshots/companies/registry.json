@@ -91,6 +91,14 @@
         "type": "manufacturer"
       },
       {
+        "confidence": "medium",
+        "name": "Adani Green Energy",
+        "slug": "adani-green",
+        "sourceNote": "Company filings (aggregated)",
+        "tickerNse": "ADANIGREEN",
+        "type": "ipp"
+      },
+      {
         "confidence": "modelled",
         "moduleGw": 2,
         "name": "Insolation Energy",
@@ -100,6 +108,22 @@
         "type": "manufacturer"
       },
       {
+        "confidence": "medium",
+        "name": "JSW Energy",
+        "slug": "jsw-energy",
+        "sourceNote": "Company filings (aggregated)",
+        "tickerNse": "JSWENERGY",
+        "type": "ipp"
+      },
+      {
+        "confidence": "medium",
+        "name": "NTPC Green Energy",
+        "slug": "ntpc-green",
+        "sourceNote": "Company filings (aggregated)",
+        "tickerNse": "NTPCGREEN",
+        "type": "ipp"
+      },
+      {
         "confidence": "modelled",
         "moduleGw": 3.8,
         "name": "Saatvik Green Energy",
@@ -107,6 +131,14 @@
         "sourceNote": "Company filings (aggregated)",
         "tickerNse": "SAATVIK",
         "type": "manufacturer"
+      },
+      {
+        "confidence": "medium",
+        "name": "Tata Power",
+        "slug": "tata-power",
+        "sourceNote": "Company filings (aggregated)",
+        "tickerNse": "TATAPOWER",
+        "type": "ipp"
       }
     ]
   },

@@ -1,0 +1,27 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "Adani Green Energy",
+  "data": {
+    "confidence": "medium",
+    "hasDetail": false,
+    "name": "Adani Green Energy",
+    "slug": "adani-green",
+    "sourceNote": "Company filings (aggregated)",
+    "tickerNse": "ADANIGREEN",
+    "type": "ipp"
+  },
+  "dataset": "detail/adani-green",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Company filings (aggregated)"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}
