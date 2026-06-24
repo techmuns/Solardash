@@ -150,7 +150,11 @@ async function fetchMonthPdf(
       }
       if (isPdf) return { buffer, url };
     } catch (err) {
-      if (debug) console.log(`[cea] ${url} threw: ${(err as Error)?.message ?? String(err)}`);
+      if (debug) {
+        const e = err as { message?: string; cause?: { code?: string; message?: string } };
+        const cause = e.cause ? ` (cause: ${e.cause.code ?? ""} ${e.cause.message ?? ""})` : "";
+        console.log(`[cea] ${url} threw: ${e.message ?? String(err)}${cause}`);
+      }
     }
   }
   return null;

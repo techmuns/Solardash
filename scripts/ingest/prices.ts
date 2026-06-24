@@ -190,7 +190,9 @@ async function fetchPrices(source: string, debug = false): Promise<string | null
     }
     return body;
   } catch (err) {
-    console.warn(`[prices] ${url} -> fetch threw: ${(err as Error)?.message ?? String(err)}`);
+    const e = err as { message?: string; cause?: { code?: string; message?: string } };
+    const cause = e.cause ? ` (cause: ${e.cause.code ?? ""} ${e.cause.message ?? ""})` : "";
+    console.warn(`[prices] ${url} -> fetch threw: ${e.message ?? String(err)}${cause}`);
     return null;
   }
 }
