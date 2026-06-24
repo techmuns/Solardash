@@ -68,6 +68,7 @@ const UNIT_LABELS: Record<string, string> = {
   "Rs_cr/GW": "₹ cr/GW",
   "USD/Wp": "$/Wp",
   "USD/kWh": "$/kWh",
+  "USD/kg": "$/kg",
   x: "×",
 };
 

@@ -1,10 +1,6 @@
 import { definePipeline } from "../lib/pipeline";
 import { maxAsOf, readManualCsv, writeSnapshot } from "../lib/io";
-import {
-  CATEGORICAL_COLORS,
-  OTHERS_COLOR,
-  categoricalColor,
-} from "../../src/lib/colors";
+import { OTHERS_COLOR, categoricalColor } from "../../src/lib/colors";
 import type { Confidence, Kpi, Series, SourceRef } from "../../src/data/types/core";
 import type {
   AlmmPhase,
@@ -12,6 +8,7 @@ import type {
   EconomicsMetric,
   ManufacturingData,
   ModulePlayer,
+  PliAwardee,
   QuarterlySeries,
   SupplyDemandSegment,
   WaferPoint,
@@ -46,6 +43,7 @@ export const manufacturingPipeline = definePipeline({
     const wfRows = readManualCsv("manufacturing/wafer.csv");
     const almmRows = readManualCsv("manufacturing/almm-timeline.csv");
     const ecoRows = readManualCsv("manufacturing/economics.csv");
+    const pliRows = readManualCsv("manufacturing/pli-awardees.csv");
     const overrideRows = readManualCsv(
       "manufacturing/cell-production-quarterly-override.csv",
     );
@@ -190,27 +188,45 @@ export const manufacturingPipeline = definePipeline({
       ...(r.note ? { note: r.note } : {}),
     }));
 
-    // --- KPIs ---
+    // --- PLI awardees (named desc, Others bucket last) ---
+    const toPli = (r: Record<string, string>): PliAwardee => ({
+      company: r.company,
+      capacityGw: Number(r.capacity_gw),
+      confidence: r.confidence as Confidence,
+    });
+    const pliAwardees: PliAwardee[] = [
+      ...pliRows
+        .filter((r) => !isOthers(r.company))
+        .map(toPli)
+        .sort((a, b) => b.capacityGw - a.capacityGw || a.company.localeCompare(b.company)),
+      ...pliRows.filter((r) => isOthers(r.company)).map(toPli),
+    ];
+
+    // --- KPIs (current MNRE / Mercom / CareEdge headline + VQ production) ---
     const totalModuleGw = round1(modulePlayers.reduce((s, m) => s + m.almm1Gw, 0));
-    const totalCellGw = round1(cellPlayers.reduce((s, c) => s + c.almm2Gw, 0));
+    const moduleSeg = supplyDemand.find((s) => s.segment === "module");
+    const cellSeg = supplyDemand.find((s) => s.segment === "cell");
+    // Cell-capacity headline is the ALMM-II enlisted figure (MNRE), not the VQ
+    // player-table sum (which is a slightly higher early-2026 estimate).
+    const totalCellGw =
+      cellSeg?.capacityFy26 ?? round1(cellPlayers.reduce((s, c) => s + c.almm2Gw, 0));
     const prodPlayers = cellPlayers.filter((c) => c.productionGw != null);
     const sumProd = prodPlayers.reduce((s, c) => s + (c.productionGw ?? 0), 0);
     const sumAlmm2 = prodPlayers.reduce((s, c) => s + c.almm2Gw, 0);
     const avgUtil = sumAlmm2 ? round1((sumProd / sumAlmm2) * 100) : 0;
     const dcrFy26 = Number(mdRows.find((r) => r.period === "FY26E")?.dcr_gw ?? 0);
-    const moduleSeg = supplyDemand.find((s) => s.segment === "module");
     const overcap =
       moduleSeg && moduleSeg.demandFy26
         ? round1(moduleSeg.capacityFy26 / moduleSeg.demandFy26)
         : 0;
 
     const kpis: Kpi[] = [
-      { key: "module_capacity", label: "Module capacity (ALMM-I)", value: totalModuleGw, unit: "GW", confidence: "medium", hint: "Σ across manufacturers" },
-      { key: "cell_capacity", label: "Cell capacity (ALMM-II)", value: totalCellGw, unit: "GW", confidence: "high", hint: "Σ across manufacturers" },
-      { key: "cell_production", label: "Cell production FY26E", value: round1(sumProd), unit: "GW", confidence: "high", hint: "modelled quarterly split" },
-      { key: "utilization", label: "Avg cell utilisation", value: avgUtil, unit: "%", confidence: "high", hint: "production ÷ ALMM-II" },
-      { key: "dcr_demand", label: "DCR module demand FY26E", value: dcrFy26, unit: "GW", confidence: "medium", hint: "domestic-content" },
-      { key: "overcapacity", label: "Module overcapacity", value: overcap, unit: "x", confidence: "medium", hint: "capacity ÷ FY26 demand" },
+      { key: "module_capacity", label: "Module capacity (ALMM-I)", value: totalModuleGw, unit: "GW", confidence: "high", hint: "MNRE Mar 2026" },
+      { key: "cell_capacity", label: "Cell capacity (ALMM-II)", value: totalCellGw, unit: "GW", confidence: "high", hint: "~27 GW enlisted" },
+      { key: "cell_production", label: "Cell production FY26E", value: round1(sumProd), unit: "GW", confidence: "high", hint: "VQ · modelled quarterly split" },
+      { key: "utilization", label: "Avg cell utilisation", value: avgUtil, unit: "%", confidence: "high", hint: "VQ · production ÷ ALMM-II" },
+      { key: "dcr_demand", label: "DCR module demand FY26E", value: dcrFy26, unit: "GW", confidence: "medium", hint: "VQ · domestic-content" },
+      { key: "overcapacity", label: "Module overcapacity", value: overcap, unit: "x", confidence: "high", hint: "173 ÷ 58 GW (FY26)" },
     ];
 
     // --- Sanity checks (warn, never throw) ---
@@ -232,13 +248,14 @@ export const manufacturingPipeline = definePipeline({
       }
     }
 
-    // --- Provenance (distinct source+confidence; all feeds share the vintage) ---
+    // --- Provenance (distinct source+url+confidence; feeds share the vintage) ---
     const srcMap = new Map<string, SourceRef>();
-    const addSrc = (name?: string, conf?: string) => {
+    const addSrc = (name?: string, conf?: string, url?: string) => {
       if (!name || !conf) return;
-      const key = `${name}|${conf}`;
+      const u = url?.trim() || undefined;
+      const key = `${name}|${u ?? ""}|${conf}`;
       if (!srcMap.has(key)) {
-        srcMap.set(key, { name, asOf: MFG_AS_OF, confidence: conf as Confidence });
+        srcMap.set(key, { name, ...(u ? { url: u } : {}), asOf: MFG_AS_OF, confidence: conf as Confidence });
       }
     };
     for (const r of [
@@ -250,11 +267,15 @@ export const manufacturingPipeline = definePipeline({
       ...wfRows,
       ...almmRows,
       ...ecoRows,
+      ...pliRows,
     ]) {
-      addSrc(r.source, r.confidence);
+      addSrc(r.source, r.confidence, r.source_url);
     }
     const sources = [...srcMap.values()].sort(
-      (a, b) => a.name.localeCompare(b.name) || a.confidence.localeCompare(b.confidence),
+      (a, b) =>
+        a.name.localeCompare(b.name) ||
+        (a.url ?? "").localeCompare(b.url ?? "") ||
+        a.confidence.localeCompare(b.confidence),
     );
 
     const data: ManufacturingData = {
@@ -268,6 +289,7 @@ export const manufacturingPipeline = definePipeline({
       wafer,
       almmTimeline,
       economics,
+      pliAwardees,
     };
 
     writeSnapshot<ManufacturingData>("manufacturing", "value-chain", {
@@ -277,9 +299,9 @@ export const manufacturingPipeline = definePipeline({
       sources,
       notes: [
         `Quarterly cell production is MODELLED: each producer's FY26E annual output is split across ${QUARTERS.join("/")} with a ramp [${RAMP.join(", ")}]; drop real (player, quarter) actuals into manufacturing/cell-production-quarterly-override.csv to override a cell.`,
-        "Cell capacity & production are MNRE / DCR-portal actuals; the ALMM-I module tail is bucketed as Others to reconcile to ~145 GW; demand, trajectory, wafer and economics are VQ Research estimates.",
+        "Module capacity is 173 GW enlisted under ALMM-I (MNRE Mar 2026; long tail bucketed as Others); the cell headline is ~27 GW ALMM-II (MNRE Feb 2026).",
+        "The player-wise cell-capacity, module-demand, cell-trajectory and wafer tables are VQ Research (early 2026); PLI Tranche I+II awardees total ~48 GW (PIB / JMK).",
         "Basic Customs Duty (BCD): modules 40% / cells 27.5%.",
-        `Player palette: ${CATEGORICAL_COLORS.length}-colour qualitative set (CATEGORICAL_COLORS); "Others" is neutral grey.`,
       ],
       data,
     });

@@ -1,4 +1,4 @@
-phase,scope,effective_date,status,confidence,source
-ALMM-I,Modules,2021-04-01,Active,high,MNRE
-ALMM-II,Cells,2026-06-01,Effective Jun 2026,high,MNRE
-ALMM-III,Wafers,2028-06-01,Announced,medium,MNRE
+phase,scope,effective_date,status,confidence,source,source_url
+ALMM-I,Modules — 173 GW enlisted,2021-04-01,Active,high,MNRE Mar 2026,https://mnre.gov.in/en/approved-list-of-models-and-manufacturers/
+ALMM-II,Cells — ~27 GW enlisted,2026-06-01,Effective Jun 2026,high,MNRE Feb 2026,https://mnre.gov.in/en/approved-list-of-models-and-manufacturers/
+ALMM-III,Wafers,2028-06-01,Announced,medium,MNRE,

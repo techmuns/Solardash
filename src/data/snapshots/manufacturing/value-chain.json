@@ -8,14 +8,14 @@
         "confidence": "high",
         "effectiveDate": "2021-04-01",
         "phase": "ALMM-I",
-        "scope": "Modules",
+        "scope": "Modules — 173 GW enlisted",
         "status": "Active"
       },
       {
         "confidence": "high",
         "effectiveDate": "2026-06-01",
         "phase": "ALMM-II",
-        "scope": "Cells",
+        "scope": "Cells — ~27 GW enlisted",
         "status": "Effective Jun 2026"
       },
       {
@@ -265,7 +265,6 @@
       {
         "confidence": "medium",
         "metric": "DCR cell premium vs China (now)",
-        "note": "domestic cell cost premium",
         "unit": "%",
         "value": 75
       },
@@ -286,28 +285,46 @@
         "metric": "Wafer+cell capex intensity",
         "unit": "Rs_cr/GW",
         "value": 1200
+      },
+      {
+        "confidence": "medium",
+        "metric": "TOPCon module price",
+        "unit": "Rs/Wp",
+        "value": 22
+      },
+      {
+        "confidence": "medium",
+        "metric": "DCR premium over non-DCR",
+        "unit": "Rs/Wp",
+        "value": 4
+      },
+      {
+        "confidence": "medium",
+        "metric": "Polysilicon (China mono)",
+        "unit": "USD/kg",
+        "value": 4.99
       }
     ],
     "kpis": [
       {
-        "confidence": "medium",
-        "hint": "Σ across manufacturers",
+        "confidence": "high",
+        "hint": "MNRE Mar 2026",
         "key": "module_capacity",
         "label": "Module capacity (ALMM-I)",
         "unit": "GW",
-        "value": 145
+        "value": 173
       },
       {
         "confidence": "high",
-        "hint": "Σ across manufacturers",
+        "hint": "~27 GW enlisted",
         "key": "cell_capacity",
         "label": "Cell capacity (ALMM-II)",
         "unit": "GW",
-        "value": 30.1
+        "value": 27
       },
       {
         "confidence": "high",
-        "hint": "modelled quarterly split",
+        "hint": "VQ · modelled quarterly split",
         "key": "cell_production",
         "label": "Cell production FY26E",
         "unit": "GW",
@@ -315,7 +332,7 @@
       },
       {
         "confidence": "high",
-        "hint": "production ÷ ALMM-II",
+        "hint": "VQ · production ÷ ALMM-II",
         "key": "utilization",
         "label": "Avg cell utilisation",
         "unit": "%",
@@ -323,19 +340,19 @@
       },
       {
         "confidence": "medium",
-        "hint": "domestic-content",
+        "hint": "VQ · domestic-content",
         "key": "dcr_demand",
         "label": "DCR module demand FY26E",
         "unit": "GW",
         "value": 18
       },
       {
-        "confidence": "medium",
-        "hint": "capacity ÷ FY26 demand",
+        "confidence": "high",
+        "hint": "173 ÷ 58 GW (FY26)",
         "key": "overcapacity",
         "label": "Module overcapacity",
         "unit": "x",
-        "value": 2.5
+        "value": 3
       }
     ],
     "moduleDemand": [
@@ -382,9 +399,29 @@
     ],
     "modulePlayers": [
       {
-        "almm1Gw": 13.3,
-        "confidence": "medium",
+        "almm1Gw": 15,
+        "confidence": "high",
         "player": "Waaree"
+      },
+      {
+        "almm1Gw": 11.1,
+        "confidence": "high",
+        "player": "Premier Energies"
+      },
+      {
+        "almm1Gw": 7.8,
+        "confidence": "medium",
+        "player": "Emmvee"
+      },
+      {
+        "almm1Gw": 6,
+        "confidence": "medium",
+        "player": "ReNew"
+      },
+      {
+        "almm1Gw": 4.9,
+        "confidence": "medium",
+        "player": "Tata Power Solar"
       },
       {
         "almm1Gw": 4.5,
@@ -398,52 +435,78 @@
       },
       {
         "almm1Gw": 3.8,
-        "confidence": "modelled",
+        "confidence": "medium",
         "player": "Saatvik"
       },
       {
-        "almm1Gw": 2.6,
-        "confidence": "medium",
-        "player": "Emmvee"
-      },
-      {
-        "almm1Gw": 2.5,
-        "confidence": "medium",
-        "player": "Premier Energies"
-      },
-      {
-        "almm1Gw": 2.5,
-        "confidence": "medium",
-        "player": "ReNew"
-      },
-      {
-        "almm1Gw": 2.4,
+        "almm1Gw": 3,
         "confidence": "medium",
         "player": "Goldi Solar"
       },
       {
-        "almm1Gw": 1.5,
-        "confidence": "modelled",
-        "player": "Tata Power Solar"
+        "almm1Gw": 112.9,
+        "confidence": "medium",
+        "player": "Others"
+      }
+    ],
+    "pliAwardees": [
+      {
+        "capacityGw": 10,
+        "company": "Reliance",
+        "confidence": "high"
       },
       {
-        "almm1Gw": 107.9,
-        "confidence": "modelled",
-        "note": "long tail to ~145 GW total",
-        "player": "Others (90+ mfrs)"
+        "capacityGw": 6,
+        "company": "Waaree",
+        "confidence": "high"
+      },
+      {
+        "capacityGw": 4.8,
+        "company": "ReNew",
+        "confidence": "high"
+      },
+      {
+        "capacityGw": 4,
+        "company": "Adani",
+        "confidence": "high"
+      },
+      {
+        "capacityGw": 4,
+        "company": "Shirdi Sai Electricals",
+        "confidence": "high"
+      },
+      {
+        "capacityGw": 4,
+        "company": "Tata Power",
+        "confidence": "high"
+      },
+      {
+        "capacityGw": 3.4,
+        "company": "First Solar",
+        "confidence": "high"
+      },
+      {
+        "capacityGw": 2.4,
+        "company": "Vikram Solar",
+        "confidence": "high"
+      },
+      {
+        "capacityGw": 9.7,
+        "company": "Others",
+        "confidence": "medium"
       }
     ],
     "supplyDemand": [
       {
-        "capacityFy26": 145,
-        "capacityFy28": 200,
+        "capacityFy26": 173,
+        "capacityFy28": 210,
         "demandFy26": 58,
         "demandFy28": 87,
         "segment": "module"
       },
       {
-        "capacityFy26": 30,
-        "capacityFy28": 100,
+        "capacityFy26": 27,
+        "capacityFy28": 60,
         "demandFy26": 58,
         "demandFy28": 87,
         "segment": "cell"
@@ -470,26 +533,41 @@
   "dataset": "value-chain",
   "notes": [
     "Quarterly cell production is MODELLED: each producer's FY26E annual output is split across Q1FY26/Q2FY26/Q3FY26/Q4FY26 with a ramp [0.22, 0.24, 0.26, 0.28]; drop real (player, quarter) actuals into manufacturing/cell-production-quarterly-override.csv to override a cell.",
-    "Cell capacity & production are MNRE / DCR-portal actuals; the ALMM-I module tail is bucketed as Others to reconcile to ~145 GW; demand, trajectory, wafer and economics are VQ Research estimates.",
-    "Basic Customs Duty (BCD): modules 40% / cells 27.5%.",
-    "Player palette: 10-colour qualitative set (CATEGORICAL_COLORS); \"Others\" is neutral grey."
+    "Module capacity is 173 GW enlisted under ALMM-I (MNRE Mar 2026; long tail bucketed as Others); the cell headline is ~27 GW ALMM-II (MNRE Feb 2026).",
+    "The player-wise cell-capacity, module-demand, cell-trajectory and wafer tables are VQ Research (early 2026); PLI Tranche I+II awardees total ~48 GW (PIB / JMK).",
+    "Basic Customs Duty (BCD): modules 40% / cells 27.5%."
   ],
   "section": "manufacturing",
   "sources": [
     {
       "asOf": "2026-03-31",
       "confidence": "medium",
-      "name": "ICRA / MNRE / VQ Research"
+      "name": "Company"
     },
     {
       "asOf": "2026-03-31",
       "confidence": "high",
-      "name": "MNRE"
+      "name": "Company FY26"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Market 2026"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Mercom / MNRE / CareEdge"
     },
     {
       "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "MNRE"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "MNRE / CareEdge"
     },
     {
       "asOf": "2026-03-31",
@@ -504,22 +582,39 @@
     {
       "asOf": "2026-03-31",
       "confidence": "medium",
-      "name": "MNRE / VQ Research"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "medium",
       "name": "MNRE ALMM List-I"
     },
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
-      "name": "MNRE ALMM List-I"
+      "confidence": "high",
+      "name": "MNRE Feb 2026",
+      "url": "https://mnre.gov.in/en/approved-list-of-models-and-manufacturers/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "MNRE Mar 2026",
+      "url": "https://mnre.gov.in/en/approved-list-of-models-and-manufacturers/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "PIB"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "PIB / JMK"
     },
     {
       "asOf": "2026-03-31",
       "confidence": "medium",
-      "name": "MNRE ALMM List-I / Company"
+      "name": "PIB / JMK"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "PVInsights Apr 2026"
     },
     {
       "asOf": "2026-03-31",

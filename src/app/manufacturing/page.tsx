@@ -81,6 +81,14 @@ export default function ManufacturingPage() {
     },
   ];
 
+  const pliData = d.pliAwardees.map((p, i) => ({
+    key: p.company.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+    label: p.company,
+    value: p.capacityGw,
+    color: /^others/i.test(p.company) ? OTHERS_COLOR : categoricalColor(i),
+  }));
+  const pliTotal = Math.round(d.pliAwardees.reduce((s, p) => s + p.capacityGw, 0));
+
   return (
     <div className="space-y-8">
       <PageHeader
@@ -142,7 +150,7 @@ export default function ManufacturingPage() {
         <ChartFrame
           title="Cell manufacturers"
           subtitle="Nameplate / ALMM-II / production / utilisation · sortable"
-          source={source}
+          source="VQ Research, early 2026"
           asOf={asOf}
           confidence="high"
         >
@@ -319,6 +327,21 @@ export default function ManufacturingPage() {
             </Card>
           ))}
         </div>
+
+        <ChartFrame
+          title="PLI awardees — supported capacity"
+          subtitle={`GW of integrated capacity · ~${pliTotal} GW PLI-supported (Tranche I+II)`}
+          source="PIB / JMK Research"
+          asOf={asOf}
+          confidence="high"
+        >
+          <CategoryBarChart
+            data={pliData}
+            unit="GW"
+            height={300}
+            categoryWidth={140}
+          />
+        </ChartFrame>
 
         <ChartFrame
           title="Cell manufacturing unit economics"

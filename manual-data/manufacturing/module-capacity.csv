@@ -1,11 +1,11 @@
-player,almm1_gw,confidence,source,note
-Waaree,13.3,medium,MNRE ALMM List-I,
+player,almm1_gw,confidence,source,source_url
+Waaree,15.0,high,Company FY26,
+Premier Energies,11.1,high,Company FY26,
+Emmvee,7.8,medium,MNRE ALMM List-I,
+ReNew,6.0,medium,MNRE ALMM List-I,
+Tata Power Solar,4.9,medium,MNRE ALMM List-I,
+Vikram Solar,4.5,medium,Company,
 Adani Solar,4.0,medium,MNRE ALMM List-I,
-Vikram Solar,4.5,medium,MNRE ALMM List-I / Company,
-Premier Energies,2.5,medium,MNRE ALMM List-I,
-Emmvee,2.6,medium,MNRE ALMM List-I,
-Goldi Solar,2.4,medium,MNRE ALMM List-I,
-ReNew,2.5,medium,MNRE ALMM List-I,
-Saatvik,3.8,modelled,MNRE ALMM List-I,
-Tata Power Solar,1.5,modelled,MNRE ALMM List-I,
-Others (90+ mfrs),107.9,modelled,MNRE ALMM List-I,long tail to ~145 GW total
+Saatvik,3.8,medium,Company,
+Goldi Solar,3.0,medium,MNRE ALMM List-I,
+Others,112.9,medium,MNRE ALMM List-I,

@@ -1,3 +1,3 @@
 segment,capacity_fy26_gw,capacity_fy28_gw,demand_fy26_gw,demand_fy28_gw,confidence,source
-module,145,200,58,87,medium,ICRA / MNRE / VQ Research
-cell,30,100,58,87,medium,MNRE / VQ Research
+module,173,210,58,87,high,Mercom / MNRE / CareEdge
+cell,27,60,58,87,high,MNRE / CareEdge

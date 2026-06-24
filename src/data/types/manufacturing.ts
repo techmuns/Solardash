@@ -63,6 +63,13 @@ export interface EconomicsMetric {
   note?: string;
 }
 
+/** A PLI (Production-Linked Incentive) awardee — supported solar capacity. */
+export interface PliAwardee {
+  company: string;
+  capacityGw: number;
+  confidence: Confidence;
+}
+
 /** Payload of the manufacturing `value-chain` snapshot. */
 export interface ManufacturingData {
   kpis: Kpi[];
@@ -78,4 +85,6 @@ export interface ManufacturingData {
   wafer: WaferPoint[];
   almmTimeline: AlmmPhase[];
   economics: EconomicsMetric[];
+  /** PLI Tranche I+II awardees (GW of supported capacity). */
+  pliAwardees: PliAwardee[];
 }

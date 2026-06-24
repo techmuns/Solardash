@@ -1,0 +1,10 @@
+company,capacity_gw,confidence,source,source_url
+Reliance,10.0,high,PIB / JMK,
+Waaree,6.0,high,PIB / JMK,
+ReNew,4.8,high,PIB / JMK,
+Tata Power,4.0,high,PIB / JMK,
+Adani,4.0,high,PIB,
+Shirdi Sai Electricals,4.0,high,PIB,
+First Solar,3.4,high,PIB / JMK,
+Vikram Solar,2.4,high,PIB / JMK,
+Others,9.7,medium,PIB / JMK,
