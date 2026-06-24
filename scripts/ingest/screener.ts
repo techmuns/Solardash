@@ -1,23 +1,21 @@
 /**
- * Screener.in financials ingestion.
+ * Screener.in financials ingestion — public-page HTML scraper (no login).
  *
- * Pulls a listed company's "Export to Excel" Data Sheet from Screener (behind a
- * session cookie) and maps it into a per-company feed JSON that the companies
- * pipeline merges as `screener` precedence (manual > screener > registry).
- *
- * Auth: set `SCREENER_SESSIONID` (the `sessionid` cookie). Screener blocks our
- * build IP, so live fetching runs from GitHub's runners; everything here is
- * verifiable offline via `--file` against a synthetic fixture.
+ * Reads each company's public Screener page and parses the on-page financial
+ * tables with cheerio. The session cookie is OPTIONAL: if SCREENER_SESSIONID is
+ * set it is sent as an anti-blocking aid, otherwise the page is fetched
+ * anonymously. Output feeds the companies pipeline as `screener` precedence
+ * (manual > screener > registry).
  *
  * CLI:
- *   tsx scripts/ingest/screener.ts                 # all companies in the codes file
+ *   tsx scripts/ingest/screener.ts                       # all companies in the codes file
  *   tsx scripts/ingest/screener.ts --slug waaree-energies
- *   tsx scripts/ingest/screener.ts --file sample.xlsx --slug fixture --dry-run
- *   tsx scripts/ingest/screener.ts --dry-run       # parse + print, don't write
+ *   tsx scripts/ingest/screener.ts --file page.html --slug fixture --dry-run
+ *   tsx scripts/ingest/screener.ts --dry-run             # parse + print, don't write
  */
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { basename, join } from "node:path";
-import * as XLSX from "xlsx";
+import * as cheerio from "cheerio";
 import { readManualCsv } from "../lib/io";
 import type {
   AnnualRow,
@@ -29,38 +27,33 @@ const ROOT = process.cwd();
 const SCREENER_DIR = join(ROOT, "manual-data", "companies", "screener");
 const USER_AGENT =
   "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) " +
-  "Chrome/124.0 Safari/537.36 Solardash-ingest/1.0";
+  "Chrome/124.0 Safari/537.36";
 const FETCH_DELAY_MS = 2500;
 const FETCH_TIMEOUT_MS = 30000;
 
 // ---------------------------------------------------------------------------
-// Parsed shapes
+// Feed shape
 // ---------------------------------------------------------------------------
 
 export interface ScreenerFeed {
   slug: string;
   annual: AnnualRow[];
   quarterly: QuarterRow[];
+  valuation?: { peX?: number; pbX?: number; cmp?: number };
   rocePct?: number;
+  roePct?: number;
   shareholding?: Shareholding;
-  /** Derived from the latest period (NOT wall-clock) so the file only changes
-   *  when the underlying data does. */
+  /** Derived from the latest reported period (NOT wall-clock). */
   asOf: string;
 }
 
-type Cell = string | number | boolean | Date | null | undefined;
-type Aoa = Cell[][];
 interface Period {
   month: number;
   year: number;
 }
-interface PeriodCol {
-  idx: number;
-  period: Period;
-}
 
 // ---------------------------------------------------------------------------
-// Cell / period helpers (tolerant — no hard-coded coordinates)
+// Number / period helpers
 // ---------------------------------------------------------------------------
 
 const MONTHS: Record<string, number> = {
@@ -71,36 +64,29 @@ const QUARTER: Record<number, string> = { 6: "Q1", 9: "Q2", 12: "Q3", 3: "Q4" };
 
 const round2 = (n: number) => Math.round(n * 100) / 100;
 
-/** Lower-cased, trimmed, trailing-colon-stripped label. */
-function norm(c: Cell): string {
-  return String(c ?? "").trim().toLowerCase().replace(/:+$/, "");
+/** Parse a numeric cell: strips `, % ₹` and spaces; `—`/`-`/empty → undefined;
+ *  handles negatives (leading minus or parentheses). */
+export function parseNum(text: string | null | undefined): number | undefined {
+  if (text == null) return undefined;
+  const s = String(text).trim();
+  if (s === "" || s === "-" || s === "—" || s === "–") return undefined;
+  const negative = /^\(.*\)$/.test(s) || s.startsWith("-");
+  const digits = s.replace(/[^0-9.]/g, "");
+  if (digits === "" || digits === ".") return undefined;
+  const n = Number(digits);
+  if (Number.isNaN(n)) return undefined;
+  return round2(negative ? -n : n);
 }
 
-/** Parse a numeric cell (strips commas / %); blank or "-" → undefined. */
-function num(c: Cell): number | undefined {
-  if (c == null || c === "") return undefined;
-  if (typeof c === "number") return Number.isFinite(c) ? round2(c) : undefined;
-  const s = String(c).replace(/,/g, "").replace(/%/g, "").trim();
-  if (s === "" || s === "-") return undefined;
-  const n = Number(s);
-  return Number.isNaN(n) ? undefined : round2(n);
-}
-
-/** Parse a Screener "Report Date" cell → {month, year}. Handles "Mar-2024",
- *  "Mar 2024", "Mar-24" and real Excel dates; "TTM"/non-dates → null. */
-function parsePeriod(c: Cell): Period | null {
-  if (c == null || c === "") return null;
-  if (c instanceof Date) return { month: c.getMonth() + 1, year: c.getFullYear() };
-  const m = String(c).trim().match(/^([A-Za-z]{3,9})[\s-]+(\d{2,4})$/);
+/** Extract `Mon YYYY` / `Mon-YYYY` → {month, year}; non-dates (e.g. "TTM") → null. */
+function extractPeriod(text: string): Period | null {
+  const m = text.trim().match(/([A-Za-z]{3,9})[\s-]+(\d{4})/);
   if (!m) return null;
   const month = MONTHS[m[1].slice(0, 3).toLowerCase()];
   if (!month) return null;
-  let year = Number(m[2]);
-  if (year < 100) year += 2000;
-  return { month, year };
+  return { month, year: Number(m[2]) };
 }
 
-/** Indian fiscal year of a period end (Apr–Mar; Mar-2026 → 2026). */
 const fyOf = (p: Period): number => (p.month <= 3 ? p.year : p.year + 1);
 const fyLabel = (p: Period): string => `FY${String(fyOf(p)).slice(2)}`;
 const annualLabel = (p: Period): string => fyLabel(p);
@@ -108,256 +94,177 @@ function quarterLabel(p: Period): string | null {
   const q = QUARTER[p.month];
   return q ? `${q}${fyLabel(p)}` : null;
 }
+
+/** Period header → {label, period}, labelled for the section kind. */
+function parsePeriod(
+  headerText: string,
+  kind: "annual" | "quarter",
+): { label: string; period: Period } | null {
+  const period = extractPeriod(headerText);
+  if (!period) return null;
+  const label = kind === "annual" ? annualLabel(period) : quarterLabel(period);
+  return label ? { label, period } : null;
+}
+
 /** Last day of the period's month, ISO. */
 function periodEndIso(p: Period): string {
   const lastDay = new Date(p.year, p.month, 0).getDate();
   return `${p.year}-${String(p.month).padStart(2, "0")}-${String(lastDay).padStart(2, "0")}`;
 }
 
+const norm = (s: string): string => s.replace(/\s+/g, " ").trim().toLowerCase();
+
 // ---------------------------------------------------------------------------
-// Section / row location
+// HTML parsing (label-based, defensive)
 // ---------------------------------------------------------------------------
 
-const SECTION_LABELS = [
-  "profit & loss", "quarters", "balance sheet", "cash flow", "derived", "price",
-];
+/** Parse a `#<sectionId> table.data-table` into rows keyed by FY/quarter. */
+function parseFinancials(
+  $: cheerio.CheerioAPI,
+  sectionId: string,
+  kind: "annual" | "quarter",
+): { rows: (AnnualRow & QuarterRow)[]; periods: Period[] } {
+  const table = $(`#${sectionId} table.data-table`).first();
+  if (!table.length) return { rows: [], periods: [] };
 
-/** First row whose column-0 label matches one of the known section headers. */
-function sectionStarts(aoa: Aoa): number[] {
-  const starts: number[] = [];
-  for (let r = 0; r < aoa.length; r++) {
-    const t = norm(aoa[r]?.[0]);
-    if (t && SECTION_LABELS.some((w) => t === w || t.startsWith(w))) starts.push(r);
-  }
-  return starts;
-}
+  const headTexts = table
+    .find("thead")
+    .first()
+    .find("th")
+    .toArray()
+    .map((el) => $(el).text());
+  const cols: { pos: number; label: string; period: Period }[] = [];
+  headTexts.forEach((text, pos) => {
+    if (pos === 0) return; // first cell is the row-label header
+    const p = parsePeriod(text, kind);
+    if (p) cols.push({ pos, label: p.label, period: p.period });
+  });
+  if (cols.length === 0) return { rows: [], periods: [] };
 
-/** Row index of the section whose header equals `label`, else -1. */
-function findSection(aoa: Aoa, label: string): number {
-  const want = norm(label);
-  for (let r = 0; r < aoa.length; r++) {
-    if (norm(aoa[r]?.[0]) === want) return r;
-  }
-  return -1;
-}
-
-/** End (exclusive) of the section starting at `start` = next section, else len. */
-function sectionEnd(start: number, starts: number[], len: number): number {
-  const next = starts.filter((s) => s > start).sort((a, b) => a - b)[0];
-  return next ?? len;
-}
-
-function collectPeriods(row: Cell[]): PeriodCol[] {
-  const out: PeriodCol[] = [];
-  for (let c = 1; c < row.length; c++) {
-    const period = parsePeriod(row[c]);
-    if (period) out.push({ idx: c, period });
-  }
-  return out;
-}
-
-/** Locate the period header within [start,end): the "Report Date" row, else the
- *  first row carrying ≥2 parseable periods. */
-function findPeriodRow(
-  aoa: Aoa,
-  start: number,
-  end: number,
-): { row: number; cols: PeriodCol[] } | null {
-  for (let r = start; r < end; r++) {
-    if (norm(aoa[r]?.[0]).startsWith("report date")) {
-      const cols = collectPeriods(aoa[r] ?? []);
-      if (cols.length) return { row: r, cols };
+  const bodyRows = table
+    .find("tbody tr")
+    .toArray()
+    .map((tr) => $(tr).find("td").toArray().map((td) => $(td).text()));
+  const findRow = (label: string): string[] | null => {
+    for (const cells of bodyRows) {
+      if (norm(cells[0] ?? "").startsWith(label)) return cells;
     }
-  }
-  for (let r = start; r < end; r++) {
-    const cols = collectPeriods(aoa[r] ?? []);
-    if (cols.length >= 2) return { row: r, cols };
-  }
-  return null;
-}
+    return null;
+  };
 
-/** First row in [start,end) whose column-0 label starts with `label`. */
-function findMetric(aoa: Aoa, start: number, end: number, label: string): Cell[] | null {
-  const want = norm(label);
-  for (let r = start; r < end; r++) {
-    if (norm(aoa[r]?.[0]).startsWith(want)) return aoa[r] ?? null;
-  }
-  return null;
-}
+  const sales = findRow("sales");
+  const op = findRow("operating profit");
+  const opm = findRow("opm");
+  const np = findRow("net profit");
+  const eps = findRow("eps");
 
-// ---------------------------------------------------------------------------
-// Section parsers
-// ---------------------------------------------------------------------------
-
-function parseAnnual(
-  aoa: Aoa,
-  start: number,
-  end: number,
-  roceByFy: Record<string, number>,
-): { rows: AnnualRow[]; cols: PeriodCol[] } {
-  const ph = findPeriodRow(aoa, start, end);
-  if (!ph) return { rows: [], cols: [] };
-  const sales = findMetric(aoa, ph.row, end, "Sales");
-  const op = findMetric(aoa, ph.row, end, "Operating Profit");
-  const opm = findMetric(aoa, ph.row, end, "OPM");
-  const np = findMetric(aoa, ph.row, end, "Net profit");
-  const eps = findMetric(aoa, ph.row, end, "EPS");
-
-  const rows = ph.cols.map(({ idx, period }) => {
-    const fy = annualLabel(period);
-    const row: AnnualRow = { period: fy };
-    const set = (key: keyof AnnualRow, arr: Cell[] | null) => {
-      if (!arr) return;
-      const v = num(arr[idx]);
-      if (v != null) (row as unknown as Record<string, number>)[key] = v;
-    };
-    set("revenue", sales);
-    set("ebitda", op);
-    set("ebitdaMarginPct", opm);
-    set("pat", np);
-    set("epsRs", eps);
-    if (roceByFy[fy] != null) row.rocePct = roceByFy[fy];
+  const rows = cols.map(({ pos, label }) => {
+    const at = (cells: string[] | null) => (cells ? parseNum(cells[pos]) : undefined);
+    const revenue = at(sales);
+    const ebitda = at(op);
+    const ebitdaMarginPct = at(opm);
+    const pat = at(np);
+    const row: AnnualRow & QuarterRow = { period: label };
+    if (revenue != null) row.revenue = revenue;
+    if (ebitda != null) row.ebitda = ebitda;
+    if (ebitdaMarginPct != null) row.ebitdaMarginPct = ebitdaMarginPct;
+    if (pat != null) row.pat = pat;
+    if (kind === "annual") {
+      const epsRs = at(eps);
+      if (epsRs != null) row.epsRs = epsRs;
+    } else if (pat != null && revenue) {
+      row.patMarginPct = round2((pat / revenue) * 100);
+    }
     return row;
   });
-  return { rows, cols: ph.cols };
+  return { rows, periods: cols.map((c) => c.period) };
 }
 
-function parseQuarters(aoa: Aoa, start: number, end: number): {
-  rows: QuarterRow[];
-  cols: PeriodCol[];
+/** Read the `#top-ratios` name/value list. */
+function parseTopRatios($: cheerio.CheerioAPI): {
+  cmp?: number;
+  peX?: number;
+  bookValue?: number;
+  rocePct?: number;
+  roePct?: number;
 } {
-  const ph = findPeriodRow(aoa, start, end);
-  if (!ph) return { rows: [], cols: [] };
-  const sales = findMetric(aoa, ph.row, end, "Sales");
-  const op = findMetric(aoa, ph.row, end, "Operating Profit");
-  const opm = findMetric(aoa, ph.row, end, "OPM");
-  const np = findMetric(aoa, ph.row, end, "Net profit");
-
-  const rows: QuarterRow[] = [];
-  for (const { idx, period } of ph.cols) {
-    const label = quarterLabel(period);
-    if (!label) continue;
-    const row: QuarterRow = { period: label };
-    const revenue = sales ? num(sales[idx]) : undefined;
-    const pat = np ? num(np[idx]) : undefined;
-    if (revenue != null) row.revenue = revenue;
-    if (op) { const v = num(op[idx]); if (v != null) row.ebitda = v; }
-    if (opm) { const v = num(opm[idx]); if (v != null) row.ebitdaMarginPct = v; }
-    if (pat != null) row.pat = pat;
-    if (pat != null && revenue) row.patMarginPct = round2((pat / revenue) * 100);
-    rows.push(row);
-  }
-  return { rows, cols: ph.cols };
-}
-
-/** ROCE by FY from the DERIVED section. Uses the section's own period header if
- *  present, else reuses the annual columns (Screener aligns derived to P&L). */
-function parseRoce(
-  aoa: Aoa,
-  start: number,
-  end: number,
-  annualCols: PeriodCol[],
-): Record<string, number> {
-  if (start < 0) return {};
-  const ph = findPeriodRow(aoa, start, end);
-  const cols = ph?.cols ?? annualCols;
-  const from = ph?.row ?? start;
-  const roce =
-    findMetric(aoa, from, end, "Return on Capital Employed") ??
-    findMetric(aoa, from, end, "ROCE");
-  if (!roce) return {};
-  const out: Record<string, number> = {};
-  for (const { idx, period } of cols) {
-    const v = num(roce[idx]);
-    if (v != null) out[annualLabel(period)] = v;
-  }
+  const out: { cmp?: number; peX?: number; bookValue?: number; rocePct?: number; roePct?: number } = {};
+  $("#top-ratios li").each((_, li) => {
+    const name = norm($(li).find(".name").first().text());
+    const valueText = $(li).find(".number").first().text() || $(li).find(".value").first().text();
+    const v = parseNum(valueText);
+    if (v == null) return;
+    if (name === "current price") out.cmp = v;
+    else if (name === "stock p/e" || name === "p/e") out.peX = v;
+    else if (name === "book value") out.bookValue = v;
+    else if (name === "roce") out.rocePct = v;
+    else if (name === "roe") out.roePct = v;
+  });
   return out;
 }
 
-/** Best-effort latest-column shareholding (Promoters/FIIs/DIIs/Public). */
-function parseShareholding(aoa: Aoa, asOf: string): Shareholding | undefined {
-  const find = (label: string): number | undefined => {
-    for (let r = 0; r < aoa.length; r++) {
-      if (norm(aoa[r]?.[0]).startsWith(label)) {
-        const row = aoa[r] ?? [];
-        for (let c = row.length - 1; c >= 1; c--) {
-          const v = num(row[c]);
+/** Latest-column shareholding from `#shareholding`. */
+function parseShareholding($: cheerio.CheerioAPI, asOf: string): Shareholding | undefined {
+  const table = $("#shareholding table.data-table").first();
+  if (!table.length) return undefined;
+  const bodyRows = table
+    .find("tbody tr")
+    .toArray()
+    .map((tr) => $(tr).find("td").toArray().map((td) => $(td).text()));
+  const latest = (label: string): number | undefined => {
+    for (const cells of bodyRows) {
+      if (norm(cells[0] ?? "").startsWith(label)) {
+        for (let i = cells.length - 1; i >= 1; i--) {
+          const v = parseNum(cells[i]);
           if (v != null) return v;
         }
       }
     }
     return undefined;
   };
-  const promoterPct = find("promoter");
-  const fiiPct = find("fii");
-  const diiPct = find("dii");
-  const publicPct = find("public");
+  const promoterPct = latest("promoter");
+  const fiiPct = latest("fii");
+  const diiPct = latest("dii");
+  const publicPct = latest("public");
   if ([promoterPct, fiiPct, diiPct, publicPct].every((x) => x == null)) return undefined;
   return {
     ...(promoterPct != null ? { promoterPct } : {}),
     ...(fiiPct != null ? { fiiPct } : {}),
     ...(diiPct != null ? { diiPct } : {}),
     ...(publicPct != null ? { publicPct } : {}),
-    asOf,
+    ...(asOf ? { asOf } : {}),
   };
 }
 
-/**
- * Parse a Screener "Data Sheet" workbook → screener feed (sans slug). Tolerant:
- * locates sections + metrics by label, never by fixed cell coordinates.
- */
-export function parseDataSheet(wb: XLSX.WorkBook): Omit<ScreenerFeed, "slug"> {
-  const sheetName =
-    wb.SheetNames.find((n) => norm(n) === "data sheet") ?? wb.SheetNames[0];
-  const ws = wb.Sheets[sheetName];
-  const aoa = XLSX.utils.sheet_to_json<Cell[]>(ws, {
-    header: 1,
-    blankrows: true,
-    defval: null,
-    raw: true,
-  });
+/** Parse a Screener public company page → feed (sans slug). Tolerant of
+ *  missing sections / rows. */
+export function parseCompanyHtml(html: string): Omit<ScreenerFeed, "slug"> {
+  const $ = cheerio.load(html);
+  const annual = parseFinancials($, "profit-loss", "annual");
+  const quarterly = parseFinancials($, "quarters", "quarter");
+  const ratios = parseTopRatios($);
 
-  const starts = sectionStarts(aoa);
-  const plStart = findSection(aoa, "PROFIT & LOSS");
-  const qStart = findSection(aoa, "Quarters");
-  const dStart = findSection(aoa, "DERIVED:");
-  const len = aoa.length;
-
-  const annualEnd = plStart >= 0 ? sectionEnd(plStart, starts, len) : len;
-  const annual0 =
-    plStart >= 0 ? parseAnnual(aoa, plStart, annualEnd, {}) : { rows: [], cols: [] };
-  const roceByFy =
-    dStart >= 0 ? parseRoce(aoa, dStart, sectionEnd(dStart, starts, len), annual0.cols) : {};
-  // Re-run annual with ROCE now that derived columns are known.
-  const annual =
-    plStart >= 0 && Object.keys(roceByFy).length
-      ? parseAnnual(aoa, plStart, annualEnd, roceByFy)
-      : annual0;
-
-  const quarterly =
-    qStart >= 0
-      ? parseQuarters(aoa, qStart, sectionEnd(qStart, starts, len))
-      : { rows: [], cols: [] };
-
-  // Latest period end across annual + quarterly → asOf.
-  const allPeriods = [...annual.cols, ...quarterly.cols].map((c) => c.period);
-  const latest = allPeriods.reduce<Period | null>(
+  const periods = [...annual.periods, ...quarterly.periods];
+  const latest = periods.reduce<Period | null>(
     (best, p) =>
       best == null || p.year * 100 + p.month > best.year * 100 + best.month ? p : best,
     null,
   );
   const asOf = latest ? periodEndIso(latest) : "";
 
-  // Top-level rocePct = latest annual ROCE.
-  const fysWithRoce = annual.rows.filter((r) => r.rocePct != null);
-  const rocePct = fysWithRoce.length ? fysWithRoce[fysWithRoce.length - 1].rocePct : undefined;
+  const valuation: { peX?: number; pbX?: number; cmp?: number } = {};
+  if (ratios.peX != null) valuation.peX = ratios.peX;
+  if (ratios.cmp != null && ratios.bookValue) valuation.pbX = round2(ratios.cmp / ratios.bookValue);
+  if (ratios.cmp != null) valuation.cmp = ratios.cmp;
 
-  const shareholding = parseShareholding(aoa, asOf);
+  const shareholding = parseShareholding($, asOf);
 
   return {
     annual: annual.rows,
     quarterly: quarterly.rows,
-    ...(rocePct != null ? { rocePct } : {}),
+    ...(Object.keys(valuation).length ? { valuation } : {}),
+    ...(ratios.rocePct != null ? { rocePct: ratios.rocePct } : {}),
+    ...(ratios.roePct != null ? { roePct: ratios.roePct } : {}),
     ...(shareholding ? { shareholding } : {}),
     asOf,
   };
@@ -369,18 +276,20 @@ export function toFeed(slug: string, parsed: Omit<ScreenerFeed, "slug">): Screen
     slug,
     annual: parsed.annual,
     quarterly: parsed.quarterly,
+    ...(parsed.valuation ? { valuation: parsed.valuation } : {}),
     ...(parsed.rocePct != null ? { rocePct: parsed.rocePct } : {}),
+    ...(parsed.roePct != null ? { roePct: parsed.roePct } : {}),
     ...(parsed.shareholding ? { shareholding: parsed.shareholding } : {}),
     asOf: parsed.asOf,
   };
 }
 
 // ---------------------------------------------------------------------------
-// IO: read a local workbook (--file) / write a feed
+// IO: read a local HTML file (--file) / write a feed
 // ---------------------------------------------------------------------------
 
-export function readWorkbookFile(path: string): XLSX.WorkBook {
-  return XLSX.read(readFileSync(path), { type: "buffer", cellDates: true });
+export function readHtmlFile(path: string): string {
+  return readFileSync(path, "utf8");
 }
 
 function writeFeed(feed: ScreenerFeed): string {
@@ -391,39 +300,26 @@ function writeFeed(feed: ScreenerFeed): string {
 }
 
 // ---------------------------------------------------------------------------
-// Live fetch (runs only on GitHub's runners — Screener blocks the build IP)
+// Fetch — public page, cookie optional
 // ---------------------------------------------------------------------------
 
-async function fetchCompanyWorkbook(
-  symbol: string,
-  sessionid: string,
-): Promise<XLSX.WorkBook> {
-  const headers = { Cookie: `sessionid=${sessionid}`, "User-Agent": USER_AGENT };
+async function fetchCompanyHtml(symbol: string, sessionid?: string): Promise<string> {
+  const headers: Record<string, string> = {
+    "User-Agent": USER_AGENT,
+    Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+  };
+  if (sessionid) headers.Cookie = `sessionid=${sessionid}`;
   const get = (path: string) =>
     fetch(`https://www.screener.in${path}`, {
       headers,
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
-  let html: string | null = null;
   for (const path of [`/company/${symbol}/consolidated/`, `/company/${symbol}/`]) {
     const res = await get(path);
-    if (res.ok) {
-      html = await res.text();
-      break;
-    }
-    if (res.status !== 404) {
-      throw new Error(`company page ${res.status} ${res.statusText}`);
-    }
+    if (res.ok) return res.text();
+    if (res.status !== 404) throw new Error(`company page ${res.status} ${res.statusText}`);
   }
-  if (html == null) throw new Error("company page not found (404)");
-
-  const m = html.match(/\/user\/company\/export\/\d+\//);
-  if (!m) throw new Error("export link not found (auth / session expired?)");
-
-  const res = await get(m[0]);
-  if (!res.ok) throw new Error(`export ${res.status} ${res.statusText}`);
-  const buf = Buffer.from(await res.arrayBuffer());
-  return XLSX.read(buf, { type: "buffer", cellDates: true });
+  throw new Error("company page not found (404)");
 }
 
 const delay = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -443,15 +339,12 @@ async function main() {
   const fileArg = flag(args, "file");
   const dryRun = args.includes("--dry-run");
 
-  // --file: parse a local workbook (offline testing/tuning).
+  // --file: parse a local HTML page (offline testing/tuning).
   if (fileArg) {
     const slug = slugArg ?? basename(fileArg).replace(/\.[^.]+$/, "");
-    const feed = toFeed(slug, parseDataSheet(readWorkbookFile(fileArg)));
-    if (dryRun || !slugArg) {
-      console.log(JSON.stringify(feed, null, 2));
-    } else {
-      console.log(`[ok] ${slug} → ${writeFeed(feed)}`);
-    }
+    const feed = toFeed(slug, parseCompanyHtml(readHtmlFile(fileArg)));
+    if (dryRun || !slugArg) console.log(JSON.stringify(feed, null, 2));
+    else console.log(`[ok] ${slug} → ${writeFeed(feed)}`);
     return;
   }
 
@@ -462,23 +355,22 @@ async function main() {
     process.exit(1);
   }
 
-  const sessionid = process.env.SCREENER_SESSIONID;
-  if (!sessionid) {
-    // No cookie (local dev / secret not configured) → graceful no-op, exit 0.
-    console.log(
-      "SCREENER_SESSIONID not set — skipping live fetch (no-op). Set the cookie, or use --file for offline parsing.",
-    );
-    return;
-  }
+  // Cookie is optional — fetch anonymously when unset, use it as an aid if set.
+  const sessionid = process.env.SCREENER_SESSIONID || undefined;
+  console.log(
+    sessionid
+      ? "Fetching Screener public pages (with session cookie)."
+      : "Fetching Screener public pages anonymously (no cookie).",
+  );
 
   let ok = 0;
   let failed = 0;
   let skipped = 0;
   for (const [i, c] of targets.entries()) {
     try {
-      const wb = await fetchCompanyWorkbook(c.symbol, sessionid);
-      const parsed = parseDataSheet(wb);
-      // Keep-last-good: a transient block / empty parse must never wipe data.
+      const html = await fetchCompanyHtml(c.symbol, sessionid);
+      const parsed = parseCompanyHtml(html);
+      // Keep-last-good: a block / empty parse must never wipe good data.
       if (parsed.annual.length === 0) {
         skipped++;
         console.warn(`[skip] ${c.slug} (${c.symbol}): zero annual rows — kept existing file`);
@@ -505,12 +397,12 @@ async function main() {
 
   console.log(`Screener: ${ok} ok, ${failed} failed, ${skipped} skipped`);
 
-  // A total wipe-out (0 succeeded) almost always means the cookie expired — make
-  // it loud so the scheduled run fails visibly. Partial failures stay exit 0;
-  // keep-last-good preserves every company that wasn't refreshed.
+  // A total wipe-out (0 succeeded) usually means Screener is blocking the IP.
+  // Partial failures stay exit 0 — keep-last-good preserves the rest.
   if (ok === 0) {
     console.error(
-      "All Screener fetches failed — SCREENER_SESSIONID likely expired; refresh the secret.",
+      "All Screener fetches failed — likely IP-blocked. Add a free-account " +
+        "SCREENER_SESSIONID secret (optional cookie) or use the manual --file fallback.",
     );
     process.exit(1);
   }

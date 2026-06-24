@@ -101,11 +101,12 @@ export const companiesPipeline = definePipeline({
       );
       const hasDetail = screener != null || manual != null;
 
-      // Headline-from-feed: surface the feed's latest annual period into the
-      // screener identity so the /companies comparison table reflects scraped
-      // data, not the stale registry seed. Skipped when a manual override
-      // exists (manual wins).
+      // Headline-from-feed: surface the feed's latest annual period + scraped
+      // valuation into the screener identity so the /companies comparison table
+      // (revenue, margin, PAT, P/E, CMP) reflects scraped data, not the stale
+      // registry seed. Skipped when a manual override exists (manual wins).
       const latest = screener?.annual?.[screener.annual.length - 1];
+      const fv = screener?.valuation;
       const screenerIdentity: CompanyIdentity =
         latest && !manual
           ? {
@@ -115,14 +116,27 @@ export const companiesPipeline = definePipeline({
                 ? { ebitdaMarginPct: latest.ebitdaMarginPct }
                 : {}),
               ...(latest.pat != null ? { patFy26Cr: latest.pat } : {}),
+              ...(fv?.peX != null ? { peX: fv.peX } : {}),
+              ...(fv?.cmp != null ? { cmp: fv.cmp } : {}),
             }
           : identity;
 
+      // Map the feed's valuation + shareholding into the rich detail (manual
+      // still overrides via the spread order below).
       const screenerDetail: Partial<CompanyDetail> = screener
         ? {
             ...(screener.annual?.length ? { annual: screener.annual } : {}),
             ...(screener.quarterly?.length ? { quarterly: screener.quarterly } : {}),
             ...(screener.shareholding ? { shareholding: screener.shareholding } : {}),
+            ...(fv && (fv.peX != null || fv.pbX != null)
+              ? {
+                  valuation: {
+                    ...(fv.peX != null ? { peX: fv.peX } : {}),
+                    ...(fv.pbX != null ? { pbX: fv.pbX } : {}),
+                    ...(screener.asOf ? { asOf: screener.asOf } : {}),
+                  },
+                }
+              : {}),
           }
         : {};
       const companyDetail = {
