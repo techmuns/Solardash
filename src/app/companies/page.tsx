@@ -5,10 +5,11 @@ import { ChartFrame } from "@/components/ui/ChartFrame";
 import { ConfidenceBadge } from "@/components/ui/Badge";
 import { CategoryBarChart } from "@/components/charts/CategoryBarChart";
 import { StackedCategoryBarChart } from "@/components/charts/StackedCategoryBarChart";
-import { getCompaniesSnapshot } from "@/data";
+import { getCompaniesSnapshot, getCompanyDetail } from "@/data";
 import { categoricalColor } from "@/lib/colors";
 import { formatDate, formatNumber } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
+import type { CompanyDetail } from "@/data/types/companies";
 import { ScreenerTable } from "./ScreenerTable";
 
 export const dynamic = "force-static";
@@ -25,6 +26,12 @@ export default function CompaniesPage() {
   const companies = snapshot.data.companies;
   const asOf = formatDate(snapshot.updatedAt);
   const source = "Company filings / broker estimates";
+
+  // Full per-company models for the compare dialog (registry alone lacks
+  // financial trends, ROE/ROCE, ownership). Built once, server-side.
+  const details = companies
+    .map((c) => getCompanyDetail(c.slug)?.data)
+    .filter((d): d is CompanyDetail => Boolean(d));
 
   const withMargin = companies.filter((c) => c.ebitdaMarginPct != null);
   const withOrderCr = companies.filter((c) => c.orderBookCr != null);
@@ -154,6 +161,7 @@ export default function CompaniesPage() {
         >
           <ScreenerTable
             companies={companies}
+            details={details}
             exportMeta={snapshotMeta(snapshot, { dataset: "screener" })}
           />
         </ChartFrame>
