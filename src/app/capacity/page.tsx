@@ -2,7 +2,6 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { ChartFrame } from "@/components/ui/ChartFrame";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { BarSeriesChart } from "@/components/charts/BarSeriesChart";
 import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { CategoryBarChart } from "@/components/charts/CategoryBarChart";
@@ -87,11 +86,6 @@ export default function CapacityPage() {
               value={kpiValue(k.value)}
               unit={k.unit ? formatUnit(k.unit) : undefined}
               hint={k.hint}
-              footer={
-                <div className="flex justify-end">
-                  <ConfidenceBadge level={k.confidence} />
-                </div>
-              }
             />
           ))}
         </div>
@@ -219,11 +213,6 @@ export default function CapacityPage() {
                 value={kpiValue(m.value)}
                 unit={m.unit ? formatUnit(m.unit) : undefined}
                 hint={m.note}
-                footer={
-                  <div className="flex justify-end">
-                    <ConfidenceBadge level={m.confidence} />
-                  </div>
-                }
               />
             ))}
           </div>

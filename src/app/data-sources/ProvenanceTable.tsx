@@ -1,12 +1,10 @@
 "use client";
 
 import { DataTable, type Column } from "@/components/ui/DataTable";
-import { Badge, ConfidenceBadge, type ConfidenceLevel } from "@/components/ui/Badge";
+import { Badge } from "@/components/ui/Badge";
 import { formatDate } from "@/lib/utils";
 import type { ExportMeta } from "@/lib/export";
 import type { ProvenanceRow } from "@/data";
-
-const CONF_ORDER: ConfidenceLevel[] = ["high", "medium", "modelled"];
 
 export function ProvenanceTable({
   rows,
@@ -83,24 +81,6 @@ export function ProvenanceTable({
                   name
                 )}
               </span>
-            ))}
-          </span>
-        );
-      },
-    },
-    {
-      key: "confidence",
-      header: "Confidence",
-      exportValue: (r) =>
-        CONF_ORDER.filter((l) => r.sources.some((s) => s.confidence === l)).join(", "),
-      render: (r) => {
-        const levels = CONF_ORDER.filter((l) =>
-          r.sources.some((s) => s.confidence === l),
-        );
-        return (
-          <span className="inline-flex flex-wrap gap-1">
-            {levels.map((l) => (
-              <ConfidenceBadge key={l} level={l} showDot={false} />
             ))}
           </span>
         );

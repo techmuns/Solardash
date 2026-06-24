@@ -2,7 +2,6 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { ChartFrame } from "@/components/ui/ChartFrame";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { LineSeriesChart } from "@/components/charts/LineSeriesChart";
 import { BarSeriesChart } from "@/components/charts/BarSeriesChart";
@@ -68,11 +67,6 @@ export default function PolicyPage() {
               value={typeof k.value === "number" && Number.isInteger(k.value) ? formatNumber(k.value) : String(k.value)}
               unit={k.unit ? formatUnit(k.unit) : undefined}
               hint={k.hint}
-              footer={
-                <div className="flex justify-end">
-                  <ConfidenceBadge level={k.confidence} />
-                </div>
-              }
             />
           ))}
         </div>
@@ -107,11 +101,6 @@ export default function PolicyPage() {
                 label={m.metric}
                 value={f.value}
                 unit={f.unit}
-                footer={
-                  <div className="flex justify-end">
-                    <ConfidenceBadge level={m.confidence} />
-                  </div>
-                }
               />
             );
           })}
@@ -153,10 +142,7 @@ export default function PolicyPage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {almm.map((ph) => (
             <Card key={ph.phase} className="p-4">
-              <div className="flex items-center justify-between gap-2">
-                <span className="text-sm font-semibold text-foreground">{ph.phase}</span>
-                <ConfidenceBadge level={ph.confidence} showDot={false} />
-              </div>
+              <span className="text-sm font-semibold text-foreground">{ph.phase}</span>
               <p className="mt-1 text-sm text-muted-foreground">{ph.scope}</p>
               <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
                 <span className="rounded-md bg-brand/10 px-2 py-0.5 font-medium text-brand">
@@ -220,11 +206,6 @@ export default function PolicyPage() {
                   value={`$${p.value.toFixed(2)}`}
                   unit="/Wp"
                   hint={p.note}
-                  footer={
-                    <div className="flex justify-end">
-                      <ConfidenceBadge level={p.confidence} />
-                    </div>
-                  }
                 />
               ))}
             </div>

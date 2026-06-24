@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { DataTable, type Column } from "@/components/ui/DataTable";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber } from "@/lib/utils";
@@ -71,12 +70,6 @@ export function PpaTrackerTable({
       sortable: true,
       accessor: (r) => r.tariffRs ?? Infinity,
       render: (r) => (r.tariffRs != null ? r.tariffRs.toFixed(2) : dash),
-    },
-    {
-      key: "confidence",
-      header: "Conf.",
-      align: "center",
-      render: (r) => <ConfidenceBadge level={r.confidence} showDot={false} />,
     },
   ];
 

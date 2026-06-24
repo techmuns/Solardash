@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 import { DataTable, type Column } from "@/components/ui/DataTable";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { LineSeriesChart } from "@/components/charts/LineSeriesChart";
 import { CompareTray } from "@/components/compare/CompareTray";
@@ -178,7 +177,6 @@ export function ScreenerTable({
       },
     },
     { key: "rating", header: "Rating", align: "center", render: (r) => <RatingBadge rating={r.rating} /> },
-    { key: "confidence", header: "Conf.", align: "center", render: (r) => <ConfidenceBadge level={r.confidence} showDot={false} /> },
   ];
 
   return (

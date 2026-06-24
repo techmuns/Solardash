@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Card } from "./Card";
-import { ConfidenceBadge, type ConfidenceLevel } from "./Badge";
+import { type ConfidenceLevel } from "./Badge";
 import { ExportMenu } from "./ExportMenu";
 import type { ColumnDef, ExportMeta, ExportRow } from "@/lib/export";
 
@@ -35,14 +35,13 @@ export function ChartFrame({
   subtitle,
   source,
   asOf,
-  confidence,
   actions,
   exportData,
   className,
   bodyClassName,
   children,
 }: ChartFrameProps) {
-  const hasFootnote = Boolean(source || asOf || confidence);
+  const hasFootnote = Boolean(source || asOf);
 
   return (
     <Card className={cn("flex flex-col", className)}>
@@ -83,11 +82,6 @@ export function ChartFrame({
             </span>
           )}
           {asOf && <span>· As of {asOf}</span>}
-          {confidence && (
-            <span className="ml-auto">
-              <ConfidenceBadge level={confidence} />
-            </span>
-          )}
         </div>
       )}
     </Card>

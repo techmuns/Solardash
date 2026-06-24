@@ -2,7 +2,6 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { ChartFrame } from "@/components/ui/ChartFrame";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { LineSeriesChart } from "@/components/charts/LineSeriesChart";
 import { CategoryBarChart } from "@/components/charts/CategoryBarChart";
 import { getDemandSnapshot } from "@/data";
@@ -107,11 +106,6 @@ export default function DemandPage() {
               value={kpiValue(k.value)}
               unit={k.unit ? formatUnit(k.unit) : undefined}
               hint={k.hint}
-              footer={
-                <div className="flex justify-end">
-                  <ConfidenceBadge level={k.confidence} />
-                </div>
-              }
             />
           ))}
         </div>

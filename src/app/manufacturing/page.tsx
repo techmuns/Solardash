@@ -2,7 +2,6 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { ChartFrame } from "@/components/ui/ChartFrame";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { StackedCategoryBarChart } from "@/components/charts/StackedCategoryBarChart";
 import { CategoryBarChart } from "@/components/charts/CategoryBarChart";
@@ -111,11 +110,6 @@ export default function ManufacturingPage() {
               value={kpiValue(k.value)}
               unit={k.unit ? formatUnit(k.unit) : undefined}
               hint={k.hint}
-              footer={
-                <div className="flex justify-end">
-                  <ConfidenceBadge level={k.confidence} />
-                </div>
-              }
             />
           ))}
         </div>
@@ -311,12 +305,9 @@ export default function ManufacturingPage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {d.almmTimeline.map((ph) => (
             <Card key={ph.phase} className="p-4">
-              <div className="flex items-center justify-between gap-2">
-                <span className="text-sm font-semibold text-foreground">
-                  {ph.phase}
-                </span>
-                <ConfidenceBadge level={ph.confidence} showDot={false} />
-              </div>
+              <span className="text-sm font-semibold text-foreground">
+                {ph.phase}
+              </span>
               <p className="mt-1 text-sm text-muted-foreground">{ph.scope}</p>
               <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
                 <span className="rounded-md bg-brand/10 px-2 py-0.5 font-medium text-brand">
@@ -359,11 +350,6 @@ export default function ManufacturingPage() {
                 value={ecoValue(e.value)}
                 unit={formatUnit(e.unit)}
                 hint={e.note}
-                footer={
-                  <div className="flex justify-end">
-                    <ConfidenceBadge level={e.confidence} />
-                  </div>
-                }
               />
             ))}
           </div>

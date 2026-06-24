@@ -1,7 +1,6 @@
 "use client";
 
 import { DataTable, type Column } from "@/components/ui/DataTable";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import type { ExportMeta } from "@/lib/export";
 import type { CellPlayer } from "@/data/types/manufacturing";
 
@@ -74,12 +73,6 @@ export function CellCapacityTable({
         ) : (
           dash
         ),
-    },
-    {
-      key: "confidence",
-      header: "Conf.",
-      align: "center",
-      render: (r) => <ConfidenceBadge level={r.confidence} showDot={false} />,
     },
   ];
 

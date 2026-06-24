@@ -100,8 +100,8 @@ export interface Snapshot<T> {
 }
 
 /**
- * A headline KPI rendered as a `StatCard` (+ `ConfidenceBadge`). Shared across
- * sections; `value` is a string for textual KPIs (e.g. "leading developer").
+ * A headline KPI rendered as a `StatCard`. Shared across sections; `value` is a
+ * string for textual KPIs (e.g. "leading developer").
  */
 export interface Kpi {
   key: string;

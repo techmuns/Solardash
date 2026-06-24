@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { DataTable, type Column } from "@/components/ui/DataTable";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { CompareTray } from "@/components/compare/CompareTray";
 import {
   CompareDialog,
@@ -196,12 +195,6 @@ export function RosterTable({
         ) : (
           <span className="text-muted-foreground/50">—</span>
         ),
-    },
-    {
-      key: "confidence",
-      header: "Conf.",
-      align: "center",
-      render: (r) => <ConfidenceBadge level={r.confidence} showDot={false} />,
     },
   ];
 

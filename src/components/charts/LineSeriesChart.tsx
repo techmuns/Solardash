@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import type { Series } from "@/data/types/core";
 import { energyColor } from "@/lib/colors";
+import { formatAxisTick } from "@/lib/utils";
 import { ChartContainer } from "./ChartContainer";
 import { seriesToRows } from "./series";
 import { useChartTheme } from "./use-chart-theme";
@@ -39,7 +40,7 @@ export function LineSeriesChart({
 
   return (
     <ChartContainer height={height}>
-      <LineChart data={rows} margin={{ top: 8, right: 8, bottom: 0, left: -12 }}>
+      <LineChart data={rows} margin={{ top: 8, right: 8, bottom: 0, left: 0 }}>
         <CartesianGrid vertical={false} stroke={theme.grid} strokeDasharray="3 3" />
         <XAxis
           dataKey="period"
@@ -52,7 +53,8 @@ export function LineSeriesChart({
           stroke={theme.axis}
           tickLine={false}
           axisLine={false}
-          width={40}
+          width={56}
+          tickFormatter={formatAxisTick}
           tick={{ fill: theme.tick, fontSize: 12 }}
         />
         <Tooltip

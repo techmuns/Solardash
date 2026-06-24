@@ -2,7 +2,6 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Card } from "@/components/ui/Card";
 import { ChartFrame } from "@/components/ui/ChartFrame";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { getGlossary, getProvenance } from "@/data";
 import { formatDate } from "@/lib/utils";
 import { ProvenanceTable } from "./ProvenanceTable";
@@ -69,31 +68,6 @@ export default function DataSourcesPage() {
             is no runtime database or client-side fetching, so every figure is reproducible
             and versioned in git.
           </p>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-foreground">
-              Confidence legend
-            </p>
-            <ul className="mt-2 space-y-2 text-sm">
-              <li className="flex items-center gap-3">
-                <ConfidenceBadge level="high" showDot={false} />
-                <span className="text-muted-foreground">
-                  Official / disclosed — MNRE, CEA, SECI, or company filings.
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <ConfidenceBadge level="medium" showDot={false} />
-                <span className="text-muted-foreground">
-                  Public data with Munshot aggregation / derivation.
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <ConfidenceBadge level="modelled" showDot={false} />
-                <span className="text-muted-foreground">
-                  Munshot estimate or model (splits, forward curves, attribution).
-                </span>
-              </li>
-            </ul>
-          </div>
         </Card>
       </section>
 
@@ -117,7 +91,7 @@ export default function DataSourcesPage() {
               asOf,
               source: "Solar Sector Dashboard data layer (all snapshots)",
               confidence: "high",
-              notes: ["Per-dataset sources and confidence levels are in the table rows."],
+              notes: ["Per-dataset sources are in the table rows."],
             }}
           />
         </ChartFrame>
@@ -132,10 +106,7 @@ export default function DataSourcesPage() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {MODELLED.map((m) => (
             <Card key={m.title} className="p-4">
-              <div className="flex items-center justify-between gap-2">
-                <h3 className="text-sm font-semibold text-foreground">{m.title}</h3>
-                <ConfidenceBadge level="modelled" showDot={false} />
-              </div>
+              <h3 className="text-sm font-semibold text-foreground">{m.title}</h3>
               <p className="mt-1.5 text-sm text-muted-foreground">{m.body}</p>
               <p className="mt-2 text-2xs text-muted-foreground">
                 Refine in <Code>{m.path}</Code>

@@ -9,6 +9,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { formatAxisTick } from "@/lib/utils";
 import { ChartContainer } from "./ChartContainer";
 import { useChartTheme } from "./use-chart-theme";
 
@@ -72,6 +73,7 @@ export function StackedCategoryBarChart({
           stroke={theme.axis}
           tickLine={false}
           axisLine={false}
+          tickFormatter={formatAxisTick}
           tick={{ fill: theme.tick, fontSize: 12 }}
         />
         <YAxis

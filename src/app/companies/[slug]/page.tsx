@@ -7,7 +7,6 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { ChartFrame } from "@/components/ui/ChartFrame";
 import { Card } from "@/components/ui/Card";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { getCompanyDetail, getCompanySlugs } from "@/data";
@@ -45,7 +44,7 @@ interface KpiItem {
 const present = (items: (KpiItem | null | false | undefined)[]): KpiItem[] =>
   items.filter((x): x is KpiItem => Boolean(x));
 
-function KpiRow({ items, confidence }: { items: KpiItem[]; confidence: CompanyDetail["confidence"] }) {
+function KpiRow({ items }: { items: KpiItem[] }) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {items.map((k) => (
@@ -55,11 +54,6 @@ function KpiRow({ items, confidence }: { items: KpiItem[]; confidence: CompanyDe
           value={k.value}
           unit={k.unit}
           hint={k.hint}
-          footer={
-            <div className="flex justify-end">
-              <ConfidenceBadge level={confidence} />
-            </div>
-          }
         />
       ))}
     </div>
@@ -131,7 +125,6 @@ export default async function CompanyPage({
           {c.tickerBse && (
             <span className="text-muted-foreground">BSE: {c.tickerBse}</span>
           )}
-          <ConfidenceBadge level={c.confidence} />
         </div>
       </PageHeader>
 
@@ -236,7 +229,7 @@ function RichDetail({
       )}
 
       {/* KPI row */}
-      <KpiRow items={headlineKpis} confidence={c.confidence} />
+      <KpiRow items={headlineKpis} />
 
       {/* Financials (annual) + Quarterly — charts carry client-side range toggles */}
       <FinancialsCharts
@@ -253,7 +246,7 @@ function RichDetail({
       {valuationKpis.length > 0 && (
         <section className="space-y-3">
           <SectionHeader title="Valuation" subtitle={v?.asOf ? `As of ${formatDate(v.asOf)}` : undefined} />
-          <KpiRow items={valuationKpis} confidence={c.confidence} />
+          <KpiRow items={valuationKpis} />
           {v?.methodology && (
             <p className="text-xs text-muted-foreground">
               <span className="font-medium text-foreground/70">Methodology:</span>{" "}
@@ -266,7 +259,7 @@ function RichDetail({
       {/* Operating & mix */}
       <section className="space-y-3">
         <SectionHeader title="Operating & order mix" subtitle="Unit economics and the order book." />
-        <KpiRow items={operatingKpis} confidence={c.confidence} />
+        <KpiRow items={operatingKpis} />
         {orderMix.length > 0 && (
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <ChartFrame title="Order book by segment" subtitle="% of order book" source={source} asOf={asOf} confidence={c.confidence}>
@@ -315,7 +308,7 @@ function HeadlineOnly({ c }: { c: CompanyDetail }) {
 
   return (
     <div className="space-y-6">
-      {items.length > 0 && <KpiRow items={items} confidence={c.confidence} />}
+      {items.length > 0 && <KpiRow items={items} />}
       <EmptyState
         icon={Sparkles}
         title="Detailed coverage pending"

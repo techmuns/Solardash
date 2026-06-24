@@ -24,7 +24,7 @@ export interface StatCardProps {
   icon?: LucideIcon;
   /** Optional sparkline slot (a chart is dropped in here in later phases). */
   sparkline?: React.ReactNode;
-  /** Optional footer slot, e.g. a <ConfidenceBadge />. */
+  /** Optional footer slot rendered below the value. */
   footer?: React.ReactNode;
   className?: string;
 }

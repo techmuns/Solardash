@@ -2,7 +2,6 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { ChartFrame } from "@/components/ui/ChartFrame";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { CategoryBarChart } from "@/components/charts/CategoryBarChart";
 import { StackedCategoryBarChart } from "@/components/charts/StackedCategoryBarChart";
 import { getCompaniesSnapshot, getCompanyDetail } from "@/data";
@@ -106,11 +105,6 @@ export default function CompaniesPage() {
               value={k.value}
               unit={k.unit || undefined}
               hint={k.hint}
-              footer={
-                <div className="flex justify-end">
-                  <ConfidenceBadge level="medium" />
-                </div>
-              }
             />
           ))}
         </div>

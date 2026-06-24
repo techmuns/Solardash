@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
-import { Badge, ConfidenceBadge } from "@/components/ui/Badge";
+import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { BarSeriesChart } from "@/components/charts/BarSeriesChart";
 import { BrandMark } from "@/components/brand/BrandMark";
@@ -239,7 +239,6 @@ export default function LandingPage() {
                     <span className="text-2xs capitalize text-muted-foreground">
                       {c.href.replace("/", "")}
                     </span>
-                    <ConfidenceBadge level={c.k.confidence} showDot={false} />
                   </div>
                 }
               />
@@ -309,7 +308,6 @@ export default function LandingPage() {
                   <Badge variant="outline" className="capitalize">
                     {ins.section}
                   </Badge>
-                  <ConfidenceBadge level={ins.confidence} showDot={false} />
                 </div>
               </Card>
             </Link>

@@ -1,7 +1,7 @@
 "use client";
 
 import { DataTable, type Column } from "@/components/ui/DataTable";
-import { Badge, ConfidenceBadge } from "@/components/ui/Badge";
+import { Badge } from "@/components/ui/Badge";
 import { formatNumber } from "@/lib/utils";
 import type { Scheme } from "@/data/types/policy";
 
@@ -57,12 +57,6 @@ export function SchemesTable({ rows }: { rows: Scheme[] }) {
       render: (r) => (
         <span className="block max-w-[18rem] text-muted-foreground">{r.keyMetric}</span>
       ),
-    },
-    {
-      key: "confidence",
-      header: "Conf.",
-      align: "center",
-      render: (r) => <ConfidenceBadge level={r.confidence} showDot={false} />,
     },
   ];
   return (

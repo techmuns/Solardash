@@ -2,7 +2,6 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { ChartFrame } from "@/components/ui/ChartFrame";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { StackedCategoryBarChart } from "@/components/charts/StackedCategoryBarChart";
 import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { getDevelopersSnapshot } from "@/data";
@@ -70,11 +69,6 @@ export default function DevelopersPage() {
               value={kpiValue(k.value)}
               unit={k.unit ? formatUnit(k.unit) : undefined}
               hint={k.hint}
-              footer={
-                <div className="flex justify-end">
-                  <ConfidenceBadge level={k.confidence} />
-                </div>
-              }
             />
           ))}
         </div>

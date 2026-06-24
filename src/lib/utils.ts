@@ -37,6 +37,18 @@ export function formatCompact(value: number): string {
   return compactNumber.format(value);
 }
 
+/**
+ * Tidy chart-axis tick: thousands get a `k`/`M` suffix so big labels stay
+ * narrow (2000 → `2k`, 26537 → `26.5k`), while sub-1000 values keep up to 2
+ * decimals (160 → `160`, 2.42 → `2.42`, 0.14 → `0.14`).
+ */
+export function formatAxisTick(value: number): string {
+  const abs = Math.abs(value);
+  if (abs >= 1_000_000) return `${parseFloat((value / 1_000_000).toFixed(1))}M`;
+  if (abs >= 1_000) return `${parseFloat((value / 1_000).toFixed(1))}k`;
+  return parseFloat(value.toFixed(2)).toString();
+}
+
 /** Fixed-decimal number with grouping (Indian locale), e.g. `12,345.6`. */
 export function formatNumber(value: number, fractionDigits = 0): string {
   return new Intl.NumberFormat("en-IN", {

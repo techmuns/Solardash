@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { DataTable, type Column } from "@/components/ui/DataTable";
-import { ConfidenceBadge } from "@/components/ui/Badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber } from "@/lib/utils";
@@ -108,12 +107,6 @@ export function RecentAwardsTable({
       exportValue: (r) => r.state ?? "Central",
       render: (r) =>
         r.state ? r.state : <span className="text-muted-foreground/60">Central</span>,
-    },
-    {
-      key: "confidence",
-      header: "Conf.",
-      align: "center",
-      render: (r) => <ConfidenceBadge level={r.confidence} showDot={false} />,
     },
   ];
 
