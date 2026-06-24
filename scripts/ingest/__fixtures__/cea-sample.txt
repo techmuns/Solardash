@@ -1,0 +1,27 @@
+CENTRAL ELECTRICITY AUTHORITY
+EXECUTIVE SUMMARY ON POWER SECTOR
+JANUARY 2026
+
+1.0  INSTALLED GENERATION CAPACITY (in MW) as on 31.01.2026
+Total Installed Capacity : 4,75,210
+...
+
+2.0  POWER SUPPLY POSITION
+All India Power Supply Position during January 2026
+
+Energy (MU)
+Energy Requirement      : 1,50,234
+Energy Met              : 1,48,230
+Energy Not Supplied (-) : 2,004
+% Energy Not Supplied   : 1.33
+
+Peak (MW)
+Peak Demand             : 2,42,100
+Peak Demand Met         : 2,40,560
+Peak Shortage (-)       : 1,540
+% Peak Shortage         : 0.64
+
+Region-wise Power Supply Position (Peak Demand Met, MW): NR 78,540  WR 71,220  SR 62,110  ER 24,980  NER 3,710
+
+3.0  GENERATION
+Total generation during the month : 1,38,910 MU

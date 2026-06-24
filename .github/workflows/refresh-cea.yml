@@ -1,0 +1,39 @@
+name: Refresh CEA demand
+
+on:
+  schedule:
+    - cron: '0 6 12 * *'     # 12th of each month, 06:00 UTC (CEA publishes ~mid-month)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-cea
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Fetch CEA Executive Summaries
+        run: npx tsx scripts/ingest/cea.ts
+      - name: Rebuild snapshots
+        run: npm run data:build
+      - name: Commit & push if changed
+        run: |
+          git config user.name "solardash-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add manual-data/demand src/data/snapshots/demand
+          if git diff --cached --quiet; then
+            echo "No demand changes."
+          else
+            git commit -m "chore(data): refresh CEA monthly demand"
+            git push
+          fi

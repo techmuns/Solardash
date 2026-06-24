@@ -22,7 +22,14 @@ export const demandPipeline = definePipeline({
   section: "demand",
   cadence: "monthly",
   run() {
-    const rows = readManualCsv("demand/monthly.csv");
+    // Merge the auto-refreshed CEA feed (authoritative) with the manual monthly
+    // anchors → one series deduped by month, CEA wins, chronological.
+    const manualRows = readManualCsv("demand/monthly.csv");
+    const ceaRows = readManualCsv("demand/cea-monthly.csv");
+    const byMonth = new Map<string, Record<string, string>>();
+    for (const r of manualRows) byMonth.set(r.month, r);
+    for (const r of ceaRows) byMonth.set(r.month, r); // CEA overrides the anchor
+    const rows = [...byMonth.values()].sort((a, b) => a.month.localeCompare(b.month));
     const months = rows.map((r) => r.month);
     const peakGw = rows.map((r) => Number(r.peak_gw));
     // Energy is sparse — null where not published.
@@ -115,7 +122,7 @@ export const demandPipeline = definePipeline({
       coverage: "India · all-India peak demand & energy met",
       sources,
       notes: [
-        "Peak demand (GW) and energy met (BU) are key CEA / PIB readings — a sparse-but-real series; not every month is published.",
+        "Monthly peak demand (GW) and energy met (BU) merge the auto-refreshed CEA Executive Summary feed (authoritative) with manual anchors, deduped by month — a real series that densifies as the CEA Action runs.",
         "KPIs are curated headline figures (CEA / PIB); YoY growth is computed from same-month pairs (e.g. Jan 2025 → Jan 2026). Demand drivers are forward-looking context.",
       ],
       data,

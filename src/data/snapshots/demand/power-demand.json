@@ -113,7 +113,7 @@
   },
   "dataset": "power-demand",
   "notes": [
-    "Peak demand (GW) and energy met (BU) are key CEA / PIB readings — a sparse-but-real series; not every month is published.",
+    "Monthly peak demand (GW) and energy met (BU) merge the auto-refreshed CEA Executive Summary feed (authoritative) with manual anchors, deduped by month — a real series that densifies as the CEA Action runs.",
     "KPIs are curated headline figures (CEA / PIB); YoY growth is computed from same-month pairs (e.g. Jan 2025 → Jan 2026). Demand drivers are forward-looking context."
   ],
   "section": "demand",
