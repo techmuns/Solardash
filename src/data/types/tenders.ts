@@ -83,6 +83,8 @@ export interface TendersData {
   awardsByQuarter: Series[];
   /** Capacity-weighted avg ₹/unit per quarter, one Series per type (excl. BESS). */
   tariffByType: Series[];
+  /** Lowest discovered solar tariff by calendar year, ₹/kWh (long-run trend). */
+  tariffHistory: Series[];
   /** Total MW awarded per agency (whole feed). */
   agencySplit: AgencySplit[];
   /** MW + share per type over the trailing window (FY26-to-date). */

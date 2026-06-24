@@ -45,6 +45,7 @@ export default function CapacityPage() {
     (sum, s) => sum + (s.values[lastIdx] ?? 0),
     0,
   );
+  const ihPeriods = d.installedHistory[0]?.points.map((p) => p.period) ?? [];
 
   const mixData = d.installedMix.map((m) => ({
     key: m.source,
@@ -96,15 +97,15 @@ export default function CapacityPage() {
         </div>
       </section>
 
-      {/* Hero — annual additions by source */}
+      {/* Hero — solar & wind build-out over time */}
       <section className="space-y-3">
         <SectionHeader
-          title="Annual capacity additions by source"
-          subtitle="GW added per financial year, stacked by source."
+          title="Solar &amp; wind build-out"
+          subtitle="Annual additions and the cumulative solar S-curve, FY19–FY26."
         />
         <ChartFrame
-          title="Annual capacity additions by source"
-          subtitle={`Stacked · GW · ${quarters[lastIdx]} total ${latestTotal.toFixed(1)} GW`}
+          title="Annual solar &amp; wind capacity additions (GW)"
+          subtitle={`Stacked · FY19–FY26 · FY26 total ${latestTotal.toFixed(1)} GW`}
           source={source}
           asOf={asOf}
           confidence="high"
@@ -120,6 +121,30 @@ export default function CapacityPage() {
             periodOrder={quarters}
             height={340}
           />
+        </ChartFrame>
+        <ChartFrame
+          title="Cumulative solar installed capacity, GW"
+          subtitle="All-India · FY19–FY26 · the 100 → 150 GW S-curve"
+          source="MNRE / CEA"
+          asOf={asOf}
+          confidence="high"
+          exportData={{
+            ...seriesToExport(d.installedHistory, ihPeriods, "FY"),
+            meta: snapshotMeta(snapshot, { dataset: "installed-history" }),
+          }}
+        >
+          <LineSeriesChart
+            series={d.installedHistory}
+            unit="GW"
+            periodOrder={ihPeriods}
+            height={300}
+          />
+          <p className="mt-3 px-2 text-xs text-muted-foreground">
+            Crossed{" "}
+            <span className="font-medium text-foreground">100 GW in FY25</span>{" "}
+            and{" "}
+            <span className="font-medium text-foreground">150 GW by FY26</span>.
+          </p>
         </ChartFrame>
       </section>
 

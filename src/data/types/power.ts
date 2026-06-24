@@ -49,6 +49,8 @@ export interface CapacityData {
   stateSolar: StateSolar[];
   /** RE share of generation trend. */
   reShareTrend: Series[];
+  /** Cumulative installed solar GW by FY (the long-run S-curve to 150 GW). */
+  installedHistory: Series[];
   metrics: CapacityMetric[];
 }
 

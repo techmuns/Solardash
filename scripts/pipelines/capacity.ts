@@ -11,14 +11,12 @@ import type {
 
 const CAP_AS_OF = "2026-03-31";
 
-// Real annual additions are published source-wise for these only.
-const COMM_SOURCES = ["solar", "wind", "hydro", "nuclear", "thermal"];
+// Annual additions are a clean 8-year solar + wind history (the installed-mix
+// donut still carries the full current source breakdown).
+const COMM_SOURCES = ["solar", "wind"];
 const COMM_LABELS: Record<string, string> = {
   solar: "Solar",
   wind: "Wind",
-  hydro: "Hydro",
-  nuclear: "Nuclear",
-  thermal: "Thermal",
 };
 const SEGMENTS = ["utility", "open_access", "rooftop", "kusum"];
 const SEG_LABELS: Record<string, string> = {
@@ -36,6 +34,7 @@ export const capacityPipeline = definePipeline({
   cadence: "quarterly",
   run() {
     const commRows = readManualCsv("capacity/commissioning-annual.csv");
+    const ihRows = readManualCsv("capacity/installed-history.csv");
     const mixRows = readManualCsv("capacity/installed-mix.csv");
     const segRows = readManualCsv("capacity/solar-segments.csv");
     const stRows = readManualCsv("capacity/state-solar.csv");
@@ -94,6 +93,17 @@ export const capacityPipeline = definePipeline({
       },
     ];
 
+    // --- Cumulative installed solar (the long-run S-curve to 150 GW) ---
+    const installedHistory: Series[] = [
+      {
+        key: "solar-installed",
+        label: "Cumulative solar",
+        unit: "GW",
+        color: energyColor("solar"),
+        points: ihRows.map((r) => ({ period: r.period, value: Number(r.solar_gw) })),
+      },
+    ];
+
     // --- Metrics (pass-through) ---
     const metrics: CapacityMetric[] = metRows.map((r) => ({
       metric: r.metric,
@@ -136,6 +146,7 @@ export const capacityPipeline = definePipeline({
       }
     };
     for (const r of commRows) addSrc(r.source, r.confidence, r.source_url);
+    for (const r of ihRows) addSrc(r.source, r.confidence, r.source_url);
     for (const r of mixRows) addSrc(r.source_ref, r.confidence, r.source_url);
     for (const r of segRows) addSrc(r.source, r.confidence, r.source_url);
     for (const r of stRows) addSrc(r.source, r.confidence, r.source_url);
@@ -155,6 +166,7 @@ export const capacityPipeline = definePipeline({
       solarSegments,
       stateSolar,
       reShareTrend,
+      installedHistory,
       metrics,
     };
 
@@ -165,7 +177,8 @@ export const capacityPipeline = definePipeline({
       sources,
       notes: [
         "Installed mix is the CEA all-India snapshot at 31 Mar 2026 (532.74 GW total).",
-        "Annual additions are source-wise GW added per FY; FY26 solar (44.6 GW) and wind (6.05 GW) are official CEA/MNRE records, while hydro/nuclear/thermal are estimated from CEA totals.",
+        "Annual additions are an 8-year solar + wind history (FY19–FY26, GW); FY26 solar 44.6 GW and wind 6.05 GW are official CEA/MNRE records.",
+        "Cumulative installed solar follows the long-run S-curve — ~30 GW (FY19) → 150.26 GW (FY26), crossing 100 GW in FY25.",
         "Solar segment splits are MNRE / JMK Research estimates; state-wise solar tails are bucketed as Others.",
       ],
       data,

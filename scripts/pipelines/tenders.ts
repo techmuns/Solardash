@@ -73,6 +73,7 @@ export const tendersPipeline = definePipeline({
   cadence: "quarterly",
   run() {
     const rows = readManualCsv("tenders/auctions.csv");
+    const thRows = readManualCsv("tenders/tariff-history.csv");
 
     // --- Atomic award records ---
     const records: AwardRecord[] = rows.map((r) => {
@@ -280,6 +281,20 @@ export const tendersPipeline = definePipeline({
       (a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id),
     );
 
+    // --- Long-run lowest discovered solar tariff (by calendar year) ---
+    const tariffHistory: Series[] = [
+      {
+        key: "lowest-solar-tariff",
+        label: "Lowest solar tariff",
+        unit: "Rs/kWh",
+        color: "#F59E0B",
+        points: thRows.map((r) => ({
+          period: r.year,
+          value: Number(r.lowest_solar_tariff_rs),
+        })),
+      },
+    ];
+
     // --- Provenance: distinct (source, url, confidence) triples ---
     const srcMap = new Map<
       string,
@@ -299,6 +314,23 @@ export const tendersPipeline = definePipeline({
         });
       } else if (r.date > ex.asOf) {
         ex.asOf = r.date;
+      }
+    }
+    // Tariff history carries no per-row date — stamp it with the feed vintage.
+    for (const r of thRows) {
+      const conf = r.confidence as Confidence;
+      const url = r.source_url?.trim() || undefined;
+      const key = `${r.source}|${url ?? ""}|${conf}`;
+      const ex = srcMap.get(key);
+      if (!ex) {
+        srcMap.set(key, {
+          name: r.source,
+          ...(url ? { url } : {}),
+          confidence: conf,
+          asOf: FY26_END,
+        });
+      } else if (FY26_END > ex.asOf) {
+        ex.asOf = FY26_END;
       }
     }
     const sources: SourceRef[] = [...srcMap.values()]
@@ -332,6 +364,7 @@ export const tendersPipeline = definePipeline({
       kpis,
       awardsByQuarter,
       tariffByType,
+      tariffHistory,
       agencySplit,
       typeMix,
       developerLeaderboard,

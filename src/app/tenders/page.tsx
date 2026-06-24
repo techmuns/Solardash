@@ -5,10 +5,12 @@ import { ChartFrame } from "@/components/ui/ChartFrame";
 import { ConfidenceBadge } from "@/components/ui/Badge";
 import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { CategoryBarChart } from "@/components/charts/CategoryBarChart";
+import { LineSeriesChart } from "@/components/charts/LineSeriesChart";
 import { getTendersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
 import { categoryToExport, snapshotMeta } from "@/lib/export";
+import { seriesToExport } from "@/components/charts/series";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import { LeaderboardTable } from "./LeaderboardTable";
 import { RecentAwardsTable } from "./RecentAwardsTable";
@@ -30,6 +32,7 @@ export default function TendersPage() {
   const snapshot = getTendersSnapshot();
   const d = snapshot.data;
   const quarters = d.awardsByQuarter[0]?.points.map((p) => p.period) ?? [];
+  const tariffYears = d.tariffHistory[0]?.points.map((p) => p.period) ?? [];
 
   const source = "Auction feed · SECI / state DISCOMs (maintained)";
   const asOf = formatDate(snapshot.updatedAt);
@@ -121,6 +124,38 @@ export default function TendersPage() {
             height={300}
             categoryWidth={72}
           />
+        </ChartFrame>
+      </section>
+
+      {/* Long-run solar tariff trend */}
+      <section className="space-y-3">
+        <SectionHeader
+          title="Long-run solar tariffs"
+          subtitle="The lowest discovered solar tariff each year — a decade of price discovery."
+        />
+        <ChartFrame
+          title="Lowest discovered solar tariff by year, ₹/kWh"
+          subtitle="Calendar years · 2016–2026"
+          source="Mercom / SECI (maintained)"
+          asOf={asOf}
+          confidence="medium"
+          exportData={{
+            ...seriesToExport(d.tariffHistory, tariffYears, "Year"),
+            meta: snapshotMeta(snapshot, { dataset: "tariff-history" }),
+          }}
+        >
+          <LineSeriesChart
+            series={d.tariffHistory}
+            unit="₹/kWh"
+            periodOrder={tariffYears}
+            height={300}
+          />
+          <p className="mt-3 px-2 text-xs text-muted-foreground">
+            All-time low{" "}
+            <span className="font-medium text-foreground">₹1.99/kWh</span> (Gujarat,
+            Dec 2020); tariffs have since settled into a{" "}
+            <span className="font-medium text-foreground">~₹2.4/kWh</span> plateau.
+          </p>
         </ChartFrame>
       </section>
 

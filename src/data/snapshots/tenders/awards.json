@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-03-02",
+  "asOf": "2026-03-31",
   "cadence": "quarterly",
   "coverage": "India · central & state RE auctions (maintained feed)",
   "data": {
@@ -986,6 +986,60 @@
         "unit": "Rs/kWh"
       }
     ],
+    "tariffHistory": [
+      {
+        "color": "#F59E0B",
+        "key": "lowest-solar-tariff",
+        "label": "Lowest solar tariff",
+        "points": [
+          {
+            "period": "2016",
+            "value": 4.34
+          },
+          {
+            "period": "2017",
+            "value": 2.44
+          },
+          {
+            "period": "2018",
+            "value": 2.44
+          },
+          {
+            "period": "2019",
+            "value": 2.55
+          },
+          {
+            "period": "2020",
+            "value": 1.99
+          },
+          {
+            "period": "2021",
+            "value": 2.14
+          },
+          {
+            "period": "2022",
+            "value": 2.17
+          },
+          {
+            "period": "2023",
+            "value": 2.49
+          },
+          {
+            "period": "2024",
+            "value": 2.53
+          },
+          {
+            "period": "2025",
+            "value": 2.17
+          },
+          {
+            "period": "2026",
+            "value": 2.42
+          }
+        ],
+        "unit": "Rs/kWh"
+      }
+    ],
     "typeMix": [
       {
         "mw": 5351,
@@ -1034,10 +1088,42 @@
   "section": "tenders",
   "sources": [
     {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Mercom"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Mercom"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Mercom (Bhadla)",
+      "url": "https://www.mercomindia.com/new-solar-tariff-record"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Mercom (Gujarat — all-time low)",
+      "url": "https://www.mercomindia.com/india-record-lowest-solar-tariff"
+    },
+    {
       "asOf": "2024-12-23",
       "confidence": "high",
       "name": "NTPC / pv-magazine",
       "url": "https://www.pv-magazine.com/2024/12/24/bharat-petroleum-wins-150-mw-of-solar-in-ntpc-auction-with-inr-2-55-kwh-bid/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Renewable Watch"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "SECI"
     },
     {
       "asOf": "2025-06-20",
@@ -1115,5 +1201,5 @@
       "url": "https://www.mercomindia.com/daily-news-sjvns-1-2-gw-solar-auction-winners-announced"
     }
   ],
-  "updatedAt": "2026-03-02"
+  "updatedAt": "2026-03-31"
 }

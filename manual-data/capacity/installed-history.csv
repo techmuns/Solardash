@@ -1,0 +1,9 @@
+period,solar_gw,confidence,source,source_url
+FY19,30,medium,MNRE,
+FY20,37,medium,MNRE,
+FY21,42,medium,MNRE,
+FY22,55,medium,MNRE,
+FY23,67,medium,MNRE,
+FY24,82,medium,MNRE / JMK,
+FY25,106,high,MNRE,https://solarquarter.com/2025/04/02/india-adds-record-25-gw-re-in-fy25-solar-capacity-crosses-100-gw-module-manufacturing-hits-74-gw/
+FY26,150.26,high,CEA,https://cea.nic.in/installed-capacity-report/?lang=en

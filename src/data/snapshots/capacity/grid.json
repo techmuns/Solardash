@@ -5,6 +5,11 @@
   "data": {
     "commissioningQuarterly": {
       "categories": [
+        "FY19",
+        "FY20",
+        "FY21",
+        "FY22",
+        "FY23",
         "FY24",
         "FY25",
         "FY26"
@@ -15,8 +20,13 @@
           "key": "solar",
           "label": "Solar",
           "values": [
+            8.5,
+            6.5,
+            5.6,
+            13,
+            12.8,
             15,
-            24.5,
+            23.8,
             44.6
           ]
         },
@@ -25,43 +35,60 @@
           "key": "wind",
           "label": "Wind",
           "values": [
+            1.6,
+            2.1,
+            1.5,
+            1.1,
+            2.3,
             3.25,
             4.15,
             6.05
           ]
-        },
-        {
-          "color": "#3B82F6",
-          "key": "hydro",
-          "label": "Hydro",
-          "values": [
-            0.6,
-            0.4,
-            1
-          ]
-        },
-        {
-          "color": "#A855F7",
-          "key": "nuclear",
-          "label": "Nuclear",
-          "values": [
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "color": "#475569",
-          "key": "thermal",
-          "label": "Thermal",
-          "values": [
-            5,
-            6,
-            9.7
-          ]
         }
       ]
     },
+    "installedHistory": [
+      {
+        "color": "#F59E0B",
+        "key": "solar-installed",
+        "label": "Cumulative solar",
+        "points": [
+          {
+            "period": "FY19",
+            "value": 30
+          },
+          {
+            "period": "FY20",
+            "value": 37
+          },
+          {
+            "period": "FY21",
+            "value": 42
+          },
+          {
+            "period": "FY22",
+            "value": 55
+          },
+          {
+            "period": "FY23",
+            "value": 67
+          },
+          {
+            "period": "FY24",
+            "value": 82
+          },
+          {
+            "period": "FY25",
+            "value": 106
+          },
+          {
+            "period": "FY26",
+            "value": 150.26
+          }
+        ],
+        "unit": "GW"
+      }
+    ],
     "installedMix": [
       {
         "capacityGw": 228.56,
@@ -331,7 +358,8 @@
   "dataset": "grid",
   "notes": [
     "Installed mix is the CEA all-India snapshot at 31 Mar 2026 (532.74 GW total).",
-    "Annual additions are source-wise GW added per FY; FY26 solar (44.6 GW) and wind (6.05 GW) are official CEA/MNRE records, while hydro/nuclear/thermal are estimated from CEA totals.",
+    "Annual additions are an 8-year solar + wind history (FY19–FY26, GW); FY26 solar 44.6 GW and wind 6.05 GW are official CEA/MNRE records.",
+    "Cumulative installed solar follows the long-run S-curve — ~30 GW (FY19) → 150.26 GW (FY26), crossing 100 GW in FY25.",
     "Solar segment splits are MNRE / JMK Research estimates; state-wise solar tails are bucketed as Others."
   ],
   "section": "capacity",
@@ -378,11 +406,6 @@
     },
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "CEA / MNRE / JMK"
-    },
-    {
-      "asOf": "2026-03-31",
       "confidence": "high",
       "name": "CEA 31 Mar 2026",
       "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
@@ -391,6 +414,18 @@
       "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "CREA / Ember"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "JMK",
+      "url": "https://jmkresearch.com/4-2-gw-wind-and-23-8-gw-solar-installed-in-india-in-fy2025/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "JMK / Saur Energy",
+      "url": "https://www.saurenergy.com/solar-energy-news/india-closes-fy23-with-12-8-gw-of-solar-additions"
     },
     {
       "asOf": "2026-03-31",
@@ -405,7 +440,23 @@
     {
       "asOf": "2026-03-31",
       "confidence": "high",
+      "name": "MNRE",
+      "url": "https://solarquarter.com/2025/04/02/india-adds-record-25-gw-re-in-fy25-solar-capacity-crosses-100-gw-module-manufacturing-hits-74-gw/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
       "name": "MNRE (record)"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "MNRE / JMK"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "MNRE / JMK"
     },
     {
       "asOf": "2026-03-31",

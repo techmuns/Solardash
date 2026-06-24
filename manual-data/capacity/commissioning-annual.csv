@@ -1,4 +1,9 @@
-period,solar,wind,hydro,nuclear,thermal,confidence,source,source_url
-FY24,15.0,3.25,0.6,0.0,5.0,medium,CEA / MNRE / JMK,
-FY25,24.5,4.15,0.4,0.0,6.0,medium,CEA / MNRE / JMK,
-FY26,44.6,6.05,1.0,0.0,9.7,high,CEA / MNRE,https://jmkresearch.com/india-installs-record-44-gw-solar-and-6-gw-wind-capacity-in-fy2026/
+period,solar,wind,confidence,source,source_url
+FY19,8.5,1.6,medium,MNRE / JMK,
+FY20,6.5,2.1,medium,MNRE / JMK,
+FY21,5.6,1.5,medium,MNRE / JMK,
+FY22,13.0,1.1,medium,MNRE / JMK,
+FY23,12.8,2.3,high,JMK / Saur Energy,https://www.saurenergy.com/solar-energy-news/india-closes-fy23-with-12-8-gw-of-solar-additions
+FY24,15.0,3.25,high,MNRE / JMK,
+FY25,23.8,4.15,high,JMK,https://jmkresearch.com/4-2-gw-wind-and-23-8-gw-solar-installed-in-india-in-fy2025/
+FY26,44.6,6.05,high,CEA / MNRE,https://jmkresearch.com/india-installs-record-44-gw-solar-and-6-gw-wind-capacity-in-fy2026/
