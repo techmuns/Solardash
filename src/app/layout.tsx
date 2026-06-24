@@ -19,25 +19,24 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const DESCRIPTION =
-  "Buy-side intelligence for India's solar & renewable-energy sector: tenders & auctions, developers, manufacturing, capacity, demand, listed companies, and policy.";
+  "Munshot's Solar Sector Dashboard — buy-side intelligence for India's solar & renewable-energy sector: tenders & auctions, developers, manufacturing, capacity, demand, listed companies, and policy.";
 
 export const metadata: Metadata = {
   title: {
-    default: "Solardash — India Solar Sector Intelligence",
-    template: "%s · Solardash",
+    default: "Solar Sector Dashboard — Munshot",
+    template: "%s · Solar Sector Dashboard",
   },
   description: DESCRIPTION,
-  applicationName: "Solardash",
-  icons: { icon: "/favicon.ico" },
+  applicationName: "Solar Sector Dashboard",
   openGraph: {
-    title: "Solardash — India Solar Sector Intelligence",
+    title: "Solar Sector Dashboard — Munshot",
     description: DESCRIPTION,
-    siteName: "Solardash",
+    siteName: "Solar Sector Dashboard",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Solardash — India Solar Sector Intelligence",
+    title: "Solar Sector Dashboard — Munshot",
     description: DESCRIPTION,
   },
 };

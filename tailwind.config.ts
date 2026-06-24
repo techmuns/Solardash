@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 /**
- * Solardash design tokens — a "solar research terminal": data-dense,
+ * Solar Sector Dashboard design tokens — a "solar research terminal": data-dense,
  * professional, legible. Light theme is primary with a `class`-strategy dark
  * mode. Surface/semantic colours flip via CSS variables (see globals.css);
  * brand + categorical energy colours are fixed hex so charts stay consistent

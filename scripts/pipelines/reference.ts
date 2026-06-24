@@ -15,7 +15,7 @@ export const referencePipeline = definePipeline({
     );
 
     const sources: SourceRef[] = [
-      { name: "Solardash glossary", asOf: REF_AS_OF, confidence: "high" },
+      { name: "Solar Sector Dashboard glossary", asOf: REF_AS_OF, confidence: "high" },
     ];
 
     writeSnapshot<ReferenceData>("reference", "glossary", {
@@ -23,7 +23,7 @@ export const referencePipeline = definePipeline({
       cadence: "adhoc",
       coverage: "India · solar / renewable sector glossary",
       sources,
-      notes: ["Reference glossary of sector terms used across Solardash."],
+      notes: ["Reference glossary of sector terms used across the Solar Sector Dashboard."],
       data: { glossary },
     });
   },

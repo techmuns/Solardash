@@ -1,5 +1,5 @@
 /**
- * Solardash data contract — shared, build-time, static-safe types.
+ * Solar Sector Dashboard data contract — shared, build-time, static-safe types.
  *
  * Provenance granularity (read this):
  *  - Provenance lives at the **snapshot** level by default (`Snapshot.sources`).

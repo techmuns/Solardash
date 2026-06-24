@@ -40,7 +40,7 @@ export const whatsNewPipeline = definePipeline({
         "India · curated solar-sector milestones (company results, capacity records, policy)",
       sources: [
         {
-          name: "Solardash editorial + linked sources",
+          name: "Munshot editorial + linked sources",
           asOf: maxDate,
           confidence: "high" as Confidence,
         },

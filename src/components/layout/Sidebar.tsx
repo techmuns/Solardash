@@ -3,8 +3,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { NAV_GROUPS } from "./nav";
 
 function isActive(pathname: string, href: string) {
@@ -33,14 +33,18 @@ export function Sidebar({ collapsed = false, onNavigate }: SidebarProps) {
         <Link
           href="/"
           onClick={onNavigate}
-          className="flex items-center gap-2.5 outline-none focus-visible:ring-2 focus-visible:ring-sidebar-accent rounded-md"
+          aria-label="Solar Sector Dashboard — by Munshot"
+          className="flex min-w-0 items-center gap-2.5 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-sidebar-accent"
         >
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-brand text-slate-900 shadow-sm">
-            <Sun className="h-5 w-5" aria-hidden />
-          </span>
+          <BrandMark size="sm" />
           {!collapsed && (
-            <span className="text-base font-semibold tracking-tight text-white">
-              Solardash
+            <span className="flex min-w-0 flex-col leading-tight">
+              <span className="truncate text-sm font-semibold tracking-tight text-white">
+                Solar Sector Dashboard
+              </span>
+              <span className="truncate text-2xs font-medium text-sidebar-muted">
+                by Munshot
+              </span>
             </span>
           )}
         </Link>

@@ -1,4 +1,4 @@
-# Solardash — Architecture & Conventions
+# Solar Sector Dashboard (Munshot) — Architecture & Conventions
 
 > This file is the source of truth for project decisions. Later phases (data
 > ingestion, charts, per-section builds) rely on the contracts described here.
@@ -6,9 +6,9 @@
 
 ## 1. Project brief
 
-**Solardash** is a buy-side equity-analyst dashboard for **India's solar /
-renewable-energy sector** — a "solar research terminal" that tracks the solar
-value chain for stock and sector calls.
+The **Solar Sector Dashboard (Munshot)** is a buy-side equity-analyst dashboard
+for **India's solar / renewable-energy sector** — a "solar research terminal"
+that tracks the solar value chain for stock and sector calls.
 
 **Audience:** buy-side analysts who follow the solar / renewables complex
 (developers, manufacturers, EPC, and adjacent listed names) and need a

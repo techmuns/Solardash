@@ -1,8 +1,8 @@
-# Solardash
+# Solar Sector Dashboard (Munshot)
 
-A buy-side equity-analyst dashboard for **India's solar / renewable-energy
-sector** — a data-dense "solar research terminal" tracking the solar value
-chain for stock and sector calls.
+The **Solar Sector Dashboard** — a Munshot buy-side equity-analyst dashboard
+for **India's solar / renewable-energy sector** — a data-dense "solar research
+terminal" tracking the solar value chain for stock and sector calls.
 
 > **Status:** feature-complete. All sections build from committed JSON
 > snapshots, every route is prerendered (`force-static`), and the production
@@ -68,7 +68,7 @@ docs/             # ARCHITECTURE.md
 
 ## Deploy
 
-Solardash deploys to **Cloudflare Workers** via
+The Solar Sector Dashboard (Munshot) deploys to **Cloudflare Workers** via
 [OpenNext](https://opennext.js.org/cloudflare). Because every route is
 prerendered (`force-static`) and heavy pages are served from Cloudflare's
 asset storage through the OpenNext **static-assets incremental cache**, the

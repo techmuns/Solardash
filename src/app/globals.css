@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /*
- * Solardash theme tokens. Surface/semantic colours are HSL channels so the
+ * Solar Sector Dashboard theme tokens. Surface/semantic colours are HSL channels so the
  * `.dark` class can flip them; brand + energy colours live in tailwind.config.ts.
  */
 @layer base {

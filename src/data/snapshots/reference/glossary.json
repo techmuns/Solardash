@@ -80,14 +80,14 @@
   },
   "dataset": "glossary",
   "notes": [
-    "Reference glossary of sector terms used across Solardash."
+    "Reference glossary of sector terms used across the Solar Sector Dashboard."
   ],
   "section": "reference",
   "sources": [
     {
       "asOf": "2026-04-01",
       "confidence": "high",
-      "name": "Solardash glossary"
+      "name": "Solar Sector Dashboard glossary"
     }
   ],
   "updatedAt": "2026-04-01"

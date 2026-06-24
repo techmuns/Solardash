@@ -174,7 +174,7 @@ export function CommandPalette({ entries, open, onOpenChange }: CommandPalettePr
       className="fixed inset-0 z-[60] flex items-start justify-center p-4 sm:p-6"
       role="dialog"
       aria-modal="true"
-      aria-label="Search Solardash"
+      aria-label="Search the Solar Sector Dashboard"
     >
       <div
         className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"

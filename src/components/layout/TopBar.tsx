@@ -19,7 +19,7 @@ function useCurrentTitle() {
       best = { label: item.label, len: item.href.length };
     }
   }
-  return best?.label ?? "Solardash";
+  return best?.label ?? "Solar Sector Dashboard";
 }
 
 export interface TopBarProps {

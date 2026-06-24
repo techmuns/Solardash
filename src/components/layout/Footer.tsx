@@ -13,8 +13,11 @@ export function Footer() {
       <div className="mx-auto w-full max-w-[1600px] px-4 py-6 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-2 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
-            <span className="font-semibold text-foreground">Solardash</span> · India
-            solar sector intelligence
+            <span className="font-semibold text-foreground">
+              Solar Sector Dashboard
+            </span>{" "}
+            · Powered by{" "}
+            <span className="font-medium text-foreground">Munshot</span>
           </p>
           <p className="flex items-center gap-3">
             <span>Data as of {formatDate(asOf)}</span>
@@ -27,10 +30,10 @@ export function Footer() {
           </p>
         </div>
         <p className="mt-3 max-w-3xl text-2xs leading-relaxed text-muted-foreground">
-          Solardash compiles public data (MNRE, CEA, SECI, company filings) and
-          analyst estimates; figures tagged{" "}
+          The Solar Sector Dashboard compiles public data (MNRE, CEA, SECI,
+          company filings) and analyst estimates; figures tagged{" "}
           <span className="font-medium text-foreground">&ldquo;modelled&rdquo;</span> are
-          Solardash estimates. For research only — not investment advice.
+          Munshot estimates. For research only — not investment advice.
         </p>
       </div>
     </footer>

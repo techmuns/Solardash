@@ -12,7 +12,7 @@ export const dynamic = "force-static";
 export const metadata = {
   title: "Data & Methodology",
   description:
-    "How Solardash is built: the static-first data model, per-snapshot provenance, what's modelled, the update workflow, and a sector glossary.",
+    "How the Solar Sector Dashboard is built: the static-first data model, per-snapshot provenance, what's modelled, the update workflow, and a sector glossary.",
 };
 
 function Code({ children }: { children: React.ReactNode }) {
@@ -52,7 +52,7 @@ export default function DataSourcesPage() {
     <div className="space-y-8">
       <PageHeader
         title="Data & Methodology"
-        subtitle="How Solardash is built — the static-first model, every dataset's provenance, what's modelled, and how to refresh it."
+        subtitle="How the Solar Sector Dashboard is built — the static-first model, every dataset's provenance, what's modelled, and how to refresh it."
         asOf={`As of ${formatDate(asOf)}`}
       />
 
@@ -61,7 +61,8 @@ export default function DataSourcesPage() {
         <SectionHeader title="Methodology" subtitle="Static-first — no live database." />
         <Card className="space-y-4 p-5">
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Solardash is <span className="font-medium text-foreground">static-first</span>.
+            The Solar Sector Dashboard is{" "}
+            <span className="font-medium text-foreground">static-first</span>.
             Offline pipelines (<Code>tsx</Code> scripts) read human-maintained feeds in{" "}
             <Code>manual-data/</Code>, derive metrics, and write committed JSON snapshots.
             Pages are prerendered (<Code>force-static</Code>) and read those snapshots — there
@@ -82,13 +83,13 @@ export default function DataSourcesPage() {
               <li className="flex items-center gap-3">
                 <ConfidenceBadge level="medium" showDot={false} />
                 <span className="text-muted-foreground">
-                  Public data with Solardash aggregation / derivation.
+                  Public data with Munshot aggregation / derivation.
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <ConfidenceBadge level="modelled" showDot={false} />
                 <span className="text-muted-foreground">
-                  Solardash estimate or model (splits, forward curves, attribution).
+                  Munshot estimate or model (splits, forward curves, attribution).
                 </span>
               </li>
             </ul>
@@ -105,7 +106,7 @@ export default function DataSourcesPage() {
         <ChartFrame
           title="Snapshot provenance"
           subtitle="Section · dataset · cadence · vintage · sources"
-          source="Solardash data layer"
+          source="Solar Sector Dashboard data layer"
           asOf={formatDate(asOf)}
         >
           <ProvenanceTable
@@ -114,7 +115,7 @@ export default function DataSourcesPage() {
               section: "data-sources",
               dataset: "provenance",
               asOf,
-              source: "Solardash data layer (all snapshots)",
+              source: "Solar Sector Dashboard data layer (all snapshots)",
               confidence: "high",
               notes: ["Per-dataset sources and confidence levels are in the table rows."],
             }}
@@ -167,11 +168,11 @@ export default function DataSourcesPage() {
 
       {/* § Glossary */}
       <section className="space-y-3">
-        <SectionHeader title="Glossary" subtitle="Sector terms used across Solardash." />
+        <SectionHeader title="Glossary" subtitle="Sector terms used across the dashboard." />
         <ChartFrame
           title="Glossary"
           subtitle={`${glossary.length} terms`}
-          source="Solardash"
+          source="Solar Sector Dashboard"
           asOf={formatDate(asOf)}
         >
           <GlossaryTable rows={glossary} />

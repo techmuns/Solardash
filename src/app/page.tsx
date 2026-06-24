@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { Badge, ConfidenceBadge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { BarSeriesChart } from "@/components/charts/BarSeriesChart";
+import { BrandMark } from "@/components/brand/BrandMark";
 import {
   getCapacitySnapshot,
   getCompaniesSnapshot,
@@ -14,6 +14,7 @@ import {
   getManufacturingSnapshot,
   getOverviewSnapshot,
   getPolicySnapshot,
+  getProvenance,
   getTendersSnapshot,
 } from "@/data";
 import { getWhatsNewFeed } from "@/data/whats-new";
@@ -50,6 +51,7 @@ export default function LandingPage() {
   const policy = getPolicySnapshot();
   const companies = companiesSnap.data.companies;
   const recentActivity = getWhatsNewFeed().slice(0, 4);
+  const sectionCount = getProvenance().length;
 
   // Landing as-of = the freshest section snapshot.
   const asOf = [
@@ -131,16 +133,30 @@ export default function LandingPage() {
 
   return (
     <div className="space-y-8">
-      <PageHeader
-        title="Solardash"
-        subtitle="India solar sector — buy-side intelligence."
-        asOf={`As of ${formatDate(asOf)}`}
-      >
-        <p className="text-xs text-muted-foreground">
-          Synthesized live from seven section datasets · confidence ranges high →
-          modelled by source.
-        </p>
-      </PageHeader>
+      {/* Munshot brand block */}
+      <div className="flex flex-col gap-4 border-b border-border pb-6 sm:flex-row sm:items-start sm:justify-between">
+        <div className="flex items-center gap-4">
+          <BrandMark size="lg" />
+          <div className="space-y-1">
+            <h1 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+              Solar Sector Dashboard{" "}
+              <span className="font-semibold text-muted-foreground">· India</span>
+            </h1>
+            <p className="text-sm text-muted-foreground">
+              Buy-side intelligence for India&apos;s solar sector
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-0.5 text-xs text-muted-foreground sm:items-end sm:text-right">
+          <span>
+            {companies.length} companies · {sectionCount} sections · data as of{" "}
+            {formatDate(asOf)}
+          </span>
+          <span className="font-semibold text-foreground/80">
+            Powered by Munshot
+          </span>
+        </div>
+      </div>
 
       {/* Hero band — tenders-led */}
       <Card className="overflow-hidden border-brand/30 bg-gradient-to-br from-brand/[0.06] to-transparent">

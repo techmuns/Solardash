@@ -1,4 +1,4 @@
-// Barrel export for the Solardash base UI component library.
+// Barrel export for the Solar Sector Dashboard base UI component library.
 export {
   Card,
   CardHeader,
