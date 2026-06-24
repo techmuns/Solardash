@@ -1,12 +1,12 @@
-developer,operational_gw,under_construction_gw,pipeline_gw,target_gw,target_year,solar_gw,wind_gw,hybrid_gw,fdre_gw,bess_gwh,confidence,source,note
-Adani Green,17.2,12.0,20.8,50,FY30,11.0,3.5,2.7,0,1.0,medium,VQ Research / Investor Presentation,
-NTPC Green,9.0,7.0,8.0,24,FY30,6.5,1.0,1.5,0,0.5,medium,VQ Research / Investor Presentation,
-ReNew,11.5,3.0,3.2,17.7,FY30,7.0,3.5,1.0,0,0.5,medium,VQ Research / Investor Presentation,
-Tata Power RE,6.1,4.0,5.9,16,FY30,5.0,0.6,0.5,0,0,medium,VQ Research / Investor Presentation,
-JSW Neo,5.7,5.0,5.8,16.5,FY30,3.5,1.5,0.7,0,0,medium,VQ Research / Investor Presentation,
-ACME Solar,2.9,3.5,3.6,10,FY30,2.5,0,0.4,0,0,medium,VQ Research / Investor Presentation,
-Avaada,7.2,6.0,4.5,18,FY30,6.0,0.5,0.7,0,0,modelled,Investor Presentation,
-Greenko,7.5,2.0,3.0,12,FY30,3.5,2.0,2.0,0,0,modelled,Investor Presentation,
-Juniper Green,3.0,2.0,2.0,7,FY30,2.0,0.5,0.5,0,0,modelled,Investor Presentation,
+developer,operational_gw,under_construction_gw,pipeline_gw,target_gw,target_year,solar_gw,wind_gw,hybrid_gw,fdre_gw,bess_gwh,confidence,source,source_url
+Adani Green,19.3,12.0,18.7,50,FY30,13.0,4.0,2.3,0,1.0,high,Company FY26,https://www.pv-magazine-india.com/2026/04/24/adani-greens-operational-re-capacity-grows-35-yoy-to-19-3-gw/
+ReNew,12.6,3.0,5.4,21,FY30,8.0,3.5,1.1,0,0.5,medium,Investor Presentation,
+NTPC Green,10.1,7.0,10.0,45,FY30,7.0,1.0,2.1,0,0.5,high,Company FY26,https://renewablewatch.in/2026/04/01/ntpc-green-energy-limited-surpasses-10-gw-installed-capacity/
+Greenko,7.5,3.0,4.5,15,FY30,3.5,2.0,2.0,0,0,medium,Company,
+Avaada,7.2,10.5,12.3,30,FY30,6.0,0.5,0.7,0,0,high,Company May 2026,
+Tata Power RE,7.0,10.1,5.9,23,FY30,5.5,0.6,0.9,0,0,medium,Company,
+JSW Neo,7.0,6.0,5.0,20,FY30,4.0,1.5,1.5,0,0,medium,Company,
 Sembcorp Green,3.5,1.5,2.0,7,FY30,2.5,0.5,0.5,0,0,modelled,Investor Presentation,
-Torrent Power,2.0,3.0,3.0,8,FY30,1.5,0.2,0.3,0,0,modelled,Investor Presentation,
+Serentica,3.0,3.0,5.0,17,FY30,2.0,0.5,0.5,0,0,modelled,Company,
+Juniper Green,3.0,2.0,2.0,7,FY30,2.0,0.5,0.5,0,0,modelled,Investor Presentation,
+ACME Solar,2.9,4.0,3.1,10,FY30,2.3,0,0.4,0.2,0.14,medium,Company,

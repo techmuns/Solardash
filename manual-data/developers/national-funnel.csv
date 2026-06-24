@@ -1,5 +1,5 @@
-stage,solar_gw,wind_gw,confidence,source
-LOA,174,41,medium,VQ Research
-PPA,116,29,medium,VQ Research
-Executed,60,17,medium,VQ Research
-Balance,56,12,medium,VQ Research
+stage,solar_gw,wind_gw,confidence,source,source_url
+LOA,174,41,medium,VQ Research,
+PPA,116,29,medium,VQ Research,
+Executed,60,17,medium,VQ Research,
+Balance,56,12,medium,VQ Research,

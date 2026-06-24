@@ -1,11 +1,11 @@
-id,date,period,developer,agency,tender_type,capacity_mw,tariff_rs,confidence,source,note
-P-01,2026-02-10,Q4FY26,JSW Neo,SECI,fdre,300,4.98,medium,SECI,25-yr PPA
-P-02,2026-01-15,Q4FY26,JSW Energy,NTPC,solar,700,,medium,NTPC,
-P-03,2025-12-05,Q3FY26,Adani Green,SECI,solar-bess,1000,3.12,medium,SECI,
-P-04,2025-11-20,Q3FY26,ReNew,SECI,hybrid,400,3.46,medium,SECI,
-P-05,2025-10-18,Q3FY26,NTPC Green,SECI,solar,1000,2.55,modelled,SECI,
-P-06,2025-09-12,Q2FY26,Tata Power RE,GUVNL,solar,800,2.70,modelled,GUVNL,
-P-07,2025-08-22,Q2FY26,ACME Solar,SECI,fdre,500,4.64,modelled,SECI,
-P-08,2025-07-15,Q1FY26,Avaada,SECI,solar,700,2.42,modelled,SECI,mfg-linked
-P-09,2025-06-10,Q1FY26,Sembcorp Green,SECI,hybrid,500,3.40,modelled,SECI,
-P-10,2025-05-08,Q1FY26,Juniper Green,MSEDCL,solar,500,2.68,modelled,MSEDCL,
+id,date,period,developer,agency,tender_type,capacity_mw,tariff_rs,confidence,source,source_url
+P-01,2026-02-20,Q4FY26,NLC India,SECI,solar-bess,600,3.12,high,SECI / Mercom,https://www.mercomindia.com/engie-nlc-india-rays-power-among-winners-of-secis-1-2-gw-solar-plus-3-6-gwh-storage-auction
+P-02,2026-02-05,Q4FY26,Waaree Renewable,SECI,wind,300,3.68,high,SECI / Mercom,https://www.mercomindia.com/kp-energy-waaree-and-vena-energy-among-winners-of-secis-1-2-gw-wind-auction
+P-03,2025-10-30,Q3FY26,Serentica,SECI,fdre,600,6.28,high,SECI / Mercom,https://www.mercomindia.com/daily-news-wrap-up-seci-announces-winners-for-4-8-gwh-fdre-auction
+P-04,2025-10-30,Q3FY26,ACME Solar,SECI,fdre,301,6.28,high,SECI / Mercom,https://www.mercomindia.com/daily-news-wrap-up-seci-announces-winners-for-4-8-gwh-fdre-auction
+P-05,2025-10-16,Q3FY26,SAEL,SECI,solar-bess,300,2.86,high,SECI / SolarQuarter,https://www.mercomindia.com/purvah-sael-among-winners-of-secis-2-gw-solar-4-gwh-energy-storage-auction
+P-06,2025-05-28,Q1FY26,Sembcorp Green,SECI,rtc,50,5.07,high,SECI / Renewable Watch,https://renewablewatch.in/2025/05/28/seci-announces-auction-results-for-1-2-gw-rtc-renewable-projects/
+P-07,2025-02-15,Q4FY25,JSW Neo,SECI,fdre,230,4.98,high,SECI / Mercom,https://www.mercomindia.com/daily-news-wrap-up-seci-announces-winners
+P-08,2024-12-23,Q3FY25,ReNew,NTPC,solar,300,2.55,high,NTPC / pv-magazine,https://www.pv-magazine.com/2024/12/24/bharat-petroleum-wins-150-mw-of-solar-in-ntpc-auction-with-inr-2-55-kwh-bid/
+P-09,2024-12-23,Q3FY25,BPCL,NTPC,solar,150,2.55,high,NTPC / pv-magazine,https://www.pv-magazine.com/2024/12/24/bharat-petroleum-wins-150-mw-of-solar-in-ntpc-auction-with-inr-2-55-kwh-bid/
+P-10,2024-11-15,Q3FY25,ACME Solar,SJVN,solar,300,2.52,high,SJVN / Mercom,https://www.mercomindia.com/daily-news-sjvns-1-2-gw-solar-auction-winners-announced

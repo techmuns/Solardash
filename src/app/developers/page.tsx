@@ -179,7 +179,7 @@ export default function DevelopersPage() {
         <ChartFrame
           title="PPA / PSA signings"
           subtitle="Newest first · per-row confidence"
-          source="SECI / state DISCOMs (maintained)"
+          source="SECI / NTPC / SJVN auctions (maintained)"
           asOf={asOf}
         >
           <PpaTrackerTable

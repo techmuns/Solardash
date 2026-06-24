@@ -208,20 +208,39 @@ export const developersPipeline = definePipeline({
       }
     }
 
-    // --- Provenance: distinct (source, confidence) pairs across all feeds ---
-    const srcMap = new Map<string, SourceRef>();
-    const addSource = (name: string, confidence: Confidence, asOf: string) => {
-      const key = `${name}|${confidence}`;
+    // --- Provenance: distinct (source, url, confidence) triples across feeds ---
+    const srcMap = new Map<
+      string,
+      { name: string; url?: string; confidence: Confidence; asOf: string }
+    >();
+    const addSource = (
+      name: string,
+      confidence: Confidence,
+      asOf: string,
+      url?: string,
+    ) => {
+      const u = url?.trim() || undefined;
+      const key = `${name}|${u ?? ""}|${confidence}`;
       const ex = srcMap.get(key);
-      if (!ex) srcMap.set(key, { name, asOf, confidence });
+      if (!ex) srcMap.set(key, { name, ...(u ? { url: u } : {}), confidence, asOf });
       else if (asOf > ex.asOf) ex.asOf = asOf;
     };
-    for (const r of devRows) addSource(r.source, r.confidence as Confidence, ROSTER_AS_OF);
-    for (const r of funnelRows) addSource(r.source, r.confidence as Confidence, ROSTER_AS_OF);
-    for (const r of ppaRows) addSource(r.source, r.confidence as Confidence, r.date);
-    const sources = [...srcMap.values()].sort(
-      (a, b) => a.name.localeCompare(b.name) || a.confidence.localeCompare(b.confidence),
-    );
+    for (const r of devRows) addSource(r.source, r.confidence as Confidence, ROSTER_AS_OF, r.source_url);
+    for (const r of funnelRows) addSource(r.source, r.confidence as Confidence, ROSTER_AS_OF, r.source_url);
+    for (const r of ppaRows) addSource(r.source, r.confidence as Confidence, r.date, r.source_url);
+    const sources: SourceRef[] = [...srcMap.values()]
+      .map((s) => ({
+        name: s.name,
+        ...(s.url ? { url: s.url } : {}),
+        asOf: s.asOf,
+        confidence: s.confidence,
+      }))
+      .sort(
+        (a, b) =>
+          a.name.localeCompare(b.name) ||
+          (a.url ?? "").localeCompare(b.url ?? "") ||
+          a.confidence.localeCompare(b.confidence),
+      );
 
     const data: DevelopersData = {
       kpis,
@@ -239,8 +258,9 @@ export const developersPipeline = definePipeline({
       coverage: "India · large & listed IPPs / developers",
       sources,
       notes: [
-        "Roster, capacity funnel and tech mix are as-of FY26 investor disclosures / VQ Research and are partly modelled & user-maintained.",
-        "Funnel splits, FY30 targets and tech mix are estimates; PPA-signed GW is derived from the PPA tracker.",
+        "Roster operational/UC/pipeline capacities are FY26 company disclosures & investor presentations; lower-confidence rows are user-maintained estimates.",
+        "The national LOA→PPA→Executed→Balance funnel, FY30 targets and tech-mix splits are VQ Research estimates; PPA-signed GW is derived from the PPA tracker.",
+        "The PPA tracker lists real SECI / NTPC / SJVN auction signings (awarded MW, ₹/kWh) sourced from SECI results & trade press.",
         "BESS is tracked in GWh and excluded from the GW-share portfolio donut.",
       ],
       data,
