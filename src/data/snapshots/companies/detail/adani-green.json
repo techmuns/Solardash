@@ -3,17 +3,230 @@
   "cadence": "quarterly",
   "coverage": "Adani Green Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 13,
+        "ebitdaMarginPct": 48,
+        "epsRs": -0.58,
+        "pat": -9,
+        "period": "FY16",
+        "revenue": 28
+      },
+      {
+        "ebitda": 403,
+        "ebitdaMarginPct": 80,
+        "epsRs": -0.37,
+        "pat": -47,
+        "period": "FY17",
+        "revenue": 502
+      },
+      {
+        "ebitda": 843,
+        "ebitdaMarginPct": 57,
+        "epsRs": -1,
+        "pat": -138,
+        "period": "FY18",
+        "revenue": 1480
+      },
+      {
+        "ebitda": 1526,
+        "ebitdaMarginPct": 74,
+        "epsRs": -3.03,
+        "pat": -475,
+        "period": "FY19",
+        "revenue": 2058
+      },
+      {
+        "ebitda": 1450,
+        "ebitdaMarginPct": 57,
+        "epsRs": -0.15,
+        "pat": -68,
+        "period": "FY20",
+        "revenue": 2549
+      },
+      {
+        "ebitda": 2241,
+        "ebitdaMarginPct": 72,
+        "epsRs": 1.34,
+        "pat": 182,
+        "period": "FY21",
+        "revenue": 3124
+      },
+      {
+        "ebitda": 3512,
+        "ebitdaMarginPct": 68,
+        "epsRs": 3.13,
+        "pat": 489,
+        "period": "FY22",
+        "revenue": 5133
+      },
+      {
+        "ebitda": 4970,
+        "ebitdaMarginPct": 64,
+        "epsRs": 6.15,
+        "pat": 973,
+        "period": "FY23",
+        "revenue": 7776
+      },
+      {
+        "ebitda": 7339,
+        "ebitdaMarginPct": 80,
+        "epsRs": 6.94,
+        "pat": 1260,
+        "period": "FY24",
+        "revenue": 9220
+      },
+      {
+        "ebitda": 8889,
+        "ebitdaMarginPct": 79,
+        "epsRs": 9.12,
+        "pat": 2001,
+        "period": "FY25",
+        "revenue": 11212
+      },
+      {
+        "ebitda": 10785,
+        "ebitdaMarginPct": 83,
+        "epsRs": 10.03,
+        "pat": 1987,
+        "period": "FY26",
+        "revenue": 12928
+      }
+    ],
+    "cmp": 1508,
     "confidence": "medium",
-    "hasDetail": false,
+    "ebitdaMarginPct": 83,
+    "hasDetail": true,
     "name": "Adani Green Energy",
+    "patFy26Cr": 1987,
+    "peX": 136,
+    "quarterly": [
+      {
+        "ebitda": 2264,
+        "ebitdaMarginPct": 87,
+        "pat": 507,
+        "patMarginPct": 19.52,
+        "period": "Q4FY23",
+        "revenue": 2598
+      },
+      {
+        "ebitda": 2081,
+        "ebitdaMarginPct": 96,
+        "pat": 323,
+        "patMarginPct": 14.94,
+        "period": "Q1FY24",
+        "revenue": 2162
+      },
+      {
+        "ebitda": 1699,
+        "ebitdaMarginPct": 77,
+        "pat": 371,
+        "patMarginPct": 16.71,
+        "period": "Q2FY24",
+        "revenue": 2220
+      },
+      {
+        "ebitda": 1666,
+        "ebitdaMarginPct": 72,
+        "pat": 256,
+        "patMarginPct": 11.08,
+        "period": "Q3FY24",
+        "revenue": 2311
+      },
+      {
+        "ebitda": 1834,
+        "ebitdaMarginPct": 73,
+        "pat": 310,
+        "patMarginPct": 12.27,
+        "period": "Q4FY24",
+        "revenue": 2527
+      },
+      {
+        "ebitda": 2379,
+        "ebitdaMarginPct": 85,
+        "pat": 629,
+        "patMarginPct": 22.51,
+        "period": "Q1FY25",
+        "revenue": 2794
+      },
+      {
+        "ebitda": 2217,
+        "ebitdaMarginPct": 74,
+        "pat": 515,
+        "patMarginPct": 17.14,
+        "period": "Q2FY25",
+        "revenue": 3005
+      },
+      {
+        "ebitda": 1880,
+        "ebitdaMarginPct": 80,
+        "pat": 474,
+        "patMarginPct": 20.26,
+        "period": "Q3FY25",
+        "revenue": 2340
+      },
+      {
+        "ebitda": 2402,
+        "ebitdaMarginPct": 78,
+        "pat": 383,
+        "patMarginPct": 12.46,
+        "period": "Q4FY25",
+        "revenue": 3073
+      },
+      {
+        "ebitda": 3042,
+        "ebitdaMarginPct": 80,
+        "pat": 824,
+        "patMarginPct": 21.68,
+        "period": "Q1FY26",
+        "revenue": 3800
+      },
+      {
+        "ebitda": 2603,
+        "ebitdaMarginPct": 87,
+        "pat": 644,
+        "patMarginPct": 21.41,
+        "period": "Q2FY26",
+        "revenue": 3008
+      },
+      {
+        "ebitda": 2241,
+        "ebitdaMarginPct": 86,
+        "pat": 5,
+        "patMarginPct": 0.19,
+        "period": "Q3FY26",
+        "revenue": 2618
+      },
+      {
+        "ebitda": 2882,
+        "ebitdaMarginPct": 82,
+        "pat": 514,
+        "patMarginPct": 14.68,
+        "period": "Q4FY26",
+        "revenue": 3502
+      }
+    ],
+    "revenueFy26Cr": 12928,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 4.56,
+      "fiiPct": 11.1,
+      "promoterPct": 62.44,
+      "publicPct": 21.92
+    },
     "slug": "adani-green",
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "ADANIGREEN",
-    "type": "ipp"
+    "type": "ipp",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 12.46,
+      "peX": 136
+    }
   },
   "dataset": "detail/adani-green",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

@@ -61,13 +61,13 @@
         "revenue": 2023
       }
     ],
-    "cmp": 359,
+    "cmp": 357,
     "confidence": "medium",
     "ebitdaMarginPct": 88,
     "hasDetail": true,
     "name": "ACME Solar Holdings",
     "patFy26Cr": 498,
-    "peX": 51,
+    "peX": 50.8,
     "quarterly": [
       {
         "ebitda": 322,
@@ -180,8 +180,8 @@
     "type": "ipp",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 4.3,
-      "peX": 51
+      "pbX": 4.28,
+      "peX": 50.8
     }
   },
   "dataset": "detail/acme-solar",

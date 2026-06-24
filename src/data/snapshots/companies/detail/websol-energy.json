@@ -30,7 +30,7 @@
     "name": "Websol Energy Systems",
     "orderBookCr": 1160,
     "patFy26Cr": 303,
-    "peX": 14.7,
+    "peX": 14.6,
     "quarterly": [
       {
         "ebitda": 68,
@@ -88,7 +88,7 @@
     "valuation": {
       "asOf": "2026-03-31",
       "pbX": 7.1,
-      "peX": 14.7
+      "peX": 14.6
     }
   },
   "dataset": "detail/websol-energy",

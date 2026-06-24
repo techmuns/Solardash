@@ -3,18 +3,143 @@
   "cadence": "quarterly",
   "coverage": "Saatvik Green Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 15,
+        "ebitdaMarginPct": 2,
+        "epsRs": 14.05,
+        "pat": 5,
+        "period": "FY23",
+        "revenue": 609
+      },
+      {
+        "ebitda": 148,
+        "ebitdaMarginPct": 14,
+        "epsRs": 297.1,
+        "pat": 100,
+        "period": "FY24",
+        "revenue": 1088
+      },
+      {
+        "ebitda": 322,
+        "ebitdaMarginPct": 15,
+        "epsRs": 19.11,
+        "pat": 214,
+        "period": "FY25",
+        "revenue": 2158
+      },
+      {
+        "ebitda": 542,
+        "ebitdaMarginPct": 12,
+        "epsRs": 28.11,
+        "pat": 357,
+        "period": "FY26",
+        "revenue": 4548
+      }
+    ],
+    "cmp": 450,
     "confidence": "modelled",
-    "hasDetail": false,
+    "ebitdaMarginPct": 12,
+    "hasDetail": true,
     "moduleGw": 3.8,
     "name": "Saatvik Green Energy",
+    "patFy26Cr": 357,
+    "peX": 15.8,
+    "quarterly": [
+      {
+        "ebitda": 21,
+        "ebitdaMarginPct": 9,
+        "pat": 14,
+        "patMarginPct": 5.98,
+        "period": "Q1FY24",
+        "revenue": 234
+      },
+      {
+        "ebitda": 32,
+        "ebitdaMarginPct": 13,
+        "pat": 21,
+        "patMarginPct": 8.54,
+        "period": "Q1FY25",
+        "revenue": 246
+      },
+      {
+        "ebitda": 68,
+        "ebitdaMarginPct": 14,
+        "pat": 61,
+        "patMarginPct": 12.84,
+        "period": "Q2FY25",
+        "revenue": 475
+      },
+      {
+        "ebitda": 68,
+        "ebitdaMarginPct": 13,
+        "pat": 40,
+        "patMarginPct": 7.72,
+        "period": "Q3FY25",
+        "revenue": 518
+      },
+      {
+        "ebitda": 157,
+        "ebitdaMarginPct": 17,
+        "pat": 95,
+        "patMarginPct": 10.34,
+        "period": "Q4FY25",
+        "revenue": 919
+      },
+      {
+        "ebitda": 177,
+        "ebitdaMarginPct": 19,
+        "pat": 119,
+        "patMarginPct": 12.99,
+        "period": "Q1FY26",
+        "revenue": 916
+      },
+      {
+        "ebitda": 108,
+        "ebitdaMarginPct": 14,
+        "pat": 83,
+        "patMarginPct": 10.81,
+        "period": "Q2FY26",
+        "revenue": 768
+      },
+      {
+        "ebitda": 151,
+        "ebitdaMarginPct": 12,
+        "pat": 97,
+        "patMarginPct": 7.72,
+        "period": "Q3FY26",
+        "revenue": 1257
+      },
+      {
+        "ebitda": 108,
+        "ebitdaMarginPct": 7,
+        "pat": 60,
+        "patMarginPct": 3.73,
+        "period": "Q4FY26",
+        "revenue": 1608
+      }
+    ],
+    "revenueFy26Cr": 4548,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 10.52,
+      "fiiPct": 0.03,
+      "promoterPct": 75.99,
+      "publicPct": 13.46
+    },
     "slug": "saatvik-green",
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "SAATVIK",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 4.21,
+      "peX": 15.8
+    }
   },
   "dataset": "detail/saatvik-green",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

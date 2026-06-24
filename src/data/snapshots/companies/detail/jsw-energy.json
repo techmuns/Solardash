@@ -3,17 +3,238 @@
   "cadence": "quarterly",
   "coverage": "JSW Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 3624,
+        "ebitdaMarginPct": 39,
+        "epsRs": 8.23,
+        "pat": 1358,
+        "period": "FY15",
+        "revenue": 9347
+      },
+      {
+        "ebitda": 4029,
+        "ebitdaMarginPct": 41,
+        "epsRs": 8.83,
+        "pat": 1460,
+        "period": "FY16",
+        "revenue": 9824
+      },
+      {
+        "ebitda": 3324,
+        "ebitdaMarginPct": 40,
+        "epsRs": 3.84,
+        "pat": 623,
+        "period": "FY17",
+        "revenue": 8263
+      },
+      {
+        "ebitda": 2713,
+        "ebitdaMarginPct": 34,
+        "epsRs": 0.48,
+        "pat": 85,
+        "period": "FY18",
+        "revenue": 8049
+      },
+      {
+        "ebitda": 2855,
+        "ebitdaMarginPct": 31,
+        "epsRs": 4.24,
+        "pat": 684,
+        "period": "FY19",
+        "revenue": 9138
+      },
+      {
+        "ebitda": 2957,
+        "ebitdaMarginPct": 36,
+        "epsRs": 6.7,
+        "pat": 1081,
+        "period": "FY20",
+        "revenue": 8273
+      },
+      {
+        "ebitda": 2913,
+        "ebitdaMarginPct": 42,
+        "epsRs": 4.84,
+        "pat": 823,
+        "period": "FY21",
+        "revenue": 6922
+      },
+      {
+        "ebitda": 3572,
+        "ebitdaMarginPct": 44,
+        "epsRs": 10.51,
+        "pat": 1743,
+        "period": "FY22",
+        "revenue": 8167
+      },
+      {
+        "ebitda": 3282,
+        "ebitdaMarginPct": 32,
+        "epsRs": 8.99,
+        "pat": 1480,
+        "period": "FY23",
+        "revenue": 10332
+      },
+      {
+        "ebitda": 5382,
+        "ebitdaMarginPct": 47,
+        "epsRs": 10.47,
+        "pat": 1725,
+        "period": "FY24",
+        "revenue": 11486
+      },
+      {
+        "ebitda": 5221,
+        "ebitdaMarginPct": 44,
+        "epsRs": 11.16,
+        "pat": 1983,
+        "period": "FY25",
+        "revenue": 11745
+      },
+      {
+        "ebitda": 10068,
+        "ebitdaMarginPct": 53,
+        "epsRs": 12.74,
+        "pat": 2762,
+        "period": "FY26",
+        "revenue": 18901
+      }
+    ],
+    "cmp": 573,
     "confidence": "medium",
-    "hasDetail": false,
+    "ebitdaMarginPct": 53,
+    "hasDetail": true,
     "name": "JSW Energy",
+    "patFy26Cr": 2762,
+    "peX": 48.1,
+    "quarterly": [
+      {
+        "ebitda": 739,
+        "ebitdaMarginPct": 28,
+        "pat": 282,
+        "patMarginPct": 10.56,
+        "period": "Q4FY23",
+        "revenue": 2670
+      },
+      {
+        "ebitda": 1222,
+        "ebitdaMarginPct": 42,
+        "pat": 290,
+        "patMarginPct": 9.9,
+        "period": "Q1FY24",
+        "revenue": 2928
+      },
+      {
+        "ebitda": 1880,
+        "ebitdaMarginPct": 58,
+        "pat": 857,
+        "patMarginPct": 26.3,
+        "period": "Q2FY24",
+        "revenue": 3259
+      },
+      {
+        "ebitda": 1111,
+        "ebitdaMarginPct": 44,
+        "pat": 232,
+        "patMarginPct": 9.12,
+        "period": "Q3FY24",
+        "revenue": 2543
+      },
+      {
+        "ebitda": 1169,
+        "ebitdaMarginPct": 42,
+        "pat": 345,
+        "patMarginPct": 12.52,
+        "period": "Q4FY24",
+        "revenue": 2756
+      },
+      {
+        "ebitda": 1418,
+        "ebitdaMarginPct": 49,
+        "pat": 534,
+        "patMarginPct": 18.55,
+        "period": "Q1FY25",
+        "revenue": 2879
+      },
+      {
+        "ebitda": 1685,
+        "ebitdaMarginPct": 52,
+        "pat": 877,
+        "patMarginPct": 27.08,
+        "period": "Q2FY25",
+        "revenue": 3238
+      },
+      {
+        "ebitda": 914,
+        "ebitdaMarginPct": 37,
+        "pat": 157,
+        "patMarginPct": 6.44,
+        "period": "Q3FY25",
+        "revenue": 2439
+      },
+      {
+        "ebitda": 1204,
+        "ebitdaMarginPct": 38,
+        "pat": 415,
+        "patMarginPct": 13.01,
+        "period": "Q4FY25",
+        "revenue": 3189
+      },
+      {
+        "ebitda": 2789,
+        "ebitdaMarginPct": 54,
+        "pat": 836,
+        "patMarginPct": 16.26,
+        "period": "Q1FY26",
+        "revenue": 5143
+      },
+      {
+        "ebitda": 2996,
+        "ebitdaMarginPct": 58,
+        "pat": 824,
+        "patMarginPct": 15.92,
+        "period": "Q2FY26",
+        "revenue": 5177
+      },
+      {
+        "ebitda": 2030,
+        "ebitdaMarginPct": 50,
+        "pat": 529,
+        "patMarginPct": 12.96,
+        "period": "Q3FY26",
+        "revenue": 4082
+      },
+      {
+        "ebitda": 2250,
+        "ebitdaMarginPct": 50,
+        "pat": 574,
+        "patMarginPct": 12.76,
+        "period": "Q4FY26",
+        "revenue": 4499
+      }
+    ],
+    "revenueFy26Cr": 18901,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 16.15,
+      "fiiPct": 11.31,
+      "promoterPct": 66.53,
+      "publicPct": 5.92
+    },
     "slug": "jsw-energy",
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "JSWENERGY",
-    "type": "ipp"
+    "type": "ipp",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 3.27,
+      "peX": 48.1
+    }
   },
   "dataset": "detail/jsw-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

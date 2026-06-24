@@ -1,0 +1,126 @@
+{
+  "slug": "saatvik-green",
+  "annual": [
+    {
+      "period": "FY23",
+      "revenue": 609,
+      "ebitda": 15,
+      "ebitdaMarginPct": 2,
+      "pat": 5,
+      "epsRs": 14.05
+    },
+    {
+      "period": "FY24",
+      "revenue": 1088,
+      "ebitda": 148,
+      "ebitdaMarginPct": 14,
+      "pat": 100,
+      "epsRs": 297.1
+    },
+    {
+      "period": "FY25",
+      "revenue": 2158,
+      "ebitda": 322,
+      "ebitdaMarginPct": 15,
+      "pat": 214,
+      "epsRs": 19.11
+    },
+    {
+      "period": "FY26",
+      "revenue": 4548,
+      "ebitda": 542,
+      "ebitdaMarginPct": 12,
+      "pat": 357,
+      "epsRs": 28.11
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY24",
+      "revenue": 234,
+      "ebitda": 21,
+      "ebitdaMarginPct": 9,
+      "pat": 14,
+      "patMarginPct": 5.98
+    },
+    {
+      "period": "Q1FY25",
+      "revenue": 246,
+      "ebitda": 32,
+      "ebitdaMarginPct": 13,
+      "pat": 21,
+      "patMarginPct": 8.54
+    },
+    {
+      "period": "Q2FY25",
+      "revenue": 475,
+      "ebitda": 68,
+      "ebitdaMarginPct": 14,
+      "pat": 61,
+      "patMarginPct": 12.84
+    },
+    {
+      "period": "Q3FY25",
+      "revenue": 518,
+      "ebitda": 68,
+      "ebitdaMarginPct": 13,
+      "pat": 40,
+      "patMarginPct": 7.72
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 919,
+      "ebitda": 157,
+      "ebitdaMarginPct": 17,
+      "pat": 95,
+      "patMarginPct": 10.34
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 916,
+      "ebitda": 177,
+      "ebitdaMarginPct": 19,
+      "pat": 119,
+      "patMarginPct": 12.99
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 768,
+      "ebitda": 108,
+      "ebitdaMarginPct": 14,
+      "pat": 83,
+      "patMarginPct": 10.81
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 1257,
+      "ebitda": 151,
+      "ebitdaMarginPct": 12,
+      "pat": 97,
+      "patMarginPct": 7.72
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 1608,
+      "ebitda": 108,
+      "ebitdaMarginPct": 7,
+      "pat": 60,
+      "patMarginPct": 3.73
+    }
+  ],
+  "valuation": {
+    "peX": 15.8,
+    "pbX": 4.21,
+    "cmp": 450
+  },
+  "rocePct": 32.9,
+  "roePct": 42.4,
+  "shareholding": {
+    "promoterPct": 75.99,
+    "fiiPct": 0.03,
+    "diiPct": 10.52,
+    "publicPct": 13.46,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

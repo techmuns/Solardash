@@ -1,0 +1,102 @@
+{
+  "slug": "insolation-energy",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 215,
+      "ebitda": 14,
+      "ebitdaMarginPct": 6,
+      "pat": 7,
+      "epsRs": 0.46
+    },
+    {
+      "period": "FY23",
+      "revenue": 279,
+      "ebitda": 19,
+      "ebitdaMarginPct": 7,
+      "pat": 11,
+      "epsRs": 0.51
+    },
+    {
+      "period": "FY24",
+      "revenue": 737,
+      "ebitda": 81,
+      "ebitdaMarginPct": 11,
+      "pat": 55,
+      "epsRs": 2.66
+    },
+    {
+      "period": "FY25",
+      "revenue": 1334,
+      "ebitda": 161,
+      "ebitdaMarginPct": 12,
+      "pat": 126,
+      "epsRs": 5.73
+    },
+    {
+      "period": "FY26",
+      "revenue": 2146,
+      "ebitda": 287,
+      "ebitdaMarginPct": 13,
+      "pat": 201,
+      "epsRs": 9.1
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 325,
+      "ebitda": 24,
+      "ebitdaMarginPct": 7,
+      "pat": 19,
+      "patMarginPct": 5.85
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 397,
+      "ebitda": 57,
+      "ebitdaMarginPct": 14,
+      "pat": 42,
+      "patMarginPct": 10.58
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 415,
+      "ebitda": 45,
+      "ebitdaMarginPct": 11,
+      "pat": 37,
+      "patMarginPct": 8.92
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 575,
+      "ebitda": 75,
+      "ebitdaMarginPct": 13,
+      "pat": 51,
+      "patMarginPct": 8.87
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 794,
+      "ebitda": 111,
+      "ebitdaMarginPct": 14,
+      "pat": 70,
+      "patMarginPct": 8.82
+    }
+  ],
+  "valuation": {
+    "peX": 12.6,
+    "pbX": 3.14,
+    "cmp": 115
+  },
+  "rocePct": 22.2,
+  "roePct": 28.2,
+  "shareholding": {
+    "promoterPct": 66.12,
+    "fiiPct": 1.09,
+    "diiPct": 0.74,
+    "publicPct": 32.05,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

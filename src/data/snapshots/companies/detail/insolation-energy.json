@@ -3,18 +3,119 @@
   "cadence": "quarterly",
   "coverage": "Insolation Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 14,
+        "ebitdaMarginPct": 6,
+        "epsRs": 0.46,
+        "pat": 7,
+        "period": "FY22",
+        "revenue": 215
+      },
+      {
+        "ebitda": 19,
+        "ebitdaMarginPct": 7,
+        "epsRs": 0.51,
+        "pat": 11,
+        "period": "FY23",
+        "revenue": 279
+      },
+      {
+        "ebitda": 81,
+        "ebitdaMarginPct": 11,
+        "epsRs": 2.66,
+        "pat": 55,
+        "period": "FY24",
+        "revenue": 737
+      },
+      {
+        "ebitda": 161,
+        "ebitdaMarginPct": 12,
+        "epsRs": 5.73,
+        "pat": 126,
+        "period": "FY25",
+        "revenue": 1334
+      },
+      {
+        "ebitda": 287,
+        "ebitdaMarginPct": 13,
+        "epsRs": 9.1,
+        "pat": 201,
+        "period": "FY26",
+        "revenue": 2146
+      }
+    ],
+    "cmp": 115,
     "confidence": "modelled",
-    "hasDetail": false,
+    "ebitdaMarginPct": 13,
+    "hasDetail": true,
     "moduleGw": 2,
     "name": "Insolation Energy",
+    "patFy26Cr": 201,
+    "peX": 12.6,
+    "quarterly": [
+      {
+        "ebitda": 24,
+        "ebitdaMarginPct": 7,
+        "pat": 19,
+        "patMarginPct": 5.85,
+        "period": "Q3FY25",
+        "revenue": 325
+      },
+      {
+        "ebitda": 57,
+        "ebitdaMarginPct": 14,
+        "pat": 42,
+        "patMarginPct": 10.58,
+        "period": "Q4FY25",
+        "revenue": 397
+      },
+      {
+        "ebitda": 45,
+        "ebitdaMarginPct": 11,
+        "pat": 37,
+        "patMarginPct": 8.92,
+        "period": "Q2FY26",
+        "revenue": 415
+      },
+      {
+        "ebitda": 75,
+        "ebitdaMarginPct": 13,
+        "pat": 51,
+        "patMarginPct": 8.87,
+        "period": "Q3FY26",
+        "revenue": 575
+      },
+      {
+        "ebitda": 111,
+        "ebitdaMarginPct": 14,
+        "pat": 70,
+        "patMarginPct": 8.82,
+        "period": "Q4FY26",
+        "revenue": 794
+      }
+    ],
+    "revenueFy26Cr": 2146,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.74,
+      "fiiPct": 1.09,
+      "promoterPct": 66.12,
+      "publicPct": 32.05
+    },
     "slug": "insolation-energy",
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "INSOLATION",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 3.14,
+      "peX": 12.6
+    }
   },
   "dataset": "detail/insolation-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

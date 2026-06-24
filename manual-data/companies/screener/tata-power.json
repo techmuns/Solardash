@@ -1,0 +1,222 @@
+{
+  "slug": "tata-power",
+  "annual": [
+    {
+      "period": "FY15",
+      "revenue": 33593,
+      "ebitda": 6301,
+      "ebitdaMarginPct": 19,
+      "pat": 457,
+      "epsRs": 0.62
+    },
+    {
+      "period": "FY16",
+      "revenue": 29494,
+      "ebitda": 2105,
+      "ebitdaMarginPct": 7,
+      "pat": 786,
+      "epsRs": 2.45
+    },
+    {
+      "period": "FY17",
+      "revenue": 27588,
+      "ebitda": 5473,
+      "ebitdaMarginPct": 20,
+      "pat": 1100,
+      "epsRs": 3.31
+    },
+    {
+      "period": "FY18",
+      "revenue": 26840,
+      "ebitda": 5007,
+      "ebitdaMarginPct": 19,
+      "pat": 2611,
+      "epsRs": 8.9
+    },
+    {
+      "period": "FY19",
+      "revenue": 29881,
+      "ebitda": 6432,
+      "ebitdaMarginPct": 22,
+      "pat": 2606,
+      "epsRs": 8.71
+    },
+    {
+      "period": "FY20",
+      "revenue": 29136,
+      "ebitda": 6805,
+      "ebitdaMarginPct": 23,
+      "pat": 1316,
+      "epsRs": 3.76
+    },
+    {
+      "period": "FY21",
+      "revenue": 32703,
+      "ebitda": 6921,
+      "ebitdaMarginPct": 21,
+      "pat": 1439,
+      "epsRs": 3.53
+    },
+    {
+      "period": "FY22",
+      "revenue": 42816,
+      "ebitda": 7031,
+      "ebitdaMarginPct": 16,
+      "pat": 2156,
+      "epsRs": 5.45
+    },
+    {
+      "period": "FY23",
+      "revenue": 55109,
+      "ebitda": 7728,
+      "ebitdaMarginPct": 14,
+      "pat": 3810,
+      "epsRs": 10.44
+    },
+    {
+      "period": "FY24",
+      "revenue": 61449,
+      "ebitda": 10735,
+      "ebitdaMarginPct": 17,
+      "pat": 4280,
+      "epsRs": 11.57
+    },
+    {
+      "period": "FY25",
+      "revenue": 65478,
+      "ebitda": 12166,
+      "ebitdaMarginPct": 19,
+      "pat": 4775,
+      "epsRs": 12.43
+    },
+    {
+      "period": "FY26",
+      "revenue": 62429,
+      "ebitda": 13271,
+      "ebitdaMarginPct": 21,
+      "pat": 5118,
+      "epsRs": 11.73
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q4FY23",
+      "revenue": 12454,
+      "ebitda": 1928,
+      "ebitdaMarginPct": 15,
+      "pat": 939,
+      "patMarginPct": 7.54
+    },
+    {
+      "period": "Q1FY24",
+      "revenue": 15213,
+      "ebitda": 2713,
+      "ebitdaMarginPct": 18,
+      "pat": 1141,
+      "patMarginPct": 7.5
+    },
+    {
+      "period": "Q2FY24",
+      "revenue": 15738,
+      "ebitda": 2771,
+      "ebitdaMarginPct": 18,
+      "pat": 1017,
+      "patMarginPct": 6.46
+    },
+    {
+      "period": "Q3FY24",
+      "revenue": 14651,
+      "ebitda": 2417,
+      "ebitdaMarginPct": 16,
+      "pat": 1076,
+      "patMarginPct": 7.34
+    },
+    {
+      "period": "Q4FY24",
+      "revenue": 15847,
+      "ebitda": 2307,
+      "ebitdaMarginPct": 15,
+      "pat": 1046,
+      "patMarginPct": 6.6
+    },
+    {
+      "period": "Q1FY25",
+      "revenue": 17294,
+      "ebitda": 3062,
+      "ebitdaMarginPct": 18,
+      "pat": 1189,
+      "patMarginPct": 6.88
+    },
+    {
+      "period": "Q2FY25",
+      "revenue": 15698,
+      "ebitda": 3271,
+      "ebitdaMarginPct": 21,
+      "pat": 1093,
+      "patMarginPct": 6.96
+    },
+    {
+      "period": "Q3FY25",
+      "revenue": 15391,
+      "ebitda": 3079,
+      "ebitdaMarginPct": 20,
+      "pat": 1188,
+      "patMarginPct": 7.72
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 17096,
+      "ebitda": 3246,
+      "ebitdaMarginPct": 19,
+      "pat": 1306,
+      "patMarginPct": 7.64
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 18035,
+      "ebitda": 3565,
+      "ebitdaMarginPct": 20,
+      "pat": 1262,
+      "patMarginPct": 7
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 15545,
+      "ebitda": 3302,
+      "ebitdaMarginPct": 21,
+      "pat": 1245,
+      "patMarginPct": 8.01
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 13948,
+      "ebitda": 3055,
+      "ebitdaMarginPct": 22,
+      "pat": 1194,
+      "patMarginPct": 8.56
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 14900,
+      "ebitda": 2599,
+      "ebitdaMarginPct": 17,
+      "pat": 1416,
+      "patMarginPct": 9.5
+    }
+  ],
+  "valuation": {
+    "peX": 32.9,
+    "pbX": 3.19,
+    "cmp": 396
+  },
+  "rocePct": 10.5,
+  "roePct": 10.2,
+  "shareholding": {
+    "promoterPct": 46.86,
+    "fiiPct": 10.04,
+    "diiPct": 17.98,
+    "publicPct": 24.81,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

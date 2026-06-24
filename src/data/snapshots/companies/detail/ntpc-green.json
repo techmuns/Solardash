@@ -3,17 +3,150 @@
   "cadence": "quarterly",
   "coverage": "NTPC Green Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 152,
+        "ebitdaMarginPct": 90,
+        "epsRs": 0.36,
+        "pat": 171,
+        "period": "FY23",
+        "revenue": 170
+      },
+      {
+        "ebitda": 1745,
+        "ebitdaMarginPct": 89,
+        "epsRs": 0.6,
+        "pat": 343,
+        "period": "FY24",
+        "revenue": 1963
+      },
+      {
+        "ebitda": 1920,
+        "ebitdaMarginPct": 87,
+        "epsRs": 0.56,
+        "pat": 474,
+        "period": "FY25",
+        "revenue": 2210
+      },
+      {
+        "ebitda": 2475,
+        "ebitdaMarginPct": 87,
+        "epsRs": 0.62,
+        "pat": 521,
+        "period": "FY26",
+        "revenue": 2858
+      }
+    ],
+    "cmp": 95,
     "confidence": "medium",
-    "hasDetail": false,
+    "ebitdaMarginPct": 87,
+    "hasDetail": true,
     "name": "NTPC Green Energy",
+    "patFy26Cr": 521,
+    "peX": 153,
+    "quarterly": [
+      {
+        "ebitda": 395,
+        "ebitdaMarginPct": 89,
+        "pat": 56,
+        "patMarginPct": 12.56,
+        "period": "Q3FY24",
+        "revenue": 446
+      },
+      {
+        "ebitda": 437,
+        "ebitdaMarginPct": 86,
+        "pat": 81,
+        "patMarginPct": 15.94,
+        "period": "Q4FY24",
+        "revenue": 508
+      },
+      {
+        "ebitda": 513,
+        "ebitdaMarginPct": 89,
+        "pat": 139,
+        "patMarginPct": 24.05,
+        "period": "Q1FY25",
+        "revenue": 578
+      },
+      {
+        "ebitda": 419,
+        "ebitdaMarginPct": 83,
+        "pat": 37,
+        "patMarginPct": 7.34,
+        "period": "Q2FY25",
+        "revenue": 504
+      },
+      {
+        "ebitda": 424,
+        "ebitdaMarginPct": 84,
+        "pat": 66,
+        "patMarginPct": 13.07,
+        "period": "Q3FY25",
+        "revenue": 505
+      },
+      {
+        "ebitda": 560,
+        "ebitdaMarginPct": 90,
+        "pat": 233,
+        "patMarginPct": 37.46,
+        "period": "Q4FY25",
+        "revenue": 622
+      },
+      {
+        "ebitda": 604,
+        "ebitdaMarginPct": 89,
+        "pat": 220,
+        "patMarginPct": 32.35,
+        "period": "Q1FY26",
+        "revenue": 680
+      },
+      {
+        "ebitda": 530,
+        "ebitdaMarginPct": 86,
+        "pat": 86,
+        "patMarginPct": 14.05,
+        "period": "Q2FY26",
+        "revenue": 612
+      },
+      {
+        "ebitda": 535,
+        "ebitdaMarginPct": 82,
+        "pat": 17,
+        "patMarginPct": 2.6,
+        "period": "Q3FY26",
+        "revenue": 653
+      },
+      {
+        "ebitda": 774,
+        "ebitdaMarginPct": 85,
+        "pat": 197,
+        "patMarginPct": 21.58,
+        "period": "Q4FY26",
+        "revenue": 913
+      }
+    ],
+    "revenueFy26Cr": 2858,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 5.07,
+      "fiiPct": 1.61,
+      "promoterPct": 89.01,
+      "publicPct": 4.3
+    },
     "slug": "ntpc-green",
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "NTPCGREEN",
-    "type": "ipp"
+    "type": "ipp",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 4.22,
+      "peX": 153
+    }
   },
   "dataset": "detail/ntpc-green",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [
