@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-03-31",
+  "asOf": "2026-06-17",
   "cadence": "quarterly",
   "coverage": "India · solar / renewable policy, incentives & value-chain pricing",
   "data": {
@@ -101,29 +101,32 @@
     ],
     "prices": [
       {
-        "confidence": "modelled",
+        "confidence": "high",
         "item": "Polysilicon",
-        "note": "spot proxy",
-        "unit": "USD/Wp",
-        "value": 0.06
+        "note": "2026-06-17 · spot",
+        "unit": "USD/kg",
+        "value": 5.1
       },
       {
-        "confidence": "modelled",
+        "confidence": "high",
         "item": "Wafer",
-        "unit": "USD/Wp",
-        "value": 0.03
+        "note": "2026-06-17 · spot",
+        "unit": "USD/piece",
+        "value": 0.135
       },
       {
-        "confidence": "medium",
+        "confidence": "high",
         "item": "Cell",
-        "unit": "USD/Wp",
-        "value": 0.1
+        "note": "2026-06-17 · spot",
+        "unit": "USD/W",
+        "value": 0.032
       },
       {
-        "confidence": "modelled",
+        "confidence": "high",
         "item": "Module",
-        "unit": "USD/Wp",
-        "value": 0.18
+        "note": "2026-06-17 · spot",
+        "unit": "USD/W",
+        "value": 0.102
       },
       {
         "confidence": "medium",
@@ -238,7 +241,7 @@
   "dataset": "policy",
   "notes": [
     "Scheme tracker spans manufacturing (ALMM/PLI/BCD), demand (DCR/CPSU/RPO/ISTS/Green-H2) and consumer (PM Surya Ghar/KUSUM) policy.",
-    "Value-chain spot prices are PVInsights / industry estimates; the cell-price line is a maintained estimate pending a live feed.",
+    "Value-chain spot prices (polysilicon → wafer → cell → module) are live weekly PVInsights averages in native units (USD/kg, USD/piece, USD/W), refreshed by the prices Action.",
     "ALMM I/II/III milestones are sourced from the manufacturing snapshot (not duplicated here)."
   ],
   "section": "policy",
@@ -279,15 +282,11 @@
       "name": "NGHM"
     },
     {
-      "asOf": "2026-03-31",
-      "confidence": "modelled",
-      "name": "PVInsights"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "VQ Research"
+      "asOf": "2026-06-17",
+      "confidence": "high",
+      "name": "PVInsights",
+      "url": "https://www.pvinsights.com/"
     }
   ],
-  "updatedAt": "2026-03-31"
+  "updatedAt": "2026-06-17"
 }
