@@ -9,7 +9,6 @@ import { ChartFrame } from "@/components/ui/ChartFrame";
 import { Card } from "@/components/ui/Card";
 import { ConfidenceBadge } from "@/components/ui/Badge";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { ComboBarLineChart } from "@/components/charts/ComboBarLineChart";
 import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { getCompanyDetail, getCompanySlugs } from "@/data";
 import { categoricalColor } from "@/lib/colors";
@@ -18,8 +17,7 @@ import { snapshotMeta } from "@/lib/export";
 import type { Snapshot } from "@/data/types/core";
 import type { CompanyDetail } from "@/data/types/companies";
 import { RatingBadge, TYPE_LABELS, TypeBadge, upsidePct } from "../company-ui";
-import { FinancialsTable } from "./FinancialsTable";
-import { QuarterlyTable } from "./QuarterlyTable";
+import { FinancialsCharts } from "./FinancialsCharts";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -240,55 +238,16 @@ function RichDetail({
       {/* KPI row */}
       <KpiRow items={headlineKpis} confidence={c.confidence} />
 
-      {/* Financials (annual) */}
-      <section className="space-y-3">
-        <SectionHeader title="Financials" subtitle="Annual · ₹ crore · E = estimate." />
-        <ChartFrame title="Annual financials" subtitle="₹ crore · FY25 → FY28E" source={source} asOf={asOf} confidence={c.confidence}>
-          <FinancialsTable
-            rows={annual}
-            exportMeta={snapshotMeta(snap, { dataset: `${c.slug}-financials-annual` })}
-          />
-        </ChartFrame>
-        <ChartFrame title="Revenue, EBITDA & margin" subtitle="Bars ₹cr (left) · margin % (right)" source={source} asOf={asOf} confidence={c.confidence}>
-          <ComboBarLineChart
-            categories={annual.map((a) => a.period)}
-            bars={[
-              { key: "revenue", label: "Revenue", color: "#2563EB", values: annual.map((a) => a.revenue ?? 0) },
-              { key: "ebitda", label: "EBITDA", color: "#10B981", values: annual.map((a) => a.ebitda ?? 0) },
-            ]}
-            line={{ key: "margin", label: "EBITDA margin", color: "#F59E0B", values: annual.map((a) => a.ebitdaMarginPct ?? null) }}
-            barUnit="₹cr"
-            lineUnit="%"
-            height={320}
-          />
-        </ChartFrame>
-      </section>
-
-      {/* Quarterly */}
-      <section className="space-y-3">
-        <SectionHeader title="Quarterly" subtitle="₹ crore · recent quarters." />
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <ChartFrame title="Quarterly financials" subtitle="₹ crore" source={source} asOf={asOf} confidence={c.confidence}>
-            <QuarterlyTable
-              rows={quarterly}
-              exportMeta={snapshotMeta(snap, { dataset: `${c.slug}-financials-quarterly` })}
-            />
-          </ChartFrame>
-          <ChartFrame title="Revenue & margin trend" subtitle="Bars ₹cr (left) · margin % (right)" source={source} asOf={asOf} confidence={c.confidence}>
-            <ComboBarLineChart
-              categories={quarterly.map((q) => q.period)}
-              bars={[
-                { key: "revenue", label: "Revenue", color: "#2563EB", values: quarterly.map((q) => q.revenue ?? 0) },
-                { key: "ebitda", label: "EBITDA", color: "#10B981", values: quarterly.map((q) => q.ebitda ?? 0) },
-              ]}
-              line={{ key: "margin", label: "EBITDA margin", color: "#F59E0B", values: quarterly.map((q) => q.ebitdaMarginPct ?? null) }}
-              barUnit="₹cr"
-              lineUnit="%"
-              height={300}
-            />
-          </ChartFrame>
-        </div>
-      </section>
+      {/* Financials (annual) + Quarterly — charts carry client-side range toggles */}
+      <FinancialsCharts
+        annual={annual}
+        quarterly={quarterly}
+        source={source}
+        asOf={asOf}
+        confidence={c.confidence}
+        annualTableMeta={snapshotMeta(snap, { dataset: `${c.slug}-financials-annual` })}
+        quarterlyTableMeta={snapshotMeta(snap, { dataset: `${c.slug}-financials-quarterly` })}
+      />
 
       {/* Valuation */}
       {valuationKpis.length > 0 && (

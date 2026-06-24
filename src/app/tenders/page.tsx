@@ -3,18 +3,16 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
 import { ChartFrame } from "@/components/ui/ChartFrame";
 import { ConfidenceBadge } from "@/components/ui/Badge";
-import { BarSeriesChart } from "@/components/charts/BarSeriesChart";
-import { LineSeriesChart } from "@/components/charts/LineSeriesChart";
 import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { CategoryBarChart } from "@/components/charts/CategoryBarChart";
 import { getTendersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
 import { categoryToExport, snapshotMeta } from "@/lib/export";
-import { seriesToExport } from "@/components/charts/series";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import { LeaderboardTable } from "./LeaderboardTable";
 import { RecentAwardsTable } from "./RecentAwardsTable";
+import { TendersTrends } from "./TendersTrends";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -80,32 +78,16 @@ export default function TendersPage() {
         </div>
       </section>
 
-      {/* Hero chart — awarded MW by quarter, stacked by type */}
-      <section className="space-y-3">
-        <SectionHeader
-          title="Awarded capacity"
-          subtitle="MW awarded per quarter, stacked by tender type."
-        />
-        <ChartFrame
-          title="Awarded MW by quarter"
-          subtitle="Stacked by tender type · whole feed"
-          source={source}
-          asOf={asOf}
-          confidence="medium"
-          exportData={{
-            ...seriesToExport(d.awardsByQuarter, quarters, "Quarter"),
-            meta: snapshotMeta(snapshot, { dataset: "awards-by-quarter" }),
-          }}
-        >
-          <BarSeriesChart
-            series={d.awardsByQuarter}
-            stacked
-            unit="MW"
-            periodOrder={quarters}
-            height={320}
-          />
-        </ChartFrame>
-      </section>
+      {/* Auction trends — awarded MW + tariffs share a quarter-range selector */}
+      <TendersTrends
+        awardsByQuarter={d.awardsByQuarter}
+        tariffByType={d.tariffByType}
+        quarters={quarters}
+        awardsMeta={snapshotMeta(snapshot, { dataset: "awards-by-quarter" })}
+        tariffMeta={snapshotMeta(snapshot, { dataset: "tariff-by-type" })}
+        source={source}
+        asOf={asOf}
+      />
 
       {/* Two-up: type mix + agency split */}
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -138,32 +120,6 @@ export default function TendersPage() {
             unit="MW"
             height={300}
             categoryWidth={72}
-          />
-        </ChartFrame>
-      </section>
-
-      {/* Tariff trends */}
-      <section className="space-y-3">
-        <SectionHeader
-          title="Tariff trends"
-          subtitle="Capacity-weighted winning tariff by type, ₹/unit."
-        />
-        <ChartFrame
-          title="Winning tariffs by type"
-          subtitle="₹/kWh · capacity-weighted · excl. standalone BESS"
-          source={source}
-          asOf={asOf}
-          confidence="medium"
-          exportData={{
-            ...seriesToExport(d.tariffByType, quarters, "Quarter"),
-            meta: snapshotMeta(snapshot, { dataset: "tariff-by-type" }),
-          }}
-        >
-          <LineSeriesChart
-            series={d.tariffByType}
-            unit="₹/kWh"
-            periodOrder={quarters}
-            height={320}
           />
         </ChartFrame>
       </section>
