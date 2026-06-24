@@ -11,15 +11,14 @@ import type {
 
 const CAP_AS_OF = "2026-03-31";
 
-const COMM_SOURCES = ["solar", "wind", "hybrid", "thermal", "nuclear", "hydro", "bess"];
+// Real annual additions are published source-wise for these only.
+const COMM_SOURCES = ["solar", "wind", "hydro", "nuclear", "thermal"];
 const COMM_LABELS: Record<string, string> = {
   solar: "Solar",
   wind: "Wind",
-  hybrid: "Hybrid",
-  thermal: "Thermal",
-  nuclear: "Nuclear",
   hydro: "Hydro",
-  bess: "BESS",
+  nuclear: "Nuclear",
+  thermal: "Thermal",
 };
 const SEGMENTS = ["utility", "open_access", "rooftop", "kusum"];
 const SEG_LABELS: Record<string, string> = {
@@ -29,7 +28,6 @@ const SEG_LABELS: Record<string, string> = {
   kusum: "KUSUM",
 };
 
-const round1 = (n: number) => Math.round(n * 10) / 10;
 const round2 = (n: number) => Math.round(n * 100) / 100;
 
 export const capacityPipeline = definePipeline({
@@ -37,7 +35,7 @@ export const capacityPipeline = definePipeline({
   section: "capacity",
   cadence: "quarterly",
   run() {
-    const commRows = readManualCsv("capacity/commissioning-quarterly.csv");
+    const commRows = readManualCsv("capacity/commissioning-annual.csv");
     const mixRows = readManualCsv("capacity/installed-mix.csv");
     const segRows = readManualCsv("capacity/solar-segments.csv");
     const stRows = readManualCsv("capacity/state-solar.csv");
@@ -53,9 +51,6 @@ export const capacityPipeline = definePipeline({
       values: commRows.map((r) => Number(r[src])),
     }));
     const commissioningQuarterly = { categories, series: commSeries };
-    const quarterTotals = categories.map((_, i) =>
-      round1(commSeries.reduce((s, ser) => s + ser.values[i], 0)),
-    );
 
     // --- Installed mix (GW + share) ---
     const totalInstalled = mixRows.reduce((s, r) => s + Number(r.capacity_gw), 0);
@@ -108,23 +103,20 @@ export const capacityPipeline = definePipeline({
       ...(r.note ? { note: r.note } : {}),
     }));
 
-    // --- KPIs ---
-    const latestIdx = categories.length - 1;
-    const latestTotal = quarterTotals[latestIdx];
-    const latestSolar = commSeries.find((s) => s.key === "solar")?.values[latestIdx] ?? 0;
-    const solarShareAdds = latestTotal ? round1((latestSolar / latestTotal) * 100) : 0;
+    // --- KPIs (real CEA / MNRE values · 31 Mar 2026 / FY26) ---
+    const metricVal = (re: RegExp) =>
+      Number(metRows.find((r) => re.test(r.metric))?.value ?? 0);
     const solarInstalled = Number(mixRows.find((r) => r.source === "solar")?.capacity_gw ?? 0);
-    const reShareLatest = Number(rsRows[rsRows.length - 1]?.re_share_pct ?? 0);
-    const cuf = Number(metRows.find((r) => /CUF/i.test(r.metric))?.value ?? 0);
-    const latestConf = (commRows[latestIdx]?.confidence as Confidence) ?? "medium";
+    const fy26SolarAdds = Number(commRows[commRows.length - 1]?.solar ?? 0);
+    const reGenShare = Number(rsRows[rsRows.length - 1]?.re_share_pct ?? 0);
 
     const kpis: Kpi[] = [
-      { key: "total_installed", label: "Total installed capacity", value: round1(totalInstalled), unit: "GW", confidence: "medium", hint: "all sources" },
-      { key: "solar_installed", label: "Solar installed", value: solarInstalled, unit: "GW", confidence: "medium", hint: "cumulative" },
-      { key: "re_share", label: "RE share of generation", value: reShareLatest, unit: "%", confidence: "medium", hint: "FY26" },
-      { key: "latest_adds", label: "Latest-quarter additions", value: latestTotal, unit: "GW", confidence: latestConf, hint: categories[latestIdx] },
-      { key: "solar_share_adds", label: "Solar share of additions", value: solarShareAdds, unit: "%", confidence: latestConf, hint: categories[latestIdx] },
-      { key: "solar_cuf", label: "Solar CUF", value: cuf, unit: "%", confidence: "medium", hint: "national avg" },
+      { key: "total_installed", label: "Total installed capacity", value: round2(totalInstalled), unit: "GW", confidence: "high", hint: "31 Mar 2026" },
+      { key: "solar_installed", label: "Solar installed", value: solarInstalled, unit: "GW", confidence: "high", hint: "cumulative" },
+      { key: "non_fossil_share", label: "Non-fossil share of capacity", value: metricVal(/non-fossil share/i), unit: "%", confidence: "high", hint: "31 Mar 2026" },
+      { key: "fy26_solar_adds", label: "FY26 solar additions", value: fy26SolarAdds, unit: "GW", confidence: "high", hint: "record" },
+      { key: "fy26_nonfossil_adds", label: "FY26 non-fossil additions", value: metricVal(/non-fossil additions/i), unit: "GW", confidence: "high", hint: "record" },
+      { key: "re_gen_share", label: "RE share of generation", value: reGenShare, unit: "%", confidence: "medium", hint: "FY26" },
     ];
 
     // --- Sanity (warn) ---
@@ -133,21 +125,27 @@ export const capacityPipeline = definePipeline({
       console.warn(`[capacity] installed-mix shares sum to ${round2(shareSum)} (≠ ~1.0)`);
     }
 
-    // --- Provenance (distinct source+confidence; feeds share the vintage) ---
+    // --- Provenance (distinct source+url+confidence; feeds share the vintage) ---
     const srcMap = new Map<string, SourceRef>();
-    const addSrc = (name?: string, conf?: string) => {
+    const addSrc = (name?: string, conf?: string, url?: string) => {
       if (!name || !conf) return;
-      const key = `${name}|${conf}`;
-      if (!srcMap.has(key)) srcMap.set(key, { name, asOf: CAP_AS_OF, confidence: conf as Confidence });
+      const u = url?.trim() || undefined;
+      const key = `${name}|${u ?? ""}|${conf}`;
+      if (!srcMap.has(key)) {
+        srcMap.set(key, { name, ...(u ? { url: u } : {}), asOf: CAP_AS_OF, confidence: conf as Confidence });
+      }
     };
-    for (const r of commRows) addSrc(r.source, r.confidence);
-    for (const r of mixRows) addSrc(r.source_ref, r.confidence);
-    for (const r of segRows) addSrc(r.source, r.confidence);
-    for (const r of stRows) addSrc(r.source, r.confidence);
-    for (const r of rsRows) addSrc(r.source, r.confidence);
-    for (const r of metRows) addSrc(r.source, r.confidence);
+    for (const r of commRows) addSrc(r.source, r.confidence, r.source_url);
+    for (const r of mixRows) addSrc(r.source_ref, r.confidence, r.source_url);
+    for (const r of segRows) addSrc(r.source, r.confidence, r.source_url);
+    for (const r of stRows) addSrc(r.source, r.confidence, r.source_url);
+    for (const r of rsRows) addSrc(r.source, r.confidence, r.source_url);
+    for (const r of metRows) addSrc(r.source, r.confidence, r.source_url);
     const sources = [...srcMap.values()].sort(
-      (a, b) => a.name.localeCompare(b.name) || a.confidence.localeCompare(b.confidence),
+      (a, b) =>
+        a.name.localeCompare(b.name) ||
+        (a.url ?? "").localeCompare(b.url ?? "") ||
+        a.confidence.localeCompare(b.confidence),
     );
 
     const data: CapacityData = {
@@ -166,8 +164,9 @@ export const capacityPipeline = definePipeline({
       coverage: "India · all-India installed capacity, commissioning & generation mix",
       sources,
       notes: [
-        "Quarterly commissioning is source-wise GW added; the latest quarter is modelled. Installed mix is the latest cumulative snapshot.",
-        "Solar segment splits are JMK Research estimates; state-wise solar tails are bucketed as Others.",
+        "Installed mix is the CEA all-India snapshot at 31 Mar 2026 (532.74 GW total).",
+        "Annual additions are source-wise GW added per FY; FY26 solar (44.6 GW) and wind (6.05 GW) are official CEA/MNRE records, while hydro/nuclear/thermal are estimated from CEA totals.",
+        "Solar segment splits are MNRE / JMK Research estimates; state-wise solar tails are bucketed as Others.",
       ],
       data,
     });

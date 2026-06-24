@@ -39,7 +39,7 @@ export interface CapacityMetric {
 
 export interface CapacityData {
   kpis: Kpi[];
-  /** GW commissioned per quarter, one Series per source (stacked + total). */
+  /** GW added per financial year, one series per source (stacked + total). */
   commissioningQuarterly: CommissioningQuarterly;
   /** Cumulative installed capacity mix (latest). */
   installedMix: InstalledMixEntry[];
@@ -73,14 +73,15 @@ export interface DemandDriver {
 
 export interface DemandData {
   kpis: Kpi[];
-  /** Month labels (e.g. `2024-04`), aligned to the arrays below. */
+  /** Month labels (e.g. `2026-01`), aligned to the arrays below. */
   months: string[];
   peakGw: number[];
-  energyBu: number[];
-  /** Per-month YoY% vs the same month a year earlier; null for the first 12. */
+  /** Energy met (BU); null where not published (the series is sparse). */
+  energyBu: (number | null)[];
+  /** Per-month YoY% vs the same month a year earlier; null when no pair exists. */
   peakGrowthYoy: (number | null)[];
   energyGrowthYoy: (number | null)[];
-  quarterlyGrowth: GrowthRow[];
-  yearlyGrowth: GrowthRow[];
+  /** YoY growth for months with a same-month prior-year counterpart. */
+  growth: GrowthRow[];
   drivers: DemandDriver[];
 }

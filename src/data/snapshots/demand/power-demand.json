@@ -32,224 +32,89 @@
       }
     ],
     "energyBu": [
-      130,
-      142,
-      138,
-      132,
       136,
-      130,
-      138,
-      122,
-      126,
-      128,
-      124,
-      134,
-      138,
-      148,
+      null,
+      null,
       143,
-      138,
-      142,
-      138,
-      144,
-      130,
-      134,
-      136,
-      132,
-      142,
-      150
+      null
     ],
     "energyGrowthYoy": [
       null,
       null,
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      6.2,
-      4.2,
-      3.6,
-      4.5,
-      4.4,
-      6.2,
-      4.3,
-      6.6,
-      6.3,
-      6.3,
-      6.5,
-      6,
-      8.7
+      5.1,
+      null
+    ],
+    "growth": [
+      {
+        "energyYoyPct": 5.1,
+        "peakYoyPct": 3.4,
+        "period": "Jan 2026"
+      }
     ],
     "kpis": [
       {
         "confidence": "high",
-        "hint": "Apr 2026",
-        "key": "latest_peak",
-        "label": "Latest peak demand",
+        "key": "fy26-peak-demand-met",
+        "label": "FY26 peak demand met",
         "unit": "GW",
-        "value": 256
+        "value": "245.4"
       },
       {
         "confidence": "high",
-        "hint": "vs Apr 2025",
-        "key": "peak_yoy",
-        "label": "Peak demand YoY",
+        "key": "all-time-peak-apr-2026",
+        "label": "All-time peak (Apr 2026)",
+        "unit": "GW",
+        "value": "256"
+      },
+      {
+        "confidence": "high",
+        "key": "peak-growth-jan-yoy",
+        "label": "Peak growth (Jan YoY)",
         "unit": "%",
-        "value": "+4.5"
+        "value": "+3.4"
       },
       {
         "confidence": "high",
-        "hint": "Apr 2026",
-        "key": "latest_energy",
-        "label": "Latest energy met",
-        "unit": "BU",
-        "value": 150
-      },
-      {
-        "confidence": "high",
-        "hint": "vs Apr 2025",
-        "key": "energy_yoy",
-        "label": "Energy met YoY",
+        "key": "energy-growth-jan-yoy",
+        "label": "Energy growth (Jan YoY)",
         "unit": "%",
-        "value": "+8.7"
+        "value": "+5.1"
       },
       {
         "confidence": "high",
-        "hint": "vs FY25",
-        "key": "fy26_peak_growth",
-        "label": "FY26 peak growth",
+        "key": "energy-deficit-fy26",
+        "label": "Energy deficit FY26",
         "unit": "%",
-        "value": "0.0"
-      },
-      {
-        "confidence": "high",
-        "hint": "vs FY25",
-        "key": "fy26_energy_growth",
-        "label": "FY26 energy growth",
-        "unit": "%",
-        "value": "+5.4"
+        "value": "0.03"
       }
     ],
     "months": [
-      "2024-04",
-      "2024-05",
-      "2024-06",
-      "2024-07",
-      "2024-08",
-      "2024-09",
-      "2024-10",
-      "2024-11",
-      "2024-12",
       "2025-01",
-      "2025-02",
-      "2025-03",
-      "2025-04",
-      "2025-05",
       "2025-06",
-      "2025-07",
-      "2025-08",
-      "2025-09",
-      "2025-10",
-      "2025-11",
       "2025-12",
       "2026-01",
-      "2026-02",
-      "2026-03",
       "2026-04"
     ],
     "peakGrowthYoy": [
       null,
       null,
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      4.3,
-      0,
-      -1.2,
-      5.9,
-      0.8,
-      5.2,
-      2,
-      5.7,
-      5.9,
-      5.8,
-      5.3,
-      5,
-      4.5
+      3.4,
+      null
     ],
     "peakGw": [
-      235,
-      250,
-      245,
-      220,
-      238,
-      232,
-      245,
-      210,
-      222,
-      225,
-      228,
-      238,
-      245,
-      250,
-      242,
-      233,
-      240,
-      244,
-      250,
-      222,
-      235,
-      238,
-      240,
-      250,
+      237.3,
+      241,
+      241.2,
+      245.4,
       256
-    ],
-    "quarterlyGrowth": [
-      {
-        "energyYoyPct": 4.6,
-        "peakYoyPct": 0,
-        "period": "Q1FY26"
-      },
-      {
-        "energyYoyPct": 5,
-        "peakYoyPct": 2.5,
-        "period": "Q2FY26"
-      },
-      {
-        "energyYoyPct": 5.7,
-        "peakYoyPct": 2,
-        "period": "Q3FY26"
-      },
-      {
-        "energyYoyPct": 6.2,
-        "peakYoyPct": 5,
-        "period": "Q4FY26"
-      }
-    ],
-    "yearlyGrowth": [
-      {
-        "energyYoyPct": 5.4,
-        "peakYoyPct": 0,
-        "period": "FY26"
-      }
     ]
   },
   "dataset": "power-demand",
   "notes": [
-    "Monthly all-India peak demand (GW) and energy met (BU) from CEA; YoY is each month vs the same month a year earlier (first 12 months have no YoY).",
-    "Quarterly & yearly growth aggregate full FY periods only (peak = max, energy = sum); demand drivers are forward-looking context."
+    "Peak demand (GW) and energy met (BU) are key CEA / PIB readings — a sparse-but-real series; not every month is published.",
+    "KPIs are curated headline figures (CEA / PIB); YoY growth is computed from same-month pairs (e.g. Jan 2025 → Jan 2026). Demand drivers are forward-looking context."
   ],
   "section": "demand",
   "sources": [
@@ -260,6 +125,11 @@
     },
     {
       "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "CEA / PIB"
+    },
+    {
+      "asOf": "2026-04-01",
       "confidence": "modelled",
       "name": "Industry"
     },
@@ -267,6 +137,18 @@
       "asOf": "2026-04-01",
       "confidence": "medium",
       "name": "NGHM"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PIB / CEA",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2256313"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PIB / CEA",
+      "url": "https://www.pib.gov.in/PressReleseDetail.aspx?PRID=2135450"
     },
     {
       "asOf": "2026-04-01",

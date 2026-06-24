@@ -18,6 +18,7 @@ export const ENERGY_COLORS = {
   nuclear: "#A855F7",
   hydro: "#3B82F6",
   gas: "#FB923C",
+  biomass: "#65A30D",
   peak: "#EC4899",
 } as const;
 
@@ -36,6 +37,7 @@ export const ENERGY_LABELS: Record<EnergySource, string> = {
   nuclear: "Nuclear",
   hydro: "Hydro",
   gas: "Gas",
+  biomass: "Biomass",
   peak: "Peak Power",
 };
 
@@ -50,6 +52,7 @@ export const ENERGY_ORDER: EnergySource[] = [
   "rtc",
   "peak",
   "hydro",
+  "biomass",
   "nuclear",
   "gas",
   "thermal",

@@ -1,8 +1,8 @@
-source,capacity_gw,confidence,source_ref
-solar,110,medium,CEA / MNRE
-wind,48,medium,CEA
-hydro,47,medium,CEA
-thermal,240,medium,CEA
-nuclear,8,high,CEA
-bess,5,medium,CEA / MNRE
-gas,25,medium,CEA
+source,capacity_gw,confidence,source_ref,source_url
+solar,150.26,high,CEA 31 Mar 2026,https://cea.nic.in/installed-capacity-report/?lang=en
+thermal,228.56,high,CEA (coal+lignite),https://cea.nic.in/installed-capacity-report/?lang=en
+wind,56.10,high,CEA,https://cea.nic.in/installed-capacity-report/?lang=en
+hydro,56.58,high,CEA (large+small),https://cea.nic.in/installed-capacity-report/?lang=en
+gas,20.71,high,CEA (gas+diesel),https://cea.nic.in/installed-capacity-report/?lang=en
+biomass,11.75,high,CEA,https://cea.nic.in/installed-capacity-report/?lang=en
+nuclear,8.78,high,CEA,https://cea.nic.in/installed-capacity-report/?lang=en

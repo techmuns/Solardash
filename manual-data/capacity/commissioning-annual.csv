@@ -1,0 +1,4 @@
+period,solar,wind,hydro,nuclear,thermal,confidence,source,source_url
+FY24,15.0,3.25,0.6,0.0,5.0,medium,CEA / MNRE / JMK,
+FY25,24.5,4.15,0.4,0.0,6.0,medium,CEA / MNRE / JMK,
+FY26,44.6,6.05,1.0,0.0,9.7,high,CEA / MNRE,https://jmkresearch.com/india-installs-record-44-gw-solar-and-6-gw-wind-capacity-in-fy2026/

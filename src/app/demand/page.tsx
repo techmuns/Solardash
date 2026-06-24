@@ -15,7 +15,7 @@ export const dynamic = "force-static";
 export const metadata = {
   title: "Power Demand",
   description:
-    "All-India peak demand and energy met — monthly trends, year-on-year growth across grains, and the forces driving future load.",
+    "All-India peak demand and energy met — key CEA readings, same-month year-on-year growth, and the forces driving future load.",
 };
 
 function kpiValue(value: number | string): string {
@@ -34,7 +34,7 @@ export default function DemandPage() {
   const snapshot = getDemandSnapshot();
   const d = snapshot.data;
   const asOf = formatDate(snapshot.updatedAt);
-  const source = "CEA (monthly)";
+  const source = "CEA / PIB";
 
   const monthLabels = d.months.map(monthLabel);
 
@@ -53,26 +53,8 @@ export default function DemandPage() {
       label: "Energy met",
       unit: "BU" as const,
       color: "#0EA5E9",
-      points: d.months.map((_, i) => ({ period: monthLabels[i], value: d.energyBu[i] })),
-    },
-  ];
-  const yoySeries = [
-    {
-      key: "peak-yoy",
-      label: "Peak YoY",
-      unit: "%" as const,
-      color: "#F59E0B",
       points: d.months
-        .map((_, i) => ({ period: monthLabels[i], value: d.peakGrowthYoy[i] }))
-        .filter((p): p is { period: string; value: number } => p.value != null),
-    },
-    {
-      key: "energy-yoy",
-      label: "Energy YoY",
-      unit: "%" as const,
-      color: "#0EA5E9",
-      points: d.months
-        .map((_, i) => ({ period: monthLabels[i], value: d.energyGrowthYoy[i] }))
+        .map((_, i) => ({ period: monthLabels[i], value: d.energyBu[i] }))
         .filter((p): p is { period: string; value: number } => p.value != null),
     },
   ];
@@ -107,7 +89,7 @@ export default function DemandPage() {
     <div className="space-y-8">
       <PageHeader
         title="Power Demand"
-        subtitle="All-India peak demand and energy met — monthly trends, year-on-year growth across grains, and the forces driving future load."
+        subtitle="All-India peak demand and energy met — key CEA readings, same-month year-on-year growth, and the forces driving future load."
         asOf={`As of ${asOf}`}
       />
 
@@ -115,7 +97,7 @@ export default function DemandPage() {
       <section className="space-y-3">
         <SectionHeader
           title="Demand snapshot"
-          subtitle="Latest month and FY26-to-date growth."
+          subtitle="FY26 peak, the all-time record and same-month YoY growth."
         />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {d.kpis.map((k) => (
@@ -139,11 +121,11 @@ export default function DemandPage() {
       <section className="space-y-3">
         <SectionHeader
           title="Monthly peak demand"
-          subtitle="All-India peak met, GW."
+          subtitle="All-India peak met — key CEA / PIB readings (sparse-but-real)."
         />
         <ChartFrame
           title="Monthly peak demand"
-          subtitle="GW · all-India"
+          subtitle="GW · key CEA / PIB readings"
           source={source}
           asOf={asOf}
           confidence="high"
@@ -159,11 +141,11 @@ export default function DemandPage() {
         </ChartFrame>
       </section>
 
-      {/* Energy + YoY growth */}
+      {/* Energy + same-month YoY growth */}
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <ChartFrame
           title="Monthly energy met"
-          subtitle="BU · all-India"
+          subtitle="BU · key CEA readings"
           source={source}
           asOf={asOf}
           confidence="high"
@@ -178,47 +160,13 @@ export default function DemandPage() {
         </ChartFrame>
         <ChartFrame
           title="Year-on-year growth"
-          subtitle="% YoY · peak & energy (from month 13)"
+          subtitle="Same-month YoY · peak & energy"
           source={source}
           asOf={asOf}
           confidence="high"
         >
-          <LineSeriesChart
-            series={yoySeries}
-            unit="%"
-            periodOrder={monthLabels}
-            xInterval={1}
-            height={280}
-          />
+          <GrowthTable rows={d.growth} periodHeader="Month" />
         </ChartFrame>
-      </section>
-
-      {/* Growth — quarterly & yearly */}
-      <section className="space-y-3">
-        <SectionHeader
-          title="Growth by grain"
-          subtitle="Quarterly and financial-year YoY (peak = max, energy = sum)."
-        />
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <ChartFrame
-            title="Quarterly YoY growth"
-            subtitle="FY26 quarters vs FY25"
-            source={source}
-            asOf={asOf}
-            confidence="high"
-          >
-            <GrowthTable rows={d.quarterlyGrowth} periodHeader="Quarter" />
-          </ChartFrame>
-          <ChartFrame
-            title="Yearly YoY growth"
-            subtitle="Financial year vs prior FY"
-            source={source}
-            asOf={asOf}
-            confidence="high"
-          >
-            <GrowthTable rows={d.yearlyGrowth} periodHeader="FY" />
-          </ChartFrame>
-        </div>
       </section>
 
       {/* Demand drivers */}

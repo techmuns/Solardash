@@ -1,11 +1,11 @@
-state,solar_gw,confidence,source
-Rajasthan,28,medium,MNRE
-Gujarat,22,medium,MNRE
-Karnataka,12,medium,MNRE
-Tamil Nadu,11,medium,MNRE
-Maharashtra,9,medium,MNRE
-Andhra Pradesh,8,medium,MNRE
-Madhya Pradesh,7,medium,MNRE
-Telangana,5,medium,MNRE
-Uttar Pradesh,5,medium,MNRE
-Others,3,modelled,MNRE
+state,solar_gw,confidence,source,source_url
+Rajasthan,33,medium,MNRE,
+Gujarat,24,medium,MNRE,
+Karnataka,13,medium,MNRE,
+Tamil Nadu,12,medium,MNRE,
+Maharashtra,10,medium,MNRE,
+Andhra Pradesh,9,medium,MNRE,
+Madhya Pradesh,8,medium,MNRE,
+Telangana,6,medium,MNRE,
+Uttar Pradesh,6,medium,MNRE,
+Others,29.26,medium,MNRE,

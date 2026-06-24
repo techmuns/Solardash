@@ -1,0 +1,6 @@
+metric,value,unit,confidence,source,source_url
+FY26 peak demand met,245.4,GW,high,CEA,
+All-time peak (Apr 2026),256,GW,high,PIB / CEA,https://www.pib.gov.in/PressReleasePage.aspx?PRID=2256313
+Peak growth (Jan YoY),3.4,%,high,CEA,
+Energy growth (Jan YoY),5.1,%,high,CEA,
+Energy deficit FY26,0.03,%,high,CEA / PIB,

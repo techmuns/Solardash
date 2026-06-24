@@ -17,12 +17,14 @@ export const dynamic = "force-static";
 export const metadata = {
   title: "Capacity & Generation",
   description:
-    "All-India installed capacity and quarterly commissioning by source, the solar build-out, state leaders, and the generation mix.",
+    "All-India installed capacity and annual additions by source, the solar build-out, state leaders, and the generation mix.",
 };
 
 function kpiValue(value: number | string): string {
   if (typeof value === "string") return value;
-  return Number.isInteger(value) ? formatNumber(value) : value.toFixed(1);
+  return Number.isInteger(value)
+    ? formatNumber(value)
+    : parseFloat(value.toFixed(2)).toString();
 }
 
 export default function CapacityPage() {
@@ -58,7 +60,9 @@ export default function CapacityPage() {
     color: /^others/i.test(s.state) ? OTHERS_COLOR : energyColor("solar"),
   }));
 
-  const sideMetrics = d.metrics.filter((m) => !/re share/i.test(m.metric));
+  const sideMetrics = d.metrics.filter(
+    (m) => !/re share|non-fossil/i.test(m.metric),
+  );
 
   return (
     <div className="space-y-8">
@@ -92,21 +96,21 @@ export default function CapacityPage() {
         </div>
       </section>
 
-      {/* Hero — commissioning by source */}
+      {/* Hero — annual additions by source */}
       <section className="space-y-3">
         <SectionHeader
-          title="Commissioning by source"
-          subtitle="GW added per quarter, stacked by source."
+          title="Annual capacity additions by source"
+          subtitle="GW added per financial year, stacked by source."
         />
         <ChartFrame
-          title="Quarterly commissioning by source"
+          title="Annual capacity additions by source"
           subtitle={`Stacked · GW · ${quarters[lastIdx]} total ${latestTotal.toFixed(1)} GW`}
           source={source}
           asOf={asOf}
-          confidence="medium"
+          confidence="high"
           exportData={{
-            ...seriesToExport(commSeries, quarters, "Quarter"),
-            meta: snapshotMeta(snapshot, { dataset: "commissioning-quarterly" }),
+            ...seriesToExport(commSeries, quarters, "FY"),
+            meta: snapshotMeta(snapshot, { dataset: "commissioning-annual" }),
           }}
         >
           <BarSeriesChart

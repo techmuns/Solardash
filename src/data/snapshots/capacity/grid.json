@@ -5,13 +5,9 @@
   "data": {
     "commissioningQuarterly": {
       "categories": [
-        "Q1FY25",
-        "Q2FY25",
-        "Q3FY25",
-        "Q4FY25",
-        "Q1FY26",
-        "Q2FY26",
-        "Q3FY26"
+        "FY24",
+        "FY25",
+        "FY26"
       ],
       "series": [
         {
@@ -19,13 +15,9 @@
           "key": "solar",
           "label": "Solar",
           "values": [
-            4.8,
-            5.6,
-            6.1,
-            8.2,
-            7.4,
-            9,
-            9.8
+            15,
+            24.5,
+            44.6
           ]
         },
         {
@@ -33,41 +25,19 @@
           "key": "wind",
           "label": "Wind",
           "values": [
-            1.1,
-            1,
-            1.3,
-            1.6,
-            1.2,
-            1.5,
-            1.4
+            3.25,
+            4.15,
+            6.05
           ]
         },
         {
-          "color": "#8B5CF6",
-          "key": "hybrid",
-          "label": "Hybrid",
+          "color": "#3B82F6",
+          "key": "hydro",
+          "label": "Hydro",
           "values": [
             0.6,
-            0.8,
-            0.9,
-            1.2,
-            1.1,
-            1.4,
-            1.3
-          ]
-        },
-        {
-          "color": "#475569",
-          "key": "thermal",
-          "label": "Thermal",
-          "values": [
-            1.2,
-            1.5,
-            1,
-            2,
-            1.4,
-            1.6,
-            1.8
+            0.4,
+            1
           ]
         },
         {
@@ -77,151 +47,138 @@
           "values": [
             0,
             0,
-            0.7,
-            0,
-            0,
-            0,
-            0.7
+            0
           ]
         },
         {
-          "color": "#3B82F6",
-          "key": "hydro",
-          "label": "Hydro",
+          "color": "#475569",
+          "key": "thermal",
+          "label": "Thermal",
           "values": [
-            0.3,
-            0.2,
-            0.4,
-            0.5,
-            0.3,
-            0.4,
-            0.3
-          ]
-        },
-        {
-          "color": "#059669",
-          "key": "bess",
-          "label": "BESS",
-          "values": [
-            0.2,
-            0.3,
-            0.4,
-            0.6,
-            0.7,
-            0.9,
-            1
+            5,
+            6,
+            9.7
           ]
         }
       ]
     },
     "installedMix": [
       {
-        "capacityGw": 240,
-        "share": 0.5,
+        "capacityGw": 228.56,
+        "share": 0.43,
         "source": "thermal"
       },
       {
-        "capacityGw": 110,
-        "share": 0.23,
+        "capacityGw": 150.26,
+        "share": 0.28,
         "source": "solar"
       },
       {
-        "capacityGw": 48,
-        "share": 0.1,
-        "source": "wind"
-      },
-      {
-        "capacityGw": 47,
-        "share": 0.1,
+        "capacityGw": 56.58,
+        "share": 0.11,
         "source": "hydro"
       },
       {
-        "capacityGw": 25,
-        "share": 0.05,
+        "capacityGw": 56.1,
+        "share": 0.11,
+        "source": "wind"
+      },
+      {
+        "capacityGw": 20.71,
+        "share": 0.04,
         "source": "gas"
       },
       {
-        "capacityGw": 8,
+        "capacityGw": 11.75,
         "share": 0.02,
-        "source": "nuclear"
+        "source": "biomass"
       },
       {
-        "capacityGw": 5,
-        "share": 0.01,
-        "source": "bess"
+        "capacityGw": 8.78,
+        "share": 0.02,
+        "source": "nuclear"
       }
     ],
     "kpis": [
       {
-        "confidence": "medium",
-        "hint": "all sources",
+        "confidence": "high",
+        "hint": "31 Mar 2026",
         "key": "total_installed",
         "label": "Total installed capacity",
         "unit": "GW",
-        "value": 483
+        "value": 532.74
       },
       {
-        "confidence": "medium",
+        "confidence": "high",
         "hint": "cumulative",
         "key": "solar_installed",
         "label": "Solar installed",
         "unit": "GW",
-        "value": 110
+        "value": 150.26
+      },
+      {
+        "confidence": "high",
+        "hint": "31 Mar 2026",
+        "key": "non_fossil_share",
+        "label": "Non-fossil share of capacity",
+        "unit": "%",
+        "value": 53.21
+      },
+      {
+        "confidence": "high",
+        "hint": "record",
+        "key": "fy26_solar_adds",
+        "label": "FY26 solar additions",
+        "unit": "GW",
+        "value": 44.6
+      },
+      {
+        "confidence": "high",
+        "hint": "record",
+        "key": "fy26_nonfossil_adds",
+        "label": "FY26 non-fossil additions",
+        "unit": "GW",
+        "value": 55.29
       },
       {
         "confidence": "medium",
         "hint": "FY26",
-        "key": "re_share",
+        "key": "re_gen_share",
         "label": "RE share of generation",
         "unit": "%",
-        "value": 15
-      },
-      {
-        "confidence": "modelled",
-        "hint": "Q3FY26",
-        "key": "latest_adds",
-        "label": "Latest-quarter additions",
-        "unit": "GW",
-        "value": 16.3
-      },
-      {
-        "confidence": "modelled",
-        "hint": "Q3FY26",
-        "key": "solar_share_adds",
-        "label": "Solar share of additions",
-        "unit": "%",
-        "value": 60.1
-      },
-      {
-        "confidence": "medium",
-        "hint": "national avg",
-        "key": "solar_cuf",
-        "label": "Solar CUF",
-        "unit": "%",
-        "value": 20
+        "value": 16
       }
     ],
     "metrics": [
       {
+        "confidence": "high",
+        "metric": "Non-fossil share of capacity",
+        "unit": "%",
+        "value": 53.21
+      },
+      {
+        "confidence": "high",
+        "metric": "FY26 non-fossil additions",
+        "unit": "GW",
+        "value": 55.29
+      },
+      {
         "confidence": "medium",
         "metric": "Solar CUF",
-        "note": "national avg",
         "unit": "%",
         "value": 20
       },
       {
         "confidence": "medium",
         "metric": "Curtailment (Q4FY26)",
-        "note": "solar curtailed",
         "unit": "%",
         "value": 5
       },
       {
         "confidence": "medium",
         "metric": "RE share of generation",
-        "note": "FY26",
         "unit": "%",
-        "value": 15
+        "value": 16
       }
     ],
     "reShareTrend": [
@@ -240,7 +197,7 @@
           },
           {
             "period": "FY26",
-            "value": 15
+            "value": 16
           }
         ],
         "unit": "%"
@@ -262,7 +219,7 @@
           },
           {
             "period": "FY26",
-            "value": 20.8
+            "value": 20.5
           }
         ],
         "unit": "GW"
@@ -282,7 +239,7 @@
           },
           {
             "period": "FY26",
-            "value": 7.5
+            "value": 7.8
           }
         ],
         "unit": "GW"
@@ -322,7 +279,7 @@
           },
           {
             "period": "FY26",
-            "value": 7.7
+            "value": 7.6
           }
         ],
         "unit": "GW"
@@ -330,63 +287,83 @@
     ],
     "stateSolar": [
       {
-        "solarGw": 28,
+        "solarGw": 33,
         "state": "Rajasthan"
       },
       {
-        "solarGw": 22,
+        "solarGw": 24,
         "state": "Gujarat"
       },
       {
-        "solarGw": 12,
+        "solarGw": 13,
         "state": "Karnataka"
       },
       {
-        "solarGw": 11,
+        "solarGw": 12,
         "state": "Tamil Nadu"
       },
       {
-        "solarGw": 9,
+        "solarGw": 10,
         "state": "Maharashtra"
       },
       {
-        "solarGw": 8,
+        "solarGw": 9,
         "state": "Andhra Pradesh"
       },
       {
-        "solarGw": 7,
+        "solarGw": 8,
         "state": "Madhya Pradesh"
       },
       {
-        "solarGw": 5,
+        "solarGw": 6,
         "state": "Telangana"
       },
       {
-        "solarGw": 5,
+        "solarGw": 6,
         "state": "Uttar Pradesh"
       },
       {
-        "solarGw": 3,
+        "solarGw": 29.26,
         "state": "Others"
       }
     ]
   },
   "dataset": "grid",
   "notes": [
-    "Quarterly commissioning is source-wise GW added; the latest quarter is modelled. Installed mix is the latest cumulative snapshot.",
-    "Solar segment splits are JMK Research estimates; state-wise solar tails are bucketed as Others."
+    "Installed mix is the CEA all-India snapshot at 31 Mar 2026 (532.74 GW total).",
+    "Annual additions are source-wise GW added per FY; FY26 solar (44.6 GW) and wind (6.05 GW) are official CEA/MNRE records, while hydro/nuclear/thermal are estimated from CEA totals.",
+    "Solar segment splits are MNRE / JMK Research estimates; state-wise solar tails are bucketed as Others."
   ],
   "section": "capacity",
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "high",
+      "confidence": "medium",
       "name": "CEA"
     },
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "CEA"
+      "confidence": "high",
+      "name": "CEA",
+      "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "CEA (coal+lignite)",
+      "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "CEA (gas+diesel)",
+      "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "CEA (large+small)",
+      "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
     },
     {
       "asOf": "2026-03-31",
@@ -395,13 +372,20 @@
     },
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "CEA / MNRE"
+      "confidence": "high",
+      "name": "CEA / MNRE",
+      "url": "https://jmkresearch.com/india-installs-record-44-gw-solar-and-6-gw-wind-capacity-in-fy2026/"
     },
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
-      "name": "CEA / MNRE"
+      "confidence": "medium",
+      "name": "CEA / MNRE / JMK"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "CEA 31 Mar 2026",
+      "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
     },
     {
       "asOf": "2026-03-31",
@@ -420,8 +404,14 @@
     },
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
-      "name": "MNRE"
+      "confidence": "high",
+      "name": "MNRE (record)"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "MNRE / JMK",
+      "url": "https://jmkresearch.com/india-installs-record-44-gw-solar-and-6-gw-wind-capacity-in-fy2026/"
     }
   ],
   "updatedAt": "2026-03-31"

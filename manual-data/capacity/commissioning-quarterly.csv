@@ -1,8 +1,0 @@
-period,solar,wind,hybrid,thermal,nuclear,hydro,bess,confidence,source
-Q1FY25,4.8,1.1,0.6,1.2,0.0,0.3,0.2,medium,CEA / MNRE
-Q2FY25,5.6,1.0,0.8,1.5,0.0,0.2,0.3,medium,CEA / MNRE
-Q3FY25,6.1,1.3,0.9,1.0,0.7,0.4,0.4,medium,CEA / MNRE
-Q4FY25,8.2,1.6,1.2,2.0,0.0,0.5,0.6,medium,CEA / MNRE
-Q1FY26,7.4,1.2,1.1,1.4,0.0,0.3,0.7,medium,CEA / MNRE
-Q2FY26,9.0,1.5,1.4,1.6,0.0,0.4,0.9,medium,CEA / MNRE
-Q3FY26,9.8,1.4,1.3,1.8,0.7,0.3,1.0,modelled,CEA / MNRE

@@ -1,4 +1,6 @@
-metric,value,unit,confidence,source,note
-Solar CUF,20,%,medium,CEA,national avg
-Curtailment (Q4FY26),5,%,medium,CREA / Ember,solar curtailed
-RE share of generation,15,%,medium,CEA / Ember,FY26
+metric,value,unit,confidence,source,source_url
+Non-fossil share of capacity,53.21,%,high,CEA 31 Mar 2026,https://cea.nic.in/installed-capacity-report/?lang=en
+FY26 non-fossil additions,55.29,GW,high,MNRE (record),
+Solar CUF,20,%,medium,CEA,
+Curtailment (Q4FY26),5,%,medium,CREA / Ember,
+RE share of generation,16,%,medium,CEA / Ember,
