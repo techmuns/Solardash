@@ -13,7 +13,7 @@
     "peX": 40,
     "revenueFy26Cr": 1050,
     "slug": "websol-energy",
-    "sourceNote": "Company / Screener",
+    "sourceNote": "Company filings (aggregated)",
     "tickerNse": "WEBELSOLAR",
     "type": "manufacturer"
   },
@@ -26,7 +26,7 @@
     {
       "asOf": "2026-03-27",
       "confidence": "medium",
-      "name": "Company / Screener"
+      "name": "Company filings (aggregated)"
     }
   ],
   "updatedAt": "2026-03-27"

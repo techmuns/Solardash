@@ -17,7 +17,7 @@
         "rating": "BUY",
         "revenueFy26Cr": 26540,
         "slug": "waaree-energies",
-        "sourceNote": "Company / Screener",
+        "sourceNote": "Company filings (aggregated)",
         "targetPrice": 3600,
         "tickerNse": "WAAREEENER",
         "type": "integrated"
@@ -35,7 +35,7 @@
         "rating": "BUY",
         "revenueFy26Cr": 7550,
         "slug": "premier-energies",
-        "sourceNote": "Company / Brokers",
+        "sourceNote": "Company filings (aggregated)",
         "targetPrice": 892,
         "tickerNse": "PREMIERENE",
         "type": "integrated"
@@ -69,7 +69,7 @@
         "peX": 40,
         "revenueFy26Cr": 1050,
         "slug": "websol-energy",
-        "sourceNote": "Company / Screener",
+        "sourceNote": "Company filings (aggregated)",
         "tickerNse": "WEBELSOLAR",
         "type": "manufacturer"
       },
@@ -77,7 +77,7 @@
         "confidence": "medium",
         "name": "ACME Solar Holdings",
         "slug": "acme-solar",
-        "sourceNote": "Company / Investor Presentation",
+        "sourceNote": "Company filings (aggregated)",
         "tickerNse": "ACMESOLAR",
         "type": "ipp"
       },
@@ -86,7 +86,7 @@
         "moduleGw": 2,
         "name": "Insolation Energy",
         "slug": "insolation-energy",
-        "sourceNote": "Company",
+        "sourceNote": "Company filings (aggregated)",
         "tickerNse": "INSOLATION",
         "type": "manufacturer"
       },
@@ -95,7 +95,7 @@
         "moduleGw": 3.8,
         "name": "Saatvik Green Energy",
         "slug": "saatvik-green",
-        "sourceNote": "Company",
+        "sourceNote": "Company filings (aggregated)",
         "tickerNse": "SAATVIK",
         "type": "manufacturer"
       }
@@ -103,30 +103,20 @@
   },
   "dataset": "registry",
   "notes": [
-    "Screener registry of listed solar / renewable names (model + manual). Headline metrics are company filings / broker estimates; per-row confidence is honoured.",
+    "Registry of listed solar / renewable names (model + manual). Headline metrics are company filings (aggregated); per-row confidence is honoured.",
     "Rich detail (financials, valuation, operating, shareholding) is added per company as <slug>.json; Vikram Solar is the seeded exemplar."
   ],
   "section": "companies",
   "sources": [
     {
       "asOf": "2026-03-27",
+      "confidence": "medium",
+      "name": "Company filings (aggregated)"
+    },
+    {
+      "asOf": "2026-03-27",
       "confidence": "modelled",
-      "name": "Company"
-    },
-    {
-      "asOf": "2026-03-27",
-      "confidence": "medium",
-      "name": "Company / Brokers"
-    },
-    {
-      "asOf": "2026-03-27",
-      "confidence": "medium",
-      "name": "Company / Investor Presentation"
-    },
-    {
-      "asOf": "2026-03-27",
-      "confidence": "medium",
-      "name": "Company / Screener"
+      "name": "Company filings (aggregated)"
     },
     {
       "asOf": "2026-03-27",

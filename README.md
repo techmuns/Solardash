@@ -127,3 +127,22 @@ Run `npm run data:build:monthly` / `:quarterly` to rebuild only one cadence.
 > (e.g. on push to `main`) with `CLOUDFLARE_API_TOKEN` (and, if needed,
 > `CLOUDFLARE_ACCOUNT_ID`) stored as repository secrets — no other config
 > required.
+
+## Automated financials refresh
+
+Company financials refresh weekly via
+[`.github/workflows/refresh-financials.yml`](.github/workflows/refresh-financials.yml).
+
+**One-time setup:**
+
+1. Log into [screener.in](https://www.screener.in) → browser DevTools →
+   Application → Cookies → `screener.in` → copy the `sessionid` value.
+2. Repo → **Settings → Secrets and variables → Actions → New repository
+   secret**: name `SCREENER_SESSIONID`, value = that cookie.
+3. **Actions** tab → "Refresh financials" → **Run workflow** (to test
+   immediately).
+
+The Action fetches Screener exports → rebuilds snapshots → commits to `main` →
+Cloudflare Pages redeploys. The cookie expires every few weeks; if a run fails
+with **"All Screener fetches failed"**, refresh the secret. The deployed site
+uses **no runtime secrets**.

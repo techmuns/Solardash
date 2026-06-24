@@ -8,7 +8,7 @@
     "moduleGw": 3.8,
     "name": "Saatvik Green Energy",
     "slug": "saatvik-green",
-    "sourceNote": "Company",
+    "sourceNote": "Company filings (aggregated)",
     "tickerNse": "SAATVIK",
     "type": "manufacturer"
   },
@@ -21,7 +21,7 @@
     {
       "asOf": "2026-03-27",
       "confidence": "modelled",
-      "name": "Company"
+      "name": "Company filings (aggregated)"
     }
   ],
   "updatedAt": "2026-03-27"

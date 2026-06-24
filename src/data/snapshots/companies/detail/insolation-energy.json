@@ -8,7 +8,7 @@
     "moduleGw": 2,
     "name": "Insolation Energy",
     "slug": "insolation-energy",
-    "sourceNote": "Company",
+    "sourceNote": "Company filings (aggregated)",
     "tickerNse": "INSOLATION",
     "type": "manufacturer"
   },
@@ -21,7 +21,7 @@
     {
       "asOf": "2026-03-27",
       "confidence": "modelled",
-      "name": "Company"
+      "name": "Company filings (aggregated)"
     }
   ],
   "updatedAt": "2026-03-27"

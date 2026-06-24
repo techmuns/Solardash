@@ -15,7 +15,7 @@
     "rating": "BUY",
     "revenueFy26Cr": 26540,
     "slug": "waaree-energies",
-    "sourceNote": "Company / Screener",
+    "sourceNote": "Company filings (aggregated)",
     "targetPrice": 3600,
     "tickerNse": "WAAREEENER",
     "type": "integrated"
@@ -29,7 +29,7 @@
     {
       "asOf": "2026-03-27",
       "confidence": "medium",
-      "name": "Company / Screener"
+      "name": "Company filings (aggregated)"
     }
   ],
   "updatedAt": "2026-03-27"

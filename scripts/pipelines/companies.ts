@@ -87,9 +87,63 @@ export const companiesPipeline = definePipeline({
   run() {
     const rows = readManualCsv("companies/registry.csv");
 
-    // Identity registry — sorted by FY26 revenue desc, then name.
-    const companies = rows
-      .map(parseIdentity)
+    // Build each company: registry identity → screener feed → manual override
+    // (precedence manual > screener > registry). A screener feed supplies
+    // financials and refreshes the identity headline; a hand-authored
+    // <slug>.json (forward estimates / valuation Screener lacks) overrides both.
+    const built = rows.map((row) => {
+      const identity = parseIdentity(row);
+      const screener = readManualJsonIfExists<ScreenerFeed>(
+        `companies/screener/${identity.slug}.json`,
+      );
+      const manual = readManualJsonIfExists<Partial<CompanyDetail>>(
+        `companies/${identity.slug}.json`,
+      );
+      const hasDetail = screener != null || manual != null;
+
+      // Headline-from-feed: surface the feed's latest annual period into the
+      // screener identity so the /companies comparison table reflects scraped
+      // data, not the stale registry seed. Skipped when a manual override
+      // exists (manual wins).
+      const latest = screener?.annual?.[screener.annual.length - 1];
+      const screenerIdentity: CompanyIdentity =
+        latest && !manual
+          ? {
+              ...identity,
+              ...(latest.revenue != null ? { revenueFy26Cr: latest.revenue } : {}),
+              ...(latest.ebitdaMarginPct != null
+                ? { ebitdaMarginPct: latest.ebitdaMarginPct }
+                : {}),
+              ...(latest.pat != null ? { patFy26Cr: latest.pat } : {}),
+            }
+          : identity;
+
+      const screenerDetail: Partial<CompanyDetail> = screener
+        ? {
+            ...(screener.annual?.length ? { annual: screener.annual } : {}),
+            ...(screener.quarterly?.length ? { quarterly: screener.quarterly } : {}),
+            ...(screener.shareholding ? { shareholding: screener.shareholding } : {}),
+          }
+        : {};
+      const companyDetail = {
+        ...screenerIdentity,
+        ...screenerDetail,
+        ...(manual ?? {}),
+        hasDetail,
+      } as CompanyDetail;
+      const detailAsOf =
+        companyDetail.valuation?.asOf ??
+        companyDetail.shareholding?.asOf ??
+        screener?.asOf;
+      checkMargins(companyDetail.slug, companyDetail.annual);
+      checkMargins(companyDetail.slug, companyDetail.quarterly);
+      return { identity: screenerIdentity, companyDetail, detailAsOf };
+    });
+
+    // Identity registry (powers the screener table) — sorted by FY26 revenue
+    // desc, then name. Uses the screener-refreshed identities.
+    const companies = built
+      .map((b) => b.identity)
       .sort(
         (a, b) =>
           (b.revenueFy26Cr ?? -1) - (a.revenueFy26Cr ?? -1) ||
@@ -102,40 +156,6 @@ export const companiesPipeline = definePipeline({
       if (slugSet.has(c.slug)) console.warn(`[companies] duplicate slug: ${c.slug}`);
       slugSet.add(c.slug);
     }
-
-    // Merge each identity with its optional rich detail. Precedence is
-    //   registry identity → screener feed → manual override  (manual wins),
-    // so a fetched screener feed supplies financials while a hand-authored
-    // <slug>.json (forward estimates / valuation Screener lacks) overrides it.
-    const built = companies.map((identity) => {
-      const screener = readManualJsonIfExists<ScreenerFeed>(
-        `companies/screener/${identity.slug}.json`,
-      );
-      const manual = readManualJsonIfExists<Partial<CompanyDetail>>(
-        `companies/${identity.slug}.json`,
-      );
-      const hasDetail = screener != null || manual != null;
-      const screenerDetail: Partial<CompanyDetail> = screener
-        ? {
-            ...(screener.annual?.length ? { annual: screener.annual } : {}),
-            ...(screener.quarterly?.length ? { quarterly: screener.quarterly } : {}),
-            ...(screener.shareholding ? { shareholding: screener.shareholding } : {}),
-          }
-        : {};
-      const companyDetail = {
-        ...identity,
-        ...screenerDetail,
-        ...(manual ?? {}),
-        hasDetail,
-      } as CompanyDetail;
-      const detailAsOf =
-        companyDetail.valuation?.asOf ??
-        companyDetail.shareholding?.asOf ??
-        screener?.asOf;
-      checkMargins(companyDetail.slug, companyDetail.annual);
-      checkMargins(companyDetail.slug, companyDetail.quarterly);
-      return { companyDetail, detailAsOf };
-    });
 
     // Sanity: the exemplar merged richly.
     const vikram = built.find((b) => b.companyDetail.slug === "vikram-solar");
@@ -192,7 +212,7 @@ export const companiesPipeline = definePipeline({
       coverage: "India · listed solar & renewable companies",
       sources,
       notes: [
-        "Screener registry of listed solar / renewable names (model + manual). Headline metrics are company filings / broker estimates; per-row confidence is honoured.",
+        "Registry of listed solar / renewable names (model + manual). Headline metrics are company filings (aggregated); per-row confidence is honoured.",
         "Rich detail (financials, valuation, operating, shareholding) is added per company as <slug>.json; Vikram Solar is the seeded exemplar.",
       ],
       data: { companies, asOf: companiesAsOf },

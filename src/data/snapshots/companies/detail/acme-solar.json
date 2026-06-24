@@ -7,7 +7,7 @@
     "hasDetail": false,
     "name": "ACME Solar Holdings",
     "slug": "acme-solar",
-    "sourceNote": "Company / Investor Presentation",
+    "sourceNote": "Company filings (aggregated)",
     "tickerNse": "ACMESOLAR",
     "type": "ipp"
   },
@@ -20,7 +20,7 @@
     {
       "asOf": "2026-03-27",
       "confidence": "medium",
-      "name": "Company / Investor Presentation"
+      "name": "Company filings (aggregated)"
     }
   ],
   "updatedAt": "2026-03-27"

@@ -16,7 +16,7 @@
     "rating": "BUY",
     "revenueFy26Cr": 7550,
     "slug": "premier-energies",
-    "sourceNote": "Company / Brokers",
+    "sourceNote": "Company filings (aggregated)",
     "targetPrice": 892,
     "tickerNse": "PREMIERENE",
     "type": "integrated"
@@ -30,7 +30,7 @@
     {
       "asOf": "2026-03-27",
       "confidence": "medium",
-      "name": "Company / Brokers"
+      "name": "Company filings (aggregated)"
     }
   ],
   "updatedAt": "2026-03-27"

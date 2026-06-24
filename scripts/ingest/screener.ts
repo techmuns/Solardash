@@ -31,6 +31,7 @@ const USER_AGENT =
   "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) " +
   "Chrome/124.0 Safari/537.36 Solardash-ingest/1.0";
 const FETCH_DELAY_MS = 2500;
+const FETCH_TIMEOUT_MS = 30000;
 
 // ---------------------------------------------------------------------------
 // Parsed shapes
@@ -398,9 +399,14 @@ async function fetchCompanyWorkbook(
   sessionid: string,
 ): Promise<XLSX.WorkBook> {
   const headers = { Cookie: `sessionid=${sessionid}`, "User-Agent": USER_AGENT };
+  const get = (path: string) =>
+    fetch(`https://www.screener.in${path}`, {
+      headers,
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    });
   let html: string | null = null;
   for (const path of [`/company/${symbol}/consolidated/`, `/company/${symbol}/`]) {
-    const res = await fetch(`https://www.screener.in${path}`, { headers });
+    const res = await get(path);
     if (res.ok) {
       html = await res.text();
       break;
@@ -414,7 +420,7 @@ async function fetchCompanyWorkbook(
   const m = html.match(/\/user\/company\/export\/\d+\//);
   if (!m) throw new Error("export link not found (auth / session expired?)");
 
-  const res = await fetch(`https://www.screener.in${m[0]}`, { headers });
+  const res = await get(m[0]);
   if (!res.ok) throw new Error(`export ${res.status} ${res.statusText}`);
   const buf = Buffer.from(await res.arrayBuffer());
   return XLSX.read(buf, { type: "buffer", cellDates: true });
@@ -458,18 +464,23 @@ async function main() {
 
   const sessionid = process.env.SCREENER_SESSIONID;
   if (!sessionid) {
-    console.error(
-      "SCREENER_SESSIONID is not set — cannot fetch. Use --file <path> for offline parsing.",
+    // No cookie (local dev / secret not configured) → graceful no-op, exit 0.
+    console.log(
+      "SCREENER_SESSIONID not set — skipping live fetch (no-op). Set the cookie, or use --file for offline parsing.",
     );
-    process.exit(1);
+    return;
   }
 
+  let ok = 0;
+  let failed = 0;
+  let skipped = 0;
   for (const [i, c] of targets.entries()) {
     try {
       const wb = await fetchCompanyWorkbook(c.symbol, sessionid);
       const parsed = parseDataSheet(wb);
       // Keep-last-good: a transient block / empty parse must never wipe data.
       if (parsed.annual.length === 0) {
+        skipped++;
         console.warn(`[skip] ${c.slug} (${c.symbol}): zero annual rows — kept existing file`);
         continue;
       }
@@ -482,12 +493,26 @@ async function main() {
           `[ok] ${c.slug}: ${feed.annual.length} annual, ${feed.quarterly.length} quarters, asOf ${feed.asOf}`,
         );
       }
+      ok++;
     } catch (err) {
+      failed++;
       console.warn(
         `[skip] ${c.slug} (${c.symbol}): ${(err as Error).message} — kept existing file`,
       );
     }
     if (i < targets.length - 1) await delay(FETCH_DELAY_MS);
+  }
+
+  console.log(`Screener: ${ok} ok, ${failed} failed, ${skipped} skipped`);
+
+  // A total wipe-out (0 succeeded) almost always means the cookie expired — make
+  // it loud so the scheduled run fails visibly. Partial failures stay exit 0;
+  // keep-last-good preserves every company that wasn't refreshed.
+  if (ok === 0) {
+    console.error(
+      "All Screener fetches failed — SCREENER_SESSIONID likely expired; refresh the secret.",
+    );
+    process.exit(1);
   }
 }
 
