@@ -190,8 +190,14 @@ async function fetchPrices(source: string, debug = false): Promise<string | null
       // so an alternate source's parser can be written against the real DOM.
       const n = (re: RegExp) => (body.match(re) ?? []).length;
       console.log(
-        `[prices] structure: <table>=${n(/<table/gi)} <tr>=${n(/<tr/gi)} USD=${n(/USD/g)} "/kg"=${n(/\/\s*kg/gi)} __NEXT_DATA__=${n(/__NEXT_DATA__/g)} ld+json=${n(/application\/ld\+json/gi)}`,
+        `[prices] structure: <table>=${n(/<table/gi)} <tr>=${n(/<tr/gi)} USD=${n(/USD/g)} "/kg"=${n(/\/\s*kg/gi)} __NEXT_DATA__=${n(/__NEXT_DATA__/g)} __NUXT__=${n(/__NUXT__|window\.__NUXT/g)} /api/=${n(/\/api\//gi)} ld+json=${n(/application\/ld\+json/gi)}`,
       );
+      // Endpoint hints for JS-rendered sources (absolute URLs / paths naming an API or price feed).
+      const hints = [
+        ...new Set(body.match(/https?:\/\/[^"'`\s)]*(api|spot[-_]?price|price[-_]?index|prices)[^"'`\s)]*/gi) ?? []),
+        ...new Set(body.match(/["'`](\/[a-z0-9_\-/.]*(api|price)[a-z0-9_\-/.]*)["'`]/gi) ?? []),
+      ];
+      hints.slice(0, 14).forEach((h) => console.log(`[prices]   hint: ${h}`));
       const tbl = body.search(/<table/i);
       if (tbl >= 0) {
         console.log(`[prices] first <table>:\n${body.slice(tbl, tbl + 3200)}\n[prices] --- /table ---`);

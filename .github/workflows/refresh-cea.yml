@@ -29,8 +29,12 @@ jobs:
       - run: npm ci
       - name: Capture cea.nic.in cert chain (debug)
         if: ${{ inputs.debug }}
-        run: npx tsx scripts/ingest/capture-chain.ts cea.nic.in
+        run: npx tsx scripts/ingest/capture-chain.ts cea.nic.in scripts/ingest/cea-intermediate.pem
       - name: Fetch CEA Executive Summaries
+        env:
+          # cea.nic.in omits its intermediate CA; trust the bundled one so the
+          # fetch stays fully verified. Missing file => ignored (keep-last-good).
+          NODE_EXTRA_CA_CERTS: ${{ github.workspace }}/scripts/ingest/cea-intermediate.pem
         run: npx tsx scripts/ingest/cea.ts ${{ inputs.debug && '--debug' || '' }}
       - name: Rebuild snapshots
         run: npm run data:build
