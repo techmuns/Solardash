@@ -13,12 +13,12 @@
  *
  *   npx tsx scripts/ingest/capture-chain.ts <host> [port]
  */
-import { connect, type PeerCertificate } from "node:tls";
+import { connect, type DetailedPeerCertificate } from "node:tls";
 import { writeFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { X509Certificate } from "node:crypto";
 
-function readLeaf(host: string, port: number): Promise<PeerCertificate> {
+function readLeaf(host: string, port: number): Promise<DetailedPeerCertificate> {
   return new Promise((resolve, reject) => {
     // Inspection-only: rejectUnauthorized:false lets us READ the public leaf to
     // discover its AIA issuer URL. No data is sent; the socket closes at once.
