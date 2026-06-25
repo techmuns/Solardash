@@ -29,7 +29,7 @@ jobs:
       - run: npm ci
       - name: Capture cea.nic.in cert chain (debug)
         if: ${{ inputs.debug }}
-        run: bash scripts/ingest/capture-chain.sh cea.nic.in
+        run: npx tsx scripts/ingest/capture-chain.ts cea.nic.in
       - name: Fetch CEA Executive Summaries
         run: npx tsx scripts/ingest/cea.ts ${{ inputs.debug && '--debug' || '' }}
       - name: Rebuild snapshots

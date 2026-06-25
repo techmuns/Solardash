@@ -186,18 +186,26 @@ async function fetchPrices(source: string, debug = false): Promise<string | null
     const body = await res.text();
     if (debug) {
       console.log(`[prices] ${url} -> 200 (${type}; ${body.length} bytes)`);
-      // Discovery: surface value-chain keywords with surrounding context, even
-      // when the price table sits deep in the document.
-      const kw = /(polysilicon|wafer|solar\s*cell|module|usd\/(kg|pc|w)|price)/gi;
+      // Discovery: structural fingerprint + the first table + price-unit context,
+      // so an alternate source's parser can be written against the real DOM.
+      const n = (re: RegExp) => (body.match(re) ?? []).length;
+      console.log(
+        `[prices] structure: <table>=${n(/<table/gi)} <tr>=${n(/<tr/gi)} USD=${n(/USD/g)} "/kg"=${n(/\/\s*kg/gi)} __NEXT_DATA__=${n(/__NEXT_DATA__/g)} ld+json=${n(/application\/ld\+json/gi)}`,
+      );
+      const tbl = body.search(/<table/i);
+      if (tbl >= 0) {
+        console.log(`[prices] first <table>:\n${body.slice(tbl, tbl + 3200)}\n[prices] --- /table ---`);
+      }
+      const unit = /(USD|RMB|CNY)\s*\/?\s*(kg|pc|piece|w|wp|pcs|g)\b/gi;
       let m: RegExpExecArray | null;
       let hits = 0;
-      while ((m = kw.exec(body)) !== null && hits < 14) {
-        const a = Math.max(0, m.index - 70);
-        const snippet = body.slice(a, m.index + 90).replace(/\s+/g, " ").trim();
-        console.log(`[prices]   …${snippet}…`);
+      while ((m = unit.exec(body)) !== null && hits < 10) {
+        if (m.index < 3000) continue;
+        console.log(
+          `[prices]   unit@${m.index}: …${body.slice(m.index - 140, m.index + 50).replace(/\s+/g, " ").trim()}…`,
+        );
         hits++;
       }
-      console.log(`[prices] --- first 2400 chars ---\n${body.slice(0, 2400)}\n[prices] --- end ---`);
     }
     return body;
   } catch (err) {
