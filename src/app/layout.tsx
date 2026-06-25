@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { AppShell } from "@/components/layout/AppShell";
-import { Footer } from "@/components/layout/Footer";
 import { ThemeScript } from "@/components/theme/theme-script";
 import { getSearchIndex } from "@/data/search";
-import { getProvenance } from "@/data";
+import { getCompaniesSnapshot, getProvenance } from "@/data";
 import { formatDate } from "@/lib/utils";
 
 const inter = Inter({
@@ -57,6 +56,8 @@ export default function RootLayout({
     "",
   );
   const dataAsOf = updatedAt ? formatDate(updatedAt) : undefined;
+  const companyCount = getCompaniesSnapshot().data.companies.length;
+  const sectionCount = getProvenance().length;
   return (
     <html
       lang="en"
@@ -65,7 +66,12 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased">
         <ThemeScript />
-        <AppShell footer={<Footer />} searchIndex={searchIndex} dataAsOf={dataAsOf}>
+        <AppShell
+          searchIndex={searchIndex}
+          dataAsOf={dataAsOf}
+          companyCount={companyCount}
+          sectionCount={sectionCount}
+        >
           {children}
         </AppShell>
       </body>

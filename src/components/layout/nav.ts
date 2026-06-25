@@ -127,3 +127,29 @@ export const NAV_GROUPS: NavGroup[] = [
 
 /** Flattened list of all nav items (handy for breadcrumbs / lookups). */
 export const NAV_ITEMS: NavItem[] = NAV_GROUPS.flatMap((g) => g.items);
+
+/**
+ * Primary horizontal tabs for the top-bar shell (redesign). Order is the
+ * client's: Overview · Tenders · Developers · Capacity · Demand ·
+ * Manufacturing · Companies · Policy. (What's New folds into Overview; Data &
+ * Methodology stays reachable via ⌘K + the as-of stamp.) Capacity & Demand
+ * remain separate this phase — they merge into "Power System" in Phase 2.
+ */
+export interface PrimaryTab {
+  href: string;
+  label: string;
+}
+
+export const PRIMARY_TABS: PrimaryTab[] = [
+  { href: "/", label: "Overview" },
+  { href: "/tenders", label: "Tenders" },
+  { href: "/developers", label: "Developers" },
+  { href: "/capacity", label: "Capacity" },
+  { href: "/demand", label: "Demand" },
+  { href: "/manufacturing", label: "Manufacturing" },
+  { href: "/companies", label: "Companies" },
+  { href: "/policy", label: "Policy" },
+];
+
+/** Routes that own the full content area (no-scroll, self-padded) this phase. */
+export const FULLBLEED_ROUTES = new Set(["/", "/tenders"]);

@@ -1,103 +1,117 @@
 "use client";
 
-import * as React from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Clock, Menu, PanelLeftClose, PanelLeftOpen, Search } from "lucide-react";
+import { Search } from "lucide-react";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
-import { NAV_ITEMS } from "./nav";
-
-function useCurrentTitle() {
-  const pathname = usePathname();
-  // Longest matching href wins (so /companies/x maps to "Listed Companies").
-  let best: { label: string; len: number } | null = null;
-  for (const item of NAV_ITEMS) {
-    const match =
-      item.href === "/"
-        ? pathname === "/"
-        : pathname === item.href || pathname.startsWith(item.href + "/");
-    if (match && (!best || item.href.length > best.len)) {
-      best = { label: item.label, len: item.href.length };
-    }
-  }
-  return best?.label ?? "Solar Sector Dashboard";
-}
+import { cn } from "@/lib/utils";
+import { PRIMARY_TABS } from "./nav";
 
 export interface TopBarProps {
-  collapsed: boolean;
-  onToggleSidebar: () => void;
-  onOpenMobile: () => void;
   onOpenSearch: () => void;
   /** Pre-formatted data-as-of date (e.g. `1 Apr 2026`), from the server layout. */
   dataAsOf?: string;
+  /** Real counts for the as-of subline (never "no data yet"). */
+  companyCount?: number;
+  sectionCount?: number;
 }
 
+function isActive(pathname: string, href: string): boolean {
+  return href === "/"
+    ? pathname === "/"
+    : pathname === href || pathname.startsWith(href + "/");
+}
+
+/**
+ * Top-bar shell (redesign): brand · primary tabs · search + as-of + theme.
+ * Replaces the old sidebar nav for every section. ~58px, white (card) surface.
+ */
 export function TopBar({
-  collapsed,
-  onToggleSidebar,
-  onOpenMobile,
   onOpenSearch,
   dataAsOf,
+  companyCount,
+  sectionCount,
 }: TopBarProps) {
-  const title = useCurrentTitle();
+  const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-30 flex h-topbar shrink-0 items-center gap-2 border-b border-border bg-background/85 px-3 backdrop-blur supports-[backdrop-filter]:bg-background/70 sm:px-4">
-      {/* Mobile: open drawer */}
-      <button
-        type="button"
-        onClick={onOpenMobile}
-        aria-label="Open navigation"
-        className="inline-flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground lg:hidden"
+    <header className="flex h-[58px] shrink-0 items-center gap-2 border-b border-border bg-card px-3 sm:gap-3 sm:px-4">
+      {/* Brand → Overview */}
+      <Link
+        href="/"
+        className="flex shrink-0 items-center gap-2.5 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-brand"
+        aria-label="Solar Sector Dashboard — Overview"
       >
-        <Menu className="h-5 w-5" aria-hidden />
-      </button>
+        <BrandMark size="sm" />
+        <span className="hidden flex-col leading-none md:flex">
+          <span className="text-[13px] font-bold tracking-tight text-foreground">
+            Solar Sector Dashboard
+          </span>
+          <span className="mt-0.5 text-[11px] text-muted-foreground">
+            India · by Munshot
+          </span>
+        </span>
+      </Link>
 
-      {/* Desktop: collapse sidebar */}
-      <button
-        type="button"
-        onClick={onToggleSidebar}
-        aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-        className="hidden h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground lg:inline-flex"
+      {/* Primary tabs */}
+      <nav
+        aria-label="Primary"
+        className="scrollbar-thin flex min-w-0 flex-1 items-center gap-1 overflow-x-auto px-1"
       >
-        {collapsed ? (
-          <PanelLeftOpen className="h-5 w-5" aria-hidden />
-        ) : (
-          <PanelLeftClose className="h-5 w-5" aria-hidden />
-        )}
-      </button>
+        {PRIMARY_TABS.map((tab) => {
+          const active = isActive(pathname, tab.href);
+          return (
+            <Link
+              key={tab.href}
+              href={tab.href}
+              aria-current={active ? "page" : undefined}
+              className={cn(
+                "whitespace-nowrap rounded-[10px] px-3 py-1.5 text-sm transition-colors outline-none focus-visible:ring-2 focus-visible:ring-brand",
+                active
+                  ? "bg-[#FEF3E2] font-[650] text-[#B45309] dark:bg-brand/15 dark:text-brand-200"
+                  : "font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
+              )}
+            >
+              {tab.label}
+            </Link>
+          );
+        })}
+      </nav>
 
-      <div className="mx-1 hidden h-5 w-px bg-border sm:block" />
-
-      <h2 className="truncate text-sm font-semibold text-foreground">{title}</h2>
-
-      <div className="ml-auto flex items-center gap-2">
-        {/* Command-palette trigger (⌘K). */}
+      {/* Right cluster */}
+      <div className="flex shrink-0 items-center gap-2">
         <button
           type="button"
           onClick={onOpenSearch}
           aria-label="Search"
-          className="inline-flex h-9 items-center gap-2 rounded-md border border-border bg-card px-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          className="inline-flex h-9 items-center gap-2 rounded-[10px] border border-border bg-background px-2.5 text-sm text-muted-foreground transition-colors hover:border-brand/40 hover:text-foreground"
         >
           <Search className="h-4 w-4" aria-hidden />
-          <span className="hidden sm:inline">Search…</span>
-          <kbd className="hidden items-center rounded border border-border bg-background px-1.5 py-0.5 font-sans text-2xs text-muted-foreground sm:inline-flex">
+          <span className="hidden lg:inline">Search…</span>
+          <kbd className="hidden items-center rounded border border-border bg-card px-1.5 py-0.5 font-sans text-2xs text-muted-foreground lg:inline-flex">
             ⌘K
           </kbd>
         </button>
 
-        {/* Global "data as-of" slot — max updatedAt across snapshots. */}
-        <span className="hidden items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1.5 text-xs text-muted-foreground sm:inline-flex">
-          <Clock className="h-3.5 w-3.5" aria-hidden />
-          <span>As of</span>
-          {dataAsOf ? (
-            <span className="font-medium text-foreground/80">{dataAsOf}</span>
-          ) : (
-            <>
-              <span className="font-medium text-foreground/70">—</span>
-              <span className="text-muted-foreground/60">· no data yet</span>
-            </>
+        {/* Data-as-of stamp; subline links to methodology. */}
+        <div className="hidden flex-col items-end leading-tight xl:flex">
+          <span className="text-[11px] text-muted-foreground">
+            Data as of{" "}
+            <span className="font-semibold text-foreground/80">
+              {dataAsOf ?? "—"}
+            </span>
+          </span>
+          {companyCount != null && sectionCount != null && (
+            <Link
+              href="/data-sources"
+              className="text-[11px] tabular-nums text-muted-foreground transition-colors hover:text-brand"
+            >
+              {companyCount} companies · {sectionCount} sections
+            </Link>
           )}
-        </span>
+        </div>
+
         <ThemeToggle />
       </div>
     </header>
