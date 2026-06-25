@@ -13,7 +13,7 @@
  *
  *   npx tsx scripts/ingest/capture-chain.ts <host> [outPath]
  */
-import { request as httpsRequest } from "node:https";
+import { request as httpsRequest, type RequestOptions } from "node:https";
 import type { TLSSocket, DetailedPeerCertificate } from "node:tls";
 import { writeFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -28,7 +28,7 @@ function readLeaf(host: string, port: number): Promise<DetailedPeerCertificate> 
         fn();
       }
     };
-    const req = httpsRequest({
+    const options: RequestOptions & { ALPNProtocols?: string[] } = {
       host,
       port,
       method: "GET",
@@ -37,7 +37,8 @@ function readLeaf(host: string, port: number): Promise<DetailedPeerCertificate> 
       rejectUnauthorized: false, // inspection only — see file header
       ALPNProtocols: ["http/1.1"],
       timeout: 15000,
-    });
+    };
+    const req = httpsRequest(options);
     req.on("socket", (sock) => {
       const s = sock as TLSSocket;
       s.on("error", () => {}); // swallow a late RST after we have the cert
