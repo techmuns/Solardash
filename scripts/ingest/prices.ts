@@ -152,7 +152,7 @@ const PARSERS: Record<string, Parser> = {
 
 export const SOURCES: Record<string, { name: string; url: string }> = {
   pvinsights: { name: "PVInsights", url: "https://www.pvinsights.com/" },
-  infolink: { name: "InfoLink", url: "https://www.infolink-group.com/en/solar-price" },
+  infolink: { name: "InfoLink", url: "https://www.infolink-group.com/spot-price/" },
   taiyangnews: { name: "TaiyangNews", url: "https://taiyangnews.info/price-index" },
   trendforce: { name: "TrendForce", url: "https://www.trendforce.com/price/pv" },
 };
@@ -186,7 +186,18 @@ async function fetchPrices(source: string, debug = false): Promise<string | null
     const body = await res.text();
     if (debug) {
       console.log(`[prices] ${url} -> 200 (${type}; ${body.length} bytes)`);
-      console.log(`[prices] --- first 1800 chars ---\n${body.slice(0, 1800)}\n[prices] --- end ---`);
+      // Discovery: surface value-chain keywords with surrounding context, even
+      // when the price table sits deep in the document.
+      const kw = /(polysilicon|wafer|solar\s*cell|module|usd\/(kg|pc|w)|price)/gi;
+      let m: RegExpExecArray | null;
+      let hits = 0;
+      while ((m = kw.exec(body)) !== null && hits < 14) {
+        const a = Math.max(0, m.index - 70);
+        const snippet = body.slice(a, m.index + 90).replace(/\s+/g, " ").trim();
+        console.log(`[prices]   …${snippet}…`);
+        hits++;
+      }
+      console.log(`[prices] --- first 2400 chars ---\n${body.slice(0, 2400)}\n[prices] --- end ---`);
     }
     return body;
   } catch (err) {

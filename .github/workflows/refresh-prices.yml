@@ -9,6 +9,10 @@ on:
         description: "Verbose fetch diagnostics (status, content-type, body head)"
         type: boolean
         default: false
+      source:
+        description: "Source: pvinsights | taiyangnews | infolink | trendforce"
+        type: string
+        default: pvinsights
 
 permissions:
   contents: write
@@ -28,7 +32,7 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Fetch PV value-chain spot prices
-        run: npx tsx scripts/ingest/prices.ts ${{ inputs.debug && '--debug' || '' }}
+        run: npx tsx scripts/ingest/prices.ts --source ${{ inputs.source || 'pvinsights' }} ${{ inputs.debug && '--debug' || '' }}
       - name: Rebuild snapshots
         run: npm run data:build
       - name: Commit & push if changed
