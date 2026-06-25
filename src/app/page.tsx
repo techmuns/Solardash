@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { StatCard } from "@/components/ui/StatCard";
 import { Badge } from "@/components/ui/Badge";
 import {
   FillBarSeries,
   FillDonut,
   FillLineSeries,
+  FillSparkline,
 } from "@/components/charts/FillCharts";
 import {
   getCapacitySnapshot,
@@ -42,6 +42,70 @@ const cardCls =
 const eyebrow =
   "text-xs font-semibold uppercase tracking-wide text-muted-foreground";
 
+// "Metric + trend" bento card: title top, value + green delta upper, a bare
+// sparkline filling the lower band down to the bottom edge (no dead space).
+function TrendCard({
+  href,
+  place,
+  label,
+  value,
+  unit,
+  delta,
+  hint,
+  values,
+  color,
+  ariaLabel,
+}: {
+  href: string;
+  place: string;
+  label: string;
+  value: string;
+  unit?: string;
+  delta?: string;
+  hint?: string;
+  values: number[];
+  color: string;
+  ariaLabel: string;
+}) {
+  return (
+    <Link href={href} aria-label={ariaLabel} className={cn(cardCls, place)}>
+      <div className="flex items-start justify-between gap-2">
+        <p className={eyebrow}>{label}</p>
+        <ArrowUpRight
+          className="h-4 w-4 shrink-0 text-muted-foreground transition-colors group-hover:text-brand"
+          aria-hidden
+        />
+      </div>
+      <div className="mt-1.5">
+        <div className="flex items-baseline gap-1">
+          <span className="text-stat font-semibold tabular-nums text-foreground">
+            {value}
+          </span>
+          {unit && (
+            <span className="text-sm font-medium text-muted-foreground">
+              {unit}
+            </span>
+          )}
+        </div>
+        {(delta || hint) && (
+          <div className="mt-0.5 flex items-center gap-2 text-xs">
+            {delta && (
+              <span className="inline-flex items-center gap-0.5 font-medium tabular-nums text-positive">
+                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                {delta}
+              </span>
+            )}
+            {hint && (
+              <span className="truncate text-muted-foreground">{hint}</span>
+            )}
+          </div>
+        )}
+      </div>
+      {values.length > 1 && <FillSparkline values={values} color={color} />}
+    </Link>
+  );
+}
+
 export default function OverviewPage() {
   const tenders = getTendersSnapshot();
   const developers = getDevelopersSnapshot();
@@ -72,6 +136,11 @@ export default function OverviewPage() {
 
   const peak = findKpi(demand.data.kpis, "all-time-peak-apr-2026");
   const peakYoy = findKpi(demand.data.kpis, "peak-growth-jan-yoy");
+
+  // Sparkline series, straight from the loaders (no hardcoded points).
+  const capTrend =
+    capacity.data.installedHistory[0]?.points.map((p) => p.value) ?? [];
+  const peakTrend = demand.data.peakGw;
 
   const topDevs = developers.data.roster.slice(0, 4);
   const maxDevGw = Math.max(1, ...topDevs.map((d) => d.operationalGw));
@@ -134,37 +203,33 @@ export default function OverviewPage() {
         />
       </Link>
 
-      {/* Installed capacity (col 3, row 1) */}
-      <Link
+      {/* Installed capacity (col 3, row 1) — value + amber installed-history spark */}
+      <TrendCard
         href="/capacity"
-        className="group rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-brand lg:col-start-3 lg:row-start-1"
-      >
-        <StatCard
-          label="Installed capacity"
-          value={kpiVal(totalInstalled)}
-          unit={totalInstalled?.unit ? formatUnit(totalInstalled.unit) : undefined}
-          delta={nfAdds ? `+${Number(nfAdds.value).toFixed(1)} GW` : undefined}
-          hint={nfShare ? `${kpiVal(nfShare)}% non-fossil · FY26` : undefined}
-          icon={ArrowUpRight}
-          className="flex h-full flex-col justify-center transition-all group-hover:-translate-y-0.5 group-hover:shadow-card-hover"
-        />
-      </Link>
+        place="lg:col-start-3 lg:row-start-1"
+        label="Installed capacity"
+        value={kpiVal(totalInstalled)}
+        unit={totalInstalled?.unit ? formatUnit(totalInstalled.unit) : undefined}
+        delta={nfAdds ? `+${Number(nfAdds.value).toFixed(1)} GW` : undefined}
+        hint={nfShare ? `${kpiVal(nfShare)}% non-fossil · FY26` : undefined}
+        values={capTrend}
+        color="#F59E0B"
+        ariaLabel="Installed capacity — open Capacity"
+      />
 
-      {/* Peak demand (col 4, row 1) */}
-      <Link
+      {/* Peak demand (col 4, row 1) — value + peak-demand history spark */}
+      <TrendCard
         href="/demand"
-        className="group rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-brand lg:col-start-4 lg:row-start-1"
-      >
-        <StatCard
-          label="Peak demand"
-          value={kpiVal(peak)}
-          unit={peak?.unit ? formatUnit(peak.unit) : "GW"}
-          delta={peakYoy ? `${peakYoy.value}%` : undefined}
-          hint="all-time peak · Apr 2026"
-          icon={ArrowUpRight}
-          className="flex h-full flex-col justify-center transition-all group-hover:-translate-y-0.5 group-hover:shadow-card-hover"
-        />
-      </Link>
+        place="lg:col-start-4 lg:row-start-1"
+        label="Peak demand"
+        value={kpiVal(peak)}
+        unit={peak?.unit ? formatUnit(peak.unit) : "GW"}
+        delta={peakYoy ? `${peakYoy.value}%` : undefined}
+        hint="all-time peak · Apr 2026"
+        values={peakTrend}
+        color="#0EA5E9"
+        ariaLabel="Peak demand — open Demand"
+      />
 
       {/* Lowest solar tariff · mini line (col 3, row 2) */}
       <Link

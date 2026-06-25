@@ -4,6 +4,7 @@ import { useAutoHeight } from "./use-auto-height";
 import { BarSeriesChart, type BarSeriesChartProps } from "./BarSeriesChart";
 import { LineSeriesChart, type LineSeriesChartProps } from "./LineSeriesChart";
 import { PieSeriesChart, type PieSeriesChartProps } from "./PieSeriesChart";
+import { Sparkline, type SparklineProps } from "./Sparkline";
 
 /**
  * Flex-fill wrappers around the existing fixed-height charts: each measures its
@@ -35,6 +36,15 @@ export function FillDonut(props: Omit<PieSeriesChartProps, "height">) {
   return (
     <div ref={ref} className="min-h-0 flex-1">
       {h > 0 && <PieSeriesChart {...props} height={h} />}
+    </div>
+  );
+}
+
+export function FillSparkline(props: Omit<SparklineProps, "height">) {
+  const [ref, h] = useAutoHeight();
+  return (
+    <div ref={ref} className="min-h-0 flex-1">
+      {h > 0 && <Sparkline {...props} height={h} />}
     </div>
   );
 }
