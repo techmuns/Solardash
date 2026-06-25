@@ -270,7 +270,24 @@ export default function OverviewPage() {
             aria-hidden
           />
         </div>
-        <FillDonut data={typeMixData} unit="MW" />
+        <div className="flex min-h-0 flex-1 flex-col">
+          <FillDonut data={typeMixData} unit="MW" showLegend={false} />
+          <ul className="grid shrink-0 grid-cols-2 gap-x-3 gap-y-0.5 pt-1.5">
+            {typeMixData.map((t) => (
+              <li
+                key={t.key}
+                className="flex items-center gap-1.5 text-2xs text-muted-foreground"
+              >
+                <span
+                  className="h-2 w-2 shrink-0 rounded-[2px]"
+                  style={{ background: t.color }}
+                  aria-hidden
+                />
+                <span className="truncate">{t.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Link>
 
       {/* Top developers · leaderboard (cols 1–2, row 3) */}

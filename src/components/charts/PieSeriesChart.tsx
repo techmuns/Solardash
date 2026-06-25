@@ -19,6 +19,9 @@ export interface PieSeriesChartProps {
   unit?: string;
   /** Render as a donut (default) vs. a full pie. */
   donut?: boolean;
+  /** Render the built-in legend (default true). Off when a compact custom
+   *  legend is rendered alongside (e.g. the Overview bento cell). */
+  showLegend?: boolean;
 }
 
 /** Donut / pie over pre-coloured categorical data (e.g. tender-type mix). */
@@ -27,6 +30,7 @@ export function PieSeriesChart({
   height = 288,
   unit,
   donut = true,
+  showLegend = true,
 }: PieSeriesChartProps) {
   const theme = useChartTheme();
   const total = data.reduce((s, d) => s + d.value, 0);
@@ -67,9 +71,11 @@ export function PieSeriesChart({
             return [`${v.toLocaleString("en-IN")}${unit ? ` ${unit}` : ""}${pct}`, name];
           }}
         />
-        <Legend
-          wrapperStyle={{ fontSize: 12, color: theme.tick, paddingTop: 8 }}
-        />
+        {showLegend && (
+          <Legend
+            wrapperStyle={{ fontSize: 12, color: theme.tick, paddingTop: 8 }}
+          />
+        )}
       </PieChart>
     </ChartContainer>
   );
