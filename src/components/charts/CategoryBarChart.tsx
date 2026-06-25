@@ -5,6 +5,7 @@ import {
   BarChart,
   CartesianGrid,
   Cell,
+  LabelList,
   Tooltip,
   XAxis,
   YAxis,
@@ -12,6 +13,11 @@ import {
 import { formatAxisTick } from "@/lib/utils";
 import { ChartContainer } from "./ChartContainer";
 import { useChartTheme } from "./use-chart-theme";
+
+const valueLabel = (v: string | number | boolean | null | undefined) =>
+  typeof v === "number" || typeof v === "string"
+    ? Number(v).toLocaleString("en-IN", { maximumFractionDigits: 1 })
+    : "";
 
 export interface CategoryDatum {
   key: string;
@@ -30,6 +36,8 @@ export interface CategoryBarChartProps {
   color?: string;
   /** Width reserved for the category (y-axis) labels. */
   categoryWidth?: number;
+  /** Render the numeric value at the end of each bar. */
+  showValues?: boolean;
 }
 
 /** Horizontal bar chart over categorical data (e.g. agency split, rankings). */
@@ -39,6 +47,7 @@ export function CategoryBarChart({
   unit,
   color = "#F59E0B",
   categoryWidth = 84,
+  showValues = false,
 }: CategoryBarChartProps) {
   const theme = useChartTheme();
 
@@ -47,7 +56,7 @@ export function CategoryBarChart({
       <BarChart
         layout="vertical"
         data={data}
-        margin={{ top: 4, right: 16, bottom: 0, left: 4 }}
+        margin={{ top: 4, right: showValues ? 48 : 16, bottom: 0, left: 4 }}
       >
         <CartesianGrid
           horizontal={false}
@@ -89,6 +98,15 @@ export function CategoryBarChart({
           {data.map((d) => (
             <Cell key={d.key} fill={d.color ?? color} />
           ))}
+          {showValues && (
+            <LabelList
+              dataKey="value"
+              position="right"
+              formatter={valueLabel}
+              fill={theme.tick}
+              fontSize={11}
+            />
+          )}
         </Bar>
       </BarChart>
     </ChartContainer>

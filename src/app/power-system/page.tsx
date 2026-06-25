@@ -3,7 +3,7 @@ import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
 import {
   FillBarSeries,
-  FillDonut,
+  FillCategoryBar,
   FillLineSeries,
 } from "@/components/charts/FillCharts";
 import {
@@ -58,13 +58,15 @@ export default function PowerSystemPage() {
       hint: k.hint,
     }));
 
-  // Cumulative installed mix → donut.
-  const mixData = c.installedMix.map((m) => ({
-    key: m.source,
-    label: cap(m.source),
-    value: m.capacityGw,
-    color: energyColor(m.source),
-  }));
+  // Cumulative installed mix → ranked horizontal bar (descending).
+  const mixData = c.installedMix
+    .map((m) => ({
+      key: m.source,
+      label: cap(m.source),
+      value: m.capacityGw,
+      color: energyColor(m.source),
+    }))
+    .sort((a, b) => b.value - a.value);
 
   // Commissioning (GW added per FY by source) → stacked bars.
   const commYears = c.commissioningQuarterly.categories;
@@ -109,9 +111,11 @@ export default function PowerSystemPage() {
       id: "mix",
       label: "Capacity mix",
       title: "Installed capacity mix",
-      subtitle: "Cumulative GW by source · latest",
+      subtitle: "Cumulative GW by source · latest, ranked",
       source: capSource,
-      body: <FillDonut data={mixData} unit="GW" />,
+      body: (
+        <FillCategoryBar data={mixData} unit="GW" categoryWidth={78} showValues />
+      ),
       side: { title: "Top states · solar GW", node: <RankList rows={stateRows} /> },
     },
     {

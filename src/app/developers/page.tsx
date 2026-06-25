@@ -3,7 +3,10 @@ import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
-import { FillDonut, FillStackedCategory } from "@/components/charts/FillCharts";
+import {
+  FillCategoryBar,
+  FillStackedCategory,
+} from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
   RankList,
@@ -56,12 +59,14 @@ export default function DevelopersPage() {
     mapKpi(find(d.kpis, "largest")),
   ];
 
-  const mixData = d.portfolioMix.map((m) => ({
-    key: m.key,
-    label: TENDER_TYPE_LABELS[m.key],
-    value: m.gw,
-    color: energyColor(m.key),
-  }));
+  const mixData = d.portfolioMix
+    .map((m) => ({
+      key: m.key,
+      label: TENDER_TYPE_LABELS[m.key],
+      value: m.gw,
+      color: energyColor(m.key),
+    }))
+    .sort((a, b) => b.value - a.value);
 
   const funnelSeries = [
     {
@@ -143,8 +148,10 @@ export default function DevelopersPage() {
       id: "mix",
       label: "Portfolio mix",
       title: "Aggregate portfolio mix",
-      subtitle: `GW by technology · + ${d.bessGwh} GWh BESS across portfolios`,
-      body: <FillDonut data={mixData} unit="GW" />,
+      subtitle: `GW by technology, ranked · + ${d.bessGwh} GWh BESS across portfolios`,
+      body: (
+        <FillCategoryBar data={mixData} unit="GW" categoryWidth={64} showValues />
+      ),
       side: opSide,
     },
   ];

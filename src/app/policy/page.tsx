@@ -89,29 +89,6 @@ function MetricGrid({ items }: { items: PolicyData["pmSuryaGhar"] }) {
   );
 }
 
-function LcoeCard({ item }: { item: PolicyData["prices"][number] }) {
-  return (
-    <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-3 text-center">
-      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-        {item.item}
-      </p>
-      <p className="text-5xl font-bold tabular-nums text-brand">
-        ₹{item.value.toFixed(2)}
-        <span className="ml-1 text-xl font-medium text-muted-foreground">
-          /kWh
-        </span>
-      </p>
-      <p className="text-sm text-muted-foreground">
-        {item.note} · round-the-clock solar-plus-storage benchmark
-      </p>
-      <p className="max-w-md text-xs text-muted-foreground">
-        Approaching new-coal tariffs — making firm, dispatchable renewable
-        power competitive for baseload.
-      </p>
-    </div>
-  );
-}
-
 export default function PolicyPage() {
   const snap = getPolicySnapshot();
   const d = snap.data;
@@ -191,18 +168,6 @@ export default function PolicyPage() {
           unit="GW"
           periodOrder={kusumPeriods}
         />
-      ),
-    },
-    {
-      id: "lcoe",
-      label: "Levelised cost",
-      title: "Levelised cost of energy",
-      subtitle: "Round-the-clock solar-plus-storage benchmark",
-      source: "Ember",
-      body: lcoe ? (
-        <LcoeCard item={lcoe} />
-      ) : (
-        <p className="p-4 text-sm text-muted-foreground">No LCOE benchmark.</p>
       ),
     },
   ];

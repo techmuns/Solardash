@@ -5,7 +5,7 @@ import { snapshotMeta } from "@/lib/export";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import {
   FillBarSeries,
-  FillDonut,
+  FillCategoryBar,
   FillLineSeries,
 } from "@/components/charts/FillCharts";
 import {
@@ -46,12 +46,14 @@ export default function TendersPage() {
   const source = "Auction feed · SECI / state DISCOMs (maintained)";
   const asOf = formatDate(snapshot.updatedAt);
 
-  const typeMixData = d.typeMix.map((t) => ({
-    key: t.type,
-    label: TENDER_TYPE_LABELS[t.type],
-    value: t.mw,
-    color: energyColor(t.type),
-  }));
+  const typeMixData = d.typeMix
+    .map((t) => ({
+      key: t.type,
+      label: TENDER_TYPE_LABELS[t.type],
+      value: t.mw,
+      color: energyColor(t.type),
+    }))
+    .sort((a, b) => b.value - a.value);
 
   const kpis: CanvasKpi[] = KPI_KEYS.map((key) =>
     d.kpis.find((k) => k.key === key),
@@ -102,8 +104,10 @@ export default function TendersPage() {
       id: "mix",
       label: "Type mix",
       title: "Tender-type mix",
-      subtitle: `Share of ${d.asOfPeriod} MW`,
-      body: <FillDonut data={typeMixData} unit="MW" />,
+      subtitle: `${d.asOfPeriod} MW by type · ranked`,
+      body: (
+        <FillCategoryBar data={typeMixData} unit="MW" categoryWidth={96} showValues />
+      ),
     },
     {
       id: "leaderboard",
