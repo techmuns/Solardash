@@ -41,7 +41,6 @@ export default function PolicyPage() {
     { key: "remaining", label: "Remaining to target", value: Math.max(0, target - install), color: "#94A3B8" },
   ];
 
-  const stagePrices = d.prices.filter((p) => !/lcoe/i.test(p.item));
   const lcoe = d.prices.find((p) => /lcoe/i.test(p.item));
 
   return (
@@ -151,20 +150,9 @@ export default function PolicyPage() {
         </div>
       </section>
 
-      {/* § Value-chain prices */}
+      {/* § Levelised cost */}
       <section className="space-y-4">
-        <SectionHeader title="Value-chain prices" subtitle="Weekly spot across the PV value chain · native units (PVInsights)." />
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {stagePrices.map((p) => (
-            <StatCard
-              key={p.item}
-              label={p.item}
-              value={`$${p.value}`}
-              unit={p.unit.replace(/^USD/, "")}
-              hint={p.note}
-            />
-          ))}
-        </div>
+        <SectionHeader title="Levelised cost" subtitle="Round-the-clock solar-plus-storage benchmark." />
         {lcoe && (
           <Card className="p-4">
             <p className="text-sm">

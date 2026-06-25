@@ -12,9 +12,7 @@
     "data": "tsx scripts/run.ts",
     "data:build": "tsx scripts/run.ts --all",
     "data:build:monthly": "tsx scripts/run.ts --cadence monthly",
-    "data:build:quarterly": "tsx scripts/run.ts --cadence quarterly",
-    "data:ingest:prices": "tsx scripts/ingest/prices.ts",
-    "data:ingest:prices:verify": "tsx scripts/ingest/prices.verify.ts"
+    "data:build:quarterly": "tsx scripts/run.ts --cadence quarterly"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.19.11",

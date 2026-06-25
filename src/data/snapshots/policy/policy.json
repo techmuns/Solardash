@@ -1,7 +1,7 @@
 {
-  "asOf": "2026-06-17",
+  "asOf": "2026-03-31",
   "cadence": "quarterly",
-  "coverage": "India · solar / renewable policy, incentives & value-chain pricing",
+  "coverage": "India · solar / renewable policy, incentives & levelised cost",
   "data": {
     "kpis": [
       {
@@ -100,34 +100,6 @@
       }
     ],
     "prices": [
-      {
-        "confidence": "high",
-        "item": "Polysilicon",
-        "note": "2026-06-17 · spot",
-        "unit": "USD/kg",
-        "value": 5.1
-      },
-      {
-        "confidence": "high",
-        "item": "Wafer",
-        "note": "2026-06-17 · spot",
-        "unit": "USD/piece",
-        "value": 0.135
-      },
-      {
-        "confidence": "high",
-        "item": "Cell",
-        "note": "2026-06-17 · spot",
-        "unit": "USD/W",
-        "value": 0.032
-      },
-      {
-        "confidence": "high",
-        "item": "Module",
-        "note": "2026-06-17 · spot",
-        "unit": "USD/W",
-        "value": 0.102
-      },
       {
         "confidence": "medium",
         "item": "Solar+BESS LCOE",
@@ -241,7 +213,7 @@
   "dataset": "policy",
   "notes": [
     "Scheme tracker spans manufacturing (ALMM/PLI/BCD), demand (DCR/CPSU/RPO/ISTS/Green-H2) and consumer (PM Surya Ghar/KUSUM) policy.",
-    "Value-chain spot prices (polysilicon → wafer → cell → module) are live weekly PVInsights averages in native units (USD/kg, USD/piece, USD/W), refreshed by the prices Action.",
+    "Solar + BESS LCOE is benchmarked from Ember's levelised-cost estimates.",
     "ALMM I/II/III milestones are sourced from the manufacturing snapshot (not duplicated here)."
   ],
   "section": "policy",
@@ -280,13 +252,7 @@
       "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "NGHM"
-    },
-    {
-      "asOf": "2026-06-17",
-      "confidence": "high",
-      "name": "PVInsights",
-      "url": "https://www.pvinsights.com/"
     }
   ],
-  "updatedAt": "2026-06-17"
+  "updatedAt": "2026-03-31"
 }

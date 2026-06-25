@@ -147,21 +147,19 @@ GitHub's IP range), either:
 - download the public company pages and parse them locally, then commit the
   feeds: `tsx scripts/ingest/screener.ts --file <page.html> --slug <slug>`.
 
-## CEA demand refresh
+## CEA demand refresh (disabled)
 
-Monthly power-demand figures refresh via
-[`.github/workflows/refresh-cea.yml`](.github/workflows/refresh-cea.yml). It
-fetches CEA's monthly **Executive Summary on Power Sector** PDF, parses the
-all-India peak demand met (MW → GW) and energy met (MU → BU), upserts
-`manual-data/demand/cea-monthly.csv` → rebuilds snapshots → commits to `main` →
-Cloudflare Pages redeploys. It runs **monthly** (CEA publishes ~mid-month) with
-**no secret**, and can be triggered from the **Actions** tab → "Refresh CEA
-demand" → **Run workflow**.
+The demand series ships from the **manual monthly anchors** in
+`manual-data/demand/`. An automated CEA refresh was prototyped but is currently
+**disabled**: `cea.nic.in` serves its TLS leaf **without the intermediate CA**
+*and* resets programmatic TLS probes from CI runners, so its Executive-Summary
+PDFs can't be fetched from GitHub Actions without weakening verification (which
+we don't do). Nothing is broken in the meantime — the demand section simply
+isn't auto-densified.
 
-If a run fails with **"All CEA fetches failed"**, CEA's URL pattern or the
-parser needs a tweak — send a sample Executive Summary PDF so the parser can be
-re-anchored, or parse a downloaded PDF locally:
-`tsx scripts/ingest/cea.ts --file <report.pdf>`. The parser is offline-verified
-against a text fixture: `tsx scripts/ingest/cea.verify.ts`.
+The offline-verified parser remains for a future revisit or local use — parse a
+downloaded **Executive Summary on Power Sector** PDF and commit the feed:
+`tsx scripts/ingest/cea.ts --file <report.pdf>` (verify the parser against its
+text fixture with `tsx scripts/ingest/cea.verify.ts`).
 
 The deployed site uses **no runtime secrets**.

@@ -84,29 +84,14 @@ export const policyPipeline = definePipeline({
     }
 
     // --- Provenance (distinct source+confidence; feeds share the vintage) ---
-    // Live price sources carry their published URL + the page date (parsed from
-    // the row `note`, e.g. "2026-06-17 · spot"); everything else shares the
-    // quarterly vintage.
-    const SOURCE_URLS: Record<string, string> = {
-      PVInsights: "https://www.pvinsights.com/",
-    };
     const srcMap = new Map<string, SourceRef>();
-    const addSrc = (name?: string, conf?: string, asOf?: string, url?: string) => {
+    const addSrc = (name?: string, conf?: string) => {
       if (!name || !conf) return;
       const key = `${name}|${conf}`;
-      if (!srcMap.has(key)) {
-        srcMap.set(key, {
-          name,
-          asOf: asOf || POLICY_AS_OF,
-          confidence: conf as Confidence,
-          ...(url ? { url } : {}),
-        });
-      }
+      if (!srcMap.has(key)) srcMap.set(key, { name, asOf: POLICY_AS_OF, confidence: conf as Confidence });
     };
-    for (const r of [...schemeRows, ...sgRows, ...kusumRows]) addSrc(r.source, r.confidence);
-    for (const r of priceRows) {
-      const asOf = r.note?.match(/\d{4}-\d{2}-\d{2}/)?.[0];
-      addSrc(r.source, r.confidence, asOf, SOURCE_URLS[r.source ?? ""]);
+    for (const r of [...schemeRows, ...sgRows, ...kusumRows, ...priceRows]) {
+      addSrc(r.source, r.confidence);
     }
     const sources = [...srcMap.values()].sort(
       (a, b) => a.name.localeCompare(b.name) || a.confidence.localeCompare(b.confidence),
@@ -123,11 +108,11 @@ export const policyPipeline = definePipeline({
     writeSnapshot<PolicyData>("policy", "policy", {
       asOf: maxAsOf(sources),
       cadence: "quarterly",
-      coverage: "India · solar / renewable policy, incentives & value-chain pricing",
+      coverage: "India · solar / renewable policy, incentives & levelised cost",
       sources,
       notes: [
         "Scheme tracker spans manufacturing (ALMM/PLI/BCD), demand (DCR/CPSU/RPO/ISTS/Green-H2) and consumer (PM Surya Ghar/KUSUM) policy.",
-        "Value-chain spot prices (polysilicon → wafer → cell → module) are live weekly PVInsights averages in native units (USD/kg, USD/piece, USD/W), refreshed by the prices Action.",
+        "Solar + BESS LCOE is benchmarked from Ember's levelised-cost estimates.",
         "ALMM I/II/III milestones are sourced from the manufacturing snapshot (not duplicated here).",
       ],
       data,
