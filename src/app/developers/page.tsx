@@ -1,7 +1,7 @@
 import { getDevelopersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
-import { snapshotMeta } from "@/lib/export";
+import { categoriesToExport, categoryToExport, snapshotMeta } from "@/lib/export";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import {
   FillCategoryBar,
@@ -44,6 +44,7 @@ export default function DevelopersPage() {
   const d = snap.data;
   const source = "Investor disclosures (maintained)";
   const asOf = formatDate(snap.updatedAt);
+  const meta = (dataset: string) => snapshotMeta(snap, { dataset });
 
   const ppaGw = d.ppaTracker.reduce((s, p) => s + p.capacityMw, 0) / 1000;
 
@@ -106,12 +107,26 @@ export default function DevelopersPage() {
         "Operational · under-construction · pipeline · FY30 target (GW) · sortable",
       body: (
         <div className="min-h-0 flex-1 overflow-auto">
-          <RosterTable
-            rows={d.roster}
-            exportMeta={snapshotMeta(snap, { dataset: "roster" })}
-          />
+          <RosterTable rows={d.roster} />
         </div>
       ),
+      exportData: {
+        columns: [
+          { key: "name", label: "Developer" },
+          { key: "operationalGw", label: "Operational (GW)" },
+          { key: "underConstructionGw", label: "Under construction (GW)" },
+          { key: "pipelineGw", label: "Pipeline (GW)" },
+          { key: "targetGw", label: "FY30 target (GW)" },
+        ],
+        rows: d.roster.map((r) => ({
+          name: r.name,
+          operationalGw: r.operationalGw,
+          underConstructionGw: r.underConstructionGw,
+          pipelineGw: r.pipelineGw,
+          targetGw: r.targetGw,
+        })),
+        meta: meta("roster"),
+      },
     },
     {
       id: "pipeline",
@@ -127,6 +142,10 @@ export default function DevelopersPage() {
         />
       ),
       side: opSide,
+      exportData: {
+        ...categoriesToExport(d.capacityFunnel.categories, funnelSeries, "Developer"),
+        meta: meta("capacity-funnel"),
+      },
     },
     {
       id: "ppas",
@@ -136,13 +155,28 @@ export default function DevelopersPage() {
       source: "SECI / NTPC / SJVN auctions (maintained)",
       body: (
         <div className="min-h-0 flex-1 overflow-auto">
-          <PpaTrackerTable
-            ppas={d.ppaTracker}
-            exportMeta={snapshotMeta(snap, { dataset: "ppa-tracker" })}
-          />
+          <PpaTrackerTable ppas={d.ppaTracker} />
         </div>
       ),
-      side: opSide,
+      exportData: {
+        columns: [
+          { key: "date", label: "Date" },
+          { key: "developer", label: "Developer" },
+          { key: "agency", label: "Agency" },
+          { key: "type", label: "Type" },
+          { key: "mw", label: "MW" },
+          { key: "tariff", label: "Tariff (₹/kWh)" },
+        ],
+        rows: d.ppaTracker.map((p) => ({
+          date: p.date,
+          developer: p.developer,
+          agency: p.agency,
+          type: TENDER_TYPE_LABELS[p.tenderType],
+          mw: p.capacityMw,
+          tariff: p.tariffRs ?? null,
+        })),
+        meta: meta("ppa-tracker"),
+      },
     },
     {
       id: "mix",
@@ -153,6 +187,10 @@ export default function DevelopersPage() {
         <FillCategoryBar data={mixData} unit="GW" categoryWidth={64} showValues />
       ),
       side: opSide,
+      exportData: {
+        ...categoryToExport(mixData, "Technology", "GW"),
+        meta: meta("portfolio-mix"),
+      },
     },
   ];
 

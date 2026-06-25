@@ -1,6 +1,8 @@
 import { getManufacturingSnapshot } from "@/data";
 import { categoricalColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { categoryToExport, snapshotMeta } from "@/lib/export";
+import { seriesToExport } from "@/components/charts/series";
 import { FillBarSeries, FillCategoryBar } from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
@@ -72,6 +74,7 @@ export default function ManufacturingPage() {
   const m = snap.data;
   const source = "MNRE / DCR Portal (maintained)";
   const asOf = formatDate(snap.updatedAt);
+  const meta = (dataset: string) => snapshotMeta(snap, { dataset });
 
   const pliAwarded = m.pliAwardees.reduce((s, p) => s + p.capacityGw, 0);
 
@@ -168,6 +171,10 @@ export default function ManufacturingPage() {
         title: "Top cell makers · nameplate GW",
         node: <RankList rows={cellMakerRows} />,
       },
+      exportData: {
+        ...seriesToExport(prodSeries, prodYears, "Quarter"),
+        meta: meta("cell-production"),
+      },
     },
     {
       id: "supply",
@@ -180,6 +187,10 @@ export default function ManufacturingPage() {
         title: "Top module makers · ALMM-I GW",
         node: <RankList rows={moduleMakerRows} />,
       },
+      exportData: {
+        ...seriesToExport(sdSeries, segPeriods, "Segment"),
+        meta: meta("supply-demand"),
+      },
     },
     {
       id: "almm",
@@ -188,6 +199,21 @@ export default function ManufacturingPage() {
       subtitle: "Approved List of Models & Manufacturers · by phase",
       source: "MNRE ALMM",
       body: <AlmmList items={m.almmTimeline} />,
+      exportData: {
+        columns: [
+          { key: "phase", label: "Phase" },
+          { key: "scope", label: "Scope" },
+          { key: "status", label: "Status" },
+          { key: "effectiveDate", label: "Effective date" },
+        ],
+        rows: m.almmTimeline.map((a) => ({
+          phase: a.phase,
+          scope: a.scope,
+          status: a.status,
+          effectiveDate: a.effectiveDate,
+        })),
+        meta: meta("almm-timeline"),
+      },
     },
     {
       id: "pli",
@@ -195,7 +221,11 @@ export default function ManufacturingPage() {
       title: "PLI awardees",
       subtitle: "Integrated manufacturing capacity awarded · GW",
       source: "PIB / JMK Research",
-      body: <FillCategoryBar data={pliData} unit="GW" categoryWidth={92} />,
+      body: <FillCategoryBar data={pliData} unit="GW" categoryWidth={92} showValues />,
+      exportData: {
+        ...categoryToExport(pliData, "Company", "GW"),
+        meta: meta("pli-awardees"),
+      },
     },
   ];
 

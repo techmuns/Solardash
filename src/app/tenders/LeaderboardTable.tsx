@@ -62,7 +62,7 @@ export function LeaderboardTable({
       getRowKey={(r) => r.developer}
       dense
       emptyMessage="No developer standings."
-      exportable
+      exportable={Boolean(exportMeta)}
       exportMeta={exportMeta}
     />
   );

@@ -1,7 +1,8 @@
 import { getTendersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
-import { snapshotMeta } from "@/lib/export";
+import { categoryToExport, snapshotMeta } from "@/lib/export";
+import { seriesToExport } from "@/components/charts/series";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import {
   FillBarSeries,
@@ -45,6 +46,7 @@ export default function TendersPage() {
   const tariffYears = d.tariffHistory[0]?.points.map((p) => p.period) ?? [];
   const source = "Auction feed · SECI / state DISCOMs (maintained)";
   const asOf = formatDate(snapshot.updatedAt);
+  const meta = (dataset: string) => snapshotMeta(snapshot, { dataset });
 
   const typeMixData = d.typeMix
     .map((t) => ({
@@ -85,6 +87,10 @@ export default function TendersPage() {
         />
       ),
       side: { title: "Top winners · FY26", node: <RankList rows={topWinners} /> },
+      exportData: {
+        ...seriesToExport(d.awardsByQuarter, quarters, "Quarter"),
+        meta: meta("awards-by-quarter"),
+      },
     },
     {
       id: "tariff",
@@ -99,6 +105,10 @@ export default function TendersPage() {
           periodOrder={tariffYears}
         />
       ),
+      exportData: {
+        ...seriesToExport(d.tariffHistory, tariffYears, "Year"),
+        meta: meta("tariff-history"),
+      },
     },
     {
       id: "mix",
@@ -108,6 +118,10 @@ export default function TendersPage() {
       body: (
         <FillCategoryBar data={typeMixData} unit="MW" categoryWidth={96} showValues />
       ),
+      exportData: {
+        ...categoryToExport(typeMixData, "Tender type", "MW"),
+        meta: meta("type-mix"),
+      },
     },
     {
       id: "leaderboard",
@@ -116,14 +130,24 @@ export default function TendersPage() {
       subtitle: "FY26-to-date · sortable · winners where disclosed",
       body: (
         <div className="min-h-0 flex-1 overflow-auto">
-          <LeaderboardTable
-            rows={d.developerLeaderboard}
-            exportMeta={snapshotMeta(snapshot, {
-              dataset: "developer-leaderboard",
-            })}
-          />
+          <LeaderboardTable rows={d.developerLeaderboard} />
         </div>
       ),
+      exportData: {
+        columns: [
+          { key: "developer", label: "Developer" },
+          { key: "mw", label: "MW won" },
+          { key: "auctions", label: "Auctions" },
+          { key: "avgTariffRs", label: "Avg tariff (₹/kWh)" },
+        ],
+        rows: d.developerLeaderboard.map((r) => ({
+          developer: r.developer,
+          mw: r.mw,
+          auctions: r.auctions,
+          avgTariffRs: r.avgTariffRs ?? null,
+        })),
+        meta: meta("developer-leaderboard"),
+      },
     },
     {
       id: "log",
@@ -132,12 +156,33 @@ export default function TendersPage() {
       subtitle: "Atomic award records · filter by type, sort any column",
       body: (
         <div className="min-h-0 flex-1 overflow-auto">
-          <RecentAwardsTable
-            awards={d.recentAwards}
-            exportMeta={snapshotMeta(snapshot, { dataset: "recent-awards" })}
-          />
+          <RecentAwardsTable awards={d.recentAwards} />
         </div>
       ),
+      exportData: {
+        columns: [
+          { key: "date", label: "Date" },
+          { key: "agency", label: "Agency" },
+          { key: "type", label: "Type" },
+          { key: "mw", label: "MW" },
+          { key: "storage", label: "Storage (MWh)" },
+          { key: "tariff", label: "Tariff (₹/kWh)" },
+          { key: "winners", label: "Winners" },
+          { key: "state", label: "State" },
+        ],
+        rows: d.recentAwards.map((a) => ({
+          date: a.date,
+          agency: a.agency,
+          type: TENDER_TYPE_LABELS[a.tenderType],
+          mw: a.capacityMw,
+          storage: a.storageMwh ?? null,
+          tariff: a.tariffRs ?? null,
+          winners:
+            (a.winners ?? []).map((w) => w.developer).join("; ") || null,
+          state: a.state ?? "Central",
+        })),
+        meta: meta("recent-awards"),
+      },
     },
   ];
 

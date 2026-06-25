@@ -134,7 +134,7 @@ export function RecentAwardsTable({
         dense
         className="max-h-[28rem]"
         emptyMessage="No awards for this type."
-        exportable
+        exportable={Boolean(exportMeta)}
         exportMeta={exportMeta}
       />
     </div>

@@ -1,6 +1,8 @@
 import { getCapacitySnapshot, getDemandSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { categoryToExport, snapshotMeta } from "@/lib/export";
+import { seriesToExport } from "@/components/charts/series";
 import {
   FillBarSeries,
   FillCategoryBar,
@@ -41,6 +43,10 @@ export default function PowerSystemPage() {
   );
   const capSource = "CEA / MNRE (maintained)";
   const demSource = "CEA / PIB";
+  const capMeta = (dataset: string) =>
+    snapshotMeta(capSnap, { section: "power-system", dataset });
+  const demMeta = (dataset: string) =>
+    snapshotMeta(demSnap, { section: "power-system", dataset });
 
   // KPI strip — supply (capacity, solar, non-fossil) + demand (peak, growth).
   const kpis: CanvasKpi[] = [
@@ -117,6 +123,10 @@ export default function PowerSystemPage() {
         <FillCategoryBar data={mixData} unit="GW" categoryWidth={78} showValues />
       ),
       side: { title: "Top states · solar GW", node: <RankList rows={stateRows} /> },
+      exportData: {
+        ...categoryToExport(mixData, "Source", "GW"),
+        meta: capMeta("capacity-mix"),
+      },
     },
     {
       id: "commissioning",
@@ -132,6 +142,10 @@ export default function PowerSystemPage() {
           periodOrder={commYears}
         />
       ),
+      exportData: {
+        ...seriesToExport(commissioning, commYears, "Year"),
+        meta: capMeta("commissioning"),
+      },
     },
     {
       id: "trend",
@@ -146,6 +160,10 @@ export default function PowerSystemPage() {
           periodOrder={histYears}
         />
       ),
+      exportData: {
+        ...seriesToExport(c.installedHistory, histYears, "Year"),
+        meta: capMeta("installed-trend"),
+      },
     },
     {
       id: "segments",
@@ -160,6 +178,10 @@ export default function PowerSystemPage() {
           periodOrder={segYears}
         />
       ),
+      exportData: {
+        ...seriesToExport(c.solarSegments, segYears, "Year"),
+        meta: capMeta("solar-segments"),
+      },
     },
     {
       id: "demand",
@@ -169,6 +191,10 @@ export default function PowerSystemPage() {
       source: demSource,
       body: <FillLineSeries series={demandSeries} periodOrder={d.months} />,
       side: { title: "Demand drivers · 2030", node: <RankList rows={driverRows} /> },
+      exportData: {
+        ...seriesToExport(demandSeries, d.months, "Month"),
+        meta: demMeta("demand-peak"),
+      },
     },
   ];
 

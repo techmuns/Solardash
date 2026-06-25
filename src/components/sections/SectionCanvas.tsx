@@ -3,7 +3,17 @@
 import * as React from "react";
 import { Card } from "@/components/ui/Card";
 import { StatCard } from "@/components/ui/StatCard";
+import { ExportMenu } from "@/components/ui/ExportMenu";
 import { cn } from "@/lib/utils";
+import type { ColumnDef, ExportMeta, ExportRow } from "@/lib/export";
+
+/** Underlying data for the canvas-footer export (CSV + xlsx with provenance). */
+export interface CanvasExport {
+  columns: ColumnDef[];
+  rows: ExportRow[];
+  meta: ExportMeta;
+  filename?: string;
+}
 
 export interface CanvasKpi {
   label: string;
@@ -30,6 +40,8 @@ export interface CanvasTab {
   body: React.ReactNode;
   /** Optional right side panel (~240px, left border). */
   side?: CanvasSide;
+  /** The active tab's underlying data, exported from the canvas footer. */
+  exportData?: CanvasExport;
 }
 
 export interface SectionCanvasProps {
@@ -133,12 +145,24 @@ export function SectionCanvas({
           )}
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border px-5 py-2.5 text-2xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border px-5 py-2 text-2xs text-muted-foreground">
           <span>
             <span className="font-medium text-foreground/70">Source</span>{" "}
             {tab.source ?? defaultSource}
           </span>
           <span>· As of {asOf}</span>
+          {tab.exportData && (
+            <div className="ml-auto">
+              <ExportMenu
+                columns={tab.exportData.columns}
+                rows={tab.exportData.rows}
+                meta={tab.exportData.meta}
+                filename={tab.exportData.filename}
+                size="sm"
+                label="Export"
+              />
+            </div>
+          )}
         </div>
       </Card>
     </div>

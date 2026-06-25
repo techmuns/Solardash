@@ -195,7 +195,7 @@ export function ScreenerTable({
         getRowKey={(r) => r.slug}
         dense
         emptyMessage="No companies of this type."
-        exportable
+        exportable={Boolean(exportMeta)}
         exportMeta={exportMeta}
       />
 

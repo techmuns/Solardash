@@ -206,7 +206,7 @@ export function RosterTable({
         getRowKey={(r) => r.name}
         dense
         emptyMessage="No developers."
-        exportable
+        exportable={Boolean(exportMeta)}
         exportMeta={exportMeta}
       />
 

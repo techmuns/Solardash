@@ -1,7 +1,7 @@
 import { getCompaniesSnapshot, getCompanyDetail } from "@/data";
 import { categoricalColor } from "@/lib/colors";
 import { formatDate, formatNumber } from "@/lib/utils";
-import { snapshotMeta } from "@/lib/export";
+import { categoryToExport, snapshotMeta } from "@/lib/export";
 import { FillCategoryBar } from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
@@ -24,6 +24,7 @@ export default function CompaniesPage() {
   const companies = snapshot.data.companies;
   const asOf = formatDate(snapshot.updatedAt);
   const source = "Company filings / broker estimates";
+  const meta = (dataset: string) => snapshotMeta(snapshot, { dataset });
 
   // Full per-company models for the compare dialog (built once, server-side).
   const details = companies
@@ -101,13 +102,30 @@ export default function CompaniesPage() {
       source,
       body: (
         <div className="min-h-0 flex-1 overflow-auto">
-          <ScreenerTable
-            companies={companies}
-            details={details}
-            exportMeta={snapshotMeta(snapshot, { dataset: "screener" })}
-          />
+          <ScreenerTable companies={companies} details={details} />
         </div>
       ),
+      exportData: {
+        columns: [
+          { key: "name", label: "Company" },
+          { key: "type", label: "Type" },
+          { key: "revenueFy26Cr", label: "Revenue FY26 (₹ cr)" },
+          { key: "patFy26Cr", label: "PAT FY26 (₹ cr)" },
+          { key: "ebitdaMarginPct", label: "EBITDA margin (%)" },
+          { key: "peX", label: "P/E (×)" },
+          { key: "cmp", label: "CMP (₹)" },
+        ],
+        rows: companies.map((c) => ({
+          name: c.name,
+          type: c.type,
+          revenueFy26Cr: c.revenueFy26Cr ?? null,
+          patFy26Cr: c.patFy26Cr ?? null,
+          ebitdaMarginPct: c.ebitdaMarginPct ?? null,
+          peX: c.peX ?? null,
+          cmp: c.cmp ?? null,
+        })),
+        meta: meta("screener"),
+      },
     },
     {
       id: "valuation",
@@ -115,8 +133,12 @@ export default function CompaniesPage() {
       title: "Valuation — P/E by company",
       subtitle: "× (price ÷ earnings) · lower = cheaper",
       source,
-      body: <FillCategoryBar data={peData} unit="×" categoryWidth={132} />,
+      body: <FillCategoryBar data={peData} unit="×" categoryWidth={132} showValues />,
       side: revSide,
+      exportData: {
+        ...categoryToExport(peData, "Company", "P/E (×)"),
+        meta: meta("valuation"),
+      },
     },
     {
       id: "margins",
@@ -124,8 +146,14 @@ export default function CompaniesPage() {
       title: "EBITDA margin by company",
       subtitle: "% · the buy-side discriminator",
       source,
-      body: <FillCategoryBar data={marginData} unit="%" categoryWidth={132} />,
+      body: (
+        <FillCategoryBar data={marginData} unit="%" categoryWidth={132} showValues />
+      ),
       side: revSide,
+      exportData: {
+        ...categoryToExport(marginData, "Company", "EBITDA margin (%)"),
+        meta: meta("margins"),
+      },
     },
   ];
 

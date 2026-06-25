@@ -1,5 +1,7 @@
 import { getPolicySnapshot } from "@/data";
 import { formatCompact, formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { snapshotMeta } from "@/lib/export";
+import { seriesToExport } from "@/components/charts/series";
 import { FillBarSeries } from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
@@ -94,6 +96,7 @@ export default function PolicyPage() {
   const d = snap.data;
   const source = "MNRE / CBIC";
   const asOf = formatDate(snap.updatedAt);
+  const meta = (dataset: string) => snapshotMeta(snap, { dataset });
 
   const install = d.pmSuryaGhar.find((m) => m.metric === "Installations");
   const target = d.pmSuryaGhar.find((m) => m.metric === "Target");
@@ -146,6 +149,21 @@ export default function PolicyPage() {
       subtitle: "Manufacturing · demand · consumer policy · by category",
       source,
       body: <SchemeTable items={d.schemes} />,
+      exportData: {
+        columns: [
+          { key: "scheme", label: "Scheme" },
+          { key: "category", label: "Category" },
+          { key: "keyMetric", label: "Key metric" },
+          { key: "status", label: "Status" },
+        ],
+        rows: d.schemes.map((s) => ({
+          scheme: s.scheme,
+          category: s.category,
+          keyMetric: s.keyMetric,
+          status: s.status,
+        })),
+        meta: meta("schemes"),
+      },
     },
     {
       id: "surya",
@@ -154,6 +172,19 @@ export default function PolicyPage() {
       subtitle: "Rooftop-solar scheme · installs, target, pipeline & allocation",
       source: "MNRE",
       body: <MetricGrid items={d.pmSuryaGhar} />,
+      exportData: {
+        columns: [
+          { key: "metric", label: "Metric" },
+          { key: "value", label: "Value" },
+          { key: "unit", label: "Unit" },
+        ],
+        rows: d.pmSuryaGhar.map((m) => ({
+          metric: m.metric,
+          value: m.value,
+          unit: m.unit,
+        })),
+        meta: meta("pm-surya-ghar"),
+      },
     },
     {
       id: "kusum",
@@ -169,6 +200,10 @@ export default function PolicyPage() {
           periodOrder={kusumPeriods}
         />
       ),
+      exportData: {
+        ...seriesToExport(kusumSeries, kusumPeriods, "Component"),
+        meta: meta("kusum"),
+      },
     },
   ];
 

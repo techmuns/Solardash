@@ -96,7 +96,7 @@ export function PpaTrackerTable({
         getRowKey={(r) => r.id}
         dense
         emptyMessage="No PPAs for this type."
-        exportable
+        exportable={Boolean(exportMeta)}
         exportMeta={exportMeta}
       />
     </div>
