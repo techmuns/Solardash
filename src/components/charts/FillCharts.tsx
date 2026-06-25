@@ -8,6 +8,10 @@ import {
   StackedCategoryBarChart,
   type StackedCategoryBarChartProps,
 } from "./StackedCategoryBarChart";
+import {
+  CategoryBarChart,
+  type CategoryBarChartProps,
+} from "./CategoryBarChart";
 import { Sparkline, type SparklineProps } from "./Sparkline";
 
 /**
@@ -51,6 +55,15 @@ export function FillStackedCategory(
   return (
     <div ref={ref} className="min-h-0 flex-1">
       {h > 0 && <StackedCategoryBarChart {...props} height={h} />}
+    </div>
+  );
+}
+
+export function FillCategoryBar(props: Omit<CategoryBarChartProps, "height">) {
+  const [ref, h] = useAutoHeight();
+  return (
+    <div ref={ref} className="min-h-0 flex-1">
+      {h > 0 && <CategoryBarChart {...props} height={h} />}
     </div>
   );
 }
