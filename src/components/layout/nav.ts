@@ -1,5 +1,4 @@
 import {
-  Activity,
   Building2,
   Database,
   Factory,
@@ -65,18 +64,11 @@ export const NAV_GROUPS: NavGroup[] = [
     label: "Power System",
     items: [
       {
-        href: "/capacity",
-        label: "Capacity & Generation",
+        href: "/power-system",
+        label: "Power System",
         icon: Zap,
         description:
-          "Installed capacity by source & state, additions, PLF/CUF, and generation mix.",
-      },
-      {
-        href: "/demand",
-        label: "Power Demand",
-        icon: Activity,
-        description:
-          "Peak & energy demand, requirement vs availability, deficits, and load patterns.",
+          "Installed capacity & mix, commissioning, the solar build-out, and power demand — supply to demand.",
       },
     ],
   },
@@ -129,11 +121,10 @@ export const NAV_GROUPS: NavGroup[] = [
 export const NAV_ITEMS: NavItem[] = NAV_GROUPS.flatMap((g) => g.items);
 
 /**
- * Primary horizontal tabs for the top-bar shell (redesign). Order is the
- * client's: Overview · Tenders · Developers · Capacity · Demand ·
- * Manufacturing · Companies · Policy. (What's New folds into Overview; Data &
- * Methodology stays reachable via ⌘K + the as-of stamp.) Capacity & Demand
- * remain separate this phase — they merge into "Power System" in Phase 2.
+ * Primary horizontal tabs for the top-bar shell. Order is the client's:
+ * Overview · Tenders · Developers · Power System · Manufacturing · Companies ·
+ * Policy. (What's New folds into Overview; Capacity + Demand merged into Power
+ * System; Data & Methodology stays reachable via ⌘K + the as-of stamp.)
  */
 export interface PrimaryTab {
   href: string;
@@ -144,12 +135,19 @@ export const PRIMARY_TABS: PrimaryTab[] = [
   { href: "/", label: "Overview" },
   { href: "/tenders", label: "Tenders" },
   { href: "/developers", label: "Developers" },
-  { href: "/capacity", label: "Capacity" },
-  { href: "/demand", label: "Demand" },
+  { href: "/power-system", label: "Power System" },
   { href: "/manufacturing", label: "Manufacturing" },
   { href: "/companies", label: "Companies" },
   { href: "/policy", label: "Policy" },
 ];
 
-/** Routes that own the full content area (no-scroll, self-padded) this phase. */
-export const FULLBLEED_ROUTES = new Set(["/", "/tenders"]);
+/** Routes that own the full content area (no-scroll, self-padded canvas). */
+export const FULLBLEED_ROUTES = new Set([
+  "/",
+  "/tenders",
+  "/developers",
+  "/power-system",
+  "/manufacturing",
+  "/companies",
+  "/policy",
+]);
