@@ -1,14 +1,16 @@
-import { PageHeader } from "@/components/ui/PageHeader";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { StatCard } from "@/components/ui/StatCard";
-import { ChartFrame } from "@/components/ui/ChartFrame";
-import { StackedCategoryBarChart } from "@/components/charts/StackedCategoryBarChart";
-import { PieSeriesChart } from "@/components/charts/PieSeriesChart";
 import { getDevelopersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
-import { categoriesToExport, snapshotMeta } from "@/lib/export";
+import { snapshotMeta } from "@/lib/export";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
+import { FillDonut, FillStackedCategory } from "@/components/charts/FillCharts";
+import {
+  SectionCanvas,
+  RankList,
+  type CanvasKpi,
+  type CanvasTab,
+} from "@/components/sections/SectionCanvas";
+import type { Kpi } from "@/data/types/core";
 import { RosterTable } from "./RosterTable";
 import { PpaTrackerTable } from "./PpaTrackerTable";
 
@@ -16,29 +18,43 @@ export const dynamic = "force-static";
 export const metadata = {
   title: "Developers / IPPs",
   description:
-    "India's solar IPPs — operational, under-construction and pipeline capacity, portfolio mix, and PPA signings.",
+    "India's renewable developers / IPPs — operational, under-construction and pipeline capacity, PPA signings, and the aggregate portfolio mix.",
 };
 
-// Stage colours for the capacity funnel — solid → lighter brand shades
-// (these are stages, not energy sources, so not ENERGY_COLORS).
-const STAGE = {
-  operational: "#B45309",
-  underConstruction: "#F59E0B",
-  pipeline: "#FCD34D",
-};
-
-function kpiValue(value: number | string): string {
-  if (typeof value === "string") return value;
-  return Number.isInteger(value) ? formatNumber(value) : value.toFixed(1);
+function kv(k?: Kpi): string {
+  if (!k) return "—";
+  if (typeof k.value === "string") return k.value;
+  return Number.isInteger(k.value)
+    ? formatNumber(k.value)
+    : parseFloat(k.value.toFixed(2)).toString();
 }
+const find = (kpis: Kpi[], key: string) => kpis.find((k) => k.key === key);
+const mapKpi = (k?: Kpi): CanvasKpi => ({
+  label: k?.label ?? "—",
+  value: kv(k),
+  unit: k?.unit ? formatUnit(k.unit) : undefined,
+  hint: k?.hint,
+});
 
 export default function DevelopersPage() {
-  const snapshot = getDevelopersSnapshot();
-  const d = snapshot.data;
-  const cf = d.capacityFunnel;
-
+  const snap = getDevelopersSnapshot();
+  const d = snap.data;
   const source = "Investor disclosures (maintained)";
-  const asOf = formatDate(snapshot.updatedAt);
+  const asOf = formatDate(snap.updatedAt);
+
+  const ppaGw = d.ppaTracker.reduce((s, p) => s + p.capacityMw, 0) / 1000;
+
+  const kpis: CanvasKpi[] = [
+    mapKpi(find(d.kpis, "operational_gw")),
+    mapKpi(find(d.kpis, "buildout_gw")),
+    {
+      label: "PPAs signed",
+      value: ppaGw.toFixed(1),
+      unit: "GW",
+      hint: `${d.ppaTracker.length} recent`,
+    },
+    mapKpi(find(d.kpis, "largest")),
+  ];
 
   const mixData = d.portfolioMix.map((m) => ({
     key: m.key,
@@ -47,127 +63,93 @@ export default function DevelopersPage() {
     color: energyColor(m.key),
   }));
 
-  return (
-    <div className="space-y-8">
-      <PageHeader
-        title="Developers / IPPs"
-        subtitle="Independent power producers — operational, under-construction and pipeline capacity, portfolio mix, and PPA signings."
-        asOf={`As of ${asOf}`}
-      />
+  const funnelSeries = [
+    {
+      key: "operational",
+      label: "Operational",
+      color: "#10B981",
+      values: d.capacityFunnel.operational,
+    },
+    {
+      key: "underConstruction",
+      label: "Under construction",
+      color: "#F59E0B",
+      values: d.capacityFunnel.underConstruction,
+    },
+    {
+      key: "pipeline",
+      label: "Pipeline",
+      color: "#94A3B8",
+      values: d.capacityFunnel.pipeline,
+    },
+  ];
 
-      {/* KPI row */}
-      <section className="space-y-3">
-        <SectionHeader
-          title="Portfolio totals"
-          subtitle="Across tracked large & listed IPPs."
-        />
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {d.kpis.map((k) => (
-            <StatCard
-              key={k.key}
-              label={k.label}
-              value={kpiValue(k.value)}
-              unit={k.unit ? formatUnit(k.unit) : undefined}
-              hint={k.hint}
-            />
-          ))}
-        </div>
-      </section>
+  const topDevRows = d.roster
+    .slice(0, 5)
+    .map((r) => ({ label: r.name, value: `${r.operationalGw}` }));
+  const opSide = {
+    title: "Top · operational GW",
+    node: <RankList rows={topDevRows} />,
+  };
 
-      {/* Hero — per-developer capacity funnel */}
-      <section className="space-y-3">
-        <SectionHeader
-          title="Capacity funnel"
-          subtitle="Operational → under-construction → pipeline, by developer (GW)."
-        />
-        <ChartFrame
-          title="Per-developer capacity funnel"
-          subtitle="Stacked GW · sorted by total portfolio"
-          source={source}
-          asOf={asOf}
-          confidence="medium"
-          exportData={{
-            ...categoriesToExport(
-              cf.categories,
-              [
-                { key: "operational", label: "Operational", unit: "GW", values: cf.operational },
-                { key: "underConstruction", label: "Under construction", unit: "GW", values: cf.underConstruction },
-                { key: "pipeline", label: "Pipeline", unit: "GW", values: cf.pipeline },
-              ],
-              "Developer",
-            ),
-            meta: snapshotMeta(snapshot, { dataset: "capacity-funnel" }),
-          }}
-        >
-          <StackedCategoryBarChart
-            categories={cf.categories}
-            series={[
-              { key: "operational", label: "Operational", color: STAGE.operational, values: cf.operational },
-              { key: "underConstruction", label: "Under construction", color: STAGE.underConstruction, values: cf.underConstruction },
-              { key: "pipeline", label: "Pipeline", color: STAGE.pipeline, values: cf.pipeline },
-            ]}
-            unit="GW"
-            height={460}
-            categoryWidth={104}
-          />
-        </ChartFrame>
-      </section>
-
-      {/* Portfolio mix */}
-      <section className="space-y-3">
-        <SectionHeader
-          title="Portfolio mix"
-          subtitle="Aggregate operational capacity by technology."
-        />
-        <ChartFrame
-          title="Aggregate portfolio mix"
-          subtitle={`Operational GW by tech · + ${d.bessGwh} GWh BESS (excl.)`}
-          source={source}
-          asOf={asOf}
-          confidence="medium"
-        >
-          <PieSeriesChart data={mixData} unit="GW" height={280} />
-        </ChartFrame>
-      </section>
-
-      {/* Developer roster */}
-      <section className="space-y-3">
-        <SectionHeader
-          title="Developer roster"
-          subtitle="Capacities in GW · sortable."
-        />
-        <ChartFrame
-          title="Developer roster"
-          subtitle="Operational / UC / pipeline / FY30 target (GW)"
-          source={source}
-          asOf={asOf}
-          confidence="medium"
-        >
+  const tabs: CanvasTab[] = [
+    {
+      id: "leaderboard",
+      label: "Leaderboard",
+      title: "Developer roster",
+      subtitle:
+        "Operational · under-construction · pipeline · FY30 target (GW) · sortable",
+      body: (
+        <div className="min-h-0 flex-1 overflow-auto">
           <RosterTable
             rows={d.roster}
-            exportMeta={snapshotMeta(snapshot, { dataset: "roster" })}
+            exportMeta={snapshotMeta(snap, { dataset: "roster" })}
           />
-        </ChartFrame>
-      </section>
-
-      {/* PPA / PSA tracker */}
-      <section className="space-y-3">
-        <SectionHeader
-          title="PPA / PSA tracker"
-          subtitle="Recent signings — filter by type, sort any column."
+        </div>
+      ),
+    },
+    {
+      id: "pipeline",
+      label: "Pipeline",
+      title: "Capacity funnel by developer",
+      subtitle: "GW · operational + under-construction + pipeline, stacked",
+      body: (
+        <FillStackedCategory
+          categories={d.capacityFunnel.categories}
+          series={funnelSeries}
+          unit="GW"
+          categoryWidth={104}
         />
-        <ChartFrame
-          title="PPA / PSA signings"
-          subtitle="Newest first · per-row confidence"
-          source="SECI / NTPC / SJVN auctions (maintained)"
-          asOf={asOf}
-        >
+      ),
+      side: opSide,
+    },
+    {
+      id: "ppas",
+      label: "PPAs",
+      title: "PPA / PSA signings",
+      subtitle: "Recent power-purchase agreements · sortable",
+      source: "SECI / NTPC / SJVN auctions (maintained)",
+      body: (
+        <div className="min-h-0 flex-1 overflow-auto">
           <PpaTrackerTable
             ppas={d.ppaTracker}
-            exportMeta={snapshotMeta(snapshot, { dataset: "ppa-tracker" })}
+            exportMeta={snapshotMeta(snap, { dataset: "ppa-tracker" })}
           />
-        </ChartFrame>
-      </section>
-    </div>
+        </div>
+      ),
+      side: opSide,
+    },
+    {
+      id: "mix",
+      label: "Portfolio mix",
+      title: "Aggregate portfolio mix",
+      subtitle: `GW by technology · + ${d.bessGwh} GWh BESS across portfolios`,
+      body: <FillDonut data={mixData} unit="GW" />,
+      side: opSide,
+    },
+  ];
+
+  return (
+    <SectionCanvas kpis={kpis} tabs={tabs} asOf={asOf} defaultSource={source} />
   );
 }

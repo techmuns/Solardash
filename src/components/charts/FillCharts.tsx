@@ -4,6 +4,10 @@ import { useAutoHeight } from "./use-auto-height";
 import { BarSeriesChart, type BarSeriesChartProps } from "./BarSeriesChart";
 import { LineSeriesChart, type LineSeriesChartProps } from "./LineSeriesChart";
 import { PieSeriesChart, type PieSeriesChartProps } from "./PieSeriesChart";
+import {
+  StackedCategoryBarChart,
+  type StackedCategoryBarChartProps,
+} from "./StackedCategoryBarChart";
 import { Sparkline, type SparklineProps } from "./Sparkline";
 
 /**
@@ -36,6 +40,17 @@ export function FillDonut(props: Omit<PieSeriesChartProps, "height">) {
   return (
     <div ref={ref} className="min-h-0 flex-1">
       {h > 0 && <PieSeriesChart {...props} height={h} />}
+    </div>
+  );
+}
+
+export function FillStackedCategory(
+  props: Omit<StackedCategoryBarChartProps, "height">,
+) {
+  const [ref, h] = useAutoHeight();
+  return (
+    <div ref={ref} className="min-h-0 flex-1">
+      {h > 0 && <StackedCategoryBarChart {...props} height={h} />}
     </div>
   );
 }
