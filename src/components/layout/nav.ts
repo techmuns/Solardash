@@ -53,10 +53,10 @@ export const NAV_GROUPS: NavGroup[] = [
       },
       {
         href: "/developers",
-        label: "Developers / IPPs",
+        label: "IPPs",
         icon: Building2,
         description:
-          "Independent power producers, portfolios, win-rates, and pipelines.",
+          "Independent power producers — portfolios, capacity funnel, PPAs, and the technology mix.",
       },
     ],
   },
@@ -134,7 +134,7 @@ export interface PrimaryTab {
 export const PRIMARY_TABS: PrimaryTab[] = [
   { href: "/", label: "Overview" },
   { href: "/tenders", label: "Tenders" },
-  { href: "/developers", label: "Developers" },
+  { href: "/developers", label: "IPPs" },
   { href: "/power-system", label: "Power System" },
   { href: "/manufacturing", label: "Manufacturing" },
   { href: "/companies", label: "Companies" },

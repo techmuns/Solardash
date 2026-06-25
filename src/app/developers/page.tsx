@@ -16,9 +16,9 @@ import { PpaTrackerTable } from "./PpaTrackerTable";
 
 export const dynamic = "force-static";
 export const metadata = {
-  title: "Developers / IPPs",
+  title: "IPPs",
   description:
-    "India's renewable developers / IPPs — operational, under-construction and pipeline capacity, PPA signings, and the aggregate portfolio mix.",
+    "India's renewable IPPs — operational, under-construction and pipeline capacity, PPA signings, and the aggregate portfolio mix.",
 };
 
 function kv(k?: Kpi): string {
@@ -96,7 +96,7 @@ export default function DevelopersPage() {
     {
       id: "leaderboard",
       label: "Leaderboard",
-      title: "Developer roster",
+      title: "IPP roster",
       subtitle:
         "Operational · under-construction · pipeline · FY30 target (GW) · sortable",
       body: (
@@ -111,7 +111,7 @@ export default function DevelopersPage() {
     {
       id: "pipeline",
       label: "Pipeline",
-      title: "Capacity funnel by developer",
+      title: "Capacity funnel by IPP",
       subtitle: "GW · operational + under-construction + pipeline, stacked",
       body: (
         <FillStackedCategory
