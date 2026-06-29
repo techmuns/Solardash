@@ -39,18 +39,38 @@ export default function CompaniesPage() {
     withMargin[0],
   );
 
+  // Aggregate revenue / PAT trajectories — Σ per-company annual financials.
+  const annualByFy = new Map<string, { rev: number; pat: number }>();
+  for (const det of details)
+    for (const a of det.annual ?? []) {
+      const e = annualByFy.get(a.period) ?? { rev: 0, pat: 0 };
+      e.rev += a.revenue ?? 0;
+      e.pat += a.pat ?? 0;
+      annualByFy.set(a.period, e);
+    }
+  const fyNum = (p: string) => Number(p.replace(/[^0-9]/g, ""));
+  const recentFy = [...annualByFy.keys()]
+    .sort((a, b) => fyNum(a) - fyNum(b))
+    .slice(-7);
+  const revTrend = recentFy.map((k) => annualByFy.get(k)?.rev ?? 0);
+  const patTrend = recentFy.map((k) => annualByFy.get(k)?.pat ?? 0);
+
   const kpis: CanvasKpi[] = [
     {
       label: "Aggregate revenue",
       value: formatNumber(revSum),
       unit: "₹ cr",
       hint: `FY26E · ${companies.length} names`,
+      trend: revTrend,
+      color: "#2563EB",
     },
     {
       label: "Aggregate PAT",
       value: formatNumber(patSum),
       unit: "₹ cr",
       hint: "FY26E",
+      trend: patTrend,
+      color: "#10B981",
     },
     { label: "Companies tracked", value: `${companies.length}`, hint: "listed names" },
     {

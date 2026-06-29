@@ -1,9 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { ArrowDownRight, ArrowUpRight, Minus } from "lucide-react";
 import { Card } from "@/components/ui/Card";
-import { StatCard } from "@/components/ui/StatCard";
 import { ExportMenu } from "@/components/ui/ExportMenu";
+import { Sparkline } from "@/components/charts/Sparkline";
 import { cn } from "@/lib/utils";
 import type { ColumnDef, ExportMeta, ExportRow } from "@/lib/export";
 
@@ -20,6 +21,12 @@ export interface CanvasKpi {
   value: string;
   unit?: string;
   hint?: string;
+  /** Pre-formatted delta (e.g. "+42%"); else derived from the trend's last step. */
+  delta?: string;
+  /** Bare trajectory — the sparkline-stat series (the DEFAULT KPI unit). */
+  trend?: number[];
+  /** Sparkline colour (defaults to brand amber). */
+  color?: string;
 }
 
 export interface CanvasSide {
@@ -59,6 +66,82 @@ const KPI_COLS: Record<number, string> = {
   6: "lg:grid-cols-6",
 };
 
+function deltaFromTrend(trend?: number[]): string | undefined {
+  if (!trend || trend.length < 2) return undefined;
+  const last = trend[trend.length - 1];
+  const prev = trend[trend.length - 2];
+  if (!prev) return undefined;
+  const pct = ((last - prev) / Math.abs(prev)) * 100;
+  return `${pct > 0 ? "+" : ""}${pct.toFixed(1)}%`;
+}
+
+/**
+ * Sparkline-stat KPI cell — value + delta + bare trajectory. The DEFAULT KPI
+ * unit (design law: every metric carries its trend). A KPI with no series keeps
+ * the value but renders no fabricated line.
+ */
+function KpiCell({ kpi }: { kpi: CanvasKpi }) {
+  const delta = kpi.delta ?? deltaFromTrend(kpi.trend);
+  const dir = delta?.startsWith("-")
+    ? "down"
+    : delta?.startsWith("+")
+      ? "up"
+      : "flat";
+  const dColor =
+    dir === "up"
+      ? "text-positive"
+      : dir === "down"
+        ? "text-negative"
+        : "text-muted-foreground";
+  const DIcon = dir === "up" ? ArrowUpRight : dir === "down" ? ArrowDownRight : Minus;
+  const hasTrend = Boolean(kpi.trend && kpi.trend.length > 1);
+
+  return (
+    <div className="flex flex-col rounded-2xl border border-border bg-card p-4 shadow-card">
+      <p className="truncate text-xs font-medium uppercase tracking-wide text-muted-foreground">
+        {kpi.label}
+      </p>
+      <div className="mt-1 flex items-baseline gap-1">
+        <span className="truncate text-stat font-semibold tabular-nums text-foreground">
+          {kpi.value}
+        </span>
+        {kpi.unit && (
+          <span className="text-sm font-medium text-muted-foreground">
+            {kpi.unit}
+          </span>
+        )}
+      </div>
+      {(delta || kpi.hint) && (
+        <div className="mt-0.5 flex items-center gap-2 text-xs">
+          {delta && (
+            <span
+              className={cn(
+                "inline-flex items-center gap-0.5 font-medium tabular-nums",
+                dColor,
+              )}
+            >
+              <DIcon className="h-3.5 w-3.5" aria-hidden />
+              {delta}
+            </span>
+          )}
+          {kpi.hint && (
+            <span className="truncate text-muted-foreground">{kpi.hint}</span>
+          )}
+        </div>
+      )}
+      {hasTrend && (
+        <div className="mt-2 h-9">
+          <Sparkline
+            values={kpi.trend as number[]}
+            color={kpi.color ?? "#F59E0B"}
+            height={36}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
 /**
  * The shared "focused canvas" template (generalised from the Phase-1 Tenders
  * canvas): a fixed KPI strip + sub-tab pills + a flex-fill canvas that swaps
@@ -82,13 +165,7 @@ export function SectionCanvas({
       {/* KPI strip */}
       <div className={cn("grid shrink-0 grid-cols-2 gap-3 sm:grid-cols-3", cols)}>
         {kpis.map((k) => (
-          <StatCard
-            key={k.label}
-            label={k.label}
-            value={k.value}
-            unit={k.unit}
-            hint={k.hint}
-          />
+          <KpiCell key={k.label} kpi={k} />
         ))}
       </div>
 

@@ -43,6 +43,39 @@ export default function PowerSystemPage() {
   const demMeta = (dataset: string) =>
     snapshotMeta(demSnap, { section: "power-system", dataset });
 
+  // Sparkline-stat trajectories (design law) from the by-source spine + demand.
+  const fyTotals =
+    c.installedBySource[0]?.points.map((_, i) =>
+      c.installedBySource.reduce((s, ser) => s + (ser.points[i]?.value ?? 0), 0),
+    ) ?? [];
+  const fossilSet = new Set(["thermal", "gas"]);
+  const nonFossilShareTrend = fyTotals.map((tot, i) =>
+    tot
+      ? Math.round(
+          ((tot -
+            c.installedBySource
+              .filter((s) => fossilSet.has(s.key))
+              .reduce((a, ser) => a + (ser.points[i]?.value ?? 0), 0)) /
+            tot) *
+            1000,
+        ) / 10
+      : 0,
+  );
+  const psTrend: Record<string, number[]> = {
+    total_installed: fyTotals,
+    solar_installed:
+      c.installedBySource.find((s) => s.key === "solar")?.points.map((p) => p.value) ??
+      [],
+    non_fossil_share: nonFossilShareTrend,
+    "all-time-peak-apr-2026": d.peakGw,
+  };
+  const psColor: Record<string, string> = {
+    total_installed: "#0EA5E9",
+    solar_installed: "#F59E0B",
+    non_fossil_share: "#10B981",
+    "all-time-peak-apr-2026": "#EC4899",
+  };
+
   // KPI strip — supply (capacity, solar, non-fossil) + demand (peak, growth).
   const kpis: CanvasKpi[] = [
     find(c.kpis, "total_installed"),
@@ -57,6 +90,7 @@ export default function PowerSystemPage() {
       value: kv(k),
       unit: k.unit ? formatUnit(k.unit) : undefined,
       hint: k.hint,
+      ...(psTrend[k.key] ? { trend: psTrend[k.key], color: psColor[k.key] } : {}),
     }));
 
   // Installed mix OVER TIME → stacked-area by source (FY17 → FY26).
