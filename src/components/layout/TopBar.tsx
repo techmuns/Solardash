@@ -1,12 +1,13 @@
 "use client";
 
+import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Search } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { cn } from "@/lib/utils";
-import { PRIMARY_TABS } from "./nav";
+import { DEEP_DIVE, PRIMARY_TABS } from "./nav";
 
 export interface TopBarProps {
   onOpenSearch: () => void;
@@ -23,6 +24,91 @@ function isActive(pathname: string, href: string): boolean {
     : pathname === href || pathname.startsWith(href + "/");
 }
 
+const TAB_BASE =
+  "whitespace-nowrap rounded-[10px] px-3 py-1.5 text-sm transition-colors outline-none focus-visible:ring-2 focus-visible:ring-brand";
+const TAB_ON =
+  "bg-[#FEF3E2] font-[650] text-[#B45309] dark:bg-brand/15 dark:text-brand-200";
+const TAB_OFF =
+  "font-medium text-muted-foreground hover:bg-muted hover:text-foreground";
+
+/**
+ * "Deep Dive" dropdown — the evidence layer behind the Industry Map. Opens on
+ * click, closes on Escape / outside-click / navigation. The trigger reads active
+ * whenever the current route is one of its items.
+ */
+function DeepDiveMenu({ pathname }: { pathname: string }) {
+  const [open, setOpen] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
+  const groupActive = DEEP_DIVE.items.some((t) => isActive(pathname, t.href));
+
+  React.useEffect(() => {
+    if (!open) return;
+    const onPointer = (e: PointerEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div ref={ref} className="relative shrink-0">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        className={cn(
+          TAB_BASE,
+          "inline-flex items-center gap-1",
+          groupActive ? TAB_ON : TAB_OFF,
+        )}
+      >
+        {DEEP_DIVE.label}
+        <ChevronDown
+          className={cn("h-3.5 w-3.5 transition-transform", open && "rotate-180")}
+          aria-hidden
+        />
+      </button>
+
+      {open && (
+        <div
+          role="menu"
+          aria-label={DEEP_DIVE.label}
+          className="absolute left-0 top-full z-50 mt-1.5 w-52 overflow-hidden rounded-xl border border-border bg-card p-1.5 shadow-card-hover"
+        >
+          {DEEP_DIVE.items.map((t) => {
+            const active = isActive(pathname, t.href);
+            return (
+              <Link
+                key={t.href}
+                href={t.href}
+                role="menuitem"
+                aria-current={active ? "page" : undefined}
+                onClick={() => setOpen(false)}
+                className={cn(
+                  "block rounded-lg px-2.5 py-1.5 text-sm outline-none transition-colors focus-visible:ring-2 focus-visible:ring-brand",
+                  active
+                    ? "bg-[#FEF3E2] font-[650] text-[#B45309] dark:bg-brand/15 dark:text-brand-200"
+                    : "font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
+                )}
+              >
+                {t.label}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 /**
  * Top-bar shell (redesign): brand · primary tabs · search + as-of + theme.
  * Replaces the old sidebar nav for every section. ~58px, white (card) surface.
@@ -36,12 +122,12 @@ export function TopBar({
   const pathname = usePathname();
 
   return (
-    <header className="flex h-[58px] shrink-0 items-center gap-2 border-b border-border bg-card px-3 sm:gap-3 sm:px-4">
+    <header className="relative z-50 flex h-[58px] shrink-0 items-center gap-2 border-b border-border bg-card px-3 sm:gap-3 sm:px-4">
       {/* Brand → Overview */}
       <Link
         href="/"
         className="flex shrink-0 items-center gap-2.5 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-brand"
-        aria-label="Solar Sector Dashboard — Overview"
+        aria-label="Solar Sector Dashboard — Industry Map"
       >
         <BrandMark size="sm" />
         <span className="hidden flex-col leading-none md:flex">
@@ -54,10 +140,11 @@ export function TopBar({
         </span>
       </Link>
 
-      {/* Primary tabs */}
+      {/* Primary tabs — the four-pillar reframe: Industry Map · Companies ·
+          Deep Dive ▾ (Profit Pools & Trends are reserved for Phases 3–4). */}
       <nav
         aria-label="Primary"
-        className="scrollbar-thin flex min-w-0 flex-1 items-center gap-1 overflow-x-auto px-1"
+        className="flex min-w-0 flex-1 items-center gap-1 px-1"
       >
         {PRIMARY_TABS.map((tab) => {
           const active = isActive(pathname, tab.href);
@@ -66,17 +153,13 @@ export function TopBar({
               key={tab.href}
               href={tab.href}
               aria-current={active ? "page" : undefined}
-              className={cn(
-                "whitespace-nowrap rounded-[10px] px-3 py-1.5 text-sm transition-colors outline-none focus-visible:ring-2 focus-visible:ring-brand",
-                active
-                  ? "bg-[#FEF3E2] font-[650] text-[#B45309] dark:bg-brand/15 dark:text-brand-200"
-                  : "font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
-              )}
+              className={cn(TAB_BASE, active ? TAB_ON : TAB_OFF)}
             >
               {tab.label}
             </Link>
           );
         })}
+        <DeepDiveMenu pathname={pathname} />
       </nav>
 
       {/* Right cluster */}
