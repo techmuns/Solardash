@@ -1,5 +1,6 @@
 import {
   Building2,
+  Coins,
   Database,
   Factory,
   Gavel,
@@ -49,6 +50,18 @@ export const NAV_GROUPS: NavGroup[] = [
         icon: LineChart,
         description:
           "Financial screener and per-stock pages for listed solar & renewable plays.",
+      },
+    ],
+  },
+  {
+    label: "Profit Pools",
+    items: [
+      {
+        href: "/profit-pools",
+        label: "Profit Pools",
+        icon: Coins,
+        description:
+          "Where value is shifting across the chain — stage profitability over time and the value-migration scorecard, from listed filings.",
       },
     ],
   },
@@ -136,15 +149,16 @@ export interface PrimaryGroup {
 }
 
 /**
- * The value-chain reframe (Phase 2). The narrative is four pillars —
- * **Industry Map · Companies · Profit Pools · Trends & Insights** — with today's
- * sections re-tiered behind a **Deep Dive** dropdown as the evidence layer.
- * Profit Pools (Phase 3) and Trends & Insights (Phase 4) are reserved but not
- * shown until they have content, so no empty tabs appear.
+ * The value-chain reframe. The narrative is four pillars — **Industry Map ·
+ * Companies · Profit Pools · Trends & Insights** — with today's sections
+ * re-tiered behind a **Deep Dive** dropdown as the evidence layer. Profit Pools
+ * landed in Phase 3; Trends & Insights (Phase 4) is reserved but not shown until
+ * it has content, so no empty tab appears.
  */
 export const PRIMARY_TABS: PrimaryTab[] = [
   { href: "/", label: "Industry Map" },
   { href: "/companies", label: "Companies" },
+  { href: "/profit-pools", label: "Profit Pools" },
 ];
 
 /** The "Deep Dive" dropdown — the deep evidence behind the map. */
@@ -169,5 +183,6 @@ export const FULLBLEED_ROUTES = new Set([
   "/power-system",
   "/manufacturing",
   "/companies",
+  "/profit-pools",
   "/policy",
 ]);
