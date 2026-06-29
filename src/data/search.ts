@@ -56,7 +56,21 @@ function slug(value: string): string {
  * Tenders) even when the description doesn't spell them out verbatim.
  */
 const SECTION_KEYWORDS: Record<string, string[]> = {
-  "/": ["overview", "summary", "dashboard", "home"],
+  "/": [
+    "industry map",
+    "value chain",
+    "supply chain",
+    "polysilicon",
+    "wafer",
+    "cell",
+    "module",
+    "offtake",
+    "grid",
+    "enablers",
+    "home",
+    "overview",
+  ],
+  "/summary": ["summary", "overview", "dashboard", "synthesis", "snapshot", "home"],
   "/whats-new": ["activity", "feed", "recent", "news", "latest", "updates", "timeline"],
   "/tenders": ["tariff", "auction", "bid", "seci", "ntpc", "ppa", "pipeline"],
   "/developers": ["ipp", "developer", "portfolio", "pipeline", "operational"],
