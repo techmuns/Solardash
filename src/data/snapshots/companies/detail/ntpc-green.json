@@ -37,13 +37,13 @@
         "revenue": 2858
       }
     ],
-    "cmp": 95,
+    "cmp": 94.5,
     "confidence": "medium",
     "ebitdaMarginPct": 87,
     "hasDetail": true,
     "name": "NTPC Green Energy",
     "patFy26Cr": 521,
-    "peX": 153,
+    "peX": 152,
     "quarterly": [
       {
         "ebitda": 395,
@@ -140,8 +140,8 @@
     "type": "ipp",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 4.22,
-      "peX": 153
+      "pbX": 4.2,
+      "peX": 152
     }
   },
   "dataset": "detail/ntpc-green",

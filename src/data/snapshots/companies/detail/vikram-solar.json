@@ -62,7 +62,7 @@
       }
     ],
     "cellGw": 0,
-    "cmp": 193,
+    "cmp": 187,
     "confidence": "high",
     "ebitdaMarginPct": 19,
     "hasDetail": true,
@@ -70,7 +70,7 @@
     "name": "Vikram Solar",
     "orderBookGw": 10.34,
     "patFy26Cr": 470,
-    "peX": 14.8,
+    "peX": 14.3,
     "quarterly": [
       {
         "ebitda": 111,
@@ -151,8 +151,8 @@
     "type": "manufacturer",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 2.21,
-      "peX": 14.8
+      "pbX": 2.14,
+      "peX": 14.3
     }
   },
   "dataset": "detail/vikram-solar",

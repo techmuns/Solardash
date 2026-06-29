@@ -45,7 +45,7 @@
         "revenue": 2146
       }
     ],
-    "cmp": 115,
+    "cmp": 114,
     "confidence": "modelled",
     "ebitdaMarginPct": 13,
     "hasDetail": true,
@@ -109,7 +109,7 @@
     "type": "manufacturer",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 3.14,
+      "pbX": 3.11,
       "peX": 12.6
     }
   },

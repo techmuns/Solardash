@@ -84,7 +84,7 @@
     {
       "period": "FY25",
       "revenue": 65478,
-      "ebitda": 12166,
+      "ebitda": 12450,
       "ebitdaMarginPct": 19,
       "pat": 4775,
       "epsRs": 12.43
@@ -205,9 +205,9 @@
     }
   ],
   "valuation": {
-    "peX": 32.9,
-    "pbX": 3.19,
-    "cmp": 396
+    "peX": 32.1,
+    "pbX": 3.11,
+    "cmp": 386
   },
   "rocePct": 10.5,
   "roePct": 10.2,

@@ -101,13 +101,13 @@
         "revenue": 18901
       }
     ],
-    "cmp": 573,
+    "cmp": 586,
     "confidence": "medium",
     "ebitdaMarginPct": 53,
     "hasDetail": true,
     "name": "JSW Energy",
     "patFy26Cr": 2762,
-    "peX": 48.1,
+    "peX": 49.4,
     "quarterly": [
       {
         "ebitda": 739,
@@ -228,8 +228,8 @@
     "type": "ipp",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 3.27,
-      "peX": 48.1
+      "pbX": 3.35,
+      "peX": 49.4
     }
   },
   "dataset": "detail/jsw-energy",

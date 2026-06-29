@@ -62,7 +62,7 @@
       }
     ],
     "cellGw": 5.4,
-    "cmp": 3048,
+    "cmp": 2886,
     "confidence": "medium",
     "ebitdaMarginPct": 22,
     "hasDetail": true,
@@ -70,7 +70,7 @@
     "name": "Waaree Energies",
     "orderBookCr": 53000,
     "patFy26Cr": 3884,
-    "peX": 22.4,
+    "peX": 21.1,
     "quarterly": [
       {
         "ebitda": 468,
@@ -185,8 +185,8 @@
     "type": "integrated",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 6.07,
-      "peX": 22.4
+      "pbX": 5.75,
+      "peX": 21.1
     }
   },
   "dataset": "detail/waaree-energies",

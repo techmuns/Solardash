@@ -93,13 +93,13 @@
         "revenue": 12928
       }
     ],
-    "cmp": 1508,
+    "cmp": 1501,
     "confidence": "medium",
     "ebitdaMarginPct": 83,
     "hasDetail": true,
     "name": "Adani Green Energy",
     "patFy26Cr": 1987,
-    "peX": 136,
+    "peX": 135,
     "quarterly": [
       {
         "ebitda": 2264,
@@ -220,8 +220,8 @@
     "type": "ipp",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 12.46,
-      "peX": 136
+      "pbX": 12.4,
+      "peX": 135
     }
   },
   "dataset": "detail/adani-green",
