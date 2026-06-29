@@ -25,6 +25,17 @@ const SEG_LABELS: Record<string, string> = {
   rooftop: "Rooftop",
   kusum: "KUSUM",
 };
+// Installed capacity by source, annual (~10yr) — stable display order.
+const BY_SOURCE = ["solar", "wind", "hydro", "gas", "nuclear", "biomass", "thermal"];
+const BY_SOURCE_LABELS: Record<string, string> = {
+  solar: "Solar",
+  wind: "Wind",
+  hydro: "Hydro",
+  thermal: "Thermal",
+  gas: "Gas",
+  nuclear: "Nuclear",
+  biomass: "Biomass",
+};
 
 const round2 = (n: number) => Math.round(n * 100) / 100;
 
@@ -40,6 +51,7 @@ export const capacityPipeline = definePipeline({
     const stRows = readManualCsv("capacity/state-solar.csv");
     const rsRows = readManualCsv("capacity/re-share.csv");
     const metRows = readManualCsv("capacity/metrics.csv");
+    const bsRows = readManualCsv("capacity/installed-by-source.csv");
 
     // --- Commissioning (source-wise GW per quarter; ENERGY_COLORS) ---
     const categories = commRows.map((r) => r.period);
@@ -104,6 +116,16 @@ export const capacityPipeline = definePipeline({
       },
     ];
 
+    // --- Installed capacity by source, annual (~10yr energy-mix transition) ---
+    // FY26 matches the installed-mix snapshot; historical splits are CEA-derived.
+    const installedBySource: Series[] = BY_SOURCE.map((src) => ({
+      key: src,
+      label: BY_SOURCE_LABELS[src],
+      unit: "GW",
+      color: energyColor(src),
+      points: bsRows.map((r) => ({ period: r.period, value: Number(r[src]) })),
+    }));
+
     // --- Metrics (pass-through) ---
     const metrics: CapacityMetric[] = metRows.map((r) => ({
       metric: r.metric,
@@ -152,6 +174,7 @@ export const capacityPipeline = definePipeline({
     for (const r of stRows) addSrc(r.source, r.confidence, r.source_url);
     for (const r of rsRows) addSrc(r.source, r.confidence, r.source_url);
     for (const r of metRows) addSrc(r.source, r.confidence, r.source_url);
+    for (const r of bsRows) addSrc(r.source, r.confidence, r.source_url);
     const sources = [...srcMap.values()].sort(
       (a, b) =>
         a.name.localeCompare(b.name) ||
@@ -167,6 +190,7 @@ export const capacityPipeline = definePipeline({
       stateSolar,
       reShareTrend,
       installedHistory,
+      installedBySource,
       metrics,
     };
 
@@ -180,6 +204,7 @@ export const capacityPipeline = definePipeline({
         "Annual additions are an 8-year solar + wind history (FY19–FY26, GW); FY26 solar 44.6 GW and wind 6.05 GW are official CEA/MNRE records.",
         "Cumulative installed solar follows the long-run S-curve — ~30 GW (FY19) → 150.26 GW (FY26), crossing 100 GW in FY25.",
         "Solar segment splits are MNRE / JMK Research estimates; state-wise solar tails are bucketed as Others.",
+        "Installed capacity BY SOURCE is a curated 10-year annual series (FY17–FY26) from CEA All India Installed Capacity / IRENA; FY26 matches the installed-mix snapshot (532.74 GW) and historical year splits are CEA-derived (medium confidence).",
       ],
       data,
     });

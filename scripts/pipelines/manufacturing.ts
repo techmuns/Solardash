@@ -1,7 +1,7 @@
 import { definePipeline } from "../lib/pipeline";
 import { maxAsOf, readManualCsv, writeSnapshot } from "../lib/io";
 import { OTHERS_COLOR, categoricalColor } from "../../src/lib/colors";
-import type { Confidence, Kpi, SourceRef } from "../../src/data/types/core";
+import type { Confidence, Kpi, Series, SourceRef } from "../../src/data/types/core";
 import type {
   AlmmPhase,
   CellPlayer,
@@ -41,6 +41,7 @@ export const manufacturingPipeline = definePipeline({
     const overrideRows = readManualCsv(
       "manufacturing/cell-production-quarterly-override.csv",
     );
+    const chRows = readManualCsv("manufacturing/capacity-history.csv");
 
     // --- Cell players (sorted by nameplate desc) ---
     const cellPlayers: CellPlayer[] = cellRows
@@ -149,6 +150,24 @@ export const manufacturingPipeline = definePipeline({
       ...pliRows.filter((r) => isOthers(r.company)).map(toPli),
     ];
 
+    // --- Cell & module nameplate capacity, annual (~5yr build-out trend) ---
+    const capacityHistory: Series[] = [
+      {
+        key: "module",
+        label: "Module",
+        unit: "GW",
+        color: "#2563EB",
+        points: chRows.map((r) => ({ period: r.period, value: Number(r.module_gw) })),
+      },
+      {
+        key: "cell",
+        label: "Cell",
+        unit: "GW",
+        color: "#F59E0B",
+        points: chRows.map((r) => ({ period: r.period, value: Number(r.cell_gw) })),
+      },
+    ];
+
     // --- KPIs (current MNRE / Mercom / CareEdge headline + VQ production) ---
     const totalModuleGw = round1(modulePlayers.reduce((s, m) => s + m.almm1Gw, 0));
     const moduleSeg = supplyDemand.find((s) => s.segment === "module");
@@ -200,6 +219,7 @@ export const manufacturingPipeline = definePipeline({
       ...sdRows,
       ...almmRows,
       ...pliRows,
+      ...chRows,
     ]) {
       addSrc(r.source, r.confidence, r.source_url);
     }
@@ -218,6 +238,7 @@ export const manufacturingPipeline = definePipeline({
       supplyDemand,
       almmTimeline,
       pliAwardees,
+      capacityHistory,
     };
 
     writeSnapshot<ManufacturingData>("manufacturing", "value-chain", {
@@ -230,6 +251,7 @@ export const manufacturingPipeline = definePipeline({
         "Module capacity is 173 GW enlisted under ALMM-I (MNRE Mar 2026; long tail bucketed as Others); the cell headline is ~27 GW ALMM-II (MNRE Feb 2026).",
         "Player-wise cell-capacity is MNRE / DCR Portal; PLI Tranche I+II awardees total ~48 GW (PIB / JMK).",
         "Basic Customs Duty (BCD): modules 40% / cells 27.5%.",
+        "Cell & module nameplate capacity history is a curated ~5-year annual series (FY21–FY26) from JMK Research / Mercom; module crossed 74 GW at Mar 2025 (sourced) — this is nameplate, distinct from the ALMM-enlisted headline KPIs.",
       ],
       data,
     });

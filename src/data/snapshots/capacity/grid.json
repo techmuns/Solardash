@@ -47,6 +47,344 @@
         }
       ]
     },
+    "installedBySource": [
+      {
+        "color": "#F59E0B",
+        "key": "solar",
+        "label": "Solar",
+        "points": [
+          {
+            "period": "FY17",
+            "value": 12.3
+          },
+          {
+            "period": "FY18",
+            "value": 21.7
+          },
+          {
+            "period": "FY19",
+            "value": 30
+          },
+          {
+            "period": "FY20",
+            "value": 37
+          },
+          {
+            "period": "FY21",
+            "value": 42
+          },
+          {
+            "period": "FY22",
+            "value": 55
+          },
+          {
+            "period": "FY23",
+            "value": 67
+          },
+          {
+            "period": "FY24",
+            "value": 82
+          },
+          {
+            "period": "FY25",
+            "value": 106
+          },
+          {
+            "period": "FY26",
+            "value": 150.26
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#0EA5E9",
+        "key": "wind",
+        "label": "Wind",
+        "points": [
+          {
+            "period": "FY17",
+            "value": 32.3
+          },
+          {
+            "period": "FY18",
+            "value": 34
+          },
+          {
+            "period": "FY19",
+            "value": 35.6
+          },
+          {
+            "period": "FY20",
+            "value": 37.7
+          },
+          {
+            "period": "FY21",
+            "value": 38.8
+          },
+          {
+            "period": "FY22",
+            "value": 40.1
+          },
+          {
+            "period": "FY23",
+            "value": 42.6
+          },
+          {
+            "period": "FY24",
+            "value": 45.9
+          },
+          {
+            "period": "FY25",
+            "value": 50
+          },
+          {
+            "period": "FY26",
+            "value": 56.1
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#3B82F6",
+        "key": "hydro",
+        "label": "Hydro",
+        "points": [
+          {
+            "period": "FY17",
+            "value": 49
+          },
+          {
+            "period": "FY18",
+            "value": 49.4
+          },
+          {
+            "period": "FY19",
+            "value": 49.8
+          },
+          {
+            "period": "FY20",
+            "value": 50.1
+          },
+          {
+            "period": "FY21",
+            "value": 50.7
+          },
+          {
+            "period": "FY22",
+            "value": 51.8
+          },
+          {
+            "period": "FY23",
+            "value": 51.9
+          },
+          {
+            "period": "FY24",
+            "value": 52
+          },
+          {
+            "period": "FY25",
+            "value": 52.4
+          },
+          {
+            "period": "FY26",
+            "value": 56.58
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#FB923C",
+        "key": "gas",
+        "label": "Gas",
+        "points": [
+          {
+            "period": "FY17",
+            "value": 25.3
+          },
+          {
+            "period": "FY18",
+            "value": 24.9
+          },
+          {
+            "period": "FY19",
+            "value": 24.9
+          },
+          {
+            "period": "FY20",
+            "value": 25
+          },
+          {
+            "period": "FY21",
+            "value": 24.9
+          },
+          {
+            "period": "FY22",
+            "value": 24.9
+          },
+          {
+            "period": "FY23",
+            "value": 24.8
+          },
+          {
+            "period": "FY24",
+            "value": 24.8
+          },
+          {
+            "period": "FY25",
+            "value": 24.6
+          },
+          {
+            "period": "FY26",
+            "value": 20.71
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#A855F7",
+        "key": "nuclear",
+        "label": "Nuclear",
+        "points": [
+          {
+            "period": "FY17",
+            "value": 6.78
+          },
+          {
+            "period": "FY18",
+            "value": 6.78
+          },
+          {
+            "period": "FY19",
+            "value": 6.78
+          },
+          {
+            "period": "FY20",
+            "value": 6.78
+          },
+          {
+            "period": "FY21",
+            "value": 6.78
+          },
+          {
+            "period": "FY22",
+            "value": 6.78
+          },
+          {
+            "period": "FY23",
+            "value": 6.78
+          },
+          {
+            "period": "FY24",
+            "value": 7.48
+          },
+          {
+            "period": "FY25",
+            "value": 8.18
+          },
+          {
+            "period": "FY26",
+            "value": 8.78
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#65A30D",
+        "key": "biomass",
+        "label": "Biomass",
+        "points": [
+          {
+            "period": "FY17",
+            "value": 8.3
+          },
+          {
+            "period": "FY18",
+            "value": 8.8
+          },
+          {
+            "period": "FY19",
+            "value": 9.5
+          },
+          {
+            "period": "FY20",
+            "value": 9.9
+          },
+          {
+            "period": "FY21",
+            "value": 10.1
+          },
+          {
+            "period": "FY22",
+            "value": 10.6
+          },
+          {
+            "period": "FY23",
+            "value": 10.2
+          },
+          {
+            "period": "FY24",
+            "value": 10.2
+          },
+          {
+            "period": "FY25",
+            "value": 11.4
+          },
+          {
+            "period": "FY26",
+            "value": 11.75
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#475569",
+        "key": "thermal",
+        "label": "Thermal",
+        "points": [
+          {
+            "period": "FY17",
+            "value": 192.2
+          },
+          {
+            "period": "FY18",
+            "value": 197.2
+          },
+          {
+            "period": "FY19",
+            "value": 200.7
+          },
+          {
+            "period": "FY20",
+            "value": 205.1
+          },
+          {
+            "period": "FY21",
+            "value": 209.3
+          },
+          {
+            "period": "FY22",
+            "value": 211
+          },
+          {
+            "period": "FY23",
+            "value": 214
+          },
+          {
+            "period": "FY24",
+            "value": 217.5
+          },
+          {
+            "period": "FY25",
+            "value": 223
+          },
+          {
+            "period": "FY26",
+            "value": 228.56
+          }
+        ],
+        "unit": "GW"
+      }
+    ],
     "installedHistory": [
       {
         "color": "#F59E0B",
@@ -360,7 +698,8 @@
     "Installed mix is the CEA all-India snapshot at 31 Mar 2026 (532.74 GW total).",
     "Annual additions are an 8-year solar + wind history (FY19–FY26, GW); FY26 solar 44.6 GW and wind 6.05 GW are official CEA/MNRE records.",
     "Cumulative installed solar follows the long-run S-curve — ~30 GW (FY19) → 150.26 GW (FY26), crossing 100 GW in FY25.",
-    "Solar segment splits are MNRE / JMK Research estimates; state-wise solar tails are bucketed as Others."
+    "Solar segment splits are MNRE / JMK Research estimates; state-wise solar tails are bucketed as Others.",
+    "Installed capacity BY SOURCE is a curated 10-year annual series (FY17–FY26) from CEA All India Installed Capacity / IRENA; FY26 matches the installed-mix snapshot (532.74 GW) and historical year splits are CEA-derived (medium confidence)."
   ],
   "section": "capacity",
   "sources": [
@@ -400,14 +739,38 @@
     },
     {
       "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "CEA / IRENA Renewable Capacity Statistics",
+      "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
+    },
+    {
+      "asOf": "2026-03-31",
       "confidence": "high",
       "name": "CEA / MNRE",
       "url": "https://jmkresearch.com/india-installs-record-44-gw-solar-and-6-gw-wind-capacity-in-fy2026/"
     },
     {
       "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "CEA / MNRE (FY25 year-end)",
+      "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
+    },
+    {
+      "asOf": "2026-03-31",
       "confidence": "high",
       "name": "CEA 31 Mar 2026",
+      "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "CEA 31 Mar 2026 (matches installed-mix)",
+      "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "CEA All India Installed Capacity (annual)",
       "url": "https://cea.nic.in/installed-capacity-report/?lang=en"
     },
     {

@@ -1,4 +1,4 @@
-import type { Confidence, Kpi } from "./core";
+import type { Confidence, Kpi, Series } from "./core";
 
 /** A cell manufacturer (capacity + modelled production). */
 export interface CellPlayer {
@@ -67,4 +67,6 @@ export interface ManufacturingData {
   almmTimeline: AlmmPhase[];
   /** PLI Tranche I+II awardees (GW of supported capacity). */
   pliAwardees: PliAwardee[];
+  /** Cell & module nameplate capacity, annual (~5yr) — the build-out trend. */
+  capacityHistory: Series[];
 }

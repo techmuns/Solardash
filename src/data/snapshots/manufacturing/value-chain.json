@@ -26,6 +26,72 @@
         "status": "Announced"
       }
     ],
+    "capacityHistory": [
+      {
+        "color": "#2563EB",
+        "key": "module",
+        "label": "Module",
+        "points": [
+          {
+            "period": "FY21",
+            "value": 10
+          },
+          {
+            "period": "FY22",
+            "value": 18
+          },
+          {
+            "period": "FY23",
+            "value": 38
+          },
+          {
+            "period": "FY24",
+            "value": 50
+          },
+          {
+            "period": "FY25",
+            "value": 74
+          },
+          {
+            "period": "FY26",
+            "value": 110
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#F59E0B",
+        "key": "cell",
+        "label": "Cell",
+        "points": [
+          {
+            "period": "FY21",
+            "value": 3
+          },
+          {
+            "period": "FY22",
+            "value": 4.5
+          },
+          {
+            "period": "FY23",
+            "value": 5
+          },
+          {
+            "period": "FY24",
+            "value": 6
+          },
+          {
+            "period": "FY25",
+            "value": 19
+          },
+          {
+            "period": "FY26",
+            "value": 50
+          }
+        ],
+        "unit": "GW"
+      }
+    ],
     "cellPlayers": [
       {
         "almm2Gw": 5.251,
@@ -364,7 +430,8 @@
     "Quarterly cell production is MODELLED: each producer's FY26E annual output is split across Q1FY26/Q2FY26/Q3FY26/Q4FY26 with a ramp [0.22, 0.24, 0.26, 0.28]; drop real (player, quarter) actuals into manufacturing/cell-production-quarterly-override.csv to override a cell.",
     "Module capacity is 173 GW enlisted under ALMM-I (MNRE Mar 2026; long tail bucketed as Others); the cell headline is ~27 GW ALMM-II (MNRE Feb 2026).",
     "Player-wise cell-capacity is MNRE / DCR Portal; PLI Tranche I+II awardees total ~48 GW (PIB / JMK).",
-    "Basic Customs Duty (BCD): modules 40% / cells 27.5%."
+    "Basic Customs Duty (BCD): modules 40% / cells 27.5%.",
+    "Cell & module nameplate capacity history is a curated ~5-year annual series (FY21–FY26) from JMK Research / Mercom; module crossed 74 GW at Mar 2025 (sourced) — this is nameplate, distinct from the ALMM-enlisted headline KPIs."
   ],
   "section": "manufacturing",
   "sources": [
@@ -377,6 +444,18 @@
       "asOf": "2026-03-31",
       "confidence": "high",
       "name": "Company FY26"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "JMK Research / ALMM (nameplate",
+      "url": "early 2026)"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "JMK Research / Mercom India (nameplate)",
+      "url": "https://jmkresearch.com/"
     },
     {
       "asOf": "2026-03-31",
@@ -434,6 +513,12 @@
       "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "PIB / JMK"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "SolarQuarter — module 74 GW at Mar 2025",
+      "url": "https://solarquarter.com/2025/04/02/india-adds-record-25-gw-re-in-fy25-solar-capacity-crosses-100-gw-module-manufacturing-hits-74-gw/"
     }
   ],
   "updatedAt": "2026-03-31"

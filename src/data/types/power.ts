@@ -51,6 +51,8 @@ export interface CapacityData {
   reShareTrend: Series[];
   /** Cumulative installed solar GW by FY (the long-run S-curve to 150 GW). */
   installedHistory: Series[];
+  /** Installed capacity by source, annual (~10yr) — the energy-mix transition. */
+  installedBySource: Series[];
   metrics: CapacityMetric[];
 }
 
