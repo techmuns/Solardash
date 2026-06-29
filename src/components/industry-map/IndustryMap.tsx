@@ -73,6 +73,10 @@ const EMPHASIS_GROW: Record<Emphasis, number> = {
   wide: 1.4,
 };
 
+/** Compact ₹-crore label for the economic-weight annotation. */
+const compactCr = (v: number) =>
+  v >= 1000 ? `₹${Math.round(v / 1000)}k cr` : `₹${Math.round(v)} cr`;
+
 function PresenceBadge({ presence }: { presence: Presence }) {
   const p = PRESENCE[presence];
   return (
@@ -88,8 +92,18 @@ function PresenceBadge({ presence }: { presence: Presence }) {
 }
 
 /** One stage column: name · presence · trend-or-status · players · drill. */
-function StageCard({ node, index }: { node: ValueChainNode; index: number }) {
+function StageCard({
+  node,
+  index,
+  maxWeight,
+}: {
+  node: ValueChainNode;
+  index: number;
+  /** Largest economicWeight across the ribbon — normalises the weight bar. */
+  maxWeight: number;
+}) {
   const hasTrend = Boolean(node.trend && node.trend.length > 1);
+  const weight = node.economicWeight ?? 0;
   const Tag = (node.href ? Link : "div") as React.ElementType;
 
   return (
@@ -127,6 +141,22 @@ function StageCard({ node, index }: { node: ValueChainNode; index: number }) {
       <div className="mt-1.5">
         <PresenceBadge presence={node.presence} />
       </div>
+
+      {/* economic-weight annotation (listed FY26 revenue pool — a proxy) */}
+      {weight > 0 && maxWeight > 0 && (
+        <div className="mt-1.5">
+          <div className="h-1 overflow-hidden rounded-full bg-muted">
+            <div
+              className="h-full rounded-full bg-foreground/30"
+              style={{ width: `${Math.max(8, (weight / maxWeight) * 100)}%` }}
+              aria-hidden
+            />
+          </div>
+          <p className="mt-0.5 truncate text-2xs tabular-nums text-muted-foreground">
+            {compactCr(weight)} pool
+          </p>
+        </div>
+      )}
 
       {/* trend (real series) or a centred status note */}
       {hasTrend ? (
@@ -236,6 +266,9 @@ export interface IndustryMapProps {
  * 1440×900 screen with no page scroll (the ribbon flexes to fill).
  */
 export function IndustryMap({ nodes, enablers }: IndustryMapProps) {
+  const maxWeight = Math.max(0, ...nodes.map((n) => n.economicWeight ?? 0));
+  const hasWeights = maxWeight > 0;
+
   return (
     <div className="flex h-full min-h-0 flex-col gap-3 p-4 sm:p-5">
       {/* header + presence key */}
@@ -249,7 +282,18 @@ export function IndustryMap({ nodes, enablers }: IndustryMapProps) {
             Click a stage to drill into the evidence.
           </p>
         </div>
-        <PresenceKey />
+        <div className="flex flex-col items-end gap-1">
+          <PresenceKey />
+          {hasWeights && (
+            <span className="inline-flex items-center gap-1.5 text-2xs text-muted-foreground">
+              <span className="h-1 w-4 rounded-full bg-foreground/30" aria-hidden />
+              bar = listed FY26 revenue pool
+              <span className="rounded-full border border-dashed border-brand/40 bg-brand/5 px-1 font-medium text-brand">
+                Munshot proxy
+              </span>
+            </span>
+          )}
+        </div>
       </div>
 
       {/* flow-direction rail — product downstream, ₹ upstream */}
@@ -269,7 +313,7 @@ export function IndustryMap({ nodes, enablers }: IndustryMapProps) {
       <div className="flex min-h-0 flex-1 items-stretch">
         {nodes.map((node, i) => (
           <React.Fragment key={node.id}>
-            <StageCard node={node} index={i} />
+            <StageCard node={node} index={i} maxWeight={maxWeight} />
             {i < nodes.length - 1 && (
               <div
                 className="flex shrink-0 items-center justify-center px-0.5 text-border"

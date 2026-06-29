@@ -4,6 +4,7 @@ import {
   getManufacturingSnapshot,
   getTendersSnapshot,
 } from "@/data";
+import { getProfitPools } from "@/data/profit-pools";
 import {
   ENABLER_ICONS,
   IndustryMap,
@@ -28,6 +29,8 @@ export default function IndustryMapPage() {
   const cap = getCapacitySnapshot().data;
   const tenders = getTendersSnapshot().data;
   const developers = getDevelopersSnapshot().data;
+  // Economic-weight proxy: the listed FY26 revenue pool per stage-group (Phase 3).
+  const pool = getProfitPools().revenuePoolFy26;
 
   // Real Phase-1 trajectories (no fabrication — straight from the snapshots).
   const cellHist = mfg.capacityHistory.find((s) => s.key === "cell");
@@ -89,7 +92,8 @@ export default function IndustryMapPage() {
       trendColor: "#2563EB",
       note: "ALMM-I capacity · GW",
       emphasis: "wide",
-      economicWeight: 0,
+      // Listed module/cell makers' FY26 revenue pool (Cell rolls up here too).
+      economicWeight: pool.manufacturing,
     },
     {
       id: "bos",
@@ -119,7 +123,8 @@ export default function IndustryMapPage() {
       trendColor: "#0EA5E9",
       note: "Installed solar · GW",
       emphasis: "wide",
-      economicWeight: 0,
+      // Listed IPPs' FY26 revenue pool.
+      economicWeight: pool.generation,
     },
     {
       id: "offtake",
