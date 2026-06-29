@@ -7,6 +7,7 @@ import type { ManufacturingData } from "./types/manufacturing";
 import type { CapacityData, DemandData } from "./types/power";
 import type { CompaniesData, CompanyDetail } from "./types/companies";
 import type { PolicyData } from "./types/policy";
+import type { PriceHistoryData, StageEconomicsData } from "./types/profit-pools";
 import type { WhatsNewData } from "./types/whats-new";
 import overviewSummary from "./snapshots/overview/summary.json";
 import tendersAwards from "./snapshots/tenders/awards.json";
@@ -15,6 +16,8 @@ import manufacturingValueChain from "./snapshots/manufacturing/value-chain.json"
 import capacityGrid from "./snapshots/capacity/grid.json";
 import demandPower from "./snapshots/demand/power-demand.json";
 import policyPolicy from "./snapshots/policy/policy.json";
+import priceHistory from "./snapshots/profit-pools/price-history.json";
+import stageEconomics from "./snapshots/profit-pools/stage-economics.json";
 import referenceGlossary from "./snapshots/reference/glossary.json";
 import whatsNewMilestones from "./snapshots/whats-new/milestones.json";
 import companiesRegistry from "./snapshots/companies/registry.json";
@@ -130,6 +133,22 @@ export function getPolicySnapshot(): Snapshot<PolicyData> {
   );
 }
 
+/** Global PV price stack — poly/wafer/cell/module native-unit annual prices. */
+export function getPriceHistorySnapshot(): Snapshot<PriceHistoryData> {
+  return assertSnapshot(
+    priceHistory as unknown as Snapshot<PriceHistoryData>,
+    "profit-pools/price-history",
+  );
+}
+
+/** Per-stage margin & direction benchmark (the sourced pack). */
+export function getStageEconomicsSnapshot(): Snapshot<StageEconomicsData> {
+  return assertSnapshot(
+    stageEconomics as unknown as Snapshot<StageEconomicsData>,
+    "profit-pools/stage-economics",
+  );
+}
+
 /** Listed-company screener registry (all companies). */
 export function getCompaniesSnapshot(): Snapshot<CompaniesData> {
   return assertSnapshot(
@@ -199,6 +218,8 @@ export function getProvenance(): ProvenanceRow[] {
     getDemandSnapshot(),
     getCompaniesSnapshot(),
     getPolicySnapshot(),
+    getPriceHistorySnapshot(),
+    getStageEconomicsSnapshot(),
     getReferenceSnapshot(),
   ];
   return snapshots.map((s) => ({

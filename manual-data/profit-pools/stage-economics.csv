@@ -1,0 +1,13 @@
+stage,region,metric,margin_text,rep_margin,rep,direction,direction_class,rationale,source,confidence,trend
+Polysilicon,Global,GM,74%→40%→-21%→+4%,4,yes,Squeezed → inflecting,squeezed,"China oversupply, prices below cash cost; supply cuts H2'25",Daqo · Wacker · BNEF,high,74;40;-21;4
+Wafer / Ingot,Global,GM,25%→-9%,-9,yes,Squeezed (deepest),squeezed,"Duopoly pushed into losses and writedowns",TCL · LONGi,high,25;-9
+Cell,China,GM,-4% to 0%,-2,no,Squeezed,squeezed,"Severe overcapacity",pv-magazine · PV-Tech,high,
+Cell,India,EBITDA,27–45%,36,yes,Expanding,expanding,"ALMM / DCR scarcity premium (Premier 27 · Websol 44)",Company FY25,high,
+Module,China,GM,-1% to +6%,2,no,Squeezed,squeezed,"Selling below cash cost (~$0.09/W); net losses",CRISIL · Wood Mackenzie,high,
+Module,India,EBITDA,12–19%,18,yes,Expanding,expanding,"ALMM / BCD wall + US export premium (Waaree 17→19)",Company · IEEFA,high,
+Module,US,GM,39–44%,41,no,Expanding,expanding,"IRA / 45X manufacturing credit (First Solar)",First Solar,high,
+Inverter / BoS,Global,GM,SolarEdge +20→neg · Enphase 46–53 · Sungrow ~30 · trackers ~36,36,yes,Bifurcated,mixed,"Value-add hardware holds margin",Company FY24–25,high,
+EPC,India,EBITDA,~4–8%,6,yes,Squeezed (improving),squeezed,"Commoditized, bid-driven (S&W -56% FY23 → +3.9% FY25)",Renewable Watch · CRISIL,high,
+IPP / Generation,India,EBITDA,85–92%,88,yes,Margins high & stable; returns squeezed,stable,"Fixed PPAs; tariff compression bites returns (IRR 14→12%); AGEL 92 · ReNew 72",Company · CRISIL · ICRA,high,
+BESS,India,—,Tariffs -86% vs cost -36%; ~75% awards viability-risky,,no,Volume exploding · margin unproven,mixed,"Tariffs competed away faster than costs fall; no clean EBITDA yet",Mercom · IEEFA-JMK · BNEF,high demand · low margin,
+O&M,India,EBITDA,~20%,20,yes,Stable annuity,stable,"Recurring contracts on a growing installed base",Wood Mackenzie · S&W · NREL,medium,

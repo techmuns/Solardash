@@ -1,0 +1,223 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "annual",
+  "coverage": "Global · solar PV price stack (polysilicon, wafer, cell, module)",
+  "data": {
+    "series": [
+      {
+        "color": "#EA580C",
+        "key": "poly",
+        "label": "Polysilicon",
+        "points": [
+          {
+            "period": "2019",
+            "value": 9
+          },
+          {
+            "period": "2020",
+            "value": 8
+          },
+          {
+            "period": "2021",
+            "value": 27
+          },
+          {
+            "period": "2022",
+            "value": 36
+          },
+          {
+            "period": "2023",
+            "value": 15
+          },
+          {
+            "period": "2024",
+            "value": 5
+          },
+          {
+            "period": "2025",
+            "value": 6.5
+          }
+        ],
+        "unit": "$/kg"
+      },
+      {
+        "color": "#8B5CF6",
+        "key": "wafer",
+        "label": "Wafer",
+        "points": [
+          {
+            "modelled": true,
+            "period": "2019",
+            "value": 0.35
+          },
+          {
+            "modelled": true,
+            "period": "2020",
+            "value": 0.32
+          },
+          {
+            "modelled": true,
+            "period": "2021",
+            "value": 0.7
+          },
+          {
+            "modelled": true,
+            "period": "2022",
+            "value": 0.95
+          },
+          {
+            "period": "2023",
+            "value": 0.33
+          },
+          {
+            "period": "2024",
+            "value": 0.17
+          },
+          {
+            "modelled": true,
+            "period": "2025",
+            "value": 0.2
+          }
+        ],
+        "unit": "$/pc"
+      },
+      {
+        "color": "#F59E0B",
+        "key": "cell",
+        "label": "Cell",
+        "points": [
+          {
+            "modelled": true,
+            "period": "2019",
+            "value": 0.115
+          },
+          {
+            "modelled": true,
+            "period": "2020",
+            "value": 0.105
+          },
+          {
+            "modelled": true,
+            "period": "2021",
+            "value": 0.145
+          },
+          {
+            "modelled": true,
+            "period": "2022",
+            "value": 0.15
+          },
+          {
+            "period": "2023",
+            "value": 0.055
+          },
+          {
+            "period": "2024",
+            "value": 0.055
+          },
+          {
+            "period": "2025",
+            "value": 0.055
+          }
+        ],
+        "unit": "$/W"
+      },
+      {
+        "color": "#2563EB",
+        "key": "module",
+        "label": "Module",
+        "points": [
+          {
+            "period": "2019",
+            "value": 0.23
+          },
+          {
+            "period": "2020",
+            "value": 0.19
+          },
+          {
+            "period": "2021",
+            "value": 0.26
+          },
+          {
+            "period": "2022",
+            "value": 0.26
+          },
+          {
+            "period": "2023",
+            "value": 0.13
+          },
+          {
+            "period": "2024",
+            "value": 0.1
+          },
+          {
+            "period": "2025",
+            "value": 0.095
+          }
+        ],
+        "unit": "$/W"
+      }
+    ],
+    "years": [
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ]
+  },
+  "dataset": "price-history",
+  "notes": [
+    "Representative annual values in native units (poly $/kg, wafer $/piece, cell & module $/W); points flagged modelled were reconstructed from monthly series (the pack's est. flag).",
+    "Polysilicon peaked ~$39/kg in Aug 2022 and fell to ~$5/kg in 2024 (−88% peak→trough), below cash cost across poly/wafer/cell; 2025 is a partial recovery (poly ~+39% YTD). Module $/W roughly halved 2022→2024.",
+    "Confidence: polysilicon & module HIGH; wafer & cell MEDIUM."
+  ],
+  "section": "profit-pools",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Bernreuter Research",
+      "note": "representative annual; est. where monthly-reconstructed"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "InfoLink Consulting",
+      "note": "representative annual; est. where monthly-reconstructed"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "BloombergNEF",
+      "note": "representative annual; est. where monthly-reconstructed"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "IEA",
+      "note": "representative annual; est. where monthly-reconstructed"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "OPIS",
+      "note": "representative annual; est. where monthly-reconstructed"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Wood Mackenzie",
+      "note": "representative annual; est. where monthly-reconstructed"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "ITRPV",
+      "note": "representative annual; est. where monthly-reconstructed"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

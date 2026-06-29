@@ -8,6 +8,7 @@ import { capacityPipeline } from "../pipelines/capacity";
 import { demandPipeline } from "../pipelines/demand";
 import { companiesPipeline } from "../pipelines/companies";
 import { policyPipeline } from "../pipelines/policy";
+import { profitPoolsPipeline } from "../pipelines/profit-pools";
 import { referencePipeline } from "../pipelines/reference";
 import { whatsNewPipeline } from "../pipelines/whats-new";
 
@@ -21,6 +22,7 @@ export const pipelines: Pipeline[] = [
   demandPipeline,
   companiesPipeline,
   policyPipeline,
+  profitPoolsPipeline,
   referencePipeline,
   whatsNewPipeline,
 ];

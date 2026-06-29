@@ -1,0 +1,285 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "adhoc",
+  "coverage": "Solar value chain · per-stage margin & direction benchmark (global + India)",
+  "data": {
+    "rows": [
+      {
+        "confidence": "high",
+        "direction": "Squeezed → inflecting",
+        "directionClass": "squeezed",
+        "marginText": "74%→40%→-21%→+4%",
+        "metric": "GM",
+        "rationale": "China oversupply, prices below cash cost; supply cuts H2'25",
+        "region": "Global",
+        "rep": true,
+        "repMargin": 4,
+        "source": "Daqo · Wacker · BNEF",
+        "stage": "Polysilicon",
+        "trend": [
+          74,
+          40,
+          -21,
+          4
+        ]
+      },
+      {
+        "confidence": "high",
+        "direction": "Squeezed (deepest)",
+        "directionClass": "squeezed",
+        "marginText": "25%→-9%",
+        "metric": "GM",
+        "rationale": "Duopoly pushed into losses and writedowns",
+        "region": "Global",
+        "rep": true,
+        "repMargin": -9,
+        "source": "TCL · LONGi",
+        "stage": "Wafer / Ingot",
+        "trend": [
+          25,
+          -9
+        ]
+      },
+      {
+        "confidence": "high",
+        "direction": "Squeezed",
+        "directionClass": "squeezed",
+        "marginText": "-4% to 0%",
+        "metric": "GM",
+        "rationale": "Severe overcapacity",
+        "region": "China",
+        "rep": false,
+        "repMargin": -2,
+        "source": "pv-magazine · PV-Tech",
+        "stage": "Cell"
+      },
+      {
+        "confidence": "high",
+        "direction": "Expanding",
+        "directionClass": "expanding",
+        "marginText": "27–45%",
+        "metric": "EBITDA",
+        "rationale": "ALMM / DCR scarcity premium (Premier 27 · Websol 44)",
+        "region": "India",
+        "rep": true,
+        "repMargin": 36,
+        "source": "Company FY25",
+        "stage": "Cell"
+      },
+      {
+        "confidence": "high",
+        "direction": "Squeezed",
+        "directionClass": "squeezed",
+        "marginText": "-1% to +6%",
+        "metric": "GM",
+        "rationale": "Selling below cash cost (~$0.09/W); net losses",
+        "region": "China",
+        "rep": false,
+        "repMargin": 2,
+        "source": "CRISIL · Wood Mackenzie",
+        "stage": "Module"
+      },
+      {
+        "confidence": "high",
+        "direction": "Expanding",
+        "directionClass": "expanding",
+        "marginText": "12–19%",
+        "metric": "EBITDA",
+        "rationale": "ALMM / BCD wall + US export premium (Waaree 17→19)",
+        "region": "India",
+        "rep": true,
+        "repMargin": 18,
+        "source": "Company · IEEFA",
+        "stage": "Module"
+      },
+      {
+        "confidence": "high",
+        "direction": "Expanding",
+        "directionClass": "expanding",
+        "marginText": "39–44%",
+        "metric": "GM",
+        "rationale": "IRA / 45X manufacturing credit (First Solar)",
+        "region": "US",
+        "rep": false,
+        "repMargin": 41,
+        "source": "First Solar",
+        "stage": "Module"
+      },
+      {
+        "confidence": "high",
+        "direction": "Bifurcated",
+        "directionClass": "mixed",
+        "marginText": "SolarEdge +20→neg · Enphase 46–53 · Sungrow ~30 · trackers ~36",
+        "metric": "GM",
+        "rationale": "Value-add hardware holds margin",
+        "region": "Global",
+        "rep": true,
+        "repMargin": 36,
+        "source": "Company FY24–25",
+        "stage": "Inverter / BoS"
+      },
+      {
+        "confidence": "high",
+        "direction": "Squeezed (improving)",
+        "directionClass": "squeezed",
+        "marginText": "~4–8%",
+        "metric": "EBITDA",
+        "rationale": "Commoditized, bid-driven (S&W -56% FY23 → +3.9% FY25)",
+        "region": "India",
+        "rep": true,
+        "repMargin": 6,
+        "source": "Renewable Watch · CRISIL",
+        "stage": "EPC"
+      },
+      {
+        "confidence": "high",
+        "direction": "Margins high & stable; returns squeezed",
+        "directionClass": "stable",
+        "marginText": "85–92%",
+        "metric": "EBITDA",
+        "rationale": "Fixed PPAs; tariff compression bites returns (IRR 14→12%); AGEL 92 · ReNew 72",
+        "region": "India",
+        "rep": true,
+        "repMargin": 88,
+        "source": "Company · CRISIL · ICRA",
+        "stage": "IPP / Generation"
+      },
+      {
+        "confidence": "high demand · low margin",
+        "direction": "Volume exploding · margin unproven",
+        "directionClass": "mixed",
+        "marginText": "Tariffs -86% vs cost -36%; ~75% awards viability-risky",
+        "metric": "—",
+        "rationale": "Tariffs competed away faster than costs fall; no clean EBITDA yet",
+        "region": "India",
+        "rep": false,
+        "repMargin": null,
+        "source": "Mercom · IEEFA-JMK · BNEF",
+        "stage": "BESS"
+      },
+      {
+        "confidence": "medium",
+        "direction": "Stable annuity",
+        "directionClass": "stable",
+        "marginText": "~20%",
+        "metric": "EBITDA",
+        "rationale": "Recurring contracts on a growing installed base",
+        "region": "India",
+        "rep": true,
+        "repMargin": 20,
+        "source": "Wood Mackenzie · S&W · NREL",
+        "stage": "O&M"
+      }
+    ]
+  },
+  "dataset": "stage-economics",
+  "notes": [
+    "Margins are sourced FACT (company filings / agencies); the direction reading and the representative per-stage margin are Munshot analysis.",
+    "Where a stage is bifurcated by geography, the India figure is the representative; China (squeezed) and US (IRA-boosted) figures are shown alongside. The key insight: trade policy, not technology, sets the module margin.",
+    "BESS has no clean EBITDA yet — auction tariffs have fallen ~86% against a ~36% cost decline, so volume is exploding but margin is unproven (low confidence)."
+  ],
+  "section": "profit-pools",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "BNEF"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Company"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Company FY24–25"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Company FY25"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "CRISIL"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Daqo"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "First Solar"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "ICRA"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "IEEFA"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "IEEFA-JMK"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "LONGi"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Mercom"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "NREL"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "pv-magazine"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "PV-Tech"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Renewable Watch"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "S&W"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "TCL"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Wacker"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Wood Mackenzie"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}
