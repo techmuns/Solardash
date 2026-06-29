@@ -1,13 +1,9 @@
 import { getCapacitySnapshot, getDemandSnapshot } from "@/data";
-import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
-import { categoryToExport, snapshotMeta } from "@/lib/export";
+import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
-import {
-  FillBarSeries,
-  FillCategoryBar,
-  FillLineSeries,
-} from "@/components/charts/FillCharts";
+import { FillBarSeries, FillLineSeries } from "@/components/charts/FillCharts";
+import { MixAreaToggle } from "@/components/charts/MixAreaToggle";
 import {
   SectionCanvas,
   RankList,
@@ -31,7 +27,6 @@ function kv(k?: Kpi): string {
     : parseFloat(k.value.toFixed(2)).toString();
 }
 const find = (kpis: Kpi[], key: string) => kpis.find((k) => k.key === key);
-const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 export default function PowerSystemPage() {
   const capSnap = getCapacitySnapshot();
@@ -64,15 +59,9 @@ export default function PowerSystemPage() {
       hint: k.hint,
     }));
 
-  // Cumulative installed mix → ranked horizontal bar (descending).
-  const mixData = c.installedMix
-    .map((m) => ({
-      key: m.source,
-      label: cap(m.source),
-      value: m.capacityGw,
-      color: energyColor(m.source),
-    }))
-    .sort((a, b) => b.value - a.value);
+  // Installed mix OVER TIME → stacked-area by source (FY17 → FY26).
+  const bySource = c.installedBySource;
+  const fyOrder = bySource[0]?.points.map((p) => p.period) ?? [];
 
   // Commissioning (GW added per FY by source) → stacked bars.
   const commYears = c.commissioningQuarterly.categories;
@@ -116,15 +105,13 @@ export default function PowerSystemPage() {
     {
       id: "mix",
       label: "Capacity mix",
-      title: "Installed capacity mix",
-      subtitle: "Cumulative GW by source · latest, ranked",
+      title: "Capacity mix over time",
+      subtitle: "Installed GW by source · FY17 → FY26 · toggle 100% share",
       source: capSource,
-      body: (
-        <FillCategoryBar data={mixData} unit="GW" categoryWidth={78} showValues />
-      ),
+      body: <MixAreaToggle series={bySource} periodOrder={fyOrder} unit="GW" />,
       side: { title: "Top states · solar GW", node: <RankList rows={stateRows} /> },
       exportData: {
-        ...categoryToExport(mixData, "Source", "GW"),
+        ...seriesToExport(bySource, fyOrder, "Year"),
         meta: capMeta("capacity-mix"),
       },
     },

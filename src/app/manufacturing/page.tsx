@@ -3,7 +3,11 @@ import { categoricalColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
 import { categoryToExport, snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
-import { FillBarSeries, FillCategoryBar } from "@/components/charts/FillCharts";
+import {
+  FillBarSeries,
+  FillCategoryBar,
+  FillLineSeries,
+} from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
   RankList,
@@ -152,7 +156,27 @@ export default function ManufacturingPage() {
     .slice(0, 5)
     .map((p) => ({ label: p.player, value: `${p.almm1Gw}` }));
 
+  const chYears = m.capacityHistory[0]?.points.map((p) => p.period) ?? [];
+
   const tabs: CanvasTab[] = [
+    {
+      id: "buildout",
+      label: "Capacity build-out",
+      title: "Cell vs module capacity over time",
+      subtitle: "Nameplate GW · FY21 → FY26 — cell catching up to module",
+      source: "JMK Research / Mercom",
+      body: (
+        <FillLineSeries
+          series={m.capacityHistory}
+          unit="GW"
+          periodOrder={chYears}
+        />
+      ),
+      exportData: {
+        ...seriesToExport(m.capacityHistory, chYears, "Year"),
+        meta: meta("capacity-history"),
+      },
+    },
     {
       id: "production",
       label: "Cell production",

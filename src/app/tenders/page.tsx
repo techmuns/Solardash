@@ -1,14 +1,10 @@
 import { getTendersSnapshot } from "@/data";
-import { energyColor } from "@/lib/colors";
 import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
-import { categoryToExport, snapshotMeta } from "@/lib/export";
+import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
-import {
-  FillBarSeries,
-  FillCategoryBar,
-  FillLineSeries,
-} from "@/components/charts/FillCharts";
+import { FillBarSeries, FillLineSeries } from "@/components/charts/FillCharts";
+import { MixAreaToggle } from "@/components/charts/MixAreaToggle";
 import {
   SectionCanvas,
   RankList,
@@ -47,15 +43,6 @@ export default function TendersPage() {
   const source = "Auction feed · SECI / state DISCOMs (maintained)";
   const asOf = formatDate(snapshot.updatedAt);
   const meta = (dataset: string) => snapshotMeta(snapshot, { dataset });
-
-  const typeMixData = d.typeMix
-    .map((t) => ({
-      key: t.type,
-      label: TENDER_TYPE_LABELS[t.type],
-      value: t.mw,
-      color: energyColor(t.type),
-    }))
-    .sort((a, b) => b.value - a.value);
 
   const kpis: CanvasKpi[] = KPI_KEYS.map((key) =>
     d.kpis.find((k) => k.key === key),
@@ -112,15 +99,21 @@ export default function TendersPage() {
     },
     {
       id: "mix",
-      label: "Type mix",
-      title: "Tender-type mix",
-      subtitle: `${d.asOfPeriod} MW by type · ranked`,
+      label: "Mix shift",
+      title: "Tender mix over time",
+      subtitle:
+        "Awarded-MW composition by type per quarter · 100% share (toggle MW)",
       body: (
-        <FillCategoryBar data={typeMixData} unit="MW" categoryWidth={96} showValues />
+        <MixAreaToggle
+          series={d.awardsByQuarter}
+          periodOrder={quarters}
+          unit="MW"
+          initialShare
+        />
       ),
       exportData: {
-        ...categoryToExport(typeMixData, "Tender type", "MW"),
-        meta: meta("type-mix"),
+        ...seriesToExport(d.awardsByQuarter, quarters, "Quarter"),
+        meta: meta("tender-mix-over-time"),
       },
     },
     {

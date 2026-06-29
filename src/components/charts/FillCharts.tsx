@@ -1,6 +1,7 @@
 "use client";
 
 import { useAutoHeight } from "./use-auto-height";
+import { AreaSeriesChart, type AreaSeriesChartProps } from "./AreaSeriesChart";
 import { BarSeriesChart, type BarSeriesChartProps } from "./BarSeriesChart";
 import { LineSeriesChart, type LineSeriesChartProps } from "./LineSeriesChart";
 import { PieSeriesChart, type PieSeriesChartProps } from "./PieSeriesChart";
@@ -35,6 +36,15 @@ export function FillLineSeries(props: Omit<LineSeriesChartProps, "height">) {
   return (
     <div ref={ref} className="min-h-0 flex-1">
       {h > 0 && <LineSeriesChart {...props} height={h} />}
+    </div>
+  );
+}
+
+export function FillArea(props: Omit<AreaSeriesChartProps, "height">) {
+  const [ref, h] = useAutoHeight();
+  return (
+    <div ref={ref} className="min-h-0 flex-1">
+      {h > 0 && <AreaSeriesChart {...props} height={h} />}
     </div>
   );
 }
