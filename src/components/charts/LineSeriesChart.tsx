@@ -25,6 +25,8 @@ export interface LineSeriesChartProps {
   periodOrder?: string[];
   /** X-axis tick interval (Recharts) — thins labels on dense series. */
   xInterval?: number | "preserveStart" | "preserveEnd" | "preserveStartEnd";
+  /** Show the series legend (default true; off for single-series small-multiples). */
+  showLegend?: boolean;
 }
 
 /** Generic line chart over our typed Series, coloured via ENERGY_COLORS. */
@@ -34,6 +36,7 @@ export function LineSeriesChart({
   unit,
   periodOrder,
   xInterval,
+  showLegend = true,
 }: LineSeriesChartProps) {
   const theme = useChartTheme();
   const rows = seriesToRows(series, periodOrder);
@@ -71,7 +74,9 @@ export function LineSeriesChart({
           itemStyle={{ color: theme.tooltipText, padding: "1px 0" }}
           formatter={(value, name) => [unit ? `${value} ${unit}` : `${value}`, name]}
         />
-        <Legend wrapperStyle={{ fontSize: 12, color: theme.tick, paddingTop: 8 }} />
+        {showLegend && (
+          <Legend wrapperStyle={{ fontSize: 12, color: theme.tick, paddingTop: 8 }} />
+        )}
         {series.map((s) => (
           <Line
             key={s.key}

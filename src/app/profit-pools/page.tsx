@@ -1,6 +1,8 @@
 import {
   getCompaniesSnapshot,
   getManufacturingSnapshot,
+  getPriceHistorySnapshot,
+  getStageEconomicsSnapshot,
   getTendersSnapshot,
 } from "@/data";
 import { getProfitPools } from "@/data/profit-pools";
@@ -14,6 +16,12 @@ import {
   type CanvasTab,
 } from "@/components/sections/SectionCanvas";
 import { AnalysisTag, Constituents, Scorecard, type ScorecardClaim } from "./parts";
+import {
+  MarginByStage,
+  MarginContrast,
+  PriceStack,
+  StageEconomicsTable,
+} from "./PackTabs";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -93,6 +101,26 @@ export default function ProfitPoolsPage() {
     .map((p, i) => (p.includes("FY26") ? firmShare[i] : null))
     .filter((v): v is number => v != null);
 
+  // ── Pack-fed benchmark datasets (sourced; cited per series/row) ────────
+  const price = getPriceHistorySnapshot();
+  const eco = getStageEconomicsSnapshot();
+  const priceMeta = snapshotMeta(price, {
+    section: "profit-pools",
+    dataset: "price-history",
+  });
+  const ecoMeta = snapshotMeta(eco, {
+    section: "profit-pools",
+    dataset: "stage-economics",
+  });
+  // Attach the render-time India aggregates as sparklines where a stage's
+  // margin trajectory exists in our filings data (Module / IPP).
+  const ecoRows = eco.data.rows.map((r) => {
+    if (r.stage === "Module" && r.region === "India") return { ...r, trend: mfgTrend };
+    if (r.stage.startsWith("IPP") && r.region === "India")
+      return { ...r, trend: ippTrend };
+    return r;
+  });
+
   const claims: ScorecardClaim[] = [
     {
       title: "Domestic cell pool emerging",
@@ -164,6 +192,58 @@ export default function ProfitPoolsPage() {
       subtitle: "Where value is shifting — each claim linked to a real trend",
       source: "Filings · tenders · capacity data",
       body: <Scorecard claims={claims} pending={pending} />,
+    },
+    {
+      id: "price-stack",
+      label: "Price stack",
+      title: "PV price stack over time",
+      subtitle: "Native units · 2019 → 2025 · polysilicon to module",
+      source: "Bernreuter · InfoLink · BNEF · IEA · OPIS · WoodMac · ITRPV",
+      body: <PriceStack years={price.data.years} series={price.data.series} />,
+      exportData: {
+        ...seriesToExport(price.data.series, price.data.years, "Year"),
+        meta: priceMeta,
+      },
+    },
+    {
+      id: "stage-economics",
+      label: "Stage economics",
+      title: "Per-stage economics across the chain",
+      subtitle: "Margin (FACT) + value-shift direction (Munshot analysis), with the China vs India/US split",
+      source: "Company filings · CRISIL · BNEF · Mercom · IEEFA · Wood Mackenzie",
+      body: <StageEconomicsTable rows={ecoRows} />,
+      exportData: {
+        columns: [
+          { key: "stage", label: "Stage" },
+          { key: "region", label: "Region" },
+          { key: "metric", label: "Metric" },
+          { key: "margin", label: "Margin (FACT)" },
+          { key: "direction", label: "Direction (analysis)" },
+          { key: "rationale", label: "Rationale" },
+          { key: "source", label: "Source" },
+          { key: "confidence", label: "Confidence" },
+        ],
+        rows: eco.data.rows.map((r) => ({
+          stage: r.stage,
+          region: r.region,
+          metric: r.metric,
+          margin: r.marginText,
+          direction: r.direction,
+          rationale: r.rationale,
+          source: r.source,
+          confidence: r.confidence,
+        })),
+        meta: ecoMeta,
+      },
+    },
+    {
+      id: "margin-by-stage",
+      label: "Margin by stage",
+      title: "Margin by stage",
+      subtitle: "Representative EBITDA / GM margin per stage · sorted high → low",
+      source: "Munshot analysis on filings / agency benchmarks",
+      body: <MarginByStage rows={ecoRows} />,
+      side: { title: "Geographic contrast", node: <MarginContrast rows={ecoRows} /> },
     },
   ];
 
