@@ -156,37 +156,28 @@ export interface PrimaryTab {
   label: string;
 }
 
-export interface PrimaryGroup {
-  label: string;
-  items: PrimaryTab[];
-}
-
 /**
- * The value-chain reframe, now complete — the four-pillar narrative is
- * **Industry Map · Companies · Profit Pools · Trends & Insights**, with today's
- * sections re-tiered behind a **Deep Dive** dropdown as the evidence layer.
+ * Flat primary tabs. The Industry Map is the consolidated, scrollable landing
+ * (value chain + companies / profit-pool / trends summaries, each clickable to
+ * its detail tab); every section sits as its own flat tab (the "Deep Dive"
+ * dropdown is gone — sections are back in their original flat positions).
  */
 export const PRIMARY_TABS: PrimaryTab[] = [
   { href: "/", label: "Industry Map" },
+  { href: "/tenders", label: "Tenders" },
+  { href: "/developers", label: "IPPs" },
+  { href: "/power-system", label: "Power System" },
+  { href: "/manufacturing", label: "Manufacturing" },
   { href: "/companies", label: "Companies" },
+  { href: "/policy", label: "Policy" },
   { href: "/profit-pools", label: "Profit Pools" },
-  { href: "/trends", label: "Trends & Insights" },
+  { href: "/trends", label: "Trends" },
 ];
 
-/** The "Deep Dive" dropdown — the deep evidence behind the map. */
-export const DEEP_DIVE: PrimaryGroup = {
-  label: "Deep Dive",
-  items: [
-    { href: "/tenders", label: "Tenders" },
-    { href: "/developers", label: "IPPs" },
-    { href: "/power-system", label: "Power System" },
-    { href: "/manufacturing", label: "Manufacturing" },
-    { href: "/policy", label: "Policy" },
-    { href: "/summary", label: "Summary" },
-  ],
-};
-
-/** Routes that own the full content area (no-scroll, self-padded canvas). */
+/**
+ * Routes that own the full content WIDTH (self-padded). The Industry Map landing
+ * is full-width but scrolls vertically; the section canvases are no-scroll.
+ */
 export const FULLBLEED_ROUTES = new Set([
   "/",
   "/summary",
