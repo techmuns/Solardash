@@ -41,8 +41,8 @@ export default function IndustryMapPage() {
           Where India plays across the chain
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          A visual map of the sector — click any stage, company or section to dive into
-          the detail.
+          Follow a panel from polysilicon to power — click any stage, company or section
+          to dive into the detail.
         </p>
       </header>
 
