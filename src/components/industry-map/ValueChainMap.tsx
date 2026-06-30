@@ -176,9 +176,17 @@ function FlowBox({ node }: { node: FlowNode }) {
   return (
     <div
       className={cn(
-        "group relative flex w-36 shrink-0 flex-col items-center rounded-2xl border bg-card p-3 text-center shadow-card transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-card-hover",
-        node.badge ? "border-brand/50 ring-1 ring-brand/20" : "border-border",
+        "group relative flex w-36 shrink-0 flex-col items-center rounded-2xl border p-3 text-center shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover",
+        heatColor ? "" : "border-border bg-card hover:border-brand/40",
       )}
+      style={
+        heatColor
+          ? {
+              backgroundColor: `${heatColor}33`,
+              borderColor: node.badge ? heatColor : `${heatColor}b3`,
+            }
+          : undefined
+      }
     >
       {node.badge && (
         <span className="absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-card">
@@ -190,7 +198,7 @@ function FlowBox({ node }: { node: FlowNode }) {
           "flex h-9 w-9 items-center justify-center rounded-xl",
           !heatColor && "bg-brand/10 text-brand",
         )}
-        style={heatColor ? { background: `${heatColor}1f`, color: heatColor } : undefined}
+        style={heatColor ? { background: `${heatColor}59`, color: heatColor } : undefined}
         aria-hidden
       >
         <Icon className="h-[18px] w-[18px]" strokeWidth={1.75} />
