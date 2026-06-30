@@ -40,10 +40,6 @@ export default function IndustryMapPage() {
         <h1 className="mt-1.5 text-2xl font-bold tracking-tight text-foreground">
           Where India plays across the chain
         </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Follow a panel from polysilicon to power — click any stage, company or section
-          to dive into the detail.
-        </p>
       </header>
 
       {/* The clean visual value-chain map */}

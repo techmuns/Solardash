@@ -220,8 +220,8 @@ function FlowBox({ node }: { node: FlowNode }) {
 function HArrow() {
   return (
     <div className="flex shrink-0 items-center self-center" aria-hidden>
-      <span className="h-px w-3 bg-border" />
-      <ArrowRight className="-ml-1.5 h-4 w-4 text-border" strokeWidth={2.5} />
+      <span className="h-1 w-4 rounded-full bg-brand/70" />
+      <ArrowRight className="-ml-2.5 h-6 w-6 text-brand" strokeWidth={3} />
     </div>
   );
 }
@@ -243,17 +243,17 @@ function Path({ nodes }: { nodes: FlowNode[] }) {
 /** Several input rows converging (via a rail) into one downstream box. */
 function Merge({ inputs }: { inputs: React.ReactNode[] }) {
   return (
-    <div className="flex items-center" aria-hidden={false}>
-      <div className="flex flex-col items-end gap-5 border-r-2 border-border">
+    <div className="flex items-center">
+      <div className="flex flex-col items-end gap-5 border-r-[3px] border-brand/50">
         {inputs.map((input, i) => (
           <div key={i} className="flex items-center">
             {input}
-            <span className="h-px w-4 shrink-0 bg-border" aria-hidden />
+            <span className="h-1 w-4 shrink-0 bg-brand/60" aria-hidden />
           </div>
         ))}
       </div>
-      <span className="h-px w-4 shrink-0 bg-border" aria-hidden />
-      <ArrowRight className="-ml-2 h-4 w-4 shrink-0 text-border" strokeWidth={2.5} />
+      <span className="h-1 w-4 shrink-0 bg-brand/70" aria-hidden />
+      <ArrowRight className="-ml-2.5 h-6 w-6 shrink-0 text-brand" strokeWidth={3} />
     </div>
   );
 }
@@ -263,11 +263,12 @@ function Fork({ from, to }: { from: React.ReactNode; to: React.ReactNode[] }) {
   return (
     <div className="flex items-center">
       <div className="shrink-0">{from}</div>
-      <span className="h-px w-4 shrink-0 bg-border" aria-hidden />
-      <div className="flex flex-col gap-3 border-l-2 border-border">
+      <span className="h-1 w-4 shrink-0 bg-brand/70" aria-hidden />
+      <div className="flex flex-col gap-3 border-l-[3px] border-brand/50">
         {to.map((child, i) => (
           <div key={i} className="flex items-center py-1">
-            <span className="h-px w-4 shrink-0 bg-border" aria-hidden />
+            <span className="h-1 w-3 shrink-0 bg-brand/60" aria-hidden />
+            <ArrowRight className="-ml-2.5 mr-0.5 h-6 w-6 shrink-0 text-brand" strokeWidth={3} aria-hidden />
             {child}
           </div>
         ))}
@@ -338,16 +339,10 @@ export function ValueChainMap() {
       className="flex flex-col gap-4 rounded-3xl border border-border bg-gradient-to-b from-muted/30 to-transparent p-5 sm:p-6"
       aria-label="Solar PV value chain flowchart"
     >
-      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
-        <div>
-          <h2 className="text-base font-semibold tracking-tight text-foreground">
-            The solar PV value chain
-          </h2>
-          <p className="mt-0.5 text-2xs text-muted-foreground">
-            Materials → modules → applications. Click any tracked stage or company to drill in;
-            greyed boxes aren&apos;t covered yet.
-          </p>
-        </div>
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <h2 className="text-base font-semibold tracking-tight text-foreground">
+          The solar PV value chain
+        </h2>
         <HeatLegend />
       </div>
 
