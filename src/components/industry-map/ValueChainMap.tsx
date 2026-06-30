@@ -151,10 +151,10 @@ function BoxText({
   muted?: boolean;
 }) {
   return (
-    <span className="flex min-w-0 flex-col gap-0.5">
+    <span className="flex min-w-0 flex-col gap-1">
       <span
         className={cn(
-          "text-xs font-semibold leading-tight tracking-tight",
+          "text-sm font-semibold leading-tight tracking-tight",
           muted ? "font-medium text-muted-foreground" : "text-foreground",
         )}
       >
@@ -163,8 +163,8 @@ function BoxText({
       {teaser && (
         <span
           className={cn(
-            "flex flex-col text-[9px] leading-tight",
-            muted ? "text-muted-foreground/70" : "text-foreground/55",
+            "flex flex-col text-[11px] leading-snug",
+            muted ? "text-muted-foreground/70" : "text-foreground/60",
           )}
         >
           <span>TAM · {teaser.tam}</span>
@@ -188,13 +188,13 @@ function FlowBox({ node }: { node: FlowNode }) {
         type="button"
         onClick={onClick}
         title="Click for market context"
-        className="flex w-44 shrink-0 items-center gap-2 rounded-xl border border-dashed border-border bg-muted/30 px-2.5 py-2 text-left opacity-90 outline-none transition-all hover:border-brand/40 hover:opacity-100 focus-visible:ring-2 focus-visible:ring-brand"
+        className="flex w-52 shrink-0 items-center gap-2 rounded-xl border border-dashed border-border bg-muted/30 px-3 py-4 text-left opacity-90 outline-none transition-all hover:border-brand/40 hover:opacity-100 focus-visible:ring-2 focus-visible:ring-brand"
       >
         <span
-          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground/50"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground/50"
           aria-hidden
         >
-          <Icon className="h-4 w-4" strokeWidth={1.75} />
+          <Icon className="h-5 w-5" strokeWidth={1.75} />
         </span>
         <BoxText label={node.label} teaser={teaser} muted />
       </button>
@@ -207,7 +207,7 @@ function FlowBox({ node }: { node: FlowNode }) {
       type="button"
       onClick={onClick}
       className={cn(
-        "group relative flex w-44 shrink-0 items-center gap-2 rounded-xl border px-2.5 py-2 text-left shadow-card outline-none transition-all hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:ring-2 focus-visible:ring-brand",
+        "group relative flex w-52 shrink-0 items-center gap-2 rounded-xl border px-3 py-4 text-left shadow-card outline-none transition-all hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:ring-2 focus-visible:ring-brand",
         heatColor ? "" : "border-border bg-card hover:border-brand/40",
       )}
       style={
@@ -226,13 +226,13 @@ function FlowBox({ node }: { node: FlowNode }) {
       )}
       <span
         className={cn(
-          "flex h-7 w-7 shrink-0 items-center justify-center rounded-lg",
+          "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg",
           !heatColor && "bg-brand/10 text-brand",
         )}
         style={heatColor ? { background: `${heatColor}59`, color: heatColor } : undefined}
         aria-hidden
       >
-        <Icon className="h-4 w-4" strokeWidth={1.75} />
+        <Icon className="h-5 w-5" strokeWidth={1.75} />
       </span>
       <BoxText label={node.label} teaser={teaser} />
     </button>
@@ -295,11 +295,11 @@ function Merge({ inputs }: { inputs: React.ReactNode[] }) {
   const n = inputs.length;
   return (
     <div className="flex items-center">
-      <div className="flex flex-col items-end gap-36">
+      <div className="flex flex-col items-end gap-20">
         {inputs.map((input, i) => (
           <div key={i} className="flex items-stretch">
             <div className="flex items-center self-center">{input}</div>
-            <RailCell side="right" isFirst={i === 0} isLast={i === n - 1} bridge="-bottom-36" />
+            <RailCell side="right" isFirst={i === 0} isLast={i === n - 1} bridge="-bottom-20" />
           </div>
         ))}
       </div>
@@ -316,10 +316,10 @@ function Fork({ from, to }: { from: React.ReactNode; to: React.ReactNode[] }) {
     <div className="flex items-center">
       <div className="shrink-0">{from}</div>
       <span className="h-[3px] w-2.5 shrink-0 bg-brand/70" aria-hidden />
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-6">
         {to.map((child, i) => (
           <div key={i} className="flex items-stretch">
-            <RailCell side="left" isFirst={i === 0} isLast={i === n - 1} bridge="-bottom-12" />
+            <RailCell side="left" isFirst={i === 0} isLast={i === n - 1} bridge="-bottom-6" />
             <div className="flex items-center self-center">
               <ArrowRight className="-ml-1 h-5 w-5 shrink-0 text-brand" strokeWidth={3} aria-hidden />
               {child}
