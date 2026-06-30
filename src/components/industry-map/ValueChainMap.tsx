@@ -156,14 +156,14 @@ function FlowBox({ node }: { node: FlowNode }) {
   if (node.kind === "muted") {
     return (
       <div
-        className="flex w-36 shrink-0 flex-col items-center rounded-2xl border border-dashed border-border bg-muted/30 p-3 text-center opacity-90"
+        className="flex w-28 shrink-0 flex-col items-center rounded-2xl border border-dashed border-border bg-muted/30 p-2.5 text-center opacity-90"
         title="Not tracked yet"
       >
         <span
-          className="flex h-9 w-9 items-center justify-center rounded-xl bg-muted text-muted-foreground/50"
+          className="flex h-8 w-8 items-center justify-center rounded-xl bg-muted text-muted-foreground/50"
           aria-hidden
         >
-          <Icon className="h-[18px] w-[18px]" strokeWidth={1.75} />
+          <Icon className="h-4 w-4" strokeWidth={1.75} />
         </span>
         <span className="mt-2 text-xs font-medium leading-tight text-muted-foreground">
           {node.label}
@@ -176,7 +176,7 @@ function FlowBox({ node }: { node: FlowNode }) {
   return (
     <div
       className={cn(
-        "group relative flex w-36 shrink-0 flex-col items-center rounded-2xl border p-3 text-center shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover",
+        "group relative flex w-28 shrink-0 flex-col items-center rounded-2xl border p-2.5 text-center shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover",
         heatColor ? "" : "border-border bg-card hover:border-brand/40",
       )}
       style={
@@ -195,13 +195,13 @@ function FlowBox({ node }: { node: FlowNode }) {
       )}
       <span
         className={cn(
-          "flex h-9 w-9 items-center justify-center rounded-xl",
+          "flex h-8 w-8 items-center justify-center rounded-xl",
           !heatColor && "bg-brand/10 text-brand",
         )}
         style={heatColor ? { background: `${heatColor}59`, color: heatColor } : undefined}
         aria-hidden
       >
-        <Icon className="h-[18px] w-[18px]" strokeWidth={1.75} />
+        <Icon className="h-4 w-4" strokeWidth={1.75} />
       </span>
       {node.href ? (
         <Link
@@ -228,8 +228,8 @@ function FlowBox({ node }: { node: FlowNode }) {
 function HArrow() {
   return (
     <div className="flex shrink-0 items-center self-center" aria-hidden>
-      <span className="h-1 w-4 rounded-full bg-brand/70" />
-      <ArrowRight className="-ml-2.5 h-6 w-6 text-brand" strokeWidth={3} />
+      <span className="h-1 w-2.5 rounded-full bg-brand/70" />
+      <ArrowRight className="-ml-2 h-5 w-5 text-brand" strokeWidth={3} />
     </div>
   );
 }
@@ -267,7 +267,7 @@ function RailCell({
 }) {
   const x = side === "left" ? "left-0" : "right-0";
   return (
-    <div className="relative w-4 shrink-0 self-stretch" aria-hidden>
+    <div className="relative w-3 shrink-0 self-stretch" aria-hidden>
       {!isFirst && <span className={cn("absolute top-0 h-1/2 w-[3px] bg-brand/70", x)} />}
       {!isLast && <span className={cn("absolute top-1/2 w-[3px] bg-brand/70", x, bridge)} />}
       <span className="absolute inset-x-0 top-1/2 h-[3px] -translate-y-1/2 bg-brand/70" />
@@ -280,16 +280,16 @@ function Merge({ inputs }: { inputs: React.ReactNode[] }) {
   const n = inputs.length;
   return (
     <div className="flex items-center">
-      <div className="flex flex-col items-end gap-6">
+      <div className="flex flex-col items-end gap-16">
         {inputs.map((input, i) => (
           <div key={i} className="flex items-stretch">
             <div className="flex items-center self-center">{input}</div>
-            <RailCell side="right" isFirst={i === 0} isLast={i === n - 1} bridge="-bottom-6" />
+            <RailCell side="right" isFirst={i === 0} isLast={i === n - 1} bridge="-bottom-16" />
           </div>
         ))}
       </div>
-      <span className="h-[3px] w-4 shrink-0 bg-brand/70" aria-hidden />
-      <ArrowRight className="-ml-2.5 h-6 w-6 shrink-0 text-brand" strokeWidth={3} aria-hidden />
+      <span className="h-[3px] w-2.5 shrink-0 bg-brand/70" aria-hidden />
+      <ArrowRight className="-ml-2 h-5 w-5 shrink-0 text-brand" strokeWidth={3} aria-hidden />
     </div>
   );
 }
@@ -300,13 +300,13 @@ function Fork({ from, to }: { from: React.ReactNode; to: React.ReactNode[] }) {
   return (
     <div className="flex items-center">
       <div className="shrink-0">{from}</div>
-      <span className="h-[3px] w-4 shrink-0 bg-brand/70" aria-hidden />
-      <div className="flex flex-col gap-4">
+      <span className="h-[3px] w-2.5 shrink-0 bg-brand/70" aria-hidden />
+      <div className="flex flex-col gap-2.5">
         {to.map((child, i) => (
           <div key={i} className="flex items-stretch">
-            <RailCell side="left" isFirst={i === 0} isLast={i === n - 1} bridge="-bottom-4" />
+            <RailCell side="left" isFirst={i === 0} isLast={i === n - 1} bridge="-bottom-2.5" />
             <div className="flex items-center self-center">
-              <ArrowRight className="-ml-1 h-6 w-6 shrink-0 text-brand" strokeWidth={3} aria-hidden />
+              <ArrowRight className="-ml-1 h-5 w-5 shrink-0 text-brand" strokeWidth={3} aria-hidden />
               {child}
             </div>
           </div>
@@ -375,7 +375,7 @@ export function ValueChainMap() {
 
   return (
     <section
-      className="flex flex-col gap-4 rounded-3xl border border-border bg-gradient-to-b from-muted/30 to-transparent p-5 sm:p-6"
+      className="flex flex-col gap-3 rounded-3xl border border-border bg-gradient-to-b from-muted/30 to-transparent p-3 sm:p-4"
       aria-label="Solar PV value chain flowchart"
     >
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
@@ -385,8 +385,8 @@ export function ValueChainMap() {
         <HeatLegend />
       </div>
 
-      <div className="scrollbar-thin overflow-x-auto pb-2">
-        <div className="flex min-w-max items-center gap-1 px-1 py-2">
+      <div className="scrollbar-thin overflow-x-auto pb-1">
+        <div className="mx-auto flex w-max items-center gap-0.5 px-0.5 py-1">
           {/* Upstream: two technology paths + module inputs converge on PV Modules */}
           <Merge inputs={[thinFilm, crystalline, moduleInputs]} />
 

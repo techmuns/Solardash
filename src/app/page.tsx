@@ -32,16 +32,7 @@ const SECTIONS: { href: string; label: string; sub: string; icon: LucideIcon }[]
 
 export default function IndustryMapPage() {
   return (
-    <div className="mx-auto w-full max-w-[1400px] space-y-8 p-5 sm:p-8">
-      <header>
-        <p className="text-2xs font-semibold uppercase tracking-[0.2em] text-brand">
-          India · solar sector
-        </p>
-        <h1 className="mt-1.5 text-2xl font-bold tracking-tight text-foreground">
-          Where India plays across the chain
-        </h1>
-      </header>
-
+    <div className="mx-auto w-full max-w-[1600px] space-y-5 px-3 py-4 sm:px-4">
       {/* The clean visual value-chain map */}
       <ValueChainMap />
 
