@@ -22,6 +22,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { FitWidth } from "./FitWidth";
 import {
   HEAT_COLOR,
   VC_DEPLOY,
@@ -385,8 +386,8 @@ export function ValueChainMap() {
         <HeatLegend />
       </div>
 
-      <div className="scrollbar-thin overflow-x-auto pb-1">
-        <div className="mx-auto flex w-max items-center gap-0.5 px-0.5 py-1">
+      <FitWidth max={1.9}>
+        <div className="flex w-max items-center gap-0.5 px-0.5 py-1">
           {/* Upstream: two technology paths + module inputs converge on PV Modules */}
           <Merge inputs={[thinFilm, crystalline, moduleInputs]} />
 
@@ -416,7 +417,7 @@ export function ValueChainMap() {
             ]}
           />
         </div>
-      </div>
+      </FitWidth>
     </section>
   );
 }
