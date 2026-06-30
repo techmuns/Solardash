@@ -162,12 +162,14 @@ export function SectionCanvas({
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-3.5 p-4 sm:p-5">
-      {/* KPI strip */}
-      <div className={cn("grid shrink-0 grid-cols-2 gap-3 sm:grid-cols-3", cols)}>
-        {kpis.map((k) => (
-          <KpiCell key={k.label} kpi={k} />
-        ))}
-      </div>
+      {/* KPI strip (omitted when a section carries no headline KPIs) */}
+      {kpis.length > 0 && (
+        <div className={cn("grid shrink-0 grid-cols-2 gap-3 sm:grid-cols-3", cols)}>
+          {kpis.map((k) => (
+            <KpiCell key={k.label} kpi={k} />
+          ))}
+        </div>
+      )}
 
       {/* Sub-tab pills */}
       <div

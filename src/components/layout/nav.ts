@@ -9,6 +9,7 @@ import {
   Network,
   ScrollText,
   Sparkles,
+  Telescope,
   Zap,
   type LucideIcon,
 } from "lucide-react";
@@ -62,6 +63,18 @@ export const NAV_GROUPS: NavGroup[] = [
         icon: Coins,
         description:
           "Where value is shifting across the chain — stage profitability over time and the value-migration scorecard, from listed filings.",
+      },
+    ],
+  },
+  {
+    label: "Trends & Insights",
+    items: [
+      {
+        href: "/trends",
+        label: "Trends & Insights",
+        icon: Telescope,
+        description:
+          "The buy-side synthesis — structural trends, anomalies, and what most people miss, each insight evidenced and flagged Munshot analysis.",
       },
     ],
   },
@@ -149,16 +162,15 @@ export interface PrimaryGroup {
 }
 
 /**
- * The value-chain reframe. The narrative is four pillars — **Industry Map ·
- * Companies · Profit Pools · Trends & Insights** — with today's sections
- * re-tiered behind a **Deep Dive** dropdown as the evidence layer. Profit Pools
- * landed in Phase 3; Trends & Insights (Phase 4) is reserved but not shown until
- * it has content, so no empty tab appears.
+ * The value-chain reframe, now complete — the four-pillar narrative is
+ * **Industry Map · Companies · Profit Pools · Trends & Insights**, with today's
+ * sections re-tiered behind a **Deep Dive** dropdown as the evidence layer.
  */
 export const PRIMARY_TABS: PrimaryTab[] = [
   { href: "/", label: "Industry Map" },
   { href: "/companies", label: "Companies" },
   { href: "/profit-pools", label: "Profit Pools" },
+  { href: "/trends", label: "Trends & Insights" },
 ];
 
 /** The "Deep Dive" dropdown — the deep evidence behind the map. */
@@ -184,5 +196,6 @@ export const FULLBLEED_ROUTES = new Set([
   "/manufacturing",
   "/companies",
   "/profit-pools",
+  "/trends",
   "/policy",
 ]);
