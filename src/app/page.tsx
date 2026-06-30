@@ -1,64 +1,16 @@
-import Link from "next/link";
-import {
-  Building2,
-  Coins,
-  Factory,
-  Gavel,
-  LineChart,
-  ScrollText,
-  Telescope,
-  Zap,
-  type LucideIcon,
-} from "lucide-react";
 import { ValueChainMap } from "@/components/industry-map/ValueChainMap";
 
 export const dynamic = "force-static";
 export const metadata = {
   title: "Industry Map",
   description:
-    "India's solar value chain at a glance — who plays where across the chain, and a visual launcher into every detail view.",
+    "India's solar value chain at a glance — click any stage for its market size, profit pool, and the leading companies globally and in India.",
 };
-
-const SECTIONS: { href: string; label: string; sub: string; icon: LucideIcon }[] = [
-  { href: "/tenders", label: "Tenders", sub: "auctions & tariffs", icon: Gavel },
-  { href: "/developers", label: "IPPs", sub: "developers & portfolios", icon: Building2 },
-  { href: "/power-system", label: "Power System", sub: "capacity & demand", icon: Zap },
-  { href: "/manufacturing", label: "Manufacturing", sub: "cells, modules, ALMM", icon: Factory },
-  { href: "/companies", label: "Companies", sub: "listed screener", icon: LineChart },
-  { href: "/policy", label: "Policy", sub: "schemes & duties", icon: ScrollText },
-  { href: "/profit-pools", label: "Profit Pools", sub: "where value sits", icon: Coins },
-  { href: "/trends", label: "Trends & Insights", sub: "the buy-side read", icon: Telescope },
-];
 
 export default function IndustryMapPage() {
   return (
-    <div className="mx-auto w-full max-w-[1600px] space-y-5 px-3 py-4 sm:px-4">
-      {/* The clean visual value-chain map */}
+    <div className="mx-auto w-full max-w-[1600px] px-3 py-4 sm:px-4">
       <ValueChainMap />
-
-      {/* Visual launcher into every detail view */}
-      <section className="space-y-3">
-        <h2 className="text-2xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-          Explore the dashboard
-        </h2>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {SECTIONS.map((s) => (
-            <Link
-              key={s.href}
-              href={s.href}
-              className="group flex flex-col items-center gap-2.5 rounded-2xl border border-border bg-card p-5 text-center shadow-card outline-none transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-card-hover focus-visible:ring-2 focus-visible:ring-brand"
-            >
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-muted text-foreground/70 transition-colors group-hover:bg-brand/10 group-hover:text-brand">
-                <s.icon className="h-6 w-6" strokeWidth={1.75} />
-              </span>
-              <span className="text-sm font-semibold tracking-tight text-foreground">
-                {s.label}
-              </span>
-              <span className="text-2xs text-muted-foreground">{s.sub}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }

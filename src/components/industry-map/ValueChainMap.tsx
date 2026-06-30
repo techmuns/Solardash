@@ -1,5 +1,6 @@
+"use client";
+
 import * as React from "react";
-import Link from "next/link";
 import {
   ArrowRight,
   Atom,
@@ -23,6 +24,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FitWidth } from "./FitWidth";
+import { StageDetailDialog, type OpenNode } from "./StageDetailDialog";
 import {
   HEAT_COLOR,
   VC_DEPLOY,
@@ -30,6 +32,17 @@ import {
   type Heat,
   type VcStage,
 } from "@/data/value-chain";
+
+/** Map drill targets to friendly labels for the popup's "Open …" button. */
+const HREF_LABEL: Record<string, string> = {
+  "/manufacturing": "Manufacturing",
+  "/developers": "IPPs",
+  "/power-system": "Power System",
+  "/tenders": "Tenders",
+};
+
+/** Provides the "open this stage's detail popup" callback to every FlowBox. */
+const OpenStageContext = React.createContext<((node: OpenNode) => void) | null>(null);
 
 /* ------------------------------------------------------------------ *
  * Node model — the value chain as a branching graph (after Figure 1).
@@ -111,15 +124,34 @@ const HEAT_LABEL: Record<Heat, string> = {
   offtake: "Offtake risk",
 };
 
-/** One box in the flowchart — rendered by state. */
+/** Translate a graph node into the payload the detail popup needs. */
+function nodeToOpen(node: FlowNode): OpenNode {
+  const heatColor = node.kind === "stage" && node.heat ? HEAT_COLOR[node.heat] : undefined;
+  const heatLabel = node.kind === "stage" && node.heat ? HEAT_LABEL[node.heat] : undefined;
+  return {
+    id: node.id,
+    label: node.label,
+    icon: node.icon,
+    heatColor,
+    heatLabel,
+    href: node.href,
+    hrefLabel: node.href ? HREF_LABEL[node.href] : undefined,
+  };
+}
+
+/** One box in the flowchart — a button that opens the stage's detail popup. */
 function FlowBox({ node }: { node: FlowNode }) {
   const Icon = node.icon;
+  const openStage = React.useContext(OpenStageContext);
+  const onClick = () => openStage?.(nodeToOpen(node));
 
   if (node.kind === "muted") {
     return (
-      <div
-        className="flex w-40 shrink-0 items-center gap-2 rounded-xl border border-dashed border-border bg-muted/30 px-2.5 py-2 text-left opacity-90"
-        title="Not tracked yet"
+      <button
+        type="button"
+        onClick={onClick}
+        title="Click for market context"
+        className="flex w-40 shrink-0 items-center gap-2 rounded-xl border border-dashed border-border bg-muted/30 px-2.5 py-2 text-left opacity-90 outline-none transition-all hover:border-brand/40 hover:opacity-100 focus-visible:ring-2 focus-visible:ring-brand"
       >
         <span
           className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground/50"
@@ -130,15 +162,17 @@ function FlowBox({ node }: { node: FlowNode }) {
         <span className="text-xs font-medium leading-tight text-muted-foreground">
           {node.label}
         </span>
-      </div>
+      </button>
     );
   }
 
   const heatColor = node.kind === "stage" && node.heat ? HEAT_COLOR[node.heat] : undefined;
   return (
-    <div
+    <button
+      type="button"
+      onClick={onClick}
       className={cn(
-        "group relative flex w-40 shrink-0 items-center gap-2 rounded-xl border px-2.5 py-2 text-left shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover",
+        "group relative flex w-40 shrink-0 items-center gap-2 rounded-xl border px-2.5 py-2 text-left shadow-card outline-none transition-all hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:ring-2 focus-visible:ring-brand",
         heatColor ? "" : "border-border bg-card hover:border-brand/40",
       )}
       style={
@@ -165,17 +199,10 @@ function FlowBox({ node }: { node: FlowNode }) {
       >
         <Icon className="h-4 w-4" strokeWidth={1.75} />
       </span>
-      {node.href ? (
-        <Link
-          href={node.href}
-          className="text-xs font-semibold leading-tight tracking-tight text-foreground outline-none after:absolute after:inset-0 focus-visible:ring-2 focus-visible:ring-brand"
-        >
-          {node.label}
-        </Link>
-      ) : (
-        <span className="text-xs font-semibold leading-tight text-foreground">{node.label}</span>
-      )}
-    </div>
+      <span className="text-xs font-semibold leading-tight tracking-tight text-foreground">
+        {node.label}
+      </span>
+    </button>
   );
 }
 
@@ -294,10 +321,12 @@ function HeatLegend() {
  * thin-film (greyed, no Indian base) — plus solar glass and balance-of-system
  * converge into PV Modules, which then branches into the downstream
  * applications: grid power plants (EPC / IPP), rooftop / off-grid (system
- * integration), and solar products. Tracked boxes are heat-tinted and drill to
- * their detail tab; boxes we don't yet cover are greyed.
+ * integration), and solar products. Tracked boxes are heat-tinted; clicking any
+ * box opens a popup with its market size, profit pool and leading companies.
  */
 export function ValueChainMap() {
+  const [open, setOpen] = React.useState<OpenNode | null>(null);
+
   const thinFilm = (
     <div className="rounded-2xl border border-dashed border-border/70 bg-muted/20 p-2.5">
       <p className="mb-1.5 px-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/70">
@@ -329,10 +358,11 @@ export function ValueChainMap() {
   );
 
   return (
-    <section
-      className="flex flex-col gap-3 rounded-3xl border border-border bg-gradient-to-b from-muted/30 to-transparent p-3 sm:p-4"
-      aria-label="Solar PV value chain flowchart"
-    >
+    <OpenStageContext.Provider value={setOpen}>
+      <section
+        className="flex flex-col gap-3 rounded-3xl border border-border bg-gradient-to-b from-muted/30 to-transparent p-3 sm:p-4"
+        aria-label="Solar PV value chain flowchart"
+      >
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
         <h2 className="text-base font-semibold tracking-tight text-foreground">
           The solar PV value chain
@@ -372,6 +402,9 @@ export function ValueChainMap() {
           />
         </div>
       </FitWidth>
-    </section>
+      </section>
+
+      <StageDetailDialog node={open} onClose={() => setOpen(null)} />
+    </OpenStageContext.Provider>
   );
 }
