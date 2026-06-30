@@ -91,7 +91,7 @@ export const STAGE_DETAIL: Record<string, StageDetail> = {
     source:
       "DCR premium ≈ 2× non-DCR. Mordor · PV-Tech; Munshot research (Jun 2026).",
   },
-  module: {
+  modules: {
     tam: "~$130 bn global (2024)",
     tamSub: "Top-10 makers shipped ~502 GW in 2024 (+22% YoY).",
     profit: "Squeezed / commoditised",
