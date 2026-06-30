@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function IndustryMapPage() {
   return (
-    <div className="mx-auto w-full max-w-[1600px] px-3 py-4 sm:px-4">
+    <div className="mx-auto flex h-full w-full max-w-[1600px] flex-col px-3 py-3 sm:px-4 sm:py-4">
       <ValueChainMap />
     </div>
   );

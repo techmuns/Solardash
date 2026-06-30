@@ -396,3 +396,24 @@ export const STAGE_DETAIL: Record<string, StageDetail> = {
     source: "Industry estimates.",
   },
 };
+
+/** Ultra-short TAM / profit-pool teaser shown directly on each map box. */
+export const STAGE_TEASER: Record<string, { tam: string; pool: string }> = {
+  poly: { tam: "$18B", pool: "Loss-making" },
+  wafer: { tam: "$25B", pool: "Thin" },
+  cell: { tam: "$120B", pool: "~30% EBITDA" },
+  modules: { tam: "$130B", pool: "Squeezed" },
+  bos: { tam: "589 GWac", pool: "Mixed" },
+  epc: { tam: "25 GW/yr", pool: "~5-10%" },
+  ipp: { tam: "$2.1T capex", pool: "~90% EBITDA" },
+  gridPlant: { tam: "Utility-scale", pool: "Auction-led" },
+  rooftop: { tam: "7.1 GW/yr", pool: "Thin" },
+  pvMaterials: { tam: "3-5% of PV", pool: "Niche" },
+  substrate: { tam: "Thin-film", pool: "Niche" },
+  solarGlass: { tam: "$8-10B", pool: "Commodity" },
+  solarProducts: { tam: "Off-grid", pool: "Scheme-led" },
+  sysIntegration: { tam: "Distributed", pool: "Thin" },
+  lanterns: { tam: "Off-grid", pool: "Volume" },
+  waterPumps: { tam: "PM-KUSUM", pool: "Scheme-led" },
+  otherProducts: { tam: "Niche", pool: "Fragmented" },
+};
