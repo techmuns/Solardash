@@ -19,7 +19,7 @@ export const CATEGORY_META: Record<
   tender: { label: "Tender", icon: Gavel, color: "#F59E0B" },
   ppa: { label: "PPA", icon: Handshake, color: "#10B981" },
   company: { label: "Company", icon: LineChart, color: "#2563EB" },
-  developer: { label: "Developer", icon: Building2, color: "#8B5CF6" },
+  developer: { label: "IPP", icon: Building2, color: "#8B5CF6" },
   capacity: { label: "Capacity", icon: Zap, color: "#EAB308" },
   manufacturing: { label: "Manufacturing", icon: Factory, color: "#64748B" },
   demand: { label: "Demand", icon: Activity, color: "#EC4899" },

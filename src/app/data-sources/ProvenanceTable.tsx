@@ -6,6 +6,27 @@ import { formatDate } from "@/lib/utils";
 import type { ExportMeta } from "@/lib/export";
 import type { ProvenanceRow } from "@/data";
 
+/**
+ * Display labels for the snapshot section ids — kept in step with the product
+ * vocabulary (the data still lives under the raw section folders; this only
+ * relabels the visible Section column, e.g. `developers` → "IPPs"). The dataset
+ * column preserves the underlying lineage.
+ */
+const SECTION_LABELS: Record<string, string> = {
+  overview: "Summary",
+  tenders: "Tenders",
+  developers: "IPPs",
+  manufacturing: "Manufacturing",
+  capacity: "Power System",
+  demand: "Power System",
+  companies: "Companies",
+  policy: "Policy",
+  "profit-pools": "Profit Pools",
+  reference: "Reference",
+};
+const sectionLabel = (s: string) =>
+  SECTION_LABELS[s] ?? s.charAt(0).toUpperCase() + s.slice(1);
+
 export function ProvenanceTable({
   rows,
   exportMeta,
@@ -18,9 +39,10 @@ export function ProvenanceTable({
       key: "section",
       header: "Section",
       sortable: true,
-      accessor: (r) => r.section,
+      accessor: (r) => sectionLabel(r.section),
+      exportValue: (r) => sectionLabel(r.section),
       render: (r) => (
-        <span className="font-medium capitalize text-foreground">{r.section}</span>
+        <span className="font-medium text-foreground">{sectionLabel(r.section)}</span>
       ),
     },
     {

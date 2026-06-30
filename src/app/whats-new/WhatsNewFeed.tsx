@@ -16,7 +16,7 @@ const FILTERS: { value: string; label: string }[] = [
   { value: "tender", label: "Tenders" },
   { value: "ppa", label: "PPAs" },
   { value: "company", label: "Companies" },
-  { value: "developer", label: "Developers" },
+  { value: "developer", label: "IPPs" },
   { value: "capacity", label: "Capacity" },
   { value: "manufacturing", label: "Manufacturing" },
 ];

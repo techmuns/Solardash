@@ -167,7 +167,7 @@ export function getSearchIndex(): SearchEntry[] {
     entries.push({
       id: `developer:${slug(d.name)}`,
       label: d.name,
-      sublabel: `Developer · ${d.operationalGw} GW`,
+      sublabel: `IPP · ${d.operationalGw} GW`,
       type: "developer",
       href: "/developers",
       keywords: [...new Set(["developer", "ipp", ...tech])],

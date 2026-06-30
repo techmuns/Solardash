@@ -298,7 +298,7 @@ export default function SummaryPage() {
       >
         <div className="flex items-center justify-between gap-2">
           <div>
-            <p className={eyebrow}>Top developers</p>
+            <p className={eyebrow}>Top IPPs</p>
             <p className="text-2xs text-muted-foreground">operational GW</p>
           </div>
           <ArrowUpRight

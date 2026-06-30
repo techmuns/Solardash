@@ -112,7 +112,7 @@ export default function DevelopersPage() {
       ),
       exportData: {
         columns: [
-          { key: "name", label: "Developer" },
+          { key: "name", label: "IPP" },
           { key: "operationalGw", label: "Operational (GW)" },
           { key: "underConstructionGw", label: "Under construction (GW)" },
           { key: "pipelineGw", label: "Pipeline (GW)" },
