@@ -2,9 +2,21 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Building2, Globe2, X, type LucideIcon } from "lucide-react";
+import {
+  ArrowUpRight,
+  Building2,
+  ChevronRight,
+  Gauge,
+  Globe2,
+  Layers,
+  Target,
+  Workflow,
+  X,
+  type LucideIcon,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Dialog } from "@/components/ui/Dialog";
-import { STAGE_DETAIL, type DetailCompany } from "@/data/value-chain-detail";
+import { STAGE_DETAIL, type DetailCompany, type Rating } from "@/data/value-chain-detail";
 
 /** What the map hands the dialog when a box is clicked. */
 export interface OpenNode {
@@ -48,6 +60,29 @@ function Section({
   );
 }
 
+/** A Low/Medium/High rating shown as a 3-segment meter. */
+function Meter({ label, rating }: { label: string; rating: Rating }) {
+  const level = rating === "High" ? 3 : rating === "Medium" ? 2 : 1;
+  return (
+    <div className="rounded-lg border border-border bg-muted/30 px-2.5 py-2">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+        {label}
+      </p>
+      <div className="mt-1.5 flex items-center justify-between gap-2">
+        <span className="flex gap-1" aria-hidden>
+          {[1, 2, 3].map((i) => (
+            <span
+              key={i}
+              className={cn("h-1.5 w-5 rounded-full", i <= level ? "bg-foreground/70" : "bg-border")}
+            />
+          ))}
+        </span>
+        <span className="text-2xs font-semibold text-foreground">{rating}</span>
+      </div>
+    </div>
+  );
+}
+
 function CompanyList({ items }: { items: DetailCompany[] }) {
   return (
     <ul className="divide-y divide-border/70 rounded-xl border border-border">
@@ -65,9 +100,10 @@ function CompanyList({ items }: { items: DetailCompany[] }) {
 }
 
 /**
- * Click-through popup for a value-chain stage: market size (TAM), profit pool,
- * the leading companies globally and the players in India. Data is curated &
- * sourced in value-chain-detail.ts.
+ * Click-through popup for a value-chain stage: market size (TAM), profit pool, a
+ * risk/return scorecard, the key success drivers, the leading companies globally
+ * and in India, plus a "how it's made" process strip and thin-film materials.
+ * Data is curated & sourced in value-chain-detail.ts.
  */
 export function StageDetailDialog({
   node,
@@ -84,7 +120,7 @@ export function StageDetailDialog({
       open={Boolean(node && detail)}
       onClose={onClose}
       ariaLabel={node ? `${node.label} — value-chain detail` : undefined}
-      className="max-w-lg"
+      className="max-w-xl"
     >
       {node && detail && (
         <>
@@ -134,6 +170,33 @@ export function StageDetailDialog({
               <Stat label="Profit pool" value={detail.profit} sub={detail.profitSub} />
             </div>
 
+            {detail.scorecard && (
+              <Section icon={Gauge} title="Stage scorecard">
+                <div className="grid grid-cols-2 gap-2">
+                  <Meter label="Competition" rating={detail.scorecard.competition} />
+                  <Meter label="Capital intensity" rating={detail.scorecard.capital} />
+                  <Meter label="Payback" rating={detail.scorecard.payback} />
+                  <Meter label="Risk" rating={detail.scorecard.risk} />
+                </div>
+              </Section>
+            )}
+
+            {detail.drivers && detail.drivers.length > 0 && (
+              <Section icon={Target} title="What drives winners here">
+                <ul className="space-y-1.5">
+                  {detail.drivers.map((d) => (
+                    <li key={d} className="flex gap-2 text-sm text-foreground">
+                      <span
+                        className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-brand"
+                        aria-hidden
+                      />
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              </Section>
+            )}
+
             <Section icon={Globe2} title="Top companies globally — by size">
               <CompanyList items={detail.global} />
             </Section>
@@ -141,6 +204,29 @@ export function StageDetailDialog({
             <Section icon={Building2} title="In India">
               <CompanyList items={detail.india} />
             </Section>
+
+            {detail.process && detail.process.length > 0 && (
+              <Section icon={Workflow} title="How it's made">
+                <div className="flex flex-wrap items-center gap-x-1 gap-y-1.5">
+                  {detail.process.map((step, i) => (
+                    <React.Fragment key={step}>
+                      <span className="rounded-md border border-border bg-muted/40 px-2 py-1 text-2xs font-medium text-foreground">
+                        {step}
+                      </span>
+                      {i < detail.process!.length - 1 && (
+                        <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden />
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              </Section>
+            )}
+
+            {detail.materials && detail.materials.length > 0 && (
+              <Section icon={Layers} title="Thin-film materials">
+                <CompanyList items={detail.materials} />
+              </Section>
+            )}
 
             <p className="text-2xs leading-relaxed text-muted-foreground">{detail.source}</p>
           </div>
