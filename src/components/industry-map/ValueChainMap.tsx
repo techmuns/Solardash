@@ -240,36 +240,67 @@ function Path({ nodes }: { nodes: FlowNode[] }) {
   );
 }
 
+/**
+ * One connector cell next to a branch box. The vertical rail is drawn as two
+ * half-segments (above / below this box's centre), so the rail spans only from
+ * the first branch box to the last — it never dangles past the end arrows. The
+ * lower half bridges the inter-row gap to meet the next box's upper half.
+ */
+function RailCell({
+  side,
+  isFirst,
+  isLast,
+  bridge,
+}: {
+  side: "left" | "right";
+  isFirst: boolean;
+  isLast: boolean;
+  bridge: string;
+}) {
+  const x = side === "left" ? "left-0" : "right-0";
+  return (
+    <div className="relative w-4 shrink-0 self-stretch" aria-hidden>
+      {!isFirst && <span className={cn("absolute top-0 h-1/2 w-[3px] bg-brand/70", x)} />}
+      {!isLast && <span className={cn("absolute top-1/2 w-[3px] bg-brand/70", x, bridge)} />}
+      <span className="absolute inset-x-0 top-1/2 h-[3px] -translate-y-1/2 bg-brand/70" />
+    </div>
+  );
+}
+
 /** Several input rows converging (via a rail) into one downstream box. */
 function Merge({ inputs }: { inputs: React.ReactNode[] }) {
+  const n = inputs.length;
   return (
     <div className="flex items-center">
-      <div className="flex flex-col items-end gap-5 border-r-[3px] border-brand/50">
+      <div className="flex flex-col items-end gap-6">
         {inputs.map((input, i) => (
-          <div key={i} className="flex items-center">
-            {input}
-            <span className="h-1 w-4 shrink-0 bg-brand/60" aria-hidden />
+          <div key={i} className="flex items-stretch">
+            <div className="flex items-center self-center">{input}</div>
+            <RailCell side="right" isFirst={i === 0} isLast={i === n - 1} bridge="-bottom-6" />
           </div>
         ))}
       </div>
-      <span className="h-1 w-4 shrink-0 bg-brand/70" aria-hidden />
-      <ArrowRight className="-ml-2.5 h-6 w-6 shrink-0 text-brand" strokeWidth={3} />
+      <span className="h-[3px] w-4 shrink-0 bg-brand/70" aria-hidden />
+      <ArrowRight className="-ml-2.5 h-6 w-6 shrink-0 text-brand" strokeWidth={3} aria-hidden />
     </div>
   );
 }
 
 /** One box branching (via a rail) into one or more downstream boxes. */
 function Fork({ from, to }: { from: React.ReactNode; to: React.ReactNode[] }) {
+  const n = to.length;
   return (
     <div className="flex items-center">
       <div className="shrink-0">{from}</div>
-      <span className="h-1 w-4 shrink-0 bg-brand/70" aria-hidden />
-      <div className="flex flex-col gap-3 border-l-[3px] border-brand/50">
+      <span className="h-[3px] w-4 shrink-0 bg-brand/70" aria-hidden />
+      <div className="flex flex-col gap-4">
         {to.map((child, i) => (
-          <div key={i} className="flex items-center py-1">
-            <span className="h-1 w-3 shrink-0 bg-brand/60" aria-hidden />
-            <ArrowRight className="-ml-2.5 mr-0.5 h-6 w-6 shrink-0 text-brand" strokeWidth={3} aria-hidden />
-            {child}
+          <div key={i} className="flex items-stretch">
+            <RailCell side="left" isFirst={i === 0} isLast={i === n - 1} bridge="-bottom-4" />
+            <div className="flex items-center self-center">
+              <ArrowRight className="-ml-1 h-6 w-6 shrink-0 text-brand" strokeWidth={3} aria-hidden />
+              {child}
+            </div>
           </div>
         ))}
       </div>
