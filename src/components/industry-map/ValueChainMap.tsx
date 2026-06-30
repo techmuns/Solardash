@@ -28,7 +28,6 @@ import {
   VC_DEPLOY,
   VC_MFG,
   type Heat,
-  type VcPlayer,
   type VcStage,
 } from "@/data/value-chain";
 
@@ -46,7 +45,6 @@ interface FlowNode {
   kind: NodeKind;
   icon: LucideIcon;
   heat?: Heat;
-  players?: VcPlayer[];
   href?: string;
   badge?: string;
 }
@@ -58,7 +56,7 @@ function stage(id: string): VcStage {
   return s;
 }
 
-/** Build a tracked-stage node, pulling heat / players / drill target from data. */
+/** Build a tracked-stage node, pulling heat / drill target from data. */
 function stageNode(p: {
   id: string;
   label: string;
@@ -73,7 +71,6 @@ function stageNode(p: {
     kind: "stage",
     icon: p.icon,
     heat: s.heat,
-    players: s.players,
     href: s.href,
     badge: p.badge,
   };
@@ -114,42 +111,6 @@ const HEAT_LABEL: Record<Heat, string> = {
   offtake: "Offtake risk",
 };
 
-function initials(name: string): string {
-  return name
-    .split(/[\s./&]+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase();
-}
-
-/** A company monogram — clickable to its page when we track it, else muted. */
-function Avatar({ player }: { player: VcPlayer }) {
-  const base =
-    "flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-semibold leading-none";
-  return player.slug ? (
-    <Link
-      href={`/companies/${player.slug}`}
-      title={player.name}
-      aria-label={player.name}
-      className={cn(
-        base,
-        "relative z-10 border border-border bg-card text-foreground/80 outline-none transition-colors hover:border-brand hover:bg-brand/10 hover:text-brand focus-visible:ring-2 focus-visible:ring-brand",
-      )}
-    >
-      {initials(player.name)}
-    </Link>
-  ) : (
-    <span
-      title={player.name}
-      className={cn(base, "border border-dashed border-border bg-muted text-muted-foreground")}
-    >
-      {initials(player.name)}
-    </span>
-  );
-}
-
 /** One box in the flowchart — rendered by state. */
 function FlowBox({ node }: { node: FlowNode }) {
   const Icon = node.icon;
@@ -157,16 +118,16 @@ function FlowBox({ node }: { node: FlowNode }) {
   if (node.kind === "muted") {
     return (
       <div
-        className="flex w-28 shrink-0 flex-col items-center rounded-2xl border border-dashed border-border bg-muted/30 p-2.5 text-center opacity-90"
+        className="flex w-40 shrink-0 items-center gap-2 rounded-xl border border-dashed border-border bg-muted/30 px-2.5 py-2 text-left opacity-90"
         title="Not tracked yet"
       >
         <span
-          className="flex h-8 w-8 items-center justify-center rounded-xl bg-muted text-muted-foreground/50"
+          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground/50"
           aria-hidden
         >
           <Icon className="h-4 w-4" strokeWidth={1.75} />
         </span>
-        <span className="mt-2 text-xs font-medium leading-tight text-muted-foreground">
+        <span className="text-xs font-medium leading-tight text-muted-foreground">
           {node.label}
         </span>
       </div>
@@ -177,7 +138,7 @@ function FlowBox({ node }: { node: FlowNode }) {
   return (
     <div
       className={cn(
-        "group relative flex w-28 shrink-0 flex-col items-center rounded-2xl border p-2.5 text-center shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover",
+        "group relative flex w-40 shrink-0 items-center gap-2 rounded-xl border px-2.5 py-2 text-left shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover",
         heatColor ? "" : "border-border bg-card hover:border-brand/40",
       )}
       style={
@@ -190,13 +151,13 @@ function FlowBox({ node }: { node: FlowNode }) {
       }
     >
       {node.badge && (
-        <span className="absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-card">
+        <span className="absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white shadow-card">
           {node.badge}
         </span>
       )}
       <span
         className={cn(
-          "flex h-8 w-8 items-center justify-center rounded-xl",
+          "flex h-7 w-7 shrink-0 items-center justify-center rounded-lg",
           !heatColor && "bg-brand/10 text-brand",
         )}
         style={heatColor ? { background: `${heatColor}59`, color: heatColor } : undefined}
@@ -207,19 +168,12 @@ function FlowBox({ node }: { node: FlowNode }) {
       {node.href ? (
         <Link
           href={node.href}
-          className="mt-2 text-xs font-semibold leading-tight tracking-tight text-foreground outline-none after:absolute after:inset-0 focus-visible:ring-2 focus-visible:ring-brand"
+          className="text-xs font-semibold leading-tight tracking-tight text-foreground outline-none after:absolute after:inset-0 focus-visible:ring-2 focus-visible:ring-brand"
         >
           {node.label}
         </Link>
       ) : (
-        <span className="mt-2 text-xs font-semibold leading-tight text-foreground">{node.label}</span>
-      )}
-      {node.players && node.players.length > 0 && (
-        <div className="relative z-10 mt-2 flex flex-wrap justify-center gap-1">
-          {node.players.slice(0, 3).map((p) => (
-            <Avatar key={p.name} player={p} />
-          ))}
-        </div>
+        <span className="text-xs font-semibold leading-tight text-foreground">{node.label}</span>
       )}
     </div>
   );
@@ -386,7 +340,7 @@ export function ValueChainMap() {
         <HeatLegend />
       </div>
 
-      <FitWidth max={1.9}>
+      <FitWidth max={1.25}>
         <div className="flex w-max items-center gap-0.5 px-0.5 py-1">
           {/* Upstream: two technology paths + module inputs converge on PV Modules */}
           <Merge inputs={[thinFilm, crystalline, moduleInputs]} />
