@@ -1,17 +1,24 @@
 import * as React from "react";
 import Link from "next/link";
 import {
-  ArrowDown,
   ArrowRight,
   Atom,
-  Building,
+  Boxes,
   Building2,
   Cable,
   Grid2x2,
   HardHat,
+  Home,
   Layers,
   LayoutGrid,
-  Network,
+  Lightbulb,
+  Package,
+  Package2,
+  PanelTop,
+  Settings2,
+  Square,
+  Sun,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -24,30 +31,77 @@ import {
   type VcStage,
 } from "@/data/value-chain";
 
-/** One clean icon per stage — the "image" for that capability. */
-const STAGE_ICON: Record<string, LucideIcon> = {
-  polysilicon: Atom,
-  wafer: Layers,
-  cell: Grid2x2,
-  module: LayoutGrid,
-  bos: Cable,
-  epc: HardHat,
-  ipp: Building2,
-  grid: Network,
-  offtake: Building,
-};
+/* ------------------------------------------------------------------ *
+ * Node model — the value chain as a branching graph (after Figure 1).
+ * Three states: a tracked value-chain "stage" (heat-tinted, clickable,
+ * with companies), an application "segment" (brand-tinted, clickable),
+ * or a "muted" box we don't track yet (greyed, not clickable).
+ * ------------------------------------------------------------------ */
+type NodeKind = "stage" | "segment" | "muted";
 
-/** A one-word "what happens here" — the verbs read as a flow when chained. */
-const STAGE_ROLE: Record<string, string> = {
-  polysilicon: "Feedstock",
-  wafer: "Sliced",
-  cell: "Energised",
-  module: "Assembled",
-  bos: "Hardware",
-  epc: "Built",
-  ipp: "Operated",
-  grid: "Carried",
-  offtake: "Consumed",
+interface FlowNode {
+  id: string;
+  label: string;
+  kind: NodeKind;
+  icon: LucideIcon;
+  heat?: Heat;
+  players?: VcPlayer[];
+  href?: string;
+  badge?: string;
+}
+
+/** Look up a curated stage by id (build-time safety — ids are known). */
+function stage(id: string): VcStage {
+  const s = [...VC_MFG, ...VC_DEPLOY].find((x) => x.id === id);
+  if (!s) throw new Error(`value-chain: unknown stage "${id}"`);
+  return s;
+}
+
+/** Build a tracked-stage node, pulling heat / players / drill target from data. */
+function stageNode(p: {
+  id: string;
+  label: string;
+  stageId: string;
+  icon: LucideIcon;
+  badge?: string;
+}): FlowNode {
+  const s = stage(p.stageId);
+  return {
+    id: p.id,
+    label: p.label,
+    kind: "stage",
+    icon: p.icon,
+    heat: s.heat,
+    players: s.players,
+    href: s.href,
+    badge: p.badge,
+  };
+}
+
+const N: Record<string, FlowNode> = {
+  // Thin-film path — no Indian manufacturing base, so greyed.
+  pvMaterials: { id: "pvMaterials", label: "PV Materials", kind: "muted", icon: Boxes },
+  substrate: { id: "substrate", label: "Substrate", kind: "muted", icon: Square },
+  // Crystalline-silicon path — India's actual path; tracked.
+  poly: stageNode({ id: "poly", label: "Poly-silicon", stageId: "polysilicon", icon: Atom }),
+  wafer: stageNode({ id: "wafer", label: "Ingots & Wafers", stageId: "wafer", icon: Layers }),
+  cell: stageNode({ id: "cell", label: "PV Cells", stageId: "cell", icon: Grid2x2, badge: "★ ALMM live" }),
+  // Module inputs.
+  solarGlass: { id: "solarGlass", label: "Solar Glass", kind: "muted", icon: PanelTop },
+  bos: stageNode({ id: "bos", label: "Balance of System", stageId: "bos", icon: Cable }),
+  // The convergence.
+  modules: stageNode({ id: "modules", label: "PV Modules", stageId: "module", icon: LayoutGrid }),
+  // Application segments.
+  gridPlant: { id: "gridPlant", label: "Grid Power Plant", kind: "segment", icon: Sun, href: "/developers" },
+  rooftop: { id: "rooftop", label: "Rooftop / Offgrid", kind: "segment", icon: Home, href: "/power-system" },
+  solarProducts: { id: "solarProducts", label: "Solar Products", kind: "muted", icon: Package },
+  // Roles & sub-applications.
+  epc: stageNode({ id: "epc", label: "EPC", stageId: "epc", icon: HardHat }),
+  ipp: stageNode({ id: "ipp", label: "IPP", stageId: "ipp", icon: Building2 }),
+  sysIntegration: { id: "sysIntegration", label: "System Integration", kind: "muted", icon: Settings2 },
+  lanterns: { id: "lanterns", label: "Lanterns & Lights", kind: "muted", icon: Lightbulb },
+  waterPumps: { id: "waterPumps", label: "Solar Water Pumps", kind: "muted", icon: Zap },
+  otherProducts: { id: "otherProducts", label: "Other Solar Products", kind: "muted", icon: Package2 },
 };
 
 const HEAT_LABEL: Record<Heat, string> = {
@@ -72,7 +126,7 @@ function initials(name: string): string {
 /** A company monogram — clickable to its page when we track it, else muted. */
 function Avatar({ player }: { player: VcPlayer }) {
   const base =
-    "flex h-7 w-7 items-center justify-center rounded-full text-2xs font-semibold leading-none";
+    "flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-semibold leading-none";
   return player.slug ? (
     <Link
       href={`/companies/${player.slug}`}
@@ -95,45 +149,65 @@ function Avatar({ player }: { player: VcPlayer }) {
   );
 }
 
-/** A visual stage node: a heat-tinted icon, the flow-role, the capability name,
- *  and the companies that operate there. The whole node drills to its detail tab. */
-function StageNode({ stage }: { stage: VcStage }) {
-  const Icon = STAGE_ICON[stage.id] ?? Layers;
-  const role = STAGE_ROLE[stage.id];
-  const color = HEAT_COLOR[stage.heat];
+/** One box in the flowchart — rendered by state. */
+function FlowBox({ node }: { node: FlowNode }) {
+  const Icon = node.icon;
+
+  if (node.kind === "muted") {
+    return (
+      <div
+        className="flex w-36 shrink-0 flex-col items-center rounded-2xl border border-dashed border-border bg-muted/30 p-3 text-center opacity-90"
+        title="Not tracked yet"
+      >
+        <span
+          className="flex h-9 w-9 items-center justify-center rounded-xl bg-muted text-muted-foreground/50"
+          aria-hidden
+        >
+          <Icon className="h-[18px] w-[18px]" strokeWidth={1.75} />
+        </span>
+        <span className="mt-2 text-xs font-medium leading-tight text-muted-foreground">
+          {node.label}
+        </span>
+      </div>
+    );
+  }
+
+  const heatColor = node.kind === "stage" && node.heat ? HEAT_COLOR[node.heat] : undefined;
   return (
     <div
       className={cn(
-        "group relative flex w-40 shrink-0 flex-col items-center rounded-2xl border bg-card p-3.5 text-center shadow-card transition-all hover:-translate-y-1 hover:border-brand/40 hover:shadow-card-hover",
-        stage.emphasis ? "border-brand/50 ring-1 ring-brand/20" : "border-border",
+        "group relative flex w-36 shrink-0 flex-col items-center rounded-2xl border bg-card p-3 text-center shadow-card transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-card-hover",
+        node.badge ? "border-brand/50 ring-1 ring-brand/20" : "border-border",
       )}
     >
-      {stage.emphasis && (
+      {node.badge && (
         <span className="absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-card">
-          ★ ALMM live
+          {node.badge}
         </span>
       )}
       <span
-        className="flex h-14 w-14 items-center justify-center rounded-2xl"
-        style={{ background: `${color}1f`, color }}
+        className={cn(
+          "flex h-9 w-9 items-center justify-center rounded-xl",
+          !heatColor && "bg-brand/10 text-brand",
+        )}
+        style={heatColor ? { background: `${heatColor}1f`, color: heatColor } : undefined}
         aria-hidden
       >
-        <Icon className="h-7 w-7" strokeWidth={1.75} />
+        <Icon className="h-[18px] w-[18px]" strokeWidth={1.75} />
       </span>
-      {role && (
-        <span className="mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground/70">
-          {role}
-        </span>
+      {node.href ? (
+        <Link
+          href={node.href}
+          className="mt-2 text-xs font-semibold leading-tight tracking-tight text-foreground outline-none after:absolute after:inset-0 focus-visible:ring-2 focus-visible:ring-brand"
+        >
+          {node.label}
+        </Link>
+      ) : (
+        <span className="mt-2 text-xs font-semibold leading-tight text-foreground">{node.label}</span>
       )}
-      <Link
-        href={stage.href}
-        className="mt-0.5 text-sm font-semibold leading-tight tracking-tight text-foreground outline-none after:absolute after:inset-0 focus-visible:ring-2 focus-visible:ring-brand"
-      >
-        {stage.name}
-      </Link>
-      {stage.players.length > 0 && (
-        <div className="relative z-10 mt-2.5 flex flex-wrap justify-center gap-1">
-          {stage.players.slice(0, 4).map((p) => (
+      {node.players && node.players.length > 0 && (
+        <div className="relative z-10 mt-2 flex flex-wrap justify-center gap-1">
+          {node.players.slice(0, 3).map((p) => (
             <Avatar key={p.name} player={p} />
           ))}
         </div>
@@ -142,81 +216,62 @@ function StageNode({ stage }: { stage: VcStage }) {
   );
 }
 
-/** A directional connector between two nodes — a line that ends in an arrowhead. */
-function FlowArrow() {
+/** A short directional connector between two boxes in a row. */
+function HArrow() {
   return (
     <div className="flex shrink-0 items-center self-center" aria-hidden>
-      <span className="h-px w-4 bg-border sm:w-5" />
+      <span className="h-px w-3 bg-border" />
       <ArrowRight className="-ml-1.5 h-4 w-4 text-border" strokeWidth={2.5} />
     </div>
   );
 }
 
-/** A horizontal flow tier: a numbered label, then the stages chained by arrows. */
-function FlowTier({
-  step,
-  label,
-  stages,
-}: {
-  step: number;
-  label: string;
-  stages: VcStage[];
-}) {
+/** A left→right chain of boxes joined by arrows (one upstream technology path). */
+function Path({ nodes }: { nodes: FlowNode[] }) {
   return (
-    <div>
-      <div className="mb-3 flex items-center gap-2">
-        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand/10 text-2xs font-bold text-brand">
-          {step}
-        </span>
-        <p className="text-2xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-          {label}
-        </p>
-      </div>
-      <div className="scrollbar-thin overflow-x-auto pb-1">
-        <div className="flex items-stretch justify-center gap-1">
-          {stages.map((s, i) => (
-            <React.Fragment key={s.id}>
-              <StageNode stage={s} />
-              {i < stages.length - 1 && <FlowArrow />}
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
+    <div className="flex items-center">
+      {nodes.map((n, i) => (
+        <React.Fragment key={n.id}>
+          <FlowBox node={n} />
+          {i < nodes.length - 1 && <HArrow />}
+        </React.Fragment>
+      ))}
     </div>
   );
 }
 
-/** The branch between the tiers: the finished panel + balance-of-system are
- *  engineered into operating plants. Shows BoS feeding in as a side-input. */
-function Junction({ bos }: { bos: VcStage }) {
-  const color = HEAT_COLOR[bos.heat];
+/** Several input rows converging (via a rail) into one downstream box. */
+function Merge({ inputs }: { inputs: React.ReactNode[] }) {
   return (
-    <div className="flex flex-col items-center gap-1.5" aria-label="Panels are built into operating plants">
-      <span className="h-3 w-px bg-border" aria-hidden />
-      <div className="flex items-center gap-2 rounded-full border border-border bg-card px-2.5 py-1.5 shadow-card">
-        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand/10 text-brand">
-          <ArrowDown className="h-3.5 w-3.5" strokeWidth={2.5} />
-        </span>
-        <span className="text-2xs font-medium text-muted-foreground">
-          Built into operating plants
-        </span>
-        <span className="h-4 w-px bg-border" aria-hidden />
-        <Link
-          href={bos.href}
-          title={`${bos.name} feeds in here`}
-          className="group relative flex items-center gap-1.5 rounded-full pr-1 text-2xs font-semibold text-foreground/80 outline-none transition-colors hover:text-brand focus-visible:ring-2 focus-visible:ring-brand"
-        >
-          <span
-            className="flex h-6 w-6 items-center justify-center rounded-full"
-            style={{ background: `${color}1f`, color }}
-            aria-hidden
-          >
-            <Cable className="h-3.5 w-3.5" strokeWidth={1.75} />
-          </span>
-          + {bos.name}
-        </Link>
+    <div className="flex items-center" aria-hidden={false}>
+      <div className="flex flex-col items-end gap-5 border-r-2 border-border">
+        {inputs.map((input, i) => (
+          <div key={i} className="flex items-center">
+            {input}
+            <span className="h-px w-4 shrink-0 bg-border" aria-hidden />
+          </div>
+        ))}
       </div>
-      <span className="h-3 w-px bg-border" aria-hidden />
+      <span className="h-px w-4 shrink-0 bg-border" aria-hidden />
+      <ArrowRight className="-ml-2 h-4 w-4 shrink-0 text-border" strokeWidth={2.5} />
+    </div>
+  );
+}
+
+/** One box branching (via a rail) into one or more downstream boxes. */
+function Fork({ from, to }: { from: React.ReactNode; to: React.ReactNode[] }) {
+  return (
+    <div className="flex items-center">
+      <div className="shrink-0">{from}</div>
+      <span className="h-px w-4 shrink-0 bg-border" aria-hidden />
+      <div className="flex flex-col gap-3 border-l-2 border-border">
+        {to.map((child, i) => (
+          <div key={i} className="flex items-center py-1">
+            <span className="h-px w-4 shrink-0 bg-border" aria-hidden />
+            {child}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -230,37 +285,104 @@ function HeatLegend() {
           {HEAT_LABEL[h]}
         </span>
       ))}
+      <span className="inline-flex items-center gap-1.5">
+        <span className="h-2.5 w-2.5 rounded-full border border-dashed border-border bg-muted" />
+        Not tracked yet
+      </span>
     </div>
   );
 }
 
 /**
- * The solar value-chain flowchart — how a panel becomes power. The silicon chain
- * flows left→right (polysilicon → wafers → cells → modules); the finished panel
- * plus balance-of-system then drops into the deployment chain (EPC → IPP → grid →
- * end markets). Each node is heat-tinted by its profit pool, drills to its detail
- * tab, and carries the companies that operate there as clickable monograms.
+ * The solar-PV value chain as a branching flowchart (after Figure 1). Two
+ * upstream technology paths — crystalline-silicon (India's tracked path) and
+ * thin-film (greyed, no Indian base) — plus solar glass and balance-of-system
+ * converge into PV Modules, which then branches into the downstream
+ * applications: grid power plants (EPC / IPP), rooftop / off-grid (system
+ * integration), and solar products. Tracked boxes are heat-tinted and drill to
+ * their detail tab; boxes we don't yet cover are greyed.
  */
 export function ValueChainMap() {
-  // The silicon chain is the linear upstream flow; Balance of System is a
-  // parallel hardware input that joins at deployment, so it feeds the junction.
-  const siliconChain = VC_MFG.filter((s) => s.id !== "bos");
-  const bos = VC_MFG.find((s) => s.id === "bos");
+  const thinFilm = (
+    <div className="rounded-2xl border border-dashed border-border/70 bg-muted/20 p-2.5">
+      <p className="mb-1.5 px-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/70">
+        Thin-film · integrated process
+      </p>
+      <Path nodes={[N.pvMaterials, N.substrate]} />
+    </div>
+  );
+
+  const crystalline = (
+    <div className="px-0.5">
+      <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/70">
+        Crystalline silicon
+      </p>
+      <Path nodes={[N.poly, N.wafer, N.cell]} />
+    </div>
+  );
+
+  const moduleInputs = (
+    <div className="px-0.5">
+      <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/70">
+        Module inputs
+      </p>
+      <div className="flex items-center gap-2">
+        <FlowBox node={N.solarGlass} />
+        <FlowBox node={N.bos} />
+      </div>
+    </div>
+  );
 
   return (
-    <section className="flex flex-col gap-4 rounded-3xl border border-border bg-gradient-to-b from-muted/30 to-transparent p-5 sm:p-6">
-      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <h2 className="text-base font-semibold tracking-tight text-foreground">
-          The solar value chain — how a panel becomes power
-        </h2>
+    <section
+      className="flex flex-col gap-4 rounded-3xl border border-border bg-gradient-to-b from-muted/30 to-transparent p-5 sm:p-6"
+      aria-label="Solar PV value chain flowchart"
+    >
+      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+        <div>
+          <h2 className="text-base font-semibold tracking-tight text-foreground">
+            The solar PV value chain
+          </h2>
+          <p className="mt-0.5 text-2xs text-muted-foreground">
+            Materials → modules → applications. Click any tracked stage or company to drill in;
+            greyed boxes aren&apos;t covered yet.
+          </p>
+        </div>
         <HeatLegend />
       </div>
 
-      <FlowTier step={1} label="Make the panel · upstream manufacturing" stages={siliconChain} />
+      <div className="scrollbar-thin overflow-x-auto pb-2">
+        <div className="flex min-w-max items-center gap-1 px-1 py-2">
+          {/* Upstream: two technology paths + module inputs converge on PV Modules */}
+          <Merge inputs={[thinFilm, crystalline, moduleInputs]} />
 
-      {bos && <Junction bos={bos} />}
-
-      <FlowTier step={2} label="Build & sell the power · downstream deployment" stages={VC_DEPLOY} />
+          {/* PV Modules → downstream application branches */}
+          <Fork
+            from={<FlowBox node={N.modules} />}
+            to={[
+              <Fork
+                key="grid"
+                from={<FlowBox node={N.gridPlant} />}
+                to={[<FlowBox key="epc" node={N.epc} />, <FlowBox key="ipp" node={N.ipp} />]}
+              />,
+              <Fork
+                key="rooftop"
+                from={<FlowBox node={N.rooftop} />}
+                to={[<FlowBox key="si" node={N.sysIntegration} />]}
+              />,
+              <Fork
+                key="products"
+                from={<FlowBox node={N.solarProducts} />}
+                to={[
+                  <FlowBox key="lan" node={N.lanterns} />,
+                  <FlowBox key="pump" node={N.waterPumps} />,
+                  <FlowBox key="other" node={N.otherProducts} />,
+                ]}
+              />,
+            ]}
+          />
+        </div>
+      </div>
     </section>
   );
 }
