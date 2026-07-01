@@ -1,9 +1,11 @@
 "use client";
 
+import * as React from "react";
 import { DataTable, type Column } from "@/components/ui/DataTable";
-import { formatNumber } from "@/lib/utils";
+import { cn, formatNumber } from "@/lib/utils";
 import type { ExportMeta } from "@/lib/export";
 import type { DeveloperStanding } from "@/data/types/tenders";
+import { LISTED_DEVELOPERS, isListedDeveloper } from "./listed-developers";
 
 export function LeaderboardTable({
   rows,
@@ -12,10 +14,40 @@ export function LeaderboardTable({
   rows: DeveloperStanding[];
   exportMeta?: ExportMeta;
 }) {
+  const [listedOnly, setListedOnly] = React.useState(false);
+
+  const listedCount = React.useMemo(
+    () => rows.filter((r) => isListedDeveloper(r.developer)).length,
+    [rows],
+  );
+  const data = listedOnly
+    ? rows.filter((r) => isListedDeveloper(r.developer))
+    : rows;
+
   const maxMw = Math.max(1, ...rows.map((r) => r.mw));
 
   const columns: Column<DeveloperStanding>[] = [
-    { key: "developer", header: "Developer", sortable: true },
+    {
+      key: "developer",
+      header: "Developer",
+      sortable: true,
+      render: (r) => {
+        const ticker = LISTED_DEVELOPERS[r.developer];
+        return (
+          <span className="inline-flex items-center gap-1.5">
+            {r.developer}
+            {ticker && (
+              <span
+                className="rounded bg-positive/10 px-1.5 py-0.5 text-[10px] font-semibold tabular-nums tracking-wide text-positive"
+                title={`Listed · NSE: ${ticker}`}
+              >
+                {ticker}
+              </span>
+            )}
+          </span>
+        );
+      },
+    },
     {
       key: "mw",
       header: "MW won",
@@ -56,14 +88,46 @@ export function LeaderboardTable({
   ];
 
   return (
-    <DataTable
-      columns={columns}
-      data={rows}
-      getRowKey={(r) => r.developer}
-      dense
-      emptyMessage="No developer standings."
-      exportable={Boolean(exportMeta)}
-      exportMeta={exportMeta}
-    />
+    <div className="flex min-h-0 flex-1 flex-col gap-2.5">
+      <div className="flex shrink-0 items-center gap-2">
+        <button
+          type="button"
+          role="switch"
+          aria-checked={listedOnly}
+          onClick={() => setListedOnly((v) => !v)}
+          className={cn(
+            "inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-brand",
+            listedOnly
+              ? "border-positive/40 bg-positive/10 text-positive"
+              : "border-border text-muted-foreground hover:bg-muted hover:text-foreground",
+          )}
+        >
+          <span
+            className={cn(
+              "h-2 w-2 rounded-full",
+              listedOnly ? "bg-positive" : "bg-muted-foreground/40",
+            )}
+            aria-hidden
+          />
+          Listed only
+        </button>
+        <span className="text-2xs text-muted-foreground">
+          {listedOnly
+            ? `${listedCount} listed of ${rows.length} developers`
+            : `${listedCount} of ${rows.length} trade publicly (NSE/BSE)`}
+        </span>
+      </div>
+      <div className="min-h-0 flex-1 overflow-auto">
+        <DataTable
+          columns={columns}
+          data={data}
+          getRowKey={(r) => r.developer}
+          dense
+          emptyMessage="No developer standings."
+          exportable={Boolean(exportMeta)}
+          exportMeta={exportMeta}
+        />
+      </div>
+    </div>
   );
 }

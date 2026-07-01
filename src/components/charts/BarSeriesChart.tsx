@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import {
   Bar,
   BarChart,
@@ -27,6 +28,8 @@ export interface BarSeriesChartProps {
   periodOrder?: string[];
   /** X-axis tick interval (Recharts) — thins labels on dense series. */
   xInterval?: number | "preserveStart" | "preserveEnd" | "preserveStartEnd";
+  /** Custom recharts tooltip content; overrides the default per-series tooltip. */
+  tooltipContent?: React.ComponentProps<typeof Tooltip>["content"];
 }
 
 /** Generic bar chart over our typed Series, coloured via ENERGY_COLORS. */
@@ -37,6 +40,7 @@ export function BarSeriesChart({
   unit,
   periodOrder,
   xInterval,
+  tooltipContent,
 }: BarSeriesChartProps) {
   const theme = useChartTheme();
   const rows = seriesToRows(series, periodOrder);
@@ -60,20 +64,24 @@ export function BarSeriesChart({
           tickFormatter={formatAxisTick}
           tick={{ fill: theme.tick, fontSize: 12 }}
         />
-        <Tooltip
-          cursor={{ fill: theme.cursor }}
-          contentStyle={{
-            background: theme.tooltipBg,
-            border: `1px solid ${theme.tooltipBorder}`,
-            borderRadius: 8,
-            fontSize: 12,
-            color: theme.tooltipText,
-            boxShadow: "0 4px 12px -2px rgb(15 23 42 / 0.12)",
-          }}
-          labelStyle={{ color: theme.tooltipText, fontWeight: 600, marginBottom: 4 }}
-          itemStyle={{ color: theme.tooltipText, padding: "1px 0" }}
-          formatter={(value, name) => [unit ? `${value} ${unit}` : `${value}`, name]}
-        />
+        {tooltipContent ? (
+          <Tooltip cursor={{ fill: theme.cursor }} content={tooltipContent} />
+        ) : (
+          <Tooltip
+            cursor={{ fill: theme.cursor }}
+            contentStyle={{
+              background: theme.tooltipBg,
+              border: `1px solid ${theme.tooltipBorder}`,
+              borderRadius: 8,
+              fontSize: 12,
+              color: theme.tooltipText,
+              boxShadow: "0 4px 12px -2px rgb(15 23 42 / 0.12)",
+            }}
+            labelStyle={{ color: theme.tooltipText, fontWeight: 600, marginBottom: 4 }}
+            itemStyle={{ color: theme.tooltipText, padding: "1px 0" }}
+            formatter={(value, name) => [unit ? `${value} ${unit}` : `${value}`, name]}
+          />
+        )}
         <Legend wrapperStyle={{ fontSize: 12, color: theme.tick, paddingTop: 8 }} />
         {series.map((s) => (
           <Bar
