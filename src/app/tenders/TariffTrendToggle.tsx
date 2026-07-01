@@ -7,9 +7,9 @@ import type { Series } from "@/data/types/core";
 
 /**
  * Tariff trend with a granularity switch: the long-run "By year" line (lowest
- * discovered solar tariff per calendar year) and a recent "By quarter" line
- * (capacity-weighted solar auction tariff per quarter). Both come from the
- * committed auction feed, which currently runs through Q4 FY26 (Mar 2026).
+ * discovered solar tariff per calendar year) and a recent "By quarter" view
+ * (capacity-weighted solar and solar-plus-storage auction tariff per quarter).
+ * Both come from the committed auction feed, which runs through Q4 FY26 (Mar 2026).
  */
 export function TariffTrendToggle({
   annual,
@@ -32,7 +32,7 @@ export function TariffTrendToggle({
         <p className="text-2xs text-muted-foreground">
           {isYear
             ? "Lowest discovered solar tariff per calendar year"
-            : "Capacity-weighted solar auction tariff per quarter"}
+            : "Capacity-weighted solar & solar-plus-storage tariff per quarter"}
         </p>
         <div className="flex items-center gap-0.5 rounded-lg border border-border p-0.5 text-xs">
           {(["year", "quarter"] as const).map((m) => {

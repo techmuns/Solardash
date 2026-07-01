@@ -86,10 +86,16 @@ export default function TendersPage() {
   const awardsByPeriod: Record<string, AwardRecord[]> = {};
   for (const a of d.recentAwards) (awardsByPeriod[a.period] ??= []).push(a);
 
-  // Recent quarterly solar tariff (capacity-weighted per quarter) for the
-  // "By quarter" toggle on the tariff tab; the annual line stays the default.
-  const solarTariffQ = d.tariffByType.filter((s) => s.key === "solar");
-  const tariffQuarters = solarTariffQ[0]?.points.map((p) => p.period) ?? [];
+  // Recent quarterly solar-family tariff (capacity-weighted per quarter) for the
+  // "By quarter" toggle on the tariff tab: pure solar + solar-plus-storage, for
+  // denser coverage than solar alone. The annual line stays the default.
+  const solarFamilyTariffQ = d.tariffByType.filter(
+    (s) => s.key === "solar" || s.key === "solar-bess",
+  );
+  const famPeriods = new Set(
+    solarFamilyTariffQ.flatMap((s) => s.points.map((p) => p.period)),
+  );
+  const tariffQuarters = quarters.filter((q) => famPeriods.has(q));
 
   const tabs: CanvasTab[] = [
     {
@@ -122,7 +128,7 @@ export default function TendersPage() {
         <TariffTrendToggle
           annual={d.tariffHistory}
           annualOrder={tariffYears}
-          quarterly={solarTariffQ}
+          quarterly={solarFamilyTariffQ}
           quarterlyOrder={tariffQuarters}
         />
       ),
