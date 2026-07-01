@@ -10,11 +10,7 @@ import { formatDate } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
 import { FillLineSeries } from "@/components/charts/FillCharts";
-import {
-  SectionCanvas,
-  type CanvasKpi,
-  type CanvasTab,
-} from "@/components/sections/SectionCanvas";
+import { SectionCanvas, type CanvasTab } from "@/components/sections/SectionCanvas";
 import { AnalysisTag, Constituents, Scorecard, type ScorecardClaim } from "./parts";
 import {
   MarginByStage,
@@ -42,8 +38,6 @@ export default function ProfitPoolsPage() {
   const meta = (dataset: string) =>
     snapshotMeta(companiesSnap, { section: "profit-pools", dataset });
 
-  const last = (xs: number[]) => xs[xs.length - 1];
-
   // ── KPI trends (sparkline-stat, all real) ──────────────────────────────
   const mfgTrend =
     pools.marginByStage.find((s) => s.key === "manufacturing")?.points.map((p) => p.value) ??
@@ -53,33 +47,6 @@ export default function ProfitPoolsPage() {
     [];
   const tariffHist = tenders.tariffHistory[0];
   const tariffTrend = tariffHist?.points.map((p) => p.value) ?? [];
-
-  const kpis: CanvasKpi[] = [
-    {
-      label: "Mfg pool EBITDA margin",
-      value: `${last(mfgTrend)}`,
-      unit: "%",
-      hint: "rev-weighted · listed makers · FY26",
-      trend: mfgTrend,
-      color: "#10B981",
-    },
-    {
-      label: "IPP pool EBITDA margin",
-      value: `${last(ippTrend)}`,
-      unit: "%",
-      hint: "rev-weighted · listed IPPs · FY26",
-      trend: ippTrend,
-      color: "#6366F1",
-    },
-    {
-      label: "Lowest solar tariff",
-      value: `${last(tariffTrend)}`,
-      unit: "₹/kWh",
-      hint: `by year · ${tariffHist?.points[tariffHist.points.length - 1]?.period ?? ""}`,
-      trend: tariffTrend,
-      color: "#EC4899",
-    },
-  ];
 
   // ── Scorecard claims (only what our committed data evidences) ──────────
   const cellTrend =
@@ -249,5 +216,5 @@ export default function ProfitPoolsPage() {
     },
   ];
 
-  return <SectionCanvas kpis={kpis} tabs={tabs} asOf={asOf} defaultSource="Company filings" />;
+  return <SectionCanvas tabs={tabs} asOf={asOf} defaultSource="Company filings" />;
 }

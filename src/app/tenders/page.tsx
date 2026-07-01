@@ -1,15 +1,14 @@
 import { getTendersSnapshot } from "@/data";
-import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { formatDate, formatNumber } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
 import { FillBarSeries } from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
   RankList,
-  type CanvasKpi,
   type CanvasTab,
 } from "@/components/sections/SectionCanvas";
-import type { AwardRecord, TenderKpi } from "@/data/types/tenders";
+import type { AwardRecord } from "@/data/types/tenders";
 import { LeaderboardTable } from "./LeaderboardTable";
 import { AwardsTooltip } from "./AwardsTooltip";
 import { TariffTrendToggle } from "./TariffTrendToggle";
@@ -21,19 +20,6 @@ export const metadata = {
     "Central & state solar / renewable auction results — awarded capacity, winning tariffs, the tender-type mix, and the developer leaderboard, in a single focused canvas.",
 };
 
-function kpiValue(value: number | string): string {
-  if (typeof value === "string") return value;
-  return Number.isInteger(value) ? formatNumber(value) : value.toFixed(2);
-}
-
-const KPI_KEYS = [
-  "awarded_fy26",
-  "lowest_tariff",
-  "avg_tariff",
-  "leading_type",
-  "top_developer",
-];
-
 export default function TendersPage() {
   const snapshot = getTendersSnapshot();
   const d = snapshot.data;
@@ -42,40 +28,6 @@ export default function TendersPage() {
   const source = "Auction feed · SECI / state DISCOMs (maintained)";
   const asOf = formatDate(snapshot.updatedAt);
   const meta = (dataset: string) => snapshotMeta(snapshot, { dataset });
-
-  // Contextual change chips, from committed series only:
-  //  • lowest tariff — fall vs the series peak year (same "lowest by year" metric)
-  //  • awarded — how many auctions the total spans
-  const th = d.tariffHistory[0]?.points ?? [];
-  const tariffPeak = th.length ? Math.max(...th.map((p) => p.value)) : undefined;
-  const peakYear =
-    tariffPeak != null ? th.find((p) => p.value === tariffPeak)?.period : undefined;
-  const lowestVal = d.kpis.find((k) => k.key === "lowest_tariff")?.value;
-  const tariffFall =
-    tariffPeak && typeof lowestVal === "number"
-      ? `${Math.round(((lowestVal - tariffPeak) / tariffPeak) * 100)}%`
-      : undefined;
-  const auctions = d.kpis.find((k) => k.key === "auctions_fy26")?.value;
-
-  const kpiExtra: Record<string, { delta?: string; hint?: string }> = {
-    awarded_fy26: auctions != null ? { hint: `${auctions} auctions · FY26` } : {},
-    lowest_tariff:
-      tariffFall && peakYear
-        ? { delta: tariffFall, hint: `vs ₹${tariffPeak} in ${peakYear}` }
-        : {},
-  };
-
-  const kpis: CanvasKpi[] = KPI_KEYS.map((key) =>
-    d.kpis.find((k) => k.key === key),
-  )
-    .filter((k): k is TenderKpi => Boolean(k))
-    .map((k) => ({
-      label: k.label,
-      value: kpiValue(k.value),
-      unit: k.unit ? formatUnit(k.unit) : undefined,
-      hint: k.hint,
-      ...kpiExtra[k.key],
-    }));
 
   const topWinners = d.developerLeaderboard
     .slice(0, 5)
@@ -162,11 +114,6 @@ export default function TendersPage() {
   ];
 
   return (
-    <SectionCanvas
-      kpis={kpis}
-      tabs={tabs}
-      asOf={asOf}
-      defaultSource={source}
-    />
+    <SectionCanvas tabs={tabs} asOf={asOf} defaultSource={source} />
   );
 }

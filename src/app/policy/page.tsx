@@ -1,14 +1,13 @@
 import { getPolicySnapshot } from "@/data";
-import { formatCompact, formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { formatCompact, formatDate, formatNumber } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
 import { FillBarSeries } from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
-  type CanvasKpi,
   type CanvasTab,
 } from "@/components/sections/SectionCanvas";
-import type { Kpi, Series } from "@/data/types/core";
+import type { Series } from "@/data/types/core";
 import type { PolicyData } from "@/data/types/policy";
 
 export const dynamic = "force-static";
@@ -17,21 +16,6 @@ export const metadata = {
   description:
     "India's solar / renewable policy toolkit — the scheme tracker, PM Surya Ghar, PM-KUSUM, and the round-the-clock levelised cost benchmark.",
 };
-
-function kv(k?: Kpi): string {
-  if (!k) return "—";
-  if (typeof k.value === "string") return k.value;
-  return Number.isInteger(k.value)
-    ? formatNumber(k.value)
-    : parseFloat(k.value.toFixed(2)).toString();
-}
-const find = (kpis: Kpi[], key: string) => kpis.find((k) => k.key === key);
-const mapKpi = (k?: Kpi): CanvasKpi => ({
-  label: k?.label ?? "—",
-  value: kv(k),
-  unit: k?.unit ? formatUnit(k.unit) : undefined,
-  hint: k?.hint,
-});
 
 function metricValue(value: number, unit: string): string {
   if (unit === "count") return formatCompact(value);
@@ -97,33 +81,6 @@ export default function PolicyPage() {
   const source = "MNRE / CBIC";
   const asOf = formatDate(snap.updatedAt);
   const meta = (dataset: string) => snapshotMeta(snap, { dataset });
-
-  const install = d.pmSuryaGhar.find((m) => m.metric === "Installations");
-  const target = d.pmSuryaGhar.find((m) => m.metric === "Target");
-  const kusumExecuted = d.kusum.reduce((s, k) => s + k.executedGw, 0);
-  const kusumTarget = d.kusum.reduce((s, k) => s + k.targetGw, 0);
-  const lcoe = d.prices.find((p) => /lcoe/i.test(p.item)) ?? d.prices[0];
-
-  const kpis: CanvasKpi[] = [
-    mapKpi(find(d.kpis, "active_schemes")),
-    {
-      label: "PM Surya Ghar installs",
-      value: install ? formatCompact(install.value) : "—",
-      hint: target ? `of ${formatCompact(target.value)} target` : undefined,
-    },
-    {
-      label: "KUSUM executed",
-      value: `${kusumExecuted}`,
-      unit: "GW",
-      hint: `of ${kusumTarget} GW target`,
-    },
-    {
-      label: lcoe?.item ?? "LCOE",
-      value: lcoe ? lcoe.value.toFixed(2) : "—",
-      unit: "₹/kWh",
-      hint: lcoe?.note,
-    },
-  ];
 
   const kusumSeries: Series[] = [
     {
@@ -208,6 +165,6 @@ export default function PolicyPage() {
   ];
 
   return (
-    <SectionCanvas kpis={kpis} tabs={tabs} asOf={asOf} defaultSource={source} />
+    <SectionCanvas tabs={tabs} asOf={asOf} defaultSource={source} />
   );
 }

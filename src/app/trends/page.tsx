@@ -84,7 +84,6 @@ export default function TrendsPage() {
 
   return (
     <SectionCanvas
-      kpis={[]}
       tabs={tabs}
       asOf={formatDate(pools.asOf)}
       defaultSource="Munshot synthesis"

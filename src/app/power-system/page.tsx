@@ -1,5 +1,5 @@
 import { getCapacitySnapshot, getDemandSnapshot } from "@/data";
-import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
 import { FillBarSeries, FillLineSeries } from "@/components/charts/FillCharts";
@@ -7,10 +7,9 @@ import { MixAreaToggle } from "@/components/charts/MixAreaToggle";
 import {
   SectionCanvas,
   RankList,
-  type CanvasKpi,
   type CanvasTab,
 } from "@/components/sections/SectionCanvas";
-import type { Kpi, Series } from "@/data/types/core";
+import type { Series } from "@/data/types/core";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -18,15 +17,6 @@ export const metadata = {
   description:
     "India's installed capacity & mix, commissioning, the solar build-out, and power demand — the supply-to-demand story in one focused canvas.",
 };
-
-function kv(k?: Kpi): string {
-  if (!k) return "—";
-  if (typeof k.value === "string") return k.value;
-  return Number.isInteger(k.value)
-    ? formatNumber(k.value)
-    : parseFloat(k.value.toFixed(2)).toString();
-}
-const find = (kpis: Kpi[], key: string) => kpis.find((k) => k.key === key);
 
 export default function PowerSystemPage() {
   const capSnap = getCapacitySnapshot();
@@ -42,59 +32,6 @@ export default function PowerSystemPage() {
     snapshotMeta(capSnap, { section: "power-system", dataset });
   const demMeta = (dataset: string) =>
     snapshotMeta(demSnap, { section: "power-system", dataset });
-
-  // Sparkline-stat trajectories (design law) from the by-source spine + demand.
-  const fyTotals =
-    c.installedBySource[0]?.points.map((_, i) =>
-      c.installedBySource.reduce((s, ser) => s + (ser.points[i]?.value ?? 0), 0),
-    ) ?? [];
-  const fossilSet = new Set(["thermal", "gas"]);
-  const nonFossilShareTrend = fyTotals.map((tot, i) =>
-    tot
-      ? Math.round(
-          ((tot -
-            c.installedBySource
-              .filter((s) => fossilSet.has(s.key))
-              .reduce((a, ser) => a + (ser.points[i]?.value ?? 0), 0)) /
-            tot) *
-            1000,
-        ) / 10
-      : 0,
-  );
-  // Trends feed the KPI change chip (last FY-over-FY step). Peak growth is
-  // already a YoY KPI of its own, so the all-time-peak stat carries no delta.
-  const psTrend: Record<string, number[]> = {
-    total_installed: fyTotals,
-    solar_installed:
-      c.installedBySource.find((s) => s.key === "solar")?.points.map((p) => p.value) ??
-      [],
-    non_fossil_share: nonFossilShareTrend,
-  };
-  // Context line — names the change basis so the delta reads unambiguously.
-  const psHint: Record<string, string> = {
-    total_installed: "YoY · 31 Mar 2026",
-    solar_installed: "YoY · cumulative",
-    non_fossil_share: "YoY · 31 Mar 2026",
-    "all-time-peak-apr-2026": "Apr 2026 · all-time high",
-    "peak-growth-jan-yoy": "Jan YoY",
-  };
-
-  // KPI strip — supply (capacity, solar, non-fossil) + demand (peak, growth).
-  const kpis: CanvasKpi[] = [
-    find(c.kpis, "total_installed"),
-    find(c.kpis, "solar_installed"),
-    find(c.kpis, "non_fossil_share"),
-    find(d.kpis, "all-time-peak-apr-2026"),
-    find(d.kpis, "peak-growth-jan-yoy"),
-  ]
-    .filter((k): k is Kpi => Boolean(k))
-    .map((k) => ({
-      label: k.label,
-      value: kv(k),
-      unit: k.unit ? formatUnit(k.unit) : undefined,
-      hint: psHint[k.key] ?? k.hint,
-      ...(psTrend[k.key] ? { trend: psTrend[k.key] } : {}),
-    }));
 
   // Installed mix OVER TIME → stacked-area by source (FY17 → FY26).
   const bySource = c.installedBySource;
@@ -224,7 +161,6 @@ export default function PowerSystemPage() {
 
   return (
     <SectionCanvas
-      kpis={kpis}
       tabs={tabs}
       asOf={asOf}
       defaultSource={capSource}

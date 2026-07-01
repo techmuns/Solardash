@@ -1,6 +1,6 @@
 import { getManufacturingSnapshot } from "@/data";
 import { categoricalColor } from "@/lib/colors";
-import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { categoryToExport, snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
 import {
@@ -11,10 +11,9 @@ import {
 import {
   SectionCanvas,
   RankList,
-  type CanvasKpi,
   type CanvasTab,
 } from "@/components/sections/SectionCanvas";
-import type { Kpi, Series } from "@/data/types/core";
+import type { Series } from "@/data/types/core";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -23,20 +22,6 @@ export const metadata = {
     "India's solar manufacturing value chain — cell & module capacity, the production ramp, supply vs demand, the ALMM rollout, and PLI awardees.",
 };
 
-function kv(k?: Kpi): string {
-  if (!k) return "—";
-  if (typeof k.value === "string") return k.value;
-  return Number.isInteger(k.value)
-    ? formatNumber(k.value)
-    : parseFloat(k.value.toFixed(2)).toString();
-}
-const find = (kpis: Kpi[], key: string) => kpis.find((k) => k.key === key);
-const mapKpi = (k?: Kpi): CanvasKpi => ({
-  label: k?.label ?? "—",
-  value: kv(k),
-  unit: k?.unit ? formatUnit(k.unit) : undefined,
-  hint: k?.hint,
-});
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 function AlmmList({
@@ -79,40 +64,6 @@ export default function ManufacturingPage() {
   const source = "MNRE / DCR Portal (maintained)";
   const asOf = formatDate(snap.updatedAt);
   const meta = (dataset: string) => snapshotMeta(snap, { dataset });
-
-  const pliAwarded = m.pliAwardees.reduce((s, p) => s + p.capacityGw, 0);
-
-  // YoY change of the nameplate build-out (capacity-history spine) — the real
-  // growth context behind the ALMM headline figures.
-  const chYoy = (key: string): string | undefined => {
-    const pts = m.capacityHistory.find((s) => s.key === key)?.points ?? [];
-    if (pts.length < 2) return undefined;
-    const cur = pts[pts.length - 1].value;
-    const prev = pts[pts.length - 2].value;
-    if (!prev) return undefined;
-    const pct = Math.round(((cur - prev) / prev) * 100);
-    return `${pct >= 0 ? "+" : ""}${pct}%`;
-  };
-
-  const kpis: CanvasKpi[] = [
-    {
-      ...mapKpi(find(m.kpis, "cell_capacity")),
-      delta: chYoy("cell"),
-      hint: "nameplate build-out · YoY",
-    },
-    {
-      ...mapKpi(find(m.kpis, "module_capacity")),
-      delta: chYoy("module"),
-      hint: "nameplate build-out · YoY",
-    },
-    mapKpi(find(m.kpis, "overcapacity")),
-    {
-      label: "PLI awarded",
-      value: pliAwarded.toFixed(1),
-      unit: "GW",
-      hint: `${m.pliAwardees.length} firms`,
-    },
-  ];
 
   const prodYears = m.cellQuarterly.categories;
   const prodSeries: Series[] = m.cellQuarterly.series.map((s) => ({
@@ -274,6 +225,6 @@ export default function ManufacturingPage() {
   ];
 
   return (
-    <SectionCanvas kpis={kpis} tabs={tabs} asOf={asOf} defaultSource={source} />
+    <SectionCanvas tabs={tabs} asOf={asOf} defaultSource={source} />
   );
 }

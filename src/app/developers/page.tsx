@@ -1,6 +1,6 @@
 import { getDevelopersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
-import { formatDate, formatNumber, formatUnit } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { categoriesToExport, categoryToExport, snapshotMeta } from "@/lib/export";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import {
@@ -10,10 +10,8 @@ import {
 import {
   SectionCanvas,
   RankList,
-  type CanvasKpi,
   type CanvasTab,
 } from "@/components/sections/SectionCanvas";
-import type { Kpi } from "@/data/types/core";
 import { RosterTable } from "./RosterTable";
 import { PpaTrackerTable } from "./PpaTrackerTable";
 
@@ -24,62 +22,12 @@ export const metadata = {
     "India's renewable IPPs — operational, under-construction and pipeline capacity, PPA signings, and the aggregate portfolio mix.",
 };
 
-function kv(k?: Kpi): string {
-  if (!k) return "—";
-  if (typeof k.value === "string") return k.value;
-  return Number.isInteger(k.value)
-    ? formatNumber(k.value)
-    : parseFloat(k.value.toFixed(2)).toString();
-}
-const find = (kpis: Kpi[], key: string) => kpis.find((k) => k.key === key);
-const mapKpi = (k?: Kpi): CanvasKpi => ({
-  label: k?.label ?? "—",
-  value: kv(k),
-  unit: k?.unit ? formatUnit(k.unit) : undefined,
-  hint: k?.hint,
-});
-
 export default function DevelopersPage() {
   const snap = getDevelopersSnapshot();
   const d = snap.data;
   const source = "Investor disclosures (maintained)";
   const asOf = formatDate(snap.updatedAt);
   const meta = (dataset: string) => snapshotMeta(snap, { dataset });
-
-  const ppaGw = d.ppaTracker.reduce((s, p) => s + p.capacityMw, 0) / 1000;
-
-  // Contextual ratios from committed figures (this roster has no time series,
-  // so the context is structural rather than a period-over-period delta).
-  const opGw = Number(find(d.kpis, "operational_gw")?.value) || 0;
-  const targetGw = Number(find(d.kpis, "target_gw")?.value) || 0;
-  const buildoutGw = Number(find(d.kpis, "buildout_gw")?.value) || 0;
-  const largestOp = d.roster.reduce((mx, r) => Math.max(mx, r.operationalGw), 0);
-
-  const kpis: CanvasKpi[] = [
-    {
-      ...mapKpi(find(d.kpis, "operational_gw")),
-      hint: targetGw
-        ? `${Math.round((opGw / targetGw) * 100)}% of ${targetGw} GW FY30 goal`
-        : undefined,
-    },
-    {
-      ...mapKpi(find(d.kpis, "buildout_gw")),
-      hint: opGw ? `${(buildoutGw / opGw).toFixed(1)}× operational base` : undefined,
-    },
-    {
-      label: "PPAs signed",
-      value: ppaGw.toFixed(1),
-      unit: "GW",
-      hint: `${d.ppaTracker.length} recent`,
-    },
-    {
-      ...mapKpi(find(d.kpis, "largest")),
-      hint:
-        opGw && largestOp
-          ? `${largestOp} GW · ${Math.round((largestOp / opGw) * 100)}% of tracked`
-          : undefined,
-    },
-  ];
 
   const mixData = d.portfolioMix
     .map((m) => ({
@@ -216,6 +164,6 @@ export default function DevelopersPage() {
   ];
 
   return (
-    <SectionCanvas kpis={kpis} tabs={tabs} asOf={asOf} defaultSource={source} />
+    <SectionCanvas tabs={tabs} asOf={asOf} defaultSource={source} />
   );
 }
