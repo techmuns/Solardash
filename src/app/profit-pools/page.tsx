@@ -209,9 +209,20 @@ export default function ProfitPoolsPage() {
       id: "stage-economics",
       label: "Stage economics",
       title: "Per-stage economics across the chain",
-      subtitle: "Margin (FACT) + value-shift direction (Munshot analysis), with the China vs India/US split",
+      subtitle:
+        "Representative margin per stage (bars) + the FACT table with value-shift direction and the China vs India/US split",
       source: "Company filings · CRISIL · BNEF · Mercom · IEEFA · Wood Mackenzie",
-      body: <StageEconomicsTable rows={ecoRows} />,
+      body: (
+        <div className="flex min-h-0 flex-1 flex-col gap-3">
+          <div className="flex min-h-0 basis-2/5 flex-col">
+            <MarginByStage rows={ecoRows} />
+          </div>
+          <div className="flex min-h-0 flex-1 flex-col">
+            <StageEconomicsTable rows={ecoRows} />
+          </div>
+        </div>
+      ),
+      side: { title: "Geographic contrast", node: <MarginContrast rows={ecoRows} /> },
       exportData: {
         columns: [
           { key: "stage", label: "Stage" },
@@ -235,15 +246,6 @@ export default function ProfitPoolsPage() {
         })),
         meta: ecoMeta,
       },
-    },
-    {
-      id: "margin-by-stage",
-      label: "Margin by stage",
-      title: "Margin by stage",
-      subtitle: "Representative EBITDA / GM margin per stage · sorted high → low",
-      source: "Munshot analysis on filings / agency benchmarks",
-      body: <MarginByStage rows={ecoRows} />,
-      side: { title: "Geographic contrast", node: <MarginContrast rows={ecoRows} /> },
     },
   ];
 
