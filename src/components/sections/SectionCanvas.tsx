@@ -4,7 +4,6 @@ import * as React from "react";
 import { ArrowDownRight, ArrowUpRight, Minus } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { ExportMenu } from "@/components/ui/ExportMenu";
-import { Sparkline } from "@/components/charts/Sparkline";
 import { cn } from "@/lib/utils";
 import type { ColumnDef, ExportMeta, ExportRow } from "@/lib/export";
 
@@ -21,11 +20,11 @@ export interface CanvasKpi {
   value: string;
   unit?: string;
   hint?: string;
-  /** Pre-formatted delta (e.g. "+42%"); else derived from the trend's last step. */
+  /** Pre-formatted change chip (e.g. "+42%"); else derived from the trend's last step. */
   delta?: string;
-  /** Bare trajectory — the sparkline-stat series (the DEFAULT KPI unit). */
+  /** Optional trajectory — used only to derive `delta` when one isn't supplied. */
   trend?: number[];
-  /** Sparkline colour (defaults to brand amber). */
+  /** Retained for callers; no longer rendered (the strip dropped its sparkline). */
   color?: string;
 }
 
@@ -76,9 +75,10 @@ function deltaFromTrend(trend?: number[]): string | undefined {
 }
 
 /**
- * Sparkline-stat KPI cell — value + delta + bare trajectory. The DEFAULT KPI
- * unit (design law: every metric carries its trend). A KPI with no series keeps
- * the value but renders no fabricated line.
+ * Compact KPI cell — a small "bold text" stat: label · value · an inline
+ * change chip · one context line. The delta reads from `kpi.delta` (or the last
+ * step of `kpi.trend`); a KPI with neither shows just its value + context, never
+ * a fabricated number.
  */
 function KpiCell({ kpi }: { kpi: CanvasKpi }) {
   const delta = kpi.delta ?? deltaFromTrend(kpi.trend);
@@ -94,49 +94,37 @@ function KpiCell({ kpi }: { kpi: CanvasKpi }) {
         ? "text-negative"
         : "text-muted-foreground";
   const DIcon = dir === "up" ? ArrowUpRight : dir === "down" ? ArrowDownRight : Minus;
-  const hasTrend = Boolean(kpi.trend && kpi.trend.length > 1);
 
   return (
-    <div className="flex flex-col rounded-2xl border border-border bg-card p-4 shadow-card">
-      <p className="truncate text-xs font-medium uppercase tracking-wide text-muted-foreground">
+    <div className="flex flex-col justify-center rounded-xl border border-border bg-card px-3.5 py-2.5">
+      <p className="truncate text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
         {kpi.label}
       </p>
-      <div className="mt-1 flex items-baseline gap-1">
-        <span className="truncate text-stat font-semibold tabular-nums text-foreground">
+      <div className="mt-1 flex items-baseline gap-1.5">
+        <span className="min-w-0 truncate text-xl font-bold leading-none tracking-tight tabular-nums text-foreground">
           {kpi.value}
         </span>
         {kpi.unit && (
-          <span className="text-sm font-medium text-muted-foreground">
+          <span className="shrink-0 text-xs font-medium text-muted-foreground">
             {kpi.unit}
           </span>
         )}
+        {delta && (
+          <span
+            className={cn(
+              "ml-auto inline-flex shrink-0 items-center gap-0.5 text-xs font-semibold tabular-nums",
+              dColor,
+            )}
+          >
+            <DIcon className="h-3.5 w-3.5" aria-hidden />
+            {delta}
+          </span>
+        )}
       </div>
-      {(delta || kpi.hint) && (
-        <div className="mt-0.5 flex items-center gap-2 text-xs">
-          {delta && (
-            <span
-              className={cn(
-                "inline-flex items-center gap-0.5 font-medium tabular-nums",
-                dColor,
-              )}
-            >
-              <DIcon className="h-3.5 w-3.5" aria-hidden />
-              {delta}
-            </span>
-          )}
-          {kpi.hint && (
-            <span className="truncate text-muted-foreground">{kpi.hint}</span>
-          )}
-        </div>
-      )}
-      {hasTrend && (
-        <div className="mt-2 h-9">
-          <Sparkline
-            values={kpi.trend as number[]}
-            color={kpi.color ?? "#F59E0B"}
-            height={36}
-          />
-        </div>
+      {kpi.hint && (
+        <p className="mt-1 truncate text-[11px] leading-tight text-muted-foreground">
+          {kpi.hint}
+        </p>
       )}
     </div>
   );
@@ -164,7 +152,7 @@ export function SectionCanvas({
     <div className="flex h-full min-h-0 flex-col gap-3.5 p-4 sm:p-5">
       {/* KPI strip (omitted when a section carries no headline KPIs) */}
       {kpis.length > 0 && (
-        <div className={cn("grid shrink-0 grid-cols-2 gap-3 sm:grid-cols-3", cols)}>
+        <div className={cn("grid shrink-0 grid-cols-2 gap-2.5 sm:grid-cols-3", cols)}>
           {kpis.map((k) => (
             <KpiCell key={k.label} kpi={k} />
           ))}

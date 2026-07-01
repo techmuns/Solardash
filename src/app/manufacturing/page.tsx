@@ -82,9 +82,29 @@ export default function ManufacturingPage() {
 
   const pliAwarded = m.pliAwardees.reduce((s, p) => s + p.capacityGw, 0);
 
+  // YoY change of the nameplate build-out (capacity-history spine) — the real
+  // growth context behind the ALMM headline figures.
+  const chYoy = (key: string): string | undefined => {
+    const pts = m.capacityHistory.find((s) => s.key === key)?.points ?? [];
+    if (pts.length < 2) return undefined;
+    const cur = pts[pts.length - 1].value;
+    const prev = pts[pts.length - 2].value;
+    if (!prev) return undefined;
+    const pct = Math.round(((cur - prev) / prev) * 100);
+    return `${pct >= 0 ? "+" : ""}${pct}%`;
+  };
+
   const kpis: CanvasKpi[] = [
-    mapKpi(find(m.kpis, "cell_capacity")),
-    mapKpi(find(m.kpis, "module_capacity")),
+    {
+      ...mapKpi(find(m.kpis, "cell_capacity")),
+      delta: chYoy("cell"),
+      hint: "nameplate build-out · YoY",
+    },
+    {
+      ...mapKpi(find(m.kpis, "module_capacity")),
+      delta: chYoy("module"),
+      hint: "nameplate build-out · YoY",
+    },
     mapKpi(find(m.kpis, "overcapacity")),
     {
       label: "PLI awarded",

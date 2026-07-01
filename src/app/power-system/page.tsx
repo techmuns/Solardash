@@ -61,19 +61,22 @@ export default function PowerSystemPage() {
         ) / 10
       : 0,
   );
+  // Trends feed the KPI change chip (last FY-over-FY step). Peak growth is
+  // already a YoY KPI of its own, so the all-time-peak stat carries no delta.
   const psTrend: Record<string, number[]> = {
     total_installed: fyTotals,
     solar_installed:
       c.installedBySource.find((s) => s.key === "solar")?.points.map((p) => p.value) ??
       [],
     non_fossil_share: nonFossilShareTrend,
-    "all-time-peak-apr-2026": d.peakGw,
   };
-  const psColor: Record<string, string> = {
-    total_installed: "#0EA5E9",
-    solar_installed: "#F59E0B",
-    non_fossil_share: "#10B981",
-    "all-time-peak-apr-2026": "#EC4899",
+  // Context line — names the change basis so the delta reads unambiguously.
+  const psHint: Record<string, string> = {
+    total_installed: "YoY · 31 Mar 2026",
+    solar_installed: "YoY · cumulative",
+    non_fossil_share: "YoY · 31 Mar 2026",
+    "all-time-peak-apr-2026": "Apr 2026 · all-time high",
+    "peak-growth-jan-yoy": "Jan YoY",
   };
 
   // KPI strip — supply (capacity, solar, non-fossil) + demand (peak, growth).
@@ -89,8 +92,8 @@ export default function PowerSystemPage() {
       label: k.label,
       value: kv(k),
       unit: k.unit ? formatUnit(k.unit) : undefined,
-      hint: k.hint,
-      ...(psTrend[k.key] ? { trend: psTrend[k.key], color: psColor[k.key] } : {}),
+      hint: psHint[k.key] ?? k.hint,
+      ...(psTrend[k.key] ? { trend: psTrend[k.key] } : {}),
     }));
 
   // Installed mix OVER TIME → stacked-area by source (FY17 → FY26).

@@ -44,6 +44,28 @@ export default function TendersPage() {
   const asOf = formatDate(snapshot.updatedAt);
   const meta = (dataset: string) => snapshotMeta(snapshot, { dataset });
 
+  // Contextual change chips, from committed series only:
+  //  • lowest tariff — fall vs the series peak year (same "lowest by year" metric)
+  //  • awarded — how many auctions the total spans
+  const th = d.tariffHistory[0]?.points ?? [];
+  const tariffPeak = th.length ? Math.max(...th.map((p) => p.value)) : undefined;
+  const peakYear =
+    tariffPeak != null ? th.find((p) => p.value === tariffPeak)?.period : undefined;
+  const lowestVal = d.kpis.find((k) => k.key === "lowest_tariff")?.value;
+  const tariffFall =
+    tariffPeak && typeof lowestVal === "number"
+      ? `${Math.round(((lowestVal - tariffPeak) / tariffPeak) * 100)}%`
+      : undefined;
+  const auctions = d.kpis.find((k) => k.key === "auctions_fy26")?.value;
+
+  const kpiExtra: Record<string, { delta?: string; hint?: string }> = {
+    awarded_fy26: auctions != null ? { hint: `${auctions} auctions · FY26` } : {},
+    lowest_tariff:
+      tariffFall && peakYear
+        ? { delta: tariffFall, hint: `vs ₹${tariffPeak} in ${peakYear}` }
+        : {},
+  };
+
   const kpis: CanvasKpi[] = KPI_KEYS.map((key) =>
     d.kpis.find((k) => k.key === key),
   )
@@ -53,6 +75,7 @@ export default function TendersPage() {
       value: kpiValue(k.value),
       unit: k.unit ? formatUnit(k.unit) : undefined,
       hint: k.hint,
+      ...kpiExtra[k.key],
     }));
 
   const topWinners = d.developerLeaderboard

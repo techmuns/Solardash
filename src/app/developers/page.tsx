@@ -48,16 +48,37 @@ export default function DevelopersPage() {
 
   const ppaGw = d.ppaTracker.reduce((s, p) => s + p.capacityMw, 0) / 1000;
 
+  // Contextual ratios from committed figures (this roster has no time series,
+  // so the context is structural rather than a period-over-period delta).
+  const opGw = Number(find(d.kpis, "operational_gw")?.value) || 0;
+  const targetGw = Number(find(d.kpis, "target_gw")?.value) || 0;
+  const buildoutGw = Number(find(d.kpis, "buildout_gw")?.value) || 0;
+  const largestOp = d.roster.reduce((mx, r) => Math.max(mx, r.operationalGw), 0);
+
   const kpis: CanvasKpi[] = [
-    mapKpi(find(d.kpis, "operational_gw")),
-    mapKpi(find(d.kpis, "buildout_gw")),
+    {
+      ...mapKpi(find(d.kpis, "operational_gw")),
+      hint: targetGw
+        ? `${Math.round((opGw / targetGw) * 100)}% of ${targetGw} GW FY30 goal`
+        : undefined,
+    },
+    {
+      ...mapKpi(find(d.kpis, "buildout_gw")),
+      hint: opGw ? `${(buildoutGw / opGw).toFixed(1)}× operational base` : undefined,
+    },
     {
       label: "PPAs signed",
       value: ppaGw.toFixed(1),
       unit: "GW",
       hint: `${d.ppaTracker.length} recent`,
     },
-    mapKpi(find(d.kpis, "largest")),
+    {
+      ...mapKpi(find(d.kpis, "largest")),
+      hint:
+        opGw && largestOp
+          ? `${largestOp} GW · ${Math.round((largestOp / opGw) * 100)}% of tracked`
+          : undefined,
+    },
   ];
 
   const mixData = d.portfolioMix
