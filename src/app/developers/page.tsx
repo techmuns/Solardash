@@ -1,12 +1,10 @@
 import { getDevelopersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate } from "@/lib/utils";
-import { categoriesToExport, categoryToExport, snapshotMeta } from "@/lib/export";
+import { fyQuarter, formatFyQuarter } from "@/lib/fiscal";
+import { categoryToExport, snapshotMeta } from "@/lib/export";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
-import {
-  FillCategoryBar,
-  FillStackedCategory,
-} from "@/components/charts/FillCharts";
+import { FillCategoryBar } from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
   RankList,
@@ -14,6 +12,7 @@ import {
 } from "@/components/sections/SectionCanvas";
 import { RosterTable } from "./RosterTable";
 import { PpaTrackerTable } from "./PpaTrackerTable";
+import { CommissioningTimeline } from "./CommissioningTimeline";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -38,33 +37,33 @@ export default function DevelopersPage() {
     }))
     .sort((a, b) => b.value - a.value);
 
-  const funnelSeries = [
-    {
-      key: "operational",
-      label: "Operational",
-      color: "#10B981",
-      values: d.capacityFunnel.operational,
-    },
-    {
-      key: "underConstruction",
-      label: "Under construction",
-      color: "#F59E0B",
-      values: d.capacityFunnel.underConstruction,
-    },
-    {
-      key: "pipeline",
-      label: "Pipeline",
-      color: "#94A3B8",
-      values: d.capacityFunnel.pipeline,
-    },
-  ];
-
   const topDevRows = d.roster
     .slice(0, 5)
     .map((r) => ({ label: r.name, value: `${r.operationalGw}` }));
   const opSide = {
     title: "Top · operational GW",
     node: <RankList rows={topDevRows} />,
+  };
+
+  // Commissioning timeline anchored to the snapshot vintage.
+  const nowPeriod = fyQuarter(snap.updatedAt);
+  const slipRows = d.commissioning
+    .filter((t) => t.slipQuarters > 0)
+    .sort(
+      (a, b) => b.slipQuarters - a.slipQuarters || b.capacityGw - a.capacityGw,
+    )
+    .slice(0, 6)
+    .map((t) => ({ label: `${t.developer} · ${t.project}`, value: `+${t.slipQuarters}Q` }));
+  const slipSide = {
+    title: "Biggest slips (Q)",
+    node:
+      slipRows.length > 0 ? (
+        <RankList rows={slipRows} />
+      ) : (
+        <p className="text-2xs text-muted-foreground">
+          No tranches behind their original guidance.
+        </p>
+      ),
   };
 
   const tabs: CanvasTab[] = [
@@ -99,21 +98,38 @@ export default function DevelopersPage() {
     },
     {
       id: "pipeline",
-      label: "Pipeline",
-      title: "Capacity funnel by IPP",
-      subtitle: "GW · operational + under-construction + pipeline, stacked",
+      label: "Commissioning",
+      title: "Commissioning timeline by IPP",
+      subtitle:
+        "Guided COD by fiscal quarter · tracked from concalls, with slippage vs earlier guidance",
       body: (
-        <FillStackedCategory
-          categories={d.capacityFunnel.categories}
-          series={funnelSeries}
-          unit="GW"
-          categoryWidth={104}
-        />
+        <CommissioningTimeline tranches={d.commissioning} now={nowPeriod} />
       ),
-      side: opSide,
+      side: slipSide,
       exportData: {
-        ...categoriesToExport(d.capacityFunnel.categories, funnelSeries, "Developer"),
-        meta: meta("capacity-funnel"),
+        columns: [
+          { key: "developer", label: "IPP" },
+          { key: "project", label: "Project" },
+          { key: "tech", label: "Tech" },
+          { key: "capacityGw", label: "Capacity" },
+          { key: "original", label: "Original target" },
+          { key: "current", label: "Current target" },
+          { key: "slipQuarters", label: "Slip (Q)" },
+          { key: "status", label: "Status" },
+          { key: "lastConcall", label: "Last stated" },
+        ],
+        rows: d.commissioning.map((t) => ({
+          developer: t.developer,
+          project: t.project,
+          tech: TENDER_TYPE_LABELS[t.tech] ?? t.tech,
+          capacityGw: t.capacityGw,
+          original: formatFyQuarter(t.originalTarget),
+          current: formatFyQuarter(t.currentTarget),
+          slipQuarters: t.slipQuarters,
+          status: t.status,
+          lastConcall: t.history[t.history.length - 1]?.concall ?? "",
+        })),
+        meta: meta("commissioning"),
       },
     },
     {

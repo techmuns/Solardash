@@ -1,0 +1,4 @@
+tranche_id,developer,project,tech,capacity_gw,stated_on,concall,target_period,status,confidence,source,source_url,note
+T1,Test IPP,Alpha solar,solar,1.2,2025-05-10,Q1 FY26 concall,Q3FY26,on-track,high,Concall,,initial guidance
+T1,Test IPP,Alpha solar,solar,1.2,2025-11-08,Q2 FY26 concall,Q1FY27,delayed,high,Concall,,supply-chain slip
+T2,Test IPP,Beta wind,wind,0.6,2025-11-20,Q2 FY26 concall,Q4FY26,on-track,medium,Concall,,

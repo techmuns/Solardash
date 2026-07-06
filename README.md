@@ -147,6 +147,36 @@ GitHub's IP range), either:
 - download the public company pages and parse them locally, then commit the
   feeds: `tsx scripts/ingest/screener.ts --file <page.html> --slug <slug>`.
 
+## Commissioning-guidance feed
+
+The **IPPs → Commissioning** timeline is driven by
+`manual-data/developers/commissioning.csv` — one row per dated guidance
+statement (a company concall / investor disclosure saying *when* a capacity
+tranche will be commissioned). Keeping **every** revision is what lets the
+dashboard show slippage: "was Q2 FY26, now Q4 FY26 (+2Q)". Columns:
+`tranche_id, developer, project, tech, capacity_gw, stated_on, concall,
+target_period, status, confidence, source, source_url, note`.
+
+Concalls are audio + PDF, so there is no scraper — this is a **maintained**
+feed. To update it, append the new statements (a new `stated_on` row for the
+same `tranche_id` records a revision), then let
+[`.github/workflows/refresh-concalls.yml`](.github/workflows/refresh-concalls.yml)
+normalize + rebuild + commit (monthly cron, or **Actions** →
+"Refresh commissioning guidance" → **Run workflow**). Locally:
+
+```bash
+tsx scripts/ingest/concalls.ts --file new-statements.csv  # merge a batch (upsert)
+tsx scripts/ingest/concalls.ts --dry-run                  # validate + normalize, no write
+tsx scripts/ingest/concalls.verify.ts                     # offline test of the normalizer
+npm run data:build                                        # regenerate the snapshot
+```
+
+The normalizer validates enums (tech/status/confidence), FY-quarter targets and
+ISO dates, upserts by `tranche_id | stated_on` (keep-last-good), and canonically
+sorts for byte-stable diffs. The pipeline groups statements per tranche, derives
+`originalTarget` / `currentTarget` / `slipQuarters` from the history, and sorts
+by current target. Lower-confidence rows are flagged as Munshot estimates.
+
 ## CEA demand refresh (disabled)
 
 The demand series ships from the **manual monthly anchors** in

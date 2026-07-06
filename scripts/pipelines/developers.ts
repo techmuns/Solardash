@@ -1,11 +1,15 @@
 import { definePipeline } from "../lib/pipeline";
 import { maxAsOf, readManualCsv, writeSnapshot } from "../lib/io";
+import { fyQuarterIndex, quarterDiff } from "../../src/lib/fiscal";
 import type { Confidence, Kpi, SourceRef } from "../../src/data/types/core";
 import type { TenderType } from "../../src/data/types/tenders";
 import type {
   CapacityFunnel,
+  CommissioningStatus,
+  CommissioningTranche,
   Developer,
   DevelopersData,
+  GuidanceStatement,
   PortfolioMixEntry,
   PpaRecord,
 } from "../../src/data/types/developers";
@@ -32,6 +36,7 @@ export const developersPipeline = definePipeline({
   run() {
     const devRows = readManualCsv("developers/developers.csv");
     const ppaRows = readManualCsv("developers/ppas.csv");
+    const commRows = readManualCsv("developers/commissioning.csv");
 
     // --- PPA tracker (newest first) ---
     const ppaTracker: PpaRecord[] = ppaRows
@@ -97,6 +102,54 @@ export const developersPipeline = definePipeline({
       underConstruction: byTotal.map((d) => d.underConstructionGw),
       pipeline: byTotal.map((d) => d.pipelineGw),
     };
+
+    // --- Commissioning guidance (group statements by tranche → revision history → slippage) ---
+    const byTranche = new Map<string, Record<string, string>[]>();
+    for (const r of commRows) {
+      const arr = byTranche.get(r.tranche_id) ?? [];
+      arr.push(r);
+      byTranche.set(r.tranche_id, arr);
+    }
+    const commissioning: CommissioningTranche[] = [...byTranche.entries()]
+      .map(([id, rows]) => {
+        // Statements oldest-first so history[0] is the original guidance.
+        const stmts = [...rows].sort(
+          (a, b) =>
+            a.stated_on.localeCompare(b.stated_on) ||
+            a.concall.localeCompare(b.concall),
+        );
+        const history: GuidanceStatement[] = stmts.map((s) => ({
+          statedOn: s.stated_on,
+          concall: s.concall,
+          targetPeriod: s.target_period,
+          status: s.status as CommissioningStatus,
+          ...(s.source_url?.trim() ? { sourceUrl: s.source_url.trim() } : {}),
+        }));
+        const first = stmts[0];
+        const last = stmts[stmts.length - 1];
+        return {
+          id,
+          developer: last.developer,
+          project: last.project,
+          tech: last.tech as TenderType,
+          capacityGw: Number(last.capacity_gw),
+          history,
+          originalTarget: first.target_period,
+          currentTarget: last.target_period,
+          status: last.status as CommissioningStatus,
+          slipQuarters: quarterDiff(first.target_period, last.target_period),
+          confidence: last.confidence as Confidence,
+          ...(last.note ? { sourceNote: last.note } : {}),
+          ...(last.source_url?.trim() ? { sourceUrl: last.source_url.trim() } : {}),
+        };
+      })
+      // Earliest current target first; then largest; then id for stability.
+      .sort(
+        (a, b) =>
+          fyQuarterIndex(a.currentTarget) - fyQuarterIndex(b.currentTarget) ||
+          b.capacityGw - a.capacityGw ||
+          a.id.localeCompare(b.id),
+      );
 
     // --- Portfolio mix (aggregate tech GW + share; BESS separate as GWh) ---
     const mixGw: Record<string, number> = { solar: 0, wind: 0, hybrid: 0, fdre: 0 };
@@ -199,6 +252,7 @@ export const developersPipeline = definePipeline({
     };
     for (const r of devRows) addSource(r.source, r.confidence as Confidence, ROSTER_AS_OF, r.source_url);
     for (const r of ppaRows) addSource(r.source, r.confidence as Confidence, r.date, r.source_url);
+    for (const r of commRows) addSource(r.source, r.confidence as Confidence, r.stated_on, r.source_url);
     const sources: SourceRef[] = [...srcMap.values()]
       .map((s) => ({
         name: s.name,
@@ -220,6 +274,7 @@ export const developersPipeline = definePipeline({
       portfolioMix,
       bessGwh,
       ppaTracker,
+      commissioning,
     };
 
     writeSnapshot<DevelopersData>("developers", "portfolio", {
@@ -232,6 +287,7 @@ export const developersPipeline = definePipeline({
         "FY30 targets and tech-mix splits are company disclosures / investor presentations; PPA-signed GW is derived from the PPA tracker.",
         "The PPA tracker lists real SECI / NTPC / SJVN auction signings (awarded MW, ₹/kWh) sourced from SECI results & trade press.",
         "BESS is tracked in GWh and excluded from the GW-share portfolio donut.",
+        "Commissioning guidance is captured per capacity tranche from company concalls / investor disclosures, keeping each revision so slippage (a pushed-out COD) is tracked; lower-confidence rows are Munshot estimates.",
       ],
       data,
     });

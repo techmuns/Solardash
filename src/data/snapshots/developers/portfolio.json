@@ -58,6 +58,902 @@
         1.5
       ]
     },
+    "commissioning": [
+      {
+        "capacityGw": 2.15,
+        "confidence": "high",
+        "currentTarget": "Q1FY26",
+        "developer": "ReNew Energy Global",
+        "history": [
+          {
+            "concall": "FY24 results",
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1848763/000095017025086534/rnw-ex99_1.htm",
+            "statedOn": "2024-06-05",
+            "status": "delayed",
+            "targetPeriod": "Q4FY25"
+          },
+          {
+            "concall": "FY25 results",
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1848763/000095017025086534/rnw-ex99_1.htm",
+            "statedOn": "2025-05-20",
+            "status": "delayed",
+            "targetPeriod": "Q1FY26"
+          }
+        ],
+        "id": "RENEW-FY25",
+        "originalTarget": "Q4FY25",
+        "project": "FY25 utility build (solar + wind)",
+        "slipQuarters": 1,
+        "sourceNote": "Guided 1.9-2.4 GW COD by end-FY25 but only 1.48 GW commissioned; ~600 MW evacuation-dependent slipped, ~466 MW COD'd just after year-end.",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1848763/000095017025086534/rnw-ex99_1.htm",
+        "status": "delayed",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 10.08,
+        "confidence": "medium",
+        "currentTarget": "Q2FY26",
+        "developer": "Greenko",
+        "history": [
+          {
+            "concall": "Original EPC schedule",
+            "sourceUrl": "https://powerline.net.in/2025/08/18/addressing-intermittency-greenkos-irep-seeks-to-set-an-example-in-the-energy-storage-space/",
+            "statedOn": "2024-06-05",
+            "status": "delayed",
+            "targetPeriod": "Q3FY25"
+          },
+          {
+            "concall": "2025 press update",
+            "sourceUrl": "https://powerline.net.in/2025/08/18/addressing-intermittency-greenkos-irep-seeks-to-set-an-example-in-the-energy-storage-space/",
+            "statedOn": "2025-11-08",
+            "status": "commissioned",
+            "targetPeriod": "Q2FY26"
+          }
+        ],
+        "id": "GK-PINNAPURAM",
+        "originalTarget": "Q3FY25",
+        "project": "Pinnapuram IRESP pumped storage (AP)",
+        "slipQuarters": 3,
+        "sourceNote": "GWh. 1,680 MW / 10.08 GWh PSP; 5 of 8 units commissioned by Jul-2025, full plant ~Sep-2025 - modest slip from an original Dec-2024 target.",
+        "sourceUrl": "https://powerline.net.in/2025/08/18/addressing-intermittency-greenkos-irep-seeks-to-set-an-example-in-the-energy-storage-space/",
+        "status": "commissioned",
+        "tech": "bess"
+      },
+      {
+        "capacityGw": 0.3,
+        "confidence": "high",
+        "currentTarget": "Q3FY26",
+        "developer": "Avaada Energy",
+        "history": [
+          {
+            "concall": "ICRA (initial)",
+            "sourceUrl": "https://www.icra.in/Rating/ShowRationalReportFilePdf/138802",
+            "statedOn": "2025-08-05",
+            "status": "delayed",
+            "targetPeriod": "Q2FY26"
+          },
+          {
+            "concall": "ICRA (Nov-2025)",
+            "sourceUrl": "https://www.icra.in/Rating/ShowRationalReportFilePdf/138802",
+            "statedOn": "2025-11-08",
+            "status": "delayed",
+            "targetPeriod": "Q3FY26"
+          }
+        ],
+        "id": "AVAADA-INCLEAN",
+        "originalTarget": "Q2FY26",
+        "project": "Avaada Inclean 300 MW solar (Gujarat, DVC PPA)",
+        "slipQuarters": 1,
+        "sourceNote": "SCoD slipped ~3.5 months (14-Sep-25 -> 31-Dec-25) per ICRA; 25-yr DVC PPA at Rs2.70/kWh, 96% promoter equity infused.",
+        "sourceUrl": "https://www.icra.in/Rating/ShowRationalReportFilePdf/138802",
+        "status": "delayed",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 5.05,
+        "confidence": "high",
+        "currentTarget": "Q4FY26",
+        "developer": "Adani Green Energy",
+        "history": [
+          {
+            "concall": "FY26 results",
+            "sourceUrl": "https://www.adani.com/newsroom/media-releases/adani-green-energy-delivers-on-5-gw-commitment-in-fy26",
+            "statedOn": "2026-03-31",
+            "status": "commissioned",
+            "targetPeriod": "Q4FY26"
+          }
+        ],
+        "id": "AGEL-FY26",
+        "originalTarget": "Q4FY26",
+        "project": "FY26 greenfield build (Khavda-led)",
+        "slipQuarters": 0,
+        "sourceNote": "Delivered 5.05 GW greenfield in FY26 (3.41 solar + 0.68 Khavda wind + 0.96 hybrid); op base 14.2->19.3 GW. Met the 5 GW commitment.",
+        "sourceUrl": "https://www.adani.com/newsroom/media-releases/adani-green-energy-delivers-on-5-gw-commitment-in-fy26",
+        "status": "commissioned",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 3,
+        "confidence": "high",
+        "currentTarget": "Q4FY26",
+        "developer": "Adani Green Energy",
+        "history": [
+          {
+            "concall": "Q2 FY26 concall",
+            "sourceUrl": "https://www.saurenergy.com/solar/adani-green-q3-concall-slowdown-explained-11035627",
+            "statedOn": "2025-11-08",
+            "status": "delayed",
+            "targetPeriod": "Q2FY26"
+          },
+          {
+            "concall": "Q3 FY26 concall",
+            "sourceUrl": "https://www.saurenergy.com/solar/adani-green-q3-concall-slowdown-explained-11035627",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q4FY26"
+          }
+        ],
+        "id": "AGEL-KHAVDA-EVAC",
+        "originalTarget": "Q2FY26",
+        "project": "Khavda capacity awaiting grid evacuation",
+        "slipQuarters": 2,
+        "sourceNote": "~4.8 GW ran as merchant/infirm for want of evacuation; 2-3 tranches guided for H1FY26 slipped; Q3FY26 re-guided up to 3 GW from Q4FY26, 14 GW Khavda evacuation by Mar-2027.",
+        "sourceUrl": "https://www.saurenergy.com/solar/adani-green-q3-concall-slowdown-explained-11035627",
+        "status": "delayed",
+        "tech": "hybrid"
+      },
+      {
+        "capacityGw": 2.4,
+        "confidence": "high",
+        "currentTarget": "Q4FY26",
+        "developer": "ReNew Energy Global",
+        "history": [
+          {
+            "concall": "FY26 results",
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1848763/000119312526155997/rnw-ex99_1.htm",
+            "statedOn": "2026-03-31",
+            "status": "commissioned",
+            "targetPeriod": "Q4FY26"
+          }
+        ],
+        "id": "RENEW-FY26",
+        "originalTarget": "Q4FY26",
+        "project": "FY26 utility build (solar + wind + BESS)",
+        "slipQuarters": 0,
+        "sourceNote": "Commissioned ~2.4 GW (top end of the 1.8-2.4 GW guide raised at Q3 FY26); highest annual in company history, op base ~12.6 GW.",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1848763/000119312526155997/rnw-ex99_1.htm",
+        "status": "commissioned",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 0.45,
+        "confidence": "high",
+        "currentTarget": "Q4FY26",
+        "developer": "ACME Solar Holdings",
+        "history": [
+          {
+            "concall": "FY26 results",
+            "sourceUrl": "https://www.acmesolar.in/assets/pdf/Results-and-Presentations/Investors-Presentation/Q4_FY_26_Investor_Presentation.pdf",
+            "statedOn": "2026-03-31",
+            "status": "commissioned",
+            "targetPeriod": "Q4FY26"
+          }
+        ],
+        "id": "ACME-FY26",
+        "originalTarget": "Q4FY26",
+        "project": "FY26 generation build (Sikar solar + wind)",
+        "slipQuarters": 0,
+        "sourceNote": "450 MW FY26 generation guidance held from Q1 FY26 and delivered; operational fleet reached 2,982 MW at 31-Mar-26 - a rare Indian-IPP target that did NOT slip.",
+        "sourceUrl": "https://www.acmesolar.in/assets/pdf/Results-and-Presentations/Investors-Presentation/Q4_FY_26_Investor_Presentation.pdf",
+        "status": "commissioned",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 0.26,
+        "confidence": "high",
+        "currentTarget": "Q4FY26",
+        "developer": "Juniper Green Energy",
+        "history": [
+          {
+            "concall": "FDRE commissioning PR",
+            "sourceUrl": "https://www.pv-magazine-india.com/2026/04/20/indias-first-fdre-project-enters-commissioning-phase/",
+            "statedOn": "2026-03-31",
+            "status": "commissioned",
+            "targetPeriod": "Q4FY26"
+          }
+        ],
+        "id": "JU-SJVN-FDRE",
+        "originalTarget": "Q4FY26",
+        "project": "SJVN FDRE - India's first (259 MWp solar + BESS)",
+        "slipQuarters": 0,
+        "sourceNote": "259 MWp solar entered COD Mar-2026; first developer under SJVN's FDRE tender to begin commissioning, supplies Haryana.",
+        "sourceUrl": "https://www.pv-magazine-india.com/2026/04/20/indias-first-fdre-project-enters-commissioning-phase/",
+        "status": "commissioned",
+        "tech": "fdre"
+      },
+      {
+        "capacityGw": 0.2,
+        "confidence": "high",
+        "currentTarget": "Q4FY26",
+        "developer": "Avaada Energy",
+        "history": [
+          {
+            "concall": "ICRA (Mar-2026)",
+            "sourceUrl": "https://www.icra.in/Rating/ShowRationalReportFilePdf/141791",
+            "statedOn": "2026-03-31",
+            "status": "commissioned",
+            "targetPeriod": "Q4FY26"
+          }
+        ],
+        "id": "AVAADA-GJSUS",
+        "originalTarget": "Q4FY26",
+        "project": "Avaada GJSustainable 200 MW solar (SECI PPA)",
+        "slipQuarters": 0,
+        "sourceNote": "108 MW of 200 MW COD Feb-2026, balance ~92 MW by Apr-2026 per revised SECI SCoD; ICRA upgraded on de-risking.",
+        "sourceUrl": "https://www.icra.in/Rating/ShowRationalReportFilePdf/141791",
+        "status": "commissioned",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 5,
+        "confidence": "high",
+        "currentTarget": "Q1FY27",
+        "developer": "NTPC Green Energy",
+        "history": [
+          {
+            "concall": "Q1 FY26 concall",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/ntpc-completes-12-gw-khavda-ii-solar-project-with-final-105-mw-tranche-11882161",
+            "statedOn": "2025-08-05",
+            "status": "on-track",
+            "targetPeriod": "Q4FY26"
+          },
+          {
+            "concall": "Q3 FY26 concall",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/ntpc-completes-12-gw-khavda-ii-solar-project-with-final-105-mw-tranche-11882161",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q1FY27"
+          }
+        ],
+        "id": "NGEL-FY26",
+        "originalTarget": "Q4FY26",
+        "project": "FY26 utility-scale build",
+        "slipQuarters": 1,
+        "sourceNote": "5 GW FY26 target held from IPO but delivered ~4.2 GW (~15% miss); the ~0.8 GW tail incl. Khavda-II final phases slipped into Q1 FY27.",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/ntpc-completes-12-gw-khavda-ii-solar-project-with-final-105-mw-tranche-11882161",
+        "status": "delayed",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 2.3,
+        "confidence": "high",
+        "currentTarget": "Q1FY27",
+        "developer": "ACME Solar Holdings",
+        "history": [
+          {
+            "concall": "Q1 FY26 concall",
+            "sourceUrl": "https://www.acmesolar.in/assets/pdf/Webcasts-and-Transcripts/08.05.2026_Q4_FY26_Earning_Call_Transcript.pdf",
+            "statedOn": "2025-08-05",
+            "status": "on-track",
+            "targetPeriod": "Q4FY26"
+          },
+          {
+            "concall": "Q3 FY26 concall",
+            "sourceUrl": "https://www.acmesolar.in/assets/pdf/Webcasts-and-Transcripts/08.05.2026_Q4_FY26_Earning_Call_Transcript.pdf",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q1FY27"
+          }
+        ],
+        "id": "ACME-BESS",
+        "originalTarget": "Q4FY26",
+        "project": "Merchant BESS (Fatehgarh / Bikaner)",
+        "slipQuarters": 1,
+        "sourceNote": "GWh. Merchant BESS reshaped (2.5->1->2 GWh across Q1-Q3); ~2.3 GWh finally commissioned in phases Feb-May 2026, spilling into Q1 FY27 for peak-tariff arbitrage.",
+        "sourceUrl": "https://www.acmesolar.in/assets/pdf/Webcasts-and-Transcripts/08.05.2026_Q4_FY26_Earning_Call_Transcript.pdf",
+        "status": "delayed",
+        "tech": "bess"
+      },
+      {
+        "capacityGw": 1.2,
+        "confidence": "medium",
+        "currentTarget": "Q1FY27",
+        "developer": "NTPC Green Energy",
+        "history": [
+          {
+            "concall": "Q3 FY26 (5 GW plan)",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/ntpc-completes-12-gw-khavda-ii-solar-project-with-final-105-mw-tranche-11882161",
+            "statedOn": "2026-02-10",
+            "status": "on-track",
+            "targetPeriod": "Q4FY26"
+          },
+          {
+            "concall": "FY26 results",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/ntpc-completes-12-gw-khavda-ii-solar-project-with-final-105-mw-tranche-11882161",
+            "statedOn": "2026-03-31",
+            "status": "delayed",
+            "targetPeriod": "Q1FY27"
+          }
+        ],
+        "id": "NGEL-KHAVDA2",
+        "originalTarget": "Q4FY26",
+        "project": "Khavda-II solar (1.2 GW, 8 phases)",
+        "slipQuarters": 1,
+        "sourceNote": "270 MW COD 11 Mar 2026; final 105 MW COD 28 May 2026 - last phases landed just past FY26, part of the ~0.8 GW shortfall.",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/ntpc-completes-12-gw-khavda-ii-solar-project-with-final-105-mw-tranche-11882161",
+        "status": "delayed",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 0.305,
+        "confidence": "high",
+        "currentTarget": "Q1FY27",
+        "developer": "Juniper Green Energy",
+        "history": [
+          {
+            "concall": "GUVNL PPA SCODs",
+            "sourceUrl": "https://www.pv-magazine-india.com/2026/06/10/juniper-green-commissions-305-mw-of-renewable-energy-capacity-in-gujarat/",
+            "statedOn": "2025-08-05",
+            "status": "on-track",
+            "targetPeriod": "Q2FY27"
+          },
+          {
+            "concall": "Commissioning update",
+            "sourceUrl": "https://www.pv-magazine-india.com/2026/06/10/juniper-green-commissions-305-mw-of-renewable-energy-capacity-in-gujarat/",
+            "statedOn": "2026-02-10",
+            "status": "on-track",
+            "targetPeriod": "Q1FY27"
+          }
+        ],
+        "id": "JU-GUVNL",
+        "originalTarget": "Q2FY27",
+        "project": "GUVNL Gujarat hybrid + wind (305 MW)",
+        "slipQuarters": -1,
+        "sourceNote": "183 MWp solar + ~122 MW wind commissioned 30-148 days AHEAD of SCOD - early delivery.",
+        "sourceUrl": "https://www.pv-magazine-india.com/2026/06/10/juniper-green-commissions-305-mw-of-renewable-energy-capacity-in-gujarat/",
+        "status": "on-track",
+        "tech": "hybrid"
+      },
+      {
+        "capacityGw": 3,
+        "confidence": "high",
+        "currentTarget": "Q2FY27",
+        "developer": "Serentica Renewables",
+        "history": [
+          {
+            "concall": "CEO interview (May-25)",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/serentica-builds-3-gw-renewable-portfolio-in-26-months-eyes-next-3-gw-12126633",
+            "statedOn": "2025-05-20",
+            "status": "on-track",
+            "targetPeriod": "Q3FY26"
+          },
+          {
+            "concall": "Feb-26 guidance",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/serentica-builds-3-gw-renewable-portfolio-in-26-months-eyes-next-3-gw-12126633",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q2FY27"
+          }
+        ],
+        "id": "SER-3GW",
+        "originalTarget": "Q3FY26",
+        "project": "First 3 GW RTC portfolio (solar + wind)",
+        "slipQuarters": 3,
+        "sourceNote": "Ramp slipped ~2-3Q: May-25 guide of ~3.5 GW by CY2025 became 2.5 GW by Mar-26, and 3 GW only reached Jul-2026.",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/serentica-builds-3-gw-renewable-portfolio-in-26-months-eyes-next-3-gw-12126633",
+        "status": "delayed",
+        "tech": "rtc"
+      },
+      {
+        "capacityGw": 11,
+        "confidence": "medium",
+        "currentTarget": "Q3FY27",
+        "developer": "Greenko",
+        "history": [
+          {
+            "concall": "Project announcement",
+            "sourceUrl": "https://www.alcircle.com/news/india-plans-over-tenfold-increase-in-pumped-storage-hydropower-capacity-backed-by-greenko-adani-jsw-114269",
+            "statedOn": "2024-06-05",
+            "status": "delayed",
+            "targetPeriod": "Q3FY25"
+          },
+          {
+            "concall": "2025 press update",
+            "sourceUrl": "https://www.alcircle.com/news/india-plans-over-tenfold-increase-in-pumped-storage-hydropower-capacity-backed-by-greenko-adani-jsw-114269",
+            "statedOn": "2025-11-08",
+            "status": "delayed",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "GK-GANDHISAGAR",
+        "originalTarget": "Q3FY25",
+        "project": "Gandhi Sagar PSP (MP)",
+        "slipQuarters": 8,
+        "sourceNote": "GWh. 1,440->1,920 MW / ~11 GWh; 2025 press guides commissioning to CY2026 vs an originally announced Dec-2024 COD - ~1.5-2 year slip.",
+        "sourceUrl": "https://www.alcircle.com/news/india-plans-over-tenfold-increase-in-pumped-storage-hydropower-capacity-backed-by-greenko-adani-jsw-114269",
+        "status": "delayed",
+        "tech": "bess"
+      },
+      {
+        "capacityGw": 0.3,
+        "confidence": "high",
+        "currentTarget": "Q3FY27",
+        "developer": "Sembcorp Green Infra",
+        "history": [
+          {
+            "concall": "Nov-2025 deck",
+            "sourceUrl": "https://www.sembcorp.com/media/yrcplozn/sci-investor-presentation-nov-2025.pdf",
+            "statedOn": "2025-11-08",
+            "status": "on-track",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "SC-NHPC300",
+        "originalTarget": "Q3FY27",
+        "project": "300 MW solar (NHPC offtake)",
+        "slipQuarters": 0,
+        "sourceNote": "Nearest-term named block, listed at '2026'; FY25 results describe a 300 MW India solar acquisition completing by end-1H2026. Year unchanged across decks.",
+        "sourceUrl": "https://www.sembcorp.com/media/yrcplozn/sci-investor-presentation-nov-2025.pdf",
+        "status": "on-track",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 10,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "Adani Green Energy",
+        "history": [
+          {
+            "concall": "FY26 concall",
+            "sourceUrl": "https://www.whalesbook.com/news/English/renewables/Adani-Green-Plans-10-GWh-Storage-Push-Amid-High-Debt-Valuation-Worries/69f16ed608235f0c2a157e36",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "AGEL-BESS",
+        "originalTarget": "Q4FY27",
+        "project": "Khavda BESS / storage",
+        "slipQuarters": 0,
+        "sourceNote": "GWh. FY27 BESS guidance RAISED from >7 GWh to >10 GWh; 3.37 GWh already live (world's largest single-location outside China), soaking up curtailed Khavda output.",
+        "sourceUrl": "https://www.whalesbook.com/news/English/renewables/Adani-Green-Plans-10-GWh-Storage-Push-Amid-High-Debt-Valuation-Worries/69f16ed608235f0c2a157e36",
+        "status": "on-track",
+        "tech": "bess"
+      },
+      {
+        "capacityGw": 8,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "NTPC Green Energy",
+        "history": [
+          {
+            "concall": "FY26 concall",
+            "sourceUrl": "https://www.angelone.in/news/stocks/ntpc-aims-for-8-gw-green-energy-boost-in-fy27-reports",
+            "statedOn": "2026-03-31",
+            "status": "at-risk",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "NGEL-FY27",
+        "originalTarget": "Q4FY27",
+        "project": "FY27 build (guided ~8 GW)",
+        "slipQuarters": 0,
+        "sourceNote": "8 GW FY27 reaffirmed since IPO but ~1.9x the 4.2 GW just delivered; NGEL missed FY25 and FY26 and is heavily Q4-backloaded.",
+        "sourceUrl": "https://www.angelone.in/news/stocks/ntpc-aims-for-8-gw-green-energy-boost-in-fy27-reports",
+        "status": "at-risk",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 4.75,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "Adani Green Energy",
+        "history": [
+          {
+            "concall": "FY26 concall",
+            "sourceUrl": "https://www.saurenergy.com/solar/adani-green-q3-concall-slowdown-explained-11035627",
+            "statedOn": "2026-03-31",
+            "status": "at-risk",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "AGEL-FY27",
+        "originalTarget": "Q4FY27",
+        "project": "FY27 greenfield build (grid-capped)",
+        "slipQuarters": 0,
+        "sourceNote": "Guided 4.5-5.0 GW for FY27 - a deliberate self-cap vs 7-8 GW capability, explicitly contingent on grid evacuation; below the ~7.5 GW/yr the 50GW-by-2030 goal implies.",
+        "sourceUrl": "https://www.saurenergy.com/solar/adani-green-q3-concall-slowdown-explained-11035627",
+        "status": "at-risk",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 3,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "JSW Neo Energy",
+        "history": [
+          {
+            "concall": "Q1 FY26 concall",
+            "sourceUrl": "https://www.jswenergy.in/wp-content/uploads/2026/05/JSWEL_Results-Presentation_Q4FY26.pdf",
+            "statedOn": "2025-08-05",
+            "status": "on-track",
+            "targetPeriod": "Q4FY26"
+          },
+          {
+            "concall": "Q3 FY26 concall",
+            "sourceUrl": "https://www.jswenergy.in/wp-content/uploads/2026/05/JSWEL_Results-Presentation_Q4FY26.pdf",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "JSWNEO-FY26",
+        "originalTarget": "Q4FY26",
+        "project": "FY26 organic RE build",
+        "slipQuarters": 4,
+        "sourceNote": "3-4 GW FY26 organic guide softened to '>15 GW total by Mar-26'; FY26 closed with only ~1.2 GW organic, the ~2 GW miss rolled into FY27 (now guided 3 GW).",
+        "sourceUrl": "https://www.jswenergy.in/wp-content/uploads/2026/05/JSWEL_Results-Presentation_Q4FY26.pdf",
+        "status": "delayed",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 2,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "ReNew Energy Global",
+        "history": [
+          {
+            "concall": "FY26 results",
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1848763/000119312526227847/rnw-ex99_1.htm",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "RENEW-FY27",
+        "originalTarget": "Q4FY27",
+        "project": "FY27 utility build",
+        "slipQuarters": 0,
+        "sourceNote": "Forward guide to complete 1.6-2.4 GW by FY27; same cadence as delivered FY26. Newly issued, no prior period to slip from.",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1848763/000119312526227847/rnw-ex99_1.htm",
+        "status": "on-track",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 1.56,
+        "confidence": "medium",
+        "currentTarget": "Q4FY27",
+        "developer": "Avaada Energy",
+        "history": [
+          {
+            "concall": "FY26 disclosures",
+            "sourceUrl": "https://www.pv-magazine-india.com/2026/06/01/avaada-group-secures-950-million-debt-financing-from-consortium-of-global-and-domestic-banks/",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "AVAADA-PUGAL",
+        "originalTarget": "Q4FY27",
+        "project": "Pugal FDRE - 1,560 MWp solar + 2,500 MWh BESS (SJVN)",
+        "slipQuarters": 0,
+        "sourceNote": "India's largest BESS-FDRE; PM Modi foundation stone Sep-2025, US$950m financial closure; commissioning guided across FY27-FY28.",
+        "sourceUrl": "https://www.pv-magazine-india.com/2026/06/01/avaada-group-secures-950-million-debt-financing-from-consortium-of-global-and-domestic-banks/",
+        "status": "on-track",
+        "tech": "fdre"
+      },
+      {
+        "capacityGw": 1.5,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "ACME Solar Holdings",
+        "history": [
+          {
+            "concall": "FY26 concall",
+            "sourceUrl": "https://www.acmesolar.in/assets/pdf/Webcasts-and-Transcripts/08.05.2026_Q4_FY26_Earning_Call_Transcript.pdf",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "ACME-FY27",
+        "originalTarget": "Q4FY27",
+        "project": "FY27 program (1.5 GW gen + ~10 GWh BESS)",
+        "slipQuarters": 0,
+        "sourceNote": "1.5 GW contracted generation + ~10 GWh BESS, reiterated from Q3 FY26; timed to CTU substation charging with a ~1-quarter buffer. Full 3.3 GW book guided by FY28.",
+        "sourceUrl": "https://www.acmesolar.in/assets/pdf/Webcasts-and-Transcripts/08.05.2026_Q4_FY26_Earning_Call_Transcript.pdf",
+        "status": "on-track",
+        "tech": "hybrid"
+      },
+      {
+        "capacityGw": 0.5,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "Tata Power Renewable Energy",
+        "history": [
+          {
+            "concall": "Q2 FY26 deck",
+            "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+            "statedOn": "2025-11-08",
+            "status": "delayed",
+            "targetPeriod": "Q4FY26"
+          },
+          {
+            "concall": "Q3 FY26 deck",
+            "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "TPREL-MSEDCL",
+        "originalTarget": "Q4FY26",
+        "project": "MSEDCL Phase-IV hybrid (501 MW)",
+        "slipQuarters": 4,
+        "sourceNote": "'Expected Commissioning' slipped a full year FY26->FY27 across the Nov-25 to Feb-26 decks; 400 MW PPA at Rs3.60/kWh.",
+        "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+        "status": "delayed",
+        "tech": "hybrid"
+      },
+      {
+        "capacityGw": 0.1,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "JSW Neo Energy",
+        "history": [
+          {
+            "concall": "Q4 FY26 deck",
+            "sourceUrl": "https://www.jswenergy.in/wp-content/uploads/2026/05/JSWEL_Results-Presentation_Q4FY26.pdf",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "JSWNEO-KREDL-BESS",
+        "originalTarget": "Q4FY27",
+        "project": "KREDL solar + BESS",
+        "slipQuarters": 0,
+        "sourceNote": "GWh. Hard disclosed SCOD Jan-2027 (Q4FY27); tariff Rs4.31/kWh, BESPA signed.",
+        "sourceUrl": "https://www.jswenergy.in/wp-content/uploads/2026/05/JSWEL_Results-Presentation_Q4FY26.pdf",
+        "status": "on-track",
+        "tech": "bess"
+      },
+      {
+        "capacityGw": 0.07,
+        "confidence": "medium",
+        "currentTarget": "Q4FY27",
+        "developer": "Juniper Green Energy",
+        "history": [
+          {
+            "concall": "GUVNL PPA (Feb-24)",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/land-delays-row-issues-win-partial-relief-for-juniper-green-at-gerc-12063280",
+            "statedOn": "2024-06-05",
+            "status": "delayed",
+            "targetPeriod": "Q2FY26"
+          },
+          {
+            "concall": "GERC relief order",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/land-delays-row-issues-win-partial-relief-for-juniper-green-at-gerc-12063280",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "JU-KITE",
+        "originalTarget": "Q2FY26",
+        "project": "Kite 70 MW wind (GUVNL Wind Phase-V)",
+        "slipQuarters": 6,
+        "sourceNote": "304-day land-allotment delay + RoW/protests; GERC granted partial SCOD relief pushing it from ~Q2FY26 into FY27.",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/land-delays-row-issues-win-partial-relief-for-juniper-green-at-gerc-12063280",
+        "status": "delayed",
+        "tech": "wind"
+      },
+      {
+        "capacityGw": 1.317,
+        "confidence": "high",
+        "currentTarget": "Q1FY28",
+        "developer": "Tata Power Renewable Energy",
+        "history": [
+          {
+            "concall": "Q2 FY26 deck",
+            "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+            "statedOn": "2025-11-08",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          },
+          {
+            "concall": "Q3 FY26 deck",
+            "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q1FY28"
+          }
+        ],
+        "id": "TPREL-SJVN-FDRE",
+        "originalTarget": "Q4FY27",
+        "project": "SJVN FDRE (1,317 MW)",
+        "slipQuarters": 1,
+        "sourceNote": "Softened from flat 'FY27' full-COD to 'phase-wise from FY27', i.e. back-end tranches spill past FY27; largest block, 460 MW firm PPA.",
+        "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+        "status": "delayed",
+        "tech": "fdre"
+      },
+      {
+        "capacityGw": 10,
+        "confidence": "medium",
+        "currentTarget": "Q3FY28",
+        "developer": "Greenko",
+        "history": [
+          {
+            "concall": "2025 press update",
+            "sourceUrl": "https://www.mercomindia.com/greenko-seeks-epc-contractors-1260-mw-pumped-hydro-storage-project-karnataka",
+            "statedOn": "2025-11-08",
+            "status": "on-track",
+            "targetPeriod": "Q3FY28"
+          }
+        ],
+        "id": "GK-SAUNDATTI",
+        "originalTarget": "Q3FY28",
+        "project": "Saundatti IRESP PSP (Karnataka)",
+        "slipQuarters": 0,
+        "sourceNote": "GWh (approx). 1,260 MW standalone PSP; guided CY2027-28, EM equipment EPC awarded (GE Power, Mar-2025); no prior public COD slipped yet.",
+        "sourceUrl": "https://www.mercomindia.com/greenko-seeks-epc-contractors-1260-mw-pumped-hydro-storage-project-karnataka",
+        "status": "on-track",
+        "tech": "bess"
+      },
+      {
+        "capacityGw": 0.45,
+        "confidence": "medium",
+        "currentTarget": "Q3FY28",
+        "developer": "Sembcorp Green Infra",
+        "history": [
+          {
+            "concall": "Nov-2025 deck",
+            "sourceUrl": "https://www.sembcorp.com/media/yrcplozn/sci-investor-presentation-nov-2025.pdf",
+            "statedOn": "2025-11-08",
+            "status": "at-risk",
+            "targetPeriod": "Q3FY28"
+          }
+        ],
+        "id": "SC-HYBRID450",
+        "originalTarget": "Q3FY28",
+        "project": "450 MW wind-solar hybrid (SECI)",
+        "slipQuarters": 0,
+        "sourceNote": "Largest greenfield hybrid, guided '2027-2028' (COD ~24 mo from PPA); sits inside the UC block whose horizon has slipped, ICRA warns pipeline scale heightens delay risk.",
+        "sourceUrl": "https://www.sembcorp.com/media/yrcplozn/sci-investor-presentation-nov-2025.pdf",
+        "status": "at-risk",
+        "tech": "hybrid"
+      },
+      {
+        "capacityGw": 3,
+        "confidence": "high",
+        "currentTarget": "Q4FY28",
+        "developer": "Serentica Renewables",
+        "history": [
+          {
+            "concall": "Feb-26 guidance",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/serentica-builds-3-gw-renewable-portfolio-in-26-months-eyes-next-3-gw-12126633",
+            "statedOn": "2026-02-10",
+            "status": "on-track",
+            "targetPeriod": "Q4FY28"
+          }
+        ],
+        "id": "SER-NEXT3GW",
+        "originalTarget": "Q4FY28",
+        "project": "Next 3 GW (renewables + storage)",
+        "slipQuarters": 0,
+        "sourceNote": "3 GW RE+storage under construction, guided COD over 'next 12-15 months' (~H2 CY2027); Feb-26 '5 GW by FY27' now looks to slip into FY28.",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/serentica-builds-3-gw-renewable-portfolio-in-26-months-eyes-next-3-gw-12126633",
+        "status": "on-track",
+        "tech": "hybrid"
+      },
+      {
+        "capacityGw": 1.93,
+        "confidence": "high",
+        "currentTarget": "Q4FY28",
+        "developer": "Sembcorp Green Infra",
+        "history": [
+          {
+            "concall": "FY24 op-data",
+            "sourceUrl": "https://www.sembcorp.com/media/fidmtsut/sci_fy2025_operational-data.pdf",
+            "statedOn": "2025-02-27",
+            "status": "on-track",
+            "targetPeriod": "Q3FY28"
+          },
+          {
+            "concall": "FY25 op-data",
+            "sourceUrl": "https://www.sembcorp.com/media/fidmtsut/sci_fy2025_operational-data.pdf",
+            "statedOn": "2026-02-25",
+            "status": "delayed",
+            "targetPeriod": "Q4FY28"
+          }
+        ],
+        "id": "SC-SOLAR-UC",
+        "originalTarget": "Q3FY28",
+        "project": "India greenfield solar under construction (~1.93 GW)",
+        "slipQuarters": 1,
+        "sourceNote": "Completion tail pushed from <=2027 out to 2030: Dec-24 op-data had UC solar done by 2027; Dec-25 op-data shows 918 MW @2028 and 300 MW @2030. ICRA flags delay risk.",
+        "sourceUrl": "https://www.sembcorp.com/media/fidmtsut/sci_fy2025_operational-data.pdf",
+        "status": "delayed",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 1.6,
+        "confidence": "modelled",
+        "currentTarget": "Q4FY28",
+        "developer": "JSW Neo Energy",
+        "history": [
+          {
+            "concall": "Q4 FY26 deck",
+            "sourceUrl": "https://www.jswenergy.in/wp-content/uploads/2026/05/JSWEL_Results-Presentation_Q4FY26.pdf",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "Q4FY28"
+          }
+        ],
+        "id": "JSWNEO-MSEDCL",
+        "originalTarget": "Q4FY28",
+        "project": "MSEDCL Hybrid III & IV (1.6 GW)",
+        "slipQuarters": 0,
+        "sourceNote": "1,200 MW contracted / 1,600 MW installed; decks give no per-project COD, FY28 modelled off the 30 GW-by-2030 path.",
+        "sourceUrl": "https://www.jswenergy.in/wp-content/uploads/2026/05/JSWEL_Results-Presentation_Q4FY26.pdf",
+        "status": "on-track",
+        "tech": "hybrid"
+      },
+      {
+        "capacityGw": 0.585,
+        "confidence": "high",
+        "currentTarget": "Q4FY28",
+        "developer": "Tata Power Renewable Energy",
+        "history": [
+          {
+            "concall": "Q3 FY26 deck",
+            "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+            "statedOn": "2026-02-10",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          },
+          {
+            "concall": "Q4 FY26 deck",
+            "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+            "statedOn": "2026-03-31",
+            "status": "delayed",
+            "targetPeriod": "Q4FY28"
+          }
+        ],
+        "id": "TPREL-NTPC-FDRE",
+        "originalTarget": "Q4FY27",
+        "project": "NTPC FDRE (585 MW)",
+        "slipQuarters": 4,
+        "sourceNote": "COD guidance pushed a full year FY27->FY28 in the May-26 deck; 200 MW firm PPA at Rs4.71/kWh.",
+        "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+        "status": "delayed",
+        "tech": "fdre"
+      },
+      {
+        "capacityGw": 0.272,
+        "confidence": "medium",
+        "currentTarget": "Q4FY28",
+        "developer": "Tata Power Renewable Energy",
+        "history": [
+          {
+            "concall": "Q3 FY26 deck",
+            "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+            "statedOn": "2026-02-10",
+            "status": "at-risk",
+            "targetPeriod": "Q4FY28"
+          }
+        ],
+        "id": "TPREL-SJVN-RTC",
+        "originalTarget": "Q4FY28",
+        "project": "SJVN RTC hybrid (272 MW)",
+        "slipQuarters": 0,
+        "sourceNote": "COD is '24 months post-PPA' but the 88 MW RTC PPA stayed UNSIGNED 15+ months after LoA, so the clock hasn't started - effectively stalled.",
+        "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
+        "status": "at-risk",
+        "tech": "rtc"
+      }
+    ],
     "kpis": [
       {
         "confidence": "medium",
@@ -431,10 +1327,53 @@
     "Roster operational/UC/pipeline capacities are FY26 company disclosures & investor presentations; lower-confidence rows are user-maintained estimates.",
     "FY30 targets and tech-mix splits are company disclosures / investor presentations; PPA-signed GW is derived from the PPA tracker.",
     "The PPA tracker lists real SECI / NTPC / SJVN auction signings (awarded MW, ₹/kWh) sourced from SECI results & trade press.",
-    "BESS is tracked in GWh and excluded from the GW-share portfolio donut."
+    "BESS is tracked in GWh and excluded from the GW-share portfolio donut.",
+    "Commissioning guidance is captured per capacity tranche from company concalls / investor disclosures, keeping each revision so slippage (a pushed-out COD) is tracked; lower-confidence rows are Munshot estimates."
   ],
   "section": "developers",
   "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "ACME Q4 FY26 concall",
+      "url": "https://www.acmesolar.in/assets/pdf/Webcasts-and-Transcripts/08.05.2026_Q4_FY26_Earning_Call_Transcript.pdf"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "ACME Q4 FY26 presentation",
+      "url": "https://www.acmesolar.in/assets/pdf/Results-and-Presentations/Investors-Presentation/Q4_FY_26_Investor_Presentation.pdf"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "AGEL FY26 concall",
+      "url": "https://www.saurenergy.com/solar/adani-green-q3-concall-slowdown-explained-11035627"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "AGEL FY26 concall",
+      "url": "https://www.whalesbook.com/news/English/renewables/Adani-Green-Plans-10-GWh-Storage-Push-Amid-High-Debt-Valuation-Worries/69f16ed608235f0c2a157e36"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "AGEL FY26 results",
+      "url": "https://www.adani.com/newsroom/media-releases/adani-green-energy-delivers-on-5-gw-commitment-in-fy26"
+    },
+    {
+      "asOf": "2026-02-10",
+      "confidence": "high",
+      "name": "AGEL Q3 FY26 concall",
+      "url": "https://www.saurenergy.com/solar/adani-green-q3-concall-slowdown-explained-11035627"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Avaada financing PR",
+      "url": "https://www.pv-magazine-india.com/2026/06/01/avaada-group-secures-950-million-debt-financing-from-consortium-of-global-and-domestic-banks/"
+    },
     {
       "asOf": "2026-03-31",
       "confidence": "medium",
@@ -463,6 +1402,42 @@
       "name": "Company May 2026"
     },
     {
+      "asOf": "2026-02-10",
+      "confidence": "medium",
+      "name": "GERC SCOD-extension order",
+      "url": "https://www.saurenergy.com/solar-energy-news/land-delays-row-issues-win-partial-relief-for-juniper-green-at-gerc-12063280"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "medium",
+      "name": "Greenko / Mercom",
+      "url": "https://www.mercomindia.com/greenko-seeks-epc-contractors-1260-mw-pumped-hydro-storage-project-karnataka"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "medium",
+      "name": "Greenko / press update",
+      "url": "https://www.alcircle.com/news/india-plans-over-tenfold-increase-in-pumped-storage-hydropower-capacity-backed-by-greenko-adani-jsw-114269"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "medium",
+      "name": "Greenko project update",
+      "url": "https://powerline.net.in/2025/08/18/addressing-intermittency-greenkos-irep-seeks-to-set-an-example-in-the-energy-storage-space/"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "high",
+      "name": "ICRA rating rationale",
+      "url": "https://www.icra.in/Rating/ShowRationalReportFilePdf/138802"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "ICRA rating rationale",
+      "url": "https://www.icra.in/Rating/ShowRationalReportFilePdf/141791"
+    },
+    {
       "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "Investor Presentation"
@@ -473,10 +1448,70 @@
       "name": "Investor Presentation"
     },
     {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "JSW Energy Q4 FY26 deck",
+      "url": "https://www.jswenergy.in/wp-content/uploads/2026/05/JSWEL_Results-Presentation_Q4FY26.pdf"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "JSW Energy Q4 FY26 deck",
+      "url": "https://www.jswenergy.in/wp-content/uploads/2026/05/JSWEL_Results-Presentation_Q4FY26.pdf"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Juniper commissioning PR",
+      "url": "https://www.pv-magazine-india.com/2026/04/20/indias-first-fdre-project-enters-commissioning-phase/"
+    },
+    {
+      "asOf": "2026-02-10",
+      "confidence": "high",
+      "name": "Juniper commissioning PR",
+      "url": "https://www.pv-magazine-india.com/2026/06/10/juniper-green-commissions-305-mw-of-renewable-energy-capacity-in-gujarat/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "NGEL COD disclosure",
+      "url": "https://www.saurenergy.com/solar-energy-news/ntpc-completes-12-gw-khavda-ii-solar-project-with-final-105-mw-tranche-11882161"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "NGEL Q4 FY26 concall",
+      "url": "https://www.angelone.in/news/stocks/ntpc-aims-for-8-gw-green-energy-boost-in-fy27-reports"
+    },
+    {
+      "asOf": "2026-02-10",
+      "confidence": "high",
+      "name": "NGEL Q4 FY26 investor call",
+      "url": "https://www.saurenergy.com/solar-energy-news/ntpc-completes-12-gw-khavda-ii-solar-project-with-final-105-mw-tranche-11882161"
+    },
+    {
       "asOf": "2024-12-23",
       "confidence": "high",
       "name": "NTPC / pv-magazine",
       "url": "https://www.pv-magazine.com/2024/12/24/bharat-petroleum-wins-150-mw-of-solar-in-ntpc-auction-with-inr-2-55-kwh-bid/"
+    },
+    {
+      "asOf": "2025-05-20",
+      "confidence": "high",
+      "name": "ReNew FY25 6-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848763/000095017025086534/rnw-ex99_1.htm"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "ReNew FY26 6-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848763/000119312526155997/rnw-ex99_1.htm"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "ReNew Q4 FY26 6-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848763/000119312526227847/rnw-ex99_1.htm"
     },
     {
       "asOf": "2025-02-15",
@@ -515,10 +1550,46 @@
       "url": "https://www.mercomindia.com/purvah-sael-among-winners-of-secis-2-gw-solar-4-gwh-energy-storage-auction"
     },
     {
+      "asOf": "2026-02-25",
+      "confidence": "high",
+      "name": "Sembcorp FY25 operational data",
+      "url": "https://www.sembcorp.com/media/fidmtsut/sci_fy2025_operational-data.pdf"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "high",
+      "name": "Sembcorp Nov-2025 deck",
+      "url": "https://www.sembcorp.com/media/yrcplozn/sci-investor-presentation-nov-2025.pdf"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "medium",
+      "name": "Sembcorp Nov-2025 deck",
+      "url": "https://www.sembcorp.com/media/yrcplozn/sci-investor-presentation-nov-2025.pdf"
+    },
+    {
+      "asOf": "2026-02-10",
+      "confidence": "high",
+      "name": "Serentica milestone PR",
+      "url": "https://www.saurenergy.com/solar-energy-news/serentica-builds-3-gw-renewable-portfolio-in-26-months-eyes-next-3-gw-12126633"
+    },
+    {
       "asOf": "2024-11-15",
       "confidence": "high",
       "name": "SJVN / Mercom",
       "url": "https://www.mercomindia.com/daily-news-sjvns-1-2-gw-solar-auction-winners-announced"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "TPREL Q4 FY26 analyst deck",
+      "url": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf"
+    },
+    {
+      "asOf": "2026-02-10",
+      "confidence": "medium",
+      "name": "TPREL Q4 FY26 analyst deck",
+      "url": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf"
     }
   ],
   "updatedAt": "2026-03-31"

@@ -1,0 +1,47 @@
+name: Refresh commissioning guidance
+
+# Commissioning guidance is a maintained feed (concalls are audio + PDF, so there
+# is no scraper). This Action normalizes manual-data/developers/commissioning.csv
+# — validating rows, upserting by tranche+date, canonically sorting — then
+# rebuilds the developers snapshot and commits only if something changed. Run it
+# after hand-editing the CSV, or on the monthly cron as a safety net.
+
+on:
+  schedule:
+    - cron: '0 6 2 * *'      # 2nd of each month, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-concalls
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Verify the normalizer
+        run: npx tsx scripts/ingest/concalls.verify.ts
+      - name: Normalize commissioning guidance
+        run: npx tsx scripts/ingest/concalls.ts
+      - name: Rebuild snapshots
+        run: npm run data:build
+      - name: Commit & push if changed
+        run: |
+          git config user.name "solardash-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add manual-data/developers/commissioning.csv src/data/snapshots/developers
+          if git diff --cached --quiet; then
+            echo "No commissioning-guidance changes."
+          else
+            git commit -m "chore(data): refresh commissioning guidance"
+            git push
+          fi
