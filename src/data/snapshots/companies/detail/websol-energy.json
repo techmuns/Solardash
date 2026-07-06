@@ -22,7 +22,7 @@
       }
     ],
     "cellGw": 1.2,
-    "cmp": 99.9,
+    "cmp": 103,
     "confidence": "medium",
     "ebitdaMarginPct": 41,
     "hasDetail": true,
@@ -30,7 +30,7 @@
     "name": "Websol Energy Systems",
     "orderBookCr": 1160,
     "patFy26Cr": 303,
-    "peX": 14.3,
+    "peX": 14.7,
     "quarterly": [
       {
         "ebitda": 68,
@@ -87,8 +87,8 @@
     "type": "manufacturer",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 6.89,
-      "peX": 14.3
+      "pbX": 7.1,
+      "peX": 14.7
     }
   },
   "dataset": "detail/websol-energy",

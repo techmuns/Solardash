@@ -62,7 +62,7 @@
       }
     ],
     "cellGw": 3.6,
-    "cmp": 1030,
+    "cmp": 1022,
     "confidence": "medium",
     "ebitdaMarginPct": 30,
     "hasDetail": true,
@@ -71,7 +71,7 @@
     "orderBookCr": 13720,
     "orderBookGw": 9.4,
     "patFy26Cr": 1510,
-    "peX": 31,
+    "peX": 30.8,
     "quarterly": [
       {
         "ebitda": 71,
@@ -186,8 +186,8 @@
     "type": "integrated",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 10.83,
-      "peX": 31
+      "pbX": 10.75,
+      "peX": 30.8
     }
   },
   "dataset": "detail/premier-energies",

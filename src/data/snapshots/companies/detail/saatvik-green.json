@@ -37,14 +37,14 @@
         "revenue": 4548
       }
     ],
-    "cmp": 463,
+    "cmp": 435,
     "confidence": "modelled",
     "ebitdaMarginPct": 12,
     "hasDetail": true,
     "moduleGw": 3.8,
     "name": "Saatvik Green Energy",
     "patFy26Cr": 357,
-    "peX": 16.3,
+    "peX": 15.4,
     "quarterly": [
       {
         "ebitda": 21,
@@ -133,8 +133,8 @@
     "type": "manufacturer",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 4.33,
-      "peX": 16.3
+      "pbX": 4.07,
+      "peX": 15.4
     }
   },
   "dataset": "detail/saatvik-green",

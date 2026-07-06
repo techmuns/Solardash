@@ -62,7 +62,7 @@
       }
     ],
     "cellGw": 5.4,
-    "cmp": 2886,
+    "cmp": 2875,
     "confidence": "medium",
     "ebitdaMarginPct": 22,
     "hasDetail": true,
@@ -185,7 +185,7 @@
     "type": "integrated",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 5.75,
+      "pbX": 5.73,
       "peX": 21.1
     }
   },

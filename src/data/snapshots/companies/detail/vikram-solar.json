@@ -70,7 +70,7 @@
     "name": "Vikram Solar",
     "orderBookGw": 10.34,
     "patFy26Cr": 470,
-    "peX": 14.3,
+    "peX": 14.2,
     "quarterly": [
       {
         "ebitda": 111,
@@ -152,7 +152,7 @@
     "valuation": {
       "asOf": "2026-03-31",
       "pbX": 2.14,
-      "peX": 14.3
+      "peX": 14.2
     }
   },
   "dataset": "detail/vikram-solar",

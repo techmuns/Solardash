@@ -45,14 +45,14 @@
         "revenue": 2146
       }
     ],
-    "cmp": 114,
+    "cmp": 113,
     "confidence": "modelled",
     "ebitdaMarginPct": 13,
     "hasDetail": true,
     "moduleGw": 2,
     "name": "Insolation Energy",
     "patFy26Cr": 201,
-    "peX": 12.6,
+    "peX": 12.5,
     "quarterly": [
       {
         "ebitda": 24,
@@ -109,8 +109,8 @@
     "type": "manufacturer",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 3.11,
-      "peX": 12.6
+      "pbX": 3.09,
+      "peX": 12.5
     }
   },
   "dataset": "detail/insolation-energy",

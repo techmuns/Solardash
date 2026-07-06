@@ -101,13 +101,13 @@
         "revenue": 62429
       }
     ],
-    "cmp": 386,
+    "cmp": 378,
     "confidence": "medium",
     "ebitdaMarginPct": 21,
     "hasDetail": true,
     "name": "Tata Power",
     "patFy26Cr": 5118,
-    "peX": 32.1,
+    "peX": 31.4,
     "quarterly": [
       {
         "ebitda": 1928,
@@ -228,8 +228,8 @@
     "type": "ipp",
     "valuation": {
       "asOf": "2026-03-31",
-      "pbX": 3.11,
-      "peX": 32.1
+      "pbX": 3.05,
+      "peX": 31.4
     }
   },
   "dataset": "detail/tata-power",
