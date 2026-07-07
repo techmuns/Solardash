@@ -1,0 +1,29 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "K2 Infragen",
+  "data": {
+    "board": "NSE SME",
+    "confidence": "modelled",
+    "hasDetail": false,
+    "marketCapCr": 90,
+    "name": "K2 Infragen",
+    "slug": "k2-infragen",
+    "sourceNote": "NSE Emerge (SME)",
+    "tickerNse": "K2INFRA",
+    "type": "epc"
+  },
+  "dataset": "detail/k2-infragen",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "NSE Emerge (SME)"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

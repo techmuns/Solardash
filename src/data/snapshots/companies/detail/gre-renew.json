@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "GRE Renew Enertech",
+  "data": {
+    "board": "BSE SME",
+    "confidence": "modelled",
+    "hasDetail": false,
+    "marketCapCr": 239,
+    "name": "GRE Renew Enertech",
+    "slug": "gre-renew",
+    "sourceNote": "BSE SME (maintained)",
+    "type": "epc"
+  },
+  "dataset": "detail/gre-renew",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "BSE SME (maintained)"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

@@ -1,11 +1,13 @@
 slug,symbol
 acme-solar,ACMESOLAR
 adani-green,ADANIGREEN
+advait-energy,ADVAIT
 alpex-solar,ALPEXSOLAR
 bf-utilities,BFUTILITIE
 bondada-engineering,BONDADA
 borosil-renewables,BORORENEW
 cesc,CESC
+danish-power,DANISH
 emmvee-photovoltaic,EMMVEE
 gensol-engineering,GENSOL
 indowind-energy,INDOWIND
@@ -13,6 +15,7 @@ inox-green,INOXGREEN
 inox-wind,INOXWIND
 insolation-energy,INA
 jsw-energy,JSWENERGY
+karma-energy,KARMAENG
 kp-energy,KPEL
 kpi-green,KPIGREEN
 nhpc,NHPC
@@ -22,7 +25,10 @@ ntpc-green,NTPCGREEN
 orient-green-power,GREENPOWER
 oswal-pumps,OSWALPUMPS
 premier-energies,PREMIERENE
+ravindra-energy,RELTD
+refex-renewables,REFEXRENEW
 saatvik-green,SAATVIKGL
+servotech-power,SERVOTECH
 shakti-pumps,SHAKTIPUMP
 sjvn,SJVN
 solarworld-energy,SOLARWORLD
@@ -34,6 +40,7 @@ swelect-energy,SWELECTES
 tata-power,TATAPOWER
 torrent-power,TORNTPOWER
 ujaas-energy,UEL
+urja-global,URJA
 vikram-solar,VIKRAMSOLR
 waaree-energies,WAAREEENER
 waaree-renewable,WAAREERTL

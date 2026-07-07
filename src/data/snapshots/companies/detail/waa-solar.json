@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "Waa Solar",
+  "data": {
+    "board": "BSE SME",
+    "confidence": "modelled",
+    "hasDetail": false,
+    "marketCapCr": 66,
+    "name": "Waa Solar",
+    "slug": "waa-solar",
+    "sourceNote": "BSE SME (maintained)",
+    "type": "ipp"
+  },
+  "dataset": "detail/waa-solar",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "BSE SME (maintained)"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

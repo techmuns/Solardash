@@ -179,6 +179,16 @@
         "type": "manufacturer"
       },
       {
+        "board": "NSE",
+        "confidence": "modelled",
+        "marketCapCr": 1486,
+        "name": "Advait Energy Transitions",
+        "slug": "advait-energy",
+        "sourceNote": "Market data (mid-2026)",
+        "tickerNse": "ADVAIT",
+        "type": "epc"
+      },
+      {
         "board": "NSE SME",
         "confidence": "modelled",
         "marketCapCr": 2359,
@@ -235,6 +245,16 @@
         "type": "utility"
       },
       {
+        "board": "NSE SME",
+        "confidence": "modelled",
+        "marketCapCr": 1800,
+        "name": "Danish Power",
+        "slug": "danish-power",
+        "sourceNote": "NSE Emerge (SME)",
+        "tickerNse": "DANISH",
+        "type": "epc"
+      },
+      {
         "confidence": "medium",
         "marketCapCr": 25070,
         "name": "Emmvee Photovoltaic Power",
@@ -261,6 +281,24 @@
         "sourceNote": "Distressed (2025 governance/insolvency issues)",
         "tickerNse": "GENSOL",
         "type": "epc"
+      },
+      {
+        "board": "BSE SME",
+        "confidence": "modelled",
+        "marketCapCr": 239,
+        "name": "GRE Renew Enertech",
+        "slug": "gre-renew",
+        "sourceNote": "BSE SME (maintained)",
+        "type": "epc"
+      },
+      {
+        "board": "BSE",
+        "confidence": "modelled",
+        "marketCapCr": 16,
+        "name": "IND Renewable Energy",
+        "slug": "ind-renewable",
+        "sourceNote": "Market data (mid-2026)",
+        "type": "ipp"
       },
       {
         "confidence": "modelled",
@@ -299,12 +337,61 @@
         "type": "wind"
       },
       {
+        "board": "NSE SME",
+        "confidence": "modelled",
+        "marketCapCr": 90,
+        "name": "K2 Infragen",
+        "slug": "k2-infragen",
+        "sourceNote": "NSE Emerge (SME)",
+        "tickerNse": "K2INFRA",
+        "type": "epc"
+      },
+      {
+        "board": "NSE",
+        "confidence": "modelled",
+        "marketCapCr": 60,
+        "name": "Karma Energy",
+        "slug": "karma-energy",
+        "sourceNote": "Market data (mid-2026)",
+        "tickerNse": "KARMAENG",
+        "type": "wind"
+      },
+      {
+        "board": "NSE SME",
+        "confidence": "modelled",
+        "marketCapCr": 110,
+        "name": "Kay Cee Energy & Infra",
+        "slug": "kaycee-energy",
+        "sourceNote": "NSE Emerge (SME)",
+        "tickerNse": "KCEIL",
+        "type": "epc"
+      },
+      {
+        "board": "BSE SME",
+        "confidence": "modelled",
+        "marketCapCr": 1860,
+        "name": "KP Green Engineering",
+        "slug": "kp-green-engineering",
+        "sourceNote": "BSE SME (maintained)",
+        "type": "epc"
+      },
+      {
         "confidence": "medium",
         "marketCapCr": 7844,
         "name": "KPI Green Energy",
         "slug": "kpi-green",
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "KPIGREEN",
+        "type": "ipp"
+      },
+      {
+        "board": "BSE",
+        "confidence": "modelled",
+        "marketCapCr": 231,
+        "name": "Madhav Infra Projects",
+        "slug": "madhav-infra",
+        "sourceNote": "Market data (mid-2026)",
+        "tickerNse": "MADHAVIPL",
         "type": "ipp"
       },
       {
@@ -335,6 +422,15 @@
         "type": "utility"
       },
       {
+        "board": "BSE",
+        "confidence": "modelled",
+        "marketCapCr": 2507,
+        "name": "Onix Solar Energy",
+        "slug": "onix-solar",
+        "sourceNote": "Market data (mid-2026)",
+        "type": "manufacturer"
+      },
+      {
         "board": "NSE SME",
         "confidence": "modelled",
         "marketCapCr": 3217,
@@ -363,6 +459,35 @@
         "type": "epc"
       },
       {
+        "board": "BSE SME",
+        "confidence": "modelled",
+        "marketCapCr": 1498,
+        "name": "Rajesh Power Services",
+        "slug": "rajesh-power",
+        "sourceNote": "BSE SME (maintained)",
+        "type": "epc"
+      },
+      {
+        "board": "NSE",
+        "confidence": "modelled",
+        "marketCapCr": 3260,
+        "name": "Ravindra Energy",
+        "slug": "ravindra-energy",
+        "sourceNote": "Market data (mid-2026)",
+        "tickerNse": "RELTD",
+        "type": "epc"
+      },
+      {
+        "board": "NSE",
+        "confidence": "modelled",
+        "marketCapCr": 137,
+        "name": "Refex Renewables & Infrastructure",
+        "slug": "refex-renewables",
+        "sourceNote": "Market data (mid-2026)",
+        "tickerNse": "REFEXRENEW",
+        "type": "epc"
+      },
+      {
         "board": "US",
         "confidence": "medium",
         "name": "ReNew Energy Global",
@@ -378,6 +503,16 @@
         "slug": "sahaj-solar",
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "SAHAJSOLAR",
+        "type": "manufacturer"
+      },
+      {
+        "board": "NSE",
+        "confidence": "modelled",
+        "marketCapCr": 2200,
+        "name": "Servotech Renewable Power",
+        "slug": "servotech-power",
+        "sourceNote": "Market data (mid-2026)",
+        "tickerNse": "SERVOTECH",
         "type": "manufacturer"
       },
       {
@@ -397,6 +532,15 @@
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "SJVN",
         "type": "utility"
+      },
+      {
+        "board": "BSE SME",
+        "confidence": "modelled",
+        "marketCapCr": 376,
+        "name": "Solarium Green Energy",
+        "slug": "solarium-green",
+        "sourceNote": "BSE SME (maintained)",
+        "type": "epc"
       },
       {
         "confidence": "modelled",
@@ -423,6 +567,16 @@
         "slug": "sterling-wilson-re",
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "SWSOLAR",
+        "type": "epc"
+      },
+      {
+        "board": "NSE SME",
+        "confidence": "modelled",
+        "marketCapCr": 43,
+        "name": "Sungarner Energies",
+        "slug": "sungarner-energies",
+        "sourceNote": "NSE Emerge (SME)",
+        "tickerNse": "SEL",
         "type": "epc"
       },
       {
@@ -471,6 +625,25 @@
         "type": "manufacturer"
       },
       {
+        "board": "NSE",
+        "confidence": "modelled",
+        "marketCapCr": 510,
+        "name": "Urja Global",
+        "slug": "urja-global",
+        "sourceNote": "Market data (mid-2026)",
+        "tickerNse": "URJA",
+        "type": "manufacturer"
+      },
+      {
+        "board": "BSE SME",
+        "confidence": "modelled",
+        "marketCapCr": 66,
+        "name": "Waa Solar",
+        "slug": "waa-solar",
+        "sourceNote": "BSE SME (maintained)",
+        "type": "ipp"
+      },
+      {
         "confidence": "medium",
         "marketCapCr": 10650,
         "name": "Waaree Renewable Technologies",
@@ -478,6 +651,14 @@
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "WAAREERTL",
         "type": "epc"
+      },
+      {
+        "board": "BSE",
+        "confidence": "modelled",
+        "name": "XL Energy",
+        "slug": "xl-energy",
+        "sourceNote": "Market data (mid-2026)",
+        "type": "manufacturer"
       },
       {
         "confidence": "modelled",
@@ -497,6 +678,11 @@
   ],
   "section": "companies",
   "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "BSE SME (maintained)"
+    },
     {
       "asOf": "2026-03-31",
       "confidence": "high",
@@ -519,6 +705,11 @@
     },
     {
       "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "Market data (mid-2026)"
+    },
+    {
+      "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     },
@@ -531,6 +722,11 @@
       "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "Nasdaq: RNW (take-private ongoing)"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "NSE Emerge (SME)"
     }
   ],
   "updatedAt": "2026-03-31"

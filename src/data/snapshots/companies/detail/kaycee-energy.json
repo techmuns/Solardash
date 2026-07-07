@@ -1,0 +1,29 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "Kay Cee Energy & Infra",
+  "data": {
+    "board": "NSE SME",
+    "confidence": "modelled",
+    "hasDetail": false,
+    "marketCapCr": 110,
+    "name": "Kay Cee Energy & Infra",
+    "slug": "kaycee-energy",
+    "sourceNote": "NSE Emerge (SME)",
+    "tickerNse": "KCEIL",
+    "type": "epc"
+  },
+  "dataset": "detail/kaycee-energy",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "NSE Emerge (SME)"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

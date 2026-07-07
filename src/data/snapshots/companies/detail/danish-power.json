@@ -1,0 +1,29 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "Danish Power",
+  "data": {
+    "board": "NSE SME",
+    "confidence": "modelled",
+    "hasDetail": false,
+    "marketCapCr": 1800,
+    "name": "Danish Power",
+    "slug": "danish-power",
+    "sourceNote": "NSE Emerge (SME)",
+    "tickerNse": "DANISH",
+    "type": "epc"
+  },
+  "dataset": "detail/danish-power",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "NSE Emerge (SME)"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}
