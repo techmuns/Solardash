@@ -22,8 +22,13 @@ const STATUS: Record<CommissioningStatus, { label: string; color: string }> = {
   "at-risk": { label: "At risk", color: "#DC2626" },
 };
 
-const unitOf = (tech: string) => (tech === "bess" ? "GWh" : "GW");
 const fmtCap = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(1));
+/** Capacity label: GWh for storage, MW under 0.1 GW, else GW. */
+function capLabel(cap: number, tech: string): string {
+  if (tech === "bess") return `${fmtCap(cap)} GWh`;
+  if (cap > 0 && cap < 0.1) return `${Math.round(cap * 1000)} MW`;
+  return `${fmtCap(cap)} GW`;
+}
 
 function slipLabel(q: number): string {
   if (q === 0) return "On plan";
@@ -36,9 +41,9 @@ function historyTitle(t: CommissioningTranche): string {
     const base = `${h.concall} → ${formatFyQuarter(h.targetPeriod)}`;
     return `${base} (${STATUS[h.status].label})`;
   });
-  const head = `${t.developer} — ${t.project}\n${fmtCap(t.capacityGw)} ${unitOf(
-    t.tech,
-  )} · ${TENDER_TYPE_LABELS[t.tech] ?? t.tech}`;
+  const head = `${t.developer} — ${t.project}\n${capLabel(t.capacityGw, t.tech)} · ${
+    TENDER_TYPE_LABELS[t.tech] ?? t.tech
+  }`;
   const slip =
     t.slipQuarters !== 0
       ? `\nSlippage: ${formatFyQuarter(t.originalTarget)} → ${formatFyQuarter(
@@ -179,7 +184,7 @@ export function CommissioningTimeline({
                           background: `${STATUS[t.status].color}1a`,
                         }}
                       >
-                        {fmtCap(t.capacityGw)} {unitOf(t.tech)}
+                        {capLabel(t.capacityGw, t.tech)}
                       </span>
                     </div>
                     <div className="truncate text-2xs text-muted-foreground">

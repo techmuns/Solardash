@@ -120,6 +120,36 @@
         "tech": "bess"
       },
       {
+        "capacityGw": 1,
+        "confidence": "high",
+        "currentTarget": "Q3FY26",
+        "developer": "SJVN",
+        "history": [
+          {
+            "concall": "Q1 FY26 / earlier",
+            "sourceUrl": "https://sjvn.nic.in/index.php/en/sjvn-achieves-cod-1000-mw-bikaner-solar-power-project-rajasthan-0",
+            "statedOn": "2025-08-05",
+            "status": "delayed",
+            "targetPeriod": "Q2FY26"
+          },
+          {
+            "concall": "Q2 FY26 concall",
+            "sourceUrl": "https://sjvn.nic.in/index.php/en/sjvn-achieves-cod-1000-mw-bikaner-solar-power-project-rajasthan-0",
+            "statedOn": "2025-11-08",
+            "status": "commissioned",
+            "targetPeriod": "Q3FY26"
+          }
+        ],
+        "id": "SJVN-BIKANER",
+        "originalTarget": "Q2FY26",
+        "project": "Bikaner 1,000 MW solar (Rajasthan)",
+        "slipQuarters": 1,
+        "sourceNote": "Full-COD target of 30-Sep-2025 slipped: only ~680 MW live at the Nov-2025 call, full 1,000 MW COD 24-Dec-2025; ~120 MW still curtailed on grid-balancing equipment.",
+        "sourceUrl": "https://sjvn.nic.in/index.php/en/sjvn-achieves-cod-1000-mw-bikaner-solar-power-project-rajasthan-0",
+        "status": "commissioned",
+        "tech": "solar"
+      },
+      {
         "capacityGw": 0.3,
         "confidence": "high",
         "currentTarget": "Q3FY26",
@@ -147,6 +177,36 @@
         "sourceNote": "SCoD slipped ~3.5 months (14-Sep-25 -> 31-Dec-25) per ICRA; 25-yr DVC PPA at Rs2.70/kWh, 96% promoter equity infused.",
         "sourceUrl": "https://www.icra.in/Rating/ShowRationalReportFilePdf/138802",
         "status": "delayed",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 0.3,
+        "confidence": "high",
+        "currentTarget": "Q3FY26",
+        "developer": "NHPC",
+        "history": [
+          {
+            "concall": "FY25 AR / mid-2025",
+            "sourceUrl": "https://www.business-standard.com/markets/capital-market-news/nhpc-commissions-balance-85-72-mw-capacity-of-300-mw-karnisar-solar-project-125101700667_1.html",
+            "statedOn": "2025-08-05",
+            "status": "delayed",
+            "targetPeriod": "Q2FY26"
+          },
+          {
+            "concall": "Q2 FY26 disclosures",
+            "sourceUrl": "https://www.business-standard.com/markets/capital-market-news/nhpc-commissions-balance-85-72-mw-capacity-of-300-mw-karnisar-solar-project-125101700667_1.html",
+            "statedOn": "2025-11-08",
+            "status": "commissioned",
+            "targetPeriod": "Q3FY26"
+          }
+        ],
+        "id": "NHPC-KARNISAR",
+        "originalTarget": "Q2FY26",
+        "project": "Karnisar 300 MW solar (Bikaner)",
+        "slipQuarters": 1,
+        "sourceNote": "Full 300 MW COD 16-Oct-2025 after phased commissioning; slipped from an earlier ~31-Aug-2025 target. PSPCL 25-yr PUA.",
+        "sourceUrl": "https://www.business-standard.com/markets/capital-market-news/nhpc-commissions-balance-85-72-mw-capacity-of-300-mw-karnisar-solar-project-125101700667_1.html",
+        "status": "commissioned",
         "tech": "solar"
       },
       {
@@ -245,6 +305,29 @@
         "slipQuarters": 0,
         "sourceNote": "450 MW FY26 generation guidance held from Q1 FY26 and delivered; operational fleet reached 2,982 MW at 31-Mar-26 - a rare Indian-IPP target that did NOT slip.",
         "sourceUrl": "https://www.acmesolar.in/assets/pdf/Results-and-Presentations/Investors-Presentation/Q4_FY_26_Investor_Presentation.pdf",
+        "status": "commissioned",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 0.3,
+        "confidence": "high",
+        "currentTarget": "Q4FY26",
+        "developer": "NLC India",
+        "history": [
+          {
+            "concall": "FY26 investor meet",
+            "sourceUrl": "https://solarquarter.com/2026/01/27/nlc-india-commissions-full-300-mw-barsingsar-solar-project-in-rajasthan-boosts-re-to-1766-mw/",
+            "statedOn": "2026-03-31",
+            "status": "commissioned",
+            "targetPeriod": "Q4FY26"
+          }
+        ],
+        "id": "NLC-BARSINGSAR",
+        "originalTarget": "Q4FY26",
+        "project": "Barsingsar 300 MW solar (Rajasthan)",
+        "slipQuarters": 0,
+        "sourceNote": "NLCIL's largest single-site solar, built in 3 phases; full 300 MW COD 24-Jan-2026 on schedule, lifting group RE to ~1,766 MW.",
+        "sourceUrl": "https://solarquarter.com/2026/01/27/nlc-india-commissions-full-300-mw-barsingsar-solar-project-in-rajasthan-boosts-re-to-1766-mw/",
         "status": "commissioned",
         "tech": "solar"
       },
@@ -415,6 +498,126 @@
         "tech": "hybrid"
       },
       {
+        "capacityGw": 0.3,
+        "confidence": "medium",
+        "currentTarget": "Q1FY27",
+        "developer": "CESC (Purvah Green)",
+        "history": [
+          {
+            "concall": "Q1 FY26 update",
+            "sourceUrl": "https://www.multibagg.ai/market-pulse/articles/cesc-q3-fy26-growth-91502",
+            "statedOn": "2025-08-05",
+            "status": "delayed",
+            "targetPeriod": "Q4FY26"
+          },
+          {
+            "concall": "Q4 FY26 results",
+            "sourceUrl": "https://www.multibagg.ai/market-pulse/articles/cesc-q3-fy26-growth-91502",
+            "statedOn": "2026-03-31",
+            "status": "delayed",
+            "targetPeriod": "Q1FY27"
+          }
+        ],
+        "id": "CESC-BHADLA300",
+        "originalTarget": "Q4FY26",
+        "project": "Bhadla 300 MW solar (Rajasthan)",
+        "slipQuarters": 1,
+        "sourceNote": "First 300 MW still 'under commissioning' at the May-2026 results, slipping past its Q4FY26 target; park acquired under-construction Apr-2024.",
+        "sourceUrl": "https://www.multibagg.ai/market-pulse/articles/cesc-q3-fy26-growth-91502",
+        "status": "delayed",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 0.1,
+        "confidence": "high",
+        "currentTarget": "Q1FY27",
+        "developer": "NHPC",
+        "history": [
+          {
+            "concall": "Q2 FY26 concall",
+            "sourceUrl": "https://solarbytes.info/india-bytes/nhpc-discloses-fy2026-q4-financial-report-india-12009300",
+            "statedOn": "2025-11-08",
+            "status": "delayed",
+            "targetPeriod": "Q4FY26"
+          },
+          {
+            "concall": "Q4 FY26 concall",
+            "sourceUrl": "https://solarbytes.info/india-bytes/nhpc-discloses-fy2026-q4-financial-report-india-12009300",
+            "statedOn": "2026-03-31",
+            "status": "delayed",
+            "targetPeriod": "Q1FY27"
+          }
+        ],
+        "id": "NHPC-NPKUNTA",
+        "originalTarget": "Q4FY26",
+        "project": "N.P. Kunta 100 MW solar (AP)",
+        "slipQuarters": 1,
+        "sourceNote": "Guided COD ~June 2026, pushed from the earlier 'within FY2025-26' schedule; unconfirmed as of mid-2026.",
+        "sourceUrl": "https://solarbytes.info/india-bytes/nhpc-discloses-fy2026-q4-financial-report-india-12009300",
+        "status": "delayed",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 0.0176,
+        "confidence": "high",
+        "currentTarget": "Q1FY27",
+        "developer": "Orient Green Power",
+        "history": [
+          {
+            "concall": "Q1 FY26 concall",
+            "sourceUrl": "https://www.orientgreenpower.com/files/Q4%20FY26%20Investor%20Call%20Transcript.pdf",
+            "statedOn": "2025-08-05",
+            "status": "delayed",
+            "targetPeriod": "Q4FY26"
+          },
+          {
+            "concall": "Q3 FY26 concall",
+            "sourceUrl": "https://www.orientgreenpower.com/files/Q4%20FY26%20Investor%20Call%20Transcript.pdf",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q1FY27"
+          }
+        ],
+        "id": "OGP-SOLAR-18",
+        "originalTarget": "Q4FY26",
+        "project": "First solar plant (17.6 MW)",
+        "slipQuarters": 1,
+        "sourceNote": "Delayed early on land due-diligence ('big hole in the land'), trimmed 18->17.6 MW; commissioning holds Q1FY27, full output drifts to Q2FY27.",
+        "sourceUrl": "https://www.orientgreenpower.com/files/Q4%20FY26%20Investor%20Call%20Transcript.pdf",
+        "status": "delayed",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 0.0063,
+        "confidence": "high",
+        "currentTarget": "Q1FY27",
+        "developer": "Orient Green Power",
+        "history": [
+          {
+            "concall": "Q2 FY26 concall",
+            "sourceUrl": "https://www.orientgreenpower.com/files/Q3%20%26%209M%20FY26%20Investor%20Call%20Transcript.pdf",
+            "statedOn": "2025-11-08",
+            "status": "delayed",
+            "targetPeriod": "Q4FY26"
+          },
+          {
+            "concall": "Q3 FY26 concall",
+            "sourceUrl": "https://www.orientgreenpower.com/files/Q3%20%26%209M%20FY26%20Investor%20Call%20Transcript.pdf",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q1FY27"
+          }
+        ],
+        "id": "OGP-REPOWER",
+        "originalTarget": "Q4FY26",
+        "project": "Devarkulam wind repowering (6.3 MW)",
+        "slipQuarters": 1,
+        "sourceNote": "First repowering under TN Life-Extension Policy; enabling policy slipped repeatedly through FY26, benefits now only in H2FY27.",
+        "sourceUrl": "https://www.orientgreenpower.com/files/Q3%20%26%209M%20FY26%20Investor%20Call%20Transcript.pdf",
+        "status": "delayed",
+        "tech": "wind"
+      },
+      {
         "capacityGw": 3,
         "confidence": "high",
         "currentTarget": "Q2FY27",
@@ -443,6 +646,59 @@
         "sourceUrl": "https://www.saurenergy.com/solar-energy-news/serentica-builds-3-gw-renewable-portfolio-in-26-months-eyes-next-3-gw-12126633",
         "status": "delayed",
         "tech": "rtc"
+      },
+      {
+        "capacityGw": 0.83,
+        "confidence": "high",
+        "currentTarget": "Q2FY27",
+        "developer": "Torrent Power",
+        "history": [
+          {
+            "concall": "Q3 FY26 deck",
+            "sourceUrl": "https://www.torrentpower.com/public/pdf/investors/InvestorPresentation_fordec312025.pdf",
+            "statedOn": "2026-02-10",
+            "status": "on-track",
+            "targetPeriod": "Q2FY27"
+          }
+        ],
+        "id": "TPW-TPLD",
+        "originalTarget": "Q2FY27",
+        "project": "TPL-D 830 MWp wind-solar hybrid",
+        "slipQuarters": 0,
+        "sourceNote": "450 MW AC / 830 MWp DC for own discom at Rs3.65/unit; 'SCOD by Sept-2026' held stable across the Feb-2025 and Feb-2026 decks - an on-track counterpoint.",
+        "sourceUrl": "https://www.torrentpower.com/public/pdf/investors/InvestorPresentation_fordec312025.pdf",
+        "status": "on-track",
+        "tech": "hybrid"
+      },
+      {
+        "capacityGw": 0.6,
+        "confidence": "high",
+        "currentTarget": "Q2FY27",
+        "developer": "NLC India",
+        "history": [
+          {
+            "concall": "Original SCOD (Dec-2025)",
+            "sourceUrl": "https://connect.acuite.in/fcompany-details/NLC_INDIA_RENEWABLES_LIMITED/7th_Apr_26",
+            "statedOn": "2025-11-08",
+            "status": "delayed",
+            "targetPeriod": "Q3FY26"
+          },
+          {
+            "concall": "Q3 FY26 concall / Acuité",
+            "sourceUrl": "https://connect.acuite.in/fcompany-details/NLC_INDIA_RENEWABLES_LIMITED/7th_Apr_26",
+            "statedOn": "2026-02-10",
+            "status": "delayed",
+            "targetPeriod": "Q2FY27"
+          }
+        ],
+        "id": "NLC-KHAVDA600",
+        "originalTarget": "Q3FY26",
+        "project": "Khavda 600 MW solar (Gujarat, GSECL)",
+        "slipQuarters": 3,
+        "sourceNote": "Original SCOD Dec-2025 revised to Q2FY27 on adverse weather; Q3FY26 already split into ~300 MW by end-FY26 + 300 MW early FY27; further slippage flagged.",
+        "sourceUrl": "https://connect.acuite.in/fcompany-details/NLC_INDIA_RENEWABLES_LIMITED/7th_Apr_26",
+        "status": "delayed",
+        "tech": "solar"
       },
       {
         "capacityGw": 11,
@@ -475,6 +731,59 @@
         "tech": "bess"
       },
       {
+        "capacityGw": 0.6,
+        "confidence": "high",
+        "currentTarget": "Q3FY27",
+        "developer": "NHPC",
+        "history": [
+          {
+            "concall": "Q4 FY26 concall",
+            "sourceUrl": "https://www.nhpcindia.com/welcome/project_detail/71/6.html",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "NHPC-KHAVDA600",
+        "originalTarget": "Q3FY27",
+        "project": "Khavda 600 MW solar (Gujarat)",
+        "slipQuarters": 0,
+        "sourceNote": "Guided COD ~Dec 2026, consistent with the 'during FY2026-27' target; gated on the ISTS sub-station for evacuation.",
+        "sourceUrl": "https://www.nhpcindia.com/welcome/project_detail/71/6.html",
+        "status": "on-track",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 0.367,
+        "confidence": "high",
+        "currentTarget": "Q3FY27",
+        "developer": "Torrent Power",
+        "history": [
+          {
+            "concall": "Q3 FY25 deck",
+            "sourceUrl": "https://www.torrentpower.com/public/pdf/investors/TorrentPower-Earnings-May13-2026%20Final.pdf",
+            "statedOn": "2025-05-20",
+            "status": "delayed",
+            "targetPeriod": "Q2FY26"
+          },
+          {
+            "concall": "Q4 FY26 concall",
+            "sourceUrl": "https://www.torrentpower.com/public/pdf/investors/TorrentPower-Earnings-May13-2026%20Final.pdf",
+            "statedOn": "2026-03-31",
+            "status": "delayed",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "TPW-MSEDCL",
+        "originalTarget": "Q2FY26",
+        "project": "MSEDCL 367 MWp solar (Nashik)",
+        "slipQuarters": 5,
+        "sourceNote": "'SCOD by Sept-2025' guided in Feb-2025; only 218 MW live by Dec-2025 (unsuitable govt lease land), SCOD extensions applied; remainder guided 6-9 months from May-2026 = H2 FY27.",
+        "sourceUrl": "https://www.torrentpower.com/public/pdf/investors/TorrentPower-Earnings-May13-2026%20Final.pdf",
+        "status": "delayed",
+        "tech": "solar"
+      },
+      {
         "capacityGw": 0.3,
         "confidence": "high",
         "currentTarget": "Q3FY27",
@@ -494,6 +803,29 @@
         "slipQuarters": 0,
         "sourceNote": "Nearest-term named block, listed at '2026'; FY25 results describe a 300 MW India solar acquisition completing by end-1H2026. Year unchanged across decks.",
         "sourceUrl": "https://www.sembcorp.com/media/yrcplozn/sci-investor-presentation-nov-2025.pdf",
+        "status": "on-track",
+        "tech": "solar"
+      },
+      {
+        "capacityGw": 0.25,
+        "confidence": "high",
+        "currentTarget": "Q3FY27",
+        "developer": "KPI Green Energy",
+        "history": [
+          {
+            "concall": "FY26 concall",
+            "sourceUrl": "https://energyasia.co.in/renewable-energy/kpi-green-energises-965-mwp-accelerates-execution-of-2-17-gwp-ipp-portfolio/",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "KPIG-GUVNL-SOLAR",
+        "originalTarget": "Q3FY27",
+        "project": "GUVNL Khavda 250 MW solar IPP",
+        "slipQuarters": 0,
+        "sourceNote": "620 MWac GUVNL PPAs (Oct-2024); full COD guided Oct-2026, commissioned in phased ~24 MW tranches, ~182 MWp energised by mid-2026.",
+        "sourceUrl": "https://energyasia.co.in/renewable-energy/kpi-green-energises-965-mwp-accelerates-execution-of-2-17-gwp-ipp-portfolio/",
         "status": "on-track",
         "tech": "solar"
       },
@@ -643,6 +975,29 @@
         "tech": "fdre"
       },
       {
+        "capacityGw": 1.555,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "SJVN",
+        "history": [
+          {
+            "concall": "Q2 FY26 concall",
+            "sourceUrl": "https://www.prysm.fi/news/sjvn-releases-q2-fy26-concall-transcript-details-significant-project-commissioning-future-capex-and-new-initiatives",
+            "statedOn": "2025-11-08",
+            "status": "at-risk",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "SJVN-FY27",
+        "originalTarget": "Q4FY27",
+        "project": "FY27 utility-scale solar build (~1.55 GW)",
+        "slipQuarters": 0,
+        "sourceNote": "Guides ~1,555 MW in FY27; at-risk given chronic execution slippage (only ~4.2 GW operational at Q3FY26) and flagged Khavda transmission delays.",
+        "sourceUrl": "https://www.prysm.fi/news/sjvn-releases-q2-fy26-concall-transcript-details-significant-project-commissioning-future-capex-and-new-initiatives",
+        "status": "at-risk",
+        "tech": "solar"
+      },
+      {
         "capacityGw": 1.5,
         "confidence": "high",
         "currentTarget": "Q4FY27",
@@ -664,6 +1019,75 @@
         "sourceUrl": "https://www.acmesolar.in/assets/pdf/Webcasts-and-Transcripts/08.05.2026_Q4_FY26_Earning_Call_Transcript.pdf",
         "status": "on-track",
         "tech": "hybrid"
+      },
+      {
+        "capacityGw": 1.3,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "Torrent Power",
+        "history": [
+          {
+            "concall": "Q4 FY26 concall",
+            "sourceUrl": "https://www.torrentpower.com/public/pdf/investors/TorrentPower-Earnings-May13-2026%20Final.pdf",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "TPW-FY27",
+        "originalTarget": "Q4FY27",
+        "project": "FY27 RE commissioning pipeline (~1.3 GW)",
+        "slipQuarters": 0,
+        "sourceNote": "1.2-1.4 GW DC guided for FY27 (~50/50 wind/solar); trimmed from 1.2-1.5 GW at Q3 but year held. From a ~4.3 GWp contracted pipeline.",
+        "sourceUrl": "https://www.torrentpower.com/public/pdf/investors/TorrentPower-Earnings-May13-2026%20Final.pdf",
+        "status": "on-track",
+        "tech": "hybrid"
+      },
+      {
+        "capacityGw": 1.2,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "CESC (Purvah Green)",
+        "history": [
+          {
+            "concall": "Q2 FY26 update",
+            "sourceUrl": "https://investmentguruindia.com/editorial/uploads/news-pdf/f6b294f0_CESC%20Initiating%20Coverage_250725_Others.pdf",
+            "statedOn": "2025-11-08",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "CESC-SUBPH1",
+        "originalTarget": "Q4FY27",
+        "project": "Sub-phase I 1.2 GW hybrid (solar+wind)",
+        "slipQuarters": 0,
+        "sourceNote": "LOAs issued, 25-yr PPAs signed, 1 GW wind turbines contracted (Envision, Jun-2025); guided fully operational by FY27.",
+        "sourceUrl": "https://investmentguruindia.com/editorial/uploads/news-pdf/f6b294f0_CESC%20Initiating%20Coverage_250725_Others.pdf",
+        "status": "on-track",
+        "tech": "hybrid"
+      },
+      {
+        "capacityGw": 0.89,
+        "confidence": "medium",
+        "currentTarget": "Q4FY27",
+        "developer": "KPI Green Energy",
+        "history": [
+          {
+            "concall": "Q2 FY26 concall",
+            "sourceUrl": "https://energyasia.co.in/renewable-energy/kpi-green-energises-965-mwp-accelerates-execution-of-2-17-gwp-ipp-portfolio/",
+            "statedOn": "2025-11-08",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "KPIG-GUVNL-BESS",
+        "originalTarget": "Q4FY27",
+        "project": "GUVNL 445 MW / 890 MWh BESS",
+        "slipQuarters": 0,
+        "sourceNote": "GWh. LOI ~Q2FY26; guided fully operational by FY27, revenue from FY28.",
+        "sourceUrl": "https://energyasia.co.in/renewable-energy/kpi-green-energises-965-mwp-accelerates-execution-of-2-17-gwp-ipp-portfolio/",
+        "status": "on-track",
+        "tech": "bess"
       },
       {
         "capacityGw": 0.5,
@@ -694,6 +1118,59 @@
         "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
         "status": "delayed",
         "tech": "hybrid"
+      },
+      {
+        "capacityGw": 0.3,
+        "confidence": "high",
+        "currentTarget": "Q4FY27",
+        "developer": "Torrent Power",
+        "history": [
+          {
+            "concall": "Q3 FY25 deck",
+            "sourceUrl": "https://www.torrentpower.com/public/pdf/investors/TorrentPower-Earnings-May13-2026%20Final.pdf",
+            "statedOn": "2025-05-20",
+            "status": "delayed",
+            "targetPeriod": "Q4FY26"
+          },
+          {
+            "concall": "Q4 FY26 concall",
+            "sourceUrl": "https://www.torrentpower.com/public/pdf/investors/TorrentPower-Earnings-May13-2026%20Final.pdf",
+            "statedOn": "2026-03-31",
+            "status": "delayed",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "TPW-SECIXII",
+        "originalTarget": "Q4FY26",
+        "project": "SECI XII 300 MW wind (ISTS)",
+        "slipQuarters": 4,
+        "sourceNote": "Suzlon EPC; 'SCOD by Jan-2026' guided in Feb-2025, downgraded to 'applied for SCOD extension' (evacuation not ready); COD now expected before Mar-2027. ~1-year slip.",
+        "sourceUrl": "https://www.torrentpower.com/public/pdf/investors/TorrentPower-Earnings-May13-2026%20Final.pdf",
+        "status": "delayed",
+        "tech": "wind"
+      },
+      {
+        "capacityGw": 0.2,
+        "confidence": "medium",
+        "currentTarget": "Q4FY27",
+        "developer": "SJVN",
+        "history": [
+          {
+            "concall": "Q2 FY26 concall",
+            "sourceUrl": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2015099",
+            "statedOn": "2025-11-08",
+            "status": "at-risk",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "SJVN-KHAVDA200",
+        "originalTarget": "Q4FY27",
+        "project": "Khavda 200 MW solar (Gujarat, GUVNL)",
+        "slipQuarters": 0,
+        "sourceNote": "Named FY27 component now under construction; management cautioned Khavda-zone curtailment risk from transmission-connectivity delays.",
+        "sourceUrl": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2015099",
+        "status": "at-risk",
+        "tech": "solar"
       },
       {
         "capacityGw": 0.1,
@@ -779,6 +1256,36 @@
         "tech": "fdre"
       },
       {
+        "capacityGw": 0.37,
+        "confidence": "medium",
+        "currentTarget": "Q1FY28",
+        "developer": "KPI Green Energy",
+        "history": [
+          {
+            "concall": "Q1 FY26 concall",
+            "sourceUrl": "https://www.whalesbook.com/news/English/renewables/KPI-Green-Energys-Growth-Hit-by-Khavda-Delays-Dilution-Fears/6a04945e9444064ed06227aa",
+            "statedOn": "2025-08-05",
+            "status": "on-track",
+            "targetPeriod": "Q3FY27"
+          },
+          {
+            "concall": "Q4 FY26 concall",
+            "sourceUrl": "https://www.whalesbook.com/news/English/renewables/KPI-Green-Energys-Growth-Hit-by-Khavda-Delays-Dilution-Fears/6a04945e9444064ed06227aa",
+            "statedOn": "2026-03-31",
+            "status": "delayed",
+            "targetPeriod": "Q1FY28"
+          }
+        ],
+        "id": "KPIG-GUVNL-HYBRID",
+        "originalTarget": "Q3FY27",
+        "project": "GUVNL Khavda 370 MW hybrid IPP",
+        "slipQuarters": 2,
+        "sourceNote": "~6-7 month push-out: the GSECL government substation (GSS)/evacuation infra ran late; GUVNL agreed to extend PPA start, hybrid balance slips into FY28.",
+        "sourceUrl": "https://www.whalesbook.com/news/English/renewables/KPI-Green-Energys-Growth-Hit-by-Khavda-Delays-Dilution-Fears/6a04945e9444064ed06227aa",
+        "status": "delayed",
+        "tech": "hybrid"
+      },
+      {
         "capacityGw": 10,
         "confidence": "medium",
         "currentTarget": "Q3FY28",
@@ -823,6 +1330,29 @@
         "sourceUrl": "https://www.sembcorp.com/media/yrcplozn/sci-investor-presentation-nov-2025.pdf",
         "status": "at-risk",
         "tech": "hybrid"
+      },
+      {
+        "capacityGw": 0.15,
+        "confidence": "medium",
+        "currentTarget": "Q3FY28",
+        "developer": "KPI Green Energy",
+        "history": [
+          {
+            "concall": "Q1 FY26 concall",
+            "sourceUrl": "https://scanx.trade/stock-market-news/stocks/kpi-green-energy-targets-25-30-ipp-revenue-share-by-fy2030-sun-drops-ipo-planned-for-h1-fy27/31206431",
+            "statedOn": "2025-08-05",
+            "status": "on-track",
+            "targetPeriod": "Q3FY28"
+          }
+        ],
+        "id": "KPIG-GUVNL-WIND",
+        "originalTarget": "Q3FY28",
+        "project": "GUVNL 150 MW wind IPP",
+        "slipQuarters": 0,
+        "sourceNote": "LOI Q1FY26, PPA by Q2FY26; COD guided ~Nov-2027. Early-stage.",
+        "sourceUrl": "https://scanx.trade/stock-market-news/stocks/kpi-green-energy-targets-25-30-ipp-revenue-share-by-fy2030-sun-drops-ipo-planned-for-h1-fy27/31206431",
+        "status": "on-track",
+        "tech": "wind"
       },
       {
         "capacityGw": 3,
@@ -901,6 +1431,29 @@
         "tech": "hybrid"
       },
       {
+        "capacityGw": 0.81,
+        "confidence": "modelled",
+        "currentTarget": "FY28",
+        "developer": "NLC India",
+        "history": [
+          {
+            "concall": "FY26 construction start",
+            "sourceUrl": "https://connect.acuite.in/fcompany-details/NLC_INDIA_RENEWABLES_LIMITED/7th_Apr_26",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "FY28"
+          }
+        ],
+        "id": "NLC-RAJ810",
+        "originalTarget": "FY28",
+        "project": "Rajasthan 810 MW solar (RRVUNL)",
+        "slipQuarters": 0,
+        "sourceNote": "One of three NIRL projects started FY26 (nascent); no explicit COD guided, FY28 modelled; Acuité warns of possible further slippage.",
+        "sourceUrl": "https://connect.acuite.in/fcompany-details/NLC_INDIA_RENEWABLES_LIMITED/7th_Apr_26",
+        "status": "on-track",
+        "tech": "solar"
+      },
+      {
         "capacityGw": 0.585,
         "confidence": "high",
         "currentTarget": "Q4FY28",
@@ -929,6 +1482,29 @@
         "sourceUrl": "https://www.tatapower.com/content/dam/tatapoweraemsitesprogram/tatapower/pdf-root/company-financials/quarterly-results-presentation/2026/Analyst%20Presentation%20Q4%20FY26.pdf",
         "status": "delayed",
         "tech": "fdre"
+      },
+      {
+        "capacityGw": 0.5,
+        "confidence": "medium",
+        "currentTarget": "FY28",
+        "developer": "NLC India",
+        "history": [
+          {
+            "concall": "FY26 investor meet",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/from-lignite-to-lithium-era-nlc-india-ramps-up-renewable-bess-expansion-11884993",
+            "statedOn": "2026-03-31",
+            "status": "on-track",
+            "targetPeriod": "FY28"
+          }
+        ],
+        "id": "NLC-TN-BESS",
+        "originalTarget": "FY28",
+        "project": "Tamil Nadu 250 MW / 500 MWh BESS",
+        "slipQuarters": 0,
+        "sourceNote": "GWh. Storage projects guided 'completed within 18 months' from May-2026 (~H2 FY28); classed nascent by Acuité.",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/from-lignite-to-lithium-era-nlc-india-ramps-up-renewable-bess-expansion-11884993",
+        "status": "on-track",
+        "tech": "bess"
       },
       {
         "capacityGw": 0.272,
@@ -1345,6 +1921,18 @@
       "url": "https://www.acmesolar.in/assets/pdf/Results-and-Presentations/Investors-Presentation/Q4_FY_26_Investor_Presentation.pdf"
     },
     {
+      "asOf": "2026-02-10",
+      "confidence": "high",
+      "name": "Acuité rationale (NIRL)",
+      "url": "https://connect.acuite.in/fcompany-details/NLC_INDIA_RENEWABLES_LIMITED/7th_Apr_26"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "Acuité rationale (NIRL)",
+      "url": "https://connect.acuite.in/fcompany-details/NLC_INDIA_RENEWABLES_LIMITED/7th_Apr_26"
+    },
+    {
       "asOf": "2026-03-31",
       "confidence": "high",
       "name": "AGEL FY26 concall",
@@ -1373,6 +1961,18 @@
       "confidence": "medium",
       "name": "Avaada financing PR",
       "url": "https://www.pv-magazine-india.com/2026/06/01/avaada-group-secures-950-million-debt-financing-from-consortium-of-global-and-domestic-banks/"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "high",
+      "name": "CESC Q2 FY26 update",
+      "url": "https://investmentguruindia.com/editorial/uploads/news-pdf/f6b294f0_CESC%20Initiating%20Coverage_250725_Others.pdf"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "CESC Q4 FY26 results",
+      "url": "https://www.multibagg.ai/market-pulse/articles/cesc-q3-fy26-growth-91502"
     },
     {
       "asOf": "2026-03-31",
@@ -1473,6 +2073,30 @@
     },
     {
       "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "KPI Green FY26 concall",
+      "url": "https://energyasia.co.in/renewable-energy/kpi-green-energises-965-mwp-accelerates-execution-of-2-17-gwp-ipp-portfolio/"
+    },
+    {
+      "asOf": "2025-08-05",
+      "confidence": "medium",
+      "name": "KPI Green Q1 FY26 concall",
+      "url": "https://scanx.trade/stock-market-news/stocks/kpi-green-energy-targets-25-30-ipp-revenue-share-by-fy2030-sun-drops-ipo-planned-for-h1-fy27/31206431"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "medium",
+      "name": "KPI Green Q2 FY26 concall",
+      "url": "https://energyasia.co.in/renewable-energy/kpi-green-energises-965-mwp-accelerates-execution-of-2-17-gwp-ipp-portfolio/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "KPI Green Q4 FY26 concall",
+      "url": "https://www.whalesbook.com/news/English/renewables/KPI-Green-Energys-Growth-Hit-by-Khavda-Delays-Dilution-Fears/6a04945e9444064ed06227aa"
+    },
+    {
+      "asOf": "2026-03-31",
       "confidence": "medium",
       "name": "NGEL COD disclosure",
       "url": "https://www.saurenergy.com/solar-energy-news/ntpc-completes-12-gw-khavda-ii-solar-project-with-final-105-mw-tranche-11882161"
@@ -1490,10 +2114,52 @@
       "url": "https://www.saurenergy.com/solar-energy-news/ntpc-completes-12-gw-khavda-ii-solar-project-with-final-105-mw-tranche-11882161"
     },
     {
+      "asOf": "2025-11-08",
+      "confidence": "high",
+      "name": "NHPC Q3 FY26 concall",
+      "url": "https://www.business-standard.com/markets/capital-market-news/nhpc-commissions-balance-85-72-mw-capacity-of-300-mw-karnisar-solar-project-125101700667_1.html"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "NHPC Q4 FY26 concall",
+      "url": "https://solarbytes.info/india-bytes/nhpc-discloses-fy2026-q4-financial-report-india-12009300"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "NHPC Q4 FY26 concall",
+      "url": "https://www.nhpcindia.com/welcome/project_detail/71/6.html"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "NLC FY26 investor meet",
+      "url": "https://solarquarter.com/2026/01/27/nlc-india-commissions-full-300-mw-barsingsar-solar-project-in-rajasthan-boosts-re-to-1766-mw/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "NLC FY26 investor meet",
+      "url": "https://www.saurenergy.com/solar-energy-news/from-lignite-to-lithium-era-nlc-india-ramps-up-renewable-bess-expansion-11884993"
+    },
+    {
       "asOf": "2024-12-23",
       "confidence": "high",
       "name": "NTPC / pv-magazine",
       "url": "https://www.pv-magazine.com/2024/12/24/bharat-petroleum-wins-150-mw-of-solar-in-ntpc-auction-with-inr-2-55-kwh-bid/"
+    },
+    {
+      "asOf": "2026-02-10",
+      "confidence": "high",
+      "name": "Orient Green Q3 FY26 concall",
+      "url": "https://www.orientgreenpower.com/files/Q3%20%26%209M%20FY26%20Investor%20Call%20Transcript.pdf"
+    },
+    {
+      "asOf": "2026-02-10",
+      "confidence": "high",
+      "name": "Orient Green Q4 FY26 concall",
+      "url": "https://www.orientgreenpower.com/files/Q4%20FY26%20Investor%20Call%20Transcript.pdf"
     },
     {
       "asOf": "2025-05-20",
@@ -1578,6 +2244,36 @@
       "confidence": "high",
       "name": "SJVN / Mercom",
       "url": "https://www.mercomindia.com/daily-news-sjvns-1-2-gw-solar-auction-winners-announced"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "high",
+      "name": "SJVN Q2 FY26 concall",
+      "url": "https://sjvn.nic.in/index.php/en/sjvn-achieves-cod-1000-mw-bikaner-solar-power-project-rajasthan-0"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "medium",
+      "name": "SJVN Q2 FY26 concall",
+      "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2015099"
+    },
+    {
+      "asOf": "2025-11-08",
+      "confidence": "high",
+      "name": "SJVN Q2 FY26 concall",
+      "url": "https://www.prysm.fi/news/sjvn-releases-q2-fy26-concall-transcript-details-significant-project-commissioning-future-capex-and-new-initiatives"
+    },
+    {
+      "asOf": "2026-02-10",
+      "confidence": "high",
+      "name": "Torrent Q3 FY26 deck",
+      "url": "https://www.torrentpower.com/public/pdf/investors/InvestorPresentation_fordec312025.pdf"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Torrent Q4 FY26 concall",
+      "url": "https://www.torrentpower.com/public/pdf/investors/TorrentPower-Earnings-May13-2026%20Final.pdf"
     },
     {
       "asOf": "2026-03-31",
