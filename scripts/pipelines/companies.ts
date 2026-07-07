@@ -9,6 +9,7 @@ import type { Confidence, SourceRef } from "../../src/data/types/core";
 import type {
   AnnualRow,
   CompaniesData,
+  Concall,
   CompanyDetail,
   CompanyIdentity,
   CompanyType,
@@ -89,6 +90,9 @@ export const companiesPipeline = definePipeline({
   cadence: "quarterly",
   run() {
     const rows = readManualCsv("companies/registry.csv");
+    // Latest earnings-call insights, one entry per slug (maintained feed).
+    const concalls =
+      readManualJsonIfExists<Record<string, Concall>>("companies/concalls.json") ?? {};
 
     // Build each company: registry identity → screener feed → manual override
     // (precedence manual > screener > registry). A screener feed supplies
@@ -146,6 +150,7 @@ export const companiesPipeline = definePipeline({
       const companyDetail = {
         ...screenerIdentity,
         ...screenerDetail,
+        ...(concalls[identity.slug] ? { concall: concalls[identity.slug] } : {}),
         ...(manual ?? {}),
         hasDetail,
       } as CompanyDetail;

@@ -63,6 +63,22 @@
     ],
     "cellGw": 5.4,
     "cmp": 2875,
+    "concall": {
+      "date": "2026-05-16",
+      "guidance": [
+        "Module capacity guided to ~21 GW and cell capacity toward ~11 GW by FY27.",
+        "EBITDA margin expected to stay in the low-20s% as cell integration offsets module price pressure.",
+        "Capex funded largely from IPO proceeds and internal accruals; net-cash balance sheet maintained."
+      ],
+      "insights": [
+        "Record order book of ~₹53,000 cr (>25 GW), skewed toward exports and the US market.",
+        "Solar cell manufacturing ramped past 5.4 GW; backward integration into ingot-wafer under way.",
+        "1.6 GW Texas (USA) module plant operational and being scaled to reduce tariff exposure."
+      ],
+      "orderExecution": "Management expects the current order book to execute over roughly 8–10 quarters (FY27–FY28), weighted to H2 as US and cell capacity ramps.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (maintained)"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 22,
     "hasDetail": true,

@@ -99,6 +99,22 @@ export interface Shareholding {
   asOf?: string;
 }
 
+/** Insights distilled from a company's most recent earnings / analyst call. */
+export interface Concall {
+  /** Fiscal quarter of the call, e.g. "Q4 FY26". */
+  quarter: string;
+  /** ISO date the call was held, when known. */
+  date?: string;
+  /** Key takeaways / interesting points from the call. */
+  insights: string[];
+  /** Forward-looking management guidance (targets, capacity, margins). */
+  guidance?: string[];
+  /** How/when management expects to execute the current order book. */
+  orderExecution?: string;
+  /** Provenance note (transcript / results call / investor deck). */
+  source?: string;
+}
+
 /** Full per-company model — registry identity + optional rich detail. */
 export interface CompanyDetail extends CompanyIdentity {
   description?: string;
@@ -108,6 +124,8 @@ export interface CompanyDetail extends CompanyIdentity {
   operating?: Operating;
   shareholding?: Shareholding;
   highlights?: string[];
+  /** Latest earnings-call insights (maintained feed). */
+  concall?: Concall;
   /** True when a rich per-company detail JSON was merged in. */
   hasDetail: boolean;
 }

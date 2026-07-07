@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Sparkles } from "lucide-react";
+import { ArrowLeft, ChevronRight, Megaphone, Sparkles } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StatCard } from "@/components/ui/StatCard";
@@ -14,7 +14,7 @@ import { categoricalColor } from "@/lib/colors";
 import { cn, formatDate, formatNumber } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import type { Snapshot } from "@/data/types/core";
-import type { CompanyDetail } from "@/data/types/companies";
+import type { CompanyDetail, Concall } from "@/data/types/companies";
 import { RatingBadge, TYPE_LABELS, TypeBadge, upsidePct } from "../company-ui";
 import { FinancialsCharts } from "./FinancialsCharts";
 
@@ -128,12 +128,82 @@ export default async function CompanyPage({
         </div>
       </PageHeader>
 
+      {c.concall && <ConcallCard concall={c.concall} />}
+
       {c.hasDetail ? (
         <RichDetail c={c} snap={snap} asOf={asOf} source={source} />
       ) : (
         <HeadlineOnly c={c} />
       )}
     </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Latest concall — distilled insights, guidance, order-book execution
+// ---------------------------------------------------------------------------
+function ConcallCard({ concall }: { concall: Concall }) {
+  return (
+    <Card className="p-5">
+      <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+        <h2 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-foreground">
+          <Megaphone className="h-4 w-4 text-brand" aria-hidden />
+          Latest concall
+        </h2>
+        <span className="text-2xs font-medium text-muted-foreground">
+          {concall.quarter}
+          {concall.date ? ` · ${formatDate(concall.date)}` : ""}
+        </span>
+      </div>
+
+      {concall.insights.length > 0 && (
+        <ul className="mt-3 space-y-2">
+          {concall.insights.map((h, i) => (
+            <li key={i} className="flex gap-2.5 text-sm text-foreground/90">
+              <span
+                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"
+                aria-hidden
+              />
+              {h}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {concall.orderExecution && (
+        <div className="mt-4 rounded-lg border border-border bg-muted/40 p-3">
+          <div className="text-2xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Order-book execution
+          </div>
+          <p className="mt-1 text-sm text-foreground/90">{concall.orderExecution}</p>
+        </div>
+      )}
+
+      {concall.guidance && concall.guidance.length > 0 && (
+        <div className="mt-4">
+          <div className="text-2xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Management guidance
+          </div>
+          <ul className="mt-2 space-y-1.5">
+            {concall.guidance.map((g, i) => (
+              <li key={i} className="flex gap-1.5 text-sm text-foreground/90">
+                <ChevronRight
+                  className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand"
+                  aria-hidden
+                />
+                {g}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {concall.source && (
+        <p className="mt-3 border-t border-border pt-2 text-2xs text-muted-foreground">
+          {concall.source}
+        </p>
+      )}
+    </Card>
   );
 }
 

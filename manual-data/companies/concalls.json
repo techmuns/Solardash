@@ -1,0 +1,33 @@
+{
+  "waaree-energies": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-16",
+    "insights": [
+      "Record order book of ~₹53,000 cr (>25 GW), skewed toward exports and the US market.",
+      "Solar cell manufacturing ramped past 5.4 GW; backward integration into ingot-wafer under way.",
+      "1.6 GW Texas (USA) module plant operational and being scaled to reduce tariff exposure."
+    ],
+    "guidance": [
+      "Module capacity guided to ~21 GW and cell capacity toward ~11 GW by FY27.",
+      "EBITDA margin expected to stay in the low-20s% as cell integration offsets module price pressure.",
+      "Capex funded largely from IPO proceeds and internal accruals; net-cash balance sheet maintained."
+    ],
+    "orderExecution": "Management expects the current order book to execute over roughly 8–10 quarters (FY27–FY28), weighted to H2 as US and cell capacity ramps.",
+    "source": "Q4 FY26 earnings call (maintained)"
+  },
+  "premier-energies": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-14",
+    "insights": [
+      "Order book of ~₹13,700 cr (≈9.4 GW) with a rising share of external (merchant) cell sales.",
+      "Fully integrated cell + module capacity; TOPCon transition largely complete.",
+      "Non-China equipment sourcing cited as an edge for US-bound DCR supply."
+    ],
+    "guidance": [
+      "Targeting cell capacity expansion toward ~10 GW over FY27–FY28.",
+      "Guided to sustain high-20s% EBITDA margin on the integrated cell advantage."
+    ],
+    "orderExecution": "Order book expected to convert over ~6–8 quarters, front-loaded as new TOPCon cell lines stabilise.",
+    "source": "Q4 FY26 earnings call (maintained)"
+  }
+}

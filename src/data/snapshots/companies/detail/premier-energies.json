@@ -63,6 +63,21 @@
     ],
     "cellGw": 3.6,
     "cmp": 1022,
+    "concall": {
+      "date": "2026-05-14",
+      "guidance": [
+        "Targeting cell capacity expansion toward ~10 GW over FY27–FY28.",
+        "Guided to sustain high-20s% EBITDA margin on the integrated cell advantage."
+      ],
+      "insights": [
+        "Order book of ~₹13,700 cr (≈9.4 GW) with a rising share of external (merchant) cell sales.",
+        "Fully integrated cell + module capacity; TOPCon transition largely complete.",
+        "Non-China equipment sourcing cited as an edge for US-bound DCR supply."
+      ],
+      "orderExecution": "Order book expected to convert over ~6–8 quarters, front-loaded as new TOPCon cell lines stabilise.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (maintained)"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 30,
     "hasDetail": true,
