@@ -136,19 +136,71 @@ export const manufacturingPipeline = definePipeline({
       status: r.status,
       confidence: r.confidence as Confidence,
     }));
-    // --- PLI awardees (named desc, Others bucket last) ---
-    const toPli = (r: Record<string, string>): PliAwardee => ({
-      company: r.company,
-      capacityGw: Number(r.capacity_gw),
-      confidence: r.confidence as Confidence,
-    });
-    const pliAwardees: PliAwardee[] = [
-      ...pliRows
-        .filter((r) => !isOthers(r.company))
-        .map(toPli)
-        .sort((a, b) => b.capacityGw - a.capacityGw || a.company.localeCompare(b.company)),
-      ...pliRows.filter((r) => isOthers(r.company)).map(toPli),
+    // --- PLI awardees: cumulative capacity awarded by tranche (a time series
+    // that surfaces who keeps winning across rounds — the "consistency" read) ---
+    const PLI_TRANCHES = [
+      { key: "Tranche I", label: "Tranche I · 2021" },
+      { key: "Tranche II", label: "Tranche II · 2023" },
     ];
+    const PLI_NAMED = 8; // named lines; the long tail is bucketed into "Others"
+
+    // awarded: company → (tranche → GW awarded in that tranche)
+    const awarded = new Map<string, Map<string, number>>();
+    for (const r of pliRows) {
+      const company = r.company?.trim();
+      const tranche = r.tranche?.trim();
+      const gw = num(r.capacity_gw);
+      if (!company || !tranche || gw == null) continue;
+      const byTranche = awarded.get(company) ?? new Map<string, number>();
+      byTranche.set(tranche, (byTranche.get(tranche) ?? 0) + gw);
+      awarded.set(company, byTranche);
+    }
+
+    // Per company: cumulative GW aligned to the tranche order, plus totals.
+    const pliByCompany = [...awarded.entries()]
+      .map(([company, byTranche]) => {
+        let running = 0;
+        const cumulative = PLI_TRANCHES.map((t) => {
+          running = round3(running + (byTranche.get(t.key) ?? 0));
+          return running;
+        });
+        return {
+          company,
+          cumulative,
+          total: cumulative[cumulative.length - 1],
+          tranchesWon: [...byTranche.values()].filter((v) => v > 0).length,
+        };
+      })
+      .sort((a, b) => b.total - a.total || a.company.localeCompare(b.company));
+
+    const pliAwardees: PliAwardee[] = pliByCompany.map((p) => ({
+      company: p.company,
+      capacityGw: p.total,
+      tranchesWon: p.tranchesWon,
+      confidence: "high",
+    }));
+
+    // Time series: top-N named as their own line, the rest folded into Others.
+    const pliHistory: Series[] = pliByCompany.slice(0, PLI_NAMED).map((p, i) => ({
+      key: slug(p.company),
+      label: p.company,
+      unit: "GW",
+      color: categoricalColor(i),
+      points: PLI_TRANCHES.map((t, ti) => ({ period: t.label, value: p.cumulative[ti] })),
+    }));
+    const pliTail = pliByCompany.slice(PLI_NAMED);
+    if (pliTail.length > 0) {
+      pliHistory.push({
+        key: "others",
+        label: `Others (${pliTail.length})`,
+        unit: "GW",
+        color: OTHERS_COLOR,
+        points: PLI_TRANCHES.map((t, ti) => ({
+          period: t.label,
+          value: round3(pliTail.reduce((s, p) => s + p.cumulative[ti], 0)),
+        })),
+      });
+    }
 
     // --- Cell & module nameplate capacity, annual (~5yr build-out trend) ---
     const capacityHistory: Series[] = [
@@ -238,6 +290,7 @@ export const manufacturingPipeline = definePipeline({
       supplyDemand,
       almmTimeline,
       pliAwardees,
+      pliHistory,
       capacityHistory,
     };
 
@@ -249,7 +302,7 @@ export const manufacturingPipeline = definePipeline({
       notes: [
         `Quarterly cell production is MODELLED: each producer's FY26E annual output is split across ${QUARTERS.join("/")} with a ramp [${RAMP.join(", ")}]; drop real (player, quarter) actuals into manufacturing/cell-production-quarterly-override.csv to override a cell.`,
         "Module capacity is 173 GW enlisted under ALMM-I (MNRE Mar 2026; long tail bucketed as Others); the cell headline is ~27 GW ALMM-II (MNRE Feb 2026).",
-        "Player-wise cell-capacity is MNRE / DCR Portal; PLI Tranche I+II awardees total ~48 GW (PIB / JMK).",
+        "Player-wise cell-capacity is MNRE / DCR Portal. PLI awardees are shown cumulatively by tranche (Tranche I: IREDA LoAs Nov–Dec 2021, 8.7 GW to 3 firms; Tranche II: SECI LoAs Apr 2023, 39.6 GW to 11 firms) — ~48 GW total. Reliance and Shirdi Sai/Indosol are the only firms selected in both tranches (each 4 → 10 GW cumulative).",
         "Basic Customs Duty (BCD): modules 40% / cells 27.5%.",
         "Cell & module nameplate capacity history is a curated ~5-year annual series (FY21–FY26) from JMK Research / Mercom; module crossed 74 GW at Mar 2025 (sourced) — this is nameplate, distinct from the ALMM-enlisted headline KPIs.",
       ],

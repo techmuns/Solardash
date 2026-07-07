@@ -1,10 +1,15 @@
-company,capacity_gw,confidence,source,source_url
-Reliance,10.0,high,PIB / JMK,
-Waaree,6.0,high,PIB / JMK,
-ReNew,4.8,high,PIB / JMK,
-Tata Power,4.0,high,PIB / JMK,
-Adani,4.0,high,PIB,
-Shirdi Sai Electricals,4.0,high,PIB,
-First Solar,3.4,high,PIB / JMK,
-Vikram Solar,2.4,high,PIB / JMK,
-Others,9.7,medium,PIB / JMK,
+company,tranche,capacity_gw,confidence,source,source_url,note
+Reliance,Tranche I,4.0,high,IREDA / PIB,https://mnre.gov.in/en/production-linked-incentive-pli/,Reliance New Energy Solar — fully integrated
+Shirdi Sai / Indosol,Tranche I,4.0,high,IREDA / PIB,https://mnre.gov.in/en/production-linked-incentive-pli/,Shirdi Sai Electricals
+Adani,Tranche I,0.737,high,IREDA / PIB,https://mnre.gov.in/en/production-linked-incentive-pli/,Adani Infrastructure — replaced Jindal (opted out)
+Reliance,Tranche II,6.0,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,P-W-C-M fully integrated
+Shirdi Sai / Indosol,Tranche II,6.0,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,via Indosol Solar — P-W-C-M
+Waaree,Tranche II,6.0,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,W-C-M
+ReNew,Tranche II,4.8,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,ReNew (Shakti Four) — W-C-M
+Tata Power,Tranche II,4.0,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,Tata Power Solar — C-M
+First Solar,Tranche II,3.4,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,First Solar — P-W-C-M
+Avaada,Tranche II,3.0,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,Avaada Ventures — W-C-M
+Vikram Solar,Tranche II,2.4,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,Vikram Solar — C-M
+Grew,Tranche II,2.0,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,Grew Energy — W-C-M
+JSW,Tranche II,1.0,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,JSW Renewable Technologies — W-C-M
+AMPIN,Tranche II,1.0,high,SECI / PIB,https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380,AMPIN Energy — C-M

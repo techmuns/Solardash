@@ -52,7 +52,10 @@ export interface AlmmPhase {
 /** A PLI (Production-Linked Incentive) awardee — supported solar capacity. */
 export interface PliAwardee {
   company: string;
+  /** Cumulative capacity awarded across all tranches (GW). */
   capacityGw: number;
+  /** How many PLI tranches this company has won (the "consistency" signal). */
+  tranchesWon: number;
   confidence: Confidence;
 }
 
@@ -65,8 +68,11 @@ export interface ManufacturingData {
   cellQuarterly: CellQuarterly;
   supplyDemand: SupplyDemandSegment[];
   almmTimeline: AlmmPhase[];
-  /** PLI Tranche I+II awardees (GW of supported capacity). */
+  /** PLI awardees, cumulative GW across tranches (desc) — for the leaderboard. */
   pliAwardees: PliAwardee[];
+  /** Cumulative PLI capacity awarded per company, by tranche (the time series
+   *  that reveals who wins across successive rounds). One series per company. */
+  pliHistory: Series[];
   /** Cell & module nameplate capacity, annual (~5yr) — the build-out trend. */
   capacityHistory: Series[];
 }

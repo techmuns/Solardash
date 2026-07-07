@@ -365,47 +365,220 @@
       {
         "capacityGw": 10,
         "company": "Reliance",
-        "confidence": "high"
+        "confidence": "high",
+        "tranchesWon": 2
+      },
+      {
+        "capacityGw": 10,
+        "company": "Shirdi Sai / Indosol",
+        "confidence": "high",
+        "tranchesWon": 2
       },
       {
         "capacityGw": 6,
         "company": "Waaree",
-        "confidence": "high"
+        "confidence": "high",
+        "tranchesWon": 1
       },
       {
         "capacityGw": 4.8,
         "company": "ReNew",
-        "confidence": "high"
-      },
-      {
-        "capacityGw": 4,
-        "company": "Adani",
-        "confidence": "high"
-      },
-      {
-        "capacityGw": 4,
-        "company": "Shirdi Sai Electricals",
-        "confidence": "high"
+        "confidence": "high",
+        "tranchesWon": 1
       },
       {
         "capacityGw": 4,
         "company": "Tata Power",
-        "confidence": "high"
+        "confidence": "high",
+        "tranchesWon": 1
       },
       {
         "capacityGw": 3.4,
         "company": "First Solar",
-        "confidence": "high"
+        "confidence": "high",
+        "tranchesWon": 1
+      },
+      {
+        "capacityGw": 3,
+        "company": "Avaada",
+        "confidence": "high",
+        "tranchesWon": 1
       },
       {
         "capacityGw": 2.4,
         "company": "Vikram Solar",
-        "confidence": "high"
+        "confidence": "high",
+        "tranchesWon": 1
       },
       {
-        "capacityGw": 9.7,
-        "company": "Others",
-        "confidence": "medium"
+        "capacityGw": 2,
+        "company": "Grew",
+        "confidence": "high",
+        "tranchesWon": 1
+      },
+      {
+        "capacityGw": 1,
+        "company": "AMPIN",
+        "confidence": "high",
+        "tranchesWon": 1
+      },
+      {
+        "capacityGw": 1,
+        "company": "JSW",
+        "confidence": "high",
+        "tranchesWon": 1
+      },
+      {
+        "capacityGw": 0.737,
+        "company": "Adani",
+        "confidence": "high",
+        "tranchesWon": 1
+      }
+    ],
+    "pliHistory": [
+      {
+        "color": "#2563EB",
+        "key": "reliance",
+        "label": "Reliance",
+        "points": [
+          {
+            "period": "Tranche I · 2021",
+            "value": 4
+          },
+          {
+            "period": "Tranche II · 2023",
+            "value": 10
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#F59E0B",
+        "key": "shirdi-sai-indosol",
+        "label": "Shirdi Sai / Indosol",
+        "points": [
+          {
+            "period": "Tranche I · 2021",
+            "value": 4
+          },
+          {
+            "period": "Tranche II · 2023",
+            "value": 10
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#10B981",
+        "key": "waaree",
+        "label": "Waaree",
+        "points": [
+          {
+            "period": "Tranche I · 2021",
+            "value": 0
+          },
+          {
+            "period": "Tranche II · 2023",
+            "value": 6
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#8B5CF6",
+        "key": "renew",
+        "label": "ReNew",
+        "points": [
+          {
+            "period": "Tranche I · 2021",
+            "value": 0
+          },
+          {
+            "period": "Tranche II · 2023",
+            "value": 4.8
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#EC4899",
+        "key": "tata-power",
+        "label": "Tata Power",
+        "points": [
+          {
+            "period": "Tranche I · 2021",
+            "value": 0
+          },
+          {
+            "period": "Tranche II · 2023",
+            "value": 4
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#06B6D4",
+        "key": "first-solar",
+        "label": "First Solar",
+        "points": [
+          {
+            "period": "Tranche I · 2021",
+            "value": 0
+          },
+          {
+            "period": "Tranche II · 2023",
+            "value": 3.4
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#F97316",
+        "key": "avaada",
+        "label": "Avaada",
+        "points": [
+          {
+            "period": "Tranche I · 2021",
+            "value": 0
+          },
+          {
+            "period": "Tranche II · 2023",
+            "value": 3
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#6366F1",
+        "key": "vikram-solar",
+        "label": "Vikram Solar",
+        "points": [
+          {
+            "period": "Tranche I · 2021",
+            "value": 0
+          },
+          {
+            "period": "Tranche II · 2023",
+            "value": 2.4
+          }
+        ],
+        "unit": "GW"
+      },
+      {
+        "color": "#94A3B8",
+        "key": "others",
+        "label": "Others (4)",
+        "points": [
+          {
+            "period": "Tranche I · 2021",
+            "value": 0.737
+          },
+          {
+            "period": "Tranche II · 2023",
+            "value": 4.737
+          }
+        ],
+        "unit": "GW"
       }
     ],
     "supplyDemand": [
@@ -429,7 +602,7 @@
   "notes": [
     "Quarterly cell production is MODELLED: each producer's FY26E annual output is split across Q1FY26/Q2FY26/Q3FY26/Q4FY26 with a ramp [0.22, 0.24, 0.26, 0.28]; drop real (player, quarter) actuals into manufacturing/cell-production-quarterly-override.csv to override a cell.",
     "Module capacity is 173 GW enlisted under ALMM-I (MNRE Mar 2026; long tail bucketed as Others); the cell headline is ~27 GW ALMM-II (MNRE Feb 2026).",
-    "Player-wise cell-capacity is MNRE / DCR Portal; PLI Tranche I+II awardees total ~48 GW (PIB / JMK).",
+    "Player-wise cell-capacity is MNRE / DCR Portal. PLI awardees are shown cumulatively by tranche (Tranche I: IREDA LoAs Nov–Dec 2021, 8.7 GW to 3 firms; Tranche II: SECI LoAs Apr 2023, 39.6 GW to 11 firms) — ~48 GW total. Reliance and Shirdi Sai/Indosol are the only firms selected in both tranches (each 4 → 10 GW cumulative).",
     "Basic Customs Duty (BCD): modules 40% / cells 27.5%.",
     "Cell & module nameplate capacity history is a curated ~5-year annual series (FY21–FY26) from JMK Research / Mercom; module crossed 74 GW at Mar 2025 (sourced) — this is nameplate, distinct from the ALMM-enlisted headline KPIs."
   ],
@@ -444,6 +617,12 @@
       "asOf": "2026-03-31",
       "confidence": "high",
       "name": "Company FY26"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "IREDA / PIB",
+      "url": "https://mnre.gov.in/en/production-linked-incentive-pli/"
     },
     {
       "asOf": "2026-03-31",
@@ -502,17 +681,8 @@
     {
       "asOf": "2026-03-31",
       "confidence": "high",
-      "name": "PIB"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "high",
-      "name": "PIB / JMK"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "PIB / JMK"
+      "name": "SECI / PIB",
+      "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380"
     },
     {
       "asOf": "2026-03-31",
