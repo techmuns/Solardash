@@ -4,11 +4,29 @@
   "coverage": "Waaree Renewable Technologies",
   "data": {
     "cmp": 1011,
+    "concall": {
+      "date": "2026-04-16",
+      "guidance": [
+        "Sustainable EBITDA margin guided 14-16% amid pricing and competition pressure.",
+        "Diversifying into IPP — operational assets 54 MW, ₹26cr FY26 revenue.",
+        "2.83 GWp book plus 36 GWp pipeline underpin continued strong topline growth."
+      ],
+      "insights": [
+        "Q4 rev ₹1,102cr +131%, PAT ₹156cr +66%; FY26 rev ₹3,331cr +108%.",
+        "Unexecuted order book 2.83 GWp — 12-15 months of revenue visibility.",
+        "Bidding pipeline >36 GWp; recent wins 420/35/14 MWp ground-mount solar.",
+        "Q4 EBITDA margin 18.76%, above 14-16% guided band but below prior year."
+      ],
+      "orderExecution": "2.83 GWp unexecuted book executes over next 12-15 months; large lower-margin utility contracts dominate.",
+      "quarter": "Q4 FY26",
+      "source": "Waaree Renewable Q4 FY26 results/concall, ~Apr 16 2026; ScanX, Mercom India, sahi.com, InvestyWise"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 19.2,
     "hasDetail": false,
     "marketCapCr": 10545,
     "name": "Waaree Renewable Technologies",
+    "orderBookGw": 2.83,
     "patFy26Cr": 479,
     "peX": 22,
     "revenueFy26Cr": 3331,

@@ -5,6 +5,21 @@
   "data": {
     "board": "NSE SME",
     "cmp": 937,
+    "concall": {
+      "date": "2026-05-11",
+      "guidance": [
+        "FY27 revenue guidance >Rs700cr from order book, L1 pipeline and full-capacity ramp"
+      ],
+      "insights": [
+        "FY26 revenue ~Rs521cr (H1 Rs211cr +29%); consolidated PAT Rs68.98cr (+26%); OPM ~17%",
+        "11,000 MVA capacity fully commissioned; Phase-1 expansion done Oct-25 (up to 220kV)",
+        "Inverter-duty transformers for >1GW solar; ~Rs84cr 66kV export order; ~Rs49cr IDT orders",
+        "Finance costs down sharply on better fund utilisation"
+      ],
+      "orderExecution": "Order book plus healthy L1 pipeline underpins FY27 ramp from full 11,000 MVA capacity.",
+      "quarter": "H2 & FY26",
+      "source": "H2 & FY26 concall, 11 May 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 17.3,
     "hasDetail": false,

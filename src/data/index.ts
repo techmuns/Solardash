@@ -21,31 +21,137 @@ import stageEconomics from "./snapshots/profit-pools/stage-economics.json";
 import referenceGlossary from "./snapshots/reference/glossary.json";
 import whatsNewMilestones from "./snapshots/whats-new/milestones.json";
 import companiesRegistry from "./snapshots/companies/registry.json";
-import detailWaaree from "./snapshots/companies/detail/waaree-energies.json";
-import detailPremier from "./snapshots/companies/detail/premier-energies.json";
-import detailVikram from "./snapshots/companies/detail/vikram-solar.json";
-import detailWebsol from "./snapshots/companies/detail/websol-energy.json";
-import detailSaatvik from "./snapshots/companies/detail/saatvik-green.json";
-import detailAcme from "./snapshots/companies/detail/acme-solar.json";
-import detailInsolation from "./snapshots/companies/detail/insolation-energy.json";
-import detailAdaniGreen from "./snapshots/companies/detail/adani-green.json";
-import detailNtpcGreen from "./snapshots/companies/detail/ntpc-green.json";
-import detailJswEnergy from "./snapshots/companies/detail/jsw-energy.json";
-import detailTataPower from "./snapshots/companies/detail/tata-power.json";
+import detail_acme_solar from "./snapshots/companies/detail/acme-solar.json";
+import detail_adani_green from "./snapshots/companies/detail/adani-green.json";
+import detail_advait_energy from "./snapshots/companies/detail/advait-energy.json";
+import detail_alpex_solar from "./snapshots/companies/detail/alpex-solar.json";
+import detail_australian_premium_solar from "./snapshots/companies/detail/australian-premium-solar.json";
+import detail_bf_utilities from "./snapshots/companies/detail/bf-utilities.json";
+import detail_bondada_engineering from "./snapshots/companies/detail/bondada-engineering.json";
+import detail_borosil_renewables from "./snapshots/companies/detail/borosil-renewables.json";
+import detail_cesc from "./snapshots/companies/detail/cesc.json";
+import detail_danish_power from "./snapshots/companies/detail/danish-power.json";
+import detail_emmvee_photovoltaic from "./snapshots/companies/detail/emmvee-photovoltaic.json";
+import detail_ganesh_green_bharat from "./snapshots/companies/detail/ganesh-green-bharat.json";
+import detail_gensol_engineering from "./snapshots/companies/detail/gensol-engineering.json";
+import detail_gre_renew from "./snapshots/companies/detail/gre-renew.json";
+import detail_ind_renewable from "./snapshots/companies/detail/ind-renewable.json";
+import detail_indowind_energy from "./snapshots/companies/detail/indowind-energy.json";
+import detail_inox_green from "./snapshots/companies/detail/inox-green.json";
+import detail_inox_wind from "./snapshots/companies/detail/inox-wind.json";
+import detail_insolation_energy from "./snapshots/companies/detail/insolation-energy.json";
+import detail_jsw_energy from "./snapshots/companies/detail/jsw-energy.json";
+import detail_k2_infragen from "./snapshots/companies/detail/k2-infragen.json";
+import detail_karma_energy from "./snapshots/companies/detail/karma-energy.json";
+import detail_kaycee_energy from "./snapshots/companies/detail/kaycee-energy.json";
+import detail_kp_energy from "./snapshots/companies/detail/kp-energy.json";
+import detail_kp_green_engineering from "./snapshots/companies/detail/kp-green-engineering.json";
+import detail_kpi_green from "./snapshots/companies/detail/kpi-green.json";
+import detail_madhav_infra from "./snapshots/companies/detail/madhav-infra.json";
+import detail_nhpc from "./snapshots/companies/detail/nhpc.json";
+import detail_nlc_india from "./snapshots/companies/detail/nlc-india.json";
+import detail_ntpc from "./snapshots/companies/detail/ntpc.json";
+import detail_ntpc_green from "./snapshots/companies/detail/ntpc-green.json";
+import detail_onix_solar from "./snapshots/companies/detail/onix-solar.json";
+import detail_oriana_power from "./snapshots/companies/detail/oriana-power.json";
+import detail_orient_green_power from "./snapshots/companies/detail/orient-green-power.json";
+import detail_oswal_pumps from "./snapshots/companies/detail/oswal-pumps.json";
+import detail_premier_energies from "./snapshots/companies/detail/premier-energies.json";
+import detail_rajesh_power from "./snapshots/companies/detail/rajesh-power.json";
+import detail_ravindra_energy from "./snapshots/companies/detail/ravindra-energy.json";
+import detail_refex_renewables from "./snapshots/companies/detail/refex-renewables.json";
+import detail_renew_energy from "./snapshots/companies/detail/renew-energy.json";
+import detail_saatvik_green from "./snapshots/companies/detail/saatvik-green.json";
+import detail_sahaj_solar from "./snapshots/companies/detail/sahaj-solar.json";
+import detail_servotech_power from "./snapshots/companies/detail/servotech-power.json";
+import detail_shakti_pumps from "./snapshots/companies/detail/shakti-pumps.json";
+import detail_sjvn from "./snapshots/companies/detail/sjvn.json";
+import detail_solarium_green from "./snapshots/companies/detail/solarium-green.json";
+import detail_solarworld_energy from "./snapshots/companies/detail/solarworld-energy.json";
+import detail_solex_energy from "./snapshots/companies/detail/solex-energy.json";
+import detail_sterling_wilson_re from "./snapshots/companies/detail/sterling-wilson-re.json";
+import detail_sungarner_energies from "./snapshots/companies/detail/sungarner-energies.json";
+import detail_surana_solar from "./snapshots/companies/detail/surana-solar.json";
+import detail_suzlon_energy from "./snapshots/companies/detail/suzlon-energy.json";
+import detail_swelect_energy from "./snapshots/companies/detail/swelect-energy.json";
+import detail_tata_power from "./snapshots/companies/detail/tata-power.json";
+import detail_torrent_power from "./snapshots/companies/detail/torrent-power.json";
+import detail_ujaas_energy from "./snapshots/companies/detail/ujaas-energy.json";
+import detail_urja_global from "./snapshots/companies/detail/urja-global.json";
+import detail_vikram_solar from "./snapshots/companies/detail/vikram-solar.json";
+import detail_waa_solar from "./snapshots/companies/detail/waa-solar.json";
+import detail_waaree_energies from "./snapshots/companies/detail/waaree-energies.json";
+import detail_waaree_renewable from "./snapshots/companies/detail/waaree-renewable.json";
+import detail_websol_energy from "./snapshots/companies/detail/websol-energy.json";
+import detail_xl_energy from "./snapshots/companies/detail/xl-energy.json";
+import detail_zodiac_energy from "./snapshots/companies/detail/zodiac-energy.json";
 
 // Static map of per-company detail snapshots (add an entry per new company).
 const COMPANY_DETAILS: Record<string, unknown> = {
-  "waaree-energies": detailWaaree,
-  "premier-energies": detailPremier,
-  "vikram-solar": detailVikram,
-  "websol-energy": detailWebsol,
-  "saatvik-green": detailSaatvik,
-  "acme-solar": detailAcme,
-  "insolation-energy": detailInsolation,
-  "adani-green": detailAdaniGreen,
-  "ntpc-green": detailNtpcGreen,
-  "jsw-energy": detailJswEnergy,
-  "tata-power": detailTataPower,
+  "acme-solar": detail_acme_solar,
+  "adani-green": detail_adani_green,
+  "advait-energy": detail_advait_energy,
+  "alpex-solar": detail_alpex_solar,
+  "australian-premium-solar": detail_australian_premium_solar,
+  "bf-utilities": detail_bf_utilities,
+  "bondada-engineering": detail_bondada_engineering,
+  "borosil-renewables": detail_borosil_renewables,
+  "cesc": detail_cesc,
+  "danish-power": detail_danish_power,
+  "emmvee-photovoltaic": detail_emmvee_photovoltaic,
+  "ganesh-green-bharat": detail_ganesh_green_bharat,
+  "gensol-engineering": detail_gensol_engineering,
+  "gre-renew": detail_gre_renew,
+  "ind-renewable": detail_ind_renewable,
+  "indowind-energy": detail_indowind_energy,
+  "inox-green": detail_inox_green,
+  "inox-wind": detail_inox_wind,
+  "insolation-energy": detail_insolation_energy,
+  "jsw-energy": detail_jsw_energy,
+  "k2-infragen": detail_k2_infragen,
+  "karma-energy": detail_karma_energy,
+  "kaycee-energy": detail_kaycee_energy,
+  "kp-energy": detail_kp_energy,
+  "kp-green-engineering": detail_kp_green_engineering,
+  "kpi-green": detail_kpi_green,
+  "madhav-infra": detail_madhav_infra,
+  "nhpc": detail_nhpc,
+  "nlc-india": detail_nlc_india,
+  "ntpc": detail_ntpc,
+  "ntpc-green": detail_ntpc_green,
+  "onix-solar": detail_onix_solar,
+  "oriana-power": detail_oriana_power,
+  "orient-green-power": detail_orient_green_power,
+  "oswal-pumps": detail_oswal_pumps,
+  "premier-energies": detail_premier_energies,
+  "rajesh-power": detail_rajesh_power,
+  "ravindra-energy": detail_ravindra_energy,
+  "refex-renewables": detail_refex_renewables,
+  "renew-energy": detail_renew_energy,
+  "saatvik-green": detail_saatvik_green,
+  "sahaj-solar": detail_sahaj_solar,
+  "servotech-power": detail_servotech_power,
+  "shakti-pumps": detail_shakti_pumps,
+  "sjvn": detail_sjvn,
+  "solarium-green": detail_solarium_green,
+  "solarworld-energy": detail_solarworld_energy,
+  "solex-energy": detail_solex_energy,
+  "sterling-wilson-re": detail_sterling_wilson_re,
+  "sungarner-energies": detail_sungarner_energies,
+  "surana-solar": detail_surana_solar,
+  "suzlon-energy": detail_suzlon_energy,
+  "swelect-energy": detail_swelect_energy,
+  "tata-power": detail_tata_power,
+  "torrent-power": detail_torrent_power,
+  "ujaas-energy": detail_ujaas_energy,
+  "urja-global": detail_urja_global,
+  "vikram-solar": detail_vikram_solar,
+  "waa-solar": detail_waa_solar,
+  "waaree-energies": detail_waaree_energies,
+  "waaree-renewable": detail_waaree_renewable,
+  "websol-energy": detail_websol_energy,
+  "xl-energy": detail_xl_energy,
+  "zodiac-energy": detail_zodiac_energy,
 };
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;

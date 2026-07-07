@@ -4,6 +4,22 @@
   "coverage": "Zodiac Energy",
   "data": {
     "cmp": 267,
+    "concall": {
+      "date": "2026-05-25",
+      "guidance": [
+        "No formal company FY27 guidance located; analyst consensus expects ~20-25% revenue growth.",
+        "Key watch item is margin sustainability (EBITDA ~12-15% expected) amid competitive EPC pricing."
+      ],
+      "insights": [
+        "FY26 revenue Rs546cr up 34%; PAT Rs21.1cr up ~5.5%; EPS Rs13.88; final dividend recommended.",
+        "Ahmedabad-based solar EPC across rooftop, C&I and ground-mount; recent Rs5.44cr Rajkot open-access order.",
+        "Net margin compressed to ~3.9% from ~4.9% as revenue outpaced profit growth.",
+        "Growth driven by Gujarat C&I/open-access demand under state renewable policy 2024."
+      ],
+      "orderExecution": "Order book not publicly disclosed; small ground-mount/rooftop EPC orders typically execute within 6-12 months.",
+      "quarter": "Q4 FY26",
+      "source": "Q4/FY26 audited results 25-May-2026 (results filing/press); univest.in, scanx.trade, screener.in. NOTE: latest concall transcript on screener is May-2025 (Q4 FY25); a formal Q4 FY26 analyst concall transcript could not be confirmed publicly."
+    },
     "confidence": "high",
     "ebitdaMarginPct": 10.3,
     "hasDetail": false,

@@ -5,6 +5,20 @@
   "data": {
     "board": "NSE SME",
     "cmp": 195,
+    "concall": {
+      "date": "2026-06-11",
+      "guidance": [
+        "No quantitative guidance in release; continued expansion across clean-energy verticals"
+      ],
+      "insights": [
+        "FY26 revenue +157.8% YoY, PAT +253% (standalone); consolidated rev ~Rs49cr, PAT ~Rs2.8cr",
+        "OPM ~11%; EPS ~Rs12 (consol); improved working capital and lower trade receivables",
+        "Turnkey solar EPC (utility/rooftop) diversifying into BESS, Li-ion and inverter solutions"
+      ],
+      "orderExecution": "Not disclosed.",
+      "quarter": "FY26",
+      "source": "FY2025-26 results press release, 11 Jun 2026 (no concall held)"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 10.7,
     "hasDetail": false,

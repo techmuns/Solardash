@@ -64,19 +64,21 @@
     "cellGw": 3.6,
     "cmp": 1022,
     "concall": {
-      "date": "2026-05-14",
+      "date": "2026-05-15",
       "guidance": [
-        "Targeting cell capacity expansion toward ~10 GW over FY27–FY28.",
-        "Guided to sustain high-20s% EBITDA margin on the integrated cell advantage."
+        "7 GW Naidupeta cell: 4.8 GW by Jun-2026, 2.2 GW Sep-2026 to reach cell 10.6 GW.",
+        "10 GW ingot-wafer: 5 GW Dec-2027, balance Dec-2028; net debt/EBITDA 0.41x.",
+        "New verticals: 12 GWh BESS, 3 GW inverter (Dec-2026), aluminium frames, transformers by Mar-2027."
       ],
       "insights": [
-        "Order book of ~₹13,700 cr (≈9.4 GW) with a rising share of external (merchant) cell sales.",
-        "Fully integrated cell + module capacity; TOPCon transition largely complete.",
-        "Non-China equipment sourcing cited as an edge for US-bound DCR supply."
+        "FY26 revenue ₹8,026 cr (+21%), PAT ₹1,510 cr (+61%), EBITDA margin 32.1%.",
+        "Q4 revenue ₹2,269 cr (+35% YoY), PAT ₹457 cr (+64.5%), margin 20.1%.",
+        "Cell capacity 3.6 GW, module 11.1 GW; FY26 cell output 2,268 MW, module 3,570 MW.",
+        "Commissioned 5.6 GW automated TOPCon zero-busbar module line; ROE 42.4%, ROCE 33.5%."
       ],
-      "orderExecution": "Order book expected to convert over ~6–8 quarters, front-loaded as new TOPCon cell lines stabilise.",
+      "orderExecution": "Order book ₹14,010 cr (9,383 MW), almost fully domestic; cells 58%, modules 42% of value.",
       "quarter": "Q4 FY26",
-      "source": "Q4 FY26 earnings call (maintained)"
+      "source": "Q4 FY26 earnings call (Energetica / Business Standard)"
     },
     "confidence": "medium",
     "ebitdaMarginPct": 30,

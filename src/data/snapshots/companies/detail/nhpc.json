@@ -4,6 +4,22 @@
   "coverage": "NHPC",
   "data": {
     "cmp": 78.9,
+    "concall": {
+      "date": "2026-05-18",
+      "guidance": [
+        "Remaining four Subansiri units (1,000 MW) commission one-by-one till March 2027.",
+        "Expanding solar/RE alongside hydro; regulated equity grows as projects capitalize."
+      ],
+      "insights": [
+        "Q4 standalone PAT ₹1,460cr (+71%); FY26 PAT ₹3,689cr (+24.6%); revenue ₹11,615cr.",
+        "Subansiri Lower: 4 of 8 units (1,000 MW) commissioned; +250 MW unit on 8 May 2026.",
+        "Parbati-II (800 MW) commissioned Apr-2025 lifted FY26 generation.",
+        "Karnisar 300 MW solar commissioned in FY26 (revenue ₹86.5cr)."
+      ],
+      "orderExecution": "Subansiri Lower's remaining 1,000 MW commissions unit-by-unit through March 2027; broader hydro pipeline is long-gestation.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call, May 18 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 45.1,
     "hasDetail": false,

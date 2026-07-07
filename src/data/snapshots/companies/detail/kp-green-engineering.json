@@ -5,6 +5,21 @@
   "data": {
     "board": "BSE SME",
     "cmp": 367,
+    "concall": {
+      "date": "2026-05-13",
+      "guidance": [
+        "Rs1,831cr order book (incl new BSNL deal) for FY27 execution; dividend Rs0.30/share"
+      ],
+      "insights": [
+        "FY26 revenue Rs1,250cr (+78%), PAT Rs136cr (+85%), EBITDA +117%, margin ~20% (consolidated)",
+        "H2 FY26 revenue Rs713cr (+65%); H2 EBITDA margin ~21%",
+        "Galvanising plant commissioned in H2; total capacity now 4,00,500 MTPA",
+        "Fresh orders Rs507.94cr across 6 segments (solar, transmission, PEB, isolators, crash barriers)"
+      ],
+      "orderExecution": "Rs507.94cr fresh orders slated for current-year execution; Rs1,831cr total book underpins FY27.",
+      "quarter": "H2 & FY26",
+      "source": "H2 & FY26 audited results + concall, 13 May 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 19.7,
     "hasDetail": false,

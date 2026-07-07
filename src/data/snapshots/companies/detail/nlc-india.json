@@ -4,11 +4,28 @@
   "coverage": "NLC India",
   "data": {
     "cmp": 302,
+    "concall": {
+      "date": "2026-05-27",
+      "guidance": [
+        "Scale RE to 10,110 MW by 2030; NIRL secured 2 GW (incl 600MW solar + 300MW/1,800MWh ESS).",
+        "NIRL IPO planned FY27 (25% stake); 1.4 GW RE assets transferred to NIRL for monetization."
+      ],
+      "insights": [
+        "FY26 consolidated PAT record ₹3,769cr (+39%); standalone ₹2,525cr; revenue ₹21,525cr (+15%).",
+        "Q4 PAT surged 189% YoY; EBITDA margin ~43%.",
+        "Coal production 19.14 MT (+11.3%); Pachwara South (9 MTPA) began March 2026.",
+        "Added 1,013 MW in FY26: 660 MW Ghatampur Unit-2 (thermal) plus 303 MW RE."
+      ],
+      "orderExecution": "NIRL executes 2 GW of secured RE plus storage toward 10 GW by 2030, with an NIRL IPO slated for FY27.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 results / investor meet, May 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 31.9,
     "hasDetail": false,
     "marketCapCr": 41911,
     "name": "NLC India",
+    "orderBookGw": 2,
     "patFy26Cr": 3769,
     "peX": 11.9,
     "revenueFy26Cr": 17490,

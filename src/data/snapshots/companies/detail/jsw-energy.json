@@ -102,11 +102,29 @@
       }
     ],
     "cmp": 549,
+    "concall": {
+      "date": "2026-05-11",
+      "guidance": [
+        "Strategy 3.0: 30 GW generation plus 40 GWh storage by FY30.",
+        "FY27 adds ~3 GW (35-40% wind); 3-3.5 GW/yr thereafter; FY27 capex ~₹20,000cr.",
+        "Targets net debt/EBITDA of ~5-5.5x by 2030."
+      ],
+      "insights": [
+        "Q4 PAT ₹574cr (+38%); FY26 EBITDA ₹11,041cr (+81%), PAT +39% — record year.",
+        "Operational capacity ~13.2 GW; FY26 added 2,579 MW incl O2 Power 1,343 MW inorganic.",
+        "Total locked-in portfolio 30.5 GW (12.5 GW under construction, 4.6 GW pipeline).",
+        "Storage locked-in 29.6 GWh (26.4 GWh PSP + 3.2 GWh BESS); 5 GWh Pune battery plant live."
+      ],
+      "orderExecution": "12.5 GW under construction across thermal and RE commissions progressively toward the FY30 30 GW target.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call, May 11 2026"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 53,
     "hasDetail": true,
     "marketCapCr": 100600,
     "name": "JSW Energy",
+    "orderBookGw": 12.5,
     "patFy26Cr": 2762,
     "peX": 46.2,
     "quarterly": [

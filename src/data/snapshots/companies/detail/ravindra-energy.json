@@ -5,6 +5,23 @@
   "data": {
     "board": "NSE",
     "cmp": 183,
+    "concall": {
+      "date": "2026-04-29",
+      "guidance": [
+        "FY27 EV battery-swap expansion across four corridors: NCR, Delhi-Mumbai, Kandla/Mundra ports, Mumbai-Pune.",
+        "Continued solar/wind IPP capacity additions from the 486MWp pipeline.",
+        "Rights issue to fund EV network build-out and renewable growth."
+      ],
+      "insights": [
+        "EIM EV arm signed MoU with Drivn to deploy ~1,000 electric heavy trucks over two years.",
+        "FY26 revenue Rs543cr; Q4 consol PAT Rs12.6cr; EBITDA margin improved to ~24%.",
+        "Renewable IPP portfolio 486.3MWp across 113 sites (228.9MWp operational); Q4 generation surged.",
+        "EV/battery-swap unit (EIM) still loss-making, dragging consolidated profit; rights issue underway."
+      ],
+      "orderExecution": "Business is IPP asset-ownership plus EV/battery-swapping rather than EPC, so there is no classic order book; growth is via capacity and station roll-out.",
+      "quarter": "Q4 FY26",
+      "source": "Q4/FY26 concall & business update (board 29-Apr-2026, screener shows Apr-2026 transcript); scanx.trade, trendlyne, powerpeakdigest, TipRanks"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 24.1,
     "hasDetail": false,

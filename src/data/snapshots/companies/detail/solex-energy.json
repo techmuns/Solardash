@@ -5,6 +5,23 @@
   "data": {
     "cellGw": 1,
     "cmp": 1006,
+    "concall": {
+      "date": "2026-05-18",
+      "guidance": [
+        "FY27 target revenue ₹2,600 cr, PAT margin 6-8%, at conservative 55% utilisation.",
+        "₹4,000 cr Gujarat MoU: 5 GW solar cell + 10 GW BESS; first 2.2 GW cell by Dec-2027.",
+        "Executed 200+ EPC projects FY26 under 'Vision 2030' integrated ecosystem."
+      ],
+      "insights": [
+        "FY26 revenue ₹1,618 cr (+144%); PAT ₹98 cr (+133%); EBITDA margin ~11.5%.",
+        "Q4 revenue ₹886 cr (+247% YoY); PAT ₹59 cr.",
+        "Module capacity 3.78 GW (ALMM-listed Mar-2026); >1 GW modules sold FY26.",
+        "Working capital cut to ~35 days (from 61); ROE 38%."
+      ],
+      "orderExecution": "Order-book visibility >₹3,400 cr as of Mar-2026, executing across FY27.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (ScanX / SolarQuarter)"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 11.4,
     "hasDetail": false,

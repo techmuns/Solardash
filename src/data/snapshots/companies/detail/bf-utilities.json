@@ -4,6 +4,21 @@
   "coverage": "BF Utilities",
   "data": {
     "cmp": 560,
+    "concall": {
+      "date": "2026-05-28",
+      "guidance": [
+        "No investor call held and no forward guidance issued (Kalyani-group holding company)"
+      ],
+      "insights": [
+        "Consolidated business dominated by Nandi (NICE) BOT toll road plus windmills",
+        "Q3 FY26 (latest granular) consol revenue ₹235 cr, PAT ₹103 cr (toll-road driven)",
+        "Standalone entity tiny and loss-making; Kalyani-group holding-company structure",
+        "FY25 consol revenue ₹837 cr, PAT ₹338 cr; wind is a small share of assets"
+      ],
+      "orderExecution": "No EPC order book; NICE Bengaluru toll-road BOT concession operational and windmills generating.",
+      "quarter": "Q4/FY26",
+      "source": "BSE FY26 results filing (board 28 May 2026); Screener consolidated financials — no concall held"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 74,
     "hasDetail": false,

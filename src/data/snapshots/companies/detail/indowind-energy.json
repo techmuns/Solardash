@@ -4,6 +4,20 @@
   "coverage": "Indowind Energy",
   "data": {
     "cmp": 9.41,
+    "concall": {
+      "guidance": [
+        "Add ~5.1 MW via acquisition and deploy fresh capital into wind capacity"
+      ],
+      "insights": [
+        "FY26 net sales ~₹40 cr with near-breakeven PAT (~₹0 cr); interest costs erode profit",
+        "Q4 FY26 weak/loss-making; small wind IPP (Tamil Nadu, Karnataka, Maharashtra)",
+        "Signed in-principle agreement to acquire a ~5.1 MW operational wind project",
+        "9M FY26 EBITDA +29.4% YoY; announced ~₹9.8 cr fund-raising and investment plan"
+      ],
+      "orderExecution": "~5.1 MW operational wind acquisition to close post fund-raising; no EPC order book (pure IPP).",
+      "quarter": "Q4/FY26",
+      "source": "FY26 results (~May 2026); Q3 FY26 concall (Feb 2026); company press releases"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 36.6,
     "hasDetail": false,

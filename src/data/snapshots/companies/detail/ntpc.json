@@ -4,11 +4,29 @@
   "coverage": "NTPC",
   "data": {
     "cmp": 354,
+    "concall": {
+      "date": "2026-05-25",
+      "guidance": [
+        "FY27 adds ~9,557 MW (8,237 RE); FY28 ~10,039 MW.",
+        "Target 149 GW by 2032 including 60 GW renewables.",
+        "NTPC Green to add 8 GW each in FY27 and FY28."
+      ],
+      "insights": [
+        "Q4 consolidated PAT ₹10,615cr (+34%); standalone PAT ₹8,747cr (+75%).",
+        "FY26 group PAT ₹27,546cr (+15%); group capex ₹49,068cr.",
+        "Installed capacity ~89,108 MW; record 9,619 MW added in FY26 (RE 4,738 MW).",
+        "Over 32 GW under construction; final dividend ₹3.5 (plus two ₹2.75 interims)."
+      ],
+      "orderExecution": "32 GW under construction (thermal, hydro, RE) commissions through FY27-FY32 at ~9.5-10 GW/yr, increasingly RE-led.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call, May 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 28.2,
     "hasDetail": false,
     "marketCapCr": 343408,
     "name": "NTPC",
+    "orderBookGw": 32,
     "patFy26Cr": 27546,
     "peX": 12.7,
     "revenueFy26Cr": 187385,

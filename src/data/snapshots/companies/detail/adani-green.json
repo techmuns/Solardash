@@ -94,11 +94,28 @@
       }
     ],
     "cmp": 1549,
+    "concall": {
+      "guidance": [
+        "50 GW by 2030; 28 GW PPAs signed; ~21 GW Khavda plus 10 GW Rajasthan sites secured.",
+        "FY27 adds 4.5-5.0 GW solar/wind, contingent on grid evacuation infrastructure.",
+        "BESS to scale from 1.4 GWh to 10+ GWh by FY27; net debt/EBITDA 5.6x (vs 5.1x)."
+      ],
+      "insights": [
+        "Operational capacity 19.3 GW (+35% YoY); 5.1 GW greenfield added — highest globally ex-China.",
+        "FY26 power-supply EBITDA ₹10,865cr (+23%); industry-leading 91% margin; sales 37.6 BU (+34%).",
+        "Khavda BESS 1,376 MWh operationalized — a world-largest single-location deployment.",
+        "Grid curtailment cost ~₹1,300-1,500cr EBITDA; evacuation capped adds at 4.5-5 GW vs 7-8 GW capability."
+      ],
+      "orderExecution": "Evacuation infrastructure is the binding constraint; ~4.5-5 GW/yr commissioned at Khavda against 7-8 GW build capability.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 results presentation & earnings call"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 83,
     "hasDetail": true,
     "marketCapCr": 256334,
     "name": "Adani Green Energy",
+    "orderBookGw": 28,
     "patFy26Cr": 1987,
     "peX": 139,
     "quarterly": [

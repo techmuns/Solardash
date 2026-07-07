@@ -38,11 +38,28 @@
       }
     ],
     "cmp": 95,
+    "concall": {
+      "date": "2026-05-22",
+      "guidance": [
+        "Targets 8 GW capacity additions in each of FY27 and FY28.",
+        "~17 GW under award plus ~9 GW pipeline; part of NTPC's 60 GW RE by 2032.",
+        "Board approved ₹5,000cr bond raise for FY27."
+      ],
+      "insights": [
+        "Crossed 10 GW operational (10,076 MW at Mar-26); added ~4.2 GW in FY26, 2.1 GW in Q4.",
+        "Q4 PAT ₹197cr — ~10x the ₹17.5cr in Q3; Q4 sales ₹913cr (+47% YoY).",
+        "FY26 revenue ₹2,858cr (+29%); operating EBITDA ₹2,475cr (+29%)."
+      ],
+      "orderExecution": "Large awarded pipeline under execution; management targets ~8 GW commissioned per year in FY27 and FY28.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call, May 22 2026"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 87,
     "hasDetail": true,
     "marketCapCr": 80500,
     "name": "NTPC Green Energy",
+    "orderBookGw": 17,
     "patFy26Cr": 521,
     "peX": 153,
     "quarterly": [

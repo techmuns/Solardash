@@ -5,6 +5,21 @@
   "data": {
     "board": "NSE SME",
     "cmp": 90.2,
+    "concall": {
+      "date": "2026-05-16",
+      "guidance": [
+        "Deferred ERS supplies to be recognised in FY27; EBITDA margin held ~18-20%"
+      ],
+      "insights": [
+        "FY26 revenue Rs165.6cr, EBITDA Rs33cr, PAT Rs18.8cr, EPS Rs15.47 (consolidated)",
+        "Missed ~Rs270-300cr revenue target; Rs50-60cr ERS supplies delayed by Mideast war",
+        "Deferred revenue slips into FY27; raw-material price volatility pressured margins",
+        "H2 FY26 revenue Rs81.6cr, PAT Rs9.6cr"
+      ],
+      "orderExecution": "Rs50-60cr delayed ERS supplies expected to be executed/recognised in FY27.",
+      "quarter": "H2 & FY26",
+      "source": "H2 & FY26 results + earnings call, 16 May 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 19.5,
     "hasDetail": false,

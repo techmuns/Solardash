@@ -1,33 +1,915 @@
 {
-  "waaree-energies": {
+  "acme-solar": {
     "quarter": "Q4 FY26",
-    "date": "2026-05-16",
+    "date": "2026-05-08",
     "insights": [
-      "Record order book of ~₹53,000 cr (>25 GW), skewed toward exports and the US market.",
-      "Solar cell manufacturing ramped past 5.4 GW; backward integration into ingot-wafer under way.",
-      "1.6 GW Texas (USA) module plant operational and being scaled to reduce tariff exposure."
+      "FY26 rev ₹2,507cr +59%, EBITDA ₹2,265cr +61%; Q4 rev ₹705cr, PAT ₹138cr.",
+      "Operational capacity ~2,990 MW (incl. 100 MW wind); under-construction 5,081 MW.",
+      "Locked-in portfolio ~8,070 MW; PPA-signed 6,570 MW (~2.1 GW PPA pending).",
+      "Q4 win 301 MW FDRE; commissioned ~2.3 GWh battery energy storage."
     ],
     "guidance": [
-      "Module capacity guided to ~21 GW and cell capacity toward ~11 GW by FY27.",
-      "EBITDA margin expected to stay in the low-20s% as cell integration offsets module price pressure.",
-      "Capex funded largely from IPO proceeds and internal accruals; net-cash balance sheet maintained."
+      "Targets ~1.5 GW capacity commissioning in FY27.",
+      "Refinanced debt cutting interest ~150 bps; ~₹15,000cr financing tied up.",
+      "FDRE/hybrid plus BESS mix to drive high-EBITDA-margin growth."
     ],
-    "orderExecution": "Management expects the current order book to execute over roughly 8–10 quarters (FY27–FY28), weighted to H2 as US and cell capacity ramps.",
-    "source": "Q4 FY26 earnings call (maintained)"
+    "orderExecution": "5.08 GW under construction commissioning through FY27-FY29; ~1.5 GW targeted in FY27 alone.",
+    "source": "ACME Solar Q4 FY26 concall, May 8 2026; Yahoo Finance, SaurEnergy, SolarBytes, ScanX"
+  },
+  "adani-green": {
+    "quarter": "Q4 FY26",
+    "insights": [
+      "Operational capacity 19.3 GW (+35% YoY); 5.1 GW greenfield added — highest globally ex-China.",
+      "FY26 power-supply EBITDA ₹10,865cr (+23%); industry-leading 91% margin; sales 37.6 BU (+34%).",
+      "Khavda BESS 1,376 MWh operationalized — a world-largest single-location deployment.",
+      "Grid curtailment cost ~₹1,300-1,500cr EBITDA; evacuation capped adds at 4.5-5 GW vs 7-8 GW capability."
+    ],
+    "guidance": [
+      "50 GW by 2030; 28 GW PPAs signed; ~21 GW Khavda plus 10 GW Rajasthan sites secured.",
+      "FY27 adds 4.5-5.0 GW solar/wind, contingent on grid evacuation infrastructure.",
+      "BESS to scale from 1.4 GWh to 10+ GWh by FY27; net debt/EBITDA 5.6x (vs 5.1x)."
+    ],
+    "orderExecution": "Evacuation infrastructure is the binding constraint; ~4.5-5 GW/yr commissioned at Khavda against 7-8 GW build capability.",
+    "source": "Q4 FY26 results presentation & earnings call"
+  },
+  "advait-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-06-01",
+    "insights": [
+      "Record order book Rs1,304cr, up 159% YoY, giving strong multi-vertical visibility.",
+      "FY26 revenue Rs714.5cr up 80%; PAT Rs58.1cr; declared Rs2/share dividend.",
+      "Segments span power transmission (conductors/hardware), BESS, green hydrogen and fuel cells.",
+      "Pivoting from transmission hardware toward higher-value energy-transition products."
+    ],
+    "guidance": [
+      "FY27 capex Rs300-350cr, including new Dholera manufacturing facility live by Q4 FY27.",
+      "Building 2.5GWh BESS and 100MW electrolyser manufacturing capacity.",
+      "Green hydrogen and fuel-cell orders positioned as medium-term growth drivers."
+    ],
+    "orderExecution": "Rs1,304cr order book is largely executable over the next ~12-18 months, with new-vertical capacity coming on-stream through FY27.",
+    "source": "Q4/FY26 earnings call 01-Jun-2026; Yahoo Finance, gurufocus.com transcript, whalesbook, concall.in"
+  },
+  "alpex-solar": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-25",
+    "insights": [
+      "FY26 revenue ₹2,223cr (2.85x YoY); EBITDA ₹327cr; PAT ₹201cr (2.41x).",
+      "Q4 revenue ₹671cr, EBITDA ₹93cr (~14% margin), PAT ₹53cr.",
+      "Module capacity 2.4GW (Greater Noida); 2.2GW G12R TopCon cell line commissioning at Kosi, UP.",
+      "26,000+ solar water pumps installed; EBITDA margin expanded ~6.5% to ~15% over four years."
+    ],
+    "guidance": [
+      "Module capacity rising 2.4GW to 3.6GW; 2.2GW cell line operational in ~90 days.",
+      "FY27 revenue target >₹3,000cr (2x); aiming ~20% blended EBITDA margin post cell integration.",
+      "5GW solar glass + 5GW ingot/wafer by FY2030; ₹10,000cr revenue vision."
+    ],
+    "orderExecution": "Sitting on ~₹1,900cr order book and deliberately slowing new intake to prioritise 3.6GW module plus cell ramp.",
+    "source": "Alpex Solar Q4 & FY26 Investors/Analysts Meet transcript, NSE filing dated 28-May-2026"
+  },
+  "australian-premium-solar": {
+    "quarter": "H2 FY26",
+    "date": "2026-05-27",
+    "insights": [
+      "FY26 total income ₹708.7cr (+60.7%); EBITDA ₹95.6cr (+62.6%).",
+      "H2 FY26 income ₹405.8cr (+46.6%); PAT ₹29.3cr; near debt-free, net worth ₹164cr.",
+      "Commissioned new TopCon line; total module capacity now 800MW.",
+      "Solar water pumps gaining traction; guided ~35-40% of expected FY27 revenue."
+    ],
+    "guidance": [
+      "400MW TopCon line by end-Aug 2026 lifting module capacity to 1.2GW.",
+      "Entering BESS and captive-power segments.",
+      "Growth guidance lowered from ~60% to 30-35%."
+    ],
+    "source": "APS H2 FY26 earnings call (GuruFocus call highlights) + H2/FY26 results release, ~27-May-2026"
+  },
+  "bf-utilities": {
+    "quarter": "Q4/FY26",
+    "date": "2026-05-28",
+    "insights": [
+      "Consolidated business dominated by Nandi (NICE) BOT toll road plus windmills",
+      "Q3 FY26 (latest granular) consol revenue ₹235 cr, PAT ₹103 cr (toll-road driven)",
+      "Standalone entity tiny and loss-making; Kalyani-group holding-company structure",
+      "FY25 consol revenue ₹837 cr, PAT ₹338 cr; wind is a small share of assets"
+    ],
+    "guidance": [
+      "No investor call held and no forward guidance issued (Kalyani-group holding company)"
+    ],
+    "orderExecution": "No EPC order book; NICE Bengaluru toll-road BOT concession operational and windmills generating.",
+    "source": "BSE FY26 results filing (board 28 May 2026); Screener consolidated financials — no concall held"
+  },
+  "bondada-engineering": {
+    "quarter": "Q4 FY26",
+    "date": "2026-04-28",
+    "insights": [
+      "FY26 revenue Rs2,843cr up 81%; net profit Rs211cr; Q4 revenue Rs914cr up 28% YoY.",
+      "Order book Rs7,147cr at Mar-2026, led by renewable/solar EPC and BESS projects.",
+      "Separate Rs9,000cr, 2GW IPP project in Andhra Pradesh in land-pooling stage, housed in dedicated SPV.",
+      "New integrated Hyderabad manufacturing facility planned, capex Rs120-130cr."
+    ],
+    "guidance": [
+      "Targets 60-70% revenue growth in FY27.",
+      "Aspires to grow order book toward Rs20,000cr by FY27, driven by renewables and BESS.",
+      "Diversifying from telecom towers into solar EPC, BESS and IPP ownership."
+    ],
+    "orderExecution": "Rs7,147cr book largely executable over ~12-18 months, supporting the guided 60-70% FY27 growth; the 2GW IPP is a longer multi-year build.",
+    "source": "Q4/FY26 post-earnings concall 28-Apr-2026; scanx.trade, ConstructionWorld, screener.in"
+  },
+  "borosil-renewables": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-13",
+    "insights": [
+      "Solar-glass capacity 1,000 TPD (~6.5 GW); Q4 India solar-glass EBITDA margin 33%.",
+      "Q4 consolidated PAT ₹169 cr (turnaround); revenue ₹440 cr (+18% YoY).",
+      "FY26 standalone revenue ₹1,535 cr (+38%), EBITDA ₹492 cr (+172% YoY).",
+      "Anti-dumping duty on China/Vietnam glass curbed imports, lifted pricing."
+    ],
+    "guidance": [
+      "Adding SG-4 & SG-5 furnaces (+600 TPD), commissioning Dec-2026 → 1,600 TPD.",
+      "Targeting 30-33% EBITDA margin; ₹750 cr fundraise approved.",
+      "Setting up a new Rooftop Solar Solutions division."
+    ],
+    "orderExecution": "Germany (GMB & Geosphere) deconsolidated post-insolvency (₹213 cr FY26 exceptional); FY26 ended in a consolidated net loss despite the strong India business.",
+    "source": "Q4 FY26 earnings call (Free Press Journal / SaurEnergy)"
+  },
+  "cesc": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-06",
+    "insights": [
+      "FY26 consolidated PAT ₹1,618cr (+13%); standalone ₹852cr; revenue ~₹18,900cr.",
+      "Q4 PAT ₹459cr (+19% YoY); revenue ₹4,096cr (+4%); EBITDA margin fell to 18.1% from 20.9%.",
+      "CESC Kolkata T&D loss at all-time low 6.11%; Chandrapur stronger, Malegaon losses down.",
+      "Regulatory income moderated to ₹2.8bn in 9MFY26 (from ₹10bn) — positive for cash flows."
+    ],
+    "guidance": [
+      "RE to 1.2 GW by FY27 (0.7 GW PPAs signed) and 3.2 GW by FY29.",
+      "Recent wins: 300 MW hybrid (CESC Kolkata) and 250 MW wind (SECI).",
+      "3 GW solar cell & module plant in Greater Noida, commissioning 2027."
+    ],
+    "orderExecution": "RE pipeline scales to 1.2 GW by FY27 (0.7 GW contracted) and 3.2 GW by FY29; module plant onstream 2027.",
+    "source": "Q4 FY26 results & investor update, May 2026"
+  },
+  "danish-power": {
+    "quarter": "H2 & FY26",
+    "date": "2026-05-11",
+    "insights": [
+      "FY26 revenue ~Rs521cr (H1 Rs211cr +29%); consolidated PAT Rs68.98cr (+26%); OPM ~17%",
+      "11,000 MVA capacity fully commissioned; Phase-1 expansion done Oct-25 (up to 220kV)",
+      "Inverter-duty transformers for >1GW solar; ~Rs84cr 66kV export order; ~Rs49cr IDT orders",
+      "Finance costs down sharply on better fund utilisation"
+    ],
+    "guidance": [
+      "FY27 revenue guidance >Rs700cr from order book, L1 pipeline and full-capacity ramp"
+    ],
+    "orderExecution": "Order book plus healthy L1 pipeline underpins FY27 ramp from full 11,000 MVA capacity.",
+    "source": "H2 & FY26 concall, 11 May 2026"
+  },
+  "emmvee-photovoltaic": {
+    "quarter": "Q4 FY26",
+    "date": "2026-04-29",
+    "insights": [
+      "FY26 revenue ₹5,049 cr (+116%), EBITDA ₹1,734 cr (34% margin), PAT ₹1,082 cr (+193%).",
+      "Module capacity 10.3 GW, cell 2.94 GW as of Mar-2026; 100% TOPCon.",
+      "Q4 PAT ₹392 cr (+89% YoY); cell utilisation 79% in Q4.",
+      "Nov-2025 IPO raised ₹2,900 cr; ₹1,621 cr debt repaid; net cash."
+    ],
+    "guidance": [
+      "New 6 GW integrated cell+module plant at Devanahalli; ₹3,306 cr loan sanctioned.",
+      "Targeting 16.3 GW modules, 8.9 GW cells by FY27.",
+      "Ingot-wafer backward integration ~9 GW planned, first facility FY29."
+    ],
+    "orderExecution": "Order book 9.4 GW (up from 4.9 GW); Q4 inflow 1.27 GW; FY26 domestic-led, zero exports.",
+    "source": "Q4 FY26 earnings call (AlphaStreet / SaurEnergy)"
+  },
+  "ganesh-green-bharat": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-29",
+    "insights": [
+      "Won 1,000MWh BESS EPC order from NTPC Renewable Energy, disclosed on the earnings call.",
+      "Order book jumped to Rs2,210cr from ~Rs700cr on new tender wins post-results.",
+      "FY26 revenue Rs1,067.6cr up 232%; PAT Rs75.2cr up 149%; EBITDA Rs113.6cr up 122%.",
+      "Portfolio spans solar EPC, rural electrification/water and now large-scale BESS."
+    ],
+    "guidance": [
+      "FY27 revenue guided at Rs1,500-1,700cr (~40-59% growth).",
+      "Actively bidding large BESS and solar tenders to extend the book.",
+      "BESS emerging as a major new growth vertical alongside core solar EPC."
+    ],
+    "orderExecution": "Rs2,210cr book against FY27 guidance of Rs1,500-1,700cr implies roughly 15-18 months of execution visibility.",
+    "source": "FY26 earnings call 29-May-2026; NSE press release, saurenergy.com, scanx.trade, SolarQuarter"
+  },
+  "gre-renew": {
+    "quarter": "FY26",
+    "date": "2026-05-23",
+    "insights": [
+      "FY26 revenue Rs122.9cr (from Rs83.7cr, ~+47%), PAT Rs13.6cr (+136%)",
+      "EBITDA margin improved to 13.1% (from 11.35%)",
+      "Executed 25 projects / 23,506 KWp (vs 17); >100MW installed by Jun-26 via EPC + RESCO",
+      "Won Rs175cr EPC deal from Solarium Green Energy (50MW); Rs17.75cr Standard Solar order"
+    ],
+    "guidance": [
+      "No formal guidance; Rs175cr Solarium 50MW order to be executed in FY27"
+    ],
+    "orderExecution": "Rs175cr Solarium 50MW EPC order to be executed in FY27; EPC portfolio >61MW pre-win.",
+    "source": "FY26 results / investor update, board 23 May 2026 (no formal concall confirmed)"
+  },
+  "indowind-energy": {
+    "quarter": "Q4/FY26",
+    "insights": [
+      "FY26 net sales ~₹40 cr with near-breakeven PAT (~₹0 cr); interest costs erode profit",
+      "Q4 FY26 weak/loss-making; small wind IPP (Tamil Nadu, Karnataka, Maharashtra)",
+      "Signed in-principle agreement to acquire a ~5.1 MW operational wind project",
+      "9M FY26 EBITDA +29.4% YoY; announced ~₹9.8 cr fund-raising and investment plan"
+    ],
+    "guidance": [
+      "Add ~5.1 MW via acquisition and deploy fresh capital into wind capacity"
+    ],
+    "orderExecution": "~5.1 MW operational wind acquisition to close post fund-raising; no EPC order book (pure IPP).",
+    "source": "FY26 results (~May 2026); Q3 FY26 concall (Feb 2026); company press releases"
+  },
+  "inox-green": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-29",
+    "insights": [
+      "Q4 rev ₹120cr +40%; EBITDA ₹57cr +93% (~47% margin); PAT ₹28cr +340% YoY.",
+      "O&M portfolio 13+ GW (10.5 GW wind); order book 3.1 GW, 24+ months visibility.",
+      "Machine availability ~96.5%; added 600 MW to order book in FY26.",
+      "Two O&M acquisitions to consolidate in FY27 at ~50% EBITDA margin."
+    ],
+    "guidance": [
+      "Strong FY27 revenue growth as two acquisitions consolidate into results.",
+      "Acquisitions to add >₹60cr EBITDA at ~50% margins in FY27.",
+      "Sector-consolidation play; scouting further O&M M&A despite limited India targets."
+    ],
+    "orderExecution": "3.1 GW multi-year O&M order book gives 24+ months of annuity-like recurring revenue visibility.",
+    "source": "Inox Green Q4 FY26 analyst call, May 29 2026; Yahoo/GuruFocus, Business Standard, InvestyWise"
+  },
+  "inox-wind": {
+    "quarter": "Q4 FY26",
+    "insights": [
+      "Q4 revenue flat ~₹1,306cr; PAT ₹106cr, net profit ₹91cr down 51% YoY.",
+      "Order book ~3.1 GW; ~600 MW fresh FY26 wins (Aditya Birla, Gentari, Jakson).",
+      "Geopolitical disruption hit ECS supply/logistics; some customers deferred payments.",
+      "Strategic pivot to equipment supply and O&M; robust pipeline exceeding 2 GW."
+    ],
+    "guidance": [
+      "FY27 revenue growth guided ~75% on 3.1 GW book and group synergies.",
+      "FY27 EBITDA margin targeted 20%+; ~₹5,000cr revenue implied.",
+      "4.X MW turbine platform ramp to drive execution and share gains."
+    ],
+    "orderExecution": "3.1 GW book executable over ~2 years; FY27 positioned as the sharp ramp-up year.",
+    "source": "Inox Wind Q4 FY26 concall, ~May 2026; Quartr, Yahoo, SaurEnergy, Power Peak Digest, TradeBrains"
+  },
+  "insolation-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-25",
+    "insights": [
+      "FY26 revenue ₹2,164 cr (+61%); PAT ₹201 cr (+60%); EBITDA ₹305 cr (+77%).",
+      "Q4 revenue ₹792 cr (+100% YoY); PAT ₹70 cr (+65%).",
+      "Module capacity expanded to 5.5 GW via INA3 facility ramp-up.",
+      "Building 4.5 GW TOPCon cell + aluminium-frame plant at Narmadapuram, MP."
+    ],
+    "guidance": [
+      "Cell production Q3/Q4 FY27, full ramp Q1 FY28; EBITDA margin 14-15% → 17-18%.",
+      "FY27 capex ~₹2,500 cr (₹1,500 cr for cells); peak debt ~₹1,500 cr.",
+      "Targeting 2-2.5 GW module sales FY27; ~60%+ revenue growth momentum."
+    ],
+    "orderExecution": "Independent IPP portfolio expanded to ~400 MW on PM-KUSUM / PM Surya Ghar demand; no single order-book figure disclosed.",
+    "source": "Q4 FY26 earnings call (Mercom / SaurEnergy)"
+  },
+  "jsw-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-11",
+    "insights": [
+      "Q4 PAT ₹574cr (+38%); FY26 EBITDA ₹11,041cr (+81%), PAT +39% — record year.",
+      "Operational capacity ~13.2 GW; FY26 added 2,579 MW incl O2 Power 1,343 MW inorganic.",
+      "Total locked-in portfolio 30.5 GW (12.5 GW under construction, 4.6 GW pipeline).",
+      "Storage locked-in 29.6 GWh (26.4 GWh PSP + 3.2 GWh BESS); 5 GWh Pune battery plant live."
+    ],
+    "guidance": [
+      "Strategy 3.0: 30 GW generation plus 40 GWh storage by FY30.",
+      "FY27 adds ~3 GW (35-40% wind); 3-3.5 GW/yr thereafter; FY27 capex ~₹20,000cr.",
+      "Targets net debt/EBITDA of ~5-5.5x by 2030."
+    ],
+    "orderExecution": "12.5 GW under construction across thermal and RE commissions progressively toward the FY30 30 GW target.",
+    "source": "Q4 FY26 earnings call, May 11 2026"
+  },
+  "k2-infragen": {
+    "quarter": "Q4 / FY26",
+    "date": "2026-05-27",
+    "insights": [
+      "FY26 revenue Rs185cr (+26%), EBITDA Rs27cr (+33%), PAT Rs13.3cr ex-exceptional (+14%)",
+      "Debtor days improved ~15%, operating cash flow +61%, cash balances up sharply",
+      "New orders ~Rs412cr since Dec-25 across energy, T&D, railways, renewable; Rs57cr RRVPNL wins",
+      "Live bid pipeline ~Rs580cr in roads and railways"
+    ],
+    "guidance": [
+      "Order-led visibility from Rs424cr unexecuted book across railways, roads and power T&D"
+    ],
+    "orderExecution": "Rs424cr unexecuted order book to be executed largely across FY27.",
+    "source": "Q4/FY26 results + concall, 27 May 2026"
+  },
+  "karma-energy": {
+    "quarter": "Q4 FY26",
+    "insights": [
+      "Very small legacy wind IPP; Q4 FY26 revenue ₹0.9 cr, net loss ₹0.8 cr",
+      "FY26 loss-making (ROCE ~-4.8%); market cap ~₹44 cr and highly illiquid",
+      "No analyst coverage or earnings call; minimal public disclosures"
+    ],
+    "guidance": [
+      "No forward guidance issued; no concall held and no disclosed expansion"
+    ],
+    "orderExecution": "No order book; operates modest legacy wind assets with no announced capacity additions.",
+    "source": "BSE / Screener Q4 FY26 (Mar 2026) result filing — no concall held"
+  },
+  "kaycee-energy": {
+    "quarter": "H2 & FY26",
+    "date": "2026-05-16",
+    "insights": [
+      "FY26 revenue Rs165.6cr, EBITDA Rs33cr, PAT Rs18.8cr, EPS Rs15.47 (consolidated)",
+      "Missed ~Rs270-300cr revenue target; Rs50-60cr ERS supplies delayed by Mideast war",
+      "Deferred revenue slips into FY27; raw-material price volatility pressured margins",
+      "H2 FY26 revenue Rs81.6cr, PAT Rs9.6cr"
+    ],
+    "guidance": [
+      "Deferred ERS supplies to be recognised in FY27; EBITDA margin held ~18-20%"
+    ],
+    "orderExecution": "Rs50-60cr delayed ERS supplies expected to be executed/recognised in FY27.",
+    "source": "H2 & FY26 results + earnings call, 16 May 2026"
+  },
+  "kp-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-12",
+    "insights": [
+      "FY26 revenue ₹1,505 cr (+57%), PAT ₹181 cr; Q4 revenue ₹634 cr (+55%), PAT ₹79 cr",
+      "Wind EPC order book ~2 GW multi-year; EPC/infra segment ₹1,452 cr (+59% YoY)",
+      "O&M revenue surged 350% YoY to ₹5.1 cr; secured CERC power-trading licence",
+      "Exploring offshore wind opportunities in Gujarat and Tamil Nadu"
+    ],
+    "guidance": [
+      "Execute ~2 GW EPC pipeline; grow IPP self-ownership and O&M portfolios",
+      "Pursue offshore wind (Gujarat, TN) and ISTS-connected wind-solar hybrid projects"
+    ],
+    "orderExecution": "~2 GW wind EPC order book to be built out over multi-year timelines; FY26 saw record commissioning pace.",
+    "source": "Q4 FY26 earnings call (12 May 2026, Share India Securities); SolarQuarter results release"
+  },
+  "kp-green-engineering": {
+    "quarter": "H2 & FY26",
+    "date": "2026-05-13",
+    "insights": [
+      "FY26 revenue Rs1,250cr (+78%), PAT Rs136cr (+85%), EBITDA +117%, margin ~20% (consolidated)",
+      "H2 FY26 revenue Rs713cr (+65%); H2 EBITDA margin ~21%",
+      "Galvanising plant commissioned in H2; total capacity now 4,00,500 MTPA",
+      "Fresh orders Rs507.94cr across 6 segments (solar, transmission, PEB, isolators, crash barriers)"
+    ],
+    "guidance": [
+      "Rs1,831cr order book (incl new BSNL deal) for FY27 execution; dividend Rs0.30/share"
+    ],
+    "orderExecution": "Rs507.94cr fresh orders slated for current-year execution; Rs1,831cr total book underpins FY27.",
+    "source": "H2 & FY26 audited results + concall, 13 May 2026"
+  },
+  "kpi-green": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-12",
+    "insights": [
+      "FY26 rev ₹2,742cr +56%, PAT ₹509cr +57%; Q4 PAT ₹155cr, EBITDA margin ~37%.",
+      "Installed 1.62 GW, work-in-progress 4.64 GW; total portfolio ~6.26 GW.",
+      "Energized 447 MW in Q4; 376 MW Khavda GUVNL IPP hit by evacuation delays.",
+      "Consolidated debt ~₹4,532cr, D/E jumped to 1.49 on debt-funded expansion."
+    ],
+    "guidance": [
+      "Reaffirmed 40-50% annual growth target across CPP and IPP segments.",
+      "BESS capacity to be fully operational by FY27; revenue from FY28.",
+      "IPP cash flows to strengthen FY27-28, easing interest burden over time."
+    ],
+    "orderExecution": "4.64 GW work-in-progress commissioning in phases across FY27-28, subject to evacuation approvals.",
+    "source": "KPI Green Q4 FY26 concall, May 12 2026; ScanX, InvestyWise, Whalesbook, SolarQuarter"
+  },
+  "madhav-infra": {
+    "quarter": "Q4 FY26",
+    "insights": [
+      "Q4 FY26 consol revenue ₹254 cr, PAT ₹12 cr; FY26 revenue ₹502 cr, PAT ₹27 cr",
+      "Order book ~₹1,120 cr (CARE, Aug-2025): railway ROB 35%, roads 34%, solar 26%",
+      "Primarily infra/EPC; solar EPC plus a smaller owned solar-IPP generation segment",
+      "FY26 wins: ₹342 cr MPUVNL solar, ₹330 cr Surat 75 MW, 73.15 MW MP feeder PPAs"
+    ],
+    "guidance": [
+      "Grow solar EPC share; execute MP feeder-solarisation and PM-KUSUM PPAs"
+    ],
+    "orderExecution": "~₹1,120 cr diversified order book executing over multi-year; 75 MW Surat solar EPC under construction.",
+    "source": "BSE Q4 FY26 results; CARE Ratings PR (14 Aug 2025); Reg-30 disclosures — no concall held"
+  },
+  "nhpc": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-18",
+    "insights": [
+      "Q4 standalone PAT ₹1,460cr (+71%); FY26 PAT ₹3,689cr (+24.6%); revenue ₹11,615cr.",
+      "Subansiri Lower: 4 of 8 units (1,000 MW) commissioned; +250 MW unit on 8 May 2026.",
+      "Parbati-II (800 MW) commissioned Apr-2025 lifted FY26 generation.",
+      "Karnisar 300 MW solar commissioned in FY26 (revenue ₹86.5cr)."
+    ],
+    "guidance": [
+      "Remaining four Subansiri units (1,000 MW) commission one-by-one till March 2027.",
+      "Expanding solar/RE alongside hydro; regulated equity grows as projects capitalize."
+    ],
+    "orderExecution": "Subansiri Lower's remaining 1,000 MW commissions unit-by-unit through March 2027; broader hydro pipeline is long-gestation.",
+    "source": "Q4 FY26 earnings call, May 18 2026"
+  },
+  "nlc-india": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-27",
+    "insights": [
+      "FY26 consolidated PAT record ₹3,769cr (+39%); standalone ₹2,525cr; revenue ₹21,525cr (+15%).",
+      "Q4 PAT surged 189% YoY; EBITDA margin ~43%.",
+      "Coal production 19.14 MT (+11.3%); Pachwara South (9 MTPA) began March 2026.",
+      "Added 1,013 MW in FY26: 660 MW Ghatampur Unit-2 (thermal) plus 303 MW RE."
+    ],
+    "guidance": [
+      "Scale RE to 10,110 MW by 2030; NIRL secured 2 GW (incl 600MW solar + 300MW/1,800MWh ESS).",
+      "NIRL IPO planned FY27 (25% stake); 1.4 GW RE assets transferred to NIRL for monetization."
+    ],
+    "orderExecution": "NIRL executes 2 GW of secured RE plus storage toward 10 GW by 2030, with an NIRL IPO slated for FY27.",
+    "source": "Q4 FY26 results / investor meet, May 2026"
+  },
+  "ntpc": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-25",
+    "insights": [
+      "Q4 consolidated PAT ₹10,615cr (+34%); standalone PAT ₹8,747cr (+75%).",
+      "FY26 group PAT ₹27,546cr (+15%); group capex ₹49,068cr.",
+      "Installed capacity ~89,108 MW; record 9,619 MW added in FY26 (RE 4,738 MW).",
+      "Over 32 GW under construction; final dividend ₹3.5 (plus two ₹2.75 interims)."
+    ],
+    "guidance": [
+      "FY27 adds ~9,557 MW (8,237 RE); FY28 ~10,039 MW.",
+      "Target 149 GW by 2032 including 60 GW renewables.",
+      "NTPC Green to add 8 GW each in FY27 and FY28."
+    ],
+    "orderExecution": "32 GW under construction (thermal, hydro, RE) commissions through FY27-FY32 at ~9.5-10 GW/yr, increasingly RE-led.",
+    "source": "Q4 FY26 earnings call, May 2026"
+  },
+  "ntpc-green": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-22",
+    "insights": [
+      "Crossed 10 GW operational (10,076 MW at Mar-26); added ~4.2 GW in FY26, 2.1 GW in Q4.",
+      "Q4 PAT ₹197cr — ~10x the ₹17.5cr in Q3; Q4 sales ₹913cr (+47% YoY).",
+      "FY26 revenue ₹2,858cr (+29%); operating EBITDA ₹2,475cr (+29%)."
+    ],
+    "guidance": [
+      "Targets 8 GW capacity additions in each of FY27 and FY28.",
+      "~17 GW under award plus ~9 GW pipeline; part of NTPC's 60 GW RE by 2032.",
+      "Board approved ₹5,000cr bond raise for FY27."
+    ],
+    "orderExecution": "Large awarded pipeline under execution; management targets ~8 GW commissioned per year in FY27 and FY28.",
+    "source": "Q4 FY26 earnings call, May 22 2026"
+  },
+  "oriana-power": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-28",
+    "insights": [
+      "Won ~Rs1,200cr Maithon Dam floating solar (Jharkhand), among world's largest floating solar plants.",
+      "FY26 revenue Rs1,814cr up ~84%; PAT Rs252cr; delivered 835+MW solar and 1,000+MWh BESS.",
+      "Order book ~Rs7,000cr spanning solar EPC, fast-growing BESS and green-fuel opportunities.",
+      "Q4 slipped to tiny net loss; margins hit by commodity inflation, FX and project delays."
+    ],
+    "guidance": [
+      "Rs7,000cr book gives revenue visibility across FY27-FY28.",
+      "Scaling BESS portfolio and green hydrogen/green-fuel pipeline.",
+      "Actis strategic-stake transaction deferred, a key overhang to watch."
+    ],
+    "orderExecution": "Rs7,000cr order book targeted for execution over FY27-FY28.",
+    "source": "Q4/FY26 results & concall 28-May-2026; tradebrains.in, univest.in, scanx.trade"
+  },
+  "orient-green-power": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-13",
+    "insights": [
+      "Operating capacity ~399 MW (392 MW wind + 7 MW solar); +9.9 MW wind added in FY26",
+      "FY26 PAT ₹71.6 cr (+70%); Q4 seasonal net loss ₹16.6 cr on weak March-quarter wind",
+      "7 MW Tamil Nadu solar commissioned Dec 2025; ~₹16 cr interest refund aided FY26",
+      "PLF: newer turbines ~22% vs ~17% older; repowering targeting >30% PLF"
+    ],
+    "guidance": [
+      "1 GW capacity target retained but slowed; ~50 MW addable from internal accruals",
+      "Repower 10 MW old turbines with 6 MW new Suzlon 2.1 MW units; 17.6 MW solar + 9.9 MW wind planned",
+      "Larger expansion needs external equity; multiple financing options under evaluation"
+    ],
+    "orderExecution": "6.6 MW wind (₹62 cr RenFra contract) targeted for commissioning by 31 Jul 2026; initial repowering underway.",
+    "source": "Q4 & FY26 earnings call (13 May 2026, T. Shivaraman/J. Kotteswari); company filings"
+  },
+  "oswal-pumps": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-18",
+    "insights": [
+      "FY26 rev ₹2,064cr +44%, PAT ₹376cr +34%; Q4 rev ₹510cr, PAT ₹92cr.",
+      "Order book ~19,912 pumps (24,500+ incl. schemes/exports); pipeline >25,000.",
+      "Diversifying into rooftop/C&I/utility solar EPC — 300 MW pipeline; first PM Surya Ghar order.",
+      "Receivables rose sharply during large-scale PM-KUSUM execution ramp."
+    ],
+    "guidance": [
+      "FY27 growth targeted 20-25%; EBITDA margin 22-23%, PAT margin 15-16%.",
+      "H1 FY27 revenue may dip on award/execution timing; ramp on PM-KUSUM 2.0.",
+      "Prepared to scale execution quickly once PM-KUSUM 2.0 orders confirmed."
+    ],
+    "orderExecution": "~20,000-pump book executes over ~12 months; H1 FY27 soft, recovery on fresh scheme awards.",
+    "source": "Oswal Pumps Q4 FY26 concall, May 18 2026; ScanX, Construction World, SaurEnergy, GuruFocus, TradeBrains"
   },
   "premier-energies": {
     "quarter": "Q4 FY26",
-    "date": "2026-05-14",
+    "date": "2026-05-15",
     "insights": [
-      "Order book of ~₹13,700 cr (≈9.4 GW) with a rising share of external (merchant) cell sales.",
-      "Fully integrated cell + module capacity; TOPCon transition largely complete.",
-      "Non-China equipment sourcing cited as an edge for US-bound DCR supply."
+      "FY26 revenue ₹8,026 cr (+21%), PAT ₹1,510 cr (+61%), EBITDA margin 32.1%.",
+      "Q4 revenue ₹2,269 cr (+35% YoY), PAT ₹457 cr (+64.5%), margin 20.1%.",
+      "Cell capacity 3.6 GW, module 11.1 GW; FY26 cell output 2,268 MW, module 3,570 MW.",
+      "Commissioned 5.6 GW automated TOPCon zero-busbar module line; ROE 42.4%, ROCE 33.5%."
     ],
     "guidance": [
-      "Targeting cell capacity expansion toward ~10 GW over FY27–FY28.",
-      "Guided to sustain high-20s% EBITDA margin on the integrated cell advantage."
+      "7 GW Naidupeta cell: 4.8 GW by Jun-2026, 2.2 GW Sep-2026 to reach cell 10.6 GW.",
+      "10 GW ingot-wafer: 5 GW Dec-2027, balance Dec-2028; net debt/EBITDA 0.41x.",
+      "New verticals: 12 GWh BESS, 3 GW inverter (Dec-2026), aluminium frames, transformers by Mar-2027."
     ],
-    "orderExecution": "Order book expected to convert over ~6–8 quarters, front-loaded as new TOPCon cell lines stabilise.",
-    "source": "Q4 FY26 earnings call (maintained)"
+    "orderExecution": "Order book ₹14,010 cr (9,383 MW), almost fully domestic; cells 58%, modules 42% of value.",
+    "source": "Q4 FY26 earnings call (Energetica / Business Standard)"
+  },
+  "rajesh-power": {
+    "quarter": "Q4 / FY26",
+    "date": "2026-04-23",
+    "insights": [
+      "FY26 revenue Rs1,627.94cr (+51.85%), EBITDA Rs197.16cr (+59%), PAT Rs143.20cr (+48%)",
+      "Order book Rs3,326cr; FY26 order inflows Rs2,743cr",
+      "Entered BESS (first project signed) as a new growth engine",
+      "Trade receivables rose materially - collection/working-capital watch item"
+    ],
+    "guidance": [
+      "~40% revenue growth guidance for FY27",
+      "BESS scale-up as a new vertical alongside power T&D and solar EPC"
+    ],
+    "orderExecution": "Rs3,326cr order book gives strong multi-quarter/FY27 revenue visibility.",
+    "source": "Q4/FY26 earnings call, 23 Apr 2026"
+  },
+  "ravindra-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-04-29",
+    "insights": [
+      "EIM EV arm signed MoU with Drivn to deploy ~1,000 electric heavy trucks over two years.",
+      "FY26 revenue Rs543cr; Q4 consol PAT Rs12.6cr; EBITDA margin improved to ~24%.",
+      "Renewable IPP portfolio 486.3MWp across 113 sites (228.9MWp operational); Q4 generation surged.",
+      "EV/battery-swap unit (EIM) still loss-making, dragging consolidated profit; rights issue underway."
+    ],
+    "guidance": [
+      "FY27 EV battery-swap expansion across four corridors: NCR, Delhi-Mumbai, Kandla/Mundra ports, Mumbai-Pune.",
+      "Continued solar/wind IPP capacity additions from the 486MWp pipeline.",
+      "Rights issue to fund EV network build-out and renewable growth."
+    ],
+    "orderExecution": "Business is IPP asset-ownership plus EV/battery-swapping rather than EPC, so there is no classic order book; growth is via capacity and station roll-out.",
+    "source": "Q4/FY26 concall & business update (board 29-Apr-2026, screener shows Apr-2026 transcript); scanx.trade, trendlyne, powerpeakdigest, TipRanks"
+  },
+  "renew-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-18",
+    "insights": [
+      "Operating portfolio ~12.8 GW (+25% YoY adj.); commissioned record 2.4 GW in FY26",
+      "FY26 adj. EBITDA ₹98.5 bn (+25%, above guidance); PAT ₹10.4 bn (2.3x YoY)",
+      "Q4 FY26 adj. EBITDA ~₹23.7 bn (₹4 bn from manufacturing)",
+      "Leverage improved: interest/EBITDA 61.5% vs 66%; cash flow to equity +45% to ₹21.6 bn"
+    ],
+    "guidance": [
+      "FY27 adj. EBITDA guidance ₹103-109 bn; build 1.6-2.4 GW of new capacity",
+      "FY27 cash flow to equity ₹18-22 bn; commission 4 GW cell facility (ALMM-2) by year-end",
+      "Pending non-binding $6.75/share take-private (CPP Investments + CEO Sinha); binding deal targeted Jun-2026"
+    ],
+    "orderExecution": "1.6-2.4 GW contracted capacity under construction for FY27; 4 GW solar-cell line to commission by FY27-end.",
+    "source": "Q4 FY26 earnings call & 6-K (18 May 2026); SEC 13D/A take-private filings (May 2026)"
+  },
+  "saatvik-green": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-21",
+    "insights": [
+      "FY26 revenue ₹4,548 cr (+111%), EBITDA ₹581 cr (+62%), PAT ₹357 cr (+64%).",
+      "Q4 revenue ₹1,608 cr (+75% YoY); Q4 PAT ₹60.6 cr, down 38% YoY on margins.",
+      "Ambala module capacity 4.8 GW; FY26 production 3,162 MW at 84% utilisation.",
+      "Order book 5.89 GW at Mar-2026; commissioned 2 GW EPE encapsulant line."
+    ],
+    "guidance": [
+      "Scaling modules to 8.8 GW via Odisha 4 GW; 3.6 GW cell tool-moving Q1 FY27.",
+      "Planning 6 GW ingot-wafer, 5 GW encapsulant; margin recovery guided in FY27.",
+      "Diversifying into transformers, inverters, BESS, solar pumps (~10 verticals)."
+    ],
+    "orderExecution": "5.89 GW order book; Q4 PAT margin fell to 3.76% on commodity/currency volatility, recovery guided FY27.",
+    "source": "Q4 FY26 earnings call (Saatvik / PV-magazine)"
+  },
+  "sahaj-solar": {
+    "quarter": "H2 FY26",
+    "date": "2026-05-18",
+    "insights": [
+      "FY26 revenue ₹419cr (+27%); PAT ₹30cr (+7%); H1 EBITDA margin ~10%.",
+      "Module capacity scaled 100MW to 850MW by Mar-2026.",
+      "Order book ₹402cr at FY26-end, up from ₹320cr in Sep-2025.",
+      "Subsidiary signed SHA with Clarion for 750MW UAE module JV (50:50)."
+    ],
+    "guidance": [
+      "Module capacity target 1.6GW by FY27.",
+      "FY27 revenue growth guided 30%+.",
+      "Scaling via domestic ramp plus UAE manufacturing JV."
+    ],
+    "orderExecution": "₹402cr order book provides forward revenue visibility into FY27.",
+    "source": "Sahaj Solar H2/FY26 earnings call (18-May-2026) + investor presentation, NSE SME"
+  },
+  "servotech-power": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-07",
+    "insights": [
+      "Q4 revenue ₹211cr (+66.6% YoY); EBITDA ₹23.2cr (+70%); PAT ₹11.7cr (+49.5%).",
+      "FY26 EBITDA margin expanded 161bps on shift to higher-margin renewable/EV mix.",
+      "Won ~67% of PSU/OMC DC fast-charger tenders; solar inverters ride PM Surya Ghar.",
+      "Segments: EV chargers, solar inverters, BESS, solar modules."
+    ],
+    "guidance": [
+      "FY27 focus on high-capacity 120-360kW chargers plus MW-scale bus/CV charging.",
+      "Scaling BESS, solar inverters and retail distribution network.",
+      "Prioritising debt reduction, receivables recovery and working-capital improvement."
+    ],
+    "orderExecution": "EV order pipeline includes 375x60kW and 48x120kW DC chargers plus a 1,415kW South Central Railway rooftop win.",
+    "source": "Servotech Renewable Q4 & FY26 earnings call transcript (~7-May-2026) + company press release"
+  },
+  "shakti-pumps": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-11",
+    "insights": [
+      "FY26 record revenue ₹2,698cr; Q4 ₹858cr; FY26 PAT ₹257cr.",
+      "Q4 solar pump installations +51% YoY; 86,086 units FY26 (+20%).",
+      "Order book ~₹1,500cr (as of 7 May) gives strong near-term visibility.",
+      "EBITDA margin ~16%, pressured by raw-material costs; receivable cycle improved."
+    ],
+    "guidance": [
+      "Optimistic on KUSUM 2.0 momentum and state-level solar pump demand.",
+      "PM-KUSUM commissioning deadline extended to 31 Mar 2027 aids execution.",
+      "Margin defence via backward integration amid input-cost volatility."
+    ],
+    "orderExecution": "~₹1,500cr book executable within ~12 months; KUSUM deadline extension de-risks the timeline.",
+    "source": "Shakti Pumps Q4 FY26 concall, May 11 2026; Whalesbook, InvestyWise, ScanX, company update"
+  },
+  "sjvn": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-15",
+    "insights": [
+      "FY26 PAT ₹1,008cr (+3.9%); PBT ₹1,630cr (+25.7%); revenue ₹3,545cr (+22%).",
+      "Total generation 13,302 MU (+25% YoY); Q4 revenue at record ₹1,496cr.",
+      "Q4 net loss ₹118cr — interest cost doubled to a record ₹522cr as commissioned projects hit P&L."
+    ],
+    "guidance": [
+      "~5 GW under construction (Buxar thermal, Sunni/Dhaulasidh/Luhri hydro, solar).",
+      "Long-term ambition 25 GW by 2030; near-term interest and depreciation a drag.",
+      "Luhri/Dhaulasidh/Sunni hydro face disputes with the Himachal Pradesh government."
+    ],
+    "orderExecution": "~5 GW under construction commissions over FY27-FY28; hydro is long-gestation with some Himachal state disputes.",
+    "source": "Q4 FY26 earnings call, May 15 2026"
+  },
+  "solarium-green": {
+    "quarter": "FY26 / H2 FY26",
+    "date": "2026-06-02",
+    "insights": [
+      "FY26 revenue Rs368cr (+60%), PAT Rs20cr, EBITDA Rs35cr (~9.5% margin)",
+      "H2 margins compressed (~7% OPM) on shift toward large-scale ground-mounted EPC mix",
+      "Order book Rs852.28cr at 30-Jun-26 (ground-mount Rs468cr, module supply Rs310cr, other Rs74cr)",
+      "Won Rs186.53cr MAHAGENCO solar EPC subcontract; 1.2GW module plant in Ahmedabad"
+    ],
+    "guidance": [
+      "Growth led by ground-mounted EPC scale-up; Rs852cr book supports forward pipeline"
+    ],
+    "orderExecution": "Rs852cr order book (as of 30-Jun-26) to be executed over coming quarters.",
+    "source": "FY26 results / investor call, 2 Jun 2026"
+  },
+  "solarworld-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-26",
+    "insights": [
+      "Key wins include BESS orders for NTPC and solar EPC for SJVN Green Energy.",
+      "Order book ~Rs2,813cr; strong Q4 execution drove full-year ramp.",
+      "FY26 consol net profit Rs120.5cr up 56%; total income Rs1,416cr up 157%; Q4 PAT Rs49.1cr up 420%.",
+      "Building manufacturing: ~1.55GW module line and ~3.4GW BESS facility."
+    ],
+    "guidance": [
+      "Targets ~60:40 BESS-to-solar EPC revenue mix, tilting toward storage.",
+      "Backward integration into modules/BESS to lift margins and secure supply.",
+      "First full year as listed co (IPO Sep-2025); scaling on NTPC/SJVN-type utility orders."
+    ],
+    "orderExecution": "Rs2,813cr order book, weighted to BESS and utility solar, executes over roughly the next 18-24 months.",
+    "source": "Q4/FY26 earnings call (audio 26-May-2026); financepulse.ai, worldsolar.in transcript, screener.in, ICICIdirect"
+  },
+  "solex-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-18",
+    "insights": [
+      "FY26 revenue ₹1,618 cr (+144%); PAT ₹98 cr (+133%); EBITDA margin ~11.5%.",
+      "Q4 revenue ₹886 cr (+247% YoY); PAT ₹59 cr.",
+      "Module capacity 3.78 GW (ALMM-listed Mar-2026); >1 GW modules sold FY26.",
+      "Working capital cut to ~35 days (from 61); ROE 38%."
+    ],
+    "guidance": [
+      "FY27 target revenue ₹2,600 cr, PAT margin 6-8%, at conservative 55% utilisation.",
+      "₹4,000 cr Gujarat MoU: 5 GW solar cell + 10 GW BESS; first 2.2 GW cell by Dec-2027.",
+      "Executed 200+ EPC projects FY26 under 'Vision 2030' integrated ecosystem."
+    ],
+    "orderExecution": "Order-book visibility >₹3,400 cr as of Mar-2026, executing across FY27.",
+    "source": "Q4 FY26 earnings call (ScanX / SolarQuarter)"
+  },
+  "sterling-wilson-re": {
+    "quarter": "Q4 FY26",
+    "date": "2026-04-24",
+    "insights": [
+      "FY26 record revenue ₹7,548cr +20%; Q4 rev ₹1,946cr, Q4 PAT ₹142cr (record).",
+      "FY26 net loss ₹296cr on exceptional/litigation items despite strong Q4.",
+      "Order inflows ₹10,062cr +43%; unexecuted order book ₹11,813cr at Mar-26.",
+      "Bid pipeline ~31 GW (India >27 GW); ~20% of new orders from BESS."
+    ],
+    "guidance": [
+      "FY27 revenue growth ~15% on order book, excluding Reliance New Energy orders.",
+      "EPC gross margins guided 8-10%; O&M gross margins stabilising ~20%.",
+      "Battery storage a rising share of order intake and bid pipeline."
+    ],
+    "orderExecution": "₹11,813cr book gives ~1.5 years' revenue; FY27 execution weighted to India utility EPC.",
+    "source": "Sterling & Wilson RE Q4 FY26 concall, Apr 24 2026; ScanX, Whalesbook, Multibagg, MarketsMojo"
+  },
+  "sungarner-energies": {
+    "quarter": "FY26",
+    "date": "2026-06-11",
+    "insights": [
+      "FY26 revenue +157.8% YoY, PAT +253% (standalone); consolidated rev ~Rs49cr, PAT ~Rs2.8cr",
+      "OPM ~11%; EPS ~Rs12 (consol); improved working capital and lower trade receivables",
+      "Turnkey solar EPC (utility/rooftop) diversifying into BESS, Li-ion and inverter solutions"
+    ],
+    "guidance": [
+      "No quantitative guidance in release; continued expansion across clean-energy verticals"
+    ],
+    "orderExecution": "Not disclosed.",
+    "source": "FY2025-26 results press release, 11 Jun 2026 (no concall held)"
+  },
+  "suzlon-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-25",
+    "insights": [
+      "Record FY26 revenue ₹16,679cr; Q4 rev ₹5,468cr +45% YoY, PAT ₹1,114cr.",
+      "Order book 5.9 GW, 66% from C&I and PSU customers.",
+      "Record deliveries: 830 MW in Q4, 2,456 MW FY26 — highest-ever in India.",
+      "975 MW erected awaiting commissioning; 350 MW ready, pending customer readiness."
+    ],
+    "guidance": [
+      "India wind installs seen 8 GW FY27, 10 GW FY28; Suzlon eyes share gains.",
+      "FY26 EBITDA ₹3,022cr +63%, margin 18.1%; volume scale-up to lift profit.",
+      "Development pipeline 22-23 GW identified, ~8 GW in advanced stages."
+    ],
+    "orderExecution": "5.9 GW book executes over ~2-3 years as commissioning ramps toward record annual volumes.",
+    "source": "Suzlon Q4 FY26 results/concall, ~May 25 2026; Yahoo Finance, DSIJ, Angel One, sahi.com"
+  },
+  "swelect-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-07",
+    "insights": [
+      "FY26 revenue ₹657cr (+5.7%); consolidated PAT ₹57.6cr (turnaround from ₹14cr).",
+      "Q4 revenue ₹202cr (+46% QoQ, -7.5% YoY); PAT ₹11cr; final dividend ₹3.50.",
+      "Doubling solar module capacity toward 2GW; TopCon bifacial focus, order book >150MW.",
+      "Entered BESS via 50% stake in Swelect FortifyGrid India (Feb-2026)."
+    ],
+    "guidance": [
+      "2GW module capacity by Q1 FY27; DCR-cell supply tie-ups secured.",
+      "Targets 2GW manufacturing + 1GW IPP + 1GW EPC within two years.",
+      "C&I BESS with hybrid inverters launching Q2 FY27; solar-wafer push planned."
+    ],
+    "orderExecution": "TopCon module order book exceeding 150MW.",
+    "source": "Swelect Q4 & FY26 results (7-May-2026) + management commentary (Q3 FY26 call/press); formal Q4 concall transcript not located"
+  },
+  "tata-power": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-12",
+    "insights": [
+      "Q4 PAT ₹1,416cr (+8% YoY); FY26 PAT crossed ₹5,000cr, EBITDA ₹16,090cr (+11%).",
+      "TP Solar FY26 PAT ₹857cr (2x); made 3,825MW modules, 3,759MW cells at >95% yield.",
+      "RE portfolio 11.6 GW incl 5.1 GW under construction; Odisha discoms revenue ₹19,980cr.",
+      "Bhivpuri 1,000MW pumped-storage: all EM/HM packages awarded, clearances secured."
+    ],
+    "guidance": [
+      "FY27 capex guided ~₹25,000cr, ~62% to grid and green energy.",
+      "RE commissioning to exceed 2 GW in FY27; ~half of 5 GW pipeline in FY27, rest FY28.",
+      "Strategic shift: no pure solar/wind — only hybrid-plus-storage projects going forward."
+    ],
+    "orderExecution": "5.1 GW RE under construction commissions ~50% in FY27 and the balance in FY28, en route to 26.3 GW installed.",
+    "source": "Q4 FY26 earnings call (May 2026)"
+  },
+  "torrent-power": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-13",
+    "insights": [
+      "Q4 PAT ₹318cr (-70% YoY on a prior-year ₹637cr deferred-tax reversal base).",
+      "Q4 PBT ₹547cr incl ₹171cr one-off UNOSUGEN provision; adjusted PBT ₹718cr (+16%).",
+      "Installed 5,094 MW (2,730 gas, 2,002 RE, 362 coal); Khavda transmission commissioned in Q4.",
+      "FY26 capex: RE ₹6,500cr, distribution ₹1,600cr, thermal ₹700cr, transmission ₹550cr."
+    ],
+    "guidance": [
+      "FY27 RE commissioning 1.2-1.4 GW; ~860 MW C&I under construction; FY27 capex above FY26.",
+      "Pipeline: 4 GW RE (₹28,000cr), 3 GW pumped storage, 1.6 GW coal (₹23,000cr) through FY31.",
+      "Renewable EBITDA pressured by expiry of generation-based incentive; pursuing Nabha acquisition."
+    ],
+    "orderExecution": "4 GW RE commissions ~1.2-1.4 GW in FY27 and the rest in FY28; 3 GW PSP and 1.6 GW coal build through FY31.",
+    "source": "Q4 FY26 earnings call, May 13 2026"
+  },
+  "vikram-solar": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-08",
+    "insights": [
+      "FY26 revenue ₹4,802 cr (+40%), PAT ₹470 cr (3.4x); Q4 revenue record ₹1,453 cr.",
+      "FY26 EBITDA ~₹917 cr, margin ~19% (from 14%); production 3,220 MW, 75% utilisation.",
+      "Module sales +76% to 3,342 MW; nameplate ~4.5 GW; no in-house cell yet.",
+      "Order book 8.2 GW (87% domestic, IPPs ~69%); top-5 customers 47% (from 80%)."
+    ],
+    "guidance": [
+      "Module capacity to 15.5 GW; new plant 'First Module Out' Jun-2026.",
+      "9 GW TOPCon cell 'First Cell Out' Dec-2026; 12 GW wafer-ingot by FY30.",
+      "BESS 15 GWh by FY30 (5 GWh cell-to-pack first); assembly from FY27."
+    ],
+    "orderExecution": "8.2 GW order book (1.9 GW booked in Q4 FY26), 87% domestic; executes across FY27+.",
+    "source": "Q4 FY26 earnings call (SaurEnergy / PV-magazine)"
+  },
+  "waa-solar": {
+    "quarter": "FY26",
+    "date": "2026-05-19",
+    "insights": [
+      "Small solar IPP; total operational capacity ~42 MW (PM-KUSUM C feeder solarisation)",
+      "FY26 consol revenue ₹27.8 cr, PAT ₹0.65 cr — sharply down from ₹6.97 cr in FY25",
+      "Flagship 10.25 MW Tikar (Surendranagar) plant sells to GUVNL on 25-yr PPA",
+      "Signed 7 PPAs for 48.15 MW solar (PM-KUSUM C, RESCO) as near-term pipeline"
+    ],
+    "guidance": [
+      "Build/commission 48.15 MW contracted PM-KUSUM C solar (RESCO, ~₹3/kWh, 25-yr)"
+    ],
+    "orderExecution": "48.15 MW contracted solar to be commissioned in phases; ~42 MW already operational.",
+    "source": "BSE SME FY26 audited results (19 May 2026); Screener; company website — no concall held"
+  },
+  "waaree-energies": {
+    "quarter": "Q4 FY26",
+    "date": "2026-04-30",
+    "insights": [
+      "FY26 revenue ₹26,537 cr (+84%), PAT ₹3,884 cr (+101%); Q4 PAT ₹1,126 cr.",
+      "Module capacity ~26 GW (24.15 India + 1.6 US); cell 5.4 GW; FY26 output record 12.6 GW.",
+      "Q4 margin hit by high silver/copper, Mideast logistics, lower overseas mix.",
+      "M10R→G12R (615W) transition lifts realisation 10-12%; retail revenue ₹5,515 cr (+84%)."
+    ],
+    "guidance": [
+      "FY27 operating EBITDA guided ₹7,000-7,700 cr (+20-25%); sustained margin 19-20%.",
+      "10 GW cell live H2 FY27 → cell 15.5 GW; Nagpur 10 GW ingot-wafer (₹6,200 cr) FY28.",
+      "US capacity to 4.2 GW (add 2.6 GW ~6 months); Waaree 2.0 ~$3.5 bn capex; raising up to ₹10,000 cr."
+    ],
+    "orderExecution": "~₹53,000 cr order book; 65-70% overseas long-range orders execute over next 3-4 years.",
+    "source": "Q4 FY26 earnings call (ScanX / SolarQuarter)"
+  },
+  "waaree-renewable": {
+    "quarter": "Q4 FY26",
+    "date": "2026-04-16",
+    "insights": [
+      "Q4 rev ₹1,102cr +131%, PAT ₹156cr +66%; FY26 rev ₹3,331cr +108%.",
+      "Unexecuted order book 2.83 GWp — 12-15 months of revenue visibility.",
+      "Bidding pipeline >36 GWp; recent wins 420/35/14 MWp ground-mount solar.",
+      "Q4 EBITDA margin 18.76%, above 14-16% guided band but below prior year."
+    ],
+    "guidance": [
+      "Sustainable EBITDA margin guided 14-16% amid pricing and competition pressure.",
+      "Diversifying into IPP — operational assets 54 MW, ₹26cr FY26 revenue.",
+      "2.83 GWp book plus 36 GWp pipeline underpin continued strong topline growth."
+    ],
+    "orderExecution": "2.83 GWp unexecuted book executes over next 12-15 months; large lower-margin utility contracts dominate.",
+    "source": "Waaree Renewable Q4 FY26 results/concall, ~Apr 16 2026; ScanX, Mercom India, sahi.com, InvestyWise"
+  },
+  "websol-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-04-28",
+    "insights": [
+      "FY26 revenue ₹1,049 cr (+82%); PAT ₹303 cr (+96%); EBITDA margin 41%.",
+      "Q4 revenue ₹401 cr (+132% YoY), best-ever; PAT ₹125 cr (+158%).",
+      "Cell Line-2 (Sep-2025) doubled cell capacity to 1.2 GW; utilisation >90%.",
+      "Turned net-cash; debt/equity 0.19x (from 0.55x); ROE 67%."
+    ],
+    "guidance": [
+      "Mono-PERC→TOPCon upgrade lifts cell capacity to 1.35 GW; commercial Feb-2027.",
+      "Planned 4 GW integrated cell+module facility (2+2 GW), targeted Jun-2027.",
+      "Wafer/ingot feasibility with Linton ahead of ALMM List-3 (Jun-2028)."
+    ],
+    "orderExecution": "Order book ₹1,161 cr at FY26-end (modules ~60%, cells ~40%); book-to-bill 1.02x; ~1 year execution.",
+    "source": "Q4 FY26 earnings call (Sovrenn / SaurEnergy)"
+  },
+  "zodiac-energy": {
+    "quarter": "Q4 FY26",
+    "date": "2026-05-25",
+    "insights": [
+      "FY26 revenue Rs546cr up 34%; PAT Rs21.1cr up ~5.5%; EPS Rs13.88; final dividend recommended.",
+      "Ahmedabad-based solar EPC across rooftop, C&I and ground-mount; recent Rs5.44cr Rajkot open-access order.",
+      "Net margin compressed to ~3.9% from ~4.9% as revenue outpaced profit growth.",
+      "Growth driven by Gujarat C&I/open-access demand under state renewable policy 2024."
+    ],
+    "guidance": [
+      "No formal company FY27 guidance located; analyst consensus expects ~20-25% revenue growth.",
+      "Key watch item is margin sustainability (EBITDA ~12-15% expected) amid competitive EPC pricing."
+    ],
+    "orderExecution": "Order book not publicly disclosed; small ground-mount/rooftop EPC orders typically execute within 6-12 months.",
+    "source": "Q4/FY26 audited results 25-May-2026 (results filing/press); univest.in, scanx.trade, screener.in. NOTE: latest concall transcript on screener is May-2025 (Q4 FY25); a formal Q4 FY26 analyst concall transcript could not be confirmed publicly."
   }
 }

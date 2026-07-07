@@ -5,11 +5,26 @@
   "data": {
     "board": "BSE",
     "cmp": 8.5,
+    "concall": {
+      "guidance": [
+        "Grow solar EPC share; execute MP feeder-solarisation and PM-KUSUM PPAs"
+      ],
+      "insights": [
+        "Q4 FY26 consol revenue ₹254 cr, PAT ₹12 cr; FY26 revenue ₹502 cr, PAT ₹27 cr",
+        "Order book ~₹1,120 cr (CARE, Aug-2025): railway ROB 35%, roads 34%, solar 26%",
+        "Primarily infra/EPC; solar EPC plus a smaller owned solar-IPP generation segment",
+        "FY26 wins: ₹342 cr MPUVNL solar, ₹330 cr Surat 75 MW, 73.15 MW MP feeder PPAs"
+      ],
+      "orderExecution": "~₹1,120 cr diversified order book executing over multi-year; 75 MW Surat solar EPC under construction.",
+      "quarter": "Q4 FY26",
+      "source": "BSE Q4 FY26 results; CARE Ratings PR (14 Aug 2025); Reg-30 disclosures — no concall held"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 13.1,
     "hasDetail": false,
     "marketCapCr": 231,
     "name": "Madhav Infra Projects",
+    "orderBookCr": 1120,
     "patFy26Cr": 27,
     "peX": 8.4,
     "revenueFy26Cr": 502,

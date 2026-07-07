@@ -23,6 +23,23 @@
     ],
     "cellGw": 1.2,
     "cmp": 103,
+    "concall": {
+      "date": "2026-04-28",
+      "guidance": [
+        "Mono-PERC→TOPCon upgrade lifts cell capacity to 1.35 GW; commercial Feb-2027.",
+        "Planned 4 GW integrated cell+module facility (2+2 GW), targeted Jun-2027.",
+        "Wafer/ingot feasibility with Linton ahead of ALMM List-3 (Jun-2028)."
+      ],
+      "insights": [
+        "FY26 revenue ₹1,049 cr (+82%); PAT ₹303 cr (+96%); EBITDA margin 41%.",
+        "Q4 revenue ₹401 cr (+132% YoY), best-ever; PAT ₹125 cr (+158%).",
+        "Cell Line-2 (Sep-2025) doubled cell capacity to 1.2 GW; utilisation >90%.",
+        "Turned net-cash; debt/equity 0.19x (from 0.55x); ROE 67%."
+      ],
+      "orderExecution": "Order book ₹1,161 cr at FY26-end (modules ~60%, cells ~40%); book-to-bill 1.02x; ~1 year execution.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (Sovrenn / SaurEnergy)"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 41,
     "hasDetail": true,

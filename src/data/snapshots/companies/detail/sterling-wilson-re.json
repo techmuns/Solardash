@@ -4,6 +4,23 @@
   "coverage": "Sterling & Wilson Renewable Energy",
   "data": {
     "cmp": 240,
+    "concall": {
+      "date": "2026-04-24",
+      "guidance": [
+        "FY27 revenue growth ~15% on order book, excluding Reliance New Energy orders.",
+        "EPC gross margins guided 8-10%; O&M gross margins stabilising ~20%.",
+        "Battery storage a rising share of order intake and bid pipeline."
+      ],
+      "insights": [
+        "FY26 record revenue ₹7,548cr +20%; Q4 rev ₹1,946cr, Q4 PAT ₹142cr (record).",
+        "FY26 net loss ₹296cr on exceptional/litigation items despite strong Q4.",
+        "Order inflows ₹10,062cr +43%; unexecuted order book ₹11,813cr at Mar-26.",
+        "Bid pipeline ~31 GW (India >27 GW); ~20% of new orders from BESS."
+      ],
+      "orderExecution": "₹11,813cr book gives ~1.5 years' revenue; FY27 execution weighted to India utility EPC.",
+      "quarter": "Q4 FY26",
+      "source": "Sterling & Wilson RE Q4 FY26 concall, Apr 24 2026; ScanX, Whalesbook, Multibagg, MarketsMojo"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 4.2,
     "hasDetail": false,

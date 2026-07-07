@@ -101,12 +101,32 @@
         "revenue": 62429
       }
     ],
+    "cellGw": 4.3,
     "cmp": 378,
+    "concall": {
+      "date": "2026-05-12",
+      "guidance": [
+        "FY27 capex guided ~₹25,000cr, ~62% to grid and green energy.",
+        "RE commissioning to exceed 2 GW in FY27; ~half of 5 GW pipeline in FY27, rest FY28.",
+        "Strategic shift: no pure solar/wind — only hybrid-plus-storage projects going forward."
+      ],
+      "insights": [
+        "Q4 PAT ₹1,416cr (+8% YoY); FY26 PAT crossed ₹5,000cr, EBITDA ₹16,090cr (+11%).",
+        "TP Solar FY26 PAT ₹857cr (2x); made 3,825MW modules, 3,759MW cells at >95% yield.",
+        "RE portfolio 11.6 GW incl 5.1 GW under construction; Odisha discoms revenue ₹19,980cr.",
+        "Bhivpuri 1,000MW pumped-storage: all EM/HM packages awarded, clearances secured."
+      ],
+      "orderExecution": "5.1 GW RE under construction commissions ~50% in FY27 and the balance in FY28, en route to 26.3 GW installed.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (May 2026)"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 21,
     "hasDetail": true,
     "marketCapCr": 119900,
+    "moduleGw": 4.3,
     "name": "Tata Power",
+    "orderBookGw": 5.1,
     "patFy26Cr": 5118,
     "peX": 31.4,
     "quarterly": [

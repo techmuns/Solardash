@@ -4,12 +4,29 @@
   "coverage": "K.P. Energy",
   "data": {
     "cmp": 322,
+    "concall": {
+      "date": "2026-05-12",
+      "guidance": [
+        "Execute ~2 GW EPC pipeline; grow IPP self-ownership and O&M portfolios",
+        "Pursue offshore wind (Gujarat, TN) and ISTS-connected wind-solar hybrid projects"
+      ],
+      "insights": [
+        "FY26 revenue ₹1,505 cr (+57%), PAT ₹181 cr; Q4 revenue ₹634 cr (+55%), PAT ₹79 cr",
+        "Wind EPC order book ~2 GW multi-year; EPC/infra segment ₹1,452 cr (+59% YoY)",
+        "O&M revenue surged 350% YoY to ₹5.1 cr; secured CERC power-trading licence",
+        "Exploring offshore wind opportunities in Gujarat and Tamil Nadu"
+      ],
+      "orderExecution": "~2 GW wind EPC order book to be built out over multi-year timelines; FY26 saw record commissioning pace.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (12 May 2026, Share India Securities); SolarQuarter results release"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 21.4,
     "hasDetail": false,
     "marketCapCr": 2180,
     "name": "K.P. Energy",
     "orderBookCr": 3086,
+    "orderBookGw": 2,
     "patFy26Cr": 181,
     "peX": 12,
     "revenueFy26Cr": 1497,

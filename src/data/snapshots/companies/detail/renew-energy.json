@@ -4,11 +4,29 @@
   "coverage": "ReNew Energy Global",
   "data": {
     "board": "US",
+    "concall": {
+      "date": "2026-05-18",
+      "guidance": [
+        "FY27 adj. EBITDA guidance ₹103-109 bn; build 1.6-2.4 GW of new capacity",
+        "FY27 cash flow to equity ₹18-22 bn; commission 4 GW cell facility (ALMM-2) by year-end",
+        "Pending non-binding $6.75/share take-private (CPP Investments + CEO Sinha); binding deal targeted Jun-2026"
+      ],
+      "insights": [
+        "Operating portfolio ~12.8 GW (+25% YoY adj.); commissioned record 2.4 GW in FY26",
+        "FY26 adj. EBITDA ₹98.5 bn (+25%, above guidance); PAT ₹10.4 bn (2.3x YoY)",
+        "Q4 FY26 adj. EBITDA ~₹23.7 bn (₹4 bn from manufacturing)",
+        "Leverage improved: interest/EBITDA 61.5% vs 66%; cash flow to equity +45% to ₹21.6 bn"
+      ],
+      "orderExecution": "1.6-2.4 GW contracted capacity under construction for FY27; 4 GW solar-cell line to commission by FY27-end.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call & 6-K (18 May 2026); SEC 13D/A take-private filings (May 2026)"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 65.4,
     "hasDetail": false,
     "marketCapCr": 15600,
     "name": "ReNew Energy Global",
+    "orderBookGw": 2.4,
     "patFy26Cr": 1039,
     "peX": 15,
     "revenueFy26Cr": 15064,

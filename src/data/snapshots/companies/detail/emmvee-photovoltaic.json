@@ -5,12 +5,30 @@
   "data": {
     "cellGw": 2.94,
     "cmp": 328,
+    "concall": {
+      "date": "2026-04-29",
+      "guidance": [
+        "New 6 GW integrated cell+module plant at Devanahalli; ₹3,306 cr loan sanctioned.",
+        "Targeting 16.3 GW modules, 8.9 GW cells by FY27.",
+        "Ingot-wafer backward integration ~9 GW planned, first facility FY29."
+      ],
+      "insights": [
+        "FY26 revenue ₹5,049 cr (+116%), EBITDA ₹1,734 cr (34% margin), PAT ₹1,082 cr (+193%).",
+        "Module capacity 10.3 GW, cell 2.94 GW as of Mar-2026; 100% TOPCon.",
+        "Q4 PAT ₹392 cr (+89% YoY); cell utilisation 79% in Q4.",
+        "Nov-2025 IPO raised ₹2,900 cr; ₹1,621 cr debt repaid; net cash."
+      ],
+      "orderExecution": "Order book 9.4 GW (up from 4.9 GW); Q4 inflow 1.27 GW; FY26 domestic-led, zero exports.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (AlphaStreet / SaurEnergy)"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 34.3,
     "hasDetail": false,
     "marketCapCr": 22725,
     "moduleGw": 10.3,
     "name": "Emmvee Photovoltaic Power",
+    "orderBookGw": 9.4,
     "patFy26Cr": 1082,
     "peX": 21,
     "revenueFy26Cr": 5050,

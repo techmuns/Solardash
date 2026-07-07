@@ -5,6 +5,21 @@
   "data": {
     "board": "BSE SME",
     "cmp": 181,
+    "concall": {
+      "date": "2026-06-02",
+      "guidance": [
+        "Growth led by ground-mounted EPC scale-up; Rs852cr book supports forward pipeline"
+      ],
+      "insights": [
+        "FY26 revenue Rs368cr (+60%), PAT Rs20cr, EBITDA Rs35cr (~9.5% margin)",
+        "H2 margins compressed (~7% OPM) on shift toward large-scale ground-mounted EPC mix",
+        "Order book Rs852.28cr at 30-Jun-26 (ground-mount Rs468cr, module supply Rs310cr, other Rs74cr)",
+        "Won Rs186.53cr MAHAGENCO solar EPC subcontract; 1.2GW module plant in Ahmedabad"
+      ],
+      "orderExecution": "Rs852cr order book (as of 30-Jun-26) to be executed over coming quarters.",
+      "quarter": "FY26 / H2 FY26",
+      "source": "FY26 results / investor call, 2 Jun 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 8.2,
     "hasDetail": false,

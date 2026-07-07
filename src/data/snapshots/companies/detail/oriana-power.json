@@ -5,6 +5,23 @@
   "data": {
     "board": "NSE SME",
     "cmp": 1473,
+    "concall": {
+      "date": "2026-05-28",
+      "guidance": [
+        "Rs7,000cr book gives revenue visibility across FY27-FY28.",
+        "Scaling BESS portfolio and green hydrogen/green-fuel pipeline.",
+        "Actis strategic-stake transaction deferred, a key overhang to watch."
+      ],
+      "insights": [
+        "Won ~Rs1,200cr Maithon Dam floating solar (Jharkhand), among world's largest floating solar plants.",
+        "FY26 revenue Rs1,814cr up ~84%; PAT Rs252cr; delivered 835+MW solar and 1,000+MWh BESS.",
+        "Order book ~Rs7,000cr spanning solar EPC, fast-growing BESS and green-fuel opportunities.",
+        "Q4 slipped to tiny net loss; margins hit by commodity inflation, FX and project delays."
+      ],
+      "orderExecution": "Rs7,000cr order book targeted for execution over FY27-FY28.",
+      "quarter": "Q4 FY26",
+      "source": "Q4/FY26 results & concall 28-May-2026; tradebrains.in, univest.in, scanx.trade"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 21.9,
     "hasDetail": false,

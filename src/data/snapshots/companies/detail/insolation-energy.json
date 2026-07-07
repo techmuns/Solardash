@@ -46,6 +46,23 @@
       }
     ],
     "cmp": 113,
+    "concall": {
+      "date": "2026-05-25",
+      "guidance": [
+        "Cell production Q3/Q4 FY27, full ramp Q1 FY28; EBITDA margin 14-15% → 17-18%.",
+        "FY27 capex ~₹2,500 cr (₹1,500 cr for cells); peak debt ~₹1,500 cr.",
+        "Targeting 2-2.5 GW module sales FY27; ~60%+ revenue growth momentum."
+      ],
+      "insights": [
+        "FY26 revenue ₹2,164 cr (+61%); PAT ₹201 cr (+60%); EBITDA ₹305 cr (+77%).",
+        "Q4 revenue ₹792 cr (+100% YoY); PAT ₹70 cr (+65%).",
+        "Module capacity expanded to 5.5 GW via INA3 facility ramp-up.",
+        "Building 4.5 GW TOPCon cell + aluminium-frame plant at Narmadapuram, MP."
+      ],
+      "orderExecution": "Independent IPP portfolio expanded to ~400 MW on PM-KUSUM / PM Surya Ghar demand; no single order-book figure disclosed.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (Mercom / SaurEnergy)"
+    },
     "confidence": "modelled",
     "ebitdaMarginPct": 13,
     "hasDetail": true,

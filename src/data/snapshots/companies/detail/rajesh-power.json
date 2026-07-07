@@ -5,6 +5,22 @@
   "data": {
     "board": "BSE SME",
     "cmp": 839,
+    "concall": {
+      "date": "2026-04-23",
+      "guidance": [
+        "~40% revenue growth guidance for FY27",
+        "BESS scale-up as a new vertical alongside power T&D and solar EPC"
+      ],
+      "insights": [
+        "FY26 revenue Rs1,627.94cr (+51.85%), EBITDA Rs197.16cr (+59%), PAT Rs143.20cr (+48%)",
+        "Order book Rs3,326cr; FY26 order inflows Rs2,743cr",
+        "Entered BESS (first project signed) as a new growth engine",
+        "Trade receivables rose materially - collection/working-capital watch item"
+      ],
+      "orderExecution": "Rs3,326cr order book gives strong multi-quarter/FY27 revenue visibility.",
+      "quarter": "Q4 / FY26",
+      "source": "Q4/FY26 earnings call, 23 Apr 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 12.1,
     "hasDetail": false,

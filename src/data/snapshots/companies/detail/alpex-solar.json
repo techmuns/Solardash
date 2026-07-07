@@ -5,12 +5,30 @@
   "data": {
     "board": "NSE SME",
     "cmp": 795,
+    "concall": {
+      "date": "2026-05-25",
+      "guidance": [
+        "Module capacity rising 2.4GW to 3.6GW; 2.2GW cell line operational in ~90 days.",
+        "FY27 revenue target >₹3,000cr (2x); aiming ~20% blended EBITDA margin post cell integration.",
+        "5GW solar glass + 5GW ingot/wafer by FY2030; ₹10,000cr revenue vision."
+      ],
+      "insights": [
+        "FY26 revenue ₹2,223cr (2.85x YoY); EBITDA ₹327cr; PAT ₹201cr (2.41x).",
+        "Q4 revenue ₹671cr, EBITDA ₹93cr (~14% margin), PAT ₹53cr.",
+        "Module capacity 2.4GW (Greater Noida); 2.2GW G12R TopCon cell line commissioning at Kosi, UP.",
+        "26,000+ solar water pumps installed; EBITDA margin expanded ~6.5% to ~15% over four years."
+      ],
+      "orderExecution": "Sitting on ~₹1,900cr order book and deliberately slowing new intake to prioritise 3.6GW module plus cell ramp.",
+      "quarter": "Q4 FY26",
+      "source": "Alpex Solar Q4 & FY26 Investors/Analysts Meet transcript, NSE filing dated 28-May-2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 14.4,
     "hasDetail": false,
     "marketCapCr": 2030,
     "moduleGw": 2.4,
     "name": "Alpex Solar",
+    "orderBookCr": 1900,
     "patFy26Cr": 202,
     "peX": 10,
     "revenueFy26Cr": 2223,

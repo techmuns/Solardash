@@ -5,6 +5,21 @@
   "data": {
     "board": "NSE SME",
     "cmp": 62,
+    "concall": {
+      "date": "2026-05-27",
+      "guidance": [
+        "Order-led visibility from Rs424cr unexecuted book across railways, roads and power T&D"
+      ],
+      "insights": [
+        "FY26 revenue Rs185cr (+26%), EBITDA Rs27cr (+33%), PAT Rs13.3cr ex-exceptional (+14%)",
+        "Debtor days improved ~15%, operating cash flow +61%, cash balances up sharply",
+        "New orders ~Rs412cr since Dec-25 across energy, T&D, railways, renewable; Rs57cr RRVPNL wins",
+        "Live bid pipeline ~Rs580cr in roads and railways"
+      ],
+      "orderExecution": "Rs424cr unexecuted order book to be executed largely across FY27.",
+      "quarter": "Q4 / FY26",
+      "source": "Q4/FY26 results + concall, 27 May 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 12.4,
     "hasDetail": false,

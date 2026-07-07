@@ -5,6 +5,22 @@
   "data": {
     "board": "NSE SME",
     "cmp": 297,
+    "concall": {
+      "date": "2026-05-27",
+      "guidance": [
+        "400MW TopCon line by end-Aug 2026 lifting module capacity to 1.2GW.",
+        "Entering BESS and captive-power segments.",
+        "Growth guidance lowered from ~60% to 30-35%."
+      ],
+      "insights": [
+        "FY26 total income ₹708.7cr (+60.7%); EBITDA ₹95.6cr (+62.6%).",
+        "H2 FY26 income ₹405.8cr (+46.6%); PAT ₹29.3cr; near debt-free, net worth ₹164cr.",
+        "Commissioned new TopCon line; total module capacity now 800MW.",
+        "Solar water pumps gaining traction; guided ~35-40% of expected FY27 revenue."
+      ],
+      "quarter": "H2 FY26",
+      "source": "APS H2 FY26 earnings call (GuruFocus call highlights) + H2/FY26 results release, ~27-May-2026"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 13.4,
     "hasDetail": false,

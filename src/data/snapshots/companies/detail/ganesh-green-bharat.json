@@ -5,6 +5,23 @@
   "data": {
     "board": "NSE SME",
     "cmp": 261,
+    "concall": {
+      "date": "2026-05-29",
+      "guidance": [
+        "FY27 revenue guided at Rs1,500-1,700cr (~40-59% growth).",
+        "Actively bidding large BESS and solar tenders to extend the book.",
+        "BESS emerging as a major new growth vertical alongside core solar EPC."
+      ],
+      "insights": [
+        "Won 1,000MWh BESS EPC order from NTPC Renewable Energy, disclosed on the earnings call.",
+        "Order book jumped to Rs2,210cr from ~Rs700cr on new tender wins post-results.",
+        "FY26 revenue Rs1,067.6cr up 232%; PAT Rs75.2cr up 149%; EBITDA Rs113.6cr up 122%.",
+        "Portfolio spans solar EPC, rural electrification/water and now large-scale BESS."
+      ],
+      "orderExecution": "Rs2,210cr book against FY27 guidance of Rs1,500-1,700cr implies roughly 15-18 months of execution visibility.",
+      "quarter": "Q4 FY26",
+      "source": "FY26 earnings call 29-May-2026; NSE press release, saurenergy.com, scanx.trade, SolarQuarter"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 10.7,
     "hasDetail": false,

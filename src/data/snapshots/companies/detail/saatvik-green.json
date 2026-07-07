@@ -38,12 +38,30 @@
       }
     ],
     "cmp": 435,
+    "concall": {
+      "date": "2026-05-21",
+      "guidance": [
+        "Scaling modules to 8.8 GW via Odisha 4 GW; 3.6 GW cell tool-moving Q1 FY27.",
+        "Planning 6 GW ingot-wafer, 5 GW encapsulant; margin recovery guided in FY27.",
+        "Diversifying into transformers, inverters, BESS, solar pumps (~10 verticals)."
+      ],
+      "insights": [
+        "FY26 revenue ₹4,548 cr (+111%), EBITDA ₹581 cr (+62%), PAT ₹357 cr (+64%).",
+        "Q4 revenue ₹1,608 cr (+75% YoY); Q4 PAT ₹60.6 cr, down 38% YoY on margins.",
+        "Ambala module capacity 4.8 GW; FY26 production 3,162 MW at 84% utilisation.",
+        "Order book 5.89 GW at Mar-2026; commissioned 2 GW EPE encapsulant line."
+      ],
+      "orderExecution": "5.89 GW order book; Q4 PAT margin fell to 3.76% on commodity/currency volatility, recovery guided FY27.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (Saatvik / PV-magazine)"
+    },
     "confidence": "modelled",
     "ebitdaMarginPct": 12,
     "hasDetail": true,
     "marketCapCr": 6100,
     "moduleGw": 3.8,
     "name": "Saatvik Green Energy",
+    "orderBookGw": 5.89,
     "patFy26Cr": 357,
     "peX": 15.4,
     "quarterly": [

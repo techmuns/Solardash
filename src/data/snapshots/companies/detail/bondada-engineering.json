@@ -4,6 +4,23 @@
   "coverage": "Bondada Engineering",
   "data": {
     "cmp": 315,
+    "concall": {
+      "date": "2026-04-28",
+      "guidance": [
+        "Targets 60-70% revenue growth in FY27.",
+        "Aspires to grow order book toward Rs20,000cr by FY27, driven by renewables and BESS.",
+        "Diversifying from telecom towers into solar EPC, BESS and IPP ownership."
+      ],
+      "insights": [
+        "FY26 revenue Rs2,843cr up 81%; net profit Rs211cr; Q4 revenue Rs914cr up 28% YoY.",
+        "Order book Rs7,147cr at Mar-2026, led by renewable/solar EPC and BESS projects.",
+        "Separate Rs9,000cr, 2GW IPP project in Andhra Pradesh in land-pooling stage, housed in dedicated SPV.",
+        "New integrated Hyderabad manufacturing facility planned, capex Rs120-130cr."
+      ],
+      "orderExecution": "Rs7,147cr book largely executable over ~12-18 months, supporting the guided 60-70% FY27 growth; the 2GW IPP is a longer multi-year build.",
+      "quarter": "Q4 FY26",
+      "source": "Q4/FY26 post-earnings concall 28-Apr-2026; scanx.trade, ConstructionWorld, screener.in"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 11.5,
     "hasDetail": false,

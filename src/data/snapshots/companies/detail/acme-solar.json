@@ -62,11 +62,29 @@
       }
     ],
     "cmp": 384,
+    "concall": {
+      "date": "2026-05-08",
+      "guidance": [
+        "Targets ~1.5 GW capacity commissioning in FY27.",
+        "Refinanced debt cutting interest ~150 bps; ~₹15,000cr financing tied up.",
+        "FDRE/hybrid plus BESS mix to drive high-EBITDA-margin growth."
+      ],
+      "insights": [
+        "FY26 rev ₹2,507cr +59%, EBITDA ₹2,265cr +61%; Q4 rev ₹705cr, PAT ₹138cr.",
+        "Operational capacity ~2,990 MW (incl. 100 MW wind); under-construction 5,081 MW.",
+        "Locked-in portfolio ~8,070 MW; PPA-signed 6,570 MW (~2.1 GW PPA pending).",
+        "Q4 win 301 MW FDRE; commissioned ~2.3 GWh battery energy storage."
+      ],
+      "orderExecution": "5.08 GW under construction commissioning through FY27-FY29; ~1.5 GW targeted in FY27 alone.",
+      "quarter": "Q4 FY26",
+      "source": "ACME Solar Q4 FY26 concall, May 8 2026; Yahoo Finance, SaurEnergy, SolarBytes, ScanX"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 88,
     "hasDetail": true,
     "marketCapCr": 27500,
     "name": "ACME Solar Holdings",
+    "orderBookGw": 5.08,
     "patFy26Cr": 498,
     "peX": 54.6,
     "quarterly": [

@@ -4,11 +4,29 @@
   "coverage": "Torrent Power",
   "data": {
     "cmp": 1400,
+    "concall": {
+      "date": "2026-05-13",
+      "guidance": [
+        "FY27 RE commissioning 1.2-1.4 GW; ~860 MW C&I under construction; FY27 capex above FY26.",
+        "Pipeline: 4 GW RE (₹28,000cr), 3 GW pumped storage, 1.6 GW coal (₹23,000cr) through FY31.",
+        "Renewable EBITDA pressured by expiry of generation-based incentive; pursuing Nabha acquisition."
+      ],
+      "insights": [
+        "Q4 PAT ₹318cr (-70% YoY on a prior-year ₹637cr deferred-tax reversal base).",
+        "Q4 PBT ₹547cr incl ₹171cr one-off UNOSUGEN provision; adjusted PBT ₹718cr (+16%).",
+        "Installed 5,094 MW (2,730 gas, 2,002 RE, 362 coal); Khavda transmission commissioned in Q4.",
+        "FY26 capex: RE ₹6,500cr, distribution ₹1,600cr, thermal ₹700cr, transmission ₹550cr."
+      ],
+      "orderExecution": "4 GW RE commissions ~1.2-1.4 GW in FY27 and the rest in FY28; 3 GW PSP and 1.6 GW coal build through FY31.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call, May 13 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 19.1,
     "hasDetail": false,
     "marketCapCr": 70537,
     "name": "Torrent Power",
+    "orderBookGw": 8.6,
     "patFy26Cr": 2469,
     "peX": 29.2,
     "revenueFy26Cr": 28966,

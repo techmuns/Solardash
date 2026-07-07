@@ -4,10 +4,28 @@
   "coverage": "Swelect Energy Systems",
   "data": {
     "cmp": 636,
+    "concall": {
+      "date": "2026-05-07",
+      "guidance": [
+        "2GW module capacity by Q1 FY27; DCR-cell supply tie-ups secured.",
+        "Targets 2GW manufacturing + 1GW IPP + 1GW EPC within two years.",
+        "C&I BESS with hybrid inverters launching Q2 FY27; solar-wafer push planned."
+      ],
+      "insights": [
+        "FY26 revenue ₹657cr (+5.7%); consolidated PAT ₹57.6cr (turnaround from ₹14cr).",
+        "Q4 revenue ₹202cr (+46% QoQ, -7.5% YoY); PAT ₹11cr; final dividend ₹3.50.",
+        "Doubling solar module capacity toward 2GW; TopCon bifacial focus, order book >150MW.",
+        "Entered BESS via 50% stake in Swelect FortifyGrid India (Feb-2026)."
+      ],
+      "orderExecution": "TopCon module order book exceeding 150MW.",
+      "quarter": "Q4 FY26",
+      "source": "Swelect Q4 & FY26 results (7-May-2026) + management commentary (Q3 FY26 call/press); formal Q4 concall transcript not located"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 23,
     "hasDetail": false,
     "marketCapCr": 963,
+    "moduleGw": 1,
     "name": "Swelect Energy Systems",
     "patFy26Cr": 58,
     "peX": 17,

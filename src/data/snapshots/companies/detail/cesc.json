@@ -4,11 +4,29 @@
   "coverage": "CESC",
   "data": {
     "cmp": 167,
+    "concall": {
+      "date": "2026-05-06",
+      "guidance": [
+        "RE to 1.2 GW by FY27 (0.7 GW PPAs signed) and 3.2 GW by FY29.",
+        "Recent wins: 300 MW hybrid (CESC Kolkata) and 250 MW wind (SECI).",
+        "3 GW solar cell & module plant in Greater Noida, commissioning 2027."
+      ],
+      "insights": [
+        "FY26 consolidated PAT ₹1,618cr (+13%); standalone ₹852cr; revenue ~₹18,900cr.",
+        "Q4 PAT ₹459cr (+19% YoY); revenue ₹4,096cr (+4%); EBITDA margin fell to 18.1% from 20.9%.",
+        "CESC Kolkata T&D loss at all-time low 6.11%; Chandrapur stronger, Malegaon losses down.",
+        "Regulatory income moderated to ₹2.8bn in 9MFY26 (from ₹10bn) — positive for cash flows."
+      ],
+      "orderExecution": "RE pipeline scales to 1.2 GW by FY27 (0.7 GW contracted) and 3.2 GW by FY29; module plant onstream 2027.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 results & investor update, May 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 18.6,
     "hasDetail": false,
     "marketCapCr": 22100,
     "name": "CESC",
+    "orderBookGw": 3.2,
     "patFy26Cr": 1618,
     "peX": 14.3,
     "revenueFy26Cr": 18570,

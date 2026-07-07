@@ -4,10 +4,28 @@
   "coverage": "SolarWorld Energy Solutions",
   "data": {
     "cmp": 208,
+    "concall": {
+      "date": "2026-05-26",
+      "guidance": [
+        "Targets ~60:40 BESS-to-solar EPC revenue mix, tilting toward storage.",
+        "Backward integration into modules/BESS to lift margins and secure supply.",
+        "First full year as listed co (IPO Sep-2025); scaling on NTPC/SJVN-type utility orders."
+      ],
+      "insights": [
+        "Key wins include BESS orders for NTPC and solar EPC for SJVN Green Energy.",
+        "Order book ~Rs2,813cr; strong Q4 execution drove full-year ramp.",
+        "FY26 consol net profit Rs120.5cr up 56%; total income Rs1,416cr up 157%; Q4 PAT Rs49.1cr up 420%.",
+        "Building manufacturing: ~1.55GW module line and ~3.4GW BESS facility."
+      ],
+      "orderExecution": "Rs2,813cr order book, weighted to BESS and utility solar, executes over roughly the next 18-24 months.",
+      "quarter": "Q4 FY26",
+      "source": "Q4/FY26 earnings call (audio 26-May-2026); financepulse.ai, worldsolar.in transcript, screener.in, ICICIdirect"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 10.7,
     "hasDetail": false,
     "marketCapCr": 1807,
+    "moduleGw": 1.552,
     "name": "SolarWorld Energy Solutions",
     "orderBookCr": 2813,
     "patFy26Cr": 120,

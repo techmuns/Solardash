@@ -4,11 +4,29 @@
   "coverage": "Inox Green Energy Services",
   "data": {
     "cmp": 205,
+    "concall": {
+      "date": "2026-05-29",
+      "guidance": [
+        "Strong FY27 revenue growth as two acquisitions consolidate into results.",
+        "Acquisitions to add >₹60cr EBITDA at ~50% margins in FY27.",
+        "Sector-consolidation play; scouting further O&M M&A despite limited India targets."
+      ],
+      "insights": [
+        "Q4 rev ₹120cr +40%; EBITDA ₹57cr +93% (~47% margin); PAT ₹28cr +340% YoY.",
+        "O&M portfolio 13+ GW (10.5 GW wind); order book 3.1 GW, 24+ months visibility.",
+        "Machine availability ~96.5%; added 600 MW to order book in FY26.",
+        "Two O&M acquisitions to consolidate in FY27 at ~50% EBITDA margin."
+      ],
+      "orderExecution": "3.1 GW multi-year O&M order book gives 24+ months of annuity-like recurring revenue visibility.",
+      "quarter": "Q4 FY26",
+      "source": "Inox Green Q4 FY26 analyst call, May 29 2026; Yahoo/GuruFocus, Business Standard, InvestyWise"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 8.2,
     "hasDetail": false,
     "marketCapCr": 8217,
     "name": "Inox Green Energy Services",
+    "orderBookGw": 3.1,
     "patFy26Cr": 103,
     "peX": 79.6,
     "revenueFy26Cr": 281,

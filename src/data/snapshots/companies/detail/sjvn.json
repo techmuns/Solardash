@@ -4,11 +4,28 @@
   "coverage": "SJVN",
   "data": {
     "cmp": 71.8,
+    "concall": {
+      "date": "2026-05-15",
+      "guidance": [
+        "~5 GW under construction (Buxar thermal, Sunni/Dhaulasidh/Luhri hydro, solar).",
+        "Long-term ambition 25 GW by 2030; near-term interest and depreciation a drag.",
+        "Luhri/Dhaulasidh/Sunni hydro face disputes with the Himachal Pradesh government."
+      ],
+      "insights": [
+        "FY26 PAT ₹1,008cr (+3.9%); PBT ₹1,630cr (+25.7%); revenue ₹3,545cr (+22%).",
+        "Total generation 13,302 MU (+25% YoY); Q4 revenue at record ₹1,496cr.",
+        "Q4 net loss ₹118cr — interest cost doubled to a record ₹522cr as commissioned projects hit P&L."
+      ],
+      "orderExecution": "~5 GW under construction commissions over FY27-FY28; hydro is long-gestation with some Himachal state disputes.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call, May 15 2026"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 72.7,
     "hasDetail": false,
     "marketCapCr": 28165,
     "name": "SJVN",
+    "orderBookGw": 5,
     "patFy26Cr": 642,
     "peX": 43.9,
     "revenueFy26Cr": 4528,

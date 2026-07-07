@@ -63,6 +63,23 @@
     ],
     "cellGw": 0,
     "cmp": 187,
+    "concall": {
+      "date": "2026-05-08",
+      "guidance": [
+        "Module capacity to 15.5 GW; new plant 'First Module Out' Jun-2026.",
+        "9 GW TOPCon cell 'First Cell Out' Dec-2026; 12 GW wafer-ingot by FY30.",
+        "BESS 15 GWh by FY30 (5 GWh cell-to-pack first); assembly from FY27."
+      ],
+      "insights": [
+        "FY26 revenue ₹4,802 cr (+40%), PAT ₹470 cr (3.4x); Q4 revenue record ₹1,453 cr.",
+        "FY26 EBITDA ~₹917 cr, margin ~19% (from 14%); production 3,220 MW, 75% utilisation.",
+        "Module sales +76% to 3,342 MW; nameplate ~4.5 GW; no in-house cell yet.",
+        "Order book 8.2 GW (87% domestic, IPPs ~69%); top-5 customers 47% (from 80%)."
+      ],
+      "orderExecution": "8.2 GW order book (1.9 GW booked in Q4 FY26), 87% domestic; executes across FY27+.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (SaurEnergy / PV-magazine)"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 19,
     "hasDetail": true,

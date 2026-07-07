@@ -5,6 +5,19 @@
   "data": {
     "board": "NSE",
     "cmp": 39.7,
+    "concall": {
+      "guidance": [
+        "No forward guidance issued; no concall held and no disclosed expansion"
+      ],
+      "insights": [
+        "Very small legacy wind IPP; Q4 FY26 revenue ₹0.9 cr, net loss ₹0.8 cr",
+        "FY26 loss-making (ROCE ~-4.8%); market cap ~₹44 cr and highly illiquid",
+        "No analyst coverage or earnings call; minimal public disclosures"
+      ],
+      "orderExecution": "No order book; operates modest legacy wind assets with no announced capacity additions.",
+      "quarter": "Q4 FY26",
+      "source": "BSE / Screener Q4 FY26 (Mar 2026) result filing — no concall held"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": -29.3,
     "hasDetail": false,

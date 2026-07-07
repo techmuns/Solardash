@@ -4,6 +4,23 @@
   "coverage": "Borosil Renewables",
   "data": {
     "cmp": 609,
+    "concall": {
+      "date": "2026-05-13",
+      "guidance": [
+        "Adding SG-4 & SG-5 furnaces (+600 TPD), commissioning Dec-2026 → 1,600 TPD.",
+        "Targeting 30-33% EBITDA margin; ₹750 cr fundraise approved.",
+        "Setting up a new Rooftop Solar Solutions division."
+      ],
+      "insights": [
+        "Solar-glass capacity 1,000 TPD (~6.5 GW); Q4 India solar-glass EBITDA margin 33%.",
+        "Q4 consolidated PAT ₹169 cr (turnaround); revenue ₹440 cr (+18% YoY).",
+        "FY26 standalone revenue ₹1,535 cr (+38%), EBITDA ₹492 cr (+172% YoY).",
+        "Anti-dumping duty on China/Vietnam glass curbed imports, lifted pricing."
+      ],
+      "orderExecution": "Germany (GMB & Geosphere) deconsolidated post-insolvency (₹213 cr FY26 exceptional); FY26 ended in a consolidated net loss despite the strong India business.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 FY26 earnings call (Free Press Journal / SaurEnergy)"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 28.3,
     "hasDetail": false,

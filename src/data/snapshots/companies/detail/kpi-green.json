@@ -4,11 +4,29 @@
   "coverage": "KPI Green Energy",
   "data": {
     "cmp": 401,
+    "concall": {
+      "date": "2026-05-12",
+      "guidance": [
+        "Reaffirmed 40-50% annual growth target across CPP and IPP segments.",
+        "BESS capacity to be fully operational by FY27; revenue from FY28.",
+        "IPP cash flows to strengthen FY27-28, easing interest burden over time."
+      ],
+      "insights": [
+        "FY26 rev ₹2,742cr +56%, PAT ₹509cr +57%; Q4 PAT ₹155cr, EBITDA margin ~37%.",
+        "Installed 1.62 GW, work-in-progress 4.64 GW; total portfolio ~6.26 GW.",
+        "Energized 447 MW in Q4; 376 MW Khavda GUVNL IPP hit by evacuation delays.",
+        "Consolidated debt ~₹4,532cr, D/E jumped to 1.49 on debt-funded expansion."
+      ],
+      "orderExecution": "4.64 GW work-in-progress commissioning in phases across FY27-28, subject to evacuation approvals.",
+      "quarter": "Q4 FY26",
+      "source": "KPI Green Q4 FY26 concall, May 12 2026; ScanX, InvestyWise, Whalesbook, SolarQuarter"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 35.5,
     "hasDetail": false,
     "marketCapCr": 7924,
     "name": "KPI Green Energy",
+    "orderBookGw": 4.64,
     "patFy26Cr": 509,
     "peX": 16.7,
     "revenueFy26Cr": 2696,

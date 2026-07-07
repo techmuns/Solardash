@@ -5,6 +5,23 @@
   "data": {
     "board": "NSE SME",
     "cmp": 124,
+    "concall": {
+      "date": "2026-05-18",
+      "guidance": [
+        "Module capacity target 1.6GW by FY27.",
+        "FY27 revenue growth guided 30%+.",
+        "Scaling via domestic ramp plus UAE manufacturing JV."
+      ],
+      "insights": [
+        "FY26 revenue ₹419cr (+27%); PAT ₹30cr (+7%); H1 EBITDA margin ~10%.",
+        "Module capacity scaled 100MW to 850MW by Mar-2026.",
+        "Order book ₹402cr at FY26-end, up from ₹320cr in Sep-2025.",
+        "Subsidiary signed SHA with Clarion for 750MW UAE module JV (50:50)."
+      ],
+      "orderExecution": "₹402cr order book provides forward revenue visibility into FY27.",
+      "quarter": "H2 FY26",
+      "source": "Sahaj Solar H2/FY26 earnings call (18-May-2026) + investor presentation, NSE SME"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 12.4,
     "hasDetail": false,

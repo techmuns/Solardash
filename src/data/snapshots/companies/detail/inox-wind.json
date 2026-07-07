@@ -4,11 +4,28 @@
   "coverage": "Inox Wind",
   "data": {
     "cmp": 86.1,
+    "concall": {
+      "guidance": [
+        "FY27 revenue growth guided ~75% on 3.1 GW book and group synergies.",
+        "FY27 EBITDA margin targeted 20%+; ~₹5,000cr revenue implied.",
+        "4.X MW turbine platform ramp to drive execution and share gains."
+      ],
+      "insights": [
+        "Q4 revenue flat ~₹1,306cr; PAT ₹106cr, net profit ₹91cr down 51% YoY.",
+        "Order book ~3.1 GW; ~600 MW fresh FY26 wins (Aditya Birla, Gentari, Jakson).",
+        "Geopolitical disruption hit ECS supply/logistics; some customers deferred payments.",
+        "Strategic pivot to equipment supply and O&M; robust pipeline exceeding 2 GW."
+      ],
+      "orderExecution": "3.1 GW book executable over ~2 years; FY27 positioned as the sharp ramp-up year.",
+      "quarter": "Q4 FY26",
+      "source": "Inox Wind Q4 FY26 concall, ~May 2026; Quartr, Yahoo, SaurEnergy, Power Peak Digest, TradeBrains"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 20.3,
     "hasDetail": false,
     "marketCapCr": 14885,
     "name": "Inox Wind",
+    "orderBookGw": 3.1,
     "patFy26Cr": 449,
     "peX": 36.8,
     "revenueFy26Cr": 4397,

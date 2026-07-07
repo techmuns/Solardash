@@ -5,6 +5,21 @@
   "data": {
     "board": "BSE SME",
     "cmp": 159,
+    "concall": {
+      "date": "2026-05-23",
+      "guidance": [
+        "No formal guidance; Rs175cr Solarium 50MW order to be executed in FY27"
+      ],
+      "insights": [
+        "FY26 revenue Rs122.9cr (from Rs83.7cr, ~+47%), PAT Rs13.6cr (+136%)",
+        "EBITDA margin improved to 13.1% (from 11.35%)",
+        "Executed 25 projects / 23,506 KWp (vs 17); >100MW installed by Jun-26 via EPC + RESCO",
+        "Won Rs175cr EPC deal from Solarium Green Energy (50MW); Rs17.75cr Standard Solar order"
+      ],
+      "orderExecution": "Rs175cr Solarium 50MW EPC order to be executed in FY27; EPC portfolio >61MW pre-win.",
+      "quarter": "FY26",
+      "source": "FY26 results / investor update, board 23 May 2026 (no formal concall confirmed)"
+    },
     "confidence": "medium",
     "ebitdaMarginPct": 13,
     "hasDetail": false,

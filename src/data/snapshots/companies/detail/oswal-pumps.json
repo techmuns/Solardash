@@ -4,6 +4,23 @@
   "coverage": "Oswal Pumps",
   "data": {
     "cmp": 424,
+    "concall": {
+      "date": "2026-05-18",
+      "guidance": [
+        "FY27 growth targeted 20-25%; EBITDA margin 22-23%, PAT margin 15-16%.",
+        "H1 FY27 revenue may dip on award/execution timing; ramp on PM-KUSUM 2.0.",
+        "Prepared to scale execution quickly once PM-KUSUM 2.0 orders confirmed."
+      ],
+      "insights": [
+        "FY26 rev ₹2,064cr +44%, PAT ₹376cr +34%; Q4 rev ₹510cr, PAT ₹92cr.",
+        "Order book ~19,912 pumps (24,500+ incl. schemes/exports); pipeline >25,000.",
+        "Diversifying into rooftop/C&I/utility solar EPC — 300 MW pipeline; first PM Surya Ghar order.",
+        "Receivables rose sharply during large-scale PM-KUSUM execution ramp."
+      ],
+      "orderExecution": "~20,000-pump book executes over ~12 months; H1 FY27 soft, recovery on fresh scheme awards.",
+      "quarter": "Q4 FY26",
+      "source": "Oswal Pumps Q4 FY26 concall, May 18 2026; ScanX, Construction World, SaurEnergy, GuruFocus, TradeBrains"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 24.9,
     "hasDetail": false,

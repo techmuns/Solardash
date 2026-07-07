@@ -5,6 +5,21 @@
   "data": {
     "board": "BSE SME",
     "cmp": 48.9,
+    "concall": {
+      "date": "2026-05-19",
+      "guidance": [
+        "Build/commission 48.15 MW contracted PM-KUSUM C solar (RESCO, ~₹3/kWh, 25-yr)"
+      ],
+      "insights": [
+        "Small solar IPP; total operational capacity ~42 MW (PM-KUSUM C feeder solarisation)",
+        "FY26 consol revenue ₹27.8 cr, PAT ₹0.65 cr — sharply down from ₹6.97 cr in FY25",
+        "Flagship 10.25 MW Tikar (Surendranagar) plant sells to GUVNL on 25-yr PPA",
+        "Signed 7 PPAs for 48.15 MW solar (PM-KUSUM C, RESCO) as near-term pipeline"
+      ],
+      "orderExecution": "48.15 MW contracted solar to be commissioned in phases; ~42 MW already operational.",
+      "quarter": "FY26",
+      "source": "BSE SME FY26 audited results (19 May 2026); Screener; company website — no concall held"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 55.8,
     "hasDetail": false,

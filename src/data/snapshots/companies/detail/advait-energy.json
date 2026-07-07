@@ -5,6 +5,23 @@
   "data": {
     "board": "NSE",
     "cmp": 2127,
+    "concall": {
+      "date": "2026-06-01",
+      "guidance": [
+        "FY27 capex Rs300-350cr, including new Dholera manufacturing facility live by Q4 FY27.",
+        "Building 2.5GWh BESS and 100MW electrolyser manufacturing capacity.",
+        "Green hydrogen and fuel-cell orders positioned as medium-term growth drivers."
+      ],
+      "insights": [
+        "Record order book Rs1,304cr, up 159% YoY, giving strong multi-vertical visibility.",
+        "FY26 revenue Rs714.5cr up 80%; PAT Rs58.1cr; declared Rs2/share dividend.",
+        "Segments span power transmission (conductors/hardware), BESS, green hydrogen and fuel cells.",
+        "Pivoting from transmission hardware toward higher-value energy-transition products."
+      ],
+      "orderExecution": "Rs1,304cr order book is largely executable over the next ~12-18 months, with new-vertical capacity coming on-stream through FY27.",
+      "quarter": "Q4 FY26",
+      "source": "Q4/FY26 earnings call 01-Jun-2026; Yahoo Finance, gurufocus.com transcript, whalesbook, concall.in"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 11.7,
     "hasDetail": false,

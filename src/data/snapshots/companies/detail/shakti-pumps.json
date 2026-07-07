@@ -4,6 +4,23 @@
   "coverage": "Shakti Pumps (India)",
   "data": {
     "cmp": 596,
+    "concall": {
+      "date": "2026-05-11",
+      "guidance": [
+        "Optimistic on KUSUM 2.0 momentum and state-level solar pump demand.",
+        "PM-KUSUM commissioning deadline extended to 31 Mar 2027 aids execution.",
+        "Margin defence via backward integration amid input-cost volatility."
+      ],
+      "insights": [
+        "FY26 record revenue ₹2,698cr; Q4 ₹858cr; FY26 PAT ₹257cr.",
+        "Q4 solar pump installations +51% YoY; 86,086 units FY26 (+20%).",
+        "Order book ~₹1,500cr (as of 7 May) gives strong near-term visibility.",
+        "EBITDA margin ~16%, pressured by raw-material costs; receivable cycle improved."
+      ],
+      "orderExecution": "~₹1,500cr book executable within ~12 months; KUSUM deadline extension de-risks the timeline.",
+      "quarter": "Q4 FY26",
+      "source": "Shakti Pumps Q4 FY26 concall, May 11 2026; Whalesbook, InvestyWise, ScanX, company update"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 15.6,
     "hasDetail": false,

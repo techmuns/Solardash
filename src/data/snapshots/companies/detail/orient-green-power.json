@@ -4,6 +4,23 @@
   "coverage": "Orient Green Power",
   "data": {
     "cmp": 10.3,
+    "concall": {
+      "date": "2026-05-13",
+      "guidance": [
+        "1 GW capacity target retained but slowed; ~50 MW addable from internal accruals",
+        "Repower 10 MW old turbines with 6 MW new Suzlon 2.1 MW units; 17.6 MW solar + 9.9 MW wind planned",
+        "Larger expansion needs external equity; multiple financing options under evaluation"
+      ],
+      "insights": [
+        "Operating capacity ~399 MW (392 MW wind + 7 MW solar); +9.9 MW wind added in FY26",
+        "FY26 PAT ₹71.6 cr (+70%); Q4 seasonal net loss ₹16.6 cr on weak March-quarter wind",
+        "7 MW Tamil Nadu solar commissioned Dec 2025; ~₹16 cr interest refund aided FY26",
+        "PLF: newer turbines ~22% vs ~17% older; repowering targeting >30% PLF"
+      ],
+      "orderExecution": "6.6 MW wind (₹62 cr RenFra contract) targeted for commissioning by 31 Jul 2026; initial repowering underway.",
+      "quarter": "Q4 FY26",
+      "source": "Q4 & FY26 earnings call (13 May 2026, T. Shivaraman/J. Kotteswari); company filings"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 62.5,
     "hasDetail": false,

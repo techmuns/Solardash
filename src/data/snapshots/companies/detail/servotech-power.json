@@ -5,6 +5,23 @@
   "data": {
     "board": "NSE",
     "cmp": 99.9,
+    "concall": {
+      "date": "2026-05-07",
+      "guidance": [
+        "FY27 focus on high-capacity 120-360kW chargers plus MW-scale bus/CV charging.",
+        "Scaling BESS, solar inverters and retail distribution network.",
+        "Prioritising debt reduction, receivables recovery and working-capital improvement."
+      ],
+      "insights": [
+        "Q4 revenue ₹211cr (+66.6% YoY); EBITDA ₹23.2cr (+70%); PAT ₹11.7cr (+49.5%).",
+        "FY26 EBITDA margin expanded 161bps on shift to higher-margin renewable/EV mix.",
+        "Won ~67% of PSU/OMC DC fast-charger tenders; solar inverters ride PM Surya Ghar.",
+        "Segments: EV chargers, solar inverters, BESS, solar modules."
+      ],
+      "orderExecution": "EV order pipeline includes 375x60kW and 48x120kW DC chargers plus a 1,415kW South Central Railway rooftop win.",
+      "quarter": "Q4 FY26",
+      "source": "Servotech Renewable Q4 & FY26 earnings call transcript (~7-May-2026) + company press release"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 10,
     "hasDetail": false,

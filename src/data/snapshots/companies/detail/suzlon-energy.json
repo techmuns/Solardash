@@ -4,11 +4,29 @@
   "coverage": "Suzlon Energy",
   "data": {
     "cmp": 54.4,
+    "concall": {
+      "date": "2026-05-25",
+      "guidance": [
+        "India wind installs seen 8 GW FY27, 10 GW FY28; Suzlon eyes share gains.",
+        "FY26 EBITDA ₹3,022cr +63%, margin 18.1%; volume scale-up to lift profit.",
+        "Development pipeline 22-23 GW identified, ~8 GW in advanced stages."
+      ],
+      "insights": [
+        "Record FY26 revenue ₹16,679cr; Q4 rev ₹5,468cr +45% YoY, PAT ₹1,114cr.",
+        "Order book 5.9 GW, 66% from C&I and PSU customers.",
+        "Record deliveries: 830 MW in Q4, 2,456 MW FY26 — highest-ever in India.",
+        "975 MW erected awaiting commissioning; 350 MW ready, pending customer readiness."
+      ],
+      "orderExecution": "5.9 GW book executes over ~2-3 years as commissioning ramps toward record annual volumes.",
+      "quarter": "Q4 FY26",
+      "source": "Suzlon Q4 FY26 results/concall, ~May 25 2026; Yahoo Finance, DSIJ, Angel One, sahi.com"
+    },
     "confidence": "high",
     "ebitdaMarginPct": 18.1,
     "hasDetail": false,
     "marketCapCr": 74147,
     "name": "Suzlon Energy",
+    "orderBookGw": 5.9,
     "patFy26Cr": 3163,
     "peX": 23.4,
     "revenueFy26Cr": 16732,

@@ -64,20 +64,21 @@
     "cellGw": 5.4,
     "cmp": 2875,
     "concall": {
-      "date": "2026-05-16",
+      "date": "2026-04-30",
       "guidance": [
-        "Module capacity guided to ~21 GW and cell capacity toward ~11 GW by FY27.",
-        "EBITDA margin expected to stay in the low-20s% as cell integration offsets module price pressure.",
-        "Capex funded largely from IPO proceeds and internal accruals; net-cash balance sheet maintained."
+        "FY27 operating EBITDA guided ₹7,000-7,700 cr (+20-25%); sustained margin 19-20%.",
+        "10 GW cell live H2 FY27 → cell 15.5 GW; Nagpur 10 GW ingot-wafer (₹6,200 cr) FY28.",
+        "US capacity to 4.2 GW (add 2.6 GW ~6 months); Waaree 2.0 ~$3.5 bn capex; raising up to ₹10,000 cr."
       ],
       "insights": [
-        "Record order book of ~₹53,000 cr (>25 GW), skewed toward exports and the US market.",
-        "Solar cell manufacturing ramped past 5.4 GW; backward integration into ingot-wafer under way.",
-        "1.6 GW Texas (USA) module plant operational and being scaled to reduce tariff exposure."
+        "FY26 revenue ₹26,537 cr (+84%), PAT ₹3,884 cr (+101%); Q4 PAT ₹1,126 cr.",
+        "Module capacity ~26 GW (24.15 India + 1.6 US); cell 5.4 GW; FY26 output record 12.6 GW.",
+        "Q4 margin hit by high silver/copper, Mideast logistics, lower overseas mix.",
+        "M10R→G12R (615W) transition lifts realisation 10-12%; retail revenue ₹5,515 cr (+84%)."
       ],
-      "orderExecution": "Management expects the current order book to execute over roughly 8–10 quarters (FY27–FY28), weighted to H2 as US and cell capacity ramps.",
+      "orderExecution": "~₹53,000 cr order book; 65-70% overseas long-range orders execute over next 3-4 years.",
       "quarter": "Q4 FY26",
-      "source": "Q4 FY26 earnings call (maintained)"
+      "source": "Q4 FY26 earnings call (ScanX / SolarQuarter)"
     },
     "confidence": "medium",
     "ebitdaMarginPct": 22,
