@@ -39,11 +39,18 @@ export function ScreenerTable({
   exportMeta?: ExportMeta;
 }) {
   const [type, setType] = React.useState<string>("all");
+  const [board, setBoard] = React.useState<string>("all");
   const sel = useCompareSelection(4);
   const [dialogOpen, setDialogOpen] = React.useState(false);
 
-  const filtered =
-    type === "all" ? companies : companies.filter((c) => c.type === type);
+  const isSme = (c: CompanyIdentity) => Boolean(c.board?.includes("SME"));
+  const smeCount = companies.filter(isSme).length;
+  const filtered = companies.filter((c) => {
+    const typeOk = type === "all" || c.type === type;
+    const boardOk =
+      board === "all" || (board === "sme" ? isSme(c) : !isSme(c));
+    return typeOk && boardOk;
+  });
 
   const detailBySlug = React.useMemo(
     () => new Map(details.map((d) => [d.slug, d])),
@@ -207,17 +214,32 @@ export function ScreenerTable({
 
   return (
     <div className="space-y-3">
-      <Tabs defaultValue="all" value={type} onValueChange={setType}>
-        <TabsList className="flex-wrap">
-          <TabsTrigger value="all">All</TabsTrigger>
-          <TabsTrigger value="manufacturer">Manufacturer</TabsTrigger>
-          <TabsTrigger value="integrated">Integrated</TabsTrigger>
-          <TabsTrigger value="ipp">IPP</TabsTrigger>
-          <TabsTrigger value="epc">EPC / O&amp;M</TabsTrigger>
-          <TabsTrigger value="wind">Wind</TabsTrigger>
-          <TabsTrigger value="utility">Utility / PSU</TabsTrigger>
-        </TabsList>
-      </Tabs>
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <Tabs defaultValue="all" value={type} onValueChange={setType}>
+          <TabsList className="flex-wrap">
+            <TabsTrigger value="all">All</TabsTrigger>
+            <TabsTrigger value="manufacturer">Manufacturer</TabsTrigger>
+            <TabsTrigger value="integrated">Integrated</TabsTrigger>
+            <TabsTrigger value="ipp">IPP</TabsTrigger>
+            <TabsTrigger value="epc">EPC / O&amp;M</TabsTrigger>
+            <TabsTrigger value="wind">Wind</TabsTrigger>
+            <TabsTrigger value="utility">Utility / PSU</TabsTrigger>
+          </TabsList>
+        </Tabs>
+        {/* Listing-board filter: mainboard vs SME */}
+        <div className="flex items-center gap-2">
+          <span className="text-2xs font-medium uppercase tracking-wide text-muted-foreground">
+            Listing
+          </span>
+          <Tabs defaultValue="all" value={board} onValueChange={setBoard}>
+            <TabsList>
+              <TabsTrigger value="all">All</TabsTrigger>
+              <TabsTrigger value="mainboard">Mainboard</TabsTrigger>
+              <TabsTrigger value="sme">SME ({smeCount})</TabsTrigger>
+            </TabsList>
+          </Tabs>
+        </div>
+      </div>
       <DataTable
         columns={columns}
         data={filtered}
