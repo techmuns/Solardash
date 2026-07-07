@@ -59,10 +59,10 @@ function SchemeTable({ items }: { items: PolicyData["schemes"] }) {
               <td className="whitespace-nowrap px-3 py-2 tabular-nums text-muted-foreground">
                 {s.announced ?? "—"}
               </td>
-              <td className="whitespace-nowrap px-3 py-2 text-muted-foreground">
+              <td className="max-w-[13rem] px-3 py-2 text-muted-foreground">
                 {s.keyMetric}
               </td>
-              <td className="max-w-md px-3 py-2 text-muted-foreground">
+              <td className="max-w-sm px-3 py-2 text-muted-foreground">
                 {s.highlights ?? "—"}
               </td>
               <td className="whitespace-nowrap px-3 py-2 text-muted-foreground">
