@@ -1,0 +1,72 @@
+<!doctype html>
+<!--
+  Synthetic MNRE "What's New" fixture for policy-schemes.verify.ts.
+  Mirrors the real page shape: a list of <a href=".../en/document/...">
+  anchors carrying descriptive titles. Deliberately mixes:
+    · genuine new RE schemes (should be picked up)
+    · routine housekeeping / noise (amendments, SOPs, circulars, fees)
+    · a non-RE scheme (passes the scheme signal but has no RE context)
+    · items that duplicate curated schemes (by URL and by name)
+-->
+<html lang="en">
+  <body>
+    <ul class="whats-new-list">
+      <!-- 1. GENUINE new scheme, dd.mm.yyyy date in title → Mar 2026 -->
+      <li>
+        <a href="https://mnre.gov.in/en/document/pm-surya-ghar-muft-bijli-yojana-guidelines-dated-12.03.2026/">
+          Guidelines for the Solar Rooftop Incentive Scheme under PM Surya Ghar Muft Bijli Yojana dated 12.03.2026
+        </a>
+      </li>
+      <!-- 2. GENUINE new scheme, "Month YYYY" date in title → Feb 2026 -->
+      <li>
+        <a href="https://mnre.gov.in/en/document/green-hydrogen-electrolyser-pli-tranche-iii/">
+          Production Linked Incentive Scheme for Green Hydrogen Electrolyser Manufacturing Tranche III, February 2026
+        </a>
+      </li>
+      <!-- 3. GENUINE new scheme, no date anywhere → announced "" -->
+      <li>
+        <a href="https://mnre.gov.in/en/document/national-wind-solar-hybrid-vgf-scheme/">
+          Viability Gap Funding scheme for setting up Wind-Solar Hybrid renewable energy projects
+        </a>
+      </li>
+      <!-- 4. NOISE: amendment → filtered by NOISE -->
+      <li>
+        <a href="https://mnre.gov.in/en/document/amendment-to-solar-scheme-guidelines/">
+          Amendment to the guidelines of the Solar Park Scheme dated 01.01.2026
+        </a>
+      </li>
+      <!-- 5. NOISE: SOP → filtered by NOISE -->
+      <li>
+        <a href="https://mnre.gov.in/en/document/sop-rooftop-solar/">
+          Standard Operating Procedure for the Rooftop Solar programme
+        </a>
+      </li>
+      <!-- 6. NOISE: application fee circular → filtered by NOISE -->
+      <li>
+        <a href="https://mnre.gov.in/en/document/application-fee-almm/">
+          Circular regarding revised application fee for ALMM enlistment of solar modules
+        </a>
+      </li>
+      <!-- 7. NON-RE: has a scheme signal but no renewable context → filtered -->
+      <li>
+        <a href="https://mnre.gov.in/en/document/coal-linkage-scheme/">
+          Guidelines for the National Coal Linkage Auction Scheme
+        </a>
+      </li>
+      <!-- 8. DUPLICATE by URL: same source_url as a curated ALMM row → skipped in merge -->
+      <li>
+        <a href="https://mnre.gov.in/en/approved-list-of-models-and-manufacturers-almm/">
+          Approved List of Models and Manufacturers (ALMM) scheme for solar PV modules updated list
+        </a>
+      </li>
+      <!-- 9. Too-short title (< 20 chars) → skipped by the length guard -->
+      <li><a href="https://mnre.gov.in/en/document/solar-pli/">Solar PLI</a></li>
+      <!-- 10. DUPLICATE candidate (same normalised name as #2) → deduped within the page -->
+      <li>
+        <a href="https://mnre.gov.in/en/document/green-hydrogen-electrolyser-pli-tranche-iii-copy/">
+          Production Linked Incentive Scheme for Green Hydrogen Electrolyser Manufacturing Tranche III, February 2026
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>
