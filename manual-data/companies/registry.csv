@@ -10,56 +10,56 @@ adani-green,Adani Green Energy,ADANIGREEN,ipp,,256334,,,,,,,,,,,,,medium,Company
 ntpc-green,NTPC Green Energy,NTPCGREEN,ipp,,80500,,,,,,,,,,,,,medium,Company filings (aggregated)
 jsw-energy,JSW Energy,JSWENERGY,ipp,,100600,,,,,,,,,,,,,medium,Company filings (aggregated)
 tata-power,Tata Power,TATAPOWER,ipp,,119900,,,,,,,,,,,,,medium,Company filings (aggregated)
-emmvee-photovoltaic,Emmvee Photovoltaic Power,EMMVEE,integrated,,25070,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-solex-energy,Solex Energy,SOLEX,manufacturer,,1422,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-swelect-energy,Swelect Energy Systems,SWELECTES,integrated,,950,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-ujaas-energy,Ujaas Energy,UEL,manufacturer,,1850,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-alpex-solar,Alpex Solar,ALPEXSOLAR,manufacturer,NSE SME,2359,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-australian-premium-solar,Australian Premium Solar (India),APS,manufacturer,NSE SME,625,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-sahaj-solar,Sahaj Solar,SAHAJSOLAR,manufacturer,NSE SME,316,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-surana-solar,Surana Solar,SURANASOL,manufacturer,,132,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-borosil-renewables,Borosil Renewables,BORORENEW,manufacturer,,8490,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-kpi-green,KPI Green Energy,KPIGREEN,ipp,,7844,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-renew-energy,ReNew Energy Global,,ipp,US,,,,,,,,,,,,,,medium,Nasdaq: RNW (take-private ongoing)
-sterling-wilson-re,Sterling & Wilson Renewable Energy,SWSOLAR,epc,,5700,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-waaree-renewable,Waaree Renewable Technologies,WAAREERTL,epc,,10650,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-shakti-pumps,Shakti Pumps (India),SHAKTIPUMP,epc,,7084,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-oswal-pumps,Oswal Pumps,OSWALPUMPS,epc,,4894,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-oriana-power,Oriana Power,ORIANA,epc,NSE SME,3217,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-bondada-engineering,Bondada Engineering,BONDADA,epc,,3800,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-gensol-engineering,Gensol Engineering,GENSOL,epc,,78,,,,,,,,,,,,,modelled,Distressed (2025 governance/insolvency issues)
-zodiac-energy,Zodiac Energy,ZODIAC,epc,,500,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-ganesh-green-bharat,Ganesh Green Bharat,GANR,epc,NSE SME,852,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-solarworld-energy,SolarWorld Energy Solutions,SOLARWORLD,epc,,1818,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-suzlon-energy,Suzlon Energy,SUZLON,wind,,77500,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-inox-wind,Inox Wind,INOXWIND,wind,,15000,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-inox-green,Inox Green Energy Services,INOXGREEN,wind,,5500,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-orient-green-power,Orient Green Power,GREENPOWER,wind,,1100,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-kp-energy,K.P. Energy,KPEL,wind,,2400,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-bf-utilities,BF Utilities,BFUTILITIE,wind,,2300,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-indowind-energy,Indowind Energy,INDOWIND,wind,,150,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
-ntpc,NTPC,NTPC,utility,,345600,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-nhpc,NHPC,NHPC,utility,,80900,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-sjvn,SJVN,SJVN,utility,,28700,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-nlc-india,NLC India,NLCINDIA,utility,,43700,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-torrent-power,Torrent Power,TORNTPOWER,utility,,72800,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-cesc,CESC,CESC,utility,,20700,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
-sungarner-energies,Sungarner Energies,SEL,epc,NSE SME,43,,,,,,,,,,,,,modelled,NSE Emerge (SME)
-k2-infragen,K2 Infragen,K2INFRA,epc,NSE SME,90,,,,,,,,,,,,,modelled,NSE Emerge (SME)
-danish-power,Danish Power,DANISH,epc,NSE SME,1800,,,,,,,,,,,,,modelled,NSE Emerge (SME)
-kaycee-energy,Kay Cee Energy & Infra,KCEIL,epc,NSE SME,110,,,,,,,,,,,,,modelled,NSE Emerge (SME)
-kp-green-engineering,KP Green Engineering,,epc,BSE SME,1860,,,,,,,,,,,,,modelled,BSE SME (maintained)
-rajesh-power,Rajesh Power Services,,epc,BSE SME,1498,,,,,,,,,,,,,modelled,BSE SME (maintained)
-solarium-green,Solarium Green Energy,,epc,BSE SME,376,,,,,,,,,,,,,modelled,BSE SME (maintained)
-gre-renew,GRE Renew Enertech,,epc,BSE SME,239,,,,,,,,,,,,,modelled,BSE SME (maintained)
-waa-solar,Waa Solar,,ipp,BSE SME,66,,,,,,,,,,,,,modelled,BSE SME (maintained)
-onix-solar,Onix Solar Energy,,manufacturer,BSE,2507,,,,,,,,,,,,,modelled,Market data (mid-2026)
-ind-renewable,IND Renewable Energy,,ipp,BSE,16,,,,,,,,,,,,,modelled,Market data (mid-2026)
-xl-energy,XL Energy,,manufacturer,BSE,,,,,,,,,,,,,,modelled,Market data (mid-2026)
-madhav-infra,Madhav Infra Projects,MADHAVIPL,ipp,BSE,231,,,,,,,,,,,,,modelled,Market data (mid-2026)
-advait-energy,Advait Energy Transitions,ADVAIT,epc,NSE,1486,,,,,,,,,,,,,modelled,Market data (mid-2026)
-servotech-power,Servotech Renewable Power,SERVOTECH,manufacturer,NSE,2200,,,,,,,,,,,,,modelled,Market data (mid-2026)
-karma-energy,Karma Energy,KARMAENG,wind,NSE,60,,,,,,,,,,,,,modelled,Market data (mid-2026)
-ravindra-energy,Ravindra Energy,RELTD,epc,NSE,3260,,,,,,,,,,,,,modelled,Market data (mid-2026)
-urja-global,Urja Global,URJA,manufacturer,NSE,510,,,,,,,,,,,,,modelled,Market data (mid-2026)
-refex-renewables,Refex Renewables & Infrastructure,REFEXRENEW,epc,NSE,137,,,,,,,,,,,,,modelled,Market data (mid-2026)
+emmvee-photovoltaic,Emmvee Photovoltaic Power,EMMVEE,integrated,,22725,10.3,2.94,,,5050,34.3,1082,21.0,,,328,,high,Market data (mid-2026) + company filings
+solex-energy,Solex Energy,SOLEX,manufacturer,,1087,4.0,1.0,3400,,1621,11.4,98,11.4,,,1006,,high,Market data (mid-2026) + company filings
+swelect-energy,Swelect Energy Systems,SWELECTES,integrated,,963,,,,,657,23.0,58,17.0,,,636,,high,Market data (mid-2026) + company filings
+ujaas-energy,Ujaas Energy,UEL,manufacturer,,1707,,,,,16.6,32.8,3.2,540,,,128,,medium,Market data (mid-2026) + company filings
+alpex-solar,Alpex Solar,ALPEXSOLAR,manufacturer,NSE SME,2030,2.4,,,,2223,14.4,202,10.0,,,795,,high,Market data (mid-2026) + company filings
+australian-premium-solar,Australian Premium Solar (India),APS,manufacturer,NSE SME,599,0.8,,,,708,13.4,58,10.4,,,297,,medium,Market data (mid-2026) + company filings
+sahaj-solar,Sahaj Solar,SAHAJSOLAR,manufacturer,NSE SME,273,0.85,,402,,419,12.4,30,9.2,,,124,,medium,Market data (mid-2026) + company filings
+surana-solar,Surana Solar,SURANASOL,manufacturer,,127,0.5,,,,20.8,-15.1,1.2,,,,25.8,,medium,Market data (mid-2026) + company filings
+borosil-renewables,Borosil Renewables,BORORENEW,manufacturer,,8540,,,,,1556,28.3,127,26.1,,,609,,medium,Market data (mid-2026) + company filings
+kpi-green,KPI Green Energy,KPIGREEN,ipp,,7924,,,,,2696,35.5,509,16.7,,,401,,high,Market data (mid-2026) + company filings
+renew-energy,ReNew Energy Global,,ipp,US,15600,,,,,15064,65.4,1039,15.0,,,,,high,Nasdaq: RNW (take-private ongoing)
+sterling-wilson-re,Sterling & Wilson Renewable Energy,SWSOLAR,epc,,5605,,,11813,,7548,4.2,-296,16.9,,,240,,high,Market data (mid-2026) + company filings
+waaree-renewable,Waaree Renewable Technologies,WAAREERTL,epc,,10545,,,,,3331,19.2,479,22.0,,,1011,,high,Market data (mid-2026) + company filings
+shakti-pumps,Shakti Pumps (India),SHAKTIPUMP,epc,,7350,,,1500,,2698,15.6,258,28.5,,,596,,high,Market data (mid-2026) + company filings
+oswal-pumps,Oswal Pumps,OSWALPUMPS,epc,,4833,,,,,2064,24.9,376,12.8,,,424,,high,Market data (mid-2026) + company filings
+oriana-power,Oriana Power,ORIANA,epc,NSE SME,2992,,,7000,,1814,21.9,252,11.9,,,1473,,high,Market data (mid-2026) + company filings
+bondada-engineering,Bondada Engineering,BONDADA,epc,,3513,,,7147,,2843,11.5,211,17.3,,,315,,high,Market data (mid-2026) + company filings
+gensol-engineering,Gensol Engineering,GENSOL,epc,,78,,,,,963,23.9,53,,,,20.3,,medium,Distressed (2025 governance/insolvency issues)
+zodiac-energy,Zodiac Energy,ZODIAC,epc,,402,,,,,544,10.3,21,19.1,,,267,,high,Market data (mid-2026) + company filings
+ganesh-green-bharat,Ganesh Green Bharat,GANR,epc,NSE SME,647,,,2210,,1068,10.7,75,8.6,,,261,,high,Market data (mid-2026) + company filings
+solarworld-energy,SolarWorld Energy Solutions,SOLARWORLD,epc,,1807,,,2813,,1376,10.7,120,15.0,,,208,,high,Market data (mid-2026) + company filings
+suzlon-energy,Suzlon Energy,SUZLON,wind,,74147,,,,,16732,18.1,3163,23.4,,,54.4,,high,Market data (mid-2026) + company filings
+inox-wind,Inox Wind,INOXWIND,wind,,14885,,,,,4397,20.3,449,36.8,,,86.1,,high,Market data (mid-2026) + company filings
+inox-green,Inox Green Energy Services,INOXGREEN,wind,,8217,,,,,281,8.2,103,79.6,,,205,,high,Market data (mid-2026) + company filings
+orient-green-power,Orient Green Power,GREENPOWER,wind,,1204,,,,,293,62.5,72,20.5,,,10.3,,high,Market data (mid-2026) + company filings
+kp-energy,K.P. Energy,KPEL,wind,,2180,,,3086,,1497,21.4,181,12.0,,,322,,high,Market data (mid-2026) + company filings
+bf-utilities,BF Utilities,BFUTILITIE,wind,,2107,,,,,837,74.0,338,13.8,,,560,,medium,Market data (mid-2026) + company filings
+indowind-energy,Indowind Energy,INDOWIND,wind,,148,,,,,40.8,36.6,0.01,,,,9.41,,high,Market data (mid-2026) + company filings
+ntpc,NTPC,NTPC,utility,,343408,,,,,187385,28.2,27546,12.7,,,354,,high,Market data (mid-2026) + company filings
+nhpc,NHPC,NHPC,utility,,79255,,,,,11615,45.1,4220,21.0,,,78.9,,high,Market data (mid-2026) + company filings
+sjvn,SJVN,SJVN,utility,,28165,,,,,4528,72.7,642,43.9,,,71.8,,high,Market data (mid-2026) + company filings
+nlc-india,NLC India,NLCINDIA,utility,,41911,,,,,17490,31.9,3769,11.9,,,302,,high,Market data (mid-2026) + company filings
+torrent-power,Torrent Power,TORNTPOWER,utility,,70537,,,,,28966,19.1,2469,29.2,,,1400,,high,Market data (mid-2026) + company filings
+cesc,CESC,CESC,utility,,22100,,,,,18570,18.6,1618,14.3,,,167,,high,Market data (mid-2026) + company filings
+sungarner-energies,Sungarner Energies,SEL,epc,NSE SME,45.3,,,,,71.9,10.7,4.8,9.5,,,195,,medium,NSE Emerge (SME)
+k2-infragen,K2 Infragen,K2INFRA,epc,NSE SME,78.2,,,424,,184.7,12.4,13.3,5.9,,,62,,high,NSE Emerge (SME)
+danish-power,Danish Power,DANISH,epc,NSE SME,1844,,,500,,521,17.3,70,26.3,,,937,,high,NSE Emerge (SME)
+kaycee-energy,Kay Cee Energy & Infra,KCEIL,epc,NSE SME,110,,,537,,164,19.5,18.8,5.9,,,90.2,,high,NSE Emerge (SME)
+kp-green-engineering,KP Green Engineering,,epc,BSE SME,1835,,,1831,,1245.6,19.7,135.7,13.5,,,367,,high,BSE SME (maintained)
+rajesh-power,Rajesh Power Services,,epc,BSE SME,1511,,,3326,,1628,12.1,143.2,11.0,,,839,,high,BSE SME (maintained)
+solarium-green,Solarium Green Energy,,epc,BSE SME,378,,,300,,368,8.2,20,20.6,,,181,,high,BSE SME (maintained)
+gre-renew,GRE Renew Enertech,,epc,BSE SME,227,,,,,123,13.0,13.6,16.7,,,159,,medium,BSE SME (maintained)
+waa-solar,Waa Solar,,ipp,BSE SME,64.9,,,,,27.8,55.8,0.65,99.8,,,48.9,,high,BSE SME (maintained)
+onix-solar,Onix Solar Energy,,manufacturer,BSE,2470,1.2,1.2,,,241,25.0,52.5,61.5,,,670,,medium,Market data (mid-2026)
+ind-renewable,IND Renewable Energy,,ipp,BSE,16.4,,,,,0,,-1.21,,,,11.8,,medium,Market data (mid-2026)
+xl-energy,XL Energy,,manufacturer,BSE,0.57,,,,,,,,,,,0.25,,modelled,Market data (mid-2026)
+madhav-infra,Madhav Infra Projects,MADHAVIPL,ipp,BSE,231,,,,,502,13.1,27,8.4,,,8.50,,high,Market data (mid-2026)
+advait-energy,Advait Energy Transitions,ADVAIT,epc,NSE,2324,,,1304,,715,11.7,55,44.9,,,2127,,high,Market data (mid-2026)
+servotech-power,Servotech Renewable Power,SERVOTECH,manufacturer,NSE,2256,0.6,,,,672,10.0,32,67.2,,,99.9,,high,Market data (mid-2026)
+karma-energy,Karma Energy,KARMAENG,wind,NSE,43.5,,,,,9.8,-29.3,1.05,,,,39.7,,medium,Market data (mid-2026)
+ravindra-energy,Ravindra Energy,RELTD,epc,NSE,3654,,,,,543,24.1,81,45.3,,,183,,medium,Market data (mid-2026)
+urja-global,Urja Global,URJA,manufacturer,NSE,505,,,,,66.7,3.2,1.3,377,,,9.6,,high,Market data (mid-2026)
+refex-renewables,Refex Renewables & Infrastructure,REFEXRENEW,epc,NSE,140,,,,,66,40.9,-43,,,,312,,medium,Market data (mid-2026)

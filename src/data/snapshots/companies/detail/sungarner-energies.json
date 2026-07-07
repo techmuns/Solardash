@@ -4,10 +4,15 @@
   "coverage": "Sungarner Energies",
   "data": {
     "board": "NSE SME",
-    "confidence": "modelled",
+    "cmp": 195,
+    "confidence": "medium",
+    "ebitdaMarginPct": 10.7,
     "hasDetail": false,
-    "marketCapCr": 43,
+    "marketCapCr": 45.3,
     "name": "Sungarner Energies",
+    "patFy26Cr": 4.8,
+    "peX": 9.5,
+    "revenueFy26Cr": 71.9,
     "slug": "sungarner-energies",
     "sourceNote": "NSE Emerge (SME)",
     "tickerNse": "SEL",
@@ -21,7 +26,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "medium",
       "name": "NSE Emerge (SME)"
     }
   ],

@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "Waaree Renewable Technologies",
   "data": {
-    "confidence": "medium",
+    "cmp": 1011,
+    "confidence": "high",
+    "ebitdaMarginPct": 19.2,
     "hasDetail": false,
-    "marketCapCr": 10650,
+    "marketCapCr": 10545,
     "name": "Waaree Renewable Technologies",
+    "patFy26Cr": 479,
+    "peX": 22,
+    "revenueFy26Cr": 3331,
     "slug": "waaree-renewable",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "WAAREERTL",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

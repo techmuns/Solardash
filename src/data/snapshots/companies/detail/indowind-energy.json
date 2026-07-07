@@ -3,10 +3,14 @@
   "cadence": "quarterly",
   "coverage": "Indowind Energy",
   "data": {
-    "confidence": "modelled",
+    "cmp": 9.41,
+    "confidence": "high",
+    "ebitdaMarginPct": 36.6,
     "hasDetail": false,
-    "marketCapCr": 150,
+    "marketCapCr": 148,
     "name": "Indowind Energy",
+    "patFy26Cr": 0.01,
+    "revenueFy26Cr": 40.8,
     "slug": "indowind-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "INDOWIND",
@@ -20,7 +24,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

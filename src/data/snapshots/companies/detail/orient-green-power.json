@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "Orient Green Power",
   "data": {
-    "confidence": "modelled",
+    "cmp": 10.3,
+    "confidence": "high",
+    "ebitdaMarginPct": 62.5,
     "hasDetail": false,
-    "marketCapCr": 1100,
+    "marketCapCr": 1204,
     "name": "Orient Green Power",
+    "patFy26Cr": 72,
+    "peX": 20.5,
+    "revenueFy26Cr": 293,
     "slug": "orient-green-power",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "GREENPOWER",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

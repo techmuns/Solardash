@@ -4,8 +4,10 @@
   "coverage": "XL Energy",
   "data": {
     "board": "BSE",
+    "cmp": 0.25,
     "confidence": "modelled",
     "hasDetail": false,
+    "marketCapCr": 0.57,
     "name": "XL Energy",
     "slug": "xl-energy",
     "sourceNote": "Market data (mid-2026)",

@@ -4,10 +4,16 @@
   "coverage": "Ganesh Green Bharat",
   "data": {
     "board": "NSE SME",
-    "confidence": "modelled",
+    "cmp": 261,
+    "confidence": "high",
+    "ebitdaMarginPct": 10.7,
     "hasDetail": false,
-    "marketCapCr": 852,
+    "marketCapCr": 647,
     "name": "Ganesh Green Bharat",
+    "orderBookCr": 2210,
+    "patFy26Cr": 75,
+    "peX": 8.6,
+    "revenueFy26Cr": 1068,
     "slug": "ganesh-green-bharat",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "GANR",
@@ -21,7 +27,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

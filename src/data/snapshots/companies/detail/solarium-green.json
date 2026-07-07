@@ -4,10 +4,16 @@
   "coverage": "Solarium Green Energy",
   "data": {
     "board": "BSE SME",
-    "confidence": "modelled",
+    "cmp": 181,
+    "confidence": "high",
+    "ebitdaMarginPct": 8.2,
     "hasDetail": false,
-    "marketCapCr": 376,
+    "marketCapCr": 378,
     "name": "Solarium Green Energy",
+    "orderBookCr": 300,
+    "patFy26Cr": 20,
+    "peX": 20.6,
+    "revenueFy26Cr": 368,
     "slug": "solarium-green",
     "sourceNote": "BSE SME (maintained)",
     "type": "epc"
@@ -20,7 +26,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "BSE SME (maintained)"
     }
   ],

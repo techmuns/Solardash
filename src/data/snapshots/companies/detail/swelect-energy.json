@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "Swelect Energy Systems",
   "data": {
-    "confidence": "medium",
+    "cmp": 636,
+    "confidence": "high",
+    "ebitdaMarginPct": 23,
     "hasDetail": false,
-    "marketCapCr": 950,
+    "marketCapCr": 963,
     "name": "Swelect Energy Systems",
+    "patFy26Cr": 58,
+    "peX": 17,
+    "revenueFy26Cr": 657,
     "slug": "swelect-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SWELECTES",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

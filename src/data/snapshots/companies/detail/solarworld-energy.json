@@ -3,10 +3,16 @@
   "cadence": "quarterly",
   "coverage": "SolarWorld Energy Solutions",
   "data": {
-    "confidence": "modelled",
+    "cmp": 208,
+    "confidence": "high",
+    "ebitdaMarginPct": 10.7,
     "hasDetail": false,
-    "marketCapCr": 1818,
+    "marketCapCr": 1807,
     "name": "SolarWorld Energy Solutions",
+    "orderBookCr": 2813,
+    "patFy26Cr": 120,
+    "peX": 15,
+    "revenueFy26Cr": 1376,
     "slug": "solarworld-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SOLARWORLD",
@@ -20,7 +26,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

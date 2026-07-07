@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "NHPC",
   "data": {
-    "confidence": "medium",
+    "cmp": 78.9,
+    "confidence": "high",
+    "ebitdaMarginPct": 45.1,
     "hasDetail": false,
-    "marketCapCr": 80900,
+    "marketCapCr": 79255,
     "name": "NHPC",
+    "patFy26Cr": 4220,
+    "peX": 21,
+    "revenueFy26Cr": 11615,
     "slug": "nhpc",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "NHPC",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

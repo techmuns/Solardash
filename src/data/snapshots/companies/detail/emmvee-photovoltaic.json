@@ -3,10 +3,17 @@
   "cadence": "quarterly",
   "coverage": "Emmvee Photovoltaic Power",
   "data": {
-    "confidence": "medium",
+    "cellGw": 2.94,
+    "cmp": 328,
+    "confidence": "high",
+    "ebitdaMarginPct": 34.3,
     "hasDetail": false,
-    "marketCapCr": 25070,
+    "marketCapCr": 22725,
+    "moduleGw": 10.3,
     "name": "Emmvee Photovoltaic Power",
+    "patFy26Cr": 1082,
+    "peX": 21,
+    "revenueFy26Cr": 5050,
     "slug": "emmvee-photovoltaic",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "EMMVEE",
@@ -20,7 +27,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

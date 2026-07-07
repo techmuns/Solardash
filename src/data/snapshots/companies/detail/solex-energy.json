@@ -3,10 +3,18 @@
   "cadence": "quarterly",
   "coverage": "Solex Energy",
   "data": {
-    "confidence": "medium",
+    "cellGw": 1,
+    "cmp": 1006,
+    "confidence": "high",
+    "ebitdaMarginPct": 11.4,
     "hasDetail": false,
-    "marketCapCr": 1422,
+    "marketCapCr": 1087,
+    "moduleGw": 4,
     "name": "Solex Energy",
+    "orderBookCr": 3400,
+    "patFy26Cr": 98,
+    "peX": 11.4,
+    "revenueFy26Cr": 1621,
     "slug": "solex-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SOLEX",
@@ -20,7 +28,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

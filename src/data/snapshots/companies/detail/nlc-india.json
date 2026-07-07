@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "NLC India",
   "data": {
-    "confidence": "medium",
+    "cmp": 302,
+    "confidence": "high",
+    "ebitdaMarginPct": 31.9,
     "hasDetail": false,
-    "marketCapCr": 43700,
+    "marketCapCr": 41911,
     "name": "NLC India",
+    "patFy26Cr": 3769,
+    "peX": 11.9,
+    "revenueFy26Cr": 17490,
     "slug": "nlc-india",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "NLCINDIA",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

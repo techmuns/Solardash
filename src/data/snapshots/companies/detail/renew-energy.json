@@ -4,9 +4,14 @@
   "coverage": "ReNew Energy Global",
   "data": {
     "board": "US",
-    "confidence": "medium",
+    "confidence": "high",
+    "ebitdaMarginPct": 65.4,
     "hasDetail": false,
+    "marketCapCr": 15600,
     "name": "ReNew Energy Global",
+    "patFy26Cr": 1039,
+    "peX": 15,
+    "revenueFy26Cr": 15064,
     "slug": "renew-energy",
     "sourceNote": "Nasdaq: RNW (take-private ongoing)",
     "type": "ipp"
@@ -19,7 +24,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Nasdaq: RNW (take-private ongoing)"
     }
   ],

@@ -4,10 +4,16 @@
   "coverage": "Oriana Power",
   "data": {
     "board": "NSE SME",
-    "confidence": "modelled",
+    "cmp": 1473,
+    "confidence": "high",
+    "ebitdaMarginPct": 21.9,
     "hasDetail": false,
-    "marketCapCr": 3217,
+    "marketCapCr": 2992,
     "name": "Oriana Power",
+    "orderBookCr": 7000,
+    "patFy26Cr": 252,
+    "peX": 11.9,
+    "revenueFy26Cr": 1814,
     "slug": "oriana-power",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "ORIANA",
@@ -21,7 +27,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

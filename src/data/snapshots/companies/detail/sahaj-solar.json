@@ -4,10 +4,17 @@
   "coverage": "Sahaj Solar",
   "data": {
     "board": "NSE SME",
-    "confidence": "modelled",
+    "cmp": 124,
+    "confidence": "medium",
+    "ebitdaMarginPct": 12.4,
     "hasDetail": false,
-    "marketCapCr": 316,
+    "marketCapCr": 273,
+    "moduleGw": 0.85,
     "name": "Sahaj Solar",
+    "orderBookCr": 402,
+    "patFy26Cr": 30,
+    "peX": 9.2,
+    "revenueFy26Cr": 419,
     "slug": "sahaj-solar",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SAHAJSOLAR",
@@ -21,7 +28,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

@@ -4,10 +4,16 @@
   "coverage": "Advait Energy Transitions",
   "data": {
     "board": "NSE",
-    "confidence": "modelled",
+    "cmp": 2127,
+    "confidence": "high",
+    "ebitdaMarginPct": 11.7,
     "hasDetail": false,
-    "marketCapCr": 1486,
+    "marketCapCr": 2324,
     "name": "Advait Energy Transitions",
+    "orderBookCr": 1304,
+    "patFy26Cr": 55,
+    "peX": 44.9,
+    "revenueFy26Cr": 715,
     "slug": "advait-energy",
     "sourceNote": "Market data (mid-2026)",
     "tickerNse": "ADVAIT",
@@ -21,7 +27,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "Market data (mid-2026)"
     }
   ],

@@ -4,10 +4,16 @@
   "coverage": "Alpex Solar",
   "data": {
     "board": "NSE SME",
-    "confidence": "modelled",
+    "cmp": 795,
+    "confidence": "high",
+    "ebitdaMarginPct": 14.4,
     "hasDetail": false,
-    "marketCapCr": 2359,
+    "marketCapCr": 2030,
+    "moduleGw": 2.4,
     "name": "Alpex Solar",
+    "patFy26Cr": 202,
+    "peX": 10,
+    "revenueFy26Cr": 2223,
     "slug": "alpex-solar",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "ALPEXSOLAR",
@@ -21,7 +27,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

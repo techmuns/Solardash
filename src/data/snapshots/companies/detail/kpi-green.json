@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "KPI Green Energy",
   "data": {
-    "confidence": "medium",
+    "cmp": 401,
+    "confidence": "high",
+    "ebitdaMarginPct": 35.5,
     "hasDetail": false,
-    "marketCapCr": 7844,
+    "marketCapCr": 7924,
     "name": "KPI Green Energy",
+    "patFy26Cr": 509,
+    "peX": 16.7,
+    "revenueFy26Cr": 2696,
     "slug": "kpi-green",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "KPIGREEN",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "Oswal Pumps",
   "data": {
-    "confidence": "modelled",
+    "cmp": 424,
+    "confidence": "high",
+    "ebitdaMarginPct": 24.9,
     "hasDetail": false,
-    "marketCapCr": 4894,
+    "marketCapCr": 4833,
     "name": "Oswal Pumps",
+    "patFy26Cr": 376,
+    "peX": 12.8,
+    "revenueFy26Cr": 2064,
     "slug": "oswal-pumps",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "OSWALPUMPS",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

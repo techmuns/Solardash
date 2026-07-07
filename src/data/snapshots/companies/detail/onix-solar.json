@@ -4,10 +4,17 @@
   "coverage": "Onix Solar Energy",
   "data": {
     "board": "BSE",
-    "confidence": "modelled",
+    "cellGw": 1.2,
+    "cmp": 670,
+    "confidence": "medium",
+    "ebitdaMarginPct": 25,
     "hasDetail": false,
-    "marketCapCr": 2507,
+    "marketCapCr": 2470,
+    "moduleGw": 1.2,
     "name": "Onix Solar Energy",
+    "patFy26Cr": 52.5,
+    "peX": 61.5,
+    "revenueFy26Cr": 241,
     "slug": "onix-solar",
     "sourceNote": "Market data (mid-2026)",
     "type": "manufacturer"
@@ -20,7 +27,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "medium",
       "name": "Market data (mid-2026)"
     }
   ],

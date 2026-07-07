@@ -4,10 +4,16 @@
   "coverage": "Danish Power",
   "data": {
     "board": "NSE SME",
-    "confidence": "modelled",
+    "cmp": 937,
+    "confidence": "high",
+    "ebitdaMarginPct": 17.3,
     "hasDetail": false,
-    "marketCapCr": 1800,
+    "marketCapCr": 1844,
     "name": "Danish Power",
+    "orderBookCr": 500,
+    "patFy26Cr": 70,
+    "peX": 26.3,
+    "revenueFy26Cr": 521,
     "slug": "danish-power",
     "sourceNote": "NSE Emerge (SME)",
     "tickerNse": "DANISH",
@@ -21,7 +27,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "NSE Emerge (SME)"
     }
   ],

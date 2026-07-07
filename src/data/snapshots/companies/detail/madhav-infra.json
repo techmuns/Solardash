@@ -4,10 +4,15 @@
   "coverage": "Madhav Infra Projects",
   "data": {
     "board": "BSE",
-    "confidence": "modelled",
+    "cmp": 8.5,
+    "confidence": "high",
+    "ebitdaMarginPct": 13.1,
     "hasDetail": false,
     "marketCapCr": 231,
     "name": "Madhav Infra Projects",
+    "patFy26Cr": 27,
+    "peX": 8.4,
+    "revenueFy26Cr": 502,
     "slug": "madhav-infra",
     "sourceNote": "Market data (mid-2026)",
     "tickerNse": "MADHAVIPL",
@@ -21,7 +26,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "Market data (mid-2026)"
     }
   ],

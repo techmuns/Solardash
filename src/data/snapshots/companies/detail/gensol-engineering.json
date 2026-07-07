@@ -3,10 +3,14 @@
   "cadence": "quarterly",
   "coverage": "Gensol Engineering",
   "data": {
-    "confidence": "modelled",
+    "cmp": 20.3,
+    "confidence": "medium",
+    "ebitdaMarginPct": 23.9,
     "hasDetail": false,
     "marketCapCr": 78,
     "name": "Gensol Engineering",
+    "patFy26Cr": 53,
+    "revenueFy26Cr": 963,
     "slug": "gensol-engineering",
     "sourceNote": "Distressed (2025 governance/insolvency issues)",
     "tickerNse": "GENSOL",
@@ -20,7 +24,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "medium",
       "name": "Distressed (2025 governance/insolvency issues)"
     }
   ],

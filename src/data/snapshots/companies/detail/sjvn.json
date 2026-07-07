@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "SJVN",
   "data": {
-    "confidence": "medium",
+    "cmp": 71.8,
+    "confidence": "high",
+    "ebitdaMarginPct": 72.7,
     "hasDetail": false,
-    "marketCapCr": 28700,
+    "marketCapCr": 28165,
     "name": "SJVN",
+    "patFy26Cr": 642,
+    "peX": 43.9,
+    "revenueFy26Cr": 4528,
     "slug": "sjvn",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SJVN",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

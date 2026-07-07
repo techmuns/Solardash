@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "Inox Wind",
   "data": {
-    "confidence": "medium",
+    "cmp": 86.1,
+    "confidence": "high",
+    "ebitdaMarginPct": 20.3,
     "hasDetail": false,
-    "marketCapCr": 15000,
+    "marketCapCr": 14885,
     "name": "Inox Wind",
+    "patFy26Cr": 449,
+    "peX": 36.8,
+    "revenueFy26Cr": 4397,
     "slug": "inox-wind",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "INOXWIND",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

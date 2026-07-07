@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "CESC",
   "data": {
-    "confidence": "medium",
+    "cmp": 167,
+    "confidence": "high",
+    "ebitdaMarginPct": 18.6,
     "hasDetail": false,
-    "marketCapCr": 20700,
+    "marketCapCr": 22100,
     "name": "CESC",
+    "patFy26Cr": 1618,
+    "peX": 14.3,
+    "revenueFy26Cr": 18570,
     "slug": "cesc",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "CESC",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

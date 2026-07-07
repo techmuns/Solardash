@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "Torrent Power",
   "data": {
-    "confidence": "medium",
+    "cmp": 1400,
+    "confidence": "high",
+    "ebitdaMarginPct": 19.1,
     "hasDetail": false,
-    "marketCapCr": 72800,
+    "marketCapCr": 70537,
     "name": "Torrent Power",
+    "patFy26Cr": 2469,
+    "peX": 29.2,
+    "revenueFy26Cr": 28966,
     "slug": "torrent-power",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "TORNTPOWER",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

@@ -4,10 +4,16 @@
   "coverage": "K2 Infragen",
   "data": {
     "board": "NSE SME",
-    "confidence": "modelled",
+    "cmp": 62,
+    "confidence": "high",
+    "ebitdaMarginPct": 12.4,
     "hasDetail": false,
-    "marketCapCr": 90,
+    "marketCapCr": 78.2,
     "name": "K2 Infragen",
+    "orderBookCr": 424,
+    "patFy26Cr": 13.3,
+    "peX": 5.9,
+    "revenueFy26Cr": 184.7,
     "slug": "k2-infragen",
     "sourceNote": "NSE Emerge (SME)",
     "tickerNse": "K2INFRA",
@@ -21,7 +27,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "NSE Emerge (SME)"
     }
   ],

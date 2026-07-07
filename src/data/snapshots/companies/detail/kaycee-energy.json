@@ -4,10 +4,16 @@
   "coverage": "Kay Cee Energy & Infra",
   "data": {
     "board": "NSE SME",
-    "confidence": "modelled",
+    "cmp": 90.2,
+    "confidence": "high",
+    "ebitdaMarginPct": 19.5,
     "hasDetail": false,
     "marketCapCr": 110,
     "name": "Kay Cee Energy & Infra",
+    "orderBookCr": 537,
+    "patFy26Cr": 18.8,
+    "peX": 5.9,
+    "revenueFy26Cr": 164,
     "slug": "kaycee-energy",
     "sourceNote": "NSE Emerge (SME)",
     "tickerNse": "KCEIL",
@@ -21,7 +27,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "NSE Emerge (SME)"
     }
   ],

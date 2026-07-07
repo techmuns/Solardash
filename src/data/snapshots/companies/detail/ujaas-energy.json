@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "Ujaas Energy",
   "data": {
-    "confidence": "modelled",
+    "cmp": 128,
+    "confidence": "medium",
+    "ebitdaMarginPct": 32.8,
     "hasDetail": false,
-    "marketCapCr": 1850,
+    "marketCapCr": 1707,
     "name": "Ujaas Energy",
+    "patFy26Cr": 3.2,
+    "peX": 540,
+    "revenueFy26Cr": 16.6,
     "slug": "ujaas-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "UEL",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

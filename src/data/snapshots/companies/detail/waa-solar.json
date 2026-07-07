@@ -4,10 +4,15 @@
   "coverage": "Waa Solar",
   "data": {
     "board": "BSE SME",
-    "confidence": "modelled",
+    "cmp": 48.9,
+    "confidence": "high",
+    "ebitdaMarginPct": 55.8,
     "hasDetail": false,
-    "marketCapCr": 66,
+    "marketCapCr": 64.9,
     "name": "Waa Solar",
+    "patFy26Cr": 0.65,
+    "peX": 99.8,
+    "revenueFy26Cr": 27.8,
     "slug": "waa-solar",
     "sourceNote": "BSE SME (maintained)",
     "type": "ipp"
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "high",
       "name": "BSE SME (maintained)"
     }
   ],

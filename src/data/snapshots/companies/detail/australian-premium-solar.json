@@ -4,10 +4,16 @@
   "coverage": "Australian Premium Solar (India)",
   "data": {
     "board": "NSE SME",
-    "confidence": "modelled",
+    "cmp": 297,
+    "confidence": "medium",
+    "ebitdaMarginPct": 13.4,
     "hasDetail": false,
-    "marketCapCr": 625,
+    "marketCapCr": 599,
+    "moduleGw": 0.8,
     "name": "Australian Premium Solar (India)",
+    "patFy26Cr": 58,
+    "peX": 10.4,
+    "revenueFy26Cr": 708,
     "slug": "australian-premium-solar",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "APS",
@@ -21,7 +27,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "modelled",
+      "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     }
   ],

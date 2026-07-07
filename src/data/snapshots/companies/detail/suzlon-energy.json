@@ -3,10 +3,15 @@
   "cadence": "quarterly",
   "coverage": "Suzlon Energy",
   "data": {
-    "confidence": "medium",
+    "cmp": 54.4,
+    "confidence": "high",
+    "ebitdaMarginPct": 18.1,
     "hasDetail": false,
-    "marketCapCr": 77500,
+    "marketCapCr": 74147,
     "name": "Suzlon Energy",
+    "patFy26Cr": 3163,
+    "peX": 23.4,
+    "revenueFy26Cr": 16732,
     "slug": "suzlon-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SUZLON",
@@ -20,7 +25,7 @@
   "sources": [
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
+      "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
