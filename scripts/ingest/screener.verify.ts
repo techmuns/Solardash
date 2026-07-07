@@ -22,7 +22,7 @@ const EXPECT = {
     { period: "Q3FY26", revenue: 550, ebitda: 99, ebitdaMarginPct: 18, pat: 70, patMarginPct: 12.73 },
     { period: "Q4FY26", revenue: 620, ebitda: 124, ebitdaMarginPct: 20, pat: 88, patMarginPct: 14.19 },
   ],
-  valuation: { peX: 24.5, pbX: 3, cmp: 456 },
+  valuation: { peX: 24.5, pbX: 3, cmp: 456, marketCapCr: 12000 },
   rocePct: 22.4,
   roePct: 18.6,
   shareholding: { promoterPct: 63.01, fiiPct: 1.82, diiPct: 1.26, publicPct: 33.91, asOf: "2026-03-31" },

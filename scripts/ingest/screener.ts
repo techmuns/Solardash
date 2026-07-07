@@ -39,7 +39,7 @@ export interface ScreenerFeed {
   slug: string;
   annual: AnnualRow[];
   quarterly: QuarterRow[];
-  valuation?: { peX?: number; pbX?: number; cmp?: number };
+  valuation?: { peX?: number; pbX?: number; cmp?: number; marketCapCr?: number };
   rocePct?: number;
   roePct?: number;
   shareholding?: Shareholding;
@@ -185,10 +185,18 @@ function parseTopRatios($: cheerio.CheerioAPI): {
   cmp?: number;
   peX?: number;
   bookValue?: number;
+  marketCapCr?: number;
   rocePct?: number;
   roePct?: number;
 } {
-  const out: { cmp?: number; peX?: number; bookValue?: number; rocePct?: number; roePct?: number } = {};
+  const out: {
+    cmp?: number;
+    peX?: number;
+    bookValue?: number;
+    marketCapCr?: number;
+    rocePct?: number;
+    roePct?: number;
+  } = {};
   $("#top-ratios li").each((_, li) => {
     const name = norm($(li).find(".name").first().text());
     const valueText = $(li).find(".number").first().text() || $(li).find(".value").first().text();
@@ -197,6 +205,7 @@ function parseTopRatios($: cheerio.CheerioAPI): {
     if (name === "current price") out.cmp = v;
     else if (name === "stock p/e" || name === "p/e") out.peX = v;
     else if (name === "book value") out.bookValue = v;
+    else if (name === "market cap") out.marketCapCr = v; // Screener quotes it in ₹ Cr
     else if (name === "roce") out.rocePct = v;
     else if (name === "roe") out.roePct = v;
   });
@@ -252,10 +261,11 @@ export function parseCompanyHtml(html: string): Omit<ScreenerFeed, "slug"> {
   );
   const asOf = latest ? periodEndIso(latest) : "";
 
-  const valuation: { peX?: number; pbX?: number; cmp?: number } = {};
+  const valuation: { peX?: number; pbX?: number; cmp?: number; marketCapCr?: number } = {};
   if (ratios.peX != null) valuation.peX = ratios.peX;
   if (ratios.cmp != null && ratios.bookValue) valuation.pbX = round2(ratios.cmp / ratios.bookValue);
   if (ratios.cmp != null) valuation.cmp = ratios.cmp;
+  if (ratios.marketCapCr != null) valuation.marketCapCr = ratios.marketCapCr;
 
   const shareholding = parseShareholding($, asOf);
 

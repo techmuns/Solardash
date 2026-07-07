@@ -114,6 +114,7 @@ export const companiesPipeline = definePipeline({
         latest && !manual
           ? {
               ...identity,
+              ...(fv?.marketCapCr != null ? { marketCapCr: fv.marketCapCr } : {}),
               ...(latest.revenue != null ? { revenueFy26Cr: latest.revenue } : {}),
               ...(latest.ebitdaMarginPct != null
                 ? { ebitdaMarginPct: latest.ebitdaMarginPct }

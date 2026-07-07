@@ -9,10 +9,10 @@ import { CompareTray } from "@/components/compare/CompareTray";
 import { CompareDialog, type CompareEntity } from "@/components/compare/CompareDialog";
 import { useCompareSelection } from "@/components/compare/useCompareSelection";
 import { categoricalColor } from "@/lib/colors";
-import { cn, formatNumber } from "@/lib/utils";
+import { formatNumber } from "@/lib/utils";
 import type { ExportMeta } from "@/lib/export";
 import type { CompanyDetail, CompanyIdentity } from "@/data/types/companies";
-import { RatingBadge, TYPE_LABELS, TypeBadge, upsidePct } from "./company-ui";
+import { TYPE_LABELS, TypeBadge } from "./company-ui";
 import { buildCompanyGroups, buildCompanyTrends } from "./compare-data";
 
 const dash = <span className="text-muted-foreground/50">—</span>;
@@ -182,34 +182,6 @@ export function ScreenerTable({
     { key: "revenueFy26Cr", header: "Rev FY26", align: "right", sortable: true, accessor: (r) => r.revenueFy26Cr ?? -1, render: (r) => cr(r.revenueFy26Cr) },
     { key: "ebitdaMarginPct", header: "EBITDA %", align: "right", sortable: true, accessor: (r) => r.ebitdaMarginPct ?? -1, render: (r) => pct(r.ebitdaMarginPct) },
     { key: "peX", header: "P/E", align: "right", sortable: true, accessor: (r) => r.peX ?? Infinity, render: (r) => x(r.peX) },
-    { key: "evEbitdaX", header: "EV/EBITDA", align: "right", sortable: true, accessor: (r) => r.evEbitdaX ?? Infinity, render: (r) => x(r.evEbitdaX) },
-    { key: "targetPrice", header: "Target", align: "right", sortable: true, accessor: (r) => r.targetPrice ?? -1, render: (r) => (r.targetPrice == null ? dash : `₹${formatNumber(r.targetPrice)}`) },
-    { key: "cmp", header: "CMP", align: "right", sortable: true, accessor: (r) => r.cmp ?? -1, render: (r) => (r.cmp == null ? dash : `₹${formatNumber(r.cmp)}`) },
-    {
-      key: "upside",
-      header: "Upside",
-      exportLabel: "Upside (%)",
-      align: "right",
-      sortable: true,
-      accessor: (r) => upsidePct(r.targetPrice, r.cmp) ?? -Infinity,
-      exportValue: (r) => upsidePct(r.targetPrice, r.cmp) ?? null,
-      render: (r) => {
-        const up = upsidePct(r.targetPrice, r.cmp);
-        if (up == null) return dash;
-        return (
-          <span
-            className={cn(
-              "tabular-nums font-medium",
-              up > 0 ? "text-positive" : up < 0 ? "text-negative" : "",
-            )}
-          >
-            {up > 0 ? "+" : ""}
-            {up.toFixed(1)}%
-          </span>
-        );
-      },
-    },
-    { key: "rating", header: "Rating", align: "center", render: (r) => <RatingBadge rating={r.rating} /> },
   ];
 
   return (

@@ -69,7 +69,7 @@ export default function CompaniesPage() {
       label: "Financials",
       title: "Screener — all companies",
       subtitle:
-        "Revenue · PAT · EBITDA margin · P/E · CMP — one combined, sortable panel",
+        "Market cap · revenue · EBITDA margin · P/E — Screener.in financials, refreshed monthly",
       source,
       body: (
         <div className="min-h-0 flex-1 overflow-auto">
@@ -80,20 +80,20 @@ export default function CompaniesPage() {
         columns: [
           { key: "name", label: "Company" },
           { key: "type", label: "Type" },
+          { key: "marketCapCr", label: "Market cap (₹ cr)" },
           { key: "revenueFy26Cr", label: "Revenue FY26 (₹ cr)" },
           { key: "patFy26Cr", label: "PAT FY26 (₹ cr)" },
           { key: "ebitdaMarginPct", label: "EBITDA margin (%)" },
           { key: "peX", label: "P/E (×)" },
-          { key: "cmp", label: "CMP (₹)" },
         ],
         rows: companies.map((c) => ({
           name: c.name,
           type: c.type,
+          marketCapCr: c.marketCapCr ?? null,
           revenueFy26Cr: c.revenueFy26Cr ?? null,
           patFy26Cr: c.patFy26Cr ?? null,
           ebitdaMarginPct: c.ebitdaMarginPct ?? null,
           peX: c.peX ?? null,
-          cmp: c.cmp ?? null,
         })),
         meta: meta("screener"),
       },
