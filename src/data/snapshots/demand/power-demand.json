@@ -32,24 +32,187 @@
       }
     ],
     "energyBu": [
-      136,
-      null,
-      null,
+      136.5,
+      140.3,
+      140.4,
+      151.3,
+      140.5,
+      139.4,
+      119.3,
+      123.2,
+      133.2,
+      127.3,
+      129.9,
+      144.3,
+      156.3,
+      152.4,
+      145.4,
+      144.2,
+      141.4,
+      140.5,
+      125.4,
+      130.4,
+      137.5,
+      131.5,
+      148.5,
+      148,
+      147.9,
+      149.1,
+      150.5,
+      145.9,
+      132,
+      139.3,
       143,
-      null
+      133,
+      149,
+      154
     ],
     "energyGrowthYoy": [
       null,
       null,
       null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      14.5,
+      8.6,
+      3.6,
+      -4.7,
+      0.6,
+      0.8,
       5.1,
-      null
+      5.8,
+      3.2,
+      3.3,
+      14.3,
+      2.6,
+      -5.4,
+      -2.2,
+      4.4,
+      3.2,
+      -6,
+      6.8,
+      4,
+      1.1,
+      0.3,
+      4.1
     ],
     "growth": [
       {
+        "energyYoyPct": 14.5,
+        "peakYoyPct": 13,
+        "period": "May 2024"
+      },
+      {
+        "energyYoyPct": 8.6,
+        "peakYoyPct": 9.5,
+        "period": "Jun 2024"
+      },
+      {
+        "energyYoyPct": 3.6,
+        "peakYoyPct": 8.4,
+        "period": "Jul 2024"
+      },
+      {
+        "energyYoyPct": -4.7,
+        "peakYoyPct": -9,
+        "period": "Aug 2024"
+      },
+      {
+        "energyYoyPct": 0.6,
+        "peakYoyPct": -3.9,
+        "period": "Sep 2024"
+      },
+      {
+        "energyYoyPct": 0.8,
+        "peakYoyPct": -1,
+        "period": "Oct 2024"
+      },
+      {
         "energyYoyPct": 5.1,
+        "peakYoyPct": 1.4,
+        "period": "Nov 2024"
+      },
+      {
+        "energyYoyPct": 5.8,
+        "peakYoyPct": 5,
+        "period": "Dec 2024"
+      },
+      {
+        "energyYoyPct": 3.2,
+        "peakYoyPct": 6.7,
+        "period": "Jan 2025"
+      },
+      {
+        "energyYoyPct": 3.3,
+        "peakYoyPct": 7.3,
+        "period": "Feb 2025"
+      },
+      {
+        "energyYoyPct": 14.3,
+        "peakYoyPct": 6.1,
+        "period": "Mar 2025"
+      },
+      {
+        "energyYoyPct": 2.6,
+        "peakYoyPct": 5,
+        "period": "Apr 2025"
+      },
+      {
+        "energyYoyPct": -5.4,
+        "peakYoyPct": -7.6,
+        "period": "May 2025"
+      },
+      {
+        "energyYoyPct": -2.2,
+        "peakYoyPct": -1.8,
+        "period": "Jun 2025"
+      },
+      {
+        "energyYoyPct": 4.4,
+        "peakYoyPct": 6,
+        "period": "Aug 2025"
+      },
+      {
+        "energyYoyPct": 3.2,
+        "peakYoyPct": -0.6,
+        "period": "Sep 2025"
+      },
+      {
+        "energyYoyPct": -6,
+        "peakYoyPct": -3.9,
+        "period": "Oct 2025"
+      },
+      {
+        "energyYoyPct": 6.8,
+        "peakYoyPct": 7.5,
+        "period": "Dec 2025"
+      },
+      {
+        "energyYoyPct": 4,
         "peakYoyPct": 3.4,
         "period": "Jan 2026"
+      },
+      {
+        "energyYoyPct": 1.1,
+        "peakYoyPct": 2.5,
+        "period": "Feb 2026"
+      },
+      {
+        "energyYoyPct": 0.3,
+        "peakYoyPct": 1.6,
+        "period": "Mar 2026"
+      },
+      {
+        "energyYoyPct": 4.1,
+        "peakYoyPct": 8.8,
+        "period": "Apr 2026"
       }
     ],
     "kpis": [
@@ -90,24 +253,111 @@
       }
     ],
     "months": [
+      "2023-05",
+      "2023-06",
+      "2023-07",
+      "2023-08",
+      "2023-09",
+      "2023-10",
+      "2023-11",
+      "2023-12",
+      "2024-01",
+      "2024-02",
+      "2024-03",
+      "2024-04",
+      "2024-05",
+      "2024-06",
+      "2024-07",
+      "2024-08",
+      "2024-09",
+      "2024-10",
+      "2024-11",
+      "2024-12",
       "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
       "2025-06",
+      "2025-08",
+      "2025-09",
+      "2025-10",
       "2025-12",
       "2026-01",
+      "2026-02",
+      "2026-03",
       "2026-04"
     ],
     "peakGrowthYoy": [
       null,
       null,
       null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      13,
+      9.5,
+      8.4,
+      -9,
+      -3.9,
+      -1,
+      1.4,
+      5,
+      6.7,
+      7.3,
+      6.1,
+      5,
+      -7.6,
+      -1.8,
+      6,
+      -0.6,
+      -3.9,
+      7.5,
       3.4,
-      null
+      2.5,
+      1.6,
+      8.8
     ],
     "peakGw": [
-      237.3,
-      241,
-      241.2,
+      221.4,
+      224.1,
+      209,
+      238.2,
+      240,
+      221.5,
+      204.6,
+      213.6,
+      222.3,
+      222,
+      221.7,
+      224.2,
+      250.1,
       245.4,
+      226.6,
+      216.7,
+      230.6,
+      219.2,
+      207.4,
+      224.2,
+      237.3,
+      238.1,
+      235.2,
+      235.3,
+      231,
+      241,
+      229.7,
+      229.2,
+      210.7,
+      241,
+      245.4,
+      244,
+      239,
       256
     ]
   },
@@ -127,6 +377,18 @@
       "asOf": "2026-04-01",
       "confidence": "high",
       "name": "CEA / PIB"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "CRISIL / CEA",
+      "url": "https://www.downtoearth.org.in/energy/indias-power-demand-hits-five-year-high-in-early-2026"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "CRISIL / CEA",
+      "url": "https://www.tribuneindia.com/news/energy-sector/december-power-demand-rises-6-8-offsetting-softer-q3fy26-trends-nuvama"
     },
     {
       "asOf": "2026-04-01",
@@ -154,6 +416,155 @@
       "confidence": "high",
       "name": "PIB / CEA",
       "url": "https://www.pib.gov.in/PressReleseDetail.aspx?PRID=2135450"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://dailypioneer.com/news/india-total-power-consumption-grows-4-percent-april-2026"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://powerline.net.in/2023/05/19/peak-power-demand-reaches-221-gw-on-may-17-2023/"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "PTI / CEA",
+      "url": "https://www.angelone.in/news/economy/india-power-demand-growth-slows-to-1-7-in-march-amid-high-rainfall"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.angelone.in/news/economy/indias-power-consumption-crossed-billion-units-in-feb"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.business-standard.com/economy/news/india-s-power-usage-rises-15-to-156-31-bn-units-in-may-due-to-extreme-heat-124060200211_1.html"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.business-standard.com/india-news/india-s-power-consumption-rises-3-2-to-145-91-bn-units-in-september-125100101068_1.html"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "medium",
+      "name": "PTI / CEA",
+      "url": "https://www.business-standard.com/india-news/india-s-power-consumption-rises-3-2-to-145-91-bn-units-in-september-125100101068_1.html"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.business-standard.com/industry/news/domestic-power-consumption-rises-1-4-to-129-89-billion-units-in-march-124040100344_1.html"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.business-standard.com/industry/news/india-s-power-consumption-declines-4-7-to-144-2-billion-units-in-aug-124090100425_1.html"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.business-standard.com/industry/news/india-s-power-consumption-rises-4-4-to-150-47-bn-units-in-august-125090100797_1.html"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.business-standard.com/industry/news/india-s-power-consumption-rises-7-to-148-48-bn-units-in-march-2025-125040100868_1.html"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.business-standard.com/industry/news/power-consumption-grows-7-5-to-1354-97-bn-units-in-fy23-24-from-apr-jan-124021800117_1.html"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.business-standard.com/industry/news/power-consumption-up-by-3-5-to-145-4-bn-units-in-july-amid-rainfall-124080100827_1.html"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.constructionworld.in/energy-infrastructure/power-and-renewable-energy/indias-power-consumption-falls-6-in-october-to-132-billion-units/80937"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.constructionworld.in/energy-infrastructure/power-and-renewable-energy/indias-power-consumption-slightly-up-to-140.4-billion-units-in-october/64556"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.dailypioneer.com/2023/business/power-consumption-grows-10-7--to-140-49-billion-units-in-september.html"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.deccanherald.com/business/indias-power-consumption-rises-by-11-in-april-3003110"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.deccanherald.com/india/indias-power-consumption-up-nearly-6-to-13040-billion-units-in-december-3338302"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.fibre2fashion.com/news/industrial-textiles-news/india-s-power-consumption-up-2-7-to-137-49-bu-in-jan-2025-300561-newsdetails.htm"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.ibef.org/news/india-s-power-consumption-rises-5-to-125-44-billion-units-in-november"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.ibef.org/news/india-s-power-consumption-rises-nearly-9-to-152-38-billion-units-in-june"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.outlookbusiness.com/news/indias-power-consumption-grows-almost-8-to-847-billion-units-in-first-half-of-fy24"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.outlookbusiness.com/news/indias-power-consumption-grows-slightly-to-13154-billion-units-in-feb"
+    },
+    {
+      "asOf": "2026-04-01",
+      "confidence": "high",
+      "name": "PTI / CEA",
+      "url": "https://www.outlookbusiness.com/news/indias-power-consumption-up-5-to-12544-billion-units-in-nov"
     }
   ],
   "updatedAt": "2026-04-01"
