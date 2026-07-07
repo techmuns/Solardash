@@ -118,12 +118,22 @@ export function ScreenerTable({
       sortable: true,
       accessor: (r) => r.name,
       render: (r) => (
-        <Link
-          href={`/companies/${r.slug}`}
-          className="whitespace-nowrap font-medium text-foreground hover:text-brand"
-        >
-          {r.name}
-        </Link>
+        <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+          <Link
+            href={`/companies/${r.slug}`}
+            className="font-medium text-foreground hover:text-brand"
+          >
+            {r.name}
+          </Link>
+          {r.board?.includes("SME") && (
+            <span
+              title={r.board}
+              className="rounded border border-border px-1 py-px text-[9px] font-semibold uppercase tracking-wide text-muted-foreground"
+            >
+              SME
+            </span>
+          )}
+        </span>
       ),
     },
     {

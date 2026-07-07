@@ -3,6 +3,7 @@
   "cadence": "quarterly",
   "coverage": "ReNew Energy Global",
   "data": {
+    "board": "US",
     "confidence": "medium",
     "hasDetail": false,
     "name": "ReNew Energy Global",

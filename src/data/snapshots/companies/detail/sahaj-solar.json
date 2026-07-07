@@ -3,6 +3,7 @@
   "cadence": "quarterly",
   "coverage": "Sahaj Solar",
   "data": {
+    "board": "NSE SME",
     "confidence": "modelled",
     "hasDetail": false,
     "marketCapCr": 316,

@@ -15,6 +15,8 @@ export interface CompanyIdentity {
   tickerNse?: string;
   tickerBse?: string;
   type: CompanyType;
+  /** Listing venue, e.g. "NSE", "BSE", "NSE SME", "BSE SME", "US". Drives the SME tag. */
+  board?: string;
   /** Approx. market capitalisation, ₹ crore (registry seed / refreshed). */
   marketCapCr?: number;
   moduleGw?: number;

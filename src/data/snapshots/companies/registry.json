@@ -179,6 +179,7 @@
         "type": "manufacturer"
       },
       {
+        "board": "NSE SME",
         "confidence": "modelled",
         "marketCapCr": 2359,
         "name": "Alpex Solar",
@@ -188,6 +189,7 @@
         "type": "manufacturer"
       },
       {
+        "board": "NSE SME",
         "confidence": "modelled",
         "marketCapCr": 625,
         "name": "Australian Premium Solar (India)",
@@ -242,6 +244,7 @@
         "type": "integrated"
       },
       {
+        "board": "NSE SME",
         "confidence": "modelled",
         "marketCapCr": 852,
         "name": "Ganesh Green Bharat",
@@ -332,6 +335,7 @@
         "type": "utility"
       },
       {
+        "board": "NSE SME",
         "confidence": "modelled",
         "marketCapCr": 3217,
         "name": "Oriana Power",
@@ -359,6 +363,7 @@
         "type": "epc"
       },
       {
+        "board": "US",
         "confidence": "medium",
         "name": "ReNew Energy Global",
         "slug": "renew-energy",
@@ -366,6 +371,7 @@
         "type": "ipp"
       },
       {
+        "board": "NSE SME",
         "confidence": "modelled",
         "marketCapCr": 316,
         "name": "Sahaj Solar",

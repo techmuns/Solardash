@@ -3,6 +3,7 @@
   "cadence": "quarterly",
   "coverage": "Australian Premium Solar (India)",
   "data": {
+    "board": "NSE SME",
     "confidence": "modelled",
     "hasDetail": false,
     "marketCapCr": 625,

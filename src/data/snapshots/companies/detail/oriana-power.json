@@ -3,6 +3,7 @@
   "cadence": "quarterly",
   "coverage": "Oriana Power",
   "data": {
+    "board": "NSE SME",
     "confidence": "modelled",
     "hasDetail": false,
     "marketCapCr": 3217,

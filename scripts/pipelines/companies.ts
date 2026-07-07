@@ -34,6 +34,7 @@ function parseIdentity(r: Record<string, string>): CompanyIdentity {
     confidence: r.confidence as Confidence,
   };
   if (r.ticker_nse) id.tickerNse = r.ticker_nse;
+  if (r.board?.trim()) id.board = r.board.trim();
   type NumericKey =
     | "marketCapCr"
     | "moduleGw"

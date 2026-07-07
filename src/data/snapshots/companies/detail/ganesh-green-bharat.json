@@ -3,6 +3,7 @@
   "cadence": "quarterly",
   "coverage": "Ganesh Green Bharat",
   "data": {
+    "board": "NSE SME",
     "confidence": "modelled",
     "hasDetail": false,
     "marketCapCr": 852,

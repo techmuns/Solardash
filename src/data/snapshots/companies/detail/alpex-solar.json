@@ -3,6 +3,7 @@
   "cadence": "quarterly",
   "coverage": "Alpex Solar",
   "data": {
+    "board": "NSE SME",
     "confidence": "modelled",
     "hasDetail": false,
     "marketCapCr": 2359,
