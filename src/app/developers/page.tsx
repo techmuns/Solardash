@@ -2,9 +2,8 @@ import { getDevelopersSnapshot } from "@/data";
 import { energyColor } from "@/lib/colors";
 import { formatDate } from "@/lib/utils";
 import { fyQuarter, formatFyQuarter } from "@/lib/fiscal";
-import { categoryToExport, snapshotMeta } from "@/lib/export";
+import { snapshotMeta } from "@/lib/export";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
-import { FillCategoryBar } from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
   RankList,
@@ -28,21 +27,46 @@ export default function DevelopersPage() {
   const asOf = formatDate(snap.updatedAt);
   const meta = (dataset: string) => snapshotMeta(snap, { dataset });
 
-  const mixData = d.portfolioMix
-    .map((m) => ({
-      key: m.key,
-      label: TENDER_TYPE_LABELS[m.key],
-      value: m.gw,
-      color: energyColor(m.key),
-    }))
-    .sort((a, b) => b.value - a.value);
-
-  const topDevRows = d.roster
-    .slice(0, 5)
-    .map((r) => ({ label: r.name, value: `${r.operationalGw}` }));
-  const opSide = {
-    title: "Top · operational GW",
-    node: <RankList rows={topDevRows} />,
+  // Aggregate portfolio tech-mix as a compact %-stacked bar (folded into the
+  // Leaderboard side — replaces the old standalone "Portfolio mix" tab).
+  const mix = [...d.portfolioMix].sort((a, b) => b.gw - a.gw);
+  const mixSide = {
+    title: "Portfolio mix",
+    node: (
+      <div className="flex flex-col gap-3">
+        <div className="flex h-3 w-full overflow-hidden rounded-full">
+          {mix.map((m) => (
+            <div
+              key={m.key}
+              title={`${TENDER_TYPE_LABELS[m.key]} · ${Math.round(m.share * 100)}%`}
+              style={{ width: `${m.share * 100}%`, background: energyColor(m.key) }}
+            />
+          ))}
+        </div>
+        <div className="flex flex-col gap-1.5">
+          {mix.map((m) => (
+            <div key={m.key} className="flex items-center gap-2 text-xs">
+              <span
+                className="h-2.5 w-2.5 shrink-0 rounded-full"
+                style={{ background: energyColor(m.key) }}
+              />
+              <span className="min-w-0 flex-1 truncate text-foreground">
+                {TENDER_TYPE_LABELS[m.key]}
+              </span>
+              <span className="shrink-0 tabular-nums text-muted-foreground">
+                {m.gw} GW
+              </span>
+              <span className="w-8 shrink-0 text-right font-semibold tabular-nums text-foreground">
+                {Math.round(m.share * 100)}%
+              </span>
+            </div>
+          ))}
+        </div>
+        <p className="border-t border-border pt-2 text-2xs text-muted-foreground">
+          + {d.bessGwh} GWh BESS across portfolios
+        </p>
+      </div>
+    ),
   };
 
   // Commissioning timeline anchored to the snapshot vintage.
@@ -78,6 +102,7 @@ export default function DevelopersPage() {
           <RosterTable rows={d.roster} />
         </div>
       ),
+      side: mixSide,
       exportData: {
         columns: [
           { key: "name", label: "IPP" },
@@ -161,20 +186,6 @@ export default function DevelopersPage() {
           tariff: p.tariffRs ?? null,
         })),
         meta: meta("ppa-tracker"),
-      },
-    },
-    {
-      id: "mix",
-      label: "Portfolio mix",
-      title: "Aggregate portfolio mix",
-      subtitle: `GW by technology, ranked · + ${d.bessGwh} GWh BESS across portfolios`,
-      body: (
-        <FillCategoryBar data={mixData} unit="GW" categoryWidth={64} showValues />
-      ),
-      side: opSide,
-      exportData: {
-        ...categoryToExport(mixData, "Technology", "GW"),
-        meta: meta("portfolio-mix"),
       },
     },
   ];
