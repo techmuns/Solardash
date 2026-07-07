@@ -1,0 +1,83 @@
+{
+  "slug": "orient-green-power",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 310.6,
+      "ebitda": 252.2,
+      "ebitdaMarginPct": 81.2,
+      "pat": 46.6
+    },
+    {
+      "period": "FY23",
+      "revenue": 258.3,
+      "ebitda": 193.1,
+      "ebitdaMarginPct": 74.8,
+      "pat": 35.1
+    },
+    {
+      "period": "FY24",
+      "revenue": 271,
+      "ebitda": 191.3,
+      "ebitdaMarginPct": 70.6,
+      "pat": 38.4
+    },
+    {
+      "period": "FY25",
+      "revenue": 263.5,
+      "ebitda": 171.9,
+      "ebitdaMarginPct": 65.2,
+      "pat": 42
+    },
+    {
+      "period": "FY26",
+      "revenue": 293,
+      "ebitda": 183.13,
+      "ebitdaMarginPct": 62.5,
+      "pat": 72
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY26",
+      "revenue": 87.4,
+      "pat": 28.6,
+      "patMarginPct": 32.72
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 131,
+      "pat": 80.9,
+      "patMarginPct": 61.76
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 36,
+      "pat": -21.4,
+      "patMarginPct": -59.44
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 38.6,
+      "pat": -16.6,
+      "patMarginPct": -43.01
+    }
+  ],
+  "valuation": {
+    "peX": 20.5,
+    "pbX": 1.2,
+    "evEbitdaX": 9.9,
+    "cmp": 10.7,
+    "marketCapCr": 1204
+  },
+  "rocePct": 6.5,
+  "roePct": 4.6,
+  "shareholding": {
+    "promoterPct": 24.4,
+    "fiiPct": 0.8,
+    "diiPct": 1.4,
+    "publicPct": 73.5,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

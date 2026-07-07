@@ -3,6 +3,43 @@
   "cadence": "quarterly",
   "coverage": "BF Utilities",
   "data": {
+    "annual": [
+      {
+        "ebitda": 341.2,
+        "ebitdaMarginPct": 63.9,
+        "pat": 93.1,
+        "period": "FY22",
+        "revenue": 534.2
+      },
+      {
+        "ebitda": 514.9,
+        "ebitdaMarginPct": 66.4,
+        "pat": 256.7,
+        "period": "FY23",
+        "revenue": 775.9
+      },
+      {
+        "ebitda": 599.9,
+        "ebitdaMarginPct": 60.7,
+        "pat": 303.5,
+        "period": "FY24",
+        "revenue": 988.5
+      },
+      {
+        "ebitda": 644.2,
+        "ebitdaMarginPct": 74.8,
+        "pat": 337.9,
+        "period": "FY25",
+        "revenue": 861.7
+      },
+      {
+        "ebitda": 619.38,
+        "ebitdaMarginPct": 74,
+        "pat": 338,
+        "period": "FY26",
+        "revenue": 837
+      }
+    ],
     "cmp": 560,
     "concall": {
       "date": "2026-05-28",
@@ -21,20 +58,54 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 74,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 2107,
     "name": "BF Utilities",
     "patFy26Cr": 338,
     "peX": 13.8,
+    "quarterly": [
+      {
+        "pat": 96.6,
+        "patMarginPct": 45.65,
+        "period": "Q1FY26",
+        "revenue": 211.6
+      },
+      {
+        "ebitda": 167.4,
+        "pat": 98.4,
+        "patMarginPct": 44.46,
+        "period": "Q2FY26",
+        "revenue": 221.3
+      },
+      {
+        "ebitda": 152.8,
+        "pat": 102.8,
+        "patMarginPct": 49,
+        "period": "Q3FY26",
+        "revenue": 209.8
+      }
+    ],
     "revenueFy26Cr": 837,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 1.5,
+      "fiiPct": 8.7,
+      "promoterPct": 56.1,
+      "publicPct": 33.7
+    },
     "slug": "bf-utilities",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "BFUTILITIE",
-    "type": "wind"
+    "type": "wind",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 7,
+      "peX": 13.8
+    }
   },
   "dataset": "detail/bf-utilities",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

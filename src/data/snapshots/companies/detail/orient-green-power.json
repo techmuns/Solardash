@@ -3,7 +3,44 @@
   "cadence": "quarterly",
   "coverage": "Orient Green Power",
   "data": {
-    "cmp": 10.3,
+    "annual": [
+      {
+        "ebitda": 252.2,
+        "ebitdaMarginPct": 81.2,
+        "pat": 46.6,
+        "period": "FY22",
+        "revenue": 310.6
+      },
+      {
+        "ebitda": 193.1,
+        "ebitdaMarginPct": 74.8,
+        "pat": 35.1,
+        "period": "FY23",
+        "revenue": 258.3
+      },
+      {
+        "ebitda": 191.3,
+        "ebitdaMarginPct": 70.6,
+        "pat": 38.4,
+        "period": "FY24",
+        "revenue": 271
+      },
+      {
+        "ebitda": 171.9,
+        "ebitdaMarginPct": 65.2,
+        "pat": 42,
+        "period": "FY25",
+        "revenue": 263.5
+      },
+      {
+        "ebitda": 183.13,
+        "ebitdaMarginPct": 62.5,
+        "pat": 72,
+        "period": "FY26",
+        "revenue": 293
+      }
+    ],
+    "cmp": 10.7,
     "concall": {
       "date": "2026-05-13",
       "guidance": [
@@ -23,20 +60,58 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 62.5,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 1204,
     "name": "Orient Green Power",
     "patFy26Cr": 72,
     "peX": 20.5,
+    "quarterly": [
+      {
+        "pat": 28.6,
+        "patMarginPct": 32.72,
+        "period": "Q1FY26",
+        "revenue": 87.4
+      },
+      {
+        "pat": 80.9,
+        "patMarginPct": 61.76,
+        "period": "Q2FY26",
+        "revenue": 131
+      },
+      {
+        "pat": -21.4,
+        "patMarginPct": -59.44,
+        "period": "Q3FY26",
+        "revenue": 36
+      },
+      {
+        "pat": -16.6,
+        "patMarginPct": -43.01,
+        "period": "Q4FY26",
+        "revenue": 38.6
+      }
+    ],
     "revenueFy26Cr": 293,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 1.4,
+      "fiiPct": 0.8,
+      "promoterPct": 24.4,
+      "publicPct": 73.5
+    },
     "slug": "orient-green-power",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "GREENPOWER",
-    "type": "wind"
+    "type": "wind",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 1.2,
+      "peX": 20.5
+    }
   },
   "dataset": "detail/orient-green-power",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [
