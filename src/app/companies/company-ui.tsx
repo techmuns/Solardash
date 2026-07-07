@@ -5,11 +5,18 @@ export const TYPE_LABELS: Record<CompanyType, string> = {
   manufacturer: "Manufacturer",
   integrated: "Integrated",
   ipp: "IPP",
+  epc: "EPC / O&M",
+  wind: "Wind",
+  utility: "Utility / PSU",
 };
 
 export function TypeBadge({ type }: { type: CompanyType }) {
   const variant =
-    type === "integrated" ? "brand" : type === "ipp" ? "neutral" : "outline";
+    type === "integrated"
+      ? "brand"
+      : type === "ipp" || type === "utility"
+        ? "neutral"
+        : "outline";
   return <Badge variant={variant}>{TYPE_LABELS[type]}</Badge>;
 }
 

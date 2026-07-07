@@ -9,6 +9,7 @@
         "cmp": 378,
         "confidence": "medium",
         "ebitdaMarginPct": 21,
+        "marketCapCr": 119900,
         "name": "Tata Power",
         "patFy26Cr": 5118,
         "peX": 31.4,
@@ -23,6 +24,7 @@
         "cmp": 2875,
         "confidence": "medium",
         "ebitdaMarginPct": 22,
+        "marketCapCr": 82245,
         "moduleGw": 15,
         "name": "Waaree Energies",
         "orderBookCr": 53000,
@@ -40,6 +42,7 @@
         "cmp": 549,
         "confidence": "medium",
         "ebitdaMarginPct": 53,
+        "marketCapCr": 100600,
         "name": "JSW Energy",
         "patFy26Cr": 2762,
         "peX": 46.2,
@@ -53,6 +56,7 @@
         "cmp": 1549,
         "confidence": "medium",
         "ebitdaMarginPct": 83,
+        "marketCapCr": 256334,
         "name": "Adani Green Energy",
         "patFy26Cr": 1987,
         "peX": 139,
@@ -67,6 +71,7 @@
         "cmp": 1022,
         "confidence": "medium",
         "ebitdaMarginPct": 30,
+        "marketCapCr": 47834,
         "moduleGw": 5,
         "name": "Premier Energies",
         "orderBookCr": 13720,
@@ -86,6 +91,7 @@
         "cmp": 187,
         "confidence": "high",
         "ebitdaMarginPct": 19,
+        "marketCapCr": 6475,
         "moduleGw": 9.5,
         "name": "Vikram Solar",
         "orderBookGw": 10.34,
@@ -101,6 +107,7 @@
         "cmp": 435,
         "confidence": "modelled",
         "ebitdaMarginPct": 12,
+        "marketCapCr": 6100,
         "moduleGw": 3.8,
         "name": "Saatvik Green Energy",
         "patFy26Cr": 357,
@@ -115,6 +122,7 @@
         "cmp": 95,
         "confidence": "medium",
         "ebitdaMarginPct": 87,
+        "marketCapCr": 80500,
         "name": "NTPC Green Energy",
         "patFy26Cr": 521,
         "peX": 153,
@@ -128,6 +136,7 @@
         "cmp": 113,
         "confidence": "modelled",
         "ebitdaMarginPct": 13,
+        "marketCapCr": 2783,
         "moduleGw": 2,
         "name": "Insolation Energy",
         "patFy26Cr": 201,
@@ -142,6 +151,7 @@
         "cmp": 384,
         "confidence": "medium",
         "ebitdaMarginPct": 88,
+        "marketCapCr": 27500,
         "name": "ACME Solar Holdings",
         "patFy26Cr": 498,
         "peX": 54.6,
@@ -156,6 +166,7 @@
         "cmp": 103,
         "confidence": "medium",
         "ebitdaMarginPct": 41,
+        "marketCapCr": 4400,
         "moduleGw": 0.55,
         "name": "Websol Energy Systems",
         "orderBookCr": 1160,
@@ -166,6 +177,310 @@
         "sourceNote": "Company filings (aggregated)",
         "tickerNse": "WEBELSOLAR",
         "type": "manufacturer"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 2359,
+        "name": "Alpex Solar",
+        "slug": "alpex-solar",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "ALPEXSOLAR",
+        "type": "manufacturer"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 625,
+        "name": "Australian Premium Solar (India)",
+        "slug": "australian-premium-solar",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "APS",
+        "type": "manufacturer"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 2300,
+        "name": "BF Utilities",
+        "slug": "bf-utilities",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "BFUTILITIE",
+        "type": "wind"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 3800,
+        "name": "Bondada Engineering",
+        "slug": "bondada-engineering",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "BONDADA",
+        "type": "epc"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 8490,
+        "name": "Borosil Renewables",
+        "slug": "borosil-renewables",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "BORORENEW",
+        "type": "manufacturer"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 20700,
+        "name": "CESC",
+        "slug": "cesc",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "CESC",
+        "type": "utility"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 25070,
+        "name": "Emmvee Photovoltaic Power",
+        "slug": "emmvee-photovoltaic",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "EMMVEE",
+        "type": "integrated"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 852,
+        "name": "Ganesh Green Bharat",
+        "slug": "ganesh-green-bharat",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "GANR",
+        "type": "epc"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 78,
+        "name": "Gensol Engineering",
+        "slug": "gensol-engineering",
+        "sourceNote": "Distressed (2025 governance/insolvency issues)",
+        "tickerNse": "GENSOL",
+        "type": "epc"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 150,
+        "name": "Indowind Energy",
+        "slug": "indowind-energy",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "INDOWIND",
+        "type": "wind"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 5500,
+        "name": "Inox Green Energy Services",
+        "slug": "inox-green",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "INOXGREEN",
+        "type": "wind"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 15000,
+        "name": "Inox Wind",
+        "slug": "inox-wind",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "INOXWIND",
+        "type": "wind"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 2400,
+        "name": "K.P. Energy",
+        "slug": "kp-energy",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "KPEL",
+        "type": "wind"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 7844,
+        "name": "KPI Green Energy",
+        "slug": "kpi-green",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "KPIGREEN",
+        "type": "ipp"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 80900,
+        "name": "NHPC",
+        "slug": "nhpc",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "NHPC",
+        "type": "utility"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 43700,
+        "name": "NLC India",
+        "slug": "nlc-india",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "NLCINDIA",
+        "type": "utility"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 345600,
+        "name": "NTPC",
+        "slug": "ntpc",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "NTPC",
+        "type": "utility"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 3217,
+        "name": "Oriana Power",
+        "slug": "oriana-power",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "ORIANA",
+        "type": "epc"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 1100,
+        "name": "Orient Green Power",
+        "slug": "orient-green-power",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "GREENPOWER",
+        "type": "wind"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 4894,
+        "name": "Oswal Pumps",
+        "slug": "oswal-pumps",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "OSWALPUMPS",
+        "type": "epc"
+      },
+      {
+        "confidence": "medium",
+        "name": "ReNew Energy Global",
+        "slug": "renew-energy",
+        "sourceNote": "Nasdaq: RNW (take-private ongoing)",
+        "type": "ipp"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 316,
+        "name": "Sahaj Solar",
+        "slug": "sahaj-solar",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "SAHAJSOLAR",
+        "type": "manufacturer"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 7084,
+        "name": "Shakti Pumps (India)",
+        "slug": "shakti-pumps",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "SHAKTIPUMP",
+        "type": "epc"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 28700,
+        "name": "SJVN",
+        "slug": "sjvn",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "SJVN",
+        "type": "utility"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 1818,
+        "name": "SolarWorld Energy Solutions",
+        "slug": "solarworld-energy",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "SOLARWORLD",
+        "type": "epc"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 1422,
+        "name": "Solex Energy",
+        "slug": "solex-energy",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "SOLEX",
+        "type": "manufacturer"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 5700,
+        "name": "Sterling & Wilson Renewable Energy",
+        "slug": "sterling-wilson-re",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "SWSOLAR",
+        "type": "epc"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 132,
+        "name": "Surana Solar",
+        "slug": "surana-solar",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "SURANASOL",
+        "type": "manufacturer"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 77500,
+        "name": "Suzlon Energy",
+        "slug": "suzlon-energy",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "SUZLON",
+        "type": "wind"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 950,
+        "name": "Swelect Energy Systems",
+        "slug": "swelect-energy",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "SWELECTES",
+        "type": "integrated"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 72800,
+        "name": "Torrent Power",
+        "slug": "torrent-power",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "TORNTPOWER",
+        "type": "utility"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 1850,
+        "name": "Ujaas Energy",
+        "slug": "ujaas-energy",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "UEL",
+        "type": "manufacturer"
+      },
+      {
+        "confidence": "medium",
+        "marketCapCr": 10650,
+        "name": "Waaree Renewable Technologies",
+        "slug": "waaree-renewable",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "WAAREERTL",
+        "type": "epc"
+      },
+      {
+        "confidence": "modelled",
+        "marketCapCr": 500,
+        "name": "Zodiac Energy",
+        "slug": "zodiac-energy",
+        "sourceNote": "Market data (mid-2026) + company filings",
+        "tickerNse": "ZODIAC",
+        "type": "epc"
       }
     ]
   },
@@ -190,6 +505,26 @@
       "asOf": "2026-03-31",
       "confidence": "modelled",
       "name": "Company filings (aggregated)"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "Distressed (2025 governance/insolvency issues)"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Market data (mid-2026) + company filings"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "Market data (mid-2026) + company filings"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Nasdaq: RNW (take-private ongoing)"
     }
   ],
   "updatedAt": "2026-03-31"

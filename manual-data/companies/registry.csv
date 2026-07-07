@@ -1,12 +1,46 @@
-slug,name,ticker_nse,type,module_gw,cell_gw,order_book_cr,order_book_gw,revenue_fy26_cr,ebitda_margin_pct,pat_fy26_cr,pe_x,ev_ebitda_x,target_price,cmp,rating,confidence,source
-waaree-energies,Waaree Energies,WAAREEENER,integrated,15.0,5.4,53000,,26540,22.3,,46,,3600,2599,BUY,medium,Company filings (aggregated)
-premier-energies,Premier Energies,PREMIERENE,integrated,5.0,3.6,13720,9.4,7550,27.0,,47,,892,683,BUY,medium,Company filings (aggregated)
-vikram-solar,Vikram Solar,VIKRAMSOLR,manufacturer,9.5,0,,10.34,4673,19.6,489,14,,,190,,high,Company filings (aggregated)
-websol-energy,Websol Energy Systems,WEBELSOLAR,manufacturer,0.55,1.2,1160,,1050,41.0,,40,,,,,medium,Company filings (aggregated)
-saatvik-green,Saatvik Green Energy,SAATVIK,manufacturer,3.8,,,,,,,,,,,,modelled,Company filings (aggregated)
-acme-solar,ACME Solar Holdings,ACMESOLAR,ipp,,,,,,,,,,,,,medium,Company filings (aggregated)
-insolation-energy,Insolation Energy,INSOLATION,manufacturer,2.0,,,,,,,,,,,,modelled,Company filings (aggregated)
-adani-green,Adani Green Energy,ADANIGREEN,ipp,,,,,,,,,,,,,medium,Company filings (aggregated)
-ntpc-green,NTPC Green Energy,NTPCGREEN,ipp,,,,,,,,,,,,,medium,Company filings (aggregated)
-jsw-energy,JSW Energy,JSWENERGY,ipp,,,,,,,,,,,,,medium,Company filings (aggregated)
-tata-power,Tata Power,TATAPOWER,ipp,,,,,,,,,,,,,medium,Company filings (aggregated)
+slug,name,ticker_nse,type,market_cap_cr,module_gw,cell_gw,order_book_cr,order_book_gw,revenue_fy26_cr,ebitda_margin_pct,pat_fy26_cr,pe_x,ev_ebitda_x,target_price,cmp,rating,confidence,source
+waaree-energies,Waaree Energies,WAAREEENER,integrated,82245,15.0,5.4,53000,,26540,22.3,,46,,3600,2599,BUY,medium,Company filings (aggregated)
+premier-energies,Premier Energies,PREMIERENE,integrated,47834,5.0,3.6,13720,9.4,7550,27.0,,47,,892,683,BUY,medium,Company filings (aggregated)
+vikram-solar,Vikram Solar,VIKRAMSOLR,manufacturer,6475,9.5,0,,10.34,4673,19.6,489,14,,,190,,high,Company filings (aggregated)
+websol-energy,Websol Energy Systems,WEBELSOLAR,manufacturer,4400,0.55,1.2,1160,,1050,41.0,,40,,,,,medium,Company filings (aggregated)
+saatvik-green,Saatvik Green Energy,SAATVIK,manufacturer,6100,3.8,,,,,,,,,,,,modelled,Company filings (aggregated)
+acme-solar,ACME Solar Holdings,ACMESOLAR,ipp,27500,,,,,,,,,,,,,medium,Company filings (aggregated)
+insolation-energy,Insolation Energy,INSOLATION,manufacturer,2783,2.0,,,,,,,,,,,,modelled,Company filings (aggregated)
+adani-green,Adani Green Energy,ADANIGREEN,ipp,256334,,,,,,,,,,,,,medium,Company filings (aggregated)
+ntpc-green,NTPC Green Energy,NTPCGREEN,ipp,80500,,,,,,,,,,,,,medium,Company filings (aggregated)
+jsw-energy,JSW Energy,JSWENERGY,ipp,100600,,,,,,,,,,,,,medium,Company filings (aggregated)
+tata-power,Tata Power,TATAPOWER,ipp,119900,,,,,,,,,,,,,medium,Company filings (aggregated)
+emmvee-photovoltaic,Emmvee Photovoltaic Power,EMMVEE,integrated,25070,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+solex-energy,Solex Energy,SOLEX,manufacturer,1422,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+swelect-energy,Swelect Energy Systems,SWELECTES,integrated,950,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+ujaas-energy,Ujaas Energy,UEL,manufacturer,1850,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+alpex-solar,Alpex Solar,ALPEXSOLAR,manufacturer,2359,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+australian-premium-solar,Australian Premium Solar (India),APS,manufacturer,625,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+sahaj-solar,Sahaj Solar,SAHAJSOLAR,manufacturer,316,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+surana-solar,Surana Solar,SURANASOL,manufacturer,132,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+borosil-renewables,Borosil Renewables,BORORENEW,manufacturer,8490,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+kpi-green,KPI Green Energy,KPIGREEN,ipp,7844,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+renew-energy,ReNew Energy Global,,ipp,,,,,,,,,,,,,,medium,Nasdaq: RNW (take-private ongoing)
+sterling-wilson-re,Sterling & Wilson Renewable Energy,SWSOLAR,epc,5700,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+waaree-renewable,Waaree Renewable Technologies,WAAREERTL,epc,10650,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+shakti-pumps,Shakti Pumps (India),SHAKTIPUMP,epc,7084,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+oswal-pumps,Oswal Pumps,OSWALPUMPS,epc,4894,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+oriana-power,Oriana Power,ORIANA,epc,3217,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+bondada-engineering,Bondada Engineering,BONDADA,epc,3800,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+gensol-engineering,Gensol Engineering,GENSOL,epc,78,,,,,,,,,,,,,modelled,Distressed (2025 governance/insolvency issues)
+zodiac-energy,Zodiac Energy,ZODIAC,epc,500,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+ganesh-green-bharat,Ganesh Green Bharat,GANR,epc,852,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+solarworld-energy,SolarWorld Energy Solutions,SOLARWORLD,epc,1818,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+suzlon-energy,Suzlon Energy,SUZLON,wind,77500,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+inox-wind,Inox Wind,INOXWIND,wind,15000,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+inox-green,Inox Green Energy Services,INOXGREEN,wind,5500,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+orient-green-power,Orient Green Power,GREENPOWER,wind,1100,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+kp-energy,K.P. Energy,KPEL,wind,2400,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+bf-utilities,BF Utilities,BFUTILITIE,wind,2300,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+indowind-energy,Indowind Energy,INDOWIND,wind,150,,,,,,,,,,,,,modelled,Market data (mid-2026) + company filings
+ntpc,NTPC,NTPC,utility,345600,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+nhpc,NHPC,NHPC,utility,80900,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+sjvn,SJVN,SJVN,utility,28700,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+nlc-india,NLC India,NLCINDIA,utility,43700,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+torrent-power,Torrent Power,TORNTPOWER,utility,72800,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings
+cesc,CESC,CESC,utility,20700,,,,,,,,,,,,,medium,Market data (mid-2026) + company filings

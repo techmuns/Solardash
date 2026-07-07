@@ -35,6 +35,7 @@ function parseIdentity(r: Record<string, string>): CompanyIdentity {
   };
   if (r.ticker_nse) id.tickerNse = r.ticker_nse;
   type NumericKey =
+    | "marketCapCr"
     | "moduleGw"
     | "cellGw"
     | "orderBookCr"
@@ -50,6 +51,7 @@ function parseIdentity(r: Record<string, string>): CompanyIdentity {
     const v = num(raw);
     if (v != null) id[key] = v;
   };
+  set("marketCapCr", r.market_cap_cr);
   set("moduleGw", r.module_gw);
   set("cellGw", r.cell_gw);
   set("orderBookCr", r.order_book_cr);

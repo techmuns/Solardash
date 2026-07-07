@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "Shakti Pumps (India)",
+  "data": {
+    "confidence": "medium",
+    "hasDetail": false,
+    "marketCapCr": 7084,
+    "name": "Shakti Pumps (India)",
+    "slug": "shakti-pumps",
+    "sourceNote": "Market data (mid-2026) + company filings",
+    "tickerNse": "SHAKTIPUMP",
+    "type": "epc"
+  },
+  "dataset": "detail/shakti-pumps",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Market data (mid-2026) + company filings"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

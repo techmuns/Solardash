@@ -1,6 +1,12 @@
 import type { Confidence } from "./core";
 
-export type CompanyType = "manufacturer" | "integrated" | "ipp";
+export type CompanyType =
+  | "manufacturer"
+  | "integrated"
+  | "ipp"
+  | "epc"
+  | "wind"
+  | "utility";
 
 /** Registry-level identity + headline metrics (powers the screener). */
 export interface CompanyIdentity {
@@ -9,6 +15,8 @@ export interface CompanyIdentity {
   tickerNse?: string;
   tickerBse?: string;
   type: CompanyType;
+  /** Approx. market capitalisation, ₹ crore (registry seed / refreshed). */
+  marketCapCr?: number;
   moduleGw?: number;
   cellGw?: number;
   orderBookCr?: number;

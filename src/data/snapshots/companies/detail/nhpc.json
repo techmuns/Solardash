@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "NHPC",
+  "data": {
+    "confidence": "medium",
+    "hasDetail": false,
+    "marketCapCr": 80900,
+    "name": "NHPC",
+    "slug": "nhpc",
+    "sourceNote": "Market data (mid-2026) + company filings",
+    "tickerNse": "NHPC",
+    "type": "utility"
+  },
+  "dataset": "detail/nhpc",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Market data (mid-2026) + company filings"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

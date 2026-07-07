@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "Gensol Engineering",
+  "data": {
+    "confidence": "modelled",
+    "hasDetail": false,
+    "marketCapCr": 78,
+    "name": "Gensol Engineering",
+    "slug": "gensol-engineering",
+    "sourceNote": "Distressed (2025 governance/insolvency issues)",
+    "tickerNse": "GENSOL",
+    "type": "epc"
+  },
+  "dataset": "detail/gensol-engineering",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "Distressed (2025 governance/insolvency issues)"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

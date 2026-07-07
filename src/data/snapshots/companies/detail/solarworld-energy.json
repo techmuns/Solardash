@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "SolarWorld Energy Solutions",
+  "data": {
+    "confidence": "modelled",
+    "hasDetail": false,
+    "marketCapCr": 1818,
+    "name": "SolarWorld Energy Solutions",
+    "slug": "solarworld-energy",
+    "sourceNote": "Market data (mid-2026) + company filings",
+    "tickerNse": "SOLARWORLD",
+    "type": "epc"
+  },
+  "dataset": "detail/solarworld-energy",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "Market data (mid-2026) + company filings"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

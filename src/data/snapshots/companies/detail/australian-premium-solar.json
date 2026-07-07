@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "Australian Premium Solar (India)",
+  "data": {
+    "confidence": "modelled",
+    "hasDetail": false,
+    "marketCapCr": 625,
+    "name": "Australian Premium Solar (India)",
+    "slug": "australian-premium-solar",
+    "sourceNote": "Market data (mid-2026) + company filings",
+    "tickerNse": "APS",
+    "type": "manufacturer"
+  },
+  "dataset": "detail/australian-premium-solar",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "Market data (mid-2026) + company filings"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

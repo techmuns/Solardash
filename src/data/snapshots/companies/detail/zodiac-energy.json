@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "Zodiac Energy",
+  "data": {
+    "confidence": "modelled",
+    "hasDetail": false,
+    "marketCapCr": 500,
+    "name": "Zodiac Energy",
+    "slug": "zodiac-energy",
+    "sourceNote": "Market data (mid-2026) + company filings",
+    "tickerNse": "ZODIAC",
+    "type": "epc"
+  },
+  "dataset": "detail/zodiac-energy",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "modelled",
+      "name": "Market data (mid-2026) + company filings"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

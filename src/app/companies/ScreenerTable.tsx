@@ -134,6 +134,22 @@ export function ScreenerTable({
       exportValue: (r) => TYPE_LABELS[r.type],
       render: (r) => <TypeBadge type={r.type} />,
     },
+    {
+      key: "marketCapCr",
+      header: "M-cap",
+      exportLabel: "Market cap (₹cr)",
+      align: "right",
+      sortable: true,
+      accessor: (r) => r.marketCapCr ?? -1,
+      render: (r) =>
+        r.marketCapCr == null ? (
+          dash
+        ) : (
+          <span className="whitespace-nowrap tabular-nums">
+            ₹{formatNumber(Math.round(r.marketCapCr))} cr
+          </span>
+        ),
+    },
     { key: "moduleGw", header: "Module GW", align: "right", sortable: true, accessor: (r) => r.moduleGw ?? -1, render: (r) => gw(r.moduleGw) },
     { key: "cellGw", header: "Cell GW", align: "right", sortable: true, accessor: (r) => r.cellGw ?? -1, render: (r) => gw(r.cellGw) },
     {
@@ -187,6 +203,9 @@ export function ScreenerTable({
           <TabsTrigger value="manufacturer">Manufacturer</TabsTrigger>
           <TabsTrigger value="integrated">Integrated</TabsTrigger>
           <TabsTrigger value="ipp">IPP</TabsTrigger>
+          <TabsTrigger value="epc">EPC / O&amp;M</TabsTrigger>
+          <TabsTrigger value="wind">Wind</TabsTrigger>
+          <TabsTrigger value="utility">Utility / PSU</TabsTrigger>
         </TabsList>
       </Tabs>
       <DataTable

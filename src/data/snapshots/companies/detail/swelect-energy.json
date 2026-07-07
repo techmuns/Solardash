@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "Swelect Energy Systems",
+  "data": {
+    "confidence": "medium",
+    "hasDetail": false,
+    "marketCapCr": 950,
+    "name": "Swelect Energy Systems",
+    "slug": "swelect-energy",
+    "sourceNote": "Market data (mid-2026) + company filings",
+    "tickerNse": "SWELECTES",
+    "type": "integrated"
+  },
+  "dataset": "detail/swelect-energy",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Market data (mid-2026) + company filings"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

@@ -1,0 +1,28 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "KPI Green Energy",
+  "data": {
+    "confidence": "medium",
+    "hasDetail": false,
+    "marketCapCr": 7844,
+    "name": "KPI Green Energy",
+    "slug": "kpi-green",
+    "sourceNote": "Market data (mid-2026) + company filings",
+    "tickerNse": "KPIGREEN",
+    "type": "ipp"
+  },
+  "dataset": "detail/kpi-green",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Market data (mid-2026) + company filings"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}

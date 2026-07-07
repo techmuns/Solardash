@@ -1,0 +1,26 @@
+{
+  "asOf": "2026-03-31",
+  "cadence": "quarterly",
+  "coverage": "ReNew Energy Global",
+  "data": {
+    "confidence": "medium",
+    "hasDetail": false,
+    "name": "ReNew Energy Global",
+    "slug": "renew-energy",
+    "sourceNote": "Nasdaq: RNW (take-private ongoing)",
+    "type": "ipp"
+  },
+  "dataset": "detail/renew-energy",
+  "notes": [
+    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+  ],
+  "section": "companies",
+  "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Nasdaq: RNW (take-private ongoing)"
+    }
+  ],
+  "updatedAt": "2026-03-31"
+}
