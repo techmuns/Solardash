@@ -3,6 +3,44 @@
   "cadence": "quarterly",
   "coverage": "Emmvee Photovoltaic Power",
   "data": {
+    "annual": [
+      {
+        "ebitda": 104,
+        "ebitdaMarginPct": 18.7,
+        "pat": 13,
+        "period": "FY22",
+        "revenue": 555
+      },
+      {
+        "ebitda": 56,
+        "ebitdaMarginPct": 9.1,
+        "pat": 9,
+        "period": "FY23",
+        "revenue": 618
+      },
+      {
+        "ebitda": 120,
+        "ebitdaMarginPct": 12.6,
+        "pat": 29,
+        "period": "FY24",
+        "revenue": 952
+      },
+      {
+        "ebitda": 722,
+        "ebitdaMarginPct": 30.9,
+        "pat": 369,
+        "period": "FY25",
+        "revenue": 2336
+      },
+      {
+        "ebitda": 1732.15,
+        "ebitdaMarginPct": 34.3,
+        "epsRs": 15.62,
+        "pat": 1082,
+        "period": "FY26",
+        "revenue": 5050
+      }
+    ],
     "cellGw": 2.94,
     "cmp": 328,
     "concall": {
@@ -24,22 +62,68 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 34.3,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 22725,
     "moduleGw": 10.3,
     "name": "Emmvee Photovoltaic Power",
     "orderBookGw": 9.4,
     "patFy26Cr": 1082,
     "peX": 21,
+    "quarterly": [
+      {
+        "ebitda": 350,
+        "ebitdaMarginPct": 34,
+        "pat": 188,
+        "patMarginPct": 18.29,
+        "period": "Q1FY26",
+        "revenue": 1028
+      },
+      {
+        "ebitda": 399,
+        "ebitdaMarginPct": 35.3,
+        "pat": 238,
+        "patMarginPct": 21.04,
+        "period": "Q2FY26",
+        "revenue": 1131
+      },
+      {
+        "ebitda": 413,
+        "ebitdaMarginPct": 35.9,
+        "pat": 264,
+        "patMarginPct": 22.92,
+        "period": "Q3FY26",
+        "revenue": 1152
+      },
+      {
+        "ebitda": 571,
+        "ebitdaMarginPct": 32.8,
+        "pat": 392,
+        "patMarginPct": 22.54,
+        "period": "Q4FY26",
+        "revenue": 1739
+      }
+    ],
     "revenueFy26Cr": 5050,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 12.28,
+      "fiiPct": 2.45,
+      "promoterPct": 80.03,
+      "publicPct": 5.24
+    },
     "slug": "emmvee-photovoltaic",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "EMMVEE",
-    "type": "integrated"
+    "type": "integrated",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 6.1,
+      "peX": 21
+    }
   },
   "dataset": "detail/emmvee-photovoltaic",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

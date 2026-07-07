@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Suzlon Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 902,
+        "ebitdaMarginPct": 13.7,
+        "epsRs": -0.17,
+        "pat": -177,
+        "period": "FY22",
+        "revenue": 6582
+      },
+      {
+        "ebitda": 836,
+        "ebitdaMarginPct": 14,
+        "epsRs": 2.28,
+        "pat": 2887,
+        "period": "FY23",
+        "revenue": 5971
+      },
+      {
+        "ebitda": 1038,
+        "ebitdaMarginPct": 15.9,
+        "epsRs": 0.49,
+        "pat": 660,
+        "period": "FY24",
+        "revenue": 6529
+      },
+      {
+        "ebitda": 1862,
+        "ebitdaMarginPct": 17.1,
+        "epsRs": 1.53,
+        "pat": 2072,
+        "period": "FY25",
+        "revenue": 10890
+      },
+      {
+        "ebitda": 3028.49,
+        "ebitdaMarginPct": 18.1,
+        "epsRs": 2.33,
+        "pat": 3163,
+        "period": "FY26",
+        "revenue": 16732
+      }
+    ],
     "cmp": 54.4,
     "concall": {
       "date": "2026-05-25",
@@ -23,21 +65,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 18.1,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 74147,
     "name": "Suzlon Energy",
     "orderBookGw": 5.9,
     "patFy26Cr": 3163,
     "peX": 23.4,
+    "quarterly": [
+      {
+        "ebitda": 500,
+        "ebitdaMarginPct": 16.8,
+        "pat": 388,
+        "patMarginPct": 13.04,
+        "period": "Q3FY25",
+        "revenue": 2975
+      },
+      {
+        "ebitda": 694,
+        "ebitdaMarginPct": 18.3,
+        "pat": 1181,
+        "patMarginPct": 31.16,
+        "period": "Q4FY25",
+        "revenue": 3790
+      },
+      {
+        "ebitda": 598,
+        "ebitdaMarginPct": 19.1,
+        "pat": 324,
+        "patMarginPct": 10.34,
+        "period": "Q1FY26",
+        "revenue": 3132
+      },
+      {
+        "ebitda": 720,
+        "ebitdaMarginPct": 18.6,
+        "pat": 1279,
+        "patMarginPct": 33.04,
+        "period": "Q2FY26",
+        "revenue": 3871
+      },
+      {
+        "ebitda": 737,
+        "ebitdaMarginPct": 17.4,
+        "pat": 445,
+        "patMarginPct": 10.51,
+        "period": "Q3FY26",
+        "revenue": 4236
+      },
+      {
+        "ebitda": 961,
+        "ebitdaMarginPct": 17.5,
+        "pat": 1114,
+        "patMarginPct": 20.28,
+        "period": "Q4FY26",
+        "revenue": 5493
+      }
+    ],
     "revenueFy26Cr": 16732,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 9.18,
+      "fiiPct": 23.85,
+      "promoterPct": 11.73,
+      "publicPct": 55.23
+    },
     "slug": "suzlon-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SUZLON",
-    "type": "wind"
+    "type": "wind",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 7.82,
+      "peX": 23.4
+    }
   },
   "dataset": "detail/suzlon-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

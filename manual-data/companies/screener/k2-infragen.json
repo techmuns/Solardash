@@ -1,0 +1,65 @@
+{
+  "slug": "k2-infragen",
+  "annual": [
+    {
+      "period": "FY23",
+      "revenue": 67,
+      "ebitda": 19,
+      "ebitdaMarginPct": 29,
+      "pat": 11
+    },
+    {
+      "period": "FY24",
+      "revenue": 109,
+      "ebitda": 21,
+      "ebitdaMarginPct": 19,
+      "pat": 12
+    },
+    {
+      "period": "FY25",
+      "revenue": 147,
+      "ebitda": 19,
+      "ebitdaMarginPct": 13,
+      "pat": 12
+    },
+    {
+      "period": "FY26",
+      "revenue": 184.7,
+      "ebitda": 22.9,
+      "ebitdaMarginPct": 12.4,
+      "pat": 13.3
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY26",
+      "revenue": 91,
+      "ebitda": 14,
+      "ebitdaMarginPct": 15,
+      "pat": 7,
+      "patMarginPct": 7.69
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 94,
+      "ebitda": 9,
+      "ebitdaMarginPct": 10,
+      "pat": 6,
+      "patMarginPct": 6.38
+    }
+  ],
+  "valuation": {
+    "peX": 5.9,
+    "pbX": 0.87,
+    "cmp": 62,
+    "marketCapCr": 78.2
+  },
+  "shareholding": {
+    "promoterPct": 40.7,
+    "fiiPct": 0.85,
+    "diiPct": 0,
+    "publicPct": 58.45,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

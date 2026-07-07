@@ -1,0 +1,104 @@
+{
+  "slug": "ravindra-energy",
+  "annual": [
+    {
+      "period": "FY23",
+      "revenue": 253,
+      "ebitda": 14,
+      "ebitdaMarginPct": 5.5,
+      "pat": 17,
+      "epsRs": 1.02
+    },
+    {
+      "period": "FY24",
+      "revenue": 131,
+      "ebitda": 34,
+      "ebitdaMarginPct": 26,
+      "pat": -51,
+      "epsRs": -3.01
+    },
+    {
+      "period": "FY25",
+      "revenue": 250,
+      "ebitda": 43,
+      "ebitdaMarginPct": 17.2,
+      "pat": 22,
+      "epsRs": 1.09
+    },
+    {
+      "period": "FY26",
+      "revenue": 543,
+      "ebitda": 130.86,
+      "ebitdaMarginPct": 24.1,
+      "pat": 81,
+      "epsRs": 4.07
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 53,
+      "ebitda": 7,
+      "ebitdaMarginPct": 13.2,
+      "pat": 2,
+      "patMarginPct": 3.77
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 159,
+      "ebitda": 27,
+      "ebitdaMarginPct": 17,
+      "pat": 13,
+      "patMarginPct": 8.18
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 163,
+      "ebitda": 28,
+      "ebitdaMarginPct": 17.2,
+      "pat": 23,
+      "patMarginPct": 14.11
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 120,
+      "ebitda": 37,
+      "ebitdaMarginPct": 30.8,
+      "pat": 31,
+      "patMarginPct": 25.83
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 127,
+      "ebitda": 32,
+      "ebitdaMarginPct": 25.2,
+      "pat": 15,
+      "patMarginPct": 11.81
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 133,
+      "ebitda": 34,
+      "ebitdaMarginPct": 25.6,
+      "pat": 13,
+      "patMarginPct": 9.77
+    }
+  ],
+  "valuation": {
+    "peX": 45.3,
+    "pbX": 8.59,
+    "evEbitdaX": 31.4,
+    "cmp": 183,
+    "marketCapCr": 3654
+  },
+  "rocePct": 15.9,
+  "roePct": 21.2,
+  "shareholding": {
+    "promoterPct": 58.26,
+    "fiiPct": 3.32,
+    "diiPct": 3.01,
+    "publicPct": 35.42,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

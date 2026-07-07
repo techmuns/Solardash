@@ -1,0 +1,64 @@
+{
+  "slug": "surana-solar",
+  "annual": [
+    {
+      "period": "FY23",
+      "revenue": 42.18,
+      "ebitda": 1.38,
+      "ebitdaMarginPct": 3.27,
+      "pat": 2.28
+    },
+    {
+      "period": "FY24",
+      "revenue": 17.71,
+      "ebitda": 2.22,
+      "ebitdaMarginPct": 12.54,
+      "pat": -1.26
+    },
+    {
+      "period": "FY25",
+      "revenue": 38.8,
+      "ebitda": 0.56,
+      "ebitdaMarginPct": 1.44,
+      "pat": 0.06
+    },
+    {
+      "period": "FY26",
+      "revenue": 20.8,
+      "ebitda": -3.14,
+      "ebitdaMarginPct": -15.1,
+      "pat": 1.2
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY26",
+      "revenue": 4.67,
+      "ebitda": -3.98,
+      "ebitdaMarginPct": -85.2,
+      "pat": 0.82,
+      "patMarginPct": 17.56
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 16.17,
+      "ebitda": 0.85,
+      "ebitdaMarginPct": 5.26,
+      "pat": 0.42,
+      "patMarginPct": 2.6
+    }
+  ],
+  "valuation": {
+    "pbX": 2.2,
+    "cmp": 25.8,
+    "marketCapCr": 127
+  },
+  "shareholding": {
+    "promoterPct": 44.34,
+    "fiiPct": 0,
+    "diiPct": 0.04,
+    "publicPct": 55.62,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

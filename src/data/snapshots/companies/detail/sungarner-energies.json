@@ -3,6 +3,36 @@
   "cadence": "quarterly",
   "coverage": "Sungarner Energies",
   "data": {
+    "annual": [
+      {
+        "ebitda": 1.25,
+        "ebitdaMarginPct": 7.22,
+        "pat": 0.74,
+        "period": "FY23",
+        "revenue": 17.32
+      },
+      {
+        "ebitda": 1.93,
+        "ebitdaMarginPct": 11.03,
+        "pat": 1.04,
+        "period": "FY24",
+        "revenue": 17.49
+      },
+      {
+        "ebitda": 3.3,
+        "ebitdaMarginPct": 11.85,
+        "pat": 1.34,
+        "period": "FY25",
+        "revenue": 27.84
+      },
+      {
+        "ebitda": 7.69,
+        "ebitdaMarginPct": 10.7,
+        "pat": 4.8,
+        "period": "FY26",
+        "revenue": 71.9
+      }
+    ],
     "board": "NSE SME",
     "cmp": 195,
     "concall": {
@@ -21,20 +51,48 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 10.7,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 45.3,
     "name": "Sungarner Energies",
     "patFy26Cr": 4.8,
     "peX": 9.5,
+    "quarterly": [
+      {
+        "ebitda": 2.62,
+        "ebitdaMarginPct": 11.18,
+        "pat": 1.3,
+        "patMarginPct": 5.55,
+        "period": "H1FY26",
+        "revenue": 23.43
+      },
+      {
+        "ebitda": 5.06,
+        "ebitdaMarginPct": 10.45,
+        "pat": 3.45,
+        "patMarginPct": 7.12,
+        "period": "H2FY26",
+        "revenue": 48.43
+      }
+    ],
     "revenueFy26Cr": 71.9,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "promoterPct": 62,
+      "publicPct": 38
+    },
     "slug": "sungarner-energies",
     "sourceNote": "NSE Emerge (SME)",
     "tickerNse": "SEL",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 2.89,
+      "peX": 9.5
+    }
   },
   "dataset": "detail/sungarner-energies",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

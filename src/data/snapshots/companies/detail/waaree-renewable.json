@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Waaree Renewable Technologies",
   "data": {
+    "annual": [
+      {
+        "ebitda": 24,
+        "ebitdaMarginPct": 14.8,
+        "epsRs": 0.83,
+        "pat": 9,
+        "period": "FY22",
+        "revenue": 162
+      },
+      {
+        "ebitda": 84,
+        "ebitdaMarginPct": 23.9,
+        "epsRs": 5.32,
+        "pat": 55,
+        "period": "FY23",
+        "revenue": 351
+      },
+      {
+        "ebitda": 207,
+        "ebitdaMarginPct": 23.6,
+        "epsRs": 13.95,
+        "pat": 145,
+        "period": "FY24",
+        "revenue": 876
+      },
+      {
+        "ebitda": 311,
+        "ebitdaMarginPct": 19.5,
+        "epsRs": 21.98,
+        "pat": 229,
+        "period": "FY25",
+        "revenue": 1598
+      },
+      {
+        "ebitda": 639.55,
+        "ebitdaMarginPct": 19.2,
+        "epsRs": 45.88,
+        "pat": 479,
+        "period": "FY26",
+        "revenue": 3331
+      }
+    ],
     "cmp": 1011,
     "concall": {
       "date": "2026-04-16",
@@ -23,21 +65,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 19.2,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 10545,
     "name": "Waaree Renewable Technologies",
     "orderBookGw": 2.83,
     "patFy26Cr": 479,
     "peX": 22,
+    "quarterly": [
+      {
+        "ebitda": 72,
+        "ebitdaMarginPct": 20,
+        "pat": 53,
+        "patMarginPct": 14.72,
+        "period": "Q3FY25",
+        "revenue": 360
+      },
+      {
+        "ebitda": 126,
+        "ebitdaMarginPct": 26.4,
+        "pat": 94,
+        "patMarginPct": 19.71,
+        "period": "Q4FY25",
+        "revenue": 477
+      },
+      {
+        "ebitda": 118,
+        "ebitdaMarginPct": 19.6,
+        "pat": 86,
+        "patMarginPct": 14.26,
+        "period": "Q1FY26",
+        "revenue": 603
+      },
+      {
+        "ebitda": 158,
+        "ebitdaMarginPct": 20.4,
+        "pat": 116,
+        "patMarginPct": 14.97,
+        "period": "Q2FY26",
+        "revenue": 775
+      },
+      {
+        "ebitda": 159,
+        "ebitdaMarginPct": 18.7,
+        "pat": 120,
+        "patMarginPct": 14.1,
+        "period": "Q3FY26",
+        "revenue": 851
+      },
+      {
+        "ebitda": 207,
+        "ebitdaMarginPct": 18.8,
+        "pat": 156,
+        "patMarginPct": 14.16,
+        "period": "Q4FY26",
+        "revenue": 1102
+      }
+    ],
     "revenueFy26Cr": 3331,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.09,
+      "fiiPct": 1.85,
+      "promoterPct": 74.32,
+      "publicPct": 23.73
+    },
     "slug": "waaree-renewable",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "WAAREERTL",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 11.3,
+      "peX": 22
+    }
   },
   "dataset": "detail/waaree-renewable",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

@@ -1,0 +1,101 @@
+{
+  "slug": "madhav-infra",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 460,
+      "ebitda": 51,
+      "ebitdaMarginPct": 11.1,
+      "pat": 6
+    },
+    {
+      "period": "FY23",
+      "revenue": 513,
+      "ebitda": 58,
+      "ebitdaMarginPct": 11.3,
+      "pat": 36
+    },
+    {
+      "period": "FY24",
+      "revenue": 460,
+      "ebitda": 58,
+      "ebitdaMarginPct": 12.6,
+      "pat": 23
+    },
+    {
+      "period": "FY25",
+      "revenue": 610,
+      "ebitda": 67,
+      "ebitdaMarginPct": 11,
+      "pat": 25
+    },
+    {
+      "period": "FY26",
+      "revenue": 502,
+      "ebitda": 65.76,
+      "ebitdaMarginPct": 13.1,
+      "pat": 27
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 147,
+      "ebitda": 15,
+      "pat": 3,
+      "patMarginPct": 2.04
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 308,
+      "ebitda": 22,
+      "pat": 11,
+      "patMarginPct": 3.57
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 88,
+      "ebitda": 17,
+      "pat": 7,
+      "patMarginPct": 7.95
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 107,
+      "ebitda": 16,
+      "pat": 12,
+      "patMarginPct": 11.21
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 54,
+      "ebitda": 5,
+      "pat": -4,
+      "patMarginPct": -7.41
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 254,
+      "ebitda": 21,
+      "pat": 12,
+      "patMarginPct": 4.72
+    }
+  ],
+  "valuation": {
+    "peX": 8.4,
+    "pbX": 1,
+    "evEbitdaX": 4.5,
+    "cmp": 8.5,
+    "marketCapCr": 231
+  },
+  "rocePct": 15.6,
+  "roePct": 12.1,
+  "shareholding": {
+    "promoterPct": 68.8,
+    "fiiPct": 0,
+    "diiPct": 0,
+    "publicPct": 31.2,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

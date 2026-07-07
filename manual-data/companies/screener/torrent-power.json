@@ -1,0 +1,112 @@
+{
+  "slug": "torrent-power",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 14258,
+      "ebitda": 3622,
+      "ebitdaMarginPct": 25.4,
+      "pat": 459,
+      "epsRs": 9.45
+    },
+    {
+      "period": "FY23",
+      "revenue": 25694,
+      "ebitda": 4779,
+      "ebitdaMarginPct": 18.6,
+      "pat": 2165,
+      "epsRs": 44.06
+    },
+    {
+      "period": "FY24",
+      "revenue": 27183,
+      "ebitda": 4594,
+      "ebitdaMarginPct": 16.9,
+      "pat": 1896,
+      "epsRs": 38.14
+    },
+    {
+      "period": "FY25",
+      "revenue": 29165,
+      "ebitda": 5308,
+      "ebitdaMarginPct": 18.2,
+      "pat": 3059,
+      "epsRs": 59.31
+    },
+    {
+      "period": "FY26",
+      "revenue": 28966,
+      "ebitda": 5532.51,
+      "ebitdaMarginPct": 19.1,
+      "pat": 2469,
+      "epsRs": 47.95
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 6499,
+      "ebitda": 1111,
+      "ebitdaMarginPct": 17.1,
+      "pat": 489,
+      "patMarginPct": 7.52
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 6456,
+      "ebitda": 1130,
+      "ebitdaMarginPct": 17.5,
+      "pat": 1077,
+      "patMarginPct": 16.68
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 7906,
+      "ebitda": 1486,
+      "ebitdaMarginPct": 18.8,
+      "pat": 742,
+      "patMarginPct": 9.39
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 7876,
+      "ebitda": 1504,
+      "ebitdaMarginPct": 19.1,
+      "pat": 742,
+      "patMarginPct": 9.42
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 6778,
+      "ebitda": 1403,
+      "ebitdaMarginPct": 20.7,
+      "pat": 655,
+      "patMarginPct": 9.66
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 6406,
+      "ebitda": 1147,
+      "ebitdaMarginPct": 17.9,
+      "pat": 331,
+      "patMarginPct": 5.17
+    }
+  ],
+  "valuation": {
+    "peX": 29.2,
+    "pbX": 3.69,
+    "evEbitdaX": 14.2,
+    "cmp": 1400,
+    "marketCapCr": 70537
+  },
+  "rocePct": 14,
+  "roePct": 13.2,
+  "shareholding": {
+    "promoterPct": 51.09,
+    "fiiPct": 8.4,
+    "diiPct": 22.82,
+    "publicPct": 17.68,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

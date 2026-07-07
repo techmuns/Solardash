@@ -1,0 +1,22 @@
+{
+  "slug": "ind-renewable",
+  "annual": [
+    {
+      "period": "FY26",
+      "revenue": 0,
+      "pat": -1.21
+    }
+  ],
+  "quarterly": [],
+  "valuation": {
+    "pbX": 0.66,
+    "cmp": 11.8,
+    "marketCapCr": 16.4
+  },
+  "shareholding": {
+    "promoterPct": 0.07,
+    "publicPct": 99.93,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

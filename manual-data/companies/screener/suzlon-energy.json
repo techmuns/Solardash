@@ -1,0 +1,112 @@
+{
+  "slug": "suzlon-energy",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 6582,
+      "ebitda": 902,
+      "ebitdaMarginPct": 13.7,
+      "pat": -177,
+      "epsRs": -0.17
+    },
+    {
+      "period": "FY23",
+      "revenue": 5971,
+      "ebitda": 836,
+      "ebitdaMarginPct": 14,
+      "pat": 2887,
+      "epsRs": 2.28
+    },
+    {
+      "period": "FY24",
+      "revenue": 6529,
+      "ebitda": 1038,
+      "ebitdaMarginPct": 15.9,
+      "pat": 660,
+      "epsRs": 0.49
+    },
+    {
+      "period": "FY25",
+      "revenue": 10890,
+      "ebitda": 1862,
+      "ebitdaMarginPct": 17.1,
+      "pat": 2072,
+      "epsRs": 1.53
+    },
+    {
+      "period": "FY26",
+      "revenue": 16732,
+      "ebitda": 3028.49,
+      "ebitdaMarginPct": 18.1,
+      "pat": 3163,
+      "epsRs": 2.33
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 2975,
+      "ebitda": 500,
+      "ebitdaMarginPct": 16.8,
+      "pat": 388,
+      "patMarginPct": 13.04
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 3790,
+      "ebitda": 694,
+      "ebitdaMarginPct": 18.3,
+      "pat": 1181,
+      "patMarginPct": 31.16
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 3132,
+      "ebitda": 598,
+      "ebitdaMarginPct": 19.1,
+      "pat": 324,
+      "patMarginPct": 10.34
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 3871,
+      "ebitda": 720,
+      "ebitdaMarginPct": 18.6,
+      "pat": 1279,
+      "patMarginPct": 33.04
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 4236,
+      "ebitda": 737,
+      "ebitdaMarginPct": 17.4,
+      "pat": 445,
+      "patMarginPct": 10.51
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 5493,
+      "ebitda": 961,
+      "ebitdaMarginPct": 17.5,
+      "pat": 1114,
+      "patMarginPct": 20.28
+    }
+  ],
+  "valuation": {
+    "peX": 23.4,
+    "pbX": 7.82,
+    "evEbitdaX": 23.8,
+    "cmp": 54.4,
+    "marketCapCr": 74147
+  },
+  "rocePct": 35.1,
+  "roePct": 40.6,
+  "shareholding": {
+    "promoterPct": 11.73,
+    "fiiPct": 23.85,
+    "diiPct": 9.18,
+    "publicPct": 55.23,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

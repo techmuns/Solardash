@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Oriana Power",
   "data": {
+    "annual": [
+      {
+        "ebitda": 12,
+        "ebitdaMarginPct": 9.7,
+        "epsRs": 11.3,
+        "pat": 7,
+        "period": "FY22",
+        "revenue": 124
+      },
+      {
+        "ebitda": 19,
+        "ebitdaMarginPct": 14.1,
+        "epsRs": 15.74,
+        "pat": 11,
+        "period": "FY23",
+        "revenue": 135
+      },
+      {
+        "ebitda": 81,
+        "ebitdaMarginPct": 21.1,
+        "epsRs": 28.33,
+        "pat": 54,
+        "period": "FY24",
+        "revenue": 383
+      },
+      {
+        "ebitda": 235,
+        "ebitdaMarginPct": 23.8,
+        "epsRs": 78.03,
+        "pat": 159,
+        "period": "FY25",
+        "revenue": 987
+      },
+      {
+        "ebitda": 397.27,
+        "ebitdaMarginPct": 21.9,
+        "epsRs": 124.19,
+        "pat": 252,
+        "period": "FY26",
+        "revenue": 1814
+      }
+    ],
     "board": "NSE SME",
     "cmp": 1473,
     "concall": {
@@ -24,21 +66,67 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 21.9,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 2992,
     "name": "Oriana Power",
     "orderBookCr": 7000,
     "patFy26Cr": 252,
     "peX": 11.9,
+    "quarterly": [
+      {
+        "ebitda": 75,
+        "ebitdaMarginPct": 20.8,
+        "pat": 49,
+        "patMarginPct": 13.61,
+        "period": "H1FY25",
+        "revenue": 360
+      },
+      {
+        "ebitda": 159,
+        "ebitdaMarginPct": 25.3,
+        "pat": 110,
+        "patMarginPct": 17.52,
+        "period": "H2FY25",
+        "revenue": 628
+      },
+      {
+        "ebitda": 180,
+        "ebitdaMarginPct": 23,
+        "pat": 122,
+        "patMarginPct": 15.62,
+        "period": "H1FY26",
+        "revenue": 781
+      },
+      {
+        "ebitda": 218,
+        "ebitdaMarginPct": 21.1,
+        "pat": 130,
+        "patMarginPct": 12.6,
+        "period": "H2FY26",
+        "revenue": 1032
+      }
+    ],
     "revenueFy26Cr": 1814,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.32,
+      "fiiPct": 0.32,
+      "promoterPct": 57.98,
+      "publicPct": 41.38
+    },
     "slug": "oriana-power",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "ORIANA",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 3.92,
+      "peX": 11.9
+    }
   },
   "dataset": "detail/oriana-power",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

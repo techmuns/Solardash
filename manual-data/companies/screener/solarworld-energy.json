@@ -1,0 +1,109 @@
+{
+  "slug": "solarworld-energy",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 28,
+      "ebitda": 2,
+      "ebitdaMarginPct": 7.1,
+      "pat": 2
+    },
+    {
+      "period": "FY23",
+      "revenue": 232,
+      "ebitda": 21,
+      "ebitdaMarginPct": 9.1,
+      "pat": 15
+    },
+    {
+      "period": "FY24",
+      "revenue": 501,
+      "ebitda": 69,
+      "ebitdaMarginPct": 13.8,
+      "pat": 52
+    },
+    {
+      "period": "FY25",
+      "revenue": 545,
+      "ebitda": 107,
+      "ebitdaMarginPct": 19.6,
+      "pat": 77,
+      "epsRs": 10.39
+    },
+    {
+      "period": "FY26",
+      "revenue": 1376,
+      "ebitda": 147.23,
+      "ebitdaMarginPct": 10.7,
+      "pat": 120,
+      "epsRs": 13.9
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 204,
+      "ebitda": 59,
+      "ebitdaMarginPct": 28.9,
+      "pat": 43,
+      "patMarginPct": 21.08
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 176,
+      "ebitda": 13,
+      "ebitdaMarginPct": 7.4,
+      "pat": 9,
+      "patMarginPct": 5.11
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 68,
+      "ebitda": 9,
+      "ebitdaMarginPct": 13.2,
+      "pat": 13,
+      "patMarginPct": 19.12
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 138,
+      "ebitda": 15,
+      "ebitdaMarginPct": 10.9,
+      "pat": 9,
+      "patMarginPct": 6.52
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 578,
+      "ebitda": 65,
+      "ebitdaMarginPct": 11.2,
+      "pat": 49,
+      "patMarginPct": 8.48
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 592,
+      "ebitda": 58,
+      "ebitdaMarginPct": 9.8,
+      "pat": 49,
+      "patMarginPct": 8.28
+    }
+  ],
+  "valuation": {
+    "peX": 15,
+    "pbX": 2.13,
+    "evEbitdaX": 14,
+    "cmp": 208,
+    "marketCapCr": 1807
+  },
+  "rocePct": 23.8,
+  "roePct": 20.8,
+  "shareholding": {
+    "promoterPct": 65.77,
+    "fiiPct": 1.23,
+    "diiPct": 11.41,
+    "publicPct": 21.59,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

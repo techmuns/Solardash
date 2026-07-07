@@ -3,6 +3,46 @@
   "cadence": "quarterly",
   "coverage": "KP Green Engineering",
   "data": {
+    "annual": [
+      {
+        "ebitda": 9,
+        "ebitdaMarginPct": 11.5,
+        "pat": 5,
+        "period": "FY22",
+        "revenue": 78
+      },
+      {
+        "ebitda": 21,
+        "ebitdaMarginPct": 18.4,
+        "pat": 12,
+        "period": "FY23",
+        "revenue": 114
+      },
+      {
+        "ebitda": 54,
+        "ebitdaMarginPct": 15.5,
+        "epsRs": 7.03,
+        "pat": 35,
+        "period": "FY24",
+        "revenue": 349
+      },
+      {
+        "ebitda": 109,
+        "ebitdaMarginPct": 15.7,
+        "epsRs": 14.7,
+        "pat": 74,
+        "period": "FY25",
+        "revenue": 695
+      },
+      {
+        "ebitda": 245.38,
+        "ebitdaMarginPct": 19.7,
+        "epsRs": 27.15,
+        "pat": 135.7,
+        "period": "FY26",
+        "revenue": 1245.6
+      }
+    ],
     "board": "BSE SME",
     "cmp": 367,
     "concall": {
@@ -22,20 +62,82 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 19.7,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 1835,
     "name": "KP Green Engineering",
     "orderBookCr": 1831,
     "patFy26Cr": 135.7,
     "peX": 13.5,
+    "quarterly": [
+      {
+        "ebitda": 18,
+        "ebitdaMarginPct": 17.3,
+        "pat": 11,
+        "patMarginPct": 10.58,
+        "period": "H1FY24",
+        "revenue": 104
+      },
+      {
+        "ebitda": 33,
+        "ebitdaMarginPct": 13.5,
+        "pat": 24,
+        "patMarginPct": 9.8,
+        "period": "H2FY24",
+        "revenue": 245
+      },
+      {
+        "ebitda": 40,
+        "ebitdaMarginPct": 15.3,
+        "pat": 27,
+        "patMarginPct": 10.31,
+        "period": "H1FY25",
+        "revenue": 262
+      },
+      {
+        "ebitda": 68,
+        "ebitdaMarginPct": 15.7,
+        "pat": 46,
+        "patMarginPct": 10.65,
+        "period": "H2FY25",
+        "revenue": 432
+      },
+      {
+        "ebitda": 98,
+        "ebitdaMarginPct": 18.4,
+        "pat": 58,
+        "patMarginPct": 10.9,
+        "period": "H1FY26",
+        "revenue": 532
+      },
+      {
+        "ebitda": 147,
+        "ebitdaMarginPct": 20.6,
+        "pat": 77,
+        "patMarginPct": 10.78,
+        "period": "H2FY26",
+        "revenue": 714
+      }
+    ],
     "revenueFy26Cr": 1245.6,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.13,
+      "fiiPct": 0.35,
+      "promoterPct": 66.61,
+      "publicPct": 32.92
+    },
     "slug": "kp-green-engineering",
     "sourceNote": "BSE SME (maintained)",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 4.01,
+      "peX": 13.5
+    }
   },
   "dataset": "detail/kp-green-engineering",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

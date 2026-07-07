@@ -1,0 +1,56 @@
+{
+  "slug": "waa-solar",
+  "annual": [
+    {
+      "period": "FY24",
+      "revenue": 26.4,
+      "ebitda": 18.29,
+      "ebitdaMarginPct": 69.28,
+      "pat": 6.63
+    },
+    {
+      "period": "FY25",
+      "revenue": 28.25,
+      "ebitda": 10.35,
+      "ebitdaMarginPct": 36.64,
+      "pat": 6.97
+    },
+    {
+      "period": "FY26",
+      "revenue": 27.8,
+      "ebitda": 15.51,
+      "ebitdaMarginPct": 55.8,
+      "pat": 0.65
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY26",
+      "revenue": 8.81,
+      "ebitda": 6.36,
+      "ebitdaMarginPct": 72.19,
+      "pat": 1.82,
+      "patMarginPct": 20.66
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 18.96,
+      "ebitda": 9.13,
+      "ebitdaMarginPct": 48.15,
+      "pat": -1.17,
+      "patMarginPct": -6.17
+    }
+  ],
+  "valuation": {
+    "peX": 99.8,
+    "pbX": 0.35,
+    "cmp": 49,
+    "marketCapCr": 64.9
+  },
+  "shareholding": {
+    "promoterPct": 67.86,
+    "publicPct": 32.14,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

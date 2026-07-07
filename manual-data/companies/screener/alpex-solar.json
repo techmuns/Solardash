@@ -1,0 +1,94 @@
+{
+  "slug": "alpex-solar",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 166,
+      "ebitda": 5,
+      "ebitdaMarginPct": 3,
+      "pat": 0
+    },
+    {
+      "period": "FY23",
+      "revenue": 195,
+      "ebitda": 12,
+      "ebitdaMarginPct": 6.2,
+      "pat": 4
+    },
+    {
+      "period": "FY24",
+      "revenue": 413,
+      "ebitda": 37,
+      "ebitdaMarginPct": 9,
+      "pat": 27,
+      "epsRs": 10.86
+    },
+    {
+      "period": "FY25",
+      "revenue": 780,
+      "ebitda": 126,
+      "ebitdaMarginPct": 16.2,
+      "pat": 83,
+      "epsRs": 34.11
+    },
+    {
+      "period": "FY26",
+      "revenue": 2223,
+      "ebitda": 320.11,
+      "ebitdaMarginPct": 14.4,
+      "pat": 202,
+      "epsRs": 78.89
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY26",
+      "revenue": 380,
+      "ebitda": 63,
+      "ebitdaMarginPct": 16.6,
+      "pat": 42,
+      "patMarginPct": 11.05
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 523,
+      "ebitda": 78,
+      "ebitdaMarginPct": 14.9,
+      "pat": 53,
+      "patMarginPct": 10.13
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 648,
+      "ebitda": 90,
+      "ebitdaMarginPct": 13.9,
+      "pat": 54,
+      "patMarginPct": 8.33
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 672,
+      "ebitda": 89,
+      "ebitdaMarginPct": 13.2,
+      "pat": 53,
+      "patMarginPct": 7.89
+    }
+  ],
+  "valuation": {
+    "peX": 10,
+    "pbX": 3.6,
+    "evEbitdaX": 8,
+    "cmp": 795,
+    "marketCapCr": 2030
+  },
+  "rocePct": 43.5,
+  "roePct": 52,
+  "shareholding": {
+    "promoterPct": 65.9,
+    "fiiPct": 3.21,
+    "diiPct": 0.41,
+    "publicPct": 30.48,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

@@ -3,6 +3,47 @@
   "cadence": "quarterly",
   "coverage": "Borosil Renewables",
   "data": {
+    "annual": [
+      {
+        "ebitda": 265,
+        "ebitdaMarginPct": 41.1,
+        "pat": 166,
+        "period": "FY22",
+        "revenue": 645
+      },
+      {
+        "ebitda": 143,
+        "ebitdaMarginPct": 16,
+        "epsRs": 5.34,
+        "pat": 71,
+        "period": "FY23",
+        "revenue": 891
+      },
+      {
+        "ebitda": 58,
+        "ebitdaMarginPct": 4.2,
+        "epsRs": -3.59,
+        "pat": -50,
+        "period": "FY24",
+        "revenue": 1371
+      },
+      {
+        "ebitda": 58,
+        "ebitdaMarginPct": 3.9,
+        "epsRs": -5.25,
+        "pat": -87,
+        "period": "FY25",
+        "revenue": 1476
+      },
+      {
+        "ebitda": 440.35,
+        "ebitdaMarginPct": 28.3,
+        "epsRs": 9.21,
+        "pat": 127,
+        "period": "FY26",
+        "revenue": 1556
+      }
+    ],
     "cmp": 609,
     "concall": {
       "date": "2026-05-13",
@@ -23,20 +64,66 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 28.3,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 8540,
     "name": "Borosil Renewables",
     "patFy26Cr": 127,
     "peX": 26.1,
+    "quarterly": [
+      {
+        "ebitda": 63,
+        "ebitdaMarginPct": 18.2,
+        "pat": -203,
+        "patMarginPct": -58.5,
+        "period": "Q1FY26",
+        "revenue": 347
+      },
+      {
+        "ebitda": 118,
+        "ebitdaMarginPct": 31.1,
+        "pat": 62,
+        "patMarginPct": 16.36,
+        "period": "Q2FY26",
+        "revenue": 379
+      },
+      {
+        "ebitda": 123,
+        "ebitdaMarginPct": 31.5,
+        "pat": 100,
+        "patMarginPct": 25.64,
+        "period": "Q3FY26",
+        "revenue": 390
+      },
+      {
+        "ebitda": 136,
+        "ebitdaMarginPct": 30.9,
+        "pat": 169,
+        "patMarginPct": 38.41,
+        "period": "Q4FY26",
+        "revenue": 440
+      }
+    ],
     "revenueFy26Cr": 1556,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 2.33,
+      "fiiPct": 4.27,
+      "promoterPct": 58.77,
+      "publicPct": 34.63
+    },
     "slug": "borosil-renewables",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "BORORENEW",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 5.6,
+      "peX": 26.1
+    }
   },
   "dataset": "detail/borosil-renewables",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

@@ -3,21 +3,37 @@
   "cadence": "quarterly",
   "coverage": "IND Renewable Energy",
   "data": {
+    "annual": [
+      {
+        "pat": -1.21,
+        "period": "FY26",
+        "revenue": 0
+      }
+    ],
     "board": "BSE",
     "cmp": 11.8,
     "confidence": "medium",
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 16.4,
     "name": "IND Renewable Energy",
     "patFy26Cr": -1.21,
     "revenueFy26Cr": 0,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "promoterPct": 0.07,
+      "publicPct": 99.93
+    },
     "slug": "ind-renewable",
     "sourceNote": "Market data (mid-2026)",
-    "type": "ipp"
+    "type": "ipp",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 0.66
+    }
   },
   "dataset": "detail/ind-renewable",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "SJVN",
   "data": {
+    "annual": [
+      {
+        "ebitda": 1793,
+        "ebitdaMarginPct": 74.2,
+        "epsRs": 2.52,
+        "pat": 990,
+        "period": "FY22",
+        "revenue": 2417
+      },
+      {
+        "ebitda": 2274,
+        "ebitdaMarginPct": 77.4,
+        "epsRs": 3.46,
+        "pat": 1359,
+        "period": "FY23",
+        "revenue": 2938
+      },
+      {
+        "ebitda": 1844,
+        "ebitdaMarginPct": 71.5,
+        "epsRs": 2.32,
+        "pat": 911,
+        "period": "FY24",
+        "revenue": 2579
+      },
+      {
+        "ebitda": 2224,
+        "ebitdaMarginPct": 72.4,
+        "epsRs": 2.09,
+        "pat": 818,
+        "period": "FY25",
+        "revenue": 3072
+      },
+      {
+        "ebitda": 3291.86,
+        "ebitdaMarginPct": 72.7,
+        "epsRs": 1.63,
+        "pat": 642,
+        "period": "FY26",
+        "revenue": 4528
+      }
+    ],
     "cmp": 71.8,
     "concall": {
       "date": "2026-05-15",
@@ -22,21 +64,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 72.7,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 28165,
     "name": "SJVN",
     "orderBookGw": 5,
     "patFy26Cr": 642,
     "peX": 43.9,
+    "quarterly": [
+      {
+        "ebitda": 464,
+        "ebitdaMarginPct": 69.2,
+        "pat": 149,
+        "patMarginPct": 22.21,
+        "period": "Q3FY25",
+        "revenue": 671
+      },
+      {
+        "ebitda": 241,
+        "ebitdaMarginPct": 47.8,
+        "pat": -128,
+        "patMarginPct": -25.4,
+        "period": "Q4FY25",
+        "revenue": 504
+      },
+      {
+        "ebitda": 707,
+        "ebitdaMarginPct": 77.1,
+        "pat": 228,
+        "patMarginPct": 24.86,
+        "period": "Q1FY26",
+        "revenue": 917
+      },
+      {
+        "ebitda": 860,
+        "ebitdaMarginPct": 83.3,
+        "pat": 308,
+        "patMarginPct": 29.84,
+        "period": "Q2FY26",
+        "revenue": 1032
+      },
+      {
+        "ebitda": 773,
+        "ebitdaMarginPct": 71.4,
+        "pat": 224,
+        "patMarginPct": 20.7,
+        "period": "Q3FY26",
+        "revenue": 1082
+      },
+      {
+        "ebitda": 910,
+        "ebitdaMarginPct": 60.8,
+        "pat": -118,
+        "patMarginPct": -7.89,
+        "period": "Q4FY26",
+        "revenue": 1496
+      }
+    ],
     "revenueFy26Cr": 4528,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 3.74,
+      "fiiPct": 2.75,
+      "promoterPct": 81.85,
+      "publicPct": 11.65
+    },
     "slug": "sjvn",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SJVN",
-    "type": "utility"
+    "type": "utility",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 1.98,
+      "peX": 43.9
+    }
   },
   "dataset": "detail/sjvn",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

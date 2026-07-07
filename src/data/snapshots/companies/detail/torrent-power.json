@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Torrent Power",
   "data": {
+    "annual": [
+      {
+        "ebitda": 3622,
+        "ebitdaMarginPct": 25.4,
+        "epsRs": 9.45,
+        "pat": 459,
+        "period": "FY22",
+        "revenue": 14258
+      },
+      {
+        "ebitda": 4779,
+        "ebitdaMarginPct": 18.6,
+        "epsRs": 44.06,
+        "pat": 2165,
+        "period": "FY23",
+        "revenue": 25694
+      },
+      {
+        "ebitda": 4594,
+        "ebitdaMarginPct": 16.9,
+        "epsRs": 38.14,
+        "pat": 1896,
+        "period": "FY24",
+        "revenue": 27183
+      },
+      {
+        "ebitda": 5308,
+        "ebitdaMarginPct": 18.2,
+        "epsRs": 59.31,
+        "pat": 3059,
+        "period": "FY25",
+        "revenue": 29165
+      },
+      {
+        "ebitda": 5532.51,
+        "ebitdaMarginPct": 19.1,
+        "epsRs": 47.95,
+        "pat": 2469,
+        "period": "FY26",
+        "revenue": 28966
+      }
+    ],
     "cmp": 1400,
     "concall": {
       "date": "2026-05-13",
@@ -23,21 +65,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 19.1,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 70537,
     "name": "Torrent Power",
     "orderBookGw": 8.6,
     "patFy26Cr": 2469,
     "peX": 29.2,
+    "quarterly": [
+      {
+        "ebitda": 1111,
+        "ebitdaMarginPct": 17.1,
+        "pat": 489,
+        "patMarginPct": 7.52,
+        "period": "Q3FY25",
+        "revenue": 6499
+      },
+      {
+        "ebitda": 1130,
+        "ebitdaMarginPct": 17.5,
+        "pat": 1077,
+        "patMarginPct": 16.68,
+        "period": "Q4FY25",
+        "revenue": 6456
+      },
+      {
+        "ebitda": 1486,
+        "ebitdaMarginPct": 18.8,
+        "pat": 742,
+        "patMarginPct": 9.39,
+        "period": "Q1FY26",
+        "revenue": 7906
+      },
+      {
+        "ebitda": 1504,
+        "ebitdaMarginPct": 19.1,
+        "pat": 742,
+        "patMarginPct": 9.42,
+        "period": "Q2FY26",
+        "revenue": 7876
+      },
+      {
+        "ebitda": 1403,
+        "ebitdaMarginPct": 20.7,
+        "pat": 655,
+        "patMarginPct": 9.66,
+        "period": "Q3FY26",
+        "revenue": 6778
+      },
+      {
+        "ebitda": 1147,
+        "ebitdaMarginPct": 17.9,
+        "pat": 331,
+        "patMarginPct": 5.17,
+        "period": "Q4FY26",
+        "revenue": 6406
+      }
+    ],
     "revenueFy26Cr": 28966,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 22.82,
+      "fiiPct": 8.4,
+      "promoterPct": 51.09,
+      "publicPct": 17.68
+    },
     "slug": "torrent-power",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "TORNTPOWER",
-    "type": "utility"
+    "type": "utility",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 3.69,
+      "peX": 29.2
+    }
   },
   "dataset": "detail/torrent-power",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

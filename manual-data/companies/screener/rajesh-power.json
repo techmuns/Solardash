@@ -1,0 +1,96 @@
+{
+  "slug": "rajesh-power",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 147,
+      "ebitda": 11,
+      "ebitdaMarginPct": 7.5,
+      "pat": 3,
+      "epsRs": 2.27
+    },
+    {
+      "period": "FY23",
+      "revenue": 207,
+      "ebitda": 14,
+      "ebitdaMarginPct": 6.8,
+      "pat": 7,
+      "epsRs": 4.44
+    },
+    {
+      "period": "FY24",
+      "revenue": 285,
+      "ebitda": 35,
+      "ebitdaMarginPct": 12.3,
+      "pat": 26,
+      "epsRs": 17.1
+    },
+    {
+      "period": "FY25",
+      "revenue": 1072,
+      "ebitda": 125,
+      "ebitdaMarginPct": 11.7,
+      "pat": 87,
+      "epsRs": 48.48
+    },
+    {
+      "period": "FY26",
+      "revenue": 1628,
+      "ebitda": 196.99,
+      "ebitdaMarginPct": 12.1,
+      "pat": 143.2,
+      "epsRs": 76.38
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY25",
+      "revenue": 313,
+      "ebitda": 37,
+      "ebitdaMarginPct": 11.8,
+      "pat": 26,
+      "patMarginPct": 8.31
+    },
+    {
+      "period": "H2FY25",
+      "revenue": 759,
+      "ebitda": 87,
+      "ebitdaMarginPct": 11.5,
+      "pat": 60,
+      "patMarginPct": 7.91
+    },
+    {
+      "period": "H1FY26",
+      "revenue": 638,
+      "ebitda": 84,
+      "ebitdaMarginPct": 13.2,
+      "pat": 58,
+      "patMarginPct": 9.09
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 990,
+      "ebitda": 113,
+      "ebitdaMarginPct": 11.4,
+      "pat": 79,
+      "patMarginPct": 7.98
+    }
+  ],
+  "valuation": {
+    "peX": 11,
+    "pbX": 3.85,
+    "evEbitdaX": 8.2,
+    "cmp": 835,
+    "marketCapCr": 1511
+  },
+  "rocePct": 48.6,
+  "roePct": 42.6,
+  "shareholding": {
+    "promoterPct": 72.7,
+    "fiiPct": 0.68,
+    "diiPct": 3.52,
+    "publicPct": 23.11,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

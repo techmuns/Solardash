@@ -1,0 +1,96 @@
+{
+  "slug": "swelect-energy",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 391,
+      "ebitda": 70,
+      "ebitdaMarginPct": 17.9,
+      "pat": 32,
+      "epsRs": 21.37
+    },
+    {
+      "period": "FY23",
+      "revenue": 246,
+      "ebitda": 62,
+      "ebitdaMarginPct": 25.2,
+      "pat": 6,
+      "epsRs": 3.65
+    },
+    {
+      "period": "FY24",
+      "revenue": 243,
+      "ebitda": 84,
+      "ebitdaMarginPct": 34.6,
+      "pat": 63,
+      "epsRs": 40.88
+    },
+    {
+      "period": "FY25",
+      "revenue": 622,
+      "ebitda": 97,
+      "ebitdaMarginPct": 15.6,
+      "pat": 14,
+      "epsRs": 8.31
+    },
+    {
+      "period": "FY26",
+      "revenue": 657,
+      "ebitda": 151.11,
+      "ebitdaMarginPct": 23,
+      "pat": 58,
+      "epsRs": 36.39
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY26",
+      "revenue": 177,
+      "ebitda": 42,
+      "ebitdaMarginPct": 23.7,
+      "pat": 21,
+      "patMarginPct": 11.86
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 139,
+      "ebitda": 41,
+      "ebitdaMarginPct": 29.5,
+      "pat": 16,
+      "patMarginPct": 11.51
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 139,
+      "ebitda": 33,
+      "ebitdaMarginPct": 23.7,
+      "pat": 10,
+      "patMarginPct": 7.19
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 202,
+      "ebitda": 35,
+      "ebitdaMarginPct": 17.3,
+      "pat": 11,
+      "patMarginPct": 5.45
+    }
+  ],
+  "valuation": {
+    "peX": 17,
+    "pbX": 1,
+    "evEbitdaX": 9.8,
+    "cmp": 636,
+    "marketCapCr": 963
+  },
+  "rocePct": 8.5,
+  "roePct": 6.4,
+  "shareholding": {
+    "promoterPct": 56.36,
+    "fiiPct": 0.23,
+    "diiPct": 0,
+    "publicPct": 43.4,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

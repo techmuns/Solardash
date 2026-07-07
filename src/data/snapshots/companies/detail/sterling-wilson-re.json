@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Sterling & Wilson Renewable Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": -903,
+        "ebitdaMarginPct": -17.4,
+        "epsRs": -47.94,
+        "pat": -916,
+        "period": "FY22",
+        "revenue": 5199
+      },
+      {
+        "ebitda": -1124,
+        "ebitdaMarginPct": -55.8,
+        "epsRs": -61.65,
+        "pat": -1175,
+        "period": "FY23",
+        "revenue": 2015
+      },
+      {
+        "ebitda": -7,
+        "ebitdaMarginPct": -0.2,
+        "epsRs": -9.09,
+        "pat": -211,
+        "period": "FY24",
+        "revenue": 3035
+      },
+      {
+        "ebitda": 264,
+        "ebitdaMarginPct": 4.2,
+        "epsRs": 3.49,
+        "pat": 86,
+        "period": "FY25",
+        "revenue": 6302
+      },
+      {
+        "ebitda": 317.02,
+        "ebitdaMarginPct": 4.2,
+        "epsRs": -13.25,
+        "pat": -296,
+        "period": "FY26",
+        "revenue": 7548
+      }
+    ],
     "cmp": 240,
     "concall": {
       "date": "2026-04-24",
@@ -23,21 +65,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 4.2,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 5605,
     "name": "Sterling & Wilson Renewable Energy",
     "orderBookCr": 11813,
     "patFy26Cr": -296,
     "peX": 16.9,
+    "quarterly": [
+      {
+        "ebitda": 70,
+        "ebitdaMarginPct": 3.8,
+        "pat": 17,
+        "patMarginPct": 0.93,
+        "period": "Q3FY25",
+        "revenue": 1837
+      },
+      {
+        "ebitda": 134,
+        "ebitdaMarginPct": 5.3,
+        "pat": 55,
+        "patMarginPct": 2.18,
+        "period": "Q4FY25",
+        "revenue": 2519
+      },
+      {
+        "ebitda": 85,
+        "ebitdaMarginPct": 4.8,
+        "pat": 39,
+        "patMarginPct": 2.21,
+        "period": "Q1FY26",
+        "revenue": 1762
+      },
+      {
+        "ebitda": 4,
+        "ebitdaMarginPct": 0.2,
+        "pat": -478,
+        "patMarginPct": -27.33,
+        "period": "Q2FY26",
+        "revenue": 1749
+      },
+      {
+        "ebitda": 67,
+        "ebitdaMarginPct": 3.2,
+        "pat": 2,
+        "patMarginPct": 0.1,
+        "period": "Q3FY26",
+        "revenue": 2092
+      },
+      {
+        "ebitda": 146,
+        "ebitdaMarginPct": 7.5,
+        "pat": 142,
+        "patMarginPct": 7.3,
+        "period": "Q4FY26",
+        "revenue": 1946
+      }
+    ],
     "revenueFy26Cr": 7548,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 3.19,
+      "fiiPct": 6.96,
+      "promoterPct": 45.73,
+      "publicPct": 44.12
+    },
     "slug": "sterling-wilson-re",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SWSOLAR",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 8.63,
+      "peX": 16.9
+    }
   },
   "dataset": "detail/sterling-wilson-re",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

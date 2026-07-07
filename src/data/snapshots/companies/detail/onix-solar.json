@@ -3,25 +3,60 @@
   "cadence": "quarterly",
   "coverage": "Onix Solar Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 1,
+        "ebitdaMarginPct": 4,
+        "pat": 1.45,
+        "period": "FY25",
+        "revenue": 29
+      },
+      {
+        "ebitda": 60.25,
+        "ebitdaMarginPct": 25,
+        "pat": 52.5,
+        "period": "FY26",
+        "revenue": 241
+      }
+    ],
     "board": "BSE",
     "cellGw": 1.2,
     "cmp": 670,
     "confidence": "medium",
     "ebitdaMarginPct": 25,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 2470,
     "moduleGw": 1.2,
     "name": "Onix Solar Energy",
     "patFy26Cr": 52.5,
     "peX": 61.5,
+    "quarterly": [
+      {
+        "pat": 28.1,
+        "patMarginPct": 36.41,
+        "period": "Q4FY26",
+        "revenue": 77.18
+      }
+    ],
     "revenueFy26Cr": 241,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.84,
+      "promoterPct": 56.44,
+      "publicPct": 42.73
+    },
     "slug": "onix-solar",
     "sourceNote": "Market data (mid-2026)",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 3.15,
+      "peX": 61.5
+    }
   },
   "dataset": "detail/onix-solar",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

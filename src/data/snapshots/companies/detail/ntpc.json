@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "NTPC",
   "data": {
+    "annual": [
+      {
+        "ebitda": 40331,
+        "ebitdaMarginPct": 30.4,
+        "epsRs": 17.2,
+        "pat": 16960,
+        "period": "FY22",
+        "revenue": 132669
+      },
+      {
+        "ebitda": 47576,
+        "ebitdaMarginPct": 27,
+        "epsRs": 17.44,
+        "pat": 17121,
+        "period": "FY23",
+        "revenue": 176207
+      },
+      {
+        "ebitda": 51415,
+        "ebitdaMarginPct": 28.8,
+        "epsRs": 21.46,
+        "pat": 21332,
+        "period": "FY24",
+        "revenue": 178525
+      },
+      {
+        "ebitda": 54372,
+        "ebitdaMarginPct": 28.9,
+        "epsRs": 24.16,
+        "pat": 23953,
+        "period": "FY25",
+        "revenue": 188138
+      },
+      {
+        "ebitda": 52842.57,
+        "ebitdaMarginPct": 28.2,
+        "epsRs": 27.9,
+        "pat": 27546,
+        "period": "FY26",
+        "revenue": 187385
+      }
+    ],
     "cmp": 354,
     "concall": {
       "date": "2026-05-25",
@@ -23,21 +65,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 28.2,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 343408,
     "name": "NTPC",
     "orderBookGw": 32,
     "patFy26Cr": 27546,
     "peX": 12.7,
+    "quarterly": [
+      {
+        "ebitda": 13340,
+        "ebitdaMarginPct": 29.6,
+        "pat": 5170,
+        "patMarginPct": 11.47,
+        "period": "Q3FY25",
+        "revenue": 45069
+      },
+      {
+        "ebitda": 14751,
+        "ebitdaMarginPct": 29.6,
+        "pat": 7897,
+        "patMarginPct": 15.85,
+        "period": "Q4FY25",
+        "revenue": 49834
+      },
+      {
+        "ebitda": 12566,
+        "ebitdaMarginPct": 26.7,
+        "pat": 6108,
+        "patMarginPct": 12.98,
+        "period": "Q1FY26",
+        "revenue": 47065
+      },
+      {
+        "ebitda": 12809,
+        "ebitdaMarginPct": 28.6,
+        "pat": 5225,
+        "patMarginPct": 11.67,
+        "period": "Q2FY26",
+        "revenue": 44786
+      },
+      {
+        "ebitda": 14579,
+        "ebitdaMarginPct": 31.8,
+        "pat": 5597,
+        "patMarginPct": 12.21,
+        "period": "Q3FY26",
+        "revenue": 45846
+      },
+      {
+        "ebitda": 8497,
+        "ebitdaMarginPct": 17.1,
+        "pat": 10615,
+        "patMarginPct": 21.36,
+        "period": "Q4FY26",
+        "revenue": 49688
+      }
+    ],
     "revenueFy26Cr": 187385,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 29.13,
+      "fiiPct": 16.54,
+      "promoterPct": 51.1,
+      "publicPct": 3.22
+    },
     "slug": "ntpc",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "NTPC",
-    "type": "utility"
+    "type": "utility",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 1.69,
+      "peX": 12.7
+    }
   },
   "dataset": "detail/ntpc",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

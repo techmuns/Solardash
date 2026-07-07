@@ -1,0 +1,112 @@
+{
+  "slug": "zodiac-energy",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 143,
+      "ebitda": 9,
+      "ebitdaMarginPct": 6.3,
+      "pat": 5,
+      "epsRs": 3.73
+    },
+    {
+      "period": "FY23",
+      "revenue": 138,
+      "ebitda": 8,
+      "ebitdaMarginPct": 5.8,
+      "pat": 3,
+      "epsRs": 2.18
+    },
+    {
+      "period": "FY24",
+      "revenue": 220,
+      "ebitda": 19,
+      "ebitdaMarginPct": 8.6,
+      "pat": 11,
+      "epsRs": 7.5
+    },
+    {
+      "period": "FY25",
+      "revenue": 408,
+      "ebitda": 37,
+      "ebitdaMarginPct": 9.1,
+      "pat": 20,
+      "epsRs": 13.23
+    },
+    {
+      "period": "FY26",
+      "revenue": 544,
+      "ebitda": 56.03,
+      "ebitdaMarginPct": 10.3,
+      "pat": 21,
+      "epsRs": 13.93
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 104,
+      "ebitda": 10,
+      "ebitdaMarginPct": 9.6,
+      "pat": 6,
+      "patMarginPct": 5.77
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 171,
+      "ebitda": 18,
+      "ebitdaMarginPct": 10.5,
+      "pat": 9,
+      "patMarginPct": 5.26
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 98,
+      "ebitda": 10,
+      "ebitdaMarginPct": 10.2,
+      "pat": 3,
+      "patMarginPct": 3.06
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 97,
+      "ebitda": 10,
+      "ebitdaMarginPct": 10.3,
+      "pat": 3,
+      "patMarginPct": 3.09
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 138,
+      "ebitda": 14,
+      "ebitdaMarginPct": 10.1,
+      "pat": 5,
+      "patMarginPct": 3.62
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 211,
+      "ebitda": 22,
+      "ebitdaMarginPct": 10.4,
+      "pat": 11,
+      "patMarginPct": 5.21
+    }
+  ],
+  "valuation": {
+    "peX": 19.1,
+    "pbX": 3.45,
+    "evEbitdaX": 10.7,
+    "cmp": 267,
+    "marketCapCr": 402
+  },
+  "rocePct": 15.9,
+  "roePct": 19.8,
+  "shareholding": {
+    "promoterPct": 69.97,
+    "fiiPct": 0.15,
+    "diiPct": 0.2,
+    "publicPct": 29.68,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

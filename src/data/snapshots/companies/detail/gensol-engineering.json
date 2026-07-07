@@ -3,22 +3,113 @@
   "cadence": "quarterly",
   "coverage": "Gensol Engineering",
   "data": {
+    "annual": [
+      {
+        "ebitda": 19,
+        "ebitdaMarginPct": 11.9,
+        "pat": 11,
+        "period": "FY22",
+        "revenue": 160
+      },
+      {
+        "ebitda": 78,
+        "ebitdaMarginPct": 19.6,
+        "pat": 23,
+        "period": "FY23",
+        "revenue": 398
+      },
+      {
+        "ebitda": 230,
+        "ebitdaMarginPct": 23.9,
+        "pat": 53,
+        "period": "FY24",
+        "revenue": 963
+      },
+      {
+        "ebitda": 230.16,
+        "ebitdaMarginPct": 23.9,
+        "pat": 53,
+        "period": "FY26",
+        "revenue": 963
+      }
+    ],
     "cmp": 20.3,
     "confidence": "medium",
     "ebitdaMarginPct": 23.9,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 78,
     "name": "Gensol Engineering",
     "patFy26Cr": 53,
+    "quarterly": [
+      {
+        "ebitda": 47,
+        "ebitdaMarginPct": 15.4,
+        "pat": 18,
+        "patMarginPct": 5.9,
+        "period": "Q2FY24",
+        "revenue": 305
+      },
+      {
+        "ebitda": 63,
+        "ebitdaMarginPct": 28.6,
+        "pat": 12,
+        "patMarginPct": 5.45,
+        "period": "Q3FY24",
+        "revenue": 220
+      },
+      {
+        "ebitda": 79,
+        "ebitdaMarginPct": 19.8,
+        "pat": 20,
+        "patMarginPct": 5.01,
+        "period": "Q4FY24",
+        "revenue": 399
+      },
+      {
+        "ebitda": 75,
+        "ebitdaMarginPct": 20.7,
+        "pat": 27,
+        "patMarginPct": 7.46,
+        "period": "Q1FY25",
+        "revenue": 362
+      },
+      {
+        "ebitda": 107,
+        "ebitdaMarginPct": 30.9,
+        "pat": 23,
+        "patMarginPct": 6.65,
+        "period": "Q2FY25",
+        "revenue": 346
+      },
+      {
+        "ebitda": 69,
+        "ebitdaMarginPct": 20,
+        "pat": 18,
+        "patMarginPct": 5.22,
+        "period": "Q3FY25",
+        "revenue": 345
+      }
+    ],
     "revenueFy26Cr": 963,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.1,
+      "fiiPct": 4.9,
+      "promoterPct": 35.9,
+      "publicPct": 57.8
+    },
     "slug": "gensol-engineering",
     "sourceNote": "Distressed (2025 governance/insolvency issues)",
     "tickerNse": "GENSOL",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 0.13
+    }
   },
   "dataset": "detail/gensol-engineering",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

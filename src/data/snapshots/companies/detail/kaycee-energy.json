@@ -3,6 +3,36 @@
   "cadence": "quarterly",
   "coverage": "Kay Cee Energy & Infra",
   "data": {
+    "annual": [
+      {
+        "ebitda": 10,
+        "ebitdaMarginPct": 17,
+        "pat": 6,
+        "period": "FY23",
+        "revenue": 61
+      },
+      {
+        "ebitda": 13,
+        "ebitdaMarginPct": 20,
+        "pat": 7,
+        "period": "FY24",
+        "revenue": 64
+      },
+      {
+        "ebitda": 27,
+        "ebitdaMarginPct": 18,
+        "pat": 17,
+        "period": "FY25",
+        "revenue": 153
+      },
+      {
+        "ebitda": 31.98,
+        "ebitdaMarginPct": 19.5,
+        "pat": 18.8,
+        "period": "FY26",
+        "revenue": 164
+      }
+    ],
     "board": "NSE SME",
     "cmp": 90.2,
     "concall": {
@@ -22,21 +52,51 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 19.5,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 110,
     "name": "Kay Cee Energy & Infra",
     "orderBookCr": 537,
     "patFy26Cr": 18.8,
     "peX": 5.9,
+    "quarterly": [
+      {
+        "ebitda": 16.1,
+        "ebitdaMarginPct": 19.2,
+        "pat": 9.2,
+        "patMarginPct": 10.95,
+        "period": "H1FY26",
+        "revenue": 84
+      },
+      {
+        "ebitda": 17,
+        "ebitdaMarginPct": 20.8,
+        "pat": 9.6,
+        "patMarginPct": 11.76,
+        "period": "H2FY26",
+        "revenue": 81.6
+      }
+    ],
     "revenueFy26Cr": 164,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 1.81,
+      "fiiPct": 0,
+      "promoterPct": 63.41,
+      "publicPct": 34.78
+    },
     "slug": "kaycee-energy",
     "sourceNote": "NSE Emerge (SME)",
     "tickerNse": "KCEIL",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 1.07,
+      "peX": 5.9
+    }
   },
   "dataset": "detail/kaycee-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

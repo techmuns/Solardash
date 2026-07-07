@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "NLC India",
   "data": {
+    "annual": [
+      {
+        "ebitda": 3947,
+        "ebitdaMarginPct": 32.7,
+        "epsRs": 7.88,
+        "pat": 1116,
+        "period": "FY22",
+        "revenue": 12070
+      },
+      {
+        "ebitda": 5739,
+        "ebitdaMarginPct": 35.5,
+        "epsRs": 10.07,
+        "pat": 1426,
+        "period": "FY23",
+        "revenue": 16165
+      },
+      {
+        "ebitda": 3432,
+        "ebitdaMarginPct": 26.4,
+        "epsRs": 13.37,
+        "pat": 1868,
+        "period": "FY24",
+        "revenue": 13001
+      },
+      {
+        "ebitda": 4750,
+        "ebitdaMarginPct": 31,
+        "epsRs": 18.9,
+        "pat": 2714,
+        "period": "FY25",
+        "revenue": 15322
+      },
+      {
+        "ebitda": 5579.31,
+        "ebitdaMarginPct": 31.9,
+        "epsRs": 25.4,
+        "pat": 3769,
+        "period": "FY26",
+        "revenue": 17490
+      }
+    ],
     "cmp": 302,
     "concall": {
       "date": "2026-05-27",
@@ -22,21 +64,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 31.9,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 41911,
     "name": "NLC India",
     "orderBookGw": 2,
     "patFy26Cr": 3769,
     "peX": 11.9,
+    "quarterly": [
+      {
+        "ebitda": 1037,
+        "ebitdaMarginPct": 23.5,
+        "pat": 696,
+        "patMarginPct": 15.78,
+        "period": "Q3FY25",
+        "revenue": 4411
+      },
+      {
+        "ebitda": 859,
+        "ebitdaMarginPct": 22.4,
+        "pat": 468,
+        "patMarginPct": 12.2,
+        "period": "Q4FY25",
+        "revenue": 3836
+      },
+      {
+        "ebitda": 934,
+        "ebitdaMarginPct": 24.4,
+        "pat": 839,
+        "patMarginPct": 21.93,
+        "period": "Q1FY26",
+        "revenue": 3826
+      },
+      {
+        "ebitda": 1400,
+        "ebitdaMarginPct": 33.5,
+        "pat": 725,
+        "patMarginPct": 17.35,
+        "period": "Q2FY26",
+        "revenue": 4178
+      },
+      {
+        "ebitda": 1342,
+        "ebitdaMarginPct": 30.2,
+        "pat": 724,
+        "patMarginPct": 16.3,
+        "period": "Q3FY26",
+        "revenue": 4443
+      },
+      {
+        "ebitda": 1775,
+        "ebitdaMarginPct": 35.2,
+        "pat": 1481,
+        "patMarginPct": 29.37,
+        "period": "Q4FY26",
+        "revenue": 5042
+      }
+    ],
     "revenueFy26Cr": 17490,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 13.97,
+      "fiiPct": 3.61,
+      "promoterPct": 72.2,
+      "publicPct": 10.22
+    },
     "slug": "nlc-india",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "NLCINDIA",
-    "type": "utility"
+    "type": "utility",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 1.95,
+      "peX": 11.9
+    }
   },
   "dataset": "detail/nlc-india",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

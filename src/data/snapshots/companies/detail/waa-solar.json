@@ -3,8 +3,31 @@
   "cadence": "quarterly",
   "coverage": "Waa Solar",
   "data": {
+    "annual": [
+      {
+        "ebitda": 18.29,
+        "ebitdaMarginPct": 69.28,
+        "pat": 6.63,
+        "period": "FY24",
+        "revenue": 26.4
+      },
+      {
+        "ebitda": 10.35,
+        "ebitdaMarginPct": 36.64,
+        "pat": 6.97,
+        "period": "FY25",
+        "revenue": 28.25
+      },
+      {
+        "ebitda": 15.51,
+        "ebitdaMarginPct": 55.8,
+        "pat": 0.65,
+        "period": "FY26",
+        "revenue": 27.8
+      }
+    ],
     "board": "BSE SME",
-    "cmp": 48.9,
+    "cmp": 49,
     "concall": {
       "date": "2026-05-19",
       "guidance": [
@@ -22,19 +45,47 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 55.8,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 64.9,
     "name": "Waa Solar",
     "patFy26Cr": 0.65,
     "peX": 99.8,
+    "quarterly": [
+      {
+        "ebitda": 6.36,
+        "ebitdaMarginPct": 72.19,
+        "pat": 1.82,
+        "patMarginPct": 20.66,
+        "period": "H1FY26",
+        "revenue": 8.81
+      },
+      {
+        "ebitda": 9.13,
+        "ebitdaMarginPct": 48.15,
+        "pat": -1.17,
+        "patMarginPct": -6.17,
+        "period": "H2FY26",
+        "revenue": 18.96
+      }
+    ],
     "revenueFy26Cr": 27.8,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "promoterPct": 67.86,
+      "publicPct": 32.14
+    },
     "slug": "waa-solar",
     "sourceNote": "BSE SME (maintained)",
-    "type": "ipp"
+    "type": "ipp",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 0.35,
+      "peX": 99.8
+    }
   },
   "dataset": "detail/waa-solar",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

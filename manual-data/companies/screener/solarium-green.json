@@ -1,0 +1,87 @@
+{
+  "slug": "solarium-green",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 167.4,
+      "ebitda": 5.1,
+      "ebitdaMarginPct": 3.1,
+      "pat": 2.1
+    },
+    {
+      "period": "FY23",
+      "revenue": 98.8,
+      "ebitda": 6.1,
+      "ebitdaMarginPct": 6.2,
+      "pat": 1.7
+    },
+    {
+      "period": "FY24",
+      "revenue": 177.4,
+      "ebitda": 24.6,
+      "ebitdaMarginPct": 13.9,
+      "pat": 15.7
+    },
+    {
+      "period": "FY25",
+      "revenue": 230.1,
+      "ebitda": 26.9,
+      "ebitdaMarginPct": 11.7,
+      "pat": 18.6
+    },
+    {
+      "period": "FY26",
+      "revenue": 368,
+      "ebitda": 30.18,
+      "ebitdaMarginPct": 8.2,
+      "pat": 20
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY25",
+      "revenue": 82.3,
+      "ebitda": 12,
+      "pat": 7.6,
+      "patMarginPct": 9.23
+    },
+    {
+      "period": "H2FY25",
+      "revenue": 147.8,
+      "ebitda": 14,
+      "pat": 11,
+      "patMarginPct": 7.44
+    },
+    {
+      "period": "H1FY26",
+      "revenue": 117,
+      "ebitda": 13,
+      "pat": 9,
+      "patMarginPct": 7.69
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 251,
+      "ebitda": 17,
+      "pat": 11,
+      "patMarginPct": 4.38
+    }
+  ],
+  "valuation": {
+    "peX": 20.6,
+    "pbX": 2.3,
+    "evEbitdaX": 15,
+    "cmp": 181,
+    "marketCapCr": 378
+  },
+  "rocePct": 12.9,
+  "roePct": 12,
+  "shareholding": {
+    "promoterPct": 58.6,
+    "fiiPct": 0,
+    "diiPct": 1.7,
+    "publicPct": 39.7,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

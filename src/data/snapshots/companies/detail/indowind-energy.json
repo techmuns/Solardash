@@ -3,6 +3,29 @@
   "cadence": "quarterly",
   "coverage": "Indowind Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 15.84,
+        "ebitdaMarginPct": 40.81,
+        "pat": 7.27,
+        "period": "FY24",
+        "revenue": 38.81
+      },
+      {
+        "ebitda": 10.55,
+        "ebitdaMarginPct": 31.48,
+        "pat": 1.27,
+        "period": "FY25",
+        "revenue": 33.51
+      },
+      {
+        "ebitda": 14.93,
+        "ebitdaMarginPct": 36.6,
+        "pat": 0.01,
+        "period": "FY26",
+        "revenue": 40.8
+      }
+    ],
     "cmp": 9.41,
     "concall": {
       "guidance": [
@@ -20,19 +43,64 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 36.6,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 148,
     "name": "Indowind Energy",
     "patFy26Cr": 0.01,
+    "quarterly": [
+      {
+        "ebitda": 5.2,
+        "ebitdaMarginPct": 45.06,
+        "pat": 2.57,
+        "patMarginPct": 22.27,
+        "period": "Q1FY26",
+        "revenue": 11.54
+      },
+      {
+        "ebitda": 10.33,
+        "ebitdaMarginPct": 58.86,
+        "pat": 4.57,
+        "patMarginPct": 26.04,
+        "period": "Q2FY26",
+        "revenue": 17.55
+      },
+      {
+        "ebitda": -0.42,
+        "ebitdaMarginPct": -6.79,
+        "pat": 0.36,
+        "patMarginPct": 5.82,
+        "period": "Q3FY26",
+        "revenue": 6.19
+      },
+      {
+        "ebitda": -2.06,
+        "ebitdaMarginPct": -39.09,
+        "pat": -7.51,
+        "patMarginPct": -142.5,
+        "period": "Q4FY26",
+        "revenue": 5.27
+      }
+    ],
     "revenueFy26Cr": 40.8,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0,
+      "fiiPct": 0,
+      "promoterPct": 48.2,
+      "publicPct": 51.79
+    },
     "slug": "indowind-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "INDOWIND",
-    "type": "wind"
+    "type": "wind",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 0.49
+    }
   },
   "dataset": "detail/indowind-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

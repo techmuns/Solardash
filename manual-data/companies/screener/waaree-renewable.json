@@ -1,0 +1,112 @@
+{
+  "slug": "waaree-renewable",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 162,
+      "ebitda": 24,
+      "ebitdaMarginPct": 14.8,
+      "pat": 9,
+      "epsRs": 0.83
+    },
+    {
+      "period": "FY23",
+      "revenue": 351,
+      "ebitda": 84,
+      "ebitdaMarginPct": 23.9,
+      "pat": 55,
+      "epsRs": 5.32
+    },
+    {
+      "period": "FY24",
+      "revenue": 876,
+      "ebitda": 207,
+      "ebitdaMarginPct": 23.6,
+      "pat": 145,
+      "epsRs": 13.95
+    },
+    {
+      "period": "FY25",
+      "revenue": 1598,
+      "ebitda": 311,
+      "ebitdaMarginPct": 19.5,
+      "pat": 229,
+      "epsRs": 21.98
+    },
+    {
+      "period": "FY26",
+      "revenue": 3331,
+      "ebitda": 639.55,
+      "ebitdaMarginPct": 19.2,
+      "pat": 479,
+      "epsRs": 45.88
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 360,
+      "ebitda": 72,
+      "ebitdaMarginPct": 20,
+      "pat": 53,
+      "patMarginPct": 14.72
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 477,
+      "ebitda": 126,
+      "ebitdaMarginPct": 26.4,
+      "pat": 94,
+      "patMarginPct": 19.71
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 603,
+      "ebitda": 118,
+      "ebitdaMarginPct": 19.6,
+      "pat": 86,
+      "patMarginPct": 14.26
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 775,
+      "ebitda": 158,
+      "ebitdaMarginPct": 20.4,
+      "pat": 116,
+      "patMarginPct": 14.97
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 851,
+      "ebitda": 159,
+      "ebitdaMarginPct": 18.7,
+      "pat": 120,
+      "patMarginPct": 14.1
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 1102,
+      "ebitda": 207,
+      "ebitdaMarginPct": 18.8,
+      "pat": 156,
+      "patMarginPct": 14.16
+    }
+  ],
+  "valuation": {
+    "peX": 22,
+    "pbX": 11.3,
+    "evEbitdaX": 16.7,
+    "cmp": 1011,
+    "marketCapCr": 10545
+  },
+  "rocePct": 83.6,
+  "roePct": 68.9,
+  "shareholding": {
+    "promoterPct": 74.32,
+    "fiiPct": 1.85,
+    "diiPct": 0.09,
+    "publicPct": 23.73,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

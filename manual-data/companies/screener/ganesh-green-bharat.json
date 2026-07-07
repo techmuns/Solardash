@@ -1,0 +1,109 @@
+{
+  "slug": "ganesh-green-bharat",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 105.5,
+      "ebitda": 9,
+      "ebitdaMarginPct": 8.5,
+      "pat": 5.21
+    },
+    {
+      "period": "FY23",
+      "revenue": 90.2,
+      "ebitda": 14,
+      "ebitdaMarginPct": 15.5,
+      "pat": 8.16
+    },
+    {
+      "period": "FY24",
+      "revenue": 170.2,
+      "ebitda": 24,
+      "ebitdaMarginPct": 14.1,
+      "pat": 19.88
+    },
+    {
+      "period": "FY25",
+      "revenue": 318,
+      "ebitda": 51.2,
+      "ebitdaMarginPct": 16.1,
+      "pat": 30.22,
+      "epsRs": 11.94
+    },
+    {
+      "period": "FY26",
+      "revenue": 1068,
+      "ebitda": 114.28,
+      "ebitdaMarginPct": 10.7,
+      "pat": 75,
+      "epsRs": 30.3
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY24",
+      "revenue": 77,
+      "ebitda": 5,
+      "ebitdaMarginPct": 6.5,
+      "pat": 2,
+      "patMarginPct": 2.6
+    },
+    {
+      "period": "H2FY24",
+      "revenue": 89,
+      "ebitda": 19,
+      "ebitdaMarginPct": 21.3,
+      "pat": 12,
+      "patMarginPct": 13.48
+    },
+    {
+      "period": "H1FY25",
+      "revenue": 133,
+      "ebitda": 19,
+      "ebitdaMarginPct": 14.3,
+      "pat": 13,
+      "patMarginPct": 9.77
+    },
+    {
+      "period": "H2FY25",
+      "revenue": 181,
+      "ebitda": 27,
+      "ebitdaMarginPct": 14.9,
+      "pat": 17,
+      "patMarginPct": 9.39
+    },
+    {
+      "period": "H1FY26",
+      "revenue": 339,
+      "ebitda": 47,
+      "ebitdaMarginPct": 13.9,
+      "pat": 33,
+      "patMarginPct": 9.73
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 725,
+      "ebitda": 62,
+      "ebitdaMarginPct": 8.6,
+      "pat": 42,
+      "patMarginPct": 5.79
+    }
+  ],
+  "valuation": {
+    "peX": 8.6,
+    "pbX": 2.35,
+    "evEbitdaX": 6.1,
+    "cmp": 261,
+    "marketCapCr": 647
+  },
+  "rocePct": 36.8,
+  "roePct": 31.8,
+  "shareholding": {
+    "promoterPct": 73.42,
+    "fiiPct": 0,
+    "diiPct": 0.76,
+    "publicPct": 25.82,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

@@ -3,6 +3,36 @@
   "cadence": "quarterly",
   "coverage": "GRE Renew Enertech",
   "data": {
+    "annual": [
+      {
+        "ebitda": 1,
+        "ebitdaMarginPct": 4,
+        "pat": 1,
+        "period": "FY23",
+        "revenue": 34
+      },
+      {
+        "ebitda": 11,
+        "ebitdaMarginPct": 14,
+        "pat": 8,
+        "period": "FY24",
+        "revenue": 76
+      },
+      {
+        "ebitda": 10,
+        "ebitdaMarginPct": 12,
+        "pat": 7,
+        "period": "FY25",
+        "revenue": 80
+      },
+      {
+        "ebitda": 15.99,
+        "ebitdaMarginPct": 13,
+        "pat": 13.6,
+        "period": "FY26",
+        "revenue": 123
+      }
+    ],
     "board": "BSE SME",
     "cmp": 159,
     "concall": {
@@ -22,19 +52,47 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 13,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 227,
     "name": "GRE Renew Enertech",
     "patFy26Cr": 13.6,
     "peX": 16.7,
+    "quarterly": [
+      {
+        "pat": 4,
+        "patMarginPct": 9.09,
+        "period": "H1FY26",
+        "revenue": 44
+      },
+      {
+        "ebitda": 10,
+        "ebitdaMarginPct": 13.5,
+        "pat": 8,
+        "patMarginPct": 10.81,
+        "period": "H2FY26",
+        "revenue": 74
+      }
+    ],
     "revenueFy26Cr": 123,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 8.79,
+      "fiiPct": 0.38,
+      "promoterPct": 69.99,
+      "publicPct": 20.85
+    },
     "slug": "gre-renew",
     "sourceNote": "BSE SME (maintained)",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 3.31,
+      "peX": 16.7
+    }
   },
   "dataset": "detail/gre-renew",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

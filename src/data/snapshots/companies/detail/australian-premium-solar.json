@@ -3,6 +3,32 @@
   "cadence": "quarterly",
   "coverage": "Australian Premium Solar (India)",
   "data": {
+    "annual": [
+      {
+        "ebitda": 9,
+        "ebitdaMarginPct": 6,
+        "epsRs": 3.12,
+        "pat": 6,
+        "period": "FY24",
+        "revenue": 150
+      },
+      {
+        "ebitda": 57,
+        "ebitdaMarginPct": 13,
+        "epsRs": 20.31,
+        "pat": 40,
+        "period": "FY25",
+        "revenue": 439
+      },
+      {
+        "ebitda": 94.87,
+        "ebitdaMarginPct": 13.4,
+        "epsRs": 28.71,
+        "pat": 58,
+        "period": "FY26",
+        "revenue": 708
+      }
+    ],
     "board": "NSE SME",
     "cmp": 297,
     "concall": {
@@ -23,21 +49,67 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 13.4,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 599,
     "moduleGw": 0.8,
     "name": "Australian Premium Solar (India)",
     "patFy26Cr": 58,
     "peX": 10.4,
+    "quarterly": [
+      {
+        "ebitda": 19,
+        "ebitdaMarginPct": 11.6,
+        "pat": 13,
+        "patMarginPct": 7.93,
+        "period": "H1FY25",
+        "revenue": 164
+      },
+      {
+        "ebitda": 38,
+        "ebitdaMarginPct": 13.8,
+        "pat": 27,
+        "patMarginPct": 9.82,
+        "period": "H2FY25",
+        "revenue": 275
+      },
+      {
+        "ebitda": 43,
+        "ebitdaMarginPct": 14.2,
+        "pat": 29,
+        "patMarginPct": 9.6,
+        "period": "H1FY26",
+        "revenue": 302
+      },
+      {
+        "ebitda": 52,
+        "ebitdaMarginPct": 12.8,
+        "pat": 29,
+        "patMarginPct": 7.16,
+        "period": "H2FY26",
+        "revenue": 405
+      }
+    ],
     "revenueFy26Cr": 708,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.46,
+      "fiiPct": 0,
+      "promoterPct": 72.62,
+      "publicPct": 26.93
+    },
     "slug": "australian-premium-solar",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "APS",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 3.6,
+      "peX": 10.4
+    }
   },
   "dataset": "detail/australian-premium-solar",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

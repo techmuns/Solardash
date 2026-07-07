@@ -1,0 +1,85 @@
+{
+  "slug": "refex-renewables",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 53,
+      "ebitda": -7,
+      "ebitdaMarginPct": -13.2,
+      "pat": -37
+    },
+    {
+      "period": "FY23",
+      "revenue": 76,
+      "ebitda": 9,
+      "ebitdaMarginPct": 11.8,
+      "pat": -30
+    },
+    {
+      "period": "FY24",
+      "revenue": 75,
+      "ebitda": 33,
+      "ebitdaMarginPct": 44,
+      "pat": -34
+    },
+    {
+      "period": "FY25",
+      "revenue": 67,
+      "ebitda": 32,
+      "ebitdaMarginPct": 47.8,
+      "pat": -36
+    },
+    {
+      "period": "FY26",
+      "revenue": 66,
+      "ebitda": 26.99,
+      "ebitdaMarginPct": 40.9,
+      "pat": -43
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY26",
+      "revenue": 17,
+      "ebitda": 9,
+      "pat": -8,
+      "patMarginPct": -47.06
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 14,
+      "ebitda": 3,
+      "pat": -14,
+      "patMarginPct": -100
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 16,
+      "ebitda": 6,
+      "pat": -11,
+      "patMarginPct": -68.75
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 19,
+      "ebitda": 9,
+      "pat": -10,
+      "patMarginPct": -52.63
+    }
+  ],
+  "valuation": {
+    "pbX": -1.7,
+    "evEbitdaX": 23.2,
+    "cmp": 312,
+    "marketCapCr": 140
+  },
+  "rocePct": 3.2,
+  "shareholding": {
+    "promoterPct": 74.9,
+    "fiiPct": 0,
+    "diiPct": 0,
+    "publicPct": 25.1,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

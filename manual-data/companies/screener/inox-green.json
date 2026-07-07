@@ -1,0 +1,87 @@
+{
+  "slug": "inox-green",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 172,
+      "ebitda": 82,
+      "ebitdaMarginPct": 47.7,
+      "pat": -93
+    },
+    {
+      "period": "FY23",
+      "revenue": 254,
+      "ebitda": 57,
+      "ebitdaMarginPct": 22.4,
+      "pat": -20
+    },
+    {
+      "period": "FY24",
+      "revenue": 224,
+      "ebitda": 75,
+      "ebitdaMarginPct": 33.5,
+      "pat": 28
+    },
+    {
+      "period": "FY25",
+      "revenue": 236,
+      "ebitda": 52,
+      "ebitdaMarginPct": 22,
+      "pat": 22
+    },
+    {
+      "period": "FY26",
+      "revenue": 281,
+      "ebitda": 23.04,
+      "ebitdaMarginPct": 8.2,
+      "pat": 103
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY26",
+      "revenue": 56,
+      "ebitda": 6,
+      "pat": 22,
+      "patMarginPct": 39.29
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 86,
+      "ebitda": 9,
+      "pat": 28,
+      "patMarginPct": 32.56
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 78,
+      "ebitda": 19,
+      "pat": 25,
+      "patMarginPct": 32.05
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 69,
+      "ebitda": -3,
+      "pat": 28,
+      "patMarginPct": 40.58
+    }
+  ],
+  "valuation": {
+    "peX": 79.6,
+    "pbX": 4.8,
+    "evEbitdaX": 120.1,
+    "cmp": 205,
+    "marketCapCr": 8217
+  },
+  "rocePct": 8.4,
+  "roePct": 5.6,
+  "shareholding": {
+    "promoterPct": 56.1,
+    "fiiPct": 8.7,
+    "diiPct": 1.5,
+    "publicPct": 33.7,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

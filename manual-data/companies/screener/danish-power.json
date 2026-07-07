@@ -1,0 +1,93 @@
+{
+  "slug": "danish-power",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 149,
+      "ebitda": 10,
+      "ebitdaMarginPct": 6.7,
+      "pat": 6
+    },
+    {
+      "period": "FY23",
+      "revenue": 188,
+      "ebitda": 16,
+      "ebitdaMarginPct": 8.5,
+      "pat": 9
+    },
+    {
+      "period": "FY24",
+      "revenue": 332,
+      "ebitda": 55,
+      "ebitdaMarginPct": 16.6,
+      "pat": 38
+    },
+    {
+      "period": "FY25",
+      "revenue": 425,
+      "ebitda": 81,
+      "ebitdaMarginPct": 19.1,
+      "pat": 58,
+      "epsRs": 29.63
+    },
+    {
+      "period": "FY26",
+      "revenue": 521,
+      "ebitda": 90.13,
+      "ebitdaMarginPct": 17.3,
+      "pat": 70,
+      "epsRs": 35.55
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY25",
+      "revenue": 163,
+      "ebitda": 30,
+      "ebitdaMarginPct": 18.4,
+      "pat": 21,
+      "patMarginPct": 12.88
+    },
+    {
+      "period": "H2FY25",
+      "revenue": 261,
+      "ebitda": 51,
+      "ebitdaMarginPct": 19.5,
+      "pat": 38,
+      "patMarginPct": 14.56
+    },
+    {
+      "period": "H1FY26",
+      "revenue": 211,
+      "ebitda": 36,
+      "ebitdaMarginPct": 17.1,
+      "pat": 29,
+      "patMarginPct": 13.74
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 310,
+      "ebitda": 54,
+      "ebitdaMarginPct": 17.4,
+      "pat": 41,
+      "patMarginPct": 13.23
+    }
+  ],
+  "valuation": {
+    "peX": 26.3,
+    "pbX": 4.04,
+    "evEbitdaX": 20.1,
+    "cmp": 937,
+    "marketCapCr": 1844
+  },
+  "rocePct": 23.8,
+  "roePct": 18,
+  "shareholding": {
+    "promoterPct": 73.62,
+    "fiiPct": 0.27,
+    "diiPct": 4.01,
+    "publicPct": 22.11,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

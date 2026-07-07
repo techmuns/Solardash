@@ -1,0 +1,110 @@
+{
+  "slug": "kp-green-engineering",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 78,
+      "ebitda": 9,
+      "ebitdaMarginPct": 11.5,
+      "pat": 5
+    },
+    {
+      "period": "FY23",
+      "revenue": 114,
+      "ebitda": 21,
+      "ebitdaMarginPct": 18.4,
+      "pat": 12
+    },
+    {
+      "period": "FY24",
+      "revenue": 349,
+      "ebitda": 54,
+      "ebitdaMarginPct": 15.5,
+      "pat": 35,
+      "epsRs": 7.03
+    },
+    {
+      "period": "FY25",
+      "revenue": 695,
+      "ebitda": 109,
+      "ebitdaMarginPct": 15.7,
+      "pat": 74,
+      "epsRs": 14.7
+    },
+    {
+      "period": "FY26",
+      "revenue": 1245.6,
+      "ebitda": 245.38,
+      "ebitdaMarginPct": 19.7,
+      "pat": 135.7,
+      "epsRs": 27.15
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY24",
+      "revenue": 104,
+      "ebitda": 18,
+      "ebitdaMarginPct": 17.3,
+      "pat": 11,
+      "patMarginPct": 10.58
+    },
+    {
+      "period": "H2FY24",
+      "revenue": 245,
+      "ebitda": 33,
+      "ebitdaMarginPct": 13.5,
+      "pat": 24,
+      "patMarginPct": 9.8
+    },
+    {
+      "period": "H1FY25",
+      "revenue": 262,
+      "ebitda": 40,
+      "ebitdaMarginPct": 15.3,
+      "pat": 27,
+      "patMarginPct": 10.31
+    },
+    {
+      "period": "H2FY25",
+      "revenue": 432,
+      "ebitda": 68,
+      "ebitdaMarginPct": 15.7,
+      "pat": 46,
+      "patMarginPct": 10.65
+    },
+    {
+      "period": "H1FY26",
+      "revenue": 532,
+      "ebitda": 98,
+      "ebitdaMarginPct": 18.4,
+      "pat": 58,
+      "patMarginPct": 10.9
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 714,
+      "ebitda": 147,
+      "ebitdaMarginPct": 20.6,
+      "pat": 77,
+      "patMarginPct": 10.78
+    }
+  ],
+  "valuation": {
+    "peX": 13.5,
+    "pbX": 4.01,
+    "evEbitdaX": 8.9,
+    "cmp": 367,
+    "marketCapCr": 1835
+  },
+  "rocePct": 36.7,
+  "roePct": 34.8,
+  "shareholding": {
+    "promoterPct": 66.61,
+    "fiiPct": 0.35,
+    "diiPct": 0.13,
+    "publicPct": 32.92,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

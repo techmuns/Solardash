@@ -3,6 +3,45 @@
   "cadence": "quarterly",
   "coverage": "Danish Power",
   "data": {
+    "annual": [
+      {
+        "ebitda": 10,
+        "ebitdaMarginPct": 6.7,
+        "pat": 6,
+        "period": "FY22",
+        "revenue": 149
+      },
+      {
+        "ebitda": 16,
+        "ebitdaMarginPct": 8.5,
+        "pat": 9,
+        "period": "FY23",
+        "revenue": 188
+      },
+      {
+        "ebitda": 55,
+        "ebitdaMarginPct": 16.6,
+        "pat": 38,
+        "period": "FY24",
+        "revenue": 332
+      },
+      {
+        "ebitda": 81,
+        "ebitdaMarginPct": 19.1,
+        "epsRs": 29.63,
+        "pat": 58,
+        "period": "FY25",
+        "revenue": 425
+      },
+      {
+        "ebitda": 90.13,
+        "ebitdaMarginPct": 17.3,
+        "epsRs": 35.55,
+        "pat": 70,
+        "period": "FY26",
+        "revenue": 521
+      }
+    ],
     "board": "NSE SME",
     "cmp": 937,
     "concall": {
@@ -22,21 +61,67 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 17.3,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 1844,
     "name": "Danish Power",
     "orderBookCr": 500,
     "patFy26Cr": 70,
     "peX": 26.3,
+    "quarterly": [
+      {
+        "ebitda": 30,
+        "ebitdaMarginPct": 18.4,
+        "pat": 21,
+        "patMarginPct": 12.88,
+        "period": "H1FY25",
+        "revenue": 163
+      },
+      {
+        "ebitda": 51,
+        "ebitdaMarginPct": 19.5,
+        "pat": 38,
+        "patMarginPct": 14.56,
+        "period": "H2FY25",
+        "revenue": 261
+      },
+      {
+        "ebitda": 36,
+        "ebitdaMarginPct": 17.1,
+        "pat": 29,
+        "patMarginPct": 13.74,
+        "period": "H1FY26",
+        "revenue": 211
+      },
+      {
+        "ebitda": 54,
+        "ebitdaMarginPct": 17.4,
+        "pat": 41,
+        "patMarginPct": 13.23,
+        "period": "H2FY26",
+        "revenue": 310
+      }
+    ],
     "revenueFy26Cr": 521,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 4.01,
+      "fiiPct": 0.27,
+      "promoterPct": 73.62,
+      "publicPct": 22.11
+    },
     "slug": "danish-power",
     "sourceNote": "NSE Emerge (SME)",
     "tickerNse": "DANISH",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 4.04,
+      "peX": 26.3
+    }
   },
   "dataset": "detail/danish-power",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

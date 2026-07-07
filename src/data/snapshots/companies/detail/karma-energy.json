@@ -3,6 +3,29 @@
   "cadence": "quarterly",
   "coverage": "Karma Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 3.21,
+        "ebitdaMarginPct": 25.99,
+        "pat": 0.12,
+        "period": "FY24",
+        "revenue": 12.35
+      },
+      {
+        "ebitda": 0.45,
+        "ebitdaMarginPct": 5.17,
+        "pat": 1.4,
+        "period": "FY25",
+        "revenue": 8.7
+      },
+      {
+        "ebitda": -2.87,
+        "ebitdaMarginPct": -29.3,
+        "pat": 1.05,
+        "period": "FY26",
+        "revenue": 9.8
+      }
+    ],
     "board": "NSE",
     "cmp": 39.7,
     "concall": {
@@ -20,19 +43,62 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": -29.3,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 43.5,
     "name": "Karma Energy",
     "patFy26Cr": 1.05,
+    "quarterly": [
+      {
+        "ebitda": -0.09,
+        "ebitdaMarginPct": -2.94,
+        "pat": 0.61,
+        "patMarginPct": 19.93,
+        "period": "Q1FY26",
+        "revenue": 3.06
+      },
+      {
+        "ebitda": 1.59,
+        "ebitdaMarginPct": 34.42,
+        "pat": 1.05,
+        "patMarginPct": 22.73,
+        "period": "Q2FY26",
+        "revenue": 4.62
+      },
+      {
+        "ebitda": -1.92,
+        "ebitdaMarginPct": -160,
+        "pat": 0.22,
+        "patMarginPct": 18.33,
+        "period": "Q3FY26",
+        "revenue": 1.2
+      },
+      {
+        "ebitda": -2.44,
+        "ebitdaMarginPct": -277.27,
+        "pat": -0.82,
+        "patMarginPct": -93.18,
+        "period": "Q4FY26",
+        "revenue": 0.88
+      }
+    ],
     "revenueFy26Cr": 9.8,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "promoterPct": 74.7,
+      "publicPct": 25.32
+    },
     "slug": "karma-energy",
     "sourceNote": "Market data (mid-2026)",
     "tickerNse": "KARMAENG",
-    "type": "wind"
+    "type": "wind",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 1.12
+    }
   },
   "dataset": "detail/karma-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

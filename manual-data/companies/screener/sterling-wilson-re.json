@@ -1,0 +1,112 @@
+{
+  "slug": "sterling-wilson-re",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 5199,
+      "ebitda": -903,
+      "ebitdaMarginPct": -17.4,
+      "pat": -916,
+      "epsRs": -47.94
+    },
+    {
+      "period": "FY23",
+      "revenue": 2015,
+      "ebitda": -1124,
+      "ebitdaMarginPct": -55.8,
+      "pat": -1175,
+      "epsRs": -61.65
+    },
+    {
+      "period": "FY24",
+      "revenue": 3035,
+      "ebitda": -7,
+      "ebitdaMarginPct": -0.2,
+      "pat": -211,
+      "epsRs": -9.09
+    },
+    {
+      "period": "FY25",
+      "revenue": 6302,
+      "ebitda": 264,
+      "ebitdaMarginPct": 4.2,
+      "pat": 86,
+      "epsRs": 3.49
+    },
+    {
+      "period": "FY26",
+      "revenue": 7548,
+      "ebitda": 317.02,
+      "ebitdaMarginPct": 4.2,
+      "pat": -296,
+      "epsRs": -13.25
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 1837,
+      "ebitda": 70,
+      "ebitdaMarginPct": 3.8,
+      "pat": 17,
+      "patMarginPct": 0.93
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 2519,
+      "ebitda": 134,
+      "ebitdaMarginPct": 5.3,
+      "pat": 55,
+      "patMarginPct": 2.18
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 1762,
+      "ebitda": 85,
+      "ebitdaMarginPct": 4.8,
+      "pat": 39,
+      "patMarginPct": 2.21
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 1749,
+      "ebitda": 4,
+      "ebitdaMarginPct": 0.2,
+      "pat": -478,
+      "patMarginPct": -27.33
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 2092,
+      "ebitda": 67,
+      "ebitdaMarginPct": 3.2,
+      "pat": 2,
+      "patMarginPct": 0.1
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 1946,
+      "ebitda": 146,
+      "ebitdaMarginPct": 7.5,
+      "pat": 142,
+      "patMarginPct": 7.3
+    }
+  ],
+  "valuation": {
+    "peX": 16.9,
+    "pbX": 8.63,
+    "evEbitdaX": 21.4,
+    "cmp": 240,
+    "marketCapCr": 5605
+  },
+  "rocePct": 26.8,
+  "roePct": 40.1,
+  "shareholding": {
+    "promoterPct": 45.73,
+    "fiiPct": 6.96,
+    "diiPct": 3.19,
+    "publicPct": 44.12,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

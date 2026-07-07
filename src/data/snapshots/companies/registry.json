@@ -133,6 +133,7 @@
       },
       {
         "board": "US",
+        "cmp": 6.1,
         "confidence": "high",
         "ebitdaMarginPct": 65.4,
         "marketCapCr": 15600,
@@ -443,7 +444,7 @@
       },
       {
         "board": "BSE SME",
-        "cmp": 839,
+        "cmp": 835,
         "confidence": "high",
         "ebitdaMarginPct": 12.1,
         "marketCapCr": 1511,
@@ -488,7 +489,7 @@
         "type": "manufacturer"
       },
       {
-        "cmp": 322,
+        "cmp": 327.8,
         "confidence": "high",
         "ebitdaMarginPct": 21.4,
         "marketCapCr": 2180,
@@ -900,7 +901,7 @@
       },
       {
         "board": "BSE SME",
-        "cmp": 48.9,
+        "cmp": 49,
         "confidence": "high",
         "ebitdaMarginPct": 55.8,
         "marketCapCr": 64.9,

@@ -1,0 +1,92 @@
+{
+  "slug": "emmvee-photovoltaic",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 555,
+      "ebitda": 104,
+      "ebitdaMarginPct": 18.7,
+      "pat": 13
+    },
+    {
+      "period": "FY23",
+      "revenue": 618,
+      "ebitda": 56,
+      "ebitdaMarginPct": 9.1,
+      "pat": 9
+    },
+    {
+      "period": "FY24",
+      "revenue": 952,
+      "ebitda": 120,
+      "ebitdaMarginPct": 12.6,
+      "pat": 29
+    },
+    {
+      "period": "FY25",
+      "revenue": 2336,
+      "ebitda": 722,
+      "ebitdaMarginPct": 30.9,
+      "pat": 369
+    },
+    {
+      "period": "FY26",
+      "revenue": 5050,
+      "ebitda": 1732.15,
+      "ebitdaMarginPct": 34.3,
+      "pat": 1082,
+      "epsRs": 15.62
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY26",
+      "revenue": 1028,
+      "ebitda": 350,
+      "ebitdaMarginPct": 34,
+      "pat": 188,
+      "patMarginPct": 18.29
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 1131,
+      "ebitda": 399,
+      "ebitdaMarginPct": 35.3,
+      "pat": 238,
+      "patMarginPct": 21.04
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 1152,
+      "ebitda": 413,
+      "ebitdaMarginPct": 35.9,
+      "pat": 264,
+      "patMarginPct": 22.92
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 1739,
+      "ebitda": 571,
+      "ebitdaMarginPct": 32.8,
+      "pat": 392,
+      "patMarginPct": 22.54
+    }
+  ],
+  "valuation": {
+    "peX": 21,
+    "pbX": 6.1,
+    "evEbitdaX": 13.3,
+    "cmp": 328,
+    "marketCapCr": 22725
+  },
+  "rocePct": 44.8,
+  "roePct": 51.1,
+  "shareholding": {
+    "promoterPct": 80.03,
+    "fiiPct": 2.45,
+    "diiPct": 12.28,
+    "publicPct": 5.24,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

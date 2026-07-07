@@ -1,0 +1,112 @@
+{
+  "slug": "shakti-pumps",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 1179,
+      "ebitda": 110,
+      "ebitdaMarginPct": 9.3,
+      "pat": 65,
+      "epsRs": 5.88
+    },
+    {
+      "period": "FY23",
+      "revenue": 968,
+      "ebitda": 67,
+      "ebitdaMarginPct": 6.9,
+      "pat": 24,
+      "epsRs": 2.19
+    },
+    {
+      "period": "FY24",
+      "revenue": 1371,
+      "ebitda": 225,
+      "ebitdaMarginPct": 16.4,
+      "pat": 142,
+      "epsRs": 11.79
+    },
+    {
+      "period": "FY25",
+      "revenue": 2516,
+      "ebitda": 603,
+      "ebitdaMarginPct": 24,
+      "pat": 408,
+      "epsRs": 33.97
+    },
+    {
+      "period": "FY26",
+      "revenue": 2698,
+      "ebitda": 420.89,
+      "ebitdaMarginPct": 15.6,
+      "pat": 258,
+      "epsRs": 20.87
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 649,
+      "ebitda": 154,
+      "ebitdaMarginPct": 23.7,
+      "pat": 104,
+      "patMarginPct": 16.02
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 665,
+      "ebitda": 164,
+      "ebitdaMarginPct": 24.7,
+      "pat": 110,
+      "patMarginPct": 16.54
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 622,
+      "ebitda": 144,
+      "ebitdaMarginPct": 23.2,
+      "pat": 97,
+      "patMarginPct": 15.59
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 666,
+      "ebitda": 136,
+      "ebitdaMarginPct": 20.4,
+      "pat": 91,
+      "patMarginPct": 13.66
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 551,
+      "ebitda": 59,
+      "ebitdaMarginPct": 10.7,
+      "pat": 32,
+      "patMarginPct": 5.81
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 858,
+      "ebitda": 83,
+      "ebitdaMarginPct": 9.7,
+      "pat": 38,
+      "patMarginPct": 4.43
+    }
+  ],
+  "valuation": {
+    "peX": 28.5,
+    "pbX": 4.32,
+    "evEbitdaX": 18.6,
+    "cmp": 596,
+    "marketCapCr": 7350
+  },
+  "rocePct": 23.7,
+  "roePct": 18,
+  "shareholding": {
+    "promoterPct": 50.36,
+    "fiiPct": 4.83,
+    "diiPct": 4.97,
+    "publicPct": 39.84,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

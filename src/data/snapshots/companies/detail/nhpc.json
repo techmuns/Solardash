@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "NHPC",
   "data": {
+    "annual": [
+      {
+        "ebitda": 4014,
+        "ebitdaMarginPct": 43.9,
+        "epsRs": 3.51,
+        "pat": 3774,
+        "period": "FY22",
+        "revenue": 9144
+      },
+      {
+        "ebitda": 6184,
+        "ebitdaMarginPct": 58.3,
+        "epsRs": 3.89,
+        "pat": 4261,
+        "period": "FY23",
+        "revenue": 10607
+      },
+      {
+        "ebitda": 4941,
+        "ebitdaMarginPct": 51.3,
+        "epsRs": 3.58,
+        "pat": 4000,
+        "period": "FY24",
+        "revenue": 9631
+      },
+      {
+        "ebitda": 5418,
+        "ebitdaMarginPct": 52.2,
+        "epsRs": 2.99,
+        "pat": 3412,
+        "period": "FY25",
+        "revenue": 10380
+      },
+      {
+        "ebitda": 5238.37,
+        "ebitdaMarginPct": 45.1,
+        "epsRs": 3.75,
+        "pat": 4220,
+        "period": "FY26",
+        "revenue": 11615
+      }
+    ],
     "cmp": 78.9,
     "concall": {
       "date": "2026-05-18",
@@ -22,20 +64,82 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 45.1,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 79255,
     "name": "NHPC",
     "patFy26Cr": 4220,
     "peX": 21,
+    "quarterly": [
+      {
+        "ebitda": 1015,
+        "ebitdaMarginPct": 44.4,
+        "pat": 330,
+        "patMarginPct": 14.43,
+        "period": "Q3FY25",
+        "revenue": 2287
+      },
+      {
+        "ebitda": 1204,
+        "ebitdaMarginPct": 51.3,
+        "pat": 920,
+        "patMarginPct": 39.2,
+        "period": "Q4FY25",
+        "revenue": 2347
+      },
+      {
+        "ebitda": 1803,
+        "ebitdaMarginPct": 56.1,
+        "pat": 1131,
+        "patMarginPct": 35.19,
+        "period": "Q1FY26",
+        "revenue": 3214
+      },
+      {
+        "ebitda": 2026,
+        "ebitdaMarginPct": 60.2,
+        "pat": 1219,
+        "patMarginPct": 36.23,
+        "period": "Q2FY26",
+        "revenue": 3365
+      },
+      {
+        "ebitda": 211,
+        "ebitdaMarginPct": 9.5,
+        "pat": 321,
+        "patMarginPct": 14.45,
+        "period": "Q3FY26",
+        "revenue": 2221
+      },
+      {
+        "ebitda": 636,
+        "ebitdaMarginPct": 22.6,
+        "pat": 1549,
+        "patMarginPct": 55.01,
+        "period": "Q4FY26",
+        "revenue": 2816
+      }
+    ],
     "revenueFy26Cr": 11615,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 10.78,
+      "fiiPct": 10.34,
+      "promoterPct": 67.4,
+      "publicPct": 11.49
+    },
     "slug": "nhpc",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "NHPC",
-    "type": "utility"
+    "type": "utility",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 1.92,
+      "peX": 21
+    }
   },
   "dataset": "detail/nhpc",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

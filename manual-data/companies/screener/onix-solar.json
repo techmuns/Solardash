@@ -1,0 +1,40 @@
+{
+  "slug": "onix-solar",
+  "annual": [
+    {
+      "period": "FY25",
+      "revenue": 29,
+      "ebitda": 1,
+      "ebitdaMarginPct": 4,
+      "pat": 1.45
+    },
+    {
+      "period": "FY26",
+      "revenue": 241,
+      "ebitda": 60.25,
+      "ebitdaMarginPct": 25,
+      "pat": 52.5
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q4FY26",
+      "revenue": 77.18,
+      "pat": 28.1,
+      "patMarginPct": 36.41
+    }
+  ],
+  "valuation": {
+    "peX": 61.5,
+    "pbX": 3.15,
+    "cmp": 670,
+    "marketCapCr": 2470
+  },
+  "shareholding": {
+    "promoterPct": 56.44,
+    "diiPct": 0.84,
+    "publicPct": 42.73,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

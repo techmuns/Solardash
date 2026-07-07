@@ -3,6 +3,36 @@
   "cadence": "quarterly",
   "coverage": "K2 Infragen",
   "data": {
+    "annual": [
+      {
+        "ebitda": 19,
+        "ebitdaMarginPct": 29,
+        "pat": 11,
+        "period": "FY23",
+        "revenue": 67
+      },
+      {
+        "ebitda": 21,
+        "ebitdaMarginPct": 19,
+        "pat": 12,
+        "period": "FY24",
+        "revenue": 109
+      },
+      {
+        "ebitda": 19,
+        "ebitdaMarginPct": 13,
+        "pat": 12,
+        "period": "FY25",
+        "revenue": 147
+      },
+      {
+        "ebitda": 22.9,
+        "ebitdaMarginPct": 12.4,
+        "pat": 13.3,
+        "period": "FY26",
+        "revenue": 184.7
+      }
+    ],
     "board": "NSE SME",
     "cmp": 62,
     "concall": {
@@ -22,21 +52,51 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 12.4,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 78.2,
     "name": "K2 Infragen",
     "orderBookCr": 424,
     "patFy26Cr": 13.3,
     "peX": 5.9,
+    "quarterly": [
+      {
+        "ebitda": 14,
+        "ebitdaMarginPct": 15,
+        "pat": 7,
+        "patMarginPct": 7.69,
+        "period": "H1FY26",
+        "revenue": 91
+      },
+      {
+        "ebitda": 9,
+        "ebitdaMarginPct": 10,
+        "pat": 6,
+        "patMarginPct": 6.38,
+        "period": "H2FY26",
+        "revenue": 94
+      }
+    ],
     "revenueFy26Cr": 184.7,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0,
+      "fiiPct": 0.85,
+      "promoterPct": 40.7,
+      "publicPct": 58.45
+    },
     "slug": "k2-infragen",
     "sourceNote": "NSE Emerge (SME)",
     "tickerNse": "K2INFRA",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 0.87,
+      "peX": 5.9
+    }
   },
   "dataset": "detail/k2-infragen",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

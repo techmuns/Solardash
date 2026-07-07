@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Sahaj Solar",
   "data": {
+    "annual": [
+      {
+        "ebitda": 4,
+        "ebitdaMarginPct": 6,
+        "epsRs": 0.98,
+        "pat": 1,
+        "period": "FY22",
+        "revenue": 67
+      },
+      {
+        "ebitda": 11,
+        "ebitdaMarginPct": 5.9,
+        "epsRs": 4.04,
+        "pat": 6,
+        "period": "FY23",
+        "revenue": 185
+      },
+      {
+        "ebitda": 24,
+        "ebitdaMarginPct": 11.9,
+        "epsRs": 8.17,
+        "pat": 13,
+        "period": "FY24",
+        "revenue": 201
+      },
+      {
+        "ebitda": 42,
+        "ebitdaMarginPct": 12.7,
+        "epsRs": 12.52,
+        "pat": 28,
+        "period": "FY25",
+        "revenue": 330
+      },
+      {
+        "ebitda": 51.96,
+        "ebitdaMarginPct": 12.4,
+        "epsRs": 13.46,
+        "pat": 30,
+        "period": "FY26",
+        "revenue": 419
+      }
+    ],
     "board": "NSE SME",
     "cmp": 124,
     "concall": {
@@ -24,22 +66,68 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 12.4,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 273,
     "moduleGw": 0.85,
     "name": "Sahaj Solar",
     "orderBookCr": 402,
     "patFy26Cr": 30,
     "peX": 9.2,
+    "quarterly": [
+      {
+        "ebitda": 8,
+        "ebitdaMarginPct": 8.2,
+        "pat": 5,
+        "patMarginPct": 5.1,
+        "period": "H1FY25",
+        "revenue": 98
+      },
+      {
+        "ebitda": 34,
+        "ebitdaMarginPct": 14.7,
+        "pat": 23,
+        "patMarginPct": 9.91,
+        "period": "H2FY25",
+        "revenue": 232
+      },
+      {
+        "ebitda": 11,
+        "ebitdaMarginPct": 9.9,
+        "pat": 5,
+        "patMarginPct": 4.5,
+        "period": "H1FY26",
+        "revenue": 111
+      },
+      {
+        "ebitda": 41,
+        "ebitdaMarginPct": 13.3,
+        "pat": 25,
+        "patMarginPct": 8.12,
+        "period": "H2FY26",
+        "revenue": 308
+      }
+    ],
     "revenueFy26Cr": 419,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 1.12,
+      "fiiPct": 0.01,
+      "promoterPct": 71.28,
+      "publicPct": 27.59
+    },
     "slug": "sahaj-solar",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SAHAJSOLAR",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 2,
+      "peX": 9.2
+    }
   },
   "dataset": "detail/sahaj-solar",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

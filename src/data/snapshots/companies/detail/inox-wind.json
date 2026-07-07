@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Inox Wind",
   "data": {
+    "annual": [
+      {
+        "ebitda": -300,
+        "ebitdaMarginPct": -48,
+        "epsRs": -5.08,
+        "pat": -483,
+        "period": "FY22",
+        "revenue": 625
+      },
+      {
+        "ebitda": -261,
+        "ebitdaMarginPct": -35.4,
+        "epsRs": -4.81,
+        "pat": -671,
+        "period": "FY23",
+        "revenue": 737
+      },
+      {
+        "ebitda": 262,
+        "ebitdaMarginPct": 15,
+        "epsRs": -0.26,
+        "pat": -48,
+        "period": "FY24",
+        "revenue": 1746
+      },
+      {
+        "ebitda": 758,
+        "ebitdaMarginPct": 21.3,
+        "epsRs": 3.23,
+        "pat": 438,
+        "period": "FY25",
+        "revenue": 3557
+      },
+      {
+        "ebitda": 892.59,
+        "ebitdaMarginPct": 20.3,
+        "epsRs": 2.34,
+        "pat": 449,
+        "period": "FY26",
+        "revenue": 4397
+      }
+    ],
     "cmp": 86.1,
     "concall": {
       "guidance": [
@@ -22,21 +64,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 20.3,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 14885,
     "name": "Inox Wind",
     "orderBookGw": 3.1,
     "patFy26Cr": 449,
     "peX": 36.8,
+    "quarterly": [
+      {
+        "ebitda": 204,
+        "ebitdaMarginPct": 22.4,
+        "pat": 110,
+        "patMarginPct": 12.07,
+        "period": "Q3FY25",
+        "revenue": 911
+      },
+      {
+        "ebitda": 254,
+        "ebitdaMarginPct": 19.9,
+        "pat": 190,
+        "patMarginPct": 14.9,
+        "period": "Q4FY25",
+        "revenue": 1275
+      },
+      {
+        "ebitda": 184,
+        "ebitdaMarginPct": 22.3,
+        "pat": 97,
+        "patMarginPct": 11.74,
+        "period": "Q1FY26",
+        "revenue": 826
+      },
+      {
+        "ebitda": 228,
+        "ebitdaMarginPct": 20.4,
+        "pat": 121,
+        "patMarginPct": 10.81,
+        "period": "Q2FY26",
+        "revenue": 1119
+      },
+      {
+        "ebitda": 282,
+        "ebitdaMarginPct": 23.4,
+        "pat": 127,
+        "patMarginPct": 10.52,
+        "period": "Q3FY26",
+        "revenue": 1207
+      },
+      {
+        "ebitda": 200,
+        "ebitdaMarginPct": 16.1,
+        "pat": 106,
+        "patMarginPct": 8.52,
+        "period": "Q4FY26",
+        "revenue": 1244
+      }
+    ],
     "revenueFy26Cr": 4397,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 10.96,
+      "fiiPct": 14.6,
+      "promoterPct": 44.18,
+      "publicPct": 30.25
+    },
     "slug": "inox-wind",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "INOXWIND",
-    "type": "wind"
+    "type": "wind",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 2.33,
+      "peX": 36.8
+    }
   },
   "dataset": "detail/inox-wind",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

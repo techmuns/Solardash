@@ -1,0 +1,94 @@
+{
+  "slug": "kp-energy",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 250,
+      "ebitda": 34,
+      "ebitdaMarginPct": 13.6,
+      "pat": 18
+    },
+    {
+      "period": "FY23",
+      "revenue": 438,
+      "ebitda": 70,
+      "ebitdaMarginPct": 16,
+      "pat": 44
+    },
+    {
+      "period": "FY24",
+      "revenue": 471,
+      "ebitda": 85,
+      "ebitdaMarginPct": 18,
+      "pat": 58
+    },
+    {
+      "period": "FY25",
+      "revenue": 936,
+      "ebitda": 176,
+      "ebitdaMarginPct": 18.8,
+      "pat": 115
+    },
+    {
+      "period": "FY26",
+      "revenue": 1497,
+      "ebitda": 320.36,
+      "ebitdaMarginPct": 21.4,
+      "pat": 181
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q4FY25",
+      "revenue": 401,
+      "ebitda": 70,
+      "pat": 46,
+      "patMarginPct": 11.47
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 219,
+      "ebitda": 48,
+      "pat": 25,
+      "patMarginPct": 11.42
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 301,
+      "ebitda": 66,
+      "pat": 36,
+      "patMarginPct": 11.96
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 345,
+      "ebitda": 75,
+      "pat": 41,
+      "patMarginPct": 11.88
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 632,
+      "ebitda": 131,
+      "pat": 79,
+      "patMarginPct": 12.5
+    }
+  ],
+  "valuation": {
+    "peX": 12,
+    "pbX": 4.29,
+    "evEbitdaX": 8.1,
+    "cmp": 327.8,
+    "marketCapCr": 2180
+  },
+  "rocePct": 39,
+  "roePct": 43,
+  "shareholding": {
+    "promoterPct": 45.4,
+    "fiiPct": 0.7,
+    "diiPct": 1,
+    "publicPct": 52.9,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

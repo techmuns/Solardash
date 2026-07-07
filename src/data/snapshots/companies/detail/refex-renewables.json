@@ -3,23 +3,101 @@
   "cadence": "quarterly",
   "coverage": "Refex Renewables & Infrastructure",
   "data": {
+    "annual": [
+      {
+        "ebitda": -7,
+        "ebitdaMarginPct": -13.2,
+        "pat": -37,
+        "period": "FY22",
+        "revenue": 53
+      },
+      {
+        "ebitda": 9,
+        "ebitdaMarginPct": 11.8,
+        "pat": -30,
+        "period": "FY23",
+        "revenue": 76
+      },
+      {
+        "ebitda": 33,
+        "ebitdaMarginPct": 44,
+        "pat": -34,
+        "period": "FY24",
+        "revenue": 75
+      },
+      {
+        "ebitda": 32,
+        "ebitdaMarginPct": 47.8,
+        "pat": -36,
+        "period": "FY25",
+        "revenue": 67
+      },
+      {
+        "ebitda": 26.99,
+        "ebitdaMarginPct": 40.9,
+        "pat": -43,
+        "period": "FY26",
+        "revenue": 66
+      }
+    ],
     "board": "NSE",
     "cmp": 312,
     "confidence": "medium",
     "ebitdaMarginPct": 40.9,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 140,
     "name": "Refex Renewables & Infrastructure",
     "patFy26Cr": -43,
+    "quarterly": [
+      {
+        "ebitda": 9,
+        "pat": -8,
+        "patMarginPct": -47.06,
+        "period": "Q1FY26",
+        "revenue": 17
+      },
+      {
+        "ebitda": 3,
+        "pat": -14,
+        "patMarginPct": -100,
+        "period": "Q2FY26",
+        "revenue": 14
+      },
+      {
+        "ebitda": 6,
+        "pat": -11,
+        "patMarginPct": -68.75,
+        "period": "Q3FY26",
+        "revenue": 16
+      },
+      {
+        "ebitda": 9,
+        "pat": -10,
+        "patMarginPct": -52.63,
+        "period": "Q4FY26",
+        "revenue": 19
+      }
+    ],
     "revenueFy26Cr": 66,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0,
+      "fiiPct": 0,
+      "promoterPct": 74.9,
+      "publicPct": 25.1
+    },
     "slug": "refex-renewables",
     "sourceNote": "Market data (mid-2026)",
     "tickerNse": "REFEXRENEW",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": -1.7
+    }
   },
   "dataset": "detail/refex-renewables",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

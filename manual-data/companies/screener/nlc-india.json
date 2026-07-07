@@ -1,0 +1,112 @@
+{
+  "slug": "nlc-india",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 12070,
+      "ebitda": 3947,
+      "ebitdaMarginPct": 32.7,
+      "pat": 1116,
+      "epsRs": 7.88
+    },
+    {
+      "period": "FY23",
+      "revenue": 16165,
+      "ebitda": 5739,
+      "ebitdaMarginPct": 35.5,
+      "pat": 1426,
+      "epsRs": 10.07
+    },
+    {
+      "period": "FY24",
+      "revenue": 13001,
+      "ebitda": 3432,
+      "ebitdaMarginPct": 26.4,
+      "pat": 1868,
+      "epsRs": 13.37
+    },
+    {
+      "period": "FY25",
+      "revenue": 15322,
+      "ebitda": 4750,
+      "ebitdaMarginPct": 31,
+      "pat": 2714,
+      "epsRs": 18.9
+    },
+    {
+      "period": "FY26",
+      "revenue": 17490,
+      "ebitda": 5579.31,
+      "ebitdaMarginPct": 31.9,
+      "pat": 3769,
+      "epsRs": 25.4
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 4411,
+      "ebitda": 1037,
+      "ebitdaMarginPct": 23.5,
+      "pat": 696,
+      "patMarginPct": 15.78
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 3836,
+      "ebitda": 859,
+      "ebitdaMarginPct": 22.4,
+      "pat": 468,
+      "patMarginPct": 12.2
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 3826,
+      "ebitda": 934,
+      "ebitdaMarginPct": 24.4,
+      "pat": 839,
+      "patMarginPct": 21.93
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 4178,
+      "ebitda": 1400,
+      "ebitdaMarginPct": 33.5,
+      "pat": 725,
+      "patMarginPct": 17.35
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 4443,
+      "ebitda": 1342,
+      "ebitdaMarginPct": 30.2,
+      "pat": 724,
+      "patMarginPct": 16.3
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 5042,
+      "ebitda": 1775,
+      "ebitdaMarginPct": 35.2,
+      "pat": 1481,
+      "patMarginPct": 29.37
+    }
+  ],
+  "valuation": {
+    "peX": 11.9,
+    "pbX": 1.95,
+    "evEbitdaX": 11.2,
+    "cmp": 302,
+    "marketCapCr": 41911
+  },
+  "rocePct": 10.4,
+  "roePct": 17.5,
+  "shareholding": {
+    "promoterPct": 72.2,
+    "fiiPct": 3.61,
+    "diiPct": 13.97,
+    "publicPct": 10.22,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

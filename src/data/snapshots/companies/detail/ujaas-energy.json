@@ -3,23 +3,77 @@
   "cadence": "quarterly",
   "coverage": "Ujaas Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 11.83,
+        "ebitdaMarginPct": 43.9,
+        "pat": 8.85,
+        "period": "FY25",
+        "revenue": 26.94
+      },
+      {
+        "ebitda": 5.44,
+        "ebitdaMarginPct": 32.8,
+        "pat": 3.2,
+        "period": "FY26",
+        "revenue": 16.6
+      }
+    ],
     "cmp": 128,
     "confidence": "medium",
     "ebitdaMarginPct": 32.8,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 1707,
     "name": "Ujaas Energy",
     "patFy26Cr": 3.2,
     "peX": 540,
+    "quarterly": [
+      {
+        "pat": 2.49,
+        "patMarginPct": 93.96,
+        "period": "Q1FY26",
+        "revenue": 2.65
+      },
+      {
+        "pat": 0.1,
+        "patMarginPct": 2.06,
+        "period": "Q2FY26",
+        "revenue": 4.86
+      },
+      {
+        "pat": 0.16,
+        "patMarginPct": 4.58,
+        "period": "Q3FY26",
+        "revenue": 3.49
+      },
+      {
+        "pat": 0.42,
+        "patMarginPct": 7.45,
+        "period": "Q4FY26",
+        "revenue": 5.64
+      }
+    ],
     "revenueFy26Cr": 16.6,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0,
+      "fiiPct": 0,
+      "promoterPct": 74.96,
+      "publicPct": 25.03
+    },
     "slug": "ujaas-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "UEL",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 19.2,
+      "peX": 540
+    }
   },
   "dataset": "detail/ujaas-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

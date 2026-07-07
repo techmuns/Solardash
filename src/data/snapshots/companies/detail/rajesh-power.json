@@ -3,8 +3,50 @@
   "cadence": "quarterly",
   "coverage": "Rajesh Power Services",
   "data": {
+    "annual": [
+      {
+        "ebitda": 11,
+        "ebitdaMarginPct": 7.5,
+        "epsRs": 2.27,
+        "pat": 3,
+        "period": "FY22",
+        "revenue": 147
+      },
+      {
+        "ebitda": 14,
+        "ebitdaMarginPct": 6.8,
+        "epsRs": 4.44,
+        "pat": 7,
+        "period": "FY23",
+        "revenue": 207
+      },
+      {
+        "ebitda": 35,
+        "ebitdaMarginPct": 12.3,
+        "epsRs": 17.1,
+        "pat": 26,
+        "period": "FY24",
+        "revenue": 285
+      },
+      {
+        "ebitda": 125,
+        "ebitdaMarginPct": 11.7,
+        "epsRs": 48.48,
+        "pat": 87,
+        "period": "FY25",
+        "revenue": 1072
+      },
+      {
+        "ebitda": 196.99,
+        "ebitdaMarginPct": 12.1,
+        "epsRs": 76.38,
+        "pat": 143.2,
+        "period": "FY26",
+        "revenue": 1628
+      }
+    ],
     "board": "BSE SME",
-    "cmp": 839,
+    "cmp": 835,
     "concall": {
       "date": "2026-04-23",
       "guidance": [
@@ -23,20 +65,66 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 12.1,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 1511,
     "name": "Rajesh Power Services",
     "orderBookCr": 3326,
     "patFy26Cr": 143.2,
     "peX": 11,
+    "quarterly": [
+      {
+        "ebitda": 37,
+        "ebitdaMarginPct": 11.8,
+        "pat": 26,
+        "patMarginPct": 8.31,
+        "period": "H1FY25",
+        "revenue": 313
+      },
+      {
+        "ebitda": 87,
+        "ebitdaMarginPct": 11.5,
+        "pat": 60,
+        "patMarginPct": 7.91,
+        "period": "H2FY25",
+        "revenue": 759
+      },
+      {
+        "ebitda": 84,
+        "ebitdaMarginPct": 13.2,
+        "pat": 58,
+        "patMarginPct": 9.09,
+        "period": "H1FY26",
+        "revenue": 638
+      },
+      {
+        "ebitda": 113,
+        "ebitdaMarginPct": 11.4,
+        "pat": 79,
+        "patMarginPct": 7.98,
+        "period": "H2FY26",
+        "revenue": 990
+      }
+    ],
     "revenueFy26Cr": 1628,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 3.52,
+      "fiiPct": 0.68,
+      "promoterPct": 72.7,
+      "publicPct": 23.11
+    },
     "slug": "rajesh-power",
     "sourceNote": "BSE SME (maintained)",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 3.85,
+      "peX": 11
+    }
   },
   "dataset": "detail/rajesh-power",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

@@ -3,6 +3,43 @@
   "cadence": "quarterly",
   "coverage": "Madhav Infra Projects",
   "data": {
+    "annual": [
+      {
+        "ebitda": 51,
+        "ebitdaMarginPct": 11.1,
+        "pat": 6,
+        "period": "FY22",
+        "revenue": 460
+      },
+      {
+        "ebitda": 58,
+        "ebitdaMarginPct": 11.3,
+        "pat": 36,
+        "period": "FY23",
+        "revenue": 513
+      },
+      {
+        "ebitda": 58,
+        "ebitdaMarginPct": 12.6,
+        "pat": 23,
+        "period": "FY24",
+        "revenue": 460
+      },
+      {
+        "ebitda": 67,
+        "ebitdaMarginPct": 11,
+        "pat": 25,
+        "period": "FY25",
+        "revenue": 610
+      },
+      {
+        "ebitda": 65.76,
+        "ebitdaMarginPct": 13.1,
+        "pat": 27,
+        "period": "FY26",
+        "revenue": 502
+      }
+    ],
     "board": "BSE",
     "cmp": 8.5,
     "concall": {
@@ -21,21 +58,77 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 13.1,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 231,
     "name": "Madhav Infra Projects",
     "orderBookCr": 1120,
     "patFy26Cr": 27,
     "peX": 8.4,
+    "quarterly": [
+      {
+        "ebitda": 15,
+        "pat": 3,
+        "patMarginPct": 2.04,
+        "period": "Q3FY25",
+        "revenue": 147
+      },
+      {
+        "ebitda": 22,
+        "pat": 11,
+        "patMarginPct": 3.57,
+        "period": "Q4FY25",
+        "revenue": 308
+      },
+      {
+        "ebitda": 17,
+        "pat": 7,
+        "patMarginPct": 7.95,
+        "period": "Q1FY26",
+        "revenue": 88
+      },
+      {
+        "ebitda": 16,
+        "pat": 12,
+        "patMarginPct": 11.21,
+        "period": "Q2FY26",
+        "revenue": 107
+      },
+      {
+        "ebitda": 5,
+        "pat": -4,
+        "patMarginPct": -7.41,
+        "period": "Q3FY26",
+        "revenue": 54
+      },
+      {
+        "ebitda": 21,
+        "pat": 12,
+        "patMarginPct": 4.72,
+        "period": "Q4FY26",
+        "revenue": 254
+      }
+    ],
     "revenueFy26Cr": 502,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0,
+      "fiiPct": 0,
+      "promoterPct": 68.8,
+      "publicPct": 31.2
+    },
     "slug": "madhav-infra",
     "sourceNote": "Market data (mid-2026)",
     "tickerNse": "MADHAVIPL",
-    "type": "ipp"
+    "type": "ipp",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 1,
+      "peX": 8.4
+    }
   },
   "dataset": "detail/madhav-infra",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

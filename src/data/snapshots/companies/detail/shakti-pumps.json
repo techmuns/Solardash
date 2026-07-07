@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Shakti Pumps (India)",
   "data": {
+    "annual": [
+      {
+        "ebitda": 110,
+        "ebitdaMarginPct": 9.3,
+        "epsRs": 5.88,
+        "pat": 65,
+        "period": "FY22",
+        "revenue": 1179
+      },
+      {
+        "ebitda": 67,
+        "ebitdaMarginPct": 6.9,
+        "epsRs": 2.19,
+        "pat": 24,
+        "period": "FY23",
+        "revenue": 968
+      },
+      {
+        "ebitda": 225,
+        "ebitdaMarginPct": 16.4,
+        "epsRs": 11.79,
+        "pat": 142,
+        "period": "FY24",
+        "revenue": 1371
+      },
+      {
+        "ebitda": 603,
+        "ebitdaMarginPct": 24,
+        "epsRs": 33.97,
+        "pat": 408,
+        "period": "FY25",
+        "revenue": 2516
+      },
+      {
+        "ebitda": 420.89,
+        "ebitdaMarginPct": 15.6,
+        "epsRs": 20.87,
+        "pat": 258,
+        "period": "FY26",
+        "revenue": 2698
+      }
+    ],
     "cmp": 596,
     "concall": {
       "date": "2026-05-11",
@@ -23,21 +65,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 15.6,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 7350,
     "name": "Shakti Pumps (India)",
     "orderBookCr": 1500,
     "patFy26Cr": 258,
     "peX": 28.5,
+    "quarterly": [
+      {
+        "ebitda": 154,
+        "ebitdaMarginPct": 23.7,
+        "pat": 104,
+        "patMarginPct": 16.02,
+        "period": "Q3FY25",
+        "revenue": 649
+      },
+      {
+        "ebitda": 164,
+        "ebitdaMarginPct": 24.7,
+        "pat": 110,
+        "patMarginPct": 16.54,
+        "period": "Q4FY25",
+        "revenue": 665
+      },
+      {
+        "ebitda": 144,
+        "ebitdaMarginPct": 23.2,
+        "pat": 97,
+        "patMarginPct": 15.59,
+        "period": "Q1FY26",
+        "revenue": 622
+      },
+      {
+        "ebitda": 136,
+        "ebitdaMarginPct": 20.4,
+        "pat": 91,
+        "patMarginPct": 13.66,
+        "period": "Q2FY26",
+        "revenue": 666
+      },
+      {
+        "ebitda": 59,
+        "ebitdaMarginPct": 10.7,
+        "pat": 32,
+        "patMarginPct": 5.81,
+        "period": "Q3FY26",
+        "revenue": 551
+      },
+      {
+        "ebitda": 83,
+        "ebitdaMarginPct": 9.7,
+        "pat": 38,
+        "patMarginPct": 4.43,
+        "period": "Q4FY26",
+        "revenue": 858
+      }
+    ],
     "revenueFy26Cr": 2698,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 4.97,
+      "fiiPct": 4.83,
+      "promoterPct": 50.36,
+      "publicPct": 39.84
+    },
     "slug": "shakti-pumps",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SHAKTIPUMP",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 4.32,
+      "peX": 28.5
+    }
   },
   "dataset": "detail/shakti-pumps",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

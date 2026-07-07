@@ -3,6 +3,47 @@
   "cadence": "quarterly",
   "coverage": "Bondada Engineering",
   "data": {
+    "annual": [
+      {
+        "ebitda": 20,
+        "ebitdaMarginPct": 6,
+        "pat": 10,
+        "period": "FY22",
+        "revenue": 334
+      },
+      {
+        "ebitda": 31,
+        "ebitdaMarginPct": 8.4,
+        "epsRs": 2.25,
+        "pat": 18,
+        "period": "FY23",
+        "revenue": 371
+      },
+      {
+        "ebitda": 68,
+        "ebitdaMarginPct": 8.5,
+        "epsRs": 4.14,
+        "pat": 46,
+        "period": "FY24",
+        "revenue": 801
+      },
+      {
+        "ebitda": 175,
+        "ebitdaMarginPct": 11.1,
+        "epsRs": 10.17,
+        "pat": 115,
+        "period": "FY25",
+        "revenue": 1571
+      },
+      {
+        "ebitda": 326.95,
+        "ebitdaMarginPct": 11.5,
+        "epsRs": 18.23,
+        "pat": 211,
+        "period": "FY26",
+        "revenue": 2843
+      }
+    ],
     "cmp": 315,
     "concall": {
       "date": "2026-04-28",
@@ -23,21 +64,75 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 11.5,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 3513,
     "name": "Bondada Engineering",
     "orderBookCr": 7147,
     "patFy26Cr": 211,
     "peX": 17.3,
+    "quarterly": [
+      {
+        "ebitda": 38,
+        "ebitdaMarginPct": 10.1,
+        "pat": 25,
+        "patMarginPct": 6.65,
+        "period": "Q3FY25",
+        "revenue": 376
+      },
+      {
+        "ebitda": 82,
+        "ebitdaMarginPct": 11.5,
+        "pat": 56,
+        "patMarginPct": 7.84,
+        "period": "Q4FY25",
+        "revenue": 714
+      },
+      {
+        "ebitda": 78,
+        "ebitdaMarginPct": 11.8,
+        "pat": 52,
+        "patMarginPct": 7.89,
+        "period": "Q2FY26",
+        "revenue": 659
+      },
+      {
+        "ebitda": 85,
+        "ebitdaMarginPct": 11.9,
+        "pat": 54,
+        "patMarginPct": 7.58,
+        "period": "Q3FY26",
+        "revenue": 712
+      },
+      {
+        "ebitda": 96,
+        "ebitdaMarginPct": 10.5,
+        "pat": 63,
+        "patMarginPct": 6.89,
+        "period": "Q4FY26",
+        "revenue": 914
+      }
+    ],
     "revenueFy26Cr": 2843,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.14,
+      "fiiPct": 0.58,
+      "promoterPct": 61.57,
+      "publicPct": 37.72
+    },
     "slug": "bondada-engineering",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "BONDADA",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 5.06,
+      "peX": 17.3
+    }
   },
   "dataset": "detail/bondada-engineering",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

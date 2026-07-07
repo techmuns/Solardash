@@ -3,6 +3,43 @@
   "cadence": "quarterly",
   "coverage": "Inox Green Energy Services",
   "data": {
+    "annual": [
+      {
+        "ebitda": 82,
+        "ebitdaMarginPct": 47.7,
+        "pat": -93,
+        "period": "FY22",
+        "revenue": 172
+      },
+      {
+        "ebitda": 57,
+        "ebitdaMarginPct": 22.4,
+        "pat": -20,
+        "period": "FY23",
+        "revenue": 254
+      },
+      {
+        "ebitda": 75,
+        "ebitdaMarginPct": 33.5,
+        "pat": 28,
+        "period": "FY24",
+        "revenue": 224
+      },
+      {
+        "ebitda": 52,
+        "ebitdaMarginPct": 22,
+        "pat": 22,
+        "period": "FY25",
+        "revenue": 236
+      },
+      {
+        "ebitda": 23.04,
+        "ebitdaMarginPct": 8.2,
+        "pat": 103,
+        "period": "FY26",
+        "revenue": 281
+      }
+    ],
     "cmp": 205,
     "concall": {
       "date": "2026-05-29",
@@ -23,21 +60,63 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 8.2,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 8217,
     "name": "Inox Green Energy Services",
     "orderBookGw": 3.1,
     "patFy26Cr": 103,
     "peX": 79.6,
+    "quarterly": [
+      {
+        "ebitda": 6,
+        "pat": 22,
+        "patMarginPct": 39.29,
+        "period": "Q1FY26",
+        "revenue": 56
+      },
+      {
+        "ebitda": 9,
+        "pat": 28,
+        "patMarginPct": 32.56,
+        "period": "Q2FY26",
+        "revenue": 86
+      },
+      {
+        "ebitda": 19,
+        "pat": 25,
+        "patMarginPct": 32.05,
+        "period": "Q3FY26",
+        "revenue": 78
+      },
+      {
+        "ebitda": -3,
+        "pat": 28,
+        "patMarginPct": 40.58,
+        "period": "Q4FY26",
+        "revenue": 69
+      }
+    ],
     "revenueFy26Cr": 281,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 1.5,
+      "fiiPct": 8.7,
+      "promoterPct": 56.1,
+      "publicPct": 33.7
+    },
     "slug": "inox-green",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "INOXGREEN",
-    "type": "wind"
+    "type": "wind",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 4.8,
+      "peX": 79.6
+    }
   },
   "dataset": "detail/inox-green",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

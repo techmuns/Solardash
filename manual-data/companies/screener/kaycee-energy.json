@@ -1,0 +1,65 @@
+{
+  "slug": "kaycee-energy",
+  "annual": [
+    {
+      "period": "FY23",
+      "revenue": 61,
+      "ebitda": 10,
+      "ebitdaMarginPct": 17,
+      "pat": 6
+    },
+    {
+      "period": "FY24",
+      "revenue": 64,
+      "ebitda": 13,
+      "ebitdaMarginPct": 20,
+      "pat": 7
+    },
+    {
+      "period": "FY25",
+      "revenue": 153,
+      "ebitda": 27,
+      "ebitdaMarginPct": 18,
+      "pat": 17
+    },
+    {
+      "period": "FY26",
+      "revenue": 164,
+      "ebitda": 31.98,
+      "ebitdaMarginPct": 19.5,
+      "pat": 18.8
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY26",
+      "revenue": 84,
+      "ebitda": 16.1,
+      "ebitdaMarginPct": 19.2,
+      "pat": 9.2,
+      "patMarginPct": 10.95
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 81.6,
+      "ebitda": 17,
+      "ebitdaMarginPct": 20.8,
+      "pat": 9.6,
+      "patMarginPct": 11.76
+    }
+  ],
+  "valuation": {
+    "peX": 5.9,
+    "pbX": 1.07,
+    "cmp": 90.2,
+    "marketCapCr": 110
+  },
+  "shareholding": {
+    "promoterPct": 63.41,
+    "fiiPct": 0,
+    "diiPct": 1.81,
+    "publicPct": 34.78,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

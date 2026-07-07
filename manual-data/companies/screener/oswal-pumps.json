@@ -1,0 +1,109 @@
+{
+  "slug": "oswal-pumps",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 360,
+      "ebitda": 39,
+      "ebitdaMarginPct": 10.8,
+      "pat": 17
+    },
+    {
+      "period": "FY23",
+      "revenue": 385,
+      "ebitda": 58,
+      "ebitdaMarginPct": 15.1,
+      "pat": 34
+    },
+    {
+      "period": "FY24",
+      "revenue": 759,
+      "ebitda": 153,
+      "ebitdaMarginPct": 20.2,
+      "pat": 98
+    },
+    {
+      "period": "FY25",
+      "revenue": 1430,
+      "ebitda": 420,
+      "ebitdaMarginPct": 29.4,
+      "pat": 281,
+      "epsRs": 28.21
+    },
+    {
+      "period": "FY26",
+      "revenue": 2064,
+      "ebitda": 513.94,
+      "ebitdaMarginPct": 24.9,
+      "pat": 376,
+      "epsRs": 33.01
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 380,
+      "ebitda": 118,
+      "ebitdaMarginPct": 31.1,
+      "pat": 80,
+      "patMarginPct": 21.05
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 365,
+      "ebitda": 99,
+      "ebitdaMarginPct": 27.1,
+      "pat": 64,
+      "patMarginPct": 17.53
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 514,
+      "ebitda": 141,
+      "ebitdaMarginPct": 27.4,
+      "pat": 95,
+      "patMarginPct": 18.48
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 540,
+      "ebitda": 128,
+      "ebitdaMarginPct": 23.7,
+      "pat": 98,
+      "patMarginPct": 18.15
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 501,
+      "ebitda": 127,
+      "ebitdaMarginPct": 25.3,
+      "pat": 92,
+      "patMarginPct": 18.36
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 510,
+      "ebitda": 118,
+      "ebitdaMarginPct": 23.1,
+      "pat": 93,
+      "patMarginPct": 18.24
+    }
+  ],
+  "valuation": {
+    "peX": 12.8,
+    "pbX": 2.86,
+    "evEbitdaX": 9.8,
+    "cmp": 424,
+    "marketCapCr": 4833
+  },
+  "rocePct": 38.2,
+  "roePct": 35.2,
+  "shareholding": {
+    "promoterPct": 75.67,
+    "fiiPct": 0.85,
+    "diiPct": 6.6,
+    "publicPct": 16.88,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

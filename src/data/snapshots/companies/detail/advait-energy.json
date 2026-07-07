@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Advait Energy Transitions",
   "data": {
+    "annual": [
+      {
+        "ebitda": 10,
+        "ebitdaMarginPct": 12.7,
+        "epsRs": 5.22,
+        "pat": 5,
+        "period": "FY22",
+        "revenue": 79
+      },
+      {
+        "ebitda": 17,
+        "ebitdaMarginPct": 16.3,
+        "epsRs": 8.27,
+        "pat": 8,
+        "period": "FY23",
+        "revenue": 104
+      },
+      {
+        "ebitda": 36,
+        "ebitdaMarginPct": 17.2,
+        "epsRs": 21.45,
+        "pat": 22,
+        "period": "FY24",
+        "revenue": 209
+      },
+      {
+        "ebitda": 52,
+        "ebitdaMarginPct": 13,
+        "epsRs": 28.6,
+        "pat": 32,
+        "period": "FY25",
+        "revenue": 399
+      },
+      {
+        "ebitda": 83.66,
+        "ebitdaMarginPct": 11.7,
+        "epsRs": 47.26,
+        "pat": 55,
+        "period": "FY26",
+        "revenue": 715
+      }
+    ],
     "board": "NSE",
     "cmp": 2127,
     "concall": {
@@ -24,21 +66,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 11.7,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 2324,
     "name": "Advait Energy Transitions",
     "orderBookCr": 1304,
     "patFy26Cr": 55,
     "peX": 44.9,
+    "quarterly": [
+      {
+        "ebitda": 15,
+        "ebitdaMarginPct": 15.3,
+        "pat": 10,
+        "patMarginPct": 10.2,
+        "period": "Q3FY25",
+        "revenue": 98
+      },
+      {
+        "ebitda": 19,
+        "ebitdaMarginPct": 9.8,
+        "pat": 13,
+        "patMarginPct": 6.74,
+        "period": "Q4FY25",
+        "revenue": 193
+      },
+      {
+        "ebitda": 14,
+        "ebitdaMarginPct": 11.9,
+        "pat": 9,
+        "patMarginPct": 7.63,
+        "period": "Q1FY26",
+        "revenue": 118
+      },
+      {
+        "ebitda": 17,
+        "ebitdaMarginPct": 10.8,
+        "pat": 10,
+        "patMarginPct": 6.37,
+        "period": "Q2FY26",
+        "revenue": 157
+      },
+      {
+        "ebitda": 24,
+        "ebitdaMarginPct": 11.4,
+        "pat": 17,
+        "patMarginPct": 8.06,
+        "period": "Q3FY26",
+        "revenue": 211
+      },
+      {
+        "ebitda": 29,
+        "ebitdaMarginPct": 12.7,
+        "pat": 19,
+        "patMarginPct": 8.33,
+        "period": "Q4FY26",
+        "revenue": 228
+      }
+    ],
     "revenueFy26Cr": 715,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.13,
+      "fiiPct": 0.21,
+      "promoterPct": 66.8,
+      "publicPct": 32.84
+    },
     "slug": "advait-energy",
     "sourceNote": "Market data (mid-2026)",
     "tickerNse": "ADVAIT",
-    "type": "epc"
+    "type": "epc",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 8.37,
+      "peX": 44.9
+    }
   },
   "dataset": "detail/advait-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

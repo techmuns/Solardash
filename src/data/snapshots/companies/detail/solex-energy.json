@@ -3,6 +3,40 @@
   "cadence": "quarterly",
   "coverage": "Solex Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 11,
+        "ebitdaMarginPct": 6.8,
+        "epsRs": 2.71,
+        "pat": 3,
+        "period": "FY23",
+        "revenue": 162
+      },
+      {
+        "ebitda": 28,
+        "ebitdaMarginPct": 7.7,
+        "epsRs": 8.73,
+        "pat": 9,
+        "period": "FY24",
+        "revenue": 366
+      },
+      {
+        "ebitda": 73,
+        "ebitdaMarginPct": 11,
+        "epsRs": 38.91,
+        "pat": 43,
+        "period": "FY25",
+        "revenue": 662
+      },
+      {
+        "ebitda": 184.79,
+        "ebitdaMarginPct": 11.4,
+        "epsRs": 88.88,
+        "pat": 98,
+        "period": "FY26",
+        "revenue": 1621
+      }
+    ],
     "cellGw": 1,
     "cmp": 1006,
     "concall": {
@@ -24,22 +58,68 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 11.4,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 1087,
     "moduleGw": 4,
     "name": "Solex Energy",
     "orderBookCr": 3400,
     "patFy26Cr": 98,
     "peX": 11.4,
+    "quarterly": [
+      {
+        "ebitda": 41,
+        "ebitdaMarginPct": 15.8,
+        "pat": 25,
+        "patMarginPct": 9.62,
+        "period": "Q1FY26",
+        "revenue": 260
+      },
+      {
+        "ebitda": 19,
+        "ebitdaMarginPct": 12.3,
+        "pat": 6,
+        "patMarginPct": 3.87,
+        "period": "Q2FY26",
+        "revenue": 155
+      },
+      {
+        "ebitda": 26,
+        "ebitdaMarginPct": 8.2,
+        "pat": 9,
+        "patMarginPct": 2.83,
+        "period": "Q3FY26",
+        "revenue": 318
+      },
+      {
+        "ebitda": 98,
+        "ebitdaMarginPct": 11.1,
+        "pat": 59,
+        "patMarginPct": 6.66,
+        "period": "Q4FY26",
+        "revenue": 886
+      }
+    ],
     "revenueFy26Cr": 1621,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.81,
+      "fiiPct": 0.13,
+      "promoterPct": 66.15,
+      "publicPct": 32.91
+    },
     "slug": "solex-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SOLEX",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 4.3,
+      "peX": 11.4
+    }
   },
   "dataset": "detail/solex-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

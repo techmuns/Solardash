@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Swelect Energy Systems",
   "data": {
+    "annual": [
+      {
+        "ebitda": 70,
+        "ebitdaMarginPct": 17.9,
+        "epsRs": 21.37,
+        "pat": 32,
+        "period": "FY22",
+        "revenue": 391
+      },
+      {
+        "ebitda": 62,
+        "ebitdaMarginPct": 25.2,
+        "epsRs": 3.65,
+        "pat": 6,
+        "period": "FY23",
+        "revenue": 246
+      },
+      {
+        "ebitda": 84,
+        "ebitdaMarginPct": 34.6,
+        "epsRs": 40.88,
+        "pat": 63,
+        "period": "FY24",
+        "revenue": 243
+      },
+      {
+        "ebitda": 97,
+        "ebitdaMarginPct": 15.6,
+        "epsRs": 8.31,
+        "pat": 14,
+        "period": "FY25",
+        "revenue": 622
+      },
+      {
+        "ebitda": 151.11,
+        "ebitdaMarginPct": 23,
+        "epsRs": 36.39,
+        "pat": 58,
+        "period": "FY26",
+        "revenue": 657
+      }
+    ],
     "cmp": 636,
     "concall": {
       "date": "2026-05-07",
@@ -23,21 +65,67 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 23,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 963,
     "moduleGw": 1,
     "name": "Swelect Energy Systems",
     "patFy26Cr": 58,
     "peX": 17,
+    "quarterly": [
+      {
+        "ebitda": 42,
+        "ebitdaMarginPct": 23.7,
+        "pat": 21,
+        "patMarginPct": 11.86,
+        "period": "Q1FY26",
+        "revenue": 177
+      },
+      {
+        "ebitda": 41,
+        "ebitdaMarginPct": 29.5,
+        "pat": 16,
+        "patMarginPct": 11.51,
+        "period": "Q2FY26",
+        "revenue": 139
+      },
+      {
+        "ebitda": 33,
+        "ebitdaMarginPct": 23.7,
+        "pat": 10,
+        "patMarginPct": 7.19,
+        "period": "Q3FY26",
+        "revenue": 139
+      },
+      {
+        "ebitda": 35,
+        "ebitdaMarginPct": 17.3,
+        "pat": 11,
+        "patMarginPct": 5.45,
+        "period": "Q4FY26",
+        "revenue": 202
+      }
+    ],
     "revenueFy26Cr": 657,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0,
+      "fiiPct": 0.23,
+      "promoterPct": 56.36,
+      "publicPct": 43.4
+    },
     "slug": "swelect-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SWELECTES",
-    "type": "integrated"
+    "type": "integrated",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 1,
+      "peX": 17
+    }
   },
   "dataset": "detail/swelect-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

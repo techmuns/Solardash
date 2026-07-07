@@ -1,0 +1,63 @@
+{
+  "slug": "sungarner-energies",
+  "annual": [
+    {
+      "period": "FY23",
+      "revenue": 17.32,
+      "ebitda": 1.25,
+      "ebitdaMarginPct": 7.22,
+      "pat": 0.74
+    },
+    {
+      "period": "FY24",
+      "revenue": 17.49,
+      "ebitda": 1.93,
+      "ebitdaMarginPct": 11.03,
+      "pat": 1.04
+    },
+    {
+      "period": "FY25",
+      "revenue": 27.84,
+      "ebitda": 3.3,
+      "ebitdaMarginPct": 11.85,
+      "pat": 1.34
+    },
+    {
+      "period": "FY26",
+      "revenue": 71.9,
+      "ebitda": 7.69,
+      "ebitdaMarginPct": 10.7,
+      "pat": 4.8
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY26",
+      "revenue": 23.43,
+      "ebitda": 2.62,
+      "ebitdaMarginPct": 11.18,
+      "pat": 1.3,
+      "patMarginPct": 5.55
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 48.43,
+      "ebitda": 5.06,
+      "ebitdaMarginPct": 10.45,
+      "pat": 3.45,
+      "patMarginPct": 7.12
+    }
+  ],
+  "valuation": {
+    "peX": 9.5,
+    "pbX": 2.89,
+    "cmp": 195,
+    "marketCapCr": 45.3
+  },
+  "shareholding": {
+    "promoterPct": 62,
+    "publicPct": 38,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

@@ -3,7 +3,44 @@
   "cadence": "quarterly",
   "coverage": "K.P. Energy",
   "data": {
-    "cmp": 322,
+    "annual": [
+      {
+        "ebitda": 34,
+        "ebitdaMarginPct": 13.6,
+        "pat": 18,
+        "period": "FY22",
+        "revenue": 250
+      },
+      {
+        "ebitda": 70,
+        "ebitdaMarginPct": 16,
+        "pat": 44,
+        "period": "FY23",
+        "revenue": 438
+      },
+      {
+        "ebitda": 85,
+        "ebitdaMarginPct": 18,
+        "pat": 58,
+        "period": "FY24",
+        "revenue": 471
+      },
+      {
+        "ebitda": 176,
+        "ebitdaMarginPct": 18.8,
+        "pat": 115,
+        "period": "FY25",
+        "revenue": 936
+      },
+      {
+        "ebitda": 320.36,
+        "ebitdaMarginPct": 21.4,
+        "pat": 181,
+        "period": "FY26",
+        "revenue": 1497
+      }
+    ],
+    "cmp": 327.8,
     "concall": {
       "date": "2026-05-12",
       "guidance": [
@@ -22,22 +59,71 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 21.4,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 2180,
     "name": "K.P. Energy",
     "orderBookCr": 3086,
     "orderBookGw": 2,
     "patFy26Cr": 181,
     "peX": 12,
+    "quarterly": [
+      {
+        "ebitda": 70,
+        "pat": 46,
+        "patMarginPct": 11.47,
+        "period": "Q4FY25",
+        "revenue": 401
+      },
+      {
+        "ebitda": 48,
+        "pat": 25,
+        "patMarginPct": 11.42,
+        "period": "Q1FY26",
+        "revenue": 219
+      },
+      {
+        "ebitda": 66,
+        "pat": 36,
+        "patMarginPct": 11.96,
+        "period": "Q2FY26",
+        "revenue": 301
+      },
+      {
+        "ebitda": 75,
+        "pat": 41,
+        "patMarginPct": 11.88,
+        "period": "Q3FY26",
+        "revenue": 345
+      },
+      {
+        "ebitda": 131,
+        "pat": 79,
+        "patMarginPct": 12.5,
+        "period": "Q4FY26",
+        "revenue": 632
+      }
+    ],
     "revenueFy26Cr": 1497,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 1,
+      "fiiPct": 0.7,
+      "promoterPct": 45.4,
+      "publicPct": 52.9
+    },
     "slug": "kp-energy",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "KPEL",
-    "type": "wind"
+    "type": "wind",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 4.29,
+      "peX": 12
+    }
   },
   "dataset": "detail/kp-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

@@ -1,0 +1,77 @@
+{
+  "slug": "renew-energy",
+  "annual": [
+    {
+      "period": "FY23",
+      "revenue": 8931,
+      "ebitda": 6200,
+      "ebitdaMarginPct": 69.4,
+      "pat": -503
+    },
+    {
+      "period": "FY24",
+      "revenue": 9653,
+      "ebitda": 6922,
+      "ebitdaMarginPct": 71.7,
+      "pat": 415
+    },
+    {
+      "period": "FY25",
+      "revenue": 10907,
+      "ebitda": 7919,
+      "ebitdaMarginPct": 72.6,
+      "pat": 459
+    },
+    {
+      "period": "FY26",
+      "revenue": 15064,
+      "ebitda": 9851.86,
+      "ebitdaMarginPct": 65.4,
+      "pat": 1039
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q1FY26",
+      "revenue": 4118,
+      "ebitda": 2722,
+      "ebitdaMarginPct": 66.1,
+      "pat": 513,
+      "patMarginPct": 12.46
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 3856,
+      "ebitda": 2624,
+      "ebitdaMarginPct": 68,
+      "pat": 468,
+      "patMarginPct": 12.14
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 3137,
+      "ebitda": 2138,
+      "ebitdaMarginPct": 68.2,
+      "pat": -20,
+      "patMarginPct": -0.64
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 3955,
+      "ebitda": 2366,
+      "ebitdaMarginPct": 59.8,
+      "pat": 78,
+      "patMarginPct": 1.97
+    }
+  ],
+  "valuation": {
+    "peX": 15,
+    "cmp": 6.1,
+    "marketCapCr": 15600
+  },
+  "shareholding": {
+    "promoterPct": 19.4,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "inox-wind",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 625,
+      "ebitda": -300,
+      "ebitdaMarginPct": -48,
+      "pat": -483,
+      "epsRs": -5.08
+    },
+    {
+      "period": "FY23",
+      "revenue": 737,
+      "ebitda": -261,
+      "ebitdaMarginPct": -35.4,
+      "pat": -671,
+      "epsRs": -4.81
+    },
+    {
+      "period": "FY24",
+      "revenue": 1746,
+      "ebitda": 262,
+      "ebitdaMarginPct": 15,
+      "pat": -48,
+      "epsRs": -0.26
+    },
+    {
+      "period": "FY25",
+      "revenue": 3557,
+      "ebitda": 758,
+      "ebitdaMarginPct": 21.3,
+      "pat": 438,
+      "epsRs": 3.23
+    },
+    {
+      "period": "FY26",
+      "revenue": 4397,
+      "ebitda": 892.59,
+      "ebitdaMarginPct": 20.3,
+      "pat": 449,
+      "epsRs": 2.34
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "Q3FY25",
+      "revenue": 911,
+      "ebitda": 204,
+      "ebitdaMarginPct": 22.4,
+      "pat": 110,
+      "patMarginPct": 12.07
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 1275,
+      "ebitda": 254,
+      "ebitdaMarginPct": 19.9,
+      "pat": 190,
+      "patMarginPct": 14.9
+    },
+    {
+      "period": "Q1FY26",
+      "revenue": 826,
+      "ebitda": 184,
+      "ebitdaMarginPct": 22.3,
+      "pat": 97,
+      "patMarginPct": 11.74
+    },
+    {
+      "period": "Q2FY26",
+      "revenue": 1119,
+      "ebitda": 228,
+      "ebitdaMarginPct": 20.4,
+      "pat": 121,
+      "patMarginPct": 10.81
+    },
+    {
+      "period": "Q3FY26",
+      "revenue": 1207,
+      "ebitda": 282,
+      "ebitdaMarginPct": 23.4,
+      "pat": 127,
+      "patMarginPct": 10.52
+    },
+    {
+      "period": "Q4FY26",
+      "revenue": 1244,
+      "ebitda": 200,
+      "ebitdaMarginPct": 16.1,
+      "pat": 106,
+      "patMarginPct": 8.52
+    }
+  ],
+  "valuation": {
+    "peX": 36.8,
+    "pbX": 2.33,
+    "evEbitdaX": 14.8,
+    "cmp": 86.1,
+    "marketCapCr": 14885
+  },
+  "rocePct": 10.5,
+  "roePct": 7.09,
+  "shareholding": {
+    "promoterPct": 44.18,
+    "fiiPct": 14.6,
+    "diiPct": 10.96,
+    "publicPct": 30.25,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

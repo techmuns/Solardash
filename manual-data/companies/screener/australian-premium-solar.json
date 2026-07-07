@@ -1,0 +1,80 @@
+{
+  "slug": "australian-premium-solar",
+  "annual": [
+    {
+      "period": "FY24",
+      "revenue": 150,
+      "ebitda": 9,
+      "ebitdaMarginPct": 6,
+      "pat": 6,
+      "epsRs": 3.12
+    },
+    {
+      "period": "FY25",
+      "revenue": 439,
+      "ebitda": 57,
+      "ebitdaMarginPct": 13,
+      "pat": 40,
+      "epsRs": 20.31
+    },
+    {
+      "period": "FY26",
+      "revenue": 708,
+      "ebitda": 94.87,
+      "ebitdaMarginPct": 13.4,
+      "pat": 58,
+      "epsRs": 28.71
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY25",
+      "revenue": 164,
+      "ebitda": 19,
+      "ebitdaMarginPct": 11.6,
+      "pat": 13,
+      "patMarginPct": 7.93
+    },
+    {
+      "period": "H2FY25",
+      "revenue": 275,
+      "ebitda": 38,
+      "ebitdaMarginPct": 13.8,
+      "pat": 27,
+      "patMarginPct": 9.82
+    },
+    {
+      "period": "H1FY26",
+      "revenue": 302,
+      "ebitda": 43,
+      "ebitdaMarginPct": 14.2,
+      "pat": 29,
+      "patMarginPct": 9.6
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 405,
+      "ebitda": 52,
+      "ebitdaMarginPct": 12.8,
+      "pat": 29,
+      "patMarginPct": 7.16
+    }
+  ],
+  "valuation": {
+    "peX": 10.4,
+    "pbX": 3.6,
+    "evEbitdaX": 6.8,
+    "cmp": 297,
+    "marketCapCr": 599
+  },
+  "rocePct": 56.5,
+  "roePct": 45.9,
+  "shareholding": {
+    "promoterPct": 72.62,
+    "fiiPct": 0,
+    "diiPct": 0.46,
+    "publicPct": 26.93,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}

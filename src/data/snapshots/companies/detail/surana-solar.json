@@ -3,23 +3,82 @@
   "cadence": "quarterly",
   "coverage": "Surana Solar",
   "data": {
+    "annual": [
+      {
+        "ebitda": 1.38,
+        "ebitdaMarginPct": 3.27,
+        "pat": 2.28,
+        "period": "FY23",
+        "revenue": 42.18
+      },
+      {
+        "ebitda": 2.22,
+        "ebitdaMarginPct": 12.54,
+        "pat": -1.26,
+        "period": "FY24",
+        "revenue": 17.71
+      },
+      {
+        "ebitda": 0.56,
+        "ebitdaMarginPct": 1.44,
+        "pat": 0.06,
+        "period": "FY25",
+        "revenue": 38.8
+      },
+      {
+        "ebitda": -3.14,
+        "ebitdaMarginPct": -15.1,
+        "pat": 1.2,
+        "period": "FY26",
+        "revenue": 20.8
+      }
+    ],
     "cmp": 25.8,
     "confidence": "medium",
     "ebitdaMarginPct": -15.1,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 127,
     "moduleGw": 0.5,
     "name": "Surana Solar",
     "patFy26Cr": 1.2,
+    "quarterly": [
+      {
+        "ebitda": -3.98,
+        "ebitdaMarginPct": -85.2,
+        "pat": 0.82,
+        "patMarginPct": 17.56,
+        "period": "H1FY26",
+        "revenue": 4.67
+      },
+      {
+        "ebitda": 0.85,
+        "ebitdaMarginPct": 5.26,
+        "pat": 0.42,
+        "patMarginPct": 2.6,
+        "period": "H2FY26",
+        "revenue": 16.17
+      }
+    ],
     "revenueFy26Cr": 20.8,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.04,
+      "fiiPct": 0,
+      "promoterPct": 44.34,
+      "publicPct": 55.62
+    },
     "slug": "surana-solar",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SURANASOL",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 2.2
+    }
   },
   "dataset": "detail/surana-solar",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

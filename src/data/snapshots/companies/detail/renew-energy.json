@@ -3,7 +3,38 @@
   "cadence": "quarterly",
   "coverage": "ReNew Energy Global",
   "data": {
+    "annual": [
+      {
+        "ebitda": 6200,
+        "ebitdaMarginPct": 69.4,
+        "pat": -503,
+        "period": "FY23",
+        "revenue": 8931
+      },
+      {
+        "ebitda": 6922,
+        "ebitdaMarginPct": 71.7,
+        "pat": 415,
+        "period": "FY24",
+        "revenue": 9653
+      },
+      {
+        "ebitda": 7919,
+        "ebitdaMarginPct": 72.6,
+        "pat": 459,
+        "period": "FY25",
+        "revenue": 10907
+      },
+      {
+        "ebitda": 9851.86,
+        "ebitdaMarginPct": 65.4,
+        "pat": 1039,
+        "period": "FY26",
+        "revenue": 15064
+      }
+    ],
     "board": "US",
+    "cmp": 6.1,
     "concall": {
       "date": "2026-05-18",
       "guidance": [
@@ -23,20 +54,62 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 65.4,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 15600,
     "name": "ReNew Energy Global",
     "orderBookGw": 2.4,
     "patFy26Cr": 1039,
     "peX": 15,
+    "quarterly": [
+      {
+        "ebitda": 2722,
+        "ebitdaMarginPct": 66.1,
+        "pat": 513,
+        "patMarginPct": 12.46,
+        "period": "Q1FY26",
+        "revenue": 4118
+      },
+      {
+        "ebitda": 2624,
+        "ebitdaMarginPct": 68,
+        "pat": 468,
+        "patMarginPct": 12.14,
+        "period": "Q2FY26",
+        "revenue": 3856
+      },
+      {
+        "ebitda": 2138,
+        "ebitdaMarginPct": 68.2,
+        "pat": -20,
+        "patMarginPct": -0.64,
+        "period": "Q3FY26",
+        "revenue": 3137
+      },
+      {
+        "ebitda": 2366,
+        "ebitdaMarginPct": 59.8,
+        "pat": 78,
+        "patMarginPct": 1.97,
+        "period": "Q4FY26",
+        "revenue": 3955
+      }
+    ],
     "revenueFy26Cr": 15064,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "promoterPct": 19.4
+    },
     "slug": "renew-energy",
     "sourceNote": "Nasdaq: RNW (take-private ongoing)",
-    "type": "ipp"
+    "type": "ipp",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "peX": 15
+    }
   },
   "dataset": "detail/renew-energy",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

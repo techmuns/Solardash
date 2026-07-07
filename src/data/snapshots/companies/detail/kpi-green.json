@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "KPI Green Energy",
   "data": {
+    "annual": [
+      {
+        "ebitda": 109,
+        "ebitdaMarginPct": 47.4,
+        "epsRs": 2.66,
+        "pat": 43,
+        "period": "FY22",
+        "revenue": 230
+      },
+      {
+        "ebitda": 208,
+        "ebitdaMarginPct": 32.3,
+        "epsRs": 6.74,
+        "pat": 110,
+        "period": "FY23",
+        "revenue": 644
+      },
+      {
+        "ebitda": 337,
+        "ebitdaMarginPct": 32.9,
+        "epsRs": 8.94,
+        "pat": 162,
+        "period": "FY24",
+        "revenue": 1024
+      },
+      {
+        "ebitda": 564,
+        "ebitdaMarginPct": 32.5,
+        "epsRs": 16.23,
+        "pat": 325,
+        "period": "FY25",
+        "revenue": 1735
+      },
+      {
+        "ebitda": 957.08,
+        "ebitdaMarginPct": 35.5,
+        "epsRs": 24.13,
+        "pat": 509,
+        "period": "FY26",
+        "revenue": 2696
+      }
+    ],
     "cmp": 401,
     "concall": {
       "date": "2026-05-12",
@@ -23,21 +65,83 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 35.5,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 7924,
     "name": "KPI Green Energy",
     "orderBookGw": 4.64,
     "patFy26Cr": 509,
     "peX": 16.7,
+    "quarterly": [
+      {
+        "ebitda": 137,
+        "ebitdaMarginPct": 29.9,
+        "pat": 85,
+        "patMarginPct": 18.56,
+        "period": "Q3FY25",
+        "revenue": 458
+      },
+      {
+        "ebitda": 161,
+        "ebitdaMarginPct": 28.3,
+        "pat": 104,
+        "patMarginPct": 18.28,
+        "period": "Q4FY25",
+        "revenue": 569
+      },
+      {
+        "ebitda": 206,
+        "ebitdaMarginPct": 34.2,
+        "pat": 111,
+        "patMarginPct": 18.41,
+        "period": "Q1FY26",
+        "revenue": 603
+      },
+      {
+        "ebitda": 226,
+        "ebitdaMarginPct": 35.6,
+        "pat": 117,
+        "patMarginPct": 18.45,
+        "period": "Q2FY26",
+        "revenue": 634
+      },
+      {
+        "ebitda": 236,
+        "ebitdaMarginPct": 35.6,
+        "pat": 126,
+        "patMarginPct": 19,
+        "period": "Q3FY26",
+        "revenue": 663
+      },
+      {
+        "ebitda": 291,
+        "ebitdaMarginPct": 36.6,
+        "pat": 155,
+        "patMarginPct": 19.47,
+        "period": "Q4FY26",
+        "revenue": 796
+      }
+    ],
     "revenueFy26Cr": 2696,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0.64,
+      "fiiPct": 8.24,
+      "promoterPct": 49.49,
+      "publicPct": 41.63
+    },
     "slug": "kpi-green",
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "KPIGREEN",
-    "type": "ipp"
+    "type": "ipp",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 2.6,
+      "peX": 16.7
+    }
   },
   "dataset": "detail/kpi-green",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

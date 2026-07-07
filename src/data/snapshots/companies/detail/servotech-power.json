@@ -3,6 +3,48 @@
   "cadence": "quarterly",
   "coverage": "Servotech Renewable Power",
   "data": {
+    "annual": [
+      {
+        "ebitda": 9,
+        "ebitdaMarginPct": 6.3,
+        "epsRs": 0.22,
+        "pat": 4,
+        "period": "FY22",
+        "revenue": 144
+      },
+      {
+        "ebitda": 19,
+        "ebitdaMarginPct": 6.8,
+        "epsRs": 0.52,
+        "pat": 11,
+        "period": "FY23",
+        "revenue": 278
+      },
+      {
+        "ebitda": 21,
+        "ebitdaMarginPct": 5.9,
+        "epsRs": 0.54,
+        "pat": 12,
+        "period": "FY24",
+        "revenue": 353
+      },
+      {
+        "ebitda": 56,
+        "ebitdaMarginPct": 8.3,
+        "epsRs": 1.46,
+        "pat": 33,
+        "period": "FY25",
+        "revenue": 674
+      },
+      {
+        "ebitda": 67.2,
+        "ebitdaMarginPct": 10,
+        "epsRs": 1.49,
+        "pat": 32,
+        "period": "FY26",
+        "revenue": 672
+      }
+    ],
     "board": "NSE",
     "cmp": 99.9,
     "concall": {
@@ -24,21 +66,67 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 10,
-    "hasDetail": false,
+    "hasDetail": true,
     "marketCapCr": 2256,
     "moduleGw": 0.6,
     "name": "Servotech Renewable Power",
     "patFy26Cr": 32,
     "peX": 67.2,
+    "quarterly": [
+      {
+        "ebitda": 10,
+        "ebitdaMarginPct": 7.3,
+        "pat": 5,
+        "patMarginPct": 3.65,
+        "period": "Q1FY26",
+        "revenue": 137
+      },
+      {
+        "ebitda": 6,
+        "ebitdaMarginPct": 5.7,
+        "pat": 0,
+        "patMarginPct": 0,
+        "period": "Q2FY26",
+        "revenue": 106
+      },
+      {
+        "ebitda": 28,
+        "ebitdaMarginPct": 13.3,
+        "pat": 16,
+        "patMarginPct": 7.58,
+        "period": "Q3FY26",
+        "revenue": 211
+      },
+      {
+        "ebitda": 23,
+        "ebitdaMarginPct": 10.6,
+        "pat": 11,
+        "patMarginPct": 5.07,
+        "period": "Q4FY26",
+        "revenue": 217
+      }
+    ],
     "revenueFy26Cr": 672,
+    "shareholding": {
+      "asOf": "2026-03-31",
+      "diiPct": 0,
+      "fiiPct": 0.14,
+      "promoterPct": 58.61,
+      "publicPct": 41.25
+    },
     "slug": "servotech-power",
     "sourceNote": "Market data (mid-2026)",
     "tickerNse": "SERVOTECH",
-    "type": "manufacturer"
+    "type": "manufacturer",
+    "valuation": {
+      "asOf": "2026-03-31",
+      "pbX": 7.8,
+      "peX": 67.2
+    }
   },
   "dataset": "detail/servotech-power",
   "notes": [
-    "Registry-level identity only; a detail JSON has not been added yet (model + manual approach)."
+    "Rich per-company model — financials, valuation, operating & shareholding."
   ],
   "section": "companies",
   "sources": [

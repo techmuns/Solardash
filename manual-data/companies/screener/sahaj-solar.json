@@ -1,0 +1,96 @@
+{
+  "slug": "sahaj-solar",
+  "annual": [
+    {
+      "period": "FY22",
+      "revenue": 67,
+      "ebitda": 4,
+      "ebitdaMarginPct": 6,
+      "pat": 1,
+      "epsRs": 0.98
+    },
+    {
+      "period": "FY23",
+      "revenue": 185,
+      "ebitda": 11,
+      "ebitdaMarginPct": 5.9,
+      "pat": 6,
+      "epsRs": 4.04
+    },
+    {
+      "period": "FY24",
+      "revenue": 201,
+      "ebitda": 24,
+      "ebitdaMarginPct": 11.9,
+      "pat": 13,
+      "epsRs": 8.17
+    },
+    {
+      "period": "FY25",
+      "revenue": 330,
+      "ebitda": 42,
+      "ebitdaMarginPct": 12.7,
+      "pat": 28,
+      "epsRs": 12.52
+    },
+    {
+      "period": "FY26",
+      "revenue": 419,
+      "ebitda": 51.96,
+      "ebitdaMarginPct": 12.4,
+      "pat": 30,
+      "epsRs": 13.46
+    }
+  ],
+  "quarterly": [
+    {
+      "period": "H1FY25",
+      "revenue": 98,
+      "ebitda": 8,
+      "ebitdaMarginPct": 8.2,
+      "pat": 5,
+      "patMarginPct": 5.1
+    },
+    {
+      "period": "H2FY25",
+      "revenue": 232,
+      "ebitda": 34,
+      "ebitdaMarginPct": 14.7,
+      "pat": 23,
+      "patMarginPct": 9.91
+    },
+    {
+      "period": "H1FY26",
+      "revenue": 111,
+      "ebitda": 11,
+      "ebitdaMarginPct": 9.9,
+      "pat": 5,
+      "patMarginPct": 4.5
+    },
+    {
+      "period": "H2FY26",
+      "revenue": 308,
+      "ebitda": 41,
+      "ebitdaMarginPct": 13.3,
+      "pat": 25,
+      "patMarginPct": 8.12
+    }
+  ],
+  "valuation": {
+    "peX": 9.2,
+    "pbX": 2,
+    "evEbitdaX": 8.6,
+    "cmp": 124,
+    "marketCapCr": 273
+  },
+  "rocePct": 21.6,
+  "roePct": 24,
+  "shareholding": {
+    "promoterPct": 71.28,
+    "fiiPct": 0.01,
+    "diiPct": 1.12,
+    "publicPct": 27.59,
+    "asOf": "2026-03-31"
+  },
+  "asOf": "2026-03-31"
+}
