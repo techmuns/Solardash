@@ -61,6 +61,9 @@ export function CommissioningTimeline({
   now: string;
 }) {
   const nowIdx = fyQuarterIndex(now);
+  const [sort, setSort] = React.useState<"timeline" | "capacity" | "slippage">(
+    "timeline",
+  );
 
   // Quarter range: span every target (original + current) and "now", capped.
   const idxs = tranches
@@ -89,6 +92,23 @@ export function CommissioningTimeline({
     .filter((t) => t.tech !== "bess")
     .reduce((s, t) => s + t.capacityGw, 0);
 
+  // Row order: default is the pipeline's chronological (by current target);
+  // clients can re-sort by capacity (largest first) or by slippage.
+  const sorted = React.useMemo(() => {
+    const arr = [...tranches];
+    if (sort === "capacity")
+      arr.sort(
+        (a, b) =>
+          b.capacityGw - a.capacityGw ||
+          fyQuarterIndex(a.currentTarget) - fyQuarterIndex(b.currentTarget),
+      );
+    else if (sort === "slippage")
+      arr.sort(
+        (a, b) => b.slipQuarters - a.slipQuarters || b.capacityGw - a.capacityGw,
+      );
+    return arr;
+  }, [tranches, sort]);
+
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-2">
       {/* Legend + headline */}
@@ -100,6 +120,35 @@ export function CommissioningTimeline({
           </span>{" "}
           ({fmtCap(Math.round(delayedGw))} GW)
         </span>
+        {/* Sort control */}
+        <div className="flex items-center gap-1">
+          <span className="font-medium uppercase tracking-wide text-muted-foreground">
+            Sort
+          </span>
+          <div className="inline-flex rounded-lg border border-border p-0.5">
+            {(
+              [
+                ["timeline", "Timeline"],
+                ["capacity", "Capacity"],
+                ["slippage", "Slippage"],
+              ] as const
+            ).map(([k, label]) => (
+              <button
+                key={k}
+                type="button"
+                onClick={() => setSort(k)}
+                className={cn(
+                  "rounded-md px-2 py-0.5 font-medium transition-colors",
+                  sort === k
+                    ? "bg-brand/15 text-foreground"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
         <span className="ml-auto flex flex-wrap items-center gap-x-3 gap-y-1">
           {(Object.keys(STATUS) as CommissioningStatus[]).map((k) => (
             <span key={k} className="flex items-center gap-1 text-muted-foreground">
@@ -159,7 +208,7 @@ export function CommissioningTimeline({
               </span>
             </div>
 
-            {tranches.map((t) => {
+            {sorted.map((t) => {
               const s = STATUS[t.status];
               const curPct = centre(fyQuarterIndex(t.currentTarget));
               const origPct = centre(fyQuarterIndex(t.originalTarget));
