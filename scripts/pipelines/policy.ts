@@ -17,6 +17,21 @@ function num(v: string | undefined): number | undefined {
   return Number.isNaN(n) ? undefined : n;
 }
 
+// "Mon YYYY" -> sortable YYYYMM (0 when unknown, so it sinks to the bottom).
+const MONTHS: Record<string, number> = {
+  jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
+  jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,
+};
+function announcedKey(s: string | undefined): number {
+  if (!s) return 0;
+  const m = s.trim().match(/([A-Za-z]{3,})\.?\s+(\d{4})/);
+  if (!m) {
+    const y = s.match(/\b(\d{4})\b/);
+    return y ? Number(y[1]) * 100 : 0;
+  }
+  return Number(m[2]) * 100 + (MONTHS[m[1].slice(0, 3).toLowerCase()] ?? 0);
+}
+
 export const policyPipeline = definePipeline({
   name: "policy",
   section: "policy",
@@ -37,10 +52,17 @@ export const policyPipeline = definePipeline({
         status: r.status,
         ...(allocationCr != null ? { allocationCr } : {}),
         keyMetric: r.key_metric,
+        ...(r.announced?.trim() ? { announced: r.announced.trim() } : {}),
+        ...(r.highlights?.trim() ? { highlights: r.highlights.trim() } : {}),
+        ...(r.source_url?.trim() ? { sourceUrl: r.source_url.trim() } : {}),
         confidence: r.confidence as Confidence,
         ...(r.note ? { note: r.note } : {}),
       };
     });
+    // Latest-announced first so newly-added schemes surface at the top.
+    schemes.sort(
+      (a, b) => announcedKey(b.announced) - announcedKey(a.announced) || a.scheme.localeCompare(b.scheme),
+    );
     const pmSuryaGhar: PmSuryaGharMetric[] = sgRows.map((r) => ({
       metric: r.metric,
       value: Number(r.value),

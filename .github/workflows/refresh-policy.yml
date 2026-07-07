@@ -1,0 +1,43 @@
+name: Refresh policy schemes
+
+# Policy schemes are a maintained feed (announcements are PIB/MNRE press
+# releases + gazette PDFs, so there is no clean scraper). New / updated schemes
+# are appended to manual-data/policy/schemes.csv; this Action rebuilds the
+# policy snapshot on the monthly cron (and on demand) and commits only if the
+# rendered data changed — so a CSV edit propagates without a manual rebuild.
+
+on:
+  schedule:
+    - cron: '0 6 1 * *'      # 1st of each month, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-policy
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Rebuild snapshots
+        run: npm run data:build
+      - name: Commit & push if changed
+        run: |
+          git config user.name "solardash-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add manual-data/policy src/data/snapshots/policy
+          if git diff --cached --quiet; then
+            echo "No policy-scheme changes."
+          else
+            git commit -m "chore(data): refresh policy schemes"
+            git push
+          fi

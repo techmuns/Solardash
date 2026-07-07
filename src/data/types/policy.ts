@@ -7,6 +7,12 @@ export interface Scheme {
   status: string;
   allocationCr?: number;
   keyMetric: string;
+  /** Month & year the scheme was announced/notified, e.g. "Feb 2024". */
+  announced?: string;
+  /** One-line summary of the scheme's main lever. */
+  highlights?: string;
+  /** Official source (MNRE / PIB / CBIC / portal) link. */
+  sourceUrl?: string;
   confidence: Confidence;
   note?: string;
 }

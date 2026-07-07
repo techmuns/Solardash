@@ -142,13 +142,12 @@
         "target": "40% modules / 27.5% cells"
       },
       {
-        "allocationCr": 24000,
-        "category": "Manufacturing",
+        "category": "Demand",
         "confidence": "medium",
-        "keyMetric": "36.5% established",
-        "scheme": "PLI (Solar PV)",
+        "keyMetric": "manufacturing-linked",
+        "scheme": "CPSU",
         "status": "Active",
-        "target": "48.3 GW supported"
+        "target": "SECI/NTPC procurement"
       },
       {
         "category": "Demand",
@@ -157,6 +156,32 @@
         "scheme": "DCR",
         "status": "Active",
         "target": "Domestic content (govt schemes)"
+      },
+      {
+        "category": "Demand",
+        "confidence": "medium",
+        "keyMetric": "extended for RE",
+        "scheme": "ISTS Waiver",
+        "status": "Active",
+        "target": "Transmission-charge waiver"
+      },
+      {
+        "allocationCr": 19744,
+        "category": "Demand",
+        "confidence": "medium",
+        "keyMetric": "~20 GW solar per MT",
+        "scheme": "National Green H2 Mission",
+        "status": "Active",
+        "target": "5 MT/yr by 2030"
+      },
+      {
+        "allocationCr": 24000,
+        "category": "Manufacturing",
+        "confidence": "medium",
+        "keyMetric": "36.5% established",
+        "scheme": "PLI (Solar PV)",
+        "status": "Active",
+        "target": "48.3 GW supported"
       },
       {
         "allocationCr": 75021,
@@ -182,31 +207,6 @@
         "scheme": "RPO / RGO",
         "status": "Active",
         "target": "Trajectory to 2030"
-      },
-      {
-        "category": "Demand",
-        "confidence": "medium",
-        "keyMetric": "extended for RE",
-        "scheme": "ISTS Waiver",
-        "status": "Active",
-        "target": "Transmission-charge waiver"
-      },
-      {
-        "allocationCr": 19744,
-        "category": "Demand",
-        "confidence": "medium",
-        "keyMetric": "~20 GW solar per MT",
-        "scheme": "National Green H2 Mission",
-        "status": "Active",
-        "target": "5 MT/yr by 2030"
-      },
-      {
-        "category": "Demand",
-        "confidence": "medium",
-        "keyMetric": "manufacturing-linked",
-        "scheme": "CPSU",
-        "status": "Active",
-        "target": "SECI/NTPC procurement"
       }
     ]
   },
