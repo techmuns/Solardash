@@ -10,7 +10,6 @@ import {
   ScrollText,
   Sparkles,
   Telescope,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 
@@ -74,7 +73,7 @@ export const NAV_GROUPS: NavGroup[] = [
         label: "Trends & Insights",
         icon: Telescope,
         description:
-          "The buy-side synthesis — structural trends, anomalies, and what most people miss, each insight evidenced and flagged Munshot analysis.",
+          "The buy-side synthesis — structural trends, anomalies, and what most people miss, plus the power demand & peak trend; each insight evidenced and flagged Munshot analysis.",
       },
     ],
   },
@@ -96,13 +95,6 @@ export const NAV_GROUPS: NavGroup[] = [
         icon: Building2,
         description:
           "Independent power producers — portfolios, capacity funnel, PPAs, and the technology mix.",
-      },
-      {
-        href: "/power-system",
-        label: "Power System",
-        icon: Zap,
-        description:
-          "Installed capacity & mix, commissioning, the solar build-out, and power demand — supply to demand.",
       },
       {
         href: "/manufacturing",
@@ -166,7 +158,6 @@ export const PRIMARY_TABS: PrimaryTab[] = [
   { href: "/", label: "Industry Map" },
   { href: "/tenders", label: "Tenders" },
   { href: "/developers", label: "IPPs" },
-  { href: "/power-system", label: "Power System" },
   { href: "/manufacturing", label: "Manufacturing" },
   { href: "/companies", label: "Companies" },
   { href: "/policy", label: "Policy" },
@@ -183,7 +174,6 @@ export const FULLBLEED_ROUTES = new Set([
   "/summary",
   "/tenders",
   "/developers",
-  "/power-system",
   "/manufacturing",
   "/companies",
   "/profit-pools",

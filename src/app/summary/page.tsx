@@ -205,7 +205,7 @@ export default function SummaryPage() {
 
       {/* Installed capacity (col 3, row 1) — value + amber installed-history spark */}
       <TrendCard
-        href="/power-system"
+        href="/trends"
         place="lg:col-start-3 lg:row-start-1"
         label="Installed capacity"
         value={kpiVal(totalInstalled)}
@@ -214,12 +214,12 @@ export default function SummaryPage() {
         hint={nfShare ? `${kpiVal(nfShare)}% non-fossil · FY26` : undefined}
         values={capTrend}
         color="#F59E0B"
-        ariaLabel="Installed capacity — open Power System"
+        ariaLabel="Installed capacity — open Trends & Insights"
       />
 
       {/* Peak demand (col 4, row 1) — value + peak-demand history spark */}
       <TrendCard
-        href="/power-system"
+        href="/trends"
         place="lg:col-start-4 lg:row-start-1"
         label="Peak demand"
         value={kpiVal(peak)}
@@ -228,7 +228,7 @@ export default function SummaryPage() {
         hint="all-time peak · Apr 2026"
         values={peakTrend}
         color="#0EA5E9"
-        ariaLabel="Peak demand — open Power System"
+        ariaLabel="Peak demand — open Trends & Insights"
       />
 
       {/* Lowest solar tariff · mini line (col 3, row 2) */}

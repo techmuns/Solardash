@@ -6,7 +6,8 @@ import { useRouter } from "next/navigation";
 /**
  * Client-side redirect stub for a statically-exported route — keeps an old deep
  * link alive (prerenders a real HTML page that immediately replaces the URL).
- * Used for /capacity and /demand → /power-system after the Phase-2 merge.
+ * Used for /capacity and /demand → /trends after the Power System section was
+ * retired (its demand & peak view moved under Trends).
  */
 export function RouteRedirect({ to }: { to: string }) {
   const router = useRouter();

@@ -38,7 +38,7 @@ import {
 const HREF_LABEL: Record<string, string> = {
   "/manufacturing": "Manufacturing",
   "/developers": "IPPs",
-  "/power-system": "Power System",
+  "/trends": "Trends & Insights",
   "/tenders": "Tenders",
 };
 
@@ -105,7 +105,7 @@ const N: Record<string, FlowNode> = {
   modules: stageNode({ id: "modules", label: "PV Modules", stageId: "module", icon: LayoutGrid }),
   // Application segments.
   gridPlant: { id: "gridPlant", label: "Grid Power Plant", kind: "segment", icon: Sun, href: "/developers" },
-  rooftop: { id: "rooftop", label: "Rooftop / Offgrid", kind: "segment", icon: Home, href: "/power-system" },
+  rooftop: { id: "rooftop", label: "Rooftop / Offgrid", kind: "segment", icon: Home, href: "/trends" },
   solarProducts: { id: "solarProducts", label: "Solar Products", kind: "muted", icon: Package },
   // Roles & sub-applications.
   epc: stageNode({ id: "epc", label: "EPC", stageId: "epc", icon: HardHat }),

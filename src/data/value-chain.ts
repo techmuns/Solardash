@@ -209,7 +209,7 @@ export const VC_DEPLOY: VcStage[] = [
     statusLabel: "REGULATED",
     margin: "Regulated returns",
     players: [{ name: "Powergrid" }, { name: "State transcos" }],
-    href: "/power-system",
+    href: "/trends",
     desc: "Bottleneck · curtailment constrains timelines.",
   },
   {
