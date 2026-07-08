@@ -2,7 +2,7 @@ import { getTendersSnapshot } from "@/data";
 import { formatDate, formatNumber } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
-import { FillBarSeries } from "@/components/charts/FillCharts";
+import { FillBarSeries, FillLineSeries } from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
   RankList,
@@ -11,7 +11,6 @@ import {
 import type { AwardRecord } from "@/data/types/tenders";
 import { LeaderboardTable } from "./LeaderboardTable";
 import { AwardsTooltip } from "./AwardsTooltip";
-import { TariffTrendToggle } from "./TariffTrendToggle";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -24,7 +23,6 @@ export default function TendersPage() {
   const snapshot = getTendersSnapshot();
   const d = snapshot.data;
   const quarters = d.awardsByQuarter[0]?.points.map((p) => p.period) ?? [];
-  const tariffYears = d.tariffHistory[0]?.points.map((p) => p.period) ?? [];
   const source = "Auction feed · SECI / state DISCOMs (maintained)";
   const asOf = formatDate(snapshot.updatedAt);
   const meta = (dataset: string) => snapshotMeta(snapshot, { dataset });
@@ -39,8 +37,8 @@ export default function TendersPage() {
   for (const a of d.recentAwards) (awardsByPeriod[a.period] ??= []).push(a);
 
   // Recent quarterly solar-family tariff (capacity-weighted per quarter) for the
-  // "By quarter" toggle on the tariff tab: pure solar + solar-plus-storage, for
-  // denser coverage than solar alone. The annual line stays the default.
+  // tariff tab: pure solar + solar-plus-storage, for denser coverage than solar
+  // alone.
   const solarFamilyTariffQ = d.tariffByType.filter(
     (s) => s.key === "solar" || s.key === "solar-bess",
   );
@@ -74,18 +72,18 @@ export default function TendersPage() {
       id: "tariff",
       label: "Tariff trend",
       title: "Solar tariff trend",
-      subtitle: "Lowest discovered ₹/kWh · switch year ↔ recent quarters",
+      subtitle:
+        "Capacity-weighted solar & solar-plus-storage ₹/kWh · by quarter",
       source: "Mercom / SECI (maintained)",
       body: (
-        <TariffTrendToggle
-          annual={d.tariffHistory}
-          annualOrder={tariffYears}
-          quarterly={solarFamilyTariffQ}
-          quarterlyOrder={tariffQuarters}
+        <FillLineSeries
+          series={solarFamilyTariffQ}
+          unit="₹/kWh"
+          periodOrder={tariffQuarters}
         />
       ),
       exportData: {
-        ...seriesToExport(d.tariffHistory, tariffYears, "Year"),
+        ...seriesToExport(solarFamilyTariffQ, tariffQuarters, "Quarter"),
         meta: meta("tariff-history"),
       },
     },

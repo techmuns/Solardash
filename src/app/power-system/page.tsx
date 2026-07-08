@@ -3,8 +3,7 @@ import { formatDate } from "@/lib/utils";
 import { energyColor } from "@/lib/colors";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
-import { FillBarSeries, FillLineSeries } from "@/components/charts/FillCharts";
-import { MixAreaToggle } from "@/components/charts/MixAreaToggle";
+import { FillLineSeries } from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
   RankList,
@@ -16,7 +15,7 @@ export const dynamic = "force-static";
 export const metadata = {
   title: "Power System",
   description:
-    "India's installed capacity & mix, the solar / non-fossil penetration curve, annual additions and power demand — the supply-to-demand story in one focused canvas.",
+    "India's renewable penetration curve, solar additions by segment and power demand — the supply-to-demand story in one focused canvas.",
 };
 
 const round1 = (n: number) => Math.round(n * 10) / 10;
@@ -37,11 +36,9 @@ export default function PowerSystemPage() {
   const demMeta = (dataset: string) =>
     snapshotMeta(demSnap, { section: "power-system", dataset });
 
-  // Installed mix OVER TIME → stacked-area by source (FY17 → FY26).
+  // Penetration: solar & non-fossil SHARE of installed capacity, FY17 → FY26.
   const bySource = c.installedBySource;
   const fyOrder = bySource[0]?.points.map((p) => p.period) ?? [];
-
-  // Penetration: solar & non-fossil SHARE of installed capacity, FY17 → FY26.
   const totals = fyOrder.map((_, i) =>
     bySource.reduce((s, ser) => s + (ser.points[i]?.value ?? 0), 0),
   );
@@ -73,15 +70,6 @@ export default function PowerSystemPage() {
     },
   ];
 
-  // Annual additions (GW added per FY by source) → stacked bars.
-  const addYears = c.commissioningQuarterly.categories;
-  const additions: Series[] = c.commissioningQuarterly.series.map((s) => ({
-    key: s.key,
-    label: s.label,
-    color: s.color,
-    points: addYears.map((cat, i) => ({ period: cat, value: s.values[i] })),
-  }));
-
   const segYears = c.solarSegments[0]?.points.map((p) => p.period) ?? [];
 
   // Demand: peak (GW) + energy (BU) → one dual-line chart.
@@ -102,45 +90,16 @@ export default function PowerSystemPage() {
     },
   ];
 
-  // --- side panels (surface the rich, previously-unused snapshot data) ---
-  const fmtMetric = (v: number, unit: string) =>
-    unit === "%" ? `${v}%` : `${v} ${unit}`;
-  const systemNow = c.metrics.map((m) => ({
-    label: m.metric,
-    value: fmtMetric(m.value, m.unit),
-  }));
+  // --- side panels ---
   const gridMixRows = c.installedMix
     .slice(0, 6)
     .map((m) => ({ label: cap(m.source), value: `${Math.round(m.share * 100)}%` }));
-  const stateRows = c.stateSolar
-    .slice(0, 6)
-    .map((s) => ({ label: s.state, value: `${s.solarGw}` }));
   const driverRows = d.drivers.map((dr) => ({
     label: dr.driver,
     value: `${dr.valueGw} GW`,
   }));
 
-  const solarShareLatest =
-    penetration[0].points[penetration[0].points.length - 1]?.value;
-  const fy26Adds = additions.reduce(
-    (s, ser) => s + (ser.points[ser.points.length - 1]?.value ?? 0),
-    0,
-  );
-
   const tabs: CanvasTab[] = [
-    {
-      id: "mix",
-      label: "Capacity mix",
-      title: "Installed capacity mix over time",
-      subtitle: `GW by source · FY17 → FY26 · toggle 100% share — solar now ${solarShareLatest}% of the grid`,
-      source: capSource,
-      body: <MixAreaToggle series={bySource} periodOrder={fyOrder} unit="GW" />,
-      side: { title: "System now", node: <RankList rows={systemNow} /> },
-      exportData: {
-        ...seriesToExport(bySource, fyOrder, "Year"),
-        meta: capMeta("capacity-mix"),
-      },
-    },
     {
       id: "penetration",
       label: "RE penetration",
@@ -154,26 +113,6 @@ export default function PowerSystemPage() {
       exportData: {
         ...seriesToExport(penetration, fyOrder, "Year"),
         meta: capMeta("re-penetration"),
-      },
-    },
-    {
-      id: "additions",
-      label: "Additions",
-      title: "Capacity added per year",
-      subtitle: `GW added by source · stacked, FY19 → FY26 — FY26 added ${round1(fy26Adds)} GW`,
-      source: capSource,
-      body: (
-        <FillBarSeries
-          series={additions}
-          stacked
-          unit="GW"
-          periodOrder={addYears}
-        />
-      ),
-      side: { title: "Top states · solar GW", node: <RankList rows={stateRows} /> },
-      exportData: {
-        ...seriesToExport(additions, addYears, "Year"),
-        meta: capMeta("annual-additions"),
       },
     },
     {
