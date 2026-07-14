@@ -1,3 +1,5 @@
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { definePipeline } from "../lib/pipeline";
 import {
   maxAsOf,
@@ -16,8 +18,16 @@ import type {
   QuarterRow,
 } from "../../src/data/types/companies";
 import type { ScreenerFeed } from "../ingest/screener";
+import { fromCsv, type ValuationRow } from "../ingest/valuation";
 
 const FALLBACK_AS_OF = "2026-03-31";
+
+/** Load the daily-refreshed valuation table (price-driven ratios), by slug. */
+function loadDailyValuation(): Map<string, ValuationRow> {
+  const path = join(process.cwd(), "manual-data", "companies", "valuation.csv");
+  if (!existsSync(path)) return new Map();
+  return new Map(fromCsv(readFileSync(path, "utf8")).map((r) => [r.slug, r]));
+}
 const round1 = (n: number) => Math.round(n * 10) / 10;
 
 function num(v: string | undefined): number | undefined {
@@ -93,6 +103,9 @@ export const companiesPipeline = definePipeline({
     // Latest earnings-call insights, one entry per slug (maintained feed).
     const concalls =
       readManualJsonIfExists<Record<string, Concall>>("companies/concalls.json") ?? {};
+    // Price-driven ratios (P/E, Market Cap, P/B, EV/EBITDA), refreshed DAILY and
+    // merged with precedence above the monthly financials feed.
+    const dailyValuation = loadDailyValuation();
 
     // Build each company: registry identity → screener feed → manual override
     // (precedence manual > screener > registry). A screener feed supplies
@@ -114,42 +127,60 @@ export const companiesPipeline = definePipeline({
       // registry seed. Skipped when a manual override exists (manual wins).
       const latest = screener?.annual?.[screener.annual.length - 1];
       const fv = screener?.valuation;
+      const dv = manual ? undefined : dailyValuation.get(identity.slug);
+
+      // Identity headline for the screener table: the feed refreshes revenue /
+      // margin / PAT (quarterly), then the daily valuation table wins for the
+      // price-driven ratios (market cap, P/E, CMP, EV/EBITDA).
       const screenerIdentity: CompanyIdentity =
-        latest && !manual
+        (latest || dv) && !manual
           ? {
               ...identity,
               ...(fv?.marketCapCr != null ? { marketCapCr: fv.marketCapCr } : {}),
-              ...(latest.revenue != null ? { revenueFy26Cr: latest.revenue } : {}),
-              ...(latest.ebitdaMarginPct != null
+              ...(latest?.revenue != null ? { revenueFy26Cr: latest.revenue } : {}),
+              ...(latest?.ebitdaMarginPct != null
                 ? { ebitdaMarginPct: latest.ebitdaMarginPct }
                 : {}),
-              ...(latest.pat != null ? { patFy26Cr: latest.pat } : {}),
+              ...(latest?.pat != null ? { patFy26Cr: latest.pat } : {}),
               ...(fv?.peX != null ? { peX: fv.peX } : {}),
               ...(fv?.cmp != null ? { cmp: fv.cmp } : {}),
+              // Daily overrides — these move with the share price every day.
+              ...(dv?.marketCapCr != null ? { marketCapCr: dv.marketCapCr } : {}),
+              ...(dv?.peX != null ? { peX: dv.peX } : {}),
+              ...(dv?.cmp != null ? { cmp: dv.cmp } : {}),
+              ...(dv?.evEbitdaX != null ? { evEbitdaX: dv.evEbitdaX } : {}),
             }
           : identity;
 
-      // Map the feed's valuation + shareholding into the rich detail (manual
-      // still overrides via the spread order below).
+      // Rich-detail valuation block: daily table wins over the monthly feed, and
+      // its as-of is the market date so the Valuation KPIs advance daily.
+      const peX = dv?.peX ?? fv?.peX;
+      const pbX = dv?.pbX ?? fv?.pbX;
+      const evEbitdaX = dv?.evEbitdaX;
+      const valAsOf = dv?.asOf ?? screener?.asOf;
+      const mergedValuation =
+        peX != null || pbX != null || evEbitdaX != null
+          ? {
+              ...(peX != null ? { peX } : {}),
+              ...(evEbitdaX != null ? { evEbitdaX } : {}),
+              ...(pbX != null ? { pbX } : {}),
+              ...(valAsOf ? { asOf: valAsOf } : {}),
+            }
+          : undefined;
+
+      // Feed supplies financials + shareholding; manual (spread last) overrides
+      // everything, including the valuation block.
       const screenerDetail: Partial<CompanyDetail> = screener
         ? {
             ...(screener.annual?.length ? { annual: screener.annual } : {}),
             ...(screener.quarterly?.length ? { quarterly: screener.quarterly } : {}),
             ...(screener.shareholding ? { shareholding: screener.shareholding } : {}),
-            ...(fv && (fv.peX != null || fv.pbX != null)
-              ? {
-                  valuation: {
-                    ...(fv.peX != null ? { peX: fv.peX } : {}),
-                    ...(fv.pbX != null ? { pbX: fv.pbX } : {}),
-                    ...(screener.asOf ? { asOf: screener.asOf } : {}),
-                  },
-                }
-              : {}),
           }
         : {};
       const companyDetail = {
         ...screenerIdentity,
         ...screenerDetail,
+        ...(mergedValuation ? { valuation: mergedValuation } : {}),
         ...(concalls[identity.slug] ? { concall: concalls[identity.slug] } : {}),
         ...(manual ?? {}),
         hasDetail,

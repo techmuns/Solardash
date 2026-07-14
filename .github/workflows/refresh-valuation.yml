@@ -1,0 +1,52 @@
+name: Refresh valuation (daily)
+
+# The price-driven ratios — Current Price, Market Cap, P/E, P/B and EV/EBITDA —
+# move every trading day, so they refresh DAILY (the filings-based financials
+# stay on the monthly refresh-financials cadence). This Action scrapes/computes
+# them from Screener into manual-data/companies/valuation.csv, rebuilds the
+# companies snapshots, and commits only if something changed.
+
+on:
+  schedule:
+    - cron: '0 13 * * 1-5'   # 13:00 UTC (18:30 IST) Mon–Fri, after market close
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-valuation
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Verify the valuation parser
+        run: npx tsx scripts/ingest/valuation.verify.ts
+      - name: Refresh daily valuation
+        # A blocked / partial scrape keeps the previous rows (keep-last-good); a
+        # total wipe-out exits non-zero but writes nothing, so don't fail the run.
+        continue-on-error: true
+        env:
+          SCREENER_SESSIONID: ${{ secrets.SCREENER_SESSIONID }}
+        run: npx tsx scripts/ingest/valuation.ts
+      - name: Rebuild snapshots
+        run: npm run data:build
+      - name: Commit & push if changed
+        run: |
+          git config user.name "solardash-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add manual-data/companies/valuation.csv src/data/snapshots/companies
+          if git diff --cached --quiet; then
+            echo "No valuation changes."
+          else
+            git commit -m "chore(data): refresh daily valuation"
+            git push
+          fi

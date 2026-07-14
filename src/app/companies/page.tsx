@@ -30,7 +30,7 @@ export default function CompaniesPage() {
       label: "Financials",
       title: "Screener — all companies",
       subtitle:
-        "Market cap · revenue · EBITDA margin · P/E — Screener.in financials, refreshed monthly",
+        "Market cap · revenue · EBITDA margin · P/E — valuation refreshed daily, financials monthly",
       source,
       body: (
         <div className="min-h-0 flex-1 overflow-auto">
