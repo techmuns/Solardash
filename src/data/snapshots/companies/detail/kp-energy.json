@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-03-31",
+  "asOf": "2026-07-14",
   "cadence": "quarterly",
   "coverage": "K.P. Energy",
   "data": {
@@ -40,7 +40,7 @@
         "revenue": 1497
       }
     ],
-    "cmp": 327.8,
+    "cmp": 323,
     "concall": {
       "date": "2026-05-12",
       "guidance": [
@@ -59,8 +59,9 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 21.4,
+    "evEbitdaX": 8.2,
     "hasDetail": true,
-    "marketCapCr": 2180,
+    "marketCapCr": 2181,
     "name": "K.P. Energy",
     "orderBookCr": 3086,
     "orderBookGw": 2,
@@ -116,8 +117,9 @@
     "tickerNse": "KPEL",
     "type": "wind",
     "valuation": {
-      "asOf": "2026-03-31",
-      "pbX": 4.29,
+      "asOf": "2026-07-14",
+      "evEbitdaX": 8.2,
+      "pbX": 4.17,
       "peX": 12
     }
   },
@@ -128,10 +130,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-07-14",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-03-31"
+  "updatedAt": "2026-07-14"
 }

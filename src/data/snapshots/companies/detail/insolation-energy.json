@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-03-31",
+  "asOf": "2026-07-14",
   "cadence": "quarterly",
   "coverage": "Insolation Energy",
   "data": {
@@ -45,7 +45,7 @@
         "revenue": 2146
       }
     ],
-    "cmp": 113,
+    "cmp": 117,
     "concall": {
       "date": "2026-05-25",
       "guidance": [
@@ -65,12 +65,13 @@
     },
     "confidence": "modelled",
     "ebitdaMarginPct": 13,
+    "evEbitdaX": 12.1,
     "hasDetail": true,
-    "marketCapCr": 2783,
+    "marketCapCr": 2586,
     "moduleGw": 2,
     "name": "Insolation Energy",
     "patFy26Cr": 201,
-    "peX": 12.5,
+    "peX": 12.9,
     "quarterly": [
       {
         "ebitda": 24,
@@ -126,9 +127,10 @@
     "tickerNse": "INSOLATION",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-03-31",
-      "pbX": 3.09,
-      "peX": 12.5
+      "asOf": "2026-07-14",
+      "evEbitdaX": 12.1,
+      "pbX": 3.2,
+      "peX": 12.9
     }
   },
   "dataset": "detail/insolation-energy",
@@ -138,10 +140,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-07-14",
       "confidence": "modelled",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-03-31"
+  "updatedAt": "2026-07-14"
 }
