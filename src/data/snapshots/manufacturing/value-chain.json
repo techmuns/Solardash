@@ -94,128 +94,488 @@
     ],
     "cellCommissioning": [
       {
-        "capacityGw": 3.4,
-        "confidence": "medium",
+        "capacityGw": 3.3,
+        "confidence": "high",
         "currentTarget": "Q4FY24",
-        "developer": "First Solar",
+        "developer": "First Solar India",
         "history": [
           {
-            "concall": "Commissioning release",
-            "statedOn": "2024-01-15",
+            "concall": "Investment PR (Jul 2021)",
+            "sourceUrl": "https://www.globenewswire.com/news-release/2021/07/29/2271743/0/en/First-Solar-Intends-to-Expand-Global-Manufacturing-Footprint-with-New-3-3-GW-Facility-in-India.html",
+            "statedOn": "2021-07-29",
+            "status": "on-track",
+            "targetPeriod": "Q3FY24"
+          },
+          {
+            "concall": "Inauguration (Jan 2024)",
+            "sourceUrl": "https://www.pv-tech.org/first-solar-inaugurates-3-3gw-manufacturing-plant-in-india/",
+            "statedOn": "2024-01-11",
             "status": "commissioned",
             "targetPeriod": "Q4FY24"
           }
         ],
-        "id": "FIRSTSOLAR-TN",
-        "originalTarget": "Q4FY24",
-        "project": "Perambalur 3.4 GW thin-film (Tamil Nadu)",
-        "slipQuarters": 0,
-        "sourceNote": "Integrated thin-film line commissioned early 2024; quarter is an initial estimate pending disclosure confirmation.",
-        "status": "commissioned",
-        "tech": "cell"
-      },
-      {
-        "capacityGw": 4,
-        "confidence": "medium",
-        "currentTarget": "Q1FY25",
-        "developer": "Adani (Mundra Solar)",
-        "history": [
-          {
-            "concall": "FY24 update",
-            "statedOn": "2024-06-30",
-            "status": "commissioned",
-            "targetPeriod": "Q1FY25"
-          }
-        ],
-        "id": "ADANI-MUNDRA",
-        "originalTarget": "Q1FY25",
-        "project": "Mundra 4 GW cell (Gujarat)",
-        "slipQuarters": 0,
-        "sourceNote": "Mundra cell capacity operational.",
+        "id": "FIRSTSOLAR-CELL-TN",
+        "originalTarget": "Q3FY24",
+        "project": "Sriperumbudur 3.3 GW thin-film (Tamil Nadu)",
+        "slipQuarters": 1,
+        "sourceNote": "Inaugurated Jan 2024, ~1-2 quarters after the H2-2023 target; ramped to ~75% by Feb 2024. Thin-film integrated cell/module.",
+        "sourceUrl": "https://www.pv-tech.org/first-solar-inaugurates-3-3gw-manufacturing-plant-in-india/",
         "status": "commissioned",
         "tech": "cell"
       },
       {
         "capacityGw": 4.3,
-        "confidence": "medium",
+        "confidence": "high",
         "currentTarget": "Q2FY25",
         "developer": "Tata Power Solar",
         "history": [
           {
-            "concall": "Q1 FY25 update",
-            "statedOn": "2024-07-30",
+            "concall": "Commissioning PR (Sep 2024)",
+            "sourceUrl": "https://www.pv-magazine-india.com/2024/09/09/tata-power-begins-solar-cell-production-at-4-3-gw-plant-in-tamil-nadu/",
+            "statedOn": "2024-09-09",
             "status": "commissioned",
             "targetPeriod": "Q2FY25"
           }
         ],
-        "id": "TATA-TIRUNELVELI",
+        "id": "TATA-CELL-TIRUNELVELI",
         "originalTarget": "Q2FY25",
-        "project": "Tirunelveli 4.3 GW cell (Tamil Nadu)",
+        "project": "Tirunelveli 4.3 GW cell line (Tamil Nadu)",
         "slipQuarters": 0,
-        "sourceNote": "4.3 GW cell line ramped through 2024.",
+        "sourceNote": "Cell production began Sep 2024 (module line ran from Oct 2023); 4.3 GW single-location cell+module plant inaugurated Feb 2025.",
+        "sourceUrl": "https://www.pv-magazine-india.com/2024/09/09/tata-power-begins-solar-cell-production-at-4-3-gw-plant-in-tamil-nadu/",
         "status": "commissioned",
         "tech": "cell"
       },
       {
         "capacityGw": 5.4,
-        "confidence": "medium",
+        "confidence": "high",
         "currentTarget": "Q4FY25",
         "developer": "Waaree Energies",
         "history": [
           {
-            "concall": "Q4 FY25 concall",
-            "statedOn": "2025-05-15",
+            "concall": "Q2 FY25 concall",
+            "sourceUrl": "https://www.energetica-india.net/news/waaree-energies-to-commence-cell-manufacturing-in-54-gw-chikhli-plant-in-mid-december",
+            "statedOn": "2024-11-18",
+            "status": "on-track",
+            "targetPeriod": "Q3FY25"
+          },
+          {
+            "concall": "Commissioning PR (Feb 2025)",
+            "sourceUrl": "https://www.pv-magazine-india.com/2025/02/10/waaree-commissions-first-phase-of-5-4-gw-solar-cell-factory/",
+            "statedOn": "2025-02-10",
             "status": "commissioned",
             "targetPeriod": "Q4FY25"
           }
         ],
-        "id": "WAAREE-CHIKHLI",
-        "originalTarget": "Q4FY25",
-        "project": "Chikhli 5.4 GW cell (Gujarat)",
-        "slipQuarters": 0,
-        "sourceNote": "5.4 GW cell line commissioned FY25.",
+        "id": "WAAREE-CELL-CHIKHLI",
+        "originalTarget": "Q3FY25",
+        "project": "Chikhli 5.4 GW cell line (Gujarat)",
+        "slipQuarters": 1,
+        "sourceNote": "First 1.4 GW mono-PERC line began production Feb 2025 (full plant inaugurated 29 Mar 2025); slipped ~2 months from mid-Dec guidance; 4 GW TOPCon phase to follow.",
+        "sourceUrl": "https://www.pv-magazine-india.com/2025/02/10/waaree-commissions-first-phase-of-5-4-gw-solar-cell-factory/",
         "status": "commissioned",
         "tech": "cell"
       },
       {
-        "capacityGw": 3,
+        "capacityGw": 1.2,
+        "confidence": "high",
+        "currentTarget": "Q1FY26",
+        "developer": "Premier Energies",
+        "history": [
+          {
+            "concall": "Commissioning PR (Jun 2025)",
+            "sourceUrl": "https://www.pv-magazine.com/2025/06/30/premier-energies-commissions-1-2-gw-topcon-solar-cell-line/",
+            "statedOn": "2025-06-26",
+            "status": "commissioned",
+            "targetPeriod": "Q1FY26"
+          }
+        ],
+        "id": "PREMIER-CELL-FABCITY",
+        "originalTarget": "Q1FY26",
+        "project": "Fab City 1.2 GW TOPCon cell line (Hyderabad)",
+        "slipQuarters": 0,
+        "sourceNote": "1.2 GW TOPCon line commissioned June 2025, later running above 90% utilisation.",
+        "sourceUrl": "https://www.pv-magazine.com/2025/06/30/premier-energies-commissions-1-2-gw-topcon-solar-cell-line/",
+        "status": "commissioned",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 1.2,
+        "confidence": "high",
+        "currentTarget": "Q2FY26",
+        "developer": "Websol Energy Systems",
+        "history": [
+          {
+            "concall": "Phase II commissioning",
+            "sourceUrl": "https://www.mercomindia.com/websol-doubles-solar-cell-manufacturing-capacity-to-1-2-gw",
+            "statedOn": "2025-09-15",
+            "status": "commissioned",
+            "targetPeriod": "Q2FY26"
+          }
+        ],
+        "id": "WEBSOL-CELL-FALTA",
+        "originalTarget": "Q2FY26",
+        "project": "Falta TOPCon cell, Phase II to 1.2 GW (West Bengal)",
+        "slipQuarters": 0,
+        "sourceNote": "Second line commissioned Sep 2025, doubling cell capacity from 0.6 to 1.2 GW.",
+        "sourceUrl": "https://www.mercomindia.com/websol-doubles-solar-cell-manufacturing-capacity-to-1-2-gw",
+        "status": "commissioned",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 2,
         "confidence": "low",
+        "currentTarget": "Q3FY26",
+        "developer": "Solex Energy",
+        "history": [
+          {
+            "concall": "Capacity roadmap (Oct 2024)",
+            "sourceUrl": "https://www.pv-magazine.com/2024/10/01/solex-energy-targets-5-gw-of-solar-cell-15-gw-of-panel-manufacturing-capacity-by-2030/",
+            "statedOn": "2024-10-01",
+            "status": "on-track",
+            "targetPeriod": "Q3FY26"
+          }
+        ],
+        "id": "SOLEX-CELL-GUJARAT",
+        "originalTarget": "Q3FY26",
+        "project": "Gujarat 2 GW TOPCon cell, two 1 GW phases",
+        "slipQuarters": 0,
+        "sourceNote": "First 1 GW guided by end-2025 and second 1 GW by end-2026; near-term status unconfirmed. Low confidence.",
+        "sourceUrl": "https://www.pv-magazine.com/2024/10/01/solex-energy-targets-5-gw-of-solar-cell-15-gw-of-panel-manufacturing-capacity-by-2030/",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 1.2,
+        "confidence": "medium",
+        "currentTarget": "Q4FY26",
+        "developer": "Goldi Solar",
+        "history": [
+          {
+            "concall": "Company guidance (Oct 2024)",
+            "sourceUrl": "https://www.pv-magazine-india.com/2024/10/07/goldi-solar-to-start-pv-cell-production-from-mid-2025/",
+            "statedOn": "2024-10-07",
+            "status": "on-track",
+            "targetPeriod": "Q2FY26"
+          },
+          {
+            "concall": "Status update (2025)",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/goldi-solar-plans-indias-largest-solar-cell-plant-but-where-it-stands-now-10799114",
+            "statedOn": "2025-06-01",
+            "status": "delayed",
+            "targetPeriod": "Q4FY26"
+          }
+        ],
+        "id": "GOLDI-CELL-NANABORSARA",
+        "originalTarget": "Q2FY26",
+        "project": "Nana Borsara 1.2 GW TOPCon cell line (Gujarat)",
+        "slipQuarters": 2,
+        "sourceNote": "First 1.2 GW line pushed to ~March 2026 from the earlier mid-2025 guidance. Date approximate.",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/goldi-solar-plans-indias-largest-solar-cell-plant-but-where-it-stands-now-10799114",
+        "status": "delayed",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 6,
+        "confidence": "medium",
+        "currentTarget": "Q1FY27",
+        "developer": "Adani (Adani Solar)",
+        "history": [
+          {
+            "concall": "Capacity plan (Oct 2023)",
+            "sourceUrl": "https://www.business-standard.com/companies/news/adani-plans-to-build-10-gw-integrated-solar-manufacturing-capacity-by-2027-123100200723_1.html",
+            "statedOn": "2023-10-02",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          },
+          {
+            "concall": "Capacity update (Oct 2024)",
+            "sourceUrl": "https://www.pv-magazine-india.com/2024/10/03/adani-to-hit-10-gw-of-solar-cell-module-manufacturing-capacity-by-mid-2026/",
+            "statedOn": "2024-10-03",
+            "status": "on-track",
+            "targetPeriod": "Q1FY27"
+          }
+        ],
+        "id": "ADANI-CELL-MUNDRA",
+        "originalTarget": "Q4FY27",
+        "project": "Mundra cell expansion 4 to 10 GW (Gujarat)",
+        "slipQuarters": -3,
+        "sourceNote": "Accelerated to mid-2026; but as of mid-2026 only ~4 GW cell confirmed operational, so the ramp appears to be running behind.",
+        "sourceUrl": "https://www.pv-magazine-india.com/2024/10/03/adani-to-hit-10-gw-of-solar-cell-module-manufacturing-capacity-by-mid-2026/",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 7,
+        "confidence": "high",
         "currentTarget": "Q2FY27",
         "developer": "Premier Energies",
         "history": [
           {
-            "concall": "Q3 FY26 concall",
-            "statedOn": "2026-02-10",
+            "concall": "Q1 FY26 results",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/premier-energies-q1-fy26-profit-surges-55-manufacturing-capacity-expanded-9550165",
+            "statedOn": "2025-07-28",
+            "status": "on-track",
+            "targetPeriod": "Q1FY27"
+          },
+          {
+            "concall": "Q4 FY26 results",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/premier-energies-set-to-scale-solar-cell-capacity-from-36-gw-to-106-gw-by-sep-2026-12141086",
+            "statedOn": "2026-05-15",
             "status": "on-track",
             "targetPeriod": "Q2FY27"
           }
         ],
-        "id": "PREMIER-TOPCON",
-        "originalTarget": "Q2FY27",
-        "project": "TOPCon cell expansion (Hyderabad)",
-        "slipQuarters": 0,
-        "sourceNote": "TOPCon cell expansion ramping toward FY27.",
+        "id": "PREMIER-CELL-NAIDUPETA",
+        "originalTarget": "Q1FY27",
+        "project": "Naidupeta 7 GW cell fab (Andhra Pradesh)",
+        "slipQuarters": 1,
+        "sourceNote": "Fab upsized to 7 GW; 4.8 GW by June 2026 with balance 2.2 GW slipping to Sep 2026; total cell capacity 3.6 to 10.6 GW.",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/premier-energies-set-to-scale-solar-cell-capacity-from-36-gw-to-106-gw-by-sep-2026-12141086",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 2.2,
+        "confidence": "high",
+        "currentTarget": "Q2FY27",
+        "developer": "Alpex Solar",
+        "history": [
+          {
+            "concall": "Project PR (Oct 2025)",
+            "sourceUrl": "https://www.pv-magazine.com/2025/10/30/indias-alpex-solar-to-build-2-2-gw-g12r-topcon-cell-facility/",
+            "statedOn": "2025-10-30",
+            "status": "on-track",
+            "targetPeriod": "Q1FY27"
+          },
+          {
+            "concall": "Q4 FY26 concall",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/alpex-solar-plans-to-commission-22-gw-solar-cell-plant-within-90-days-11875411",
+            "statedOn": "2026-05-26",
+            "status": "on-track",
+            "targetPeriod": "Q2FY27"
+          }
+        ],
+        "id": "ALPEX-CELL-KOSI",
+        "originalTarget": "Q1FY27",
+        "project": "Kosi Kotwan 2.2 GW TOPCon cell (Uttar Pradesh)",
+        "slipQuarters": 1,
+        "sourceNote": "Switched from phased ramp to commissioning the full 2.2 GW simultaneously within 90 days (~Aug 2026).",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/alpex-solar-plans-to-commission-22-gw-solar-cell-plant-within-90-days-11875411",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 12,
+        "confidence": "high",
+        "currentTarget": "Q3FY27",
+        "developer": "Vikram Solar",
+        "history": [
+          {
+            "concall": "IPO prospectus (Aug 2025)",
+            "sourceUrl": "https://geplcapital.com/ipo/ipo_18_Aug_25_11_41_18_Vikram-Solar-Limited-18082025.pdf",
+            "statedOn": "2025-08-18",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          },
+          {
+            "concall": "Mgmt guidance (Jun 2026)",
+            "sourceUrl": "https://www.pv-magazine-india.com/2026/06/16/vikram-solar-to-commission-9-gw-pv-cell-manufacturing-capacity-by-december-2026/",
+            "statedOn": "2026-06-16",
+            "status": "on-track",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "VIKRAM-CELL-TN",
+        "originalTarget": "Q4FY27",
+        "project": "Gangaikondan 12 GW cell facility (Tamil Nadu)",
+        "slipQuarters": -1,
+        "sourceNote": "First phase re-cut to 9 GW targeted by Dec 2026, with the remaining 3 GW (to 12 GW) pushed to FY28.",
+        "sourceUrl": "https://www.pv-magazine-india.com/2026/06/16/vikram-solar-to-commission-9-gw-pv-cell-manufacturing-capacity-by-december-2026/",
         "status": "on-track",
         "tech": "cell"
       },
       {
         "capacityGw": 4,
-        "confidence": "low",
-        "currentTarget": "Q4FY27",
+        "confidence": "medium",
+        "currentTarget": "Q3FY27",
         "developer": "ReNew",
         "history": [
           {
-            "concall": "Q3 FY26 update",
-            "statedOn": "2026-02-10",
+            "concall": "BII funding PR (May 2025)",
+            "sourceUrl": "https://www.pv-magazine-india.com/2025/05/06/renew-secures-100-million-from-bii-to-scale-solar-manufacturing-operations/",
+            "statedOn": "2025-05-06",
+            "status": "on-track",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "RENEW-CELL-DHOLERA",
+        "originalTarget": "Q3FY27",
+        "project": "Dholera 4 GW TOPCon cell expansion (Gujarat)",
+        "slipQuarters": 0,
+        "sourceNote": "New 4 GW TOPCon cell fab (on top of existing 2.5 GW) targeted by Dec 2026; later filings soften this to H2 FY27.",
+        "sourceUrl": "https://www.pv-magazine-india.com/2025/05/06/renew-secures-100-million-from-bii-to-scale-solar-manufacturing-operations/",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 3.5,
+        "confidence": "medium",
+        "currentTarget": "Q3FY27",
+        "developer": "Rayzon Solar",
+        "history": [
+          {
+            "concall": "IPO DRHP (2026)",
+            "sourceUrl": "https://www.mercomindia.com/rayzon-solar-files-for-%E2%82%B915-billion-ipo-to-use-funds-for-cell-manufacturing",
+            "statedOn": "2026-03-01",
+            "status": "on-track",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "RAYZON-CELL-SURAT",
+        "originalTarget": "Q3FY27",
+        "project": "Kathvada/Surat 3.5 GW TOPCon cell (Gujarat)",
+        "slipQuarters": 0,
+        "sourceNote": "3.5 GW TOPCon cell plant to be IPO-funded, with production guided from ~Nov 2026 (FY27). Date approximate.",
+        "sourceUrl": "https://www.mercomindia.com/rayzon-solar-files-for-%E2%82%B915-billion-ipo-to-use-funds-for-cell-manufacturing",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 3,
+        "confidence": "low",
+        "currentTarget": "Q3FY27",
+        "developer": "Grew Energy (Grew Solar)",
+        "history": [
+          {
+            "concall": "Project announcement (2025)",
+            "sourceUrl": "https://www.mercomindia.com/grew-solar-to-set-up-3-gw-cell-and-module-facility-in-madhya-pradesh",
+            "statedOn": "2025-09-01",
+            "status": "at-risk",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "GREW-CELL-MP",
+        "originalTarget": "Q3FY27",
+        "project": "Narmadapuram 3 GW cell (Madhya Pradesh)",
+        "slipQuarters": 0,
+        "sourceNote": "3 GW cell (aspiration to 8 GW) in MP; cell timeline end-2026 is aspirational while ingot/wafer only lands by 2028. Low confidence on quarter.",
+        "sourceUrl": "https://www.mercomindia.com/grew-solar-to-set-up-3-gw-cell-and-module-facility-in-madhya-pradesh",
+        "status": "at-risk",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 3,
+        "confidence": "medium",
+        "currentTarget": "Q3FY27",
+        "developer": "Jupiter International",
+        "history": [
+          {
+            "concall": "Company update (2026)",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/jupiter-international-commissions-3rd-solar-cell-manufacturing-unit-11095939",
+            "statedOn": "2026-02-12",
+            "status": "on-track",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "JUPITER-CELL-NAGPUR",
+        "originalTarget": "Q3FY27",
+        "project": "Nagpur 3 GW TOPCon cell fab (Maharashtra)",
+        "slipQuarters": 0,
+        "sourceNote": "3 GW TOPCon++ Nagpur fab guided for commissioning by end-2026 (separate from Baddi cell lines). Date approximate.",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/jupiter-international-commissions-3rd-solar-cell-manufacturing-unit-11095939",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 2,
+        "confidence": "medium",
+        "currentTarget": "Q3FY27",
+        "developer": "Gautam Solar",
+        "history": [
+          {
+            "concall": "Project announcement (Sep 2025)",
+            "sourceUrl": "https://www.business-standard.com/companies/news/gautam-solar-invest-rs-4000-cr-5gw-solar-cell-plant-madhya-pradesh-125090800879_1.html",
+            "statedOn": "2025-09-08",
+            "status": "on-track",
+            "targetPeriod": "Q3FY27"
+          }
+        ],
+        "id": "GAUTAM-CELL-GWALIOR",
+        "originalTarget": "Q3FY27",
+        "project": "Gwalior 2 GW TOPCon cell, Phase 1 (Madhya Pradesh)",
+        "slipQuarters": 0,
+        "sourceNote": "Phase-1 2 GW of a planned 5 GW TOPCon fab targeted by Dec 2026.",
+        "sourceUrl": "https://www.business-standard.com/companies/news/gautam-solar-invest-rs-4000-cr-5gw-solar-cell-plant-madhya-pradesh-125090800879_1.html",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 6,
+        "confidence": "medium",
+        "currentTarget": "Q4FY27",
+        "developer": "Emmvee Photovoltaic Power",
+        "history": [
+          {
+            "concall": "FY26 update / DRHP",
+            "sourceUrl": "https://www.saurenergy.com/solar-energy-news/emmvee-targets-commissioning-of-new-solar-cell-line-by-fy27-end-plans-9-gw-ingot-wafer-expansion-11821087",
+            "statedOn": "2026-05-01",
             "status": "on-track",
             "targetPeriod": "Q4FY27"
           }
         ],
-        "id": "RENEW-DHOLERA",
+        "id": "EMMVEE-CELL-ITIR",
         "originalTarget": "Q4FY27",
-        "project": "Dholera 4 GW cell (Gujarat)",
+        "project": "ITIR Phase-II integrated cell line (Bengaluru)",
         "slipQuarters": 0,
-        "sourceNote": "Dholera cell line under construction.",
+        "sourceNote": "New cell line at the 6 GW integrated ITIR-II facility targeted for end-FY27; total cell capacity to reach ~8.9 GW. Capacity and stated date approximate.",
+        "sourceUrl": "https://www.saurenergy.com/solar-energy-news/emmvee-targets-commissioning-of-new-solar-cell-line-by-fy27-end-plans-9-gw-ingot-wafer-expansion-11821087",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 2,
+        "confidence": "medium",
+        "currentTarget": "Q1FY28",
+        "developer": "Websol Energy Systems",
+        "history": [
+          {
+            "concall": "Board approval (Sep 2025)",
+            "sourceUrl": "https://www.business-standard.com/markets/capital-market-news/websol-energy-system-approves-capacity-expansion-with-investment-of-rs-3-000-cr-125090200234_1.html",
+            "statedOn": "2025-09-02",
+            "status": "on-track",
+            "targetPeriod": "Q1FY28"
+          }
+        ],
+        "id": "WEBSOL-CELL-FALTA-P3",
+        "originalTarget": "Q1FY28",
+        "project": "Falta Phase III 2 GW cell (West Bengal)",
+        "slipQuarters": 0,
+        "sourceNote": "Rs 3,000 cr Phase III to add 2 GW cell + 2 GW module by June 2027.",
+        "sourceUrl": "https://www.business-standard.com/markets/capital-market-news/websol-energy-system-approves-capacity-expansion-with-investment-of-rs-3-000-cr-125090200234_1.html",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 4.8,
+        "confidence": "medium",
+        "currentTarget": "Q3FY28",
+        "developer": "Saatvik Green Energy",
+        "history": [
+          {
+            "concall": "Groundbreaking / FY26 update",
+            "sourceUrl": "https://www.pv-tech.org/saatvik-solar-4-8gw-solar-cell-4gw-module-manufacturing-india/",
+            "statedOn": "2026-02-01",
+            "status": "on-track",
+            "targetPeriod": "Q3FY28"
+          }
+        ],
+        "id": "SAATVIK-CELL-ODISHA",
+        "originalTarget": "Q3FY28",
+        "project": "Odisha 4.8 GW cell, integrated facility",
+        "slipQuarters": 0,
+        "sourceNote": "Integrated 4.8 GW cell + 4 GW module in Odisha with cell line targeted by end-2027; company separately guides first cell output by Oct 2026. Date approximate.",
+        "sourceUrl": "https://www.pv-tech.org/saatvik-solar-4-8gw-solar-cell-4gw-module-manufacturing-india/",
         "status": "on-track",
         "tech": "cell"
       }
@@ -739,7 +1099,20 @@
     {
       "asOf": "2026-03-31",
       "confidence": "medium",
-      "name": "Adani"
+      "name": "Business Standard",
+      "url": "https://www.business-standard.com/companies/news/adani-plans-to-build-10-gw-integrated-solar-manufacturing-capacity-by-2027-123100200723_1.html"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Business Standard",
+      "url": "https://www.business-standard.com/companies/news/gautam-solar-invest-rs-4000-cr-5gw-solar-cell-plant-madhya-pradesh-125090800879_1.html"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Business Standard",
+      "url": "https://www.business-standard.com/markets/capital-market-news/websol-energy-system-approves-capacity-expansion-with-investment-of-rs-3-000-cr-125090200234_1.html"
     },
     {
       "asOf": "2026-03-31",
@@ -753,8 +1126,9 @@
     },
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "First Solar India"
+      "confidence": "high",
+      "name": "First Solar press release",
+      "url": "https://www.globenewswire.com/news-release/2021/07/29/2271743/0/en/First-Solar-Intends-to-Expand-Global-Manufacturing-Footprint-with-New-3-3-GW-Facility-in-India.html"
     },
     {
       "asOf": "2026-03-31",
@@ -778,6 +1152,24 @@
       "asOf": "2026-03-31",
       "confidence": "high",
       "name": "Mercom / MNRE / CareEdge"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "low",
+      "name": "Mercom India",
+      "url": "https://www.mercomindia.com/grew-solar-to-set-up-3-gw-cell-and-module-facility-in-madhya-pradesh"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Mercom India",
+      "url": "https://www.mercomindia.com/rayzon-solar-files-for-%E2%82%B915-billion-ipo-to-use-funds-for-cell-manufacturing"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Mercom India",
+      "url": "https://www.mercomindia.com/websol-doubles-solar-cell-manufacturing-capacity-to-1-2-gw"
     },
     {
       "asOf": "2026-03-31",
@@ -818,13 +1210,99 @@
     },
     {
       "asOf": "2026-03-31",
-      "confidence": "low",
-      "name": "Premier Energies"
+      "confidence": "high",
+      "name": "Premier Energies FY26 results",
+      "url": "https://www.saurenergy.com/solar-energy-news/premier-energies-set-to-scale-solar-cell-capacity-from-36-gw-to-106-gw-by-sep-2026-12141086"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Premier Energies press release / pv magazine",
+      "url": "https://www.pv-magazine.com/2025/06/30/premier-energies-commissions-1-2-gw-topcon-solar-cell-line/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Premier Energies Q1 FY26 results",
+      "url": "https://www.saurenergy.com/solar-energy-news/premier-energies-q1-fy26-profit-surges-55-manufacturing-capacity-expanded-9550165"
     },
     {
       "asOf": "2026-03-31",
       "confidence": "low",
-      "name": "ReNew"
+      "name": "pv magazine",
+      "url": "https://www.pv-magazine.com/2024/10/01/solex-energy-targets-5-gw-of-solar-cell-15-gw-of-panel-manufacturing-capacity-by-2030/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "pv magazine",
+      "url": "https://www.pv-magazine.com/2025/10/30/indias-alpex-solar-to-build-2-2-gw-g12r-topcon-cell-facility/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "pv magazine India",
+      "url": "https://www.pv-magazine-india.com/2024/10/03/adani-to-hit-10-gw-of-solar-cell-module-manufacturing-capacity-by-mid-2026/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "pv magazine India",
+      "url": "https://www.pv-magazine-india.com/2024/10/07/goldi-solar-to-start-pv-cell-production-from-mid-2025/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "pv magazine India",
+      "url": "https://www.pv-magazine-india.com/2025/02/10/waaree-commissions-first-phase-of-5-4-gw-solar-cell-factory/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "pv magazine India",
+      "url": "https://www.pv-magazine-india.com/2025/05/06/renew-secures-100-million-from-bii-to-scale-solar-manufacturing-operations/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "pv magazine India",
+      "url": "https://www.pv-magazine-india.com/2026/06/16/vikram-solar-to-commission-9-gw-pv-cell-manufacturing-capacity-by-december-2026/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "PV Tech",
+      "url": "https://www.pv-tech.org/first-solar-inaugurates-3-3gw-manufacturing-plant-in-india/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "PV Tech",
+      "url": "https://www.pv-tech.org/saatvik-solar-4-8gw-solar-cell-4gw-module-manufacturing-india/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "SaurEnergy",
+      "url": "https://www.saurenergy.com/solar-energy-news/alpex-solar-plans-to-commission-22-gw-solar-cell-plant-within-90-days-11875411"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "SaurEnergy",
+      "url": "https://www.saurenergy.com/solar-energy-news/emmvee-targets-commissioning-of-new-solar-cell-line-by-fy27-end-plans-9-gw-ingot-wafer-expansion-11821087"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "SaurEnergy",
+      "url": "https://www.saurenergy.com/solar-energy-news/goldi-solar-plans-indias-largest-solar-cell-plant-but-where-it-stands-now-10799114"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "SaurEnergy",
+      "url": "https://www.saurenergy.com/solar-energy-news/jupiter-international-commissions-3rd-solar-cell-manufacturing-unit-11095939"
     },
     {
       "asOf": "2026-03-31",
@@ -840,13 +1318,21 @@
     },
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "Tata Power"
+      "confidence": "high",
+      "name": "Tata Power / pv magazine India",
+      "url": "https://www.pv-magazine-india.com/2024/09/09/tata-power-begins-solar-cell-production-at-4-3-gw-plant-in-tamil-nadu/"
     },
     {
       "asOf": "2026-03-31",
-      "confidence": "medium",
-      "name": "Waaree Energies"
+      "confidence": "high",
+      "name": "Vikram Solar IPO note",
+      "url": "https://geplcapital.com/ipo/ipo_18_Aug_25_11_41_18_Vikram-Solar-Limited-18082025.pdf"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Waaree Energies Q2 FY25 investor call",
+      "url": "https://www.energetica-india.net/news/waaree-energies-to-commence-cell-manufacturing-in-54-gw-chikhli-plant-in-mid-december"
     }
   ],
   "updatedAt": "2026-03-31"
