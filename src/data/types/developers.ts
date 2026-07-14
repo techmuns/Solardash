@@ -78,11 +78,14 @@ export interface GuidanceStatement {
  */
 export interface CommissioningTranche {
   id: string;
+  /** The entity giving guidance — an IPP for the power pipeline, a maker for the
+   *  cell-manufacturing timeline. */
   developer: string;
   /** Project / tranche name, e.g. `Khavda solar — Phase III`. */
   project: string;
-  /** Technology (BESS capacity is expressed in GWh, others in GW). */
-  tech: TenderType;
+  /** Technology / stage tag (a TenderType like `solar`/`bess`, or `cell`).
+   *  BESS capacity is expressed in GWh, everything else in GW. */
+  tech: string;
   /** Headline capacity (GW; GWh when `tech` is `bess`). */
   capacityGw: number;
   /** Guidance statements, oldest first (at least one). */

@@ -36,14 +36,19 @@ function slipLabel(q: number): string {
   return q > 0 ? `+${n}Q late` : `−${n}Q early`;
 }
 
+/** Display label for a tech/stage tag — a known TenderType, else Title-cased. */
+const techLabel = (tech: string): string =>
+  (TENDER_TYPE_LABELS as Record<string, string>)[tech] ??
+  tech.charAt(0).toUpperCase() + tech.slice(1);
+
 function historyTitle(t: CommissioningTranche): string {
   const lines = t.history.map((h) => {
     const base = `${h.concall} → ${formatFyQuarter(h.targetPeriod)}`;
     return `${base} (${STATUS[h.status].label})`;
   });
-  const head = `${t.developer} — ${t.project}\n${capLabel(t.capacityGw, t.tech)} · ${
-    TENDER_TYPE_LABELS[t.tech] ?? t.tech
-  }`;
+  const head = `${t.developer} — ${t.project}\n${capLabel(t.capacityGw, t.tech)} · ${techLabel(
+    t.tech,
+  )}`;
   const slip =
     t.slipQuarters !== 0
       ? `\nSlippage: ${formatFyQuarter(t.originalTarget)} → ${formatFyQuarter(

@@ -1,15 +1,12 @@
 import { definePipeline } from "../lib/pipeline";
 import { maxAsOf, readManualCsv, writeSnapshot } from "../lib/io";
-import { fyQuarterIndex, quarterDiff } from "../../src/lib/fiscal";
+import { buildCommissioningTranches } from "../lib/commissioning";
 import type { Confidence, Kpi, SourceRef } from "../../src/data/types/core";
 import type { TenderType } from "../../src/data/types/tenders";
 import type {
   CapacityFunnel,
-  CommissioningStatus,
-  CommissioningTranche,
   Developer,
   DevelopersData,
-  GuidanceStatement,
   PortfolioMixEntry,
   PpaRecord,
 } from "../../src/data/types/developers";
@@ -103,53 +100,8 @@ export const developersPipeline = definePipeline({
       pipeline: byTotal.map((d) => d.pipelineGw),
     };
 
-    // --- Commissioning guidance (group statements by tranche → revision history → slippage) ---
-    const byTranche = new Map<string, Record<string, string>[]>();
-    for (const r of commRows) {
-      const arr = byTranche.get(r.tranche_id) ?? [];
-      arr.push(r);
-      byTranche.set(r.tranche_id, arr);
-    }
-    const commissioning: CommissioningTranche[] = [...byTranche.entries()]
-      .map(([id, rows]) => {
-        // Statements oldest-first so history[0] is the original guidance.
-        const stmts = [...rows].sort(
-          (a, b) =>
-            a.stated_on.localeCompare(b.stated_on) ||
-            a.concall.localeCompare(b.concall),
-        );
-        const history: GuidanceStatement[] = stmts.map((s) => ({
-          statedOn: s.stated_on,
-          concall: s.concall,
-          targetPeriod: s.target_period,
-          status: s.status as CommissioningStatus,
-          ...(s.source_url?.trim() ? { sourceUrl: s.source_url.trim() } : {}),
-        }));
-        const first = stmts[0];
-        const last = stmts[stmts.length - 1];
-        return {
-          id,
-          developer: last.developer,
-          project: last.project,
-          tech: last.tech as TenderType,
-          capacityGw: Number(last.capacity_gw),
-          history,
-          originalTarget: first.target_period,
-          currentTarget: last.target_period,
-          status: last.status as CommissioningStatus,
-          slipQuarters: quarterDiff(first.target_period, last.target_period),
-          confidence: last.confidence as Confidence,
-          ...(last.note ? { sourceNote: last.note } : {}),
-          ...(last.source_url?.trim() ? { sourceUrl: last.source_url.trim() } : {}),
-        };
-      })
-      // Earliest current target first; then largest; then id for stability.
-      .sort(
-        (a, b) =>
-          fyQuarterIndex(a.currentTarget) - fyQuarterIndex(b.currentTarget) ||
-          b.capacityGw - a.capacityGw ||
-          a.id.localeCompare(b.id),
-      );
+    // --- Commissioning guidance → revision history → slippage (shared helper) ---
+    const commissioning = buildCommissioningTranches(commRows);
 
     // --- Portfolio mix (aggregate tech GW + share; BESS separate as GWh) ---
     const mixGw: Record<string, number> = { solar: 0, wind: 0, hybrid: 0, fdre: 0 };

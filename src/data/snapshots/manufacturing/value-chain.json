@@ -92,6 +92,134 @@
         "unit": "GW"
       }
     ],
+    "cellCommissioning": [
+      {
+        "capacityGw": 3.4,
+        "confidence": "medium",
+        "currentTarget": "Q4FY24",
+        "developer": "First Solar",
+        "history": [
+          {
+            "concall": "Commissioning release",
+            "statedOn": "2024-01-15",
+            "status": "commissioned",
+            "targetPeriod": "Q4FY24"
+          }
+        ],
+        "id": "FIRSTSOLAR-TN",
+        "originalTarget": "Q4FY24",
+        "project": "Perambalur 3.4 GW thin-film (Tamil Nadu)",
+        "slipQuarters": 0,
+        "sourceNote": "Integrated thin-film line commissioned early 2024; quarter is an initial estimate pending disclosure confirmation.",
+        "status": "commissioned",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 4,
+        "confidence": "medium",
+        "currentTarget": "Q1FY25",
+        "developer": "Adani (Mundra Solar)",
+        "history": [
+          {
+            "concall": "FY24 update",
+            "statedOn": "2024-06-30",
+            "status": "commissioned",
+            "targetPeriod": "Q1FY25"
+          }
+        ],
+        "id": "ADANI-MUNDRA",
+        "originalTarget": "Q1FY25",
+        "project": "Mundra 4 GW cell (Gujarat)",
+        "slipQuarters": 0,
+        "sourceNote": "Mundra cell capacity operational.",
+        "status": "commissioned",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 4.3,
+        "confidence": "medium",
+        "currentTarget": "Q2FY25",
+        "developer": "Tata Power Solar",
+        "history": [
+          {
+            "concall": "Q1 FY25 update",
+            "statedOn": "2024-07-30",
+            "status": "commissioned",
+            "targetPeriod": "Q2FY25"
+          }
+        ],
+        "id": "TATA-TIRUNELVELI",
+        "originalTarget": "Q2FY25",
+        "project": "Tirunelveli 4.3 GW cell (Tamil Nadu)",
+        "slipQuarters": 0,
+        "sourceNote": "4.3 GW cell line ramped through 2024.",
+        "status": "commissioned",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 5.4,
+        "confidence": "medium",
+        "currentTarget": "Q4FY25",
+        "developer": "Waaree Energies",
+        "history": [
+          {
+            "concall": "Q4 FY25 concall",
+            "statedOn": "2025-05-15",
+            "status": "commissioned",
+            "targetPeriod": "Q4FY25"
+          }
+        ],
+        "id": "WAAREE-CHIKHLI",
+        "originalTarget": "Q4FY25",
+        "project": "Chikhli 5.4 GW cell (Gujarat)",
+        "slipQuarters": 0,
+        "sourceNote": "5.4 GW cell line commissioned FY25.",
+        "status": "commissioned",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 3,
+        "confidence": "low",
+        "currentTarget": "Q2FY27",
+        "developer": "Premier Energies",
+        "history": [
+          {
+            "concall": "Q3 FY26 concall",
+            "statedOn": "2026-02-10",
+            "status": "on-track",
+            "targetPeriod": "Q2FY27"
+          }
+        ],
+        "id": "PREMIER-TOPCON",
+        "originalTarget": "Q2FY27",
+        "project": "TOPCon cell expansion (Hyderabad)",
+        "slipQuarters": 0,
+        "sourceNote": "TOPCon cell expansion ramping toward FY27.",
+        "status": "on-track",
+        "tech": "cell"
+      },
+      {
+        "capacityGw": 4,
+        "confidence": "low",
+        "currentTarget": "Q4FY27",
+        "developer": "ReNew",
+        "history": [
+          {
+            "concall": "Q3 FY26 update",
+            "statedOn": "2026-02-10",
+            "status": "on-track",
+            "targetPeriod": "Q4FY27"
+          }
+        ],
+        "id": "RENEW-DHOLERA",
+        "originalTarget": "Q4FY27",
+        "project": "Dholera 4 GW cell (Gujarat)",
+        "slipQuarters": 0,
+        "sourceNote": "Dholera cell line under construction.",
+        "status": "on-track",
+        "tech": "cell"
+      }
+    ],
     "cellPlayers": [
       {
         "almm2Gw": 5.251,
@@ -611,12 +739,22 @@
     {
       "asOf": "2026-03-31",
       "confidence": "medium",
+      "name": "Adani"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
       "name": "Company"
     },
     {
       "asOf": "2026-03-31",
       "confidence": "high",
       "name": "Company FY26"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "First Solar India"
     },
     {
       "asOf": "2026-03-31",
@@ -680,6 +818,16 @@
     },
     {
       "asOf": "2026-03-31",
+      "confidence": "low",
+      "name": "Premier Energies"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "low",
+      "name": "ReNew"
+    },
+    {
+      "asOf": "2026-03-31",
       "confidence": "high",
       "name": "SECI / PIB",
       "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1911380"
@@ -689,6 +837,16 @@
       "confidence": "high",
       "name": "SolarQuarter — module 74 GW at Mar 2025",
       "url": "https://solarquarter.com/2025/04/02/india-adds-record-25-gw-re-in-fy25-solar-capacity-crosses-100-gw-module-manufacturing-hits-74-gw/"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Tata Power"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "medium",
+      "name": "Waaree Energies"
     }
   ],
   "updatedAt": "2026-03-31"

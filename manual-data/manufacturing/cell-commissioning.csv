@@ -1,0 +1,7 @@
+tranche_id,developer,project,tech,capacity_gw,stated_on,concall,target_period,status,confidence,source,source_url,note
+FIRSTSOLAR-TN,First Solar,Perambalur 3.4 GW thin-film (Tamil Nadu),cell,3.4,2024-01-15,Commissioning release,Q4FY24,commissioned,medium,First Solar India,,Integrated thin-film line commissioned early 2024; quarter is an initial estimate pending disclosure confirmation.
+TATA-TIRUNELVELI,Tata Power Solar,Tirunelveli 4.3 GW cell (Tamil Nadu),cell,4.3,2024-07-30,Q1 FY25 update,Q2FY25,commissioned,medium,Tata Power,,4.3 GW cell line ramped through 2024.
+ADANI-MUNDRA,Adani (Mundra Solar),Mundra 4 GW cell (Gujarat),cell,4.0,2024-06-30,FY24 update,Q1FY25,commissioned,medium,Adani,,Mundra cell capacity operational.
+WAAREE-CHIKHLI,Waaree Energies,Chikhli 5.4 GW cell (Gujarat),cell,5.4,2025-05-15,Q4 FY25 concall,Q4FY25,commissioned,medium,Waaree Energies,,5.4 GW cell line commissioned FY25.
+PREMIER-TOPCON,Premier Energies,TOPCon cell expansion (Hyderabad),cell,3.0,2026-02-10,Q3 FY26 concall,Q2FY27,on-track,low,Premier Energies,,TOPCon cell expansion ramping toward FY27.
+RENEW-DHOLERA,ReNew,Dholera 4 GW cell (Gujarat),cell,4.0,2026-02-10,Q3 FY26 update,Q4FY27,on-track,low,ReNew,,Dholera cell line under construction.

@@ -1,8 +1,10 @@
 import { getManufacturingSnapshot } from "@/data";
 import { formatDate } from "@/lib/utils";
+import { fyQuarter, formatFyQuarter } from "@/lib/fiscal";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
 import { FillBarSeries, FillLineSeries } from "@/components/charts/FillCharts";
+import { CommissioningTimeline } from "@/components/CommissioningTimeline";
 import {
   SectionCanvas,
   RankList,
@@ -37,6 +39,25 @@ export default function ManufacturingPage() {
     .map((p) => ({ label: p.player, value: `${p.nameplateGw}` }));
 
   const chYears = m.capacityHistory[0]?.points.map((p) => p.period) ?? [];
+
+  // Cell-fab commissioning timeline (mirrors the IPP commissioning tab).
+  const nowPeriod = fyQuarter(snap.updatedAt);
+  const cellSlipRows = m.cellCommissioning
+    .filter((t) => t.slipQuarters > 0)
+    .sort((a, b) => b.slipQuarters - a.slipQuarters || b.capacityGw - a.capacityGw)
+    .slice(0, 6)
+    .map((t) => ({ label: `${t.developer} · ${t.project}`, value: `+${t.slipQuarters}Q` }));
+  const cellSlipSide = {
+    title: "Biggest slips (Q)",
+    node:
+      cellSlipRows.length > 0 ? (
+        <RankList rows={cellSlipRows} />
+      ) : (
+        <p className="text-2xs text-muted-foreground">
+          No cell fabs behind their original guidance.
+        </p>
+      ),
+  };
 
   // PLI: cumulative capacity by tranche (time series) + a cumulative leaderboard.
   const pliPeriods = m.pliHistory[0]?.points.map((p) => p.period) ?? [];
@@ -87,6 +108,41 @@ export default function ManufacturingPage() {
       exportData: {
         ...seriesToExport(prodSeries, prodYears, "Quarter"),
         meta: meta("cell-production"),
+      },
+    },
+    {
+      id: "cell-commissioning",
+      label: "Cell commissioning",
+      title: "Cell-fab commissioning timeline",
+      subtitle:
+        "Guided COD by fiscal quarter · tracked from maker concalls, with slippage vs earlier guidance",
+      source: "Investor disclosures (maintained)",
+      body: (
+        <CommissioningTimeline tranches={m.cellCommissioning} now={nowPeriod} />
+      ),
+      side: cellSlipSide,
+      exportData: {
+        columns: [
+          { key: "maker", label: "Maker" },
+          { key: "project", label: "Project" },
+          { key: "capacityGw", label: "Cell GW" },
+          { key: "original", label: "Original target" },
+          { key: "current", label: "Current target" },
+          { key: "slipQuarters", label: "Slip (Q)" },
+          { key: "status", label: "Status" },
+          { key: "lastConcall", label: "Last stated" },
+        ],
+        rows: m.cellCommissioning.map((t) => ({
+          maker: t.developer,
+          project: t.project,
+          capacityGw: t.capacityGw,
+          original: formatFyQuarter(t.originalTarget),
+          current: formatFyQuarter(t.currentTarget),
+          slipQuarters: t.slipQuarters,
+          status: t.status,
+          lastConcall: t.history[t.history.length - 1]?.concall ?? "",
+        })),
+        meta: meta("cell-commissioning"),
       },
     },
     {

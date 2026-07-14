@@ -1,4 +1,5 @@
 import type { Confidence, Kpi, Series } from "./core";
+import type { CommissioningTranche } from "./developers";
 
 /** A cell manufacturer (capacity + modelled production). */
 export interface CellPlayer {
@@ -75,4 +76,10 @@ export interface ManufacturingData {
   pliHistory: Series[];
   /** Cell & module nameplate capacity, annual (~5yr) — the build-out trend. */
   capacityHistory: Series[];
+  /**
+   * Cell-fab commissioning guidance with revision history & slippage, tracked
+   * from maker concalls — drives the cell-commissioning timeline (same shape as
+   * the IPP commissioning pipeline).
+   */
+  cellCommissioning: CommissioningTranche[];
 }

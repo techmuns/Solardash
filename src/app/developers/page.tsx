@@ -11,7 +11,7 @@ import {
 } from "@/components/sections/SectionCanvas";
 import { RosterTable } from "./RosterTable";
 import { PpaTrackerTable } from "./PpaTrackerTable";
-import { CommissioningTimeline } from "./CommissioningTimeline";
+import { CommissioningTimeline } from "@/components/CommissioningTimeline";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -146,7 +146,7 @@ export default function DevelopersPage() {
         rows: d.commissioning.map((t) => ({
           developer: t.developer,
           project: t.project,
-          tech: TENDER_TYPE_LABELS[t.tech] ?? t.tech,
+          tech: (TENDER_TYPE_LABELS as Record<string, string>)[t.tech] ?? t.tech,
           capacityGw: t.capacityGw,
           original: formatFyQuarter(t.originalTarget),
           current: formatFyQuarter(t.currentTarget),

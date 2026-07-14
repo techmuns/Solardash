@@ -1,5 +1,6 @@
 import { definePipeline } from "../lib/pipeline";
 import { maxAsOf, readManualCsv, writeSnapshot } from "../lib/io";
+import { buildCommissioningTranches } from "../lib/commissioning";
 import { OTHERS_COLOR, categoricalColor } from "../../src/lib/colors";
 import type { Confidence, Kpi, Series, SourceRef } from "../../src/data/types/core";
 import type {
@@ -42,6 +43,7 @@ export const manufacturingPipeline = definePipeline({
       "manufacturing/cell-production-quarterly-override.csv",
     );
     const chRows = readManualCsv("manufacturing/capacity-history.csv");
+    const cellCommRows = readManualCsv("manufacturing/cell-commissioning.csv");
 
     // --- Cell players (sorted by nameplate desc) ---
     const cellPlayers: CellPlayer[] = cellRows
@@ -220,6 +222,9 @@ export const manufacturingPipeline = definePipeline({
       },
     ];
 
+    // --- Cell-fab commissioning guidance → revision history → slippage ---
+    const cellCommissioning = buildCommissioningTranches(cellCommRows);
+
     // --- KPIs (current MNRE / Mercom / CareEdge headline + VQ production) ---
     const totalModuleGw = round1(modulePlayers.reduce((s, m) => s + m.almm1Gw, 0));
     const moduleSeg = supplyDemand.find((s) => s.segment === "module");
@@ -272,6 +277,7 @@ export const manufacturingPipeline = definePipeline({
       ...almmRows,
       ...pliRows,
       ...chRows,
+      ...cellCommRows,
     ]) {
       addSrc(r.source, r.confidence, r.source_url);
     }
@@ -292,6 +298,7 @@ export const manufacturingPipeline = definePipeline({
       pliAwardees,
       pliHistory,
       capacityHistory,
+      cellCommissioning,
     };
 
     writeSnapshot<ManufacturingData>("manufacturing", "value-chain", {
