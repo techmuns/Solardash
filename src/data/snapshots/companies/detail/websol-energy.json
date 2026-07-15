@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-14",
+  "asOf": "2026-07-15",
   "cadence": "quarterly",
   "coverage": "Websol Energy Systems",
   "data": {
@@ -22,7 +22,7 @@
       }
     ],
     "cellGw": 1.2,
-    "cmp": 98.3,
+    "cmp": 98.2,
     "concall": {
       "date": "2026-04-28",
       "guidance": [
@@ -42,9 +42,9 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 41,
-    "evEbitdaX": 10.25,
+    "evEbitdaX": 10.24,
     "hasDetail": true,
-    "marketCapCr": 4265,
+    "marketCapCr": 4263,
     "moduleGw": 0.55,
     "name": "Websol Energy Systems",
     "orderBookCr": 1160,
@@ -105,9 +105,9 @@
     "tickerNse": "WEBELSOLAR",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-07-14",
-      "evEbitdaX": 10.25,
-      "pbX": 6.78,
+      "asOf": "2026-07-15",
+      "evEbitdaX": 10.24,
+      "pbX": 6.77,
       "peX": 14
     }
   },
@@ -118,10 +118,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-14",
+      "asOf": "2026-07-15",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-07-14"
+  "updatedAt": "2026-07-15"
 }
