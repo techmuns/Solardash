@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-15",
+  "asOf": "2026-07-16",
   "cadence": "quarterly",
   "coverage": "Advait Energy Transitions",
   "data": {
@@ -46,7 +46,7 @@
       }
     ],
     "board": "NSE",
-    "cmp": 2119,
+    "cmp": 2111,
     "concall": {
       "date": "2026-06-01",
       "guidance": [
@@ -66,13 +66,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 11.7,
-    "evEbitdaX": 28.71,
+    "evEbitdaX": 28.63,
     "hasDetail": true,
-    "marketCapCr": 2317,
+    "marketCapCr": 2310,
     "name": "Advait Energy Transitions",
     "orderBookCr": 1304,
     "patFy26Cr": 55,
-    "peX": 44.8,
+    "peX": 44.7,
     "quarterly": [
       {
         "ebitda": 15,
@@ -136,10 +136,10 @@
     "tickerNse": "ADVAIT",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-07-15",
-      "evEbitdaX": 28.71,
-      "pbX": 8.34,
-      "peX": 44.8
+      "asOf": "2026-07-16",
+      "evEbitdaX": 28.63,
+      "pbX": 8.31,
+      "peX": 44.7
     }
   },
   "dataset": "detail/advait-energy",
@@ -149,10 +149,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-15",
+      "asOf": "2026-07-16",
       "confidence": "high",
       "name": "Market data (mid-2026)"
     }
   ],
-  "updatedAt": "2026-07-15"
+  "updatedAt": "2026-07-16"
 }

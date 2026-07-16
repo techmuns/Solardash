@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-15",
+  "asOf": "2026-07-16",
   "cadence": "quarterly",
   "coverage": "SJVN",
   "data": {
@@ -64,13 +64,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 72.7,
-    "evEbitdaX": 18.16,
+    "evEbitdaX": 18.15,
     "hasDetail": true,
-    "marketCapCr": 27532,
+    "marketCapCr": 27497,
     "name": "SJVN",
     "orderBookGw": 5,
     "patFy26Cr": 642,
-    "peX": 42.9,
+    "peX": 42.8,
     "quarterly": [
       {
         "ebitda": 464,
@@ -134,10 +134,10 @@
     "tickerNse": "SJVN",
     "type": "utility",
     "valuation": {
-      "asOf": "2026-07-15",
-      "evEbitdaX": 18.16,
+      "asOf": "2026-07-16",
+      "evEbitdaX": 18.15,
       "pbX": 1.93,
-      "peX": 42.9
+      "peX": 42.8
     }
   },
   "dataset": "detail/sjvn",
@@ -147,10 +147,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-15",
+      "asOf": "2026-07-16",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-15"
+  "updatedAt": "2026-07-16"
 }

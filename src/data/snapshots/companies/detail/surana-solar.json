@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-15",
+  "asOf": "2026-07-16",
   "cadence": "quarterly",
   "coverage": "Surana Solar",
   "data": {
@@ -33,12 +33,12 @@
         "revenue": 20.8
       }
     ],
-    "cmp": 25.4,
+    "cmp": 26.3,
     "confidence": "medium",
     "ebitdaMarginPct": -15.1,
-    "evEbitdaX": 277.78,
+    "evEbitdaX": 284.44,
     "hasDetail": true,
-    "marketCapCr": 125,
+    "marketCapCr": 128,
     "moduleGw": 0.5,
     "name": "Surana Solar",
     "patFy26Cr": 1.2,
@@ -73,9 +73,9 @@
     "tickerNse": "SURANASOL",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-07-15",
-      "evEbitdaX": 277.78,
-      "pbX": 2.23
+      "asOf": "2026-07-16",
+      "evEbitdaX": 284.44,
+      "pbX": 2.31
     }
   },
   "dataset": "detail/surana-solar",
@@ -85,10 +85,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-15",
+      "asOf": "2026-07-16",
       "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-15"
+  "updatedAt": "2026-07-16"
 }

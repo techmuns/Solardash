@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-15",
+  "asOf": "2026-07-16",
   "cadence": "quarterly",
   "coverage": "Solex Energy",
   "data": {
@@ -113,7 +113,7 @@
     "tickerNse": "SOLEX",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-07-15",
+      "asOf": "2026-07-16",
       "evEbitdaX": 7.68,
       "pbX": 4.25,
       "peX": 11.2
@@ -126,10 +126,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-15",
+      "asOf": "2026-07-16",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-15"
+  "updatedAt": "2026-07-16"
 }
