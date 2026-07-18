@@ -1,35 +1,20 @@
-import {
-  ArrowLeftRight,
-  Minus,
-  TrendingDown,
-  TrendingUp,
-  type LucideIcon,
-} from "lucide-react";
+"use client";
+
+import * as React from "react";
 import { LineSeriesChart } from "@/components/charts/LineSeriesChart";
 import { FillCategoryBar } from "@/components/charts/FillCharts";
+import { FrequencyToggle } from "@/components/charts/FrequencyToggle";
 import { Sparkline } from "@/components/charts/Sparkline";
+import { DIRECTION_CLASS as DCLASS } from "@/components/ui/direction";
 import { cn } from "@/lib/utils";
 import type { Series } from "@/data/types/core";
-import type {
-  DirectionClass,
-  StageEconomicsRow,
-} from "@/data/types/profit-pools";
+import type { StageEconomicsRow } from "@/data/types/profit-pools";
 import { AnalysisTag } from "./parts";
-
-const DCLASS: Record<
-  DirectionClass,
-  { label: string; color: string; Icon: LucideIcon }
-> = {
-  expanding: { label: "Expanding", color: "#10B981", Icon: TrendingUp },
-  stable: { label: "Stable", color: "#3B82F6", Icon: Minus },
-  squeezed: { label: "Squeezed", color: "#EF4444", Icon: TrendingDown },
-  mixed: { label: "Mixed", color: "#F59E0B", Icon: ArrowLeftRight },
-};
 
 // ───────────────────────────── Tab A · Price stack ─────────────────────────
 
 /** One native-unit price panel (its own y-scale). */
-function PricePanel({ series, years }: { series: Series; years: string[] }) {
+function PricePanel({ series, periods }: { series: Series; periods: string[] }) {
   const pts = series.points;
   const first = pts[0]?.value;
   const lastP = pts[pts.length - 1];
@@ -50,7 +35,7 @@ function PricePanel({ series, years }: { series: Series; years: string[] }) {
       </div>
       <LineSeriesChart
         series={[series]}
-        periodOrder={years}
+        periodOrder={periods}
         unit={series.unit}
         height={158}
         showLegend={false}
@@ -62,23 +47,58 @@ function PricePanel({ series, years }: { series: Series; years: string[] }) {
 export function PriceStack({
   years,
   series,
+  months,
+  monthly,
 }: {
   years: string[];
   series: Series[];
+  months: string[];
+  monthly: Series[];
 }) {
+  const [freq, setFreq] = React.useState<"monthly" | "annual">("monthly");
+  const isM = freq === "monthly";
+  const windowLabel = isM
+    ? `${months[0] ?? ""} → ${months[months.length - 1] ?? ""}`
+    : `${years[0] ?? ""} → ${years[years.length - 1] ?? ""}`;
+
   return (
     <div className="flex h-full min-h-0 flex-col gap-2.5">
-      <p className="shrink-0 text-2xs leading-snug text-muted-foreground">
-        Global PV price stack, native units, 2019→2025.{" "}
-        <span className="font-medium text-foreground/80">
-          Polysilicon −88% peak→trough ($36→$5/kg); modules roughly halved
-          ($0.26→$0.10/W); 2025 a partial recovery.
-        </span>{" "}
-        Dots are annual; est. years reconstructed from monthly data.
-      </p>
+      <div className="flex shrink-0 flex-wrap items-start justify-between gap-x-3 gap-y-1">
+        <p className="min-w-0 flex-1 text-2xs leading-snug text-muted-foreground">
+          {isM ? (
+            <>
+              Monthly survey track, {windowLabel} · China spot (RMB ÷ 7.2) · module =
+              FOB China.{" "}
+              <span className="font-medium text-foreground/80">
+                Poly&apos;s H2&apos;25 supply-cut rally (~$4.9 → $7.2) unwound to
+                the cash-cost floor by Jul &apos;26; module FOB spiked ~30% in
+                early &apos;26 on export-rebate pre-buying.
+              </span>{" "}
+              Est. months interpolated between published quotes.
+            </>
+          ) : (
+            <>
+              Global PV price stack, native units, {windowLabel}.{" "}
+              <span className="font-medium text-foreground/80">
+                Polysilicon −88% peak→trough ($36→$5/kg); modules roughly halved
+                ($0.26→$0.10/W); 2025 a partial recovery.
+              </span>{" "}
+              Dots are annual; est. years reconstructed from monthly data.
+            </>
+          )}
+        </p>
+        <FrequencyToggle<"monthly" | "annual">
+          options={[
+            { value: "monthly", label: "Monthly" },
+            { value: "annual", label: "Annual" },
+          ]}
+          value={freq}
+          onChange={setFreq}
+        />
+      </div>
       <div className="grid min-h-0 flex-1 content-start grid-cols-1 gap-3 sm:grid-cols-2">
-        {series.map((s) => (
-          <PricePanel key={s.key} series={s} years={years} />
+        {(isM ? monthly : series).map((s) => (
+          <PricePanel key={s.key} series={s} periods={isM ? months : years} />
         ))}
       </div>
     </div>

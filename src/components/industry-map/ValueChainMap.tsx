@@ -25,6 +25,7 @@ import {
 import { cn } from "@/lib/utils";
 import { FitBox } from "./FitBox";
 import { StageDetailDialog, type OpenNode } from "./StageDetailDialog";
+import { ECON_CHAIN, StageEconomicsStrip } from "./StageEconomicsStrip";
 import { STAGE_TEASER } from "@/data/value-chain-detail";
 import {
   HEAT_COLOR,
@@ -33,6 +34,7 @@ import {
   type Heat,
   type VcStage,
 } from "@/data/value-chain";
+import type { StageEconomicsRow } from "@/data/types/profit-pools";
 
 /** Map drill targets to friendly labels for the popup's "Open …" button. */
 const HREF_LABEL: Record<string, string> = {
@@ -357,8 +359,25 @@ function HeatLegend() {
  * integration), and solar products. Tracked boxes are heat-tinted; clicking any
  * box opens a popup with its market size, profit pool and leading companies.
  */
-export function ValueChainMap() {
+export function ValueChainMap({
+  economics,
+}: {
+  /** Per-stage margin & direction benchmark rows (profit-pools snapshot). */
+  economics?: StageEconomicsRow[];
+}) {
   const [open, setOpen] = React.useState<OpenNode | null>(null);
+
+  // Benchmark rows grouped per map node (via the chain links), for the strip
+  // chips and the popup's stage-economics section.
+  const econByNode = React.useMemo(() => {
+    const out: Record<string, StageEconomicsRow[]> = {};
+    for (const link of ECON_CHAIN) {
+      if (!link.nodeId || !economics) continue;
+      const rows = economics.filter((r) => r.stage === link.stage);
+      if (rows.length > 0) out[link.nodeId] = rows;
+    }
+    return out;
+  }, [economics]);
 
   const thinFilm = (
     <div className="rounded-2xl border border-dashed border-border/70 bg-muted/20 p-2.5">
@@ -437,9 +456,23 @@ export function ValueChainMap() {
           </div>
         </FitBox>
       </div>
+
+      {economics && economics.length > 0 && (
+        <StageEconomicsStrip
+          rows={economics}
+          onOpenStage={(nodeId) => {
+            const node = N[nodeId];
+            if (node) setOpen(nodeToOpen(node));
+          }}
+        />
+      )}
       </section>
 
-      <StageDetailDialog node={open} onClose={() => setOpen(null)} />
+      <StageDetailDialog
+        node={open}
+        onClose={() => setOpen(null)}
+        economics={open ? econByNode[open.id] : undefined}
+      />
     </OpenStageContext.Provider>
   );
 }

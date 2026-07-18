@@ -9,9 +9,9 @@ import { getProfitPools } from "@/data/profit-pools";
 import { formatDate } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
-import { FillLineSeries } from "@/components/charts/FillCharts";
 import { SectionCanvas, type CanvasTab } from "@/components/sections/SectionCanvas";
-import { AnalysisTag, Constituents, Scorecard, type ScorecardClaim } from "./parts";
+import { Constituents, Scorecard, type ScorecardClaim } from "./parts";
+import { StageMarginsBody } from "./StageMarginsBody";
 import {
   MarginByStage,
   MarginContrast,
@@ -42,9 +42,15 @@ export default function ProfitPoolsPage() {
   const mfgTrend =
     pools.marginByStage.find((s) => s.key === "manufacturing")?.points.map((p) => p.value) ??
     [];
-  const ippTrend =
-    pools.marginByStage.find((s) => s.key === "generation")?.points.map((p) => p.value) ??
-    [];
+  // Higher-frequency (quarterly) trajectories for the stage-economics sparklines.
+  const mfgTrendQ =
+    pools.marginByStageQuarterly
+      .find((s) => s.key === "manufacturing")
+      ?.points.map((p) => p.value) ?? [];
+  const ippTrendQ =
+    pools.marginByStageQuarterly
+      .find((s) => s.key === "generation")
+      ?.points.map((p) => p.value) ?? [];
   const tariffHist = tenders.tariffHistory[0];
   const tariffTrend = tariffHist?.points.map((p) => p.value) ?? [];
 
@@ -80,11 +86,12 @@ export default function ProfitPoolsPage() {
     dataset: "stage-economics",
   });
   // Attach the render-time India aggregates as sparklines where a stage's
-  // margin trajectory exists in our filings data (Module / IPP).
+  // margin trajectory exists in our filings data (Module / IPP) — quarterly,
+  // the densest series the committed filings support.
   const ecoRows = eco.data.rows.map((r) => {
-    if (r.stage === "Module" && r.region === "India") return { ...r, trend: mfgTrend };
+    if (r.stage === "Module" && r.region === "India") return { ...r, trend: mfgTrendQ };
     if (r.stage.startsWith("IPP") && r.region === "India")
-      return { ...r, trend: ippTrend };
+      return { ...r, trend: ippTrendQ };
     return r;
   });
 
@@ -129,26 +136,25 @@ export default function ProfitPoolsPage() {
       id: "margins",
       label: "Stage margins",
       title: "Stage profitability over time",
-      subtitle: "Revenue-weighted EBITDA margin · listed players · FY20 → FY26",
-      source: "Company filings (annual reports)",
+      subtitle:
+        "Revenue-weighted EBITDA margin · listed players · quarterly Q1 FY24 → Q4 FY26 · annual FY20 → FY26",
+      source: "Company filings (quarterly results · annual reports)",
       body: (
-        <div className="flex min-h-0 flex-1 flex-col">
-          <FillLineSeries
-            series={pools.marginByStage}
-            unit="%"
-            periodOrder={pools.periods}
-          />
-          <p className="mt-1 shrink-0 text-2xs leading-snug text-muted-foreground">
-            <AnalysisTag /> Manufacturing pool margin tripled off its FY22 trough
-            (~4% → 22%) as ALMM/DCR protection and scale took hold; IPP margins
-            stayed structurally high on long-tenor PPAs — value is migrating into
-            protected domestic manufacturing.
-          </p>
-        </div>
+        <StageMarginsBody
+          annual={pools.marginByStage}
+          annualPeriods={pools.periods}
+          quarterly={pools.marginByStageQuarterly}
+          quarterPeriods={pools.quarterPeriods}
+        />
       ),
       side: { title: "Pool constituents", node: <Constituents groups={pools.groups} /> },
       exportData: {
-        ...seriesToExport(pools.marginByStage, pools.periods, "Year"),
+        columns: seriesToExport(pools.marginByStage, pools.periods, "Period").columns,
+        rows: [
+          ...seriesToExport(pools.marginByStageQuarterly, pools.quarterPeriods, "Period")
+            .rows,
+          ...seriesToExport(pools.marginByStage, pools.periods, "Period").rows,
+        ],
         meta: meta("stage-margins"),
       },
     },
@@ -164,11 +170,23 @@ export default function ProfitPoolsPage() {
       id: "price-stack",
       label: "Price stack",
       title: "PV price stack over time",
-      subtitle: "Native units · 2019 → 2025 · polysilicon to module",
-      source: "Bernreuter · InfoLink · BNEF · IEA · OPIS · WoodMac · ITRPV",
-      body: <PriceStack years={price.data.years} series={price.data.series} />,
+      subtitle:
+        "Native units · polysilicon to module · monthly survey track Jan 24 → Jul 26 + annual arc 2019 → 2025",
+      source: "InfoLink · EnergyTrend · Silicon Industry Branch · OPIS · Bernreuter · SMM",
+      body: (
+        <PriceStack
+          years={price.data.years}
+          series={price.data.series}
+          months={price.data.months}
+          monthly={price.data.monthly}
+        />
+      ),
       exportData: {
-        ...seriesToExport(price.data.series, price.data.years, "Year"),
+        columns: seriesToExport(price.data.series, price.data.years, "Period").columns,
+        rows: [
+          ...seriesToExport(price.data.monthly, price.data.months, "Period").rows,
+          ...seriesToExport(price.data.series, price.data.years, "Period").rows,
+        ],
         meta: priceMeta,
       },
     },

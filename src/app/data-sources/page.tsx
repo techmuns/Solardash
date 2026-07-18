@@ -38,6 +38,11 @@ const MODELLED = [
     body: "The 2026 and 2030 points on the BESS $/kWh curve are modelled projections; historical points are sourced.",
     path: "manual-data/policy/bess-cost-curve.csv",
   },
+  {
+    title: "Monthly PV price stack (gap months)",
+    body: "The monthly poly/wafer/cell/module track anchors on published weekly survey quotes (InfoLink, EnergyTrend, Silicon Industry Branch, OPIS, Bernreuter, SMM); months without a direct quote are interpolated and flagged est.",
+    path: "manual-data/profit-pools/price-history-monthly.csv",
+  },
 ];
 
 export default function DataSourcesPage() {

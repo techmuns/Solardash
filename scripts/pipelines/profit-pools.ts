@@ -10,6 +10,21 @@ import type {
 
 // Vintage for the sourced benchmark pack (compiled early 2026).
 const PP_AS_OF = "2026-03-31";
+// Vintage of the monthly price refresh (latest survey quotes folded in).
+const PRICE_MONTHLY_AS_OF = "2026-07-15";
+
+const MONTH_NAMES = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+/** `2026-06` → `Jun 26` (compact monthly tick labels). */
+function monthLabel(ym: string): string {
+  const [y, m] = ym.split("-");
+  const name = MONTH_NAMES[Number(m) - 1];
+  if (!name || y?.length !== 4) throw new Error(`bad month "${ym}" (want YYYY-MM)`);
+  return `${name} ${y.slice(2)}`;
+}
 
 /** Parse a price cell: trailing `e` marks an est. (monthly-reconstructed) value. */
 function parsePrice(v: string): { value: number; est: boolean } {
@@ -43,6 +58,42 @@ const PRICE_SOURCES = [
   "ITRPV",
 ];
 
+// The monthly-refresh trackers (weekly/daily surveys → mid-month points).
+// Where a name also appears in the annual pack, the monthly entry wins (it
+// carries the fresher asOf + the cadence note).
+const PRICE_MONTHLY_SOURCES: { name: string; url: string; note: string }[] = [
+  {
+    name: "InfoLink Consulting",
+    url: "https://www.infolink-group.com/spot-price/",
+    note: "weekly (Wed) full-chain spot survey — poly · wafer · cell · module",
+  },
+  {
+    name: "EnergyTrend (TrendForce)",
+    url: "https://www.energytrend.com/solar-price.html",
+    note: "weekly (Thu) China spot table; free weekly archive",
+  },
+  {
+    name: "Silicon Industry Branch (CNMIA)",
+    url: "https://www.pv-tech.org/tag/polysilicon/",
+    note: "official weekly China polysilicon transaction averages (via reprints)",
+  },
+  {
+    name: "OPIS",
+    url: "https://www.opis.com/product/pricing/spot/global-solar-markets/",
+    note: "weekly (Tue) Chinese Module Marker · Global Polysilicon Marker (via pv magazine)",
+  },
+  {
+    name: "Bernreuter Research",
+    url: "https://www.bernreuter.com/polysilicon/price-trend/",
+    note: "weekly global polysilicon price index",
+  },
+  {
+    name: "SMM",
+    url: "https://www.metal.com/photovoltaic",
+    note: "daily China poly/wafer/cell/module quotes (RMB, converted)",
+  },
+];
+
 const mapConf = (c: string): Confidence =>
   c === "high" ? "high" : c === "medium" ? "medium" : "medium";
 
@@ -64,24 +115,62 @@ export const profitPoolsPipeline = definePipeline({
         return { period: r.year, value, ...(est ? { modelled: true } : {}) };
       }),
     }));
-    const priceSources: SourceRef[] = PRICE_SOURCES.map((name) => ({
-      name,
-      asOf: PP_AS_OF,
-      confidence: "high",
-      note: "representative annual; est. where monthly-reconstructed",
+    // Monthly refresh — the same four series tracked at survey frequency.
+    const monthlyRows = readManualCsv("profit-pools/price-history-monthly.csv");
+    const months = monthlyRows.map((r) => monthLabel(r.month));
+    const monthly: Series[] = PRICE_METRICS.map((m) => ({
+      key: m.key,
+      label: m.label,
+      unit: m.unit,
+      color: m.color,
+      points: monthlyRows.map((r): SeriesPoint => {
+        const { value, est } = parsePrice(r[m.col]);
+        return {
+          period: monthLabel(r.month),
+          value,
+          ...(est ? { modelled: true } : {}),
+        };
+      }),
     }));
 
+    // One SourceRef per distinct tracker; monthly entries override annual-pack
+    // duplicates with the fresher asOf + cadence note.
+    const priceSourceMap = new Map<string, SourceRef>();
+    for (const name of PRICE_SOURCES) {
+      priceSourceMap.set(name, {
+        name,
+        asOf: PP_AS_OF,
+        confidence: "high",
+        note: "representative annual; est. where monthly-reconstructed",
+      });
+    }
+    for (const s of PRICE_MONTHLY_SOURCES) {
+      priceSourceMap.set(s.name, {
+        name: s.name,
+        url: s.url,
+        asOf: PRICE_MONTHLY_AS_OF,
+        confidence: "high",
+        note: s.note,
+      });
+    }
+    const priceSources = [...priceSourceMap.values()].sort((a, b) =>
+      a.name.localeCompare(b.name),
+    );
+
     writeSnapshot<PriceHistoryData>("profit-pools", "price-history", {
-      asOf: PP_AS_OF,
-      cadence: "annual",
+      asOf: PRICE_MONTHLY_AS_OF,
+      cadence: "monthly",
       coverage: "Global · solar PV price stack (polysilicon, wafer, cell, module)",
       sources: priceSources,
       notes: [
-        "Representative annual values in native units (poly $/kg, wafer $/piece, cell & module $/W); points flagged modelled were reconstructed from monthly series (the pack's est. flag).",
-        "Polysilicon peaked ~$39/kg in Aug 2022 and fell to ~$5/kg in 2024 (−88% peak→trough), below cash cost across poly/wafer/cell; 2025 is a partial recovery (poly ~+39% YTD). Module $/W roughly halved 2022→2024.",
+        "Two frequencies: a monthly track (Jan 2024 → Jul 2026, mid-month spot from the weekly surveys — InfoLink, EnergyTrend, Silicon Industry Branch, OPIS, Bernreuter, SMM) and representative annual values for the long arc (2019→2025). Native units: poly $/kg, wafer $/piece, cell & module $/W.",
+        "Monthly basis: China spot for poly (n-type dense), wafer (182/183N) and cell (TOPCon M10), RMB converted at ~7.2/USD; module is the TOPCon FOB-China marker (OPIS CMM basis). Annual representative values can sit slightly above China spot where they blend non-China supply.",
+        "Points flagged modelled are interpolated between published survey quotes (monthly) or reconstructed from monthly series (annual, the pack's est. flag).",
+        "Polysilicon peaked ~$39/kg in Aug 2022 and fell to ~$5/kg in 2024 (−88% peak→trough), below cash cost across poly/wafer/cell. The H2 2025 'anti-involution' supply-cut rally (~$4.9 → $7.2/kg) unwound through H1 2026 back to the cash-cost floor (~$4.5/kg, Jul 2026).",
+        "Module FOB spiked ~30% in early 2026 ($0.088 → $0.12/W) on pre-buying ahead of China's export-tax-rebate cancellation (Apr 2026); domestic China module prices stayed near RMB 0.69/W — the FOB and domestic series diverge in 2026.",
         "Confidence: polysilicon & module HIGH; wafer & cell MEDIUM.",
       ],
-      data: { years, series },
+      data: { years, series, months, monthly },
     });
 
     // ── DATASET 2 — per-stage economics benchmark ───────────────────────

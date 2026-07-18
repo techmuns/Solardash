@@ -9,6 +9,7 @@ import {
   Gauge,
   Globe2,
   Layers,
+  Percent,
   Target,
   Workflow,
   X,
@@ -16,7 +17,11 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Dialog } from "@/components/ui/Dialog";
+import { Sparkline } from "@/components/charts/Sparkline";
+import { AnalysisTag } from "@/components/ui/AnalysisTag";
+import { DIRECTION_CLASS } from "@/components/ui/direction";
 import { STAGE_DETAIL, type DetailCompany, type Rating } from "@/data/value-chain-detail";
+import type { StageEconomicsRow } from "@/data/types/profit-pools";
 
 /** What the map hands the dialog when a box is clicked. */
 export interface OpenNode {
@@ -83,6 +88,41 @@ function Meter({ label, rating }: { label: string; rating: Rating }) {
   );
 }
 
+/** One benchmark margin row (region · metric · FACT text · direction read). */
+function EconRow({ row }: { row: StageEconomicsRow }) {
+  const d = DIRECTION_CLASS[row.directionClass];
+  return (
+    <li className="rounded-lg border border-border bg-muted/30 px-3 py-2">
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+          {row.region} · {row.metric}
+        </span>
+        <span
+          className="inline-flex shrink-0 items-center gap-1 text-2xs font-medium"
+          style={{ color: d.color }}
+        >
+          <d.Icon className="h-3 w-3" aria-hidden />
+          {row.direction}
+        </span>
+      </div>
+      <div className="mt-1 flex items-end justify-between gap-3">
+        <p className="text-sm font-bold leading-snug tabular-nums text-foreground">
+          {row.marginText}
+        </p>
+        {row.trend && row.trend.length > 1 && (
+          <div className="h-6 w-16 shrink-0" aria-hidden>
+            <Sparkline values={row.trend} color={d.color} height={24} area={false} />
+          </div>
+        )}
+      </div>
+      <p className="mt-1 text-2xs leading-relaxed text-muted-foreground">
+        {row.rationale} · <span className="text-foreground/70">{row.source}</span> ·{" "}
+        {row.confidence}
+      </p>
+    </li>
+  );
+}
+
 function CompanyList({ items }: { items: DetailCompany[] }) {
   return (
     <ul className="divide-y divide-border/70 rounded-xl border border-border">
@@ -108,9 +148,12 @@ function CompanyList({ items }: { items: DetailCompany[] }) {
 export function StageDetailDialog({
   node,
   onClose,
+  economics,
 }: {
   node: OpenNode | null;
   onClose: () => void;
+  /** Stage-economics benchmark rows for this node, when the stage is tracked. */
+  economics?: StageEconomicsRow[];
 }) {
   const detail = node ? STAGE_DETAIL[node.id] : undefined;
   const Icon = node?.icon;
@@ -169,6 +212,20 @@ export function StageDetailDialog({
               <Stat label="Market size (TAM)" value={detail.tam} sub={detail.tamSub} />
               <Stat label="Profit pool" value={detail.profit} sub={detail.profitSub} />
             </div>
+
+            {economics && economics.length > 0 && (
+              <Section icon={Percent} title="Stage economics">
+                <ul className="space-y-2">
+                  {economics.map((r) => (
+                    <EconRow key={`${r.stage}-${r.region}`} row={r} />
+                  ))}
+                </ul>
+                <p className="mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-2xs leading-relaxed text-muted-foreground">
+                  Margins are sourced FACT (cited per row); the direction read is
+                  <AnalysisTag />
+                </p>
+              </Section>
+            )}
 
             {detail.scorecard && (
               <Section icon={Gauge} title="Stage scorecard">

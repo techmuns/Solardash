@@ -21,6 +21,15 @@ export interface PriceHistoryData {
    * was reconstructed from monthly data (the pack's "est." flag).
    */
   series: Series[];
+  /** Month labels (e.g. `Jan 24`) — the higher-frequency x-axis, trailing window. */
+  months: string[];
+  /**
+   * Monthly counterparts of `series` (same stages / keys / units), tracked from
+   * the weekly/monthly price surveys (InfoLink · Bernreuter · PVInsights ·
+   * OPIS · SMM). Points carry `modelled: true` where a month is interpolated
+   * between published survey quotes.
+   */
+  monthly: Series[];
 }
 
 // ---------------------------------------------------------------------------

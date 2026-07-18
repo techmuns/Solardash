@@ -1,8 +1,645 @@
 {
-  "asOf": "2026-03-31",
-  "cadence": "annual",
+  "asOf": "2026-07-15",
+  "cadence": "monthly",
   "coverage": "Global · solar PV price stack (polysilicon, wafer, cell, module)",
   "data": {
+    "monthly": [
+      {
+        "color": "#EA580C",
+        "key": "poly",
+        "label": "Polysilicon",
+        "points": [
+          {
+            "period": "Jan 24",
+            "value": 9.2
+          },
+          {
+            "modelled": true,
+            "period": "Feb 24",
+            "value": 8.8
+          },
+          {
+            "modelled": true,
+            "period": "Mar 24",
+            "value": 8.5
+          },
+          {
+            "period": "Apr 24",
+            "value": 8.1
+          },
+          {
+            "modelled": true,
+            "period": "May 24",
+            "value": 6.5
+          },
+          {
+            "period": "Jun 24",
+            "value": 5.7
+          },
+          {
+            "modelled": true,
+            "period": "Jul 24",
+            "value": 5.6
+          },
+          {
+            "modelled": true,
+            "period": "Aug 24",
+            "value": 5.6
+          },
+          {
+            "modelled": true,
+            "period": "Sep 24",
+            "value": 5.6
+          },
+          {
+            "period": "Oct 24",
+            "value": 5.6
+          },
+          {
+            "period": "Nov 24",
+            "value": 5.7
+          },
+          {
+            "period": "Dec 24",
+            "value": 5.6
+          },
+          {
+            "modelled": true,
+            "period": "Jan 25",
+            "value": 5.6
+          },
+          {
+            "period": "Feb 25",
+            "value": 5.6
+          },
+          {
+            "modelled": true,
+            "period": "Mar 25",
+            "value": 5.6
+          },
+          {
+            "period": "Apr 25",
+            "value": 5.6
+          },
+          {
+            "modelled": true,
+            "period": "May 25",
+            "value": 5.2
+          },
+          {
+            "period": "Jun 25",
+            "value": 5
+          },
+          {
+            "period": "Jul 25",
+            "value": 4.9
+          },
+          {
+            "period": "Aug 25",
+            "value": 6.2
+          },
+          {
+            "period": "Sep 25",
+            "value": 7.1
+          },
+          {
+            "modelled": true,
+            "period": "Oct 25",
+            "value": 7.2
+          },
+          {
+            "modelled": true,
+            "period": "Nov 25",
+            "value": 7.2
+          },
+          {
+            "period": "Dec 25",
+            "value": 7.2
+          },
+          {
+            "period": "Jan 26",
+            "value": 7.4
+          },
+          {
+            "period": "Feb 26",
+            "value": 7.2
+          },
+          {
+            "period": "Mar 26",
+            "value": 6.6
+          },
+          {
+            "modelled": true,
+            "period": "Apr 26",
+            "value": 5.7
+          },
+          {
+            "modelled": true,
+            "period": "May 26",
+            "value": 5
+          },
+          {
+            "period": "Jun 26",
+            "value": 4.7
+          },
+          {
+            "period": "Jul 26",
+            "value": 4.5
+          }
+        ],
+        "unit": "$/kg"
+      },
+      {
+        "color": "#8B5CF6",
+        "key": "wafer",
+        "label": "Wafer",
+        "points": [
+          {
+            "period": "Jan 24",
+            "value": 0.29
+          },
+          {
+            "modelled": true,
+            "period": "Feb 24",
+            "value": 0.28
+          },
+          {
+            "modelled": true,
+            "period": "Mar 24",
+            "value": 0.25
+          },
+          {
+            "period": "Apr 24",
+            "value": 0.22
+          },
+          {
+            "modelled": true,
+            "period": "May 24",
+            "value": 0.18
+          },
+          {
+            "period": "Jun 24",
+            "value": 0.153
+          },
+          {
+            "period": "Jul 24",
+            "value": 0.156
+          },
+          {
+            "modelled": true,
+            "period": "Aug 24",
+            "value": 0.153
+          },
+          {
+            "modelled": true,
+            "period": "Sep 24",
+            "value": 0.15
+          },
+          {
+            "modelled": true,
+            "period": "Oct 24",
+            "value": 0.146
+          },
+          {
+            "period": "Nov 24",
+            "value": 0.143
+          },
+          {
+            "modelled": true,
+            "period": "Dec 24",
+            "value": 0.143
+          },
+          {
+            "modelled": true,
+            "period": "Jan 25",
+            "value": 0.146
+          },
+          {
+            "modelled": true,
+            "period": "Feb 25",
+            "value": 0.16
+          },
+          {
+            "modelled": true,
+            "period": "Mar 25",
+            "value": 0.174
+          },
+          {
+            "period": "Apr 25",
+            "value": 0.171
+          },
+          {
+            "modelled": true,
+            "period": "May 25",
+            "value": 0.139
+          },
+          {
+            "period": "Jun 25",
+            "value": 0.125
+          },
+          {
+            "period": "Jul 25",
+            "value": 0.139
+          },
+          {
+            "modelled": true,
+            "period": "Aug 25",
+            "value": 0.153
+          },
+          {
+            "modelled": true,
+            "period": "Sep 25",
+            "value": 0.174
+          },
+          {
+            "modelled": true,
+            "period": "Oct 25",
+            "value": 0.188
+          },
+          {
+            "period": "Nov 25",
+            "value": 0.174
+          },
+          {
+            "period": "Dec 25",
+            "value": 0.164
+          },
+          {
+            "period": "Jan 26",
+            "value": 0.194
+          },
+          {
+            "modelled": true,
+            "period": "Feb 26",
+            "value": 0.174
+          },
+          {
+            "period": "Mar 26",
+            "value": 0.146
+          },
+          {
+            "period": "Apr 26",
+            "value": 0.132
+          },
+          {
+            "modelled": true,
+            "period": "May 26",
+            "value": 0.125
+          },
+          {
+            "period": "Jun 26",
+            "value": 0.125
+          },
+          {
+            "period": "Jul 26",
+            "value": 0.118
+          }
+        ],
+        "unit": "$/pc"
+      },
+      {
+        "color": "#F59E0B",
+        "key": "cell",
+        "label": "Cell",
+        "points": [
+          {
+            "period": "Jan 24",
+            "value": 0.065
+          },
+          {
+            "modelled": true,
+            "period": "Feb 24",
+            "value": 0.061
+          },
+          {
+            "modelled": true,
+            "period": "Mar 24",
+            "value": 0.056
+          },
+          {
+            "modelled": true,
+            "period": "Apr 24",
+            "value": 0.05
+          },
+          {
+            "modelled": true,
+            "period": "May 24",
+            "value": 0.044
+          },
+          {
+            "modelled": true,
+            "period": "Jun 24",
+            "value": 0.042
+          },
+          {
+            "modelled": true,
+            "period": "Jul 24",
+            "value": 0.04
+          },
+          {
+            "period": "Aug 24",
+            "value": 0.04
+          },
+          {
+            "modelled": true,
+            "period": "Sep 24",
+            "value": 0.039
+          },
+          {
+            "modelled": true,
+            "period": "Oct 24",
+            "value": 0.038
+          },
+          {
+            "period": "Nov 24",
+            "value": 0.038
+          },
+          {
+            "modelled": true,
+            "period": "Dec 24",
+            "value": 0.039
+          },
+          {
+            "modelled": true,
+            "period": "Jan 25",
+            "value": 0.04
+          },
+          {
+            "modelled": true,
+            "period": "Feb 25",
+            "value": 0.04
+          },
+          {
+            "modelled": true,
+            "period": "Mar 25",
+            "value": 0.042
+          },
+          {
+            "period": "Apr 25",
+            "value": 0.042
+          },
+          {
+            "modelled": true,
+            "period": "May 25",
+            "value": 0.038
+          },
+          {
+            "modelled": true,
+            "period": "Jun 25",
+            "value": 0.035
+          },
+          {
+            "period": "Jul 25",
+            "value": 0.032
+          },
+          {
+            "modelled": true,
+            "period": "Aug 25",
+            "value": 0.036
+          },
+          {
+            "modelled": true,
+            "period": "Sep 25",
+            "value": 0.04
+          },
+          {
+            "period": "Oct 25",
+            "value": 0.038
+          },
+          {
+            "modelled": true,
+            "period": "Nov 25",
+            "value": 0.038
+          },
+          {
+            "period": "Dec 25",
+            "value": 0.041
+          },
+          {
+            "modelled": true,
+            "period": "Jan 26",
+            "value": 0.044
+          },
+          {
+            "modelled": true,
+            "period": "Feb 26",
+            "value": 0.042
+          },
+          {
+            "modelled": true,
+            "period": "Mar 26",
+            "value": 0.04
+          },
+          {
+            "modelled": true,
+            "period": "Apr 26",
+            "value": 0.039
+          },
+          {
+            "modelled": true,
+            "period": "May 26",
+            "value": 0.038
+          },
+          {
+            "modelled": true,
+            "period": "Jun 26",
+            "value": 0.038
+          },
+          {
+            "period": "Jul 26",
+            "value": 0.037
+          }
+        ],
+        "unit": "$/W"
+      },
+      {
+        "color": "#2563EB",
+        "key": "module",
+        "label": "Module",
+        "points": [
+          {
+            "modelled": true,
+            "period": "Jan 24",
+            "value": 0.11
+          },
+          {
+            "modelled": true,
+            "period": "Feb 24",
+            "value": 0.108
+          },
+          {
+            "modelled": true,
+            "period": "Mar 24",
+            "value": 0.106
+          },
+          {
+            "modelled": true,
+            "period": "Apr 24",
+            "value": 0.104
+          },
+          {
+            "modelled": true,
+            "period": "May 24",
+            "value": 0.102
+          },
+          {
+            "modelled": true,
+            "period": "Jun 24",
+            "value": 0.101
+          },
+          {
+            "period": "Jul 24",
+            "value": 0.1
+          },
+          {
+            "modelled": true,
+            "period": "Aug 24",
+            "value": 0.096
+          },
+          {
+            "modelled": true,
+            "period": "Sep 24",
+            "value": 0.092
+          },
+          {
+            "period": "Oct 24",
+            "value": 0.089
+          },
+          {
+            "modelled": true,
+            "period": "Nov 24",
+            "value": 0.088
+          },
+          {
+            "modelled": true,
+            "period": "Dec 24",
+            "value": 0.088
+          },
+          {
+            "modelled": true,
+            "period": "Jan 25",
+            "value": 0.087
+          },
+          {
+            "modelled": true,
+            "period": "Feb 25",
+            "value": 0.088
+          },
+          {
+            "modelled": true,
+            "period": "Mar 25",
+            "value": 0.09
+          },
+          {
+            "period": "Apr 25",
+            "value": 0.092
+          },
+          {
+            "modelled": true,
+            "period": "May 25",
+            "value": 0.091
+          },
+          {
+            "modelled": true,
+            "period": "Jun 25",
+            "value": 0.088
+          },
+          {
+            "modelled": true,
+            "period": "Jul 25",
+            "value": 0.086
+          },
+          {
+            "modelled": true,
+            "period": "Aug 25",
+            "value": 0.086
+          },
+          {
+            "modelled": true,
+            "period": "Sep 25",
+            "value": 0.087
+          },
+          {
+            "modelled": true,
+            "period": "Oct 25",
+            "value": 0.088
+          },
+          {
+            "modelled": true,
+            "period": "Nov 25",
+            "value": 0.088
+          },
+          {
+            "period": "Dec 25",
+            "value": 0.089
+          },
+          {
+            "period": "Jan 26",
+            "value": 0.115
+          },
+          {
+            "modelled": true,
+            "period": "Feb 26",
+            "value": 0.118
+          },
+          {
+            "period": "Mar 26",
+            "value": 0.12
+          },
+          {
+            "modelled": true,
+            "period": "Apr 26",
+            "value": 0.118
+          },
+          {
+            "period": "May 26",
+            "value": 0.117
+          },
+          {
+            "period": "Jun 26",
+            "value": 0.114
+          },
+          {
+            "period": "Jul 26",
+            "value": 0.113
+          }
+        ],
+        "unit": "$/W"
+      }
+    ],
+    "months": [
+      "Jan 24",
+      "Feb 24",
+      "Mar 24",
+      "Apr 24",
+      "May 24",
+      "Jun 24",
+      "Jul 24",
+      "Aug 24",
+      "Sep 24",
+      "Oct 24",
+      "Nov 24",
+      "Dec 24",
+      "Jan 25",
+      "Feb 25",
+      "Mar 25",
+      "Apr 25",
+      "May 25",
+      "Jun 25",
+      "Jul 25",
+      "Aug 25",
+      "Sep 25",
+      "Oct 25",
+      "Nov 25",
+      "Dec 25",
+      "Jan 26",
+      "Feb 26",
+      "Mar 26",
+      "Apr 26",
+      "May 26",
+      "Jun 26",
+      "Jul 26"
+    ],
     "series": [
       {
         "color": "#EA580C",
@@ -170,23 +807,21 @@
   },
   "dataset": "price-history",
   "notes": [
-    "Representative annual values in native units (poly $/kg, wafer $/piece, cell & module $/W); points flagged modelled were reconstructed from monthly series (the pack's est. flag).",
-    "Polysilicon peaked ~$39/kg in Aug 2022 and fell to ~$5/kg in 2024 (−88% peak→trough), below cash cost across poly/wafer/cell; 2025 is a partial recovery (poly ~+39% YTD). Module $/W roughly halved 2022→2024.",
+    "Two frequencies: a monthly track (Jan 2024 → Jul 2026, mid-month spot from the weekly surveys — InfoLink, EnergyTrend, Silicon Industry Branch, OPIS, Bernreuter, SMM) and representative annual values for the long arc (2019→2025). Native units: poly $/kg, wafer $/piece, cell & module $/W.",
+    "Monthly basis: China spot for poly (n-type dense), wafer (182/183N) and cell (TOPCon M10), RMB converted at ~7.2/USD; module is the TOPCon FOB-China marker (OPIS CMM basis). Annual representative values can sit slightly above China spot where they blend non-China supply.",
+    "Points flagged modelled are interpolated between published survey quotes (monthly) or reconstructed from monthly series (annual, the pack's est. flag).",
+    "Polysilicon peaked ~$39/kg in Aug 2022 and fell to ~$5/kg in 2024 (−88% peak→trough), below cash cost across poly/wafer/cell. The H2 2025 'anti-involution' supply-cut rally (~$4.9 → $7.2/kg) unwound through H1 2026 back to the cash-cost floor (~$4.5/kg, Jul 2026).",
+    "Module FOB spiked ~30% in early 2026 ($0.088 → $0.12/W) on pre-buying ahead of China's export-tax-rebate cancellation (Apr 2026); domestic China module prices stayed near RMB 0.69/W — the FOB and domestic series diverge in 2026.",
     "Confidence: polysilicon & module HIGH; wafer & cell MEDIUM."
   ],
   "section": "profit-pools",
   "sources": [
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-07-15",
       "confidence": "high",
       "name": "Bernreuter Research",
-      "note": "representative annual; est. where monthly-reconstructed"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "high",
-      "name": "InfoLink Consulting",
-      "note": "representative annual; est. where monthly-reconstructed"
+      "note": "weekly global polysilicon price index",
+      "url": "https://www.bernreuter.com/polysilicon/price-trend/"
     },
     {
       "asOf": "2026-03-31",
@@ -195,29 +830,58 @@
       "note": "representative annual; est. where monthly-reconstructed"
     },
     {
+      "asOf": "2026-07-15",
+      "confidence": "high",
+      "name": "EnergyTrend (TrendForce)",
+      "note": "weekly (Thu) China spot table; free weekly archive",
+      "url": "https://www.energytrend.com/solar-price.html"
+    },
+    {
       "asOf": "2026-03-31",
       "confidence": "high",
       "name": "IEA",
       "note": "representative annual; est. where monthly-reconstructed"
     },
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-07-15",
       "confidence": "high",
-      "name": "OPIS",
-      "note": "representative annual; est. where monthly-reconstructed"
-    },
-    {
-      "asOf": "2026-03-31",
-      "confidence": "high",
-      "name": "Wood Mackenzie",
-      "note": "representative annual; est. where monthly-reconstructed"
+      "name": "InfoLink Consulting",
+      "note": "weekly (Wed) full-chain spot survey — poly · wafer · cell · module",
+      "url": "https://www.infolink-group.com/spot-price/"
     },
     {
       "asOf": "2026-03-31",
       "confidence": "high",
       "name": "ITRPV",
       "note": "representative annual; est. where monthly-reconstructed"
+    },
+    {
+      "asOf": "2026-07-15",
+      "confidence": "high",
+      "name": "OPIS",
+      "note": "weekly (Tue) Chinese Module Marker · Global Polysilicon Marker (via pv magazine)",
+      "url": "https://www.opis.com/product/pricing/spot/global-solar-markets/"
+    },
+    {
+      "asOf": "2026-07-15",
+      "confidence": "high",
+      "name": "Silicon Industry Branch (CNMIA)",
+      "note": "official weekly China polysilicon transaction averages (via reprints)",
+      "url": "https://www.pv-tech.org/tag/polysilicon/"
+    },
+    {
+      "asOf": "2026-07-15",
+      "confidence": "high",
+      "name": "SMM",
+      "note": "daily China poly/wafer/cell/module quotes (RMB, converted)",
+      "url": "https://www.metal.com/photovoltaic"
+    },
+    {
+      "asOf": "2026-03-31",
+      "confidence": "high",
+      "name": "Wood Mackenzie",
+      "note": "representative annual; est. where monthly-reconstructed"
     }
   ],
-  "updatedAt": "2026-03-31"
+  "updatedAt": "2026-07-15"
 }
