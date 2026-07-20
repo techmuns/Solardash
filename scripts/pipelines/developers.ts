@@ -26,6 +26,21 @@ function num(value: string | undefined): number | undefined {
 }
 const n0 = (v: string | undefined) => num(v) ?? 0;
 
+// Non-solar-relevant tech tags and project keywords excluded from the IPP
+// commissioning view: thermal / conventional generation and pumped-storage
+// hydro (PSP). Battery storage (BESS) is deliberately NOT excluded.
+const IRRELEVANT_TECH = new Set(["thermal", "coal", "lignite", "gas", "nuclear", "psp", "hydro"]);
+const IRRELEVANT_PROJECT_RE =
+  /\b(pumped[-\s]?storage|psp|thermal|coal|lignite|nuclear)\b/i;
+
+/** True unless the commissioning row is thermal or pumped-storage hydro. */
+function isSolarRelevant(r: Record<string, string>): boolean {
+  return (
+    !IRRELEVANT_TECH.has((r.tech ?? "").trim().toLowerCase()) &&
+    !IRRELEVANT_PROJECT_RE.test(r.project ?? "")
+  );
+}
+
 export const developersPipeline = definePipeline({
   name: "developers",
   section: "developers",
@@ -101,7 +116,11 @@ export const developersPipeline = definePipeline({
     };
 
     // --- Commissioning guidance → revision history → slippage (shared helper) ---
-    const commissioning = buildCommissioningTranches(commRows);
+    // The IPP commissioning view is a solar / RE generation tracker, so exclude
+    // assets that aren't relevant to it — thermal and pumped-storage hydro (PSP)
+    // — even if a maintained-feed row slips one in. Battery storage (BESS) stays:
+    // it firms solar and shows up in the tender mix, profit pools and policy.
+    const commissioning = buildCommissioningTranches(commRows.filter(isSolarRelevant));
 
     // --- Portfolio mix (aggregate tech GW + share; BESS separate as GWh) ---
     const mixGw: Record<string, number> = { solar: 0, wind: 0, hybrid: 0, fdre: 0 };

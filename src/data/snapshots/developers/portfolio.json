@@ -90,36 +90,6 @@
         "tech": "solar"
       },
       {
-        "capacityGw": 10.08,
-        "confidence": "medium",
-        "currentTarget": "Q2FY26",
-        "developer": "Greenko",
-        "history": [
-          {
-            "concall": "Original EPC schedule",
-            "sourceUrl": "https://powerline.net.in/2025/08/18/addressing-intermittency-greenkos-irep-seeks-to-set-an-example-in-the-energy-storage-space/",
-            "statedOn": "2024-06-05",
-            "status": "delayed",
-            "targetPeriod": "Q3FY25"
-          },
-          {
-            "concall": "2025 press update",
-            "sourceUrl": "https://powerline.net.in/2025/08/18/addressing-intermittency-greenkos-irep-seeks-to-set-an-example-in-the-energy-storage-space/",
-            "statedOn": "2025-11-08",
-            "status": "commissioned",
-            "targetPeriod": "Q2FY26"
-          }
-        ],
-        "id": "GK-PINNAPURAM",
-        "originalTarget": "Q3FY25",
-        "project": "Pinnapuram IRESP pumped storage (AP)",
-        "slipQuarters": 3,
-        "sourceNote": "GWh. 1,680 MW / 10.08 GWh PSP; 5 of 8 units commissioned by Jul-2025, full plant ~Sep-2025 - modest slip from an original Dec-2024 target.",
-        "sourceUrl": "https://powerline.net.in/2025/08/18/addressing-intermittency-greenkos-irep-seeks-to-set-an-example-in-the-energy-storage-space/",
-        "status": "commissioned",
-        "tech": "bess"
-      },
-      {
         "capacityGw": 1,
         "confidence": "high",
         "currentTarget": "Q3FY26",
@@ -701,36 +671,6 @@
         "tech": "solar"
       },
       {
-        "capacityGw": 11,
-        "confidence": "medium",
-        "currentTarget": "Q3FY27",
-        "developer": "Greenko",
-        "history": [
-          {
-            "concall": "Project announcement",
-            "sourceUrl": "https://www.alcircle.com/news/india-plans-over-tenfold-increase-in-pumped-storage-hydropower-capacity-backed-by-greenko-adani-jsw-114269",
-            "statedOn": "2024-06-05",
-            "status": "delayed",
-            "targetPeriod": "Q3FY25"
-          },
-          {
-            "concall": "2025 press update",
-            "sourceUrl": "https://www.alcircle.com/news/india-plans-over-tenfold-increase-in-pumped-storage-hydropower-capacity-backed-by-greenko-adani-jsw-114269",
-            "statedOn": "2025-11-08",
-            "status": "delayed",
-            "targetPeriod": "Q3FY27"
-          }
-        ],
-        "id": "GK-GANDHISAGAR",
-        "originalTarget": "Q3FY25",
-        "project": "Gandhi Sagar PSP (MP)",
-        "slipQuarters": 8,
-        "sourceNote": "GWh. 1,440->1,920 MW / ~11 GWh; 2025 press guides commissioning to CY2026 vs an originally announced Dec-2024 COD - ~1.5-2 year slip.",
-        "sourceUrl": "https://www.alcircle.com/news/india-plans-over-tenfold-increase-in-pumped-storage-hydropower-capacity-backed-by-greenko-adani-jsw-114269",
-        "status": "delayed",
-        "tech": "bess"
-      },
-      {
         "capacityGw": 0.6,
         "confidence": "high",
         "currentTarget": "Q3FY27",
@@ -1284,29 +1224,6 @@
         "sourceUrl": "https://www.whalesbook.com/news/English/renewables/KPI-Green-Energys-Growth-Hit-by-Khavda-Delays-Dilution-Fears/6a04945e9444064ed06227aa",
         "status": "delayed",
         "tech": "hybrid"
-      },
-      {
-        "capacityGw": 10,
-        "confidence": "medium",
-        "currentTarget": "Q3FY28",
-        "developer": "Greenko",
-        "history": [
-          {
-            "concall": "2025 press update",
-            "sourceUrl": "https://www.mercomindia.com/greenko-seeks-epc-contractors-1260-mw-pumped-hydro-storage-project-karnataka",
-            "statedOn": "2025-11-08",
-            "status": "on-track",
-            "targetPeriod": "Q3FY28"
-          }
-        ],
-        "id": "GK-SAUNDATTI",
-        "originalTarget": "Q3FY28",
-        "project": "Saundatti IRESP PSP (Karnataka)",
-        "slipQuarters": 0,
-        "sourceNote": "GWh (approx). 1,260 MW standalone PSP; guided CY2027-28, EM equipment EPC awarded (GE Power, Mar-2025); no prior public COD slipped yet.",
-        "sourceUrl": "https://www.mercomindia.com/greenko-seeks-epc-contractors-1260-mw-pumped-hydro-storage-project-karnataka",
-        "status": "on-track",
-        "tech": "bess"
       },
       {
         "capacityGw": 0.45,
@@ -2006,24 +1923,6 @@
       "confidence": "medium",
       "name": "GERC SCOD-extension order",
       "url": "https://www.saurenergy.com/solar-energy-news/land-delays-row-issues-win-partial-relief-for-juniper-green-at-gerc-12063280"
-    },
-    {
-      "asOf": "2025-11-08",
-      "confidence": "medium",
-      "name": "Greenko / Mercom",
-      "url": "https://www.mercomindia.com/greenko-seeks-epc-contractors-1260-mw-pumped-hydro-storage-project-karnataka"
-    },
-    {
-      "asOf": "2025-11-08",
-      "confidence": "medium",
-      "name": "Greenko / press update",
-      "url": "https://www.alcircle.com/news/india-plans-over-tenfold-increase-in-pumped-storage-hydropower-capacity-backed-by-greenko-adani-jsw-114269"
-    },
-    {
-      "asOf": "2025-11-08",
-      "confidence": "medium",
-      "name": "Greenko project update",
-      "url": "https://powerline.net.in/2025/08/18/addressing-intermittency-greenkos-irep-seeks-to-set-an-example-in-the-energy-storage-space/"
     },
     {
       "asOf": "2025-11-08",
