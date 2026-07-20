@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-17",
+  "asOf": "2026-07-20",
   "cadence": "quarterly",
   "coverage": "Zodiac Energy",
   "data": {
@@ -45,7 +45,7 @@
         "revenue": 544
       }
     ],
-    "cmp": 261,
+    "cmp": 259,
     "concall": {
       "date": "2026-05-25",
       "guidance": [
@@ -64,12 +64,12 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 10.3,
-    "evEbitdaX": 11.39,
+    "evEbitdaX": 11.32,
     "hasDetail": true,
-    "marketCapCr": 395,
+    "marketCapCr": 391,
     "name": "Zodiac Energy",
     "patFy26Cr": 21,
-    "peX": 18.8,
+    "peX": 18.6,
     "quarterly": [
       {
         "ebitda": 10,
@@ -133,10 +133,10 @@
     "tickerNse": "ZODIAC",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-07-17",
-      "evEbitdaX": 11.39,
-      "pbX": 3.38,
-      "peX": 18.8
+      "asOf": "2026-07-20",
+      "evEbitdaX": 11.32,
+      "pbX": 3.35,
+      "peX": 18.6
     }
   },
   "dataset": "detail/zodiac-energy",
@@ -146,10 +146,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-17",
+      "asOf": "2026-07-20",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-17"
+  "updatedAt": "2026-07-20"
 }

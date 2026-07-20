@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-17",
+  "asOf": "2026-07-20",
   "cadence": "quarterly",
   "coverage": "Sungarner Energies",
   "data": {
@@ -86,7 +86,7 @@
     "tickerNse": "SEL",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-07-17",
+      "asOf": "2026-07-20",
       "evEbitdaX": 9.97,
       "pbX": 3.6,
       "peX": 14.1
@@ -99,10 +99,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-17",
+      "asOf": "2026-07-20",
       "confidence": "medium",
       "name": "NSE Emerge (SME)"
     }
   ],
-  "updatedAt": "2026-07-17"
+  "updatedAt": "2026-07-20"
 }
