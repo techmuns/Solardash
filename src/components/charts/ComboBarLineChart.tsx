@@ -74,7 +74,7 @@ export function ComboBarLineChart({
           stroke={theme.axis}
           tickLine={false}
           axisLine={false}
-          width={56}
+          width={68}
           tickFormatter={formatAxisTick}
           tick={{ fill: theme.tick, fontSize: 12 }}
         />

@@ -1,0 +1,45 @@
+name: Refresh PV price stack
+
+# The monthly PV price stack (polysilicon → module) and the per-stage economics
+# benchmark are MAINTAINED feeds: the underlying spot surveys (InfoLink,
+# EnergyTrend, Silicon Industry Branch, OPIS, Bernreuter, SMM) are weekly but
+# paywalled / bot-blocked, so there is no scraper — a human appends the latest
+# month to manual-data/profit-pools/*.csv. This Action rebuilds the profit-pools
+# snapshot from those CSVs on a monthly cron (and on demand) and commits only if
+# the rendered data changed, so a CSV edit deploys without a manual rebuild.
+
+on:
+  schedule:
+    - cron: '0 6 3 * *'      # 3rd of each month, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-price-stack
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Rebuild profit-pools snapshot
+        run: npx tsx scripts/run.ts profit-pools
+      - name: Commit & push if changed
+        run: |
+          git config user.name "solardash-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add manual-data/profit-pools src/data/snapshots/profit-pools
+          if git diff --cached --quiet; then
+            echo "No price-stack changes."
+          else
+            git commit -m "chore(data): refresh PV price stack"
+            git push
+          fi

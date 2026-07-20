@@ -24,8 +24,8 @@ function SchemeTable({ items }: { items: PolicyData["schemes"] }) {
             <th className="px-3 py-2 font-semibold">Scheme</th>
             <th className="px-3 py-2 font-semibold">Category</th>
             <th className="whitespace-nowrap px-3 py-2 font-semibold">Announced</th>
-            <th className="px-3 py-2 font-semibold">Key metric</th>
-            <th className="px-3 py-2 font-semibold">Highlights</th>
+            <th className="px-3 py-2 font-semibold">What it is</th>
+            <th className="px-3 py-2 font-semibold">Companies affected &amp; how</th>
             <th className="px-3 py-2 font-semibold">Status</th>
           </tr>
         </thead>
@@ -38,17 +38,17 @@ function SchemeTable({ items }: { items: PolicyData["schemes"] }) {
                     href={s.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 hover:text-brand"
+                    className="inline-flex items-start gap-1 hover:text-brand"
                     title="Official source"
                   >
-                    <span className="whitespace-nowrap">{s.scheme}</span>
+                    <span className="max-w-[12rem]">{s.scheme}</span>
                     <ExternalLink
-                      className="h-3 w-3 shrink-0 text-muted-foreground/60"
+                      className="mt-0.5 h-3 w-3 shrink-0 text-muted-foreground/60"
                       aria-hidden
                     />
                   </a>
                 ) : (
-                  <span className="whitespace-nowrap">{s.scheme}</span>
+                  <span className="max-w-[12rem]">{s.scheme}</span>
                 )}
               </td>
               <td className="px-3 py-2">
@@ -59,11 +59,17 @@ function SchemeTable({ items }: { items: PolicyData["schemes"] }) {
               <td className="whitespace-nowrap px-3 py-2 tabular-nums text-muted-foreground">
                 {s.announced ?? "—"}
               </td>
-              <td className="max-w-[13rem] px-3 py-2 text-muted-foreground">
-                {s.keyMetric}
+              <td className="max-w-[24rem] px-3 py-2">
+                <p className="leading-snug text-foreground/90">{s.highlights ?? "—"}</p>
+                {s.keyMetric && (
+                  <p className="mt-1 text-2xs leading-snug text-muted-foreground">
+                    <span className="font-medium text-muted-foreground/80">Key:</span>{" "}
+                    {s.keyMetric}
+                  </p>
+                )}
               </td>
-              <td className="max-w-sm px-3 py-2 text-muted-foreground">
-                {s.highlights ?? "—"}
+              <td className="max-w-[22rem] px-3 py-2 leading-snug text-muted-foreground">
+                {s.companiesAffected ?? "—"}
               </td>
               <td className="whitespace-nowrap px-3 py-2 text-muted-foreground">
                 {s.status}
@@ -97,8 +103,9 @@ export default function PolicyPage() {
           { key: "scheme", label: "Scheme" },
           { key: "category", label: "Category" },
           { key: "announced", label: "Announced" },
+          { key: "highlights", label: "What it is" },
           { key: "keyMetric", label: "Key metric" },
-          { key: "highlights", label: "Highlights" },
+          { key: "companiesAffected", label: "Companies affected & how" },
           { key: "status", label: "Status" },
           { key: "sourceUrl", label: "Source" },
         ],
@@ -106,8 +113,9 @@ export default function PolicyPage() {
           scheme: s.scheme,
           category: s.category,
           announced: s.announced ?? null,
-          keyMetric: s.keyMetric,
           highlights: s.highlights ?? null,
+          keyMetric: s.keyMetric,
+          companiesAffected: s.companiesAffected ?? null,
           status: s.status,
           sourceUrl: s.sourceUrl ?? null,
         })),

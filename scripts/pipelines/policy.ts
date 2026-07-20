@@ -54,6 +54,9 @@ export const policyPipeline = definePipeline({
         keyMetric: r.key_metric,
         ...(r.announced?.trim() ? { announced: r.announced.trim() } : {}),
         ...(r.highlights?.trim() ? { highlights: r.highlights.trim() } : {}),
+        ...(r.companies_affected?.trim()
+          ? { companiesAffected: r.companies_affected.trim() }
+          : {}),
         ...(r.source_url?.trim() ? { sourceUrl: r.source_url.trim() } : {}),
         confidence: r.confidence as Confidence,
         ...(r.note ? { note: r.note } : {}),

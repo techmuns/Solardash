@@ -9,8 +9,10 @@ export interface Scheme {
   keyMetric: string;
   /** Month & year the scheme was announced/notified, e.g. "Feb 2024". */
   announced?: string;
-  /** One-line summary of the scheme's main lever. */
+  /** Plain-language "what this scheme is / does" summary. */
   highlights?: string;
+  /** Which companies the scheme affects, and how (plain language). */
+  companiesAffected?: string;
   /** Official source (MNRE / PIB / CBIC / portal) link. */
   sourceUrl?: string;
   confidence: Confidence;

@@ -60,7 +60,7 @@ export function AreaSeriesChart({
           stroke={theme.axis}
           tickLine={false}
           axisLine={false}
-          width={share ? 44 : 56}
+          width={share ? 44 : 64}
           domain={share ? [0, 1] : undefined}
           tickFormatter={share ? pctTick : formatAxisTick}
           tick={{ fill: theme.tick, fontSize: 12 }}

@@ -118,7 +118,11 @@ export default function ManufacturingPage() {
         "Guided COD by fiscal quarter · tracked from maker concalls, with slippage vs earlier guidance",
       source: "Investor disclosures (maintained)",
       body: (
-        <CommissioningTimeline tranches={m.cellCommissioning} now={nowPeriod} />
+        <CommissioningTimeline
+          tranches={m.cellCommissioning}
+          now={nowPeriod}
+          companyLabel="maker"
+        />
       ),
       side: cellSlipSide,
       exportData: {

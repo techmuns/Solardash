@@ -60,7 +60,7 @@ export function BarSeriesChart({
           stroke={theme.axis}
           tickLine={false}
           axisLine={false}
-          width={56}
+          width={64}
           tickFormatter={formatAxisTick}
           tick={{ fill: theme.tick, fontSize: 12 }}
         />

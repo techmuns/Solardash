@@ -13,6 +13,9 @@ import {
 } from "@/lib/fiscal";
 import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
 import { cn } from "@/lib/utils";
+import { Select, type SelectOption } from "@/components/ui/Select";
+
+const ALL = "__all__";
 
 /** CVD-safe status palette (shared with the sector report exhibits). */
 const STATUS: Record<CommissioningStatus, { label: string; color: string }> = {
@@ -59,19 +62,48 @@ function historyTitle(t: CommissioningTranche): string {
 }
 
 export function CommissioningTimeline({
-  tranches,
+  tranches: allTranches,
   now,
+  companyLabel = "company",
 }: {
   tranches: CommissioningTranche[];
   now: string;
+  /** Noun for the company filter, e.g. "IPP" or "maker". */
+  companyLabel?: string;
 }) {
   const nowIdx = fyQuarterIndex(now);
   const [sort, setSort] = React.useState<"timeline" | "capacity" | "slippage">(
     "timeline",
   );
+  const [company, setCompany] = React.useState<string>(ALL);
+
+  // Distinct companies (developers/makers), tranche-count as the option hint.
+  const companyOptions: SelectOption[] = React.useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const t of allTranches) counts.set(t.developer, (counts.get(t.developer) ?? 0) + 1);
+    const names = [...counts.keys()].sort((a, b) => a.localeCompare(b));
+    return [
+      { value: ALL, label: `All ${companyLabel === "company" ? "companies" : companyLabel + "s"}`, hint: String(allTranches.length) },
+      ...names.map((name) => ({ value: name, label: name, hint: String(counts.get(name)) })),
+    ];
+  }, [allTranches, companyLabel]);
+
+  // Effective selection: if the chosen company left the dataset (data refresh),
+  // fall back to "all" without mutating state mid-render.
+  const effectiveCompany =
+    company !== ALL && !allTranches.some((t) => t.developer === company) ? ALL : company;
+
+  const tranches = React.useMemo(
+    () =>
+      effectiveCompany === ALL
+        ? allTranches
+        : allTranches.filter((t) => t.developer === effectiveCompany),
+    [allTranches, effectiveCompany],
+  );
 
   // Quarter range: span every target (original + current) and "now", capped.
-  const idxs = tranches
+  // Anchored to the full dataset so filtering doesn't reshape the axis.
+  const idxs = allTranches
     .flatMap((t) => [fyQuarterIndex(t.originalTarget), fyQuarterIndex(t.currentTarget)])
     .filter(Number.isFinite);
   let start = Math.min(nowIdx, ...idxs);
@@ -125,6 +157,14 @@ export function CommissioningTimeline({
           </span>{" "}
           ({fmtCap(Math.round(delayedGw))} GW)
         </span>
+        {/* Company filter */}
+        <Select
+          options={companyOptions}
+          value={effectiveCompany}
+          onChange={setCompany}
+          ariaLabel={`Filter by ${companyLabel}`}
+          className="min-w-[9rem]"
+        />
         {/* Sort control */}
         <div className="flex items-center gap-1">
           <span className="font-medium uppercase tracking-wide text-muted-foreground">

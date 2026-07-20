@@ -128,7 +128,11 @@ export default function DevelopersPage() {
       subtitle:
         "Guided COD by fiscal quarter · tracked from concalls, with slippage vs earlier guidance",
       body: (
-        <CommissioningTimeline tranches={d.commissioning} now={nowPeriod} />
+        <CommissioningTimeline
+          tranches={d.commissioning}
+          now={nowPeriod}
+          companyLabel="IPP"
+        />
       ),
       side: slipSide,
       exportData: {
