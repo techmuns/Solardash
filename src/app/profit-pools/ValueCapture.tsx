@@ -5,9 +5,15 @@ import Link from "next/link";
 import { ArrowUpRight, ChevronRight, FlaskConical, X } from "lucide-react";
 import { AnalysisTag } from "@/components/ui/AnalysisTag";
 import { Dialog } from "@/components/ui/Dialog";
-import { cn } from "@/lib/utils";
-import type { StageIrrRow } from "@/data/types/profit-pools";
-import type { CompanyValueCapture } from "@/data/profit-pools";
+import { cn, formatDate } from "@/lib/utils";
+import type { CompanyValueCapture, StageIrr as StageIrrType } from "@/data/profit-pools";
+
+/** As-of dates of the live-derived metric sources. */
+export interface IrrFreshness {
+  price: string;
+  tariff: string;
+  margin: string;
+}
 
 /** IRR heat: emerald (high) → blue → amber → red (thin/none). */
 function irrColor(pct: number | null): string {
@@ -84,7 +90,7 @@ function StageRow({
   open,
   onToggle,
 }: {
-  row: StageIrrRow;
+  row: StageIrrType;
   companies: CompanyValueCapture[];
   open: boolean;
   onToggle: () => void;
@@ -169,11 +175,13 @@ function MethodologyDialog({
   onClose,
   assumptions,
   sources,
+  freshness,
 }: {
   open: boolean;
   onClose: () => void;
   assumptions: string[];
   sources: string[];
+  freshness: IrrFreshness;
 }) {
   return (
     <Dialog open={open} onClose={onClose} ariaLabel="How the IRRs are calculated" className="max-w-xl">
@@ -246,26 +254,46 @@ function MethodologyDialog({
         <MethodSection title="Where the metrics come from">
           <ul className="space-y-1.5 text-sm text-foreground/90">
             <li>
-              <span className="font-medium">CapEx intensity</span> (₹/W of capacity) — CEEW,
-              CareEdge, CRISIL: cell ~₹595 cr/GW, integrated module ~₹700 cr/GW, IPP ~₹4.2 cr/MW.
+              <span className="font-medium">Prices per Watt</span> — derived live from the latest
+              month of the PV price stack (India ASP = China spot × the DCR premium).
             </li>
             <li>
-              <span className="font-medium">Prices per Watt</span> — the PV price stack &amp;
-              stage-economics pack (Bernreuter, PV-Tech, pv-magazine, ITRPV).
+              <span className="font-medium">Generation tariff</span> — the latest awarded solar
+              tariff from the tenders feed (× CUF × 8,760 h).
             </li>
             <li>
-              <span className="font-medium">EBITDA margins</span> — company filings (per company)
-              and the stage-economics benchmark (per stage).
+              <span className="font-medium">EBITDA margins</span> — the current company registry
+              (per company) and the maintained pure-stage benchmark (per stage).
             </li>
             <li>
-              <span className="font-medium">Tariff &amp; CUF</span> for generation — ICRA, Mercom,
-              Oxford Sustainable Finance.
+              <span className="font-medium">CapEx intensity, life &amp; DCR premium</span> —
+              maintained structural inputs (CEEW, CareEdge, CRISIL, ICRA, Mercom): cell ~₹595 cr/GW,
+              integrated module ~₹700 cr/GW, IPP ~₹4.2 cr/MW.
             </li>
           </ul>
           <p className="mt-2 text-2xs leading-relaxed text-muted-foreground">
-            Full source list: {sources.join(" · ")}. CapEx &amp; prices are sourced FACT (cited per
-            row in the export); the IRR itself is Munshot analysis.
+            Full source list: {sources.join(" · ")}. CapEx &amp; prices are sourced FACT; the IRR
+            itself is Munshot analysis.
           </p>
+        </MethodSection>
+
+        <MethodSection title="Kept up to date automatically">
+          The volatile inputs are re-derived from the freshest committed data every time the site
+          rebuilds, so the IRRs stay current without hand-editing. As of now:
+          <ul className="mt-1.5 space-y-1 text-sm text-foreground/90">
+            <li className="flex justify-between gap-3">
+              <span>Prices — monthly price stack</span>
+              <span className="tabular-nums text-muted-foreground">{formatDate(freshness.price)}</span>
+            </li>
+            <li className="flex justify-between gap-3">
+              <span>Solar tariff — tenders feed</span>
+              <span className="tabular-nums text-muted-foreground">{formatDate(freshness.tariff)}</span>
+            </li>
+            <li className="flex justify-between gap-3">
+              <span>Company margins — registry</span>
+              <span className="tabular-nums text-muted-foreground">{formatDate(freshness.margin)}</span>
+            </li>
+          </ul>
         </MethodSection>
       </div>
     </Dialog>
@@ -277,11 +305,13 @@ export function StageIrr({
   companies,
   assumptions,
   sources,
+  freshness,
 }: {
-  rows: StageIrrRow[];
+  rows: StageIrrType[];
   companies: CompanyValueCapture[];
   assumptions: string[];
   sources: string[];
+  freshness: IrrFreshness;
 }) {
   const [methodOpen, setMethodOpen] = React.useState(false);
   // Group companies under their stage (matched on the stage name).
@@ -357,6 +387,7 @@ export function StageIrr({
         onClose={() => setMethodOpen(false)}
         assumptions={assumptions}
         sources={sources}
+        freshness={freshness}
       />
     </div>
   );

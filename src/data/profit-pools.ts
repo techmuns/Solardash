@@ -1,8 +1,14 @@
-import { getCompaniesSnapshot, getCompanyDetail, getStageIrrSnapshot } from "./index";
+import {
+  getCompaniesSnapshot,
+  getCompanyDetail,
+  getPriceHistorySnapshot,
+  getStageIrrConfigSnapshot,
+  getTendersSnapshot,
+} from "./index";
 import { projectIrr, paybackYears } from "@/lib/finance";
 import type { CompanyType } from "./types/companies";
 import type { Series } from "./types/core";
-import type { StageIrrRow } from "./types/profit-pools";
+import type { StageIrrConfigRow } from "./types/profit-pools";
 
 /**
  * Profit Pools — a render-time selector (like `getWhatsNewFeed`) that derives
@@ -183,38 +189,60 @@ export function getProfitPools(): ProfitPools {
 }
 
 // ---------------------------------------------------------------------------
-// Company value-capture — greenfield IRR at each maker's disclosed margin
+// Value chain IRR — computed at render time from the FRESHEST committed data
 // ---------------------------------------------------------------------------
+//
+// The stage IRRs and each company's IRR are derived here (not stored) so they
+// always reflect the latest source: the representative price/W comes from the
+// most recent month of the price stack, the generation tariff from the tenders
+// feed, and every EBITDA margin from the current company registry. Only the
+// slow-moving structural inputs (CapEx, utilisation, life, DCR premium and the
+// pure-stage margin) are maintained in the committed config snapshot. Because
+// the pages are rebuilt on every data refresh, the IRRs recompute automatically
+// whenever any of those upstream feeds updates.
 
-/**
- * One tracked manufacturer's value-capture read: the greenfield project IRR you
- * would earn building that stage's plant AT THE COMPANY'S disclosed EBITDA
- * margin (the FACT), holding the stage's CapEx, price, utilisation and asset
- * life at their representative (modelled) values. It isolates margin — the one
- * lever that varies company-to-company — as the driver of who captures value.
- */
 export type ValueCaptureStage = "cell" | "module" | "generation";
 
+/** One value-chain stage's greenfield IRR (computed from live + config inputs). */
+export interface StageIrr {
+  stage: string;
+  region: string;
+  nodeId?: string;
+  capexPerW: number;
+  /** Representative price/W — DERIVED from the freshest price / tariff feed. */
+  aspPerW: number;
+  ebitdaMarginPct: number;
+  utilizationPct: number;
+  lifeYears: number;
+  ebitdaPerWYr: number;
+  paybackYears: number | null;
+  irrPct: number | null;
+  offChart?: boolean;
+  source: string;
+  confidence: string;
+  note?: string;
+}
+
+/**
+ * One tracked player's value-capture read: the greenfield project IRR of that
+ * stage's plant AT THE COMPANY'S own disclosed EBITDA margin (FACT), holding the
+ * (freshly-derived) stage price, CapEx, utilisation and life fixed — so margin
+ * is the only lever that varies.
+ */
 export interface CompanyValueCapture {
   slug: string;
   name: string;
-  /** Which stage's economics apply (cell / module / generation). */
   stageKey: ValueCaptureStage;
   stageLabel: string;
   /** Stage name matching the stage-IRR row (for grouping under a stage). */
   stageName: string;
-  /** Disclosed company EBITDA margin (%) — FACT. */
   ebitdaMarginPct: number;
-  /** Stage CapEx, ₹/W of annual capacity (model). */
   capexPerW: number;
-  /** Stage representative price, ₹/W (model). */
   aspPerW: number;
   utilizationPct: number;
   lifeYears: number;
-  /** Annual EBITDA cash at the company's margin, ₹/W. */
   ebitdaPerWYr: number;
   paybackYears: number | null;
-  /** Greenfield IRR at the company's margin (%) — Munshot analysis. */
   irrPct: number | null;
   offChart?: boolean;
 }
@@ -228,30 +256,134 @@ const STAGE_META: Record<ValueCaptureStage, { node: string; label: string; name:
   generation: { node: "ipp", label: "IPP", name: "IPP / Generation" },
 };
 
+/** Latest value of a price-stack monthly series, in its native unit. */
+function latestPrice(series: Series[], key: string): number | null {
+  const s = series.find((x) => x.key === key);
+  const last = s?.points[s.points.length - 1];
+  return last?.value ?? null;
+}
+
 /**
- * Value-capture across the listed players: apply each stage's greenfield model
- * at the company's OWN disclosed EBITDA margin (FACT), holding CapEx / price /
- * utilisation / life at the stage's representative (modelled) values — so margin
- * is the only lever that varies. Cell-line makers (with `cellGw`) read on cell
- * economics — the scarce, protected profit centre; module-only makers on module
- * economics; IPPs on the 25-yr generation model. EPCs are asset-light (no
- * capex-IRR). Diversified IPPs' blended margins understate a pure-solar IRR.
+ * Derive a stage's representative price/W (₹) from the freshest committed data,
+ * per the config row's `priceMode`. Falls back to the maintained
+ * `priceFallbackPerW` when the live source is unavailable.
  */
-export function getCompanyValueCapture(): {
-  rows: CompanyValueCapture[];
+function derivePricePerW(
+  cfg: StageIrrConfigRow,
+  fx: number,
+  priceSeries: Series[],
+  latestSolarTariff: number | null,
+): number {
+  const p = cfg.priceParam ?? 0;
+  switch (cfg.priceMode) {
+    case "stack:cell": {
+      const v = latestPrice(priceSeries, "cell"); // $/W
+      return v != null ? v * fx * (p || 1) : cfg.priceFallbackPerW;
+    }
+    case "stack:module": {
+      const v = latestPrice(priceSeries, "module"); // $/W
+      return v != null ? v * fx * (p || 1) : cfg.priceFallbackPerW;
+    }
+    case "stack:poly": {
+      const v = latestPrice(priceSeries, "poly"); // $/kg, p = g/W
+      return v != null && p ? (v * p) / 1000 * fx : cfg.priceFallbackPerW;
+    }
+    case "stack:wafer": {
+      const v = latestPrice(priceSeries, "wafer"); // $/pc, p = W/piece
+      return v != null && p ? (v / p) * fx : cfg.priceFallbackPerW;
+    }
+    case "tariff": {
+      // Annual revenue/W = tariff (₹/kWh) × CUF × 8,760 h ÷ 1,000 (Wh→kWh).
+      return latestSolarTariff != null && p
+        ? latestSolarTariff * (p / 100) * 8.76
+        : cfg.priceFallbackPerW;
+    }
+    default:
+      return cfg.priceFallbackPerW;
+  }
+}
+
+/** Solve payback + IRR for a per-W CapEx / annual-EBITDA / life triple. */
+function irrOf(capexPerW: number, ebitdaPerWYr: number, lifeYears: number) {
+  const payback = paybackYears(capexPerW, ebitdaPerWYr);
+  const irrFrac = projectIrr(capexPerW, ebitdaPerWYr, lifeYears);
+  const recovers = ebitdaPerWYr > 0 && ebitdaPerWYr * lifeYears > capexPerW;
+  return {
+    paybackYears: payback == null ? null : round1c(payback),
+    irrPct: irrFrac == null ? null : round1c(irrFrac * 100),
+    offChart: irrFrac == null && recovers,
+  };
+}
+
+export interface ValueChainIrr {
+  stages: StageIrr[];
+  companies: CompanyValueCapture[];
+  assumptions: string[];
+  sources: string[];
+  /** Freshest input date across the price / tariff / margin / config feeds. */
   asOf: string;
-} {
-  const irr = getStageIrrSnapshot();
-  const byNode = new Map<string, StageIrrRow>();
-  for (const r of irr.data.rows) if (r.nodeId) byNode.set(r.nodeId, r);
+  /** As-of of each derived-metric source (shown in the methodology dialog). */
+  priceAsOf: string;
+  tariffAsOf: string;
+  marginAsOf: string;
+}
 
-  const registry = getCompaniesSnapshot().data.companies;
-  const rows: CompanyValueCapture[] = [];
+/**
+ * Build the value-chain IRR view. Stage prices are derived from the latest
+ * price stack / tenders tariff and stage/company margins from the current
+ * registry, so the model always uses the freshest available source; only the
+ * structural inputs come from the committed config.
+ */
+export function getValueChainIrr(): ValueChainIrr {
+  const cfgSnap = getStageIrrConfigSnapshot();
+  const { fxInrPerUsd: fx, assumptions } = cfgSnap.data;
+  const priceSnap = getPriceHistorySnapshot();
+  const tendersSnap = getTendersSnapshot();
+  const companiesSnap = getCompaniesSnapshot();
 
-  for (const c of registry) {
+  const priceSeries = priceSnap.data.monthly;
+  const solar = tendersSnap.data.tariffByType.find((s) => s.key === "solar");
+  const latestSolarTariff = solar?.points[solar.points.length - 1]?.value ?? null;
+
+  // ── Stage IRRs (derived price/tariff + maintained pure-stage margin) ──
+  const priceByNode = new Map<string, number>();
+  const stages: StageIrr[] = cfgSnap.data.rows.map((cfg) => {
+    const aspPerW = round2c(derivePricePerW(cfg, fx, priceSeries, latestSolarTariff));
+    if (cfg.nodeId) priceByNode.set(cfg.nodeId, aspPerW);
+    const ebitdaPerWYr = aspPerW * (cfg.ebitdaMarginPct / 100) * (cfg.utilizationPct / 100);
+    const { paybackYears: pb, irrPct, offChart } = irrOf(
+      cfg.capexPerW,
+      ebitdaPerWYr,
+      cfg.lifeYears,
+    );
+    return {
+      stage: cfg.stage,
+      region: cfg.region,
+      ...(cfg.nodeId ? { nodeId: cfg.nodeId } : {}),
+      capexPerW: cfg.capexPerW,
+      aspPerW,
+      ebitdaMarginPct: cfg.ebitdaMarginPct,
+      utilizationPct: cfg.utilizationPct,
+      lifeYears: cfg.lifeYears,
+      ebitdaPerWYr: round2c(ebitdaPerWYr),
+      paybackYears: pb,
+      irrPct,
+      ...(offChart ? { offChart: true } : {}),
+      source: cfg.source,
+      confidence: cfg.confidence,
+      ...(cfg.note ? { note: cfg.note } : {}),
+    };
+  });
+
+  // Config indexed by node id, for the per-company model.
+  const cfgByNode = new Map<string, StageIrrConfigRow>();
+  for (const c of cfgSnap.data.rows) if (c.nodeId) cfgByNode.set(c.nodeId, c);
+
+  // ── Company IRRs (same derived stage price, each firm's own margin) ──
+  const companies: CompanyValueCapture[] = [];
+  for (const c of companiesSnap.data.companies) {
     if (c.ebitdaMarginPct == null || c.ebitdaMarginPct <= 0) continue;
 
-    // Map the company to the value-chain stage whose economics it captures.
     let stageKey: ValueCaptureStage | null = null;
     if (c.type === "manufacturer" || c.type === "integrated") {
       if ((c.cellGw ?? 0) > 0) stageKey = "cell";
@@ -262,40 +394,55 @@ export function getCompanyValueCapture(): {
     if (!stageKey) continue;
 
     const meta = STAGE_META[stageKey];
-    const model = byNode.get(meta.node);
-    if (!model) continue;
+    const cfg = cfgByNode.get(meta.node);
+    const aspPerW = priceByNode.get(meta.node);
+    if (!cfg || aspPerW == null) continue;
 
-    const ebitdaPerWYr =
-      model.aspPerW * (c.ebitdaMarginPct / 100) * (model.utilizationPct / 100);
-    const payback = paybackYears(model.capexPerW, ebitdaPerWYr);
-    const irrFrac = projectIrr(model.capexPerW, ebitdaPerWYr, model.lifeYears);
-    const recovers = ebitdaPerWYr > 0 && ebitdaPerWYr * model.lifeYears > model.capexPerW;
-
-    rows.push({
+    const ebitdaPerWYr = aspPerW * (c.ebitdaMarginPct / 100) * (cfg.utilizationPct / 100);
+    const { paybackYears: pb, irrPct, offChart } = irrOf(
+      cfg.capexPerW,
+      ebitdaPerWYr,
+      cfg.lifeYears,
+    );
+    companies.push({
       slug: c.slug,
       name: c.name,
       stageKey,
       stageLabel: meta.label,
       stageName: meta.name,
       ebitdaMarginPct: c.ebitdaMarginPct,
-      capexPerW: model.capexPerW,
-      aspPerW: model.aspPerW,
-      utilizationPct: model.utilizationPct,
-      lifeYears: model.lifeYears,
+      capexPerW: cfg.capexPerW,
+      aspPerW,
+      utilizationPct: cfg.utilizationPct,
+      lifeYears: cfg.lifeYears,
       ebitdaPerWYr: round2c(ebitdaPerWYr),
-      paybackYears: payback == null ? null : round1c(payback),
-      irrPct: irrFrac == null ? null : round1c(irrFrac * 100),
-      ...(irrFrac == null && recovers ? { offChart: true } : {}),
+      paybackYears: pb,
+      irrPct,
+      ...(offChart ? { offChart: true } : {}),
     });
   }
-
-  // Best value-capture first (off-chart at the top, then by IRR, then margin).
-  rows.sort(
+  companies.sort(
     (a, b) =>
       Number(b.offChart ?? false) - Number(a.offChart ?? false) ||
       (b.irrPct ?? -999) - (a.irrPct ?? -999) ||
       b.ebitdaMarginPct - a.ebitdaMarginPct,
   );
 
-  return { rows, asOf: irr.updatedAt };
+  const priceAsOf = priceSnap.updatedAt;
+  const tariffAsOf = tendersSnap.updatedAt;
+  const marginAsOf = companiesSnap.updatedAt;
+  const asOf = [priceAsOf, tariffAsOf, marginAsOf, cfgSnap.updatedAt].reduce((m, d) =>
+    d > m ? d : m,
+  );
+
+  return {
+    stages,
+    companies,
+    assumptions,
+    sources: cfgSnap.sources.map((s) => s.name),
+    asOf,
+    priceAsOf,
+    tariffAsOf,
+    marginAsOf,
+  };
 }

@@ -1,18 +1,26 @@
 import { definePipeline } from "../lib/pipeline";
 import { readManualCsv, writeSnapshot } from "../lib/io";
-import { projectIrr, paybackYears } from "../../src/lib/finance";
 import type { Confidence, Series, SeriesPoint, SourceRef } from "../../src/data/types/core";
 import type {
   DirectionClass,
   PriceHistoryData,
   StageEconomicsData,
   StageEconomicsRow,
-  StageIrrData,
-  StageIrrRow,
+  StageIrrConfigData,
+  StageIrrConfigRow,
+  StagePriceMode,
 } from "../../src/data/types/profit-pools";
 
-const round1 = (n: number) => Math.round(n * 10) / 10;
-const round2 = (n: number) => Math.round(n * 100) / 100;
+// ₹ per US$ used to convert the (US$) price stack into ₹/W (documented FX).
+const FX_INR_PER_USD = 86;
+const PRICE_MODES: StagePriceMode[] = [
+  "stack:cell",
+  "stack:module",
+  "stack:poly",
+  "stack:wafer",
+  "tariff",
+  "fixed",
+];
 
 // Vintage for the sourced benchmark pack (compiled early 2026).
 const PP_AS_OF = "2026-03-31";
@@ -225,34 +233,26 @@ export const profitPoolsPipeline = definePipeline({
       data: { rows },
     });
 
-    // ── DATASET 3 — greenfield project IRR per stage (CapEx + EBITDA → IRR) ──
+    // ── DATASET 3 — IRR model config (structural inputs; prices/margins are
+    //    derived from the freshest committed data at render time) ────────────
     const irrInput = readManualCsv("profit-pools/value-chain-irr.csv");
-    const irrRows: StageIrrRow[] = irrInput.map((r) => {
-      const capexPerW = Number(r.capex_per_w);
-      const aspPerW = Number(r.asp_per_w);
-      const ebitdaMarginPct = Number(r.ebitda_margin_pct);
-      const utilizationPct = Number(r.utilization_pct);
-      const lifeYears = Number(r.life_years);
-      const ebitdaPerWYr = aspPerW * (ebitdaMarginPct / 100) * (utilizationPct / 100);
-      const payback = paybackYears(capexPerW, ebitdaPerWYr);
-      const irr = projectIrr(capexPerW, ebitdaPerWYr, lifeYears);
-      // Positive cash that recovers capital but whose IRR sits above the search
-      // ceiling ⇒ "off the chart" rather than loss-making.
-      const recovers = ebitdaPerWYr > 0 && ebitdaPerWYr * lifeYears > capexPerW;
-      const offChart = irr === null && recovers;
+    const irrRows: StageIrrConfigRow[] = irrInput.map((r) => {
+      const priceMode = r.price_mode?.trim() as StagePriceMode;
+      if (!PRICE_MODES.includes(priceMode)) {
+        throw new Error(`value-chain-irr: bad price_mode "${r.price_mode}" for ${r.stage}`);
+      }
+      const priceParam = r.price_param?.trim();
       return {
         stage: r.stage,
         region: r.region,
         ...(r.node_id?.trim() ? { nodeId: r.node_id.trim() } : {}),
-        capexPerW: round2(capexPerW),
-        aspPerW: round2(aspPerW),
-        ebitdaMarginPct,
-        utilizationPct,
-        lifeYears,
-        ebitdaPerWYr: round2(ebitdaPerWYr),
-        paybackYears: payback == null ? null : round1(payback),
-        irrPct: irr == null ? null : round1(irr * 100),
-        ...(offChart ? { offChart: true } : {}),
+        capexPerW: Number(r.capex_per_w),
+        utilizationPct: Number(r.utilization_pct),
+        lifeYears: Number(r.life_years),
+        priceMode,
+        ...(priceParam ? { priceParam: Number(priceParam) } : {}),
+        ebitdaMarginPct: Number(r.ebitda_margin_pct),
+        priceFallbackPerW: Number(r.price_fallback_per_w),
         source: r.source,
         confidence: r.confidence,
         ...(r.note?.trim() ? { note: r.note.trim() } : {}),
@@ -268,23 +268,23 @@ export const profitPoolsPipeline = definePipeline({
     }
     const irrSources = [...irrSrcMap.values()].sort((a, b) => a.name.localeCompare(b.name));
 
-    writeSnapshot<StageIrrData>("profit-pools", "value-chain-irr", {
+    writeSnapshot<StageIrrConfigData>("profit-pools", "value-chain-irr", {
       asOf: PP_AS_OF,
       cadence: "adhoc",
-      coverage: "Solar value chain · greenfield project IRR per stage (India where built)",
+      coverage: "Solar value chain · greenfield-IRR model config (structural inputs)",
       sources: irrSources,
       notes: [
-        "IRR is Munshot ANALYSIS: a pre-tax, unlevered project IRR solved from a single CapEx outflow and a level annual EBITDA cash flow over the asset life. Inputs (CapEx intensity, representative price, EBITDA margin, utilisation, life) are sourced FACT / assumptions, cited per row.",
-        "All per-Watt figures are ₹ per Watt of annual output capacity for that stage. Annual EBITDA/W = price/W × EBITDA margin × utilisation. Generation uses annual revenue/W = tariff × CUF × 8,760 h.",
-        "This is a stylised steady-state model — it ignores leverage, tax, ramp, working capital and terminal value, so it captures the relative value-capture gradient across the chain, not a bankable return. Loss-making stages (poly, wafer) show no IRR.",
+        "This snapshot holds only the STRUCTURAL inputs (CapEx intensity, utilisation, asset life, the India price premium and the maintained pure-stage margin). The volatile inputs — the representative price/W and the generation tariff — are DERIVED at render time from the freshest committed data (the monthly price stack and the tenders tariff feed), so the IRR always uses the latest source without re-hand-editing.",
+        "The IRR itself (pre-tax, unlevered project IRR = solve CapEx = Σ EBITDA/(1+r)ᵗ over the asset life) is computed at render time and is Munshot analysis. CapEx & prices are sourced FACT; loss-making stages (poly, wafer) return no positive IRR.",
       ],
       data: {
         rows: irrRows,
+        fxInrPerUsd: FX_INR_PER_USD,
         assumptions: [
           "Pre-tax, unlevered project IRR · level annual EBITDA as the cash proxy · single upfront CapEx.",
           "Per Watt of annual output capacity · EBITDA/W = price/W × margin × utilisation.",
           "Manufacturing life ~10–15 yrs · generation 25-yr PPA · steady-state utilisation (India module lines run ~40–50%).",
-          "Ignores leverage, tax, ramp & working capital — a relative value-capture read, not a bankable return.",
+          "Prices/tariff derived from the latest price-stack & tenders data; CapEx & DCR premium maintained. Ignores leverage, tax, ramp & working capital — a relative value-capture read, not a bankable return.",
         ],
       },
     });

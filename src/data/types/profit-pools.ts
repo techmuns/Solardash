@@ -71,46 +71,56 @@ export interface StageEconomicsData {
 
 // ---------------------------------------------------------------------------
 // value-chain-irr — greenfield project IRR per stage (CapEx + EBITDA → IRR)
+//
+// The committed snapshot holds only the STRUCTURAL config below; the computed
+// per-stage / per-company IRRs are derived at render time from the freshest
+// price, tariff and margin feeds (see `getValueChainIrr` in profit-pools.ts).
 // ---------------------------------------------------------------------------
 
 /**
- * One value-chain stage's greenfield project economics. The IRR is a
- * pre-tax, unlevered project IRR solved from a single CapEx outflow and a level
- * annual EBITDA cash flow over the asset life — Munshot ANALYSIS built on
- * sourced CapEx / price / margin assumptions (each cited). All per-Watt figures
- * are ₹ per Watt of annual output capacity for that stage.
+ * How a stage's representative price/W is derived from the freshest committed
+ * data (so the IRR uses the latest source, not a hardcoded number):
+ *  - `stack:cell` / `stack:module` — latest month of the price stack ($/W)
+ *    × FX × `priceParam` (the India realised premium).
+ *  - `stack:poly` — latest poly ($/kg) × `priceParam` (g/W) ÷ 1000 × FX.
+ *  - `stack:wafer` — latest wafer ($/pc) ÷ `priceParam` (W/piece) × FX.
+ *  - `tariff` — latest awarded solar tariff (₹/kWh) × `priceParam` (CUF %)
+ *    ÷ 100 × 8,760 h → annual revenue/W.
+ *  - `fixed` — use `priceFallbackPerW` verbatim.
  */
-export interface StageIrrRow {
+export type StagePriceMode =
+  | "stack:cell"
+  | "stack:module"
+  | "stack:poly"
+  | "stack:wafer"
+  | "tariff"
+  | "fixed";
+
+/** Maintained, slow-moving structural inputs for one stage's IRR. */
+export interface StageIrrConfigRow {
   stage: string;
   region: string;
-  /** Value-chain map node id, where the stage maps to one. */
   nodeId?: string;
-  /** Greenfield CapEx, ₹ per W of annual capacity (sourced). */
+  /** Greenfield CapEx, ₹ per W of annual capacity (sourced structural input). */
   capexPerW: number;
-  /** Representative annual revenue, ₹ per W of capacity (price × output). */
-  aspPerW: number;
-  /** Representative EBITDA margin (%). */
-  ebitdaMarginPct: number;
-  /** Steady-state utilisation (%). */
   utilizationPct: number;
-  /** Asset / plant life (years). */
   lifeYears: number;
-  /** Derived: annual EBITDA cash, ₹ per W of capacity. */
-  ebitdaPerWYr: number;
-  /** Derived: undiscounted payback (years); null when EBITDA ≤ 0. */
-  paybackYears: number | null;
-  /** Derived pre-tax project IRR (%); null when loss-making or off-chart. */
-  irrPct: number | null;
-  /** True when the IRR is above the model ceiling (shown as ">Nx"). */
-  offChart?: boolean;
-  /** Cited source(s) for the CapEx / price FACTs. */
+  /** Derivation rule for the (freshly-sourced) representative price/W. */
+  priceMode: StagePriceMode;
+  priceParam?: number;
+  /** Representative pure-stage EBITDA margin (%) — maintained benchmark. */
+  ebitdaMarginPct: number;
+  /** Price/W used when `priceMode` is `fixed` or the live source is missing. */
+  priceFallbackPerW: number;
   source: string;
   confidence: string;
   note?: string;
 }
 
-export interface StageIrrData {
-  rows: StageIrrRow[];
-  /** Model assumptions, shown beside the chart for transparency. */
+export interface StageIrrConfigData {
+  rows: StageIrrConfigRow[];
+  /** ₹ per US$ used to convert the (US$) price stack into ₹/W. */
+  fxInrPerUsd: number;
+  /** Model assumptions, shown in the methodology dialog. */
   assumptions: string[];
 }

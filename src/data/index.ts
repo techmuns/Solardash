@@ -10,7 +10,7 @@ import type { PolicyData } from "./types/policy";
 import type {
   PriceHistoryData,
   StageEconomicsData,
-  StageIrrData,
+  StageIrrConfigData,
 } from "./types/profit-pools";
 import type { WhatsNewData } from "./types/whats-new";
 import overviewSummary from "./snapshots/overview/summary.json";
@@ -260,10 +260,10 @@ export function getStageEconomicsSnapshot(): Snapshot<StageEconomicsData> {
   );
 }
 
-/** Greenfield project IRR per value-chain stage (CapEx + EBITDA → IRR). */
-export function getStageIrrSnapshot(): Snapshot<StageIrrData> {
+/** Structural config for the greenfield-IRR model (prices derived at render). */
+export function getStageIrrConfigSnapshot(): Snapshot<StageIrrConfigData> {
   return assertSnapshot(
-    valueChainIrr as unknown as Snapshot<StageIrrData>,
+    valueChainIrr as unknown as Snapshot<StageIrrConfigData>,
     "profit-pools/value-chain-irr",
   );
 }
@@ -339,7 +339,7 @@ export function getProvenance(): ProvenanceRow[] {
     getPolicySnapshot(),
     getPriceHistorySnapshot(),
     getStageEconomicsSnapshot(),
-    getStageIrrSnapshot(),
+    getStageIrrConfigSnapshot(),
     getReferenceSnapshot(),
   ];
   return snapshots.map((s) => ({

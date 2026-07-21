@@ -3,10 +3,10 @@ import {
   getManufacturingSnapshot,
   getPriceHistorySnapshot,
   getStageEconomicsSnapshot,
-  getStageIrrSnapshot,
+  getStageIrrConfigSnapshot,
   getTendersSnapshot,
 } from "@/data";
-import { getProfitPools, getCompanyValueCapture } from "@/data/profit-pools";
+import { getProfitPools, getValueChainIrr } from "@/data/profit-pools";
 import { formatDate } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
@@ -79,8 +79,8 @@ export default function ProfitPoolsPage() {
   // ── Pack-fed benchmark datasets (sourced; cited per series/row) ────────
   const price = getPriceHistorySnapshot();
   const eco = getStageEconomicsSnapshot();
-  const irr = getStageIrrSnapshot();
-  const valueCapture = getCompanyValueCapture();
+  const irrConfig = getStageIrrConfigSnapshot();
+  const vci = getValueChainIrr();
   const priceMeta = snapshotMeta(price, {
     section: "profit-pools",
     dataset: "price-history",
@@ -89,7 +89,7 @@ export default function ProfitPoolsPage() {
     section: "profit-pools",
     dataset: "stage-economics",
   });
-  const irrMeta = snapshotMeta(irr, {
+  const irrMeta = snapshotMeta(irrConfig, {
     section: "profit-pools",
     dataset: "value-chain-irr",
   });
@@ -248,15 +248,20 @@ export default function ProfitPoolsPage() {
       source: "CEEW · CareEdge · CRISIL · ICRA · Mercom · company filings",
       body: (
         <StageIrr
-          rows={irr.data.rows}
-          companies={valueCapture.rows}
-          assumptions={irr.data.assumptions}
-          sources={irr.sources.map((s) => s.name)}
+          rows={vci.stages}
+          companies={vci.companies}
+          assumptions={vci.assumptions}
+          sources={vci.sources}
+          freshness={{
+            price: vci.priceAsOf,
+            tariff: vci.tariffAsOf,
+            margin: vci.marginAsOf,
+          }}
         />
       ),
       side: {
         title: "Top value capturers",
-        node: <CompanyValueCaptureList rows={valueCapture.rows} />,
+        node: <CompanyValueCaptureList rows={vci.companies} />,
       },
       exportData: {
         columns: [
@@ -272,7 +277,7 @@ export default function ProfitPoolsPage() {
           { key: "irrPct", label: "IRR % (analysis)" },
           { key: "source", label: "Source" },
         ],
-        rows: irr.data.rows.map((r) => ({
+        rows: vci.stages.map((r) => ({
           stage: r.stage,
           region: r.region,
           capexPerW: r.capexPerW,
