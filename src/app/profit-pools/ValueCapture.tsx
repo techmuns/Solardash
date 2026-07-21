@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowUpRight, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight, FlaskConical, X } from "lucide-react";
 import { AnalysisTag } from "@/components/ui/AnalysisTag";
+import { Dialog } from "@/components/ui/Dialog";
 import { cn } from "@/lib/utils";
 import type { StageIrrRow } from "@/data/types/profit-pools";
 import type { CompanyValueCapture } from "@/data/profit-pools";
@@ -149,15 +150,140 @@ function StageRow({
   );
 }
 
+// ───────────────────────────── Methodology dialog ──────────────────────────
+
+function MethodSection({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <h3 className="text-2xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+        {title}
+      </h3>
+      <div className="mt-1.5 text-sm leading-relaxed text-foreground/90">{children}</div>
+    </div>
+  );
+}
+
+/** "How the IRRs are calculated" — plain-language method + metric sources. */
+function MethodologyDialog({
+  open,
+  onClose,
+  assumptions,
+  sources,
+}: {
+  open: boolean;
+  onClose: () => void;
+  assumptions: string[];
+  sources: string[];
+}) {
+  return (
+    <Dialog open={open} onClose={onClose} ariaLabel="How the IRRs are calculated" className="max-w-xl">
+      <div className="flex items-start justify-between gap-3 border-b border-border px-5 py-4">
+        <div className="flex items-center gap-2">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+            <FlaskConical className="h-4 w-4" aria-hidden />
+          </span>
+          <div>
+            <h2 className="text-base font-bold tracking-tight text-foreground">
+              How the IRRs are calculated
+            </h2>
+            <p className="text-2xs text-muted-foreground">Munshot analysis · method &amp; sources</p>
+          </div>
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="-mr-1.5 -mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-brand"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      </div>
+
+      <div className="space-y-4 overflow-y-auto px-5 py-4">
+        <MethodSection title="What this shows">
+          For each stage of the chain — and each listed player — the{" "}
+          <span className="font-medium text-foreground">greenfield project IRR</span>: the annual
+          return of building that plant today and running it over its life. It answers who captures
+          the most value across the chain.
+        </MethodSection>
+
+        <MethodSection title="The formula">
+          The IRR is the rate <span className="font-medium">r</span> at which the plant just breaks
+          even — its up-front CapEx equals the present value of the EBITDA it earns each year:
+          <div className="my-2 rounded-lg border border-border bg-muted/40 px-3 py-2 text-center text-sm font-medium tabular-nums text-foreground">
+            CapEx = Σ EBITDA / (1 + r)ᵗ &nbsp;<span className="text-muted-foreground">(t = 1 … asset life)</span>
+          </div>
+          Spend the CapEx once, earn EBITDA every year; the IRR is the yield that equates them. A
+          quick sense-check is the <span className="font-medium">payback</span> (CapEx ÷ annual
+          EBITDA) — shown alongside.
+        </MethodSection>
+
+        <MethodSection title="How the annual EBITDA is built">
+          Everything is measured <span className="font-medium">per Watt of annual capacity</span>:
+          <div className="my-2 rounded-lg border border-border bg-muted/40 px-3 py-2 text-center text-sm font-medium text-foreground">
+            EBITDA/W = price/W × EBITDA margin × utilisation
+          </div>
+          Generation is the exception — its annual revenue/W = tariff × CUF × 8,760 hours.
+        </MethodSection>
+
+        <MethodSection title="Company IRRs">
+          Each company keeps its stage&apos;s CapEx, price, utilisation and life, but we swap in{" "}
+          <span className="font-medium">its own disclosed EBITDA margin</span> (a fact from filings).
+          Margin is then the only thing that varies, isolating how much value each player captures.
+        </MethodSection>
+
+        <MethodSection title="Key assumptions">
+          <ul className="space-y-1">
+            {assumptions.map((a) => (
+              <li key={a} className="flex gap-2 text-sm text-foreground/90">
+                <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-brand" aria-hidden />
+                {a}
+              </li>
+            ))}
+          </ul>
+        </MethodSection>
+
+        <MethodSection title="Where the metrics come from">
+          <ul className="space-y-1.5 text-sm text-foreground/90">
+            <li>
+              <span className="font-medium">CapEx intensity</span> (₹/W of capacity) — CEEW,
+              CareEdge, CRISIL: cell ~₹595 cr/GW, integrated module ~₹700 cr/GW, IPP ~₹4.2 cr/MW.
+            </li>
+            <li>
+              <span className="font-medium">Prices per Watt</span> — the PV price stack &amp;
+              stage-economics pack (Bernreuter, PV-Tech, pv-magazine, ITRPV).
+            </li>
+            <li>
+              <span className="font-medium">EBITDA margins</span> — company filings (per company)
+              and the stage-economics benchmark (per stage).
+            </li>
+            <li>
+              <span className="font-medium">Tariff &amp; CUF</span> for generation — ICRA, Mercom,
+              Oxford Sustainable Finance.
+            </li>
+          </ul>
+          <p className="mt-2 text-2xs leading-relaxed text-muted-foreground">
+            Full source list: {sources.join(" · ")}. CapEx &amp; prices are sourced FACT (cited per
+            row in the export); the IRR itself is Munshot analysis.
+          </p>
+        </MethodSection>
+      </div>
+    </Dialog>
+  );
+}
+
 export function StageIrr({
   rows,
   companies,
   assumptions,
+  sources,
 }: {
   rows: StageIrrRow[];
   companies: CompanyValueCapture[];
   assumptions: string[];
+  sources: string[];
 }) {
+  const [methodOpen, setMethodOpen] = React.useState(false);
   // Group companies under their stage (matched on the stage name).
   const byStage = React.useMemo(() => {
     const m = new Map<string, CompanyValueCapture[]>();
@@ -180,21 +306,22 @@ export function StageIrr({
       return next;
     });
 
-  const lossStages = rows.filter((r) => r.irrPct == null && !r.offChart).map((r) => r.stage);
-
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-2">
-      <p className="flex shrink-0 flex-wrap items-center gap-x-2 gap-y-1 text-2xs leading-snug text-muted-foreground">
-        <AnalysisTag />
-        <span>
-          Greenfield IRR = solve{" "}
-          <span className="font-medium text-foreground/80">CapEx = Σ EBITDA / (1+r)ᵗ</span> over asset
-          life. Expand a stage for each company&apos;s IRR at its own margin.
-          {lossStages.length > 0 && (
-            <> Loss-making upstream ({lossStages.join(", ")}) returns no positive IRR.</>
-          )}
+      <div className="flex shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-1">
+        <span className="flex items-center gap-2 text-2xs text-muted-foreground">
+          <AnalysisTag />
+          Expand a stage for each company&apos;s IRR.
         </span>
-      </p>
+        <button
+          type="button"
+          onClick={() => setMethodOpen(true)}
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-border bg-card px-2 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+        >
+          <FlaskConical className="h-3.5 w-3.5" aria-hidden />
+          Methodology
+        </button>
+      </div>
       <div className="min-h-0 flex-1 overflow-auto">
         <table className="w-full border-collapse text-sm">
           <thead className="sticky top-0 z-10 bg-card">
@@ -225,9 +352,12 @@ export function StageIrr({
           </tbody>
         </table>
       </div>
-      <p className="shrink-0 border-t border-border pt-1.5 text-[10px] leading-snug text-muted-foreground">
-        Assumptions · {assumptions.join(" · ")}
-      </p>
+      <MethodologyDialog
+        open={methodOpen}
+        onClose={() => setMethodOpen(false)}
+        assumptions={assumptions}
+        sources={sources}
+      />
     </div>
   );
 }

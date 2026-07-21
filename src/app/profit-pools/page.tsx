@@ -251,6 +251,7 @@ export default function ProfitPoolsPage() {
           rows={irr.data.rows}
           companies={valueCapture.rows}
           assumptions={irr.data.assumptions}
+          sources={irr.sources.map((s) => s.name)}
         />
       ),
       side: {
