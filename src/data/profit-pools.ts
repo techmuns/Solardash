@@ -193,12 +193,16 @@ export function getProfitPools(): ProfitPools {
  * life at their representative (modelled) values. It isolates margin — the one
  * lever that varies company-to-company — as the driver of who captures value.
  */
+export type ValueCaptureStage = "cell" | "module" | "generation";
+
 export interface CompanyValueCapture {
   slug: string;
   name: string;
-  /** Which manufacturing stage's economics apply (cell vs module). */
-  stageKey: "cell" | "module";
+  /** Which stage's economics apply (cell / module / generation). */
+  stageKey: ValueCaptureStage;
   stageLabel: string;
+  /** Stage name matching the stage-IRR row (for grouping under a stage). */
+  stageName: string;
   /** Disclosed company EBITDA margin (%) — FACT. */
   ebitdaMarginPct: number;
   /** Stage CapEx, ₹/W of annual capacity (model). */
@@ -218,12 +222,20 @@ export interface CompanyValueCapture {
 const round1c = (n: number) => Math.round(n * 10) / 10;
 const round2c = (n: number) => Math.round(n * 100) / 100;
 
+const STAGE_META: Record<ValueCaptureStage, { node: string; label: string; name: string }> = {
+  cell: { node: "cell", label: "Cell", name: "Cell" },
+  module: { node: "modules", label: "Module", name: "Module" },
+  generation: { node: "ipp", label: "IPP", name: "IPP / Generation" },
+};
+
 /**
- * Value-capture across the listed cell/module makers: apply each stage's
- * greenfield model at the company's own EBITDA margin. A maker running a cell
- * line (has `cellGw`) is read on cell economics — the scarce, protected profit
- * centre; a module-only maker on module economics. IPPs/EPCs are excluded (the
- * IRR gradient there is a stage-level, not margin-driven, story).
+ * Value-capture across the listed players: apply each stage's greenfield model
+ * at the company's OWN disclosed EBITDA margin (FACT), holding CapEx / price /
+ * utilisation / life at the stage's representative (modelled) values — so margin
+ * is the only lever that varies. Cell-line makers (with `cellGw`) read on cell
+ * economics — the scarce, protected profit centre; module-only makers on module
+ * economics; IPPs on the 25-yr generation model. EPCs are asset-light (no
+ * capex-IRR). Diversified IPPs' blended margins understate a pure-solar IRR.
  */
 export function getCompanyValueCapture(): {
   rows: CompanyValueCapture[];
@@ -232,22 +244,26 @@ export function getCompanyValueCapture(): {
   const irr = getStageIrrSnapshot();
   const byNode = new Map<string, StageIrrRow>();
   for (const r of irr.data.rows) if (r.nodeId) byNode.set(r.nodeId, r);
-  const cellModel = byNode.get("cell");
-  const moduleModel = byNode.get("modules");
 
   const registry = getCompaniesSnapshot().data.companies;
   const rows: CompanyValueCapture[] = [];
 
   for (const c of registry) {
-    if (c.type !== "manufacturer" && c.type !== "integrated") continue;
     if (c.ebitdaMarginPct == null || c.ebitdaMarginPct <= 0) continue;
 
-    // Cell-line makers are read on cell economics; module-only on module.
-    const onCell = (c.cellGw ?? 0) > 0;
-    const model = onCell ? cellModel : moduleModel;
+    // Map the company to the value-chain stage whose economics it captures.
+    let stageKey: ValueCaptureStage | null = null;
+    if (c.type === "manufacturer" || c.type === "integrated") {
+      if ((c.cellGw ?? 0) > 0) stageKey = "cell";
+      else if ((c.moduleGw ?? 0) > 0) stageKey = "module";
+    } else if (c.type === "ipp") {
+      stageKey = "generation";
+    }
+    if (!stageKey) continue;
+
+    const meta = STAGE_META[stageKey];
+    const model = byNode.get(meta.node);
     if (!model) continue;
-    // Skip a maker with no relevant capacity at all.
-    if (!onCell && !((c.moduleGw ?? 0) > 0)) continue;
 
     const ebitdaPerWYr =
       model.aspPerW * (c.ebitdaMarginPct / 100) * (model.utilizationPct / 100);
@@ -258,8 +274,9 @@ export function getCompanyValueCapture(): {
     rows.push({
       slug: c.slug,
       name: c.name,
-      stageKey: onCell ? "cell" : "module",
-      stageLabel: onCell ? "Cell" : "Module",
+      stageKey,
+      stageLabel: meta.label,
+      stageName: meta.name,
       ebitdaMarginPct: c.ebitdaMarginPct,
       capexPerW: model.capexPerW,
       aspPerW: model.aspPerW,
@@ -280,5 +297,5 @@ export function getCompanyValueCapture(): {
       b.ebitdaMarginPct - a.ebitdaMarginPct,
   );
 
-  return { rows, asOf: getStageIrrSnapshot().updatedAt };
+  return { rows, asOf: irr.updatedAt };
 }

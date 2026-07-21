@@ -246,9 +246,15 @@ export default function ProfitPoolsPage() {
       subtitle:
         "Greenfield project IRR per stage from CapEx + EBITDA over asset life · and each maker's IRR at its own margin",
       source: "CEEW · CareEdge · CRISIL · ICRA · Mercom · company filings",
-      body: <StageIrr rows={irr.data.rows} assumptions={irr.data.assumptions} />,
+      body: (
+        <StageIrr
+          rows={irr.data.rows}
+          companies={valueCapture.rows}
+          assumptions={irr.data.assumptions}
+        />
+      ),
       side: {
-        title: "Company value capture",
+        title: "Top value capturers",
         node: <CompanyValueCaptureList rows={valueCapture.rows} />,
       },
       exportData: {

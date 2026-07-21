@@ -1,14 +1,14 @@
 "use client";
 
+import * as React from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { FillCategoryBar } from "@/components/charts/FillCharts";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { AnalysisTag } from "@/components/ui/AnalysisTag";
 import { cn } from "@/lib/utils";
 import type { StageIrrRow } from "@/data/types/profit-pools";
 import type { CompanyValueCapture } from "@/data/profit-pools";
 
-/** IRR heat: emerald (high) → blue → amber → slate (thin/none). */
+/** IRR heat: emerald (high) → blue → amber → red (thin/none). */
 function irrColor(pct: number | null): string {
   if (pct == null) return "#94A3B8";
   if (pct >= 20) return "#10B981";
@@ -20,108 +20,210 @@ function irrColor(pct: number | null): string {
 const fmtPct = (v: number | null, off?: boolean) =>
   off ? "off-chart" : v == null ? "—" : `${v}%`;
 
-// ─────────────────────────── Stage IRR (bars + table) ──────────────────────
+// ─────────────────────── Expandable per-stage company rows ──────────────────
 
-/** The per-stage greenfield-IRR bar chart (only stages with a positive IRR). */
-function StageIrrBars({ rows }: { rows: StageIrrRow[] }) {
-  const withIrr = rows
-    .filter((r) => r.irrPct != null)
-    .sort((a, b) => (b.irrPct ?? 0) - (a.irrPct ?? 0));
-  const data = withIrr.map((r) => ({
-    key: `${r.stage}-${r.region}`,
-    label: r.stage,
-    value: r.irrPct as number,
-    color: irrColor(r.irrPct),
-  }));
-  return <FillCategoryBar data={data} unit="%" categoryWidth={104} showValues />;
+function CompanyRows({ companies }: { companies: CompanyValueCapture[] }) {
+  if (companies.length === 0) {
+    return (
+      <tr className="bg-muted/20">
+        <td colSpan={9} className="px-2 py-2 pl-8 text-2xs text-muted-foreground">
+          No tracked India players at this stage.
+        </td>
+      </tr>
+    );
+  }
+  return (
+    <>
+      {companies.map((c) => (
+        <tr key={c.slug} className="bg-muted/20 text-xs">
+          <td className="py-1.5 pl-8 pr-2">
+            <Link
+              href={`/companies/${c.slug}`}
+              className="text-foreground/90 outline-none hover:text-brand focus-visible:ring-2 focus-visible:ring-brand"
+            >
+              {c.name}
+            </Link>
+          </td>
+          <td className="px-2 py-1.5 text-right tabular-nums text-muted-foreground/50">
+            {c.capexPerW}
+          </td>
+          <td className="px-2 py-1.5 text-right tabular-nums text-muted-foreground/50">
+            {c.aspPerW}
+          </td>
+          <td className="px-2 py-1.5 text-right font-medium tabular-nums text-foreground/90">
+            {c.ebitdaMarginPct}%
+          </td>
+          <td className="px-2 py-1.5 text-right tabular-nums text-muted-foreground/50">
+            {c.utilizationPct}%
+          </td>
+          <td className="px-2 py-1.5 text-right tabular-nums text-muted-foreground/50">
+            {c.lifeYears}y
+          </td>
+          <td className="px-2 py-1.5 text-right tabular-nums text-foreground/80">
+            {c.ebitdaPerWYr > 0 ? c.ebitdaPerWYr : "—"}
+          </td>
+          <td className="px-2 py-1.5 text-right tabular-nums text-muted-foreground">
+            {c.paybackYears != null ? `${c.paybackYears}y` : "—"}
+          </td>
+          <td
+            className="px-2 py-1.5 text-right font-semibold tabular-nums"
+            style={{ color: c.irrPct != null ? irrColor(c.irrPct) : undefined }}
+          >
+            {fmtPct(c.irrPct, c.offChart)}
+          </td>
+        </tr>
+      ))}
+    </>
+  );
 }
 
-function StageIrrTable({ rows }: { rows: StageIrrRow[] }) {
+function StageRow({
+  row,
+  companies,
+  open,
+  onToggle,
+}: {
+  row: StageIrrRow;
+  companies: CompanyValueCapture[];
+  open: boolean;
+  onToggle: () => void;
+}) {
+  const expandable = companies.length > 0;
   return (
-    <div className="min-h-0 flex-1 overflow-auto">
-      <table className="w-full border-collapse text-sm">
-        <thead className="sticky top-0 z-10 bg-card">
-          <tr className="border-b border-border text-left text-2xs uppercase tracking-wide text-muted-foreground">
-            <th className="px-2 py-2 font-semibold">Stage</th>
-            <th className="px-2 py-2 text-right font-semibold">CapEx ₹/W</th>
-            <th className="px-2 py-2 text-right font-semibold">Price ₹/W</th>
-            <th className="px-2 py-2 text-right font-semibold">Margin</th>
-            <th className="px-2 py-2 text-right font-semibold">Util</th>
-            <th className="px-2 py-2 text-right font-semibold">Life</th>
-            <th className="px-2 py-2 text-right font-semibold">EBITDA ₹/W/yr</th>
-            <th className="px-2 py-2 text-right font-semibold">Payback</th>
-            <th className="px-2 py-2 text-right font-semibold">
-              IRR <span className="font-normal normal-case">· Munshot</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={`${r.stage}-${r.region}`} className="border-b border-border/60 align-top">
-              <td className="px-2 py-2">
-                <div className="font-medium text-foreground">{r.stage}</div>
-                <div className="text-2xs text-muted-foreground">{r.region}</div>
-              </td>
-              <td className="px-2 py-2 text-right tabular-nums text-foreground/90">
-                {r.capexPerW}
-              </td>
-              <td className="px-2 py-2 text-right tabular-nums text-foreground/90">
-                {r.aspPerW}
-              </td>
-              <td className="px-2 py-2 text-right tabular-nums text-foreground/90">
-                {r.ebitdaMarginPct}%
-              </td>
-              <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">
-                {r.utilizationPct}%
-              </td>
-              <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">
-                {r.lifeYears}y
-              </td>
-              <td className="px-2 py-2 text-right tabular-nums text-foreground/90">
-                {r.ebitdaPerWYr > 0 ? r.ebitdaPerWYr : "—"}
-              </td>
-              <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">
-                {r.paybackYears != null ? `${r.paybackYears}y` : "—"}
-              </td>
-              <td
-                className="px-2 py-2 text-right font-semibold tabular-nums"
-                style={{ color: r.irrPct != null ? irrColor(r.irrPct) : undefined }}
-              >
-                {fmtPct(r.irrPct, r.offChart)}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <>
+      <tr
+        className={cn(
+          "border-b border-border/60 align-middle",
+          expandable && "cursor-pointer hover:bg-muted/30",
+          open && "bg-muted/20",
+        )}
+        onClick={expandable ? onToggle : undefined}
+      >
+        <td className="px-2 py-2">
+          <div className="flex items-center gap-1.5">
+            <ChevronRight
+              className={cn(
+                "h-3.5 w-3.5 shrink-0 text-muted-foreground transition-transform",
+                open && "rotate-90",
+                !expandable && "opacity-0",
+              )}
+              aria-hidden
+            />
+            <div>
+              <div className="font-medium text-foreground">
+                {row.stage}
+                {expandable && (
+                  <span className="ml-1.5 text-2xs font-normal text-muted-foreground">
+                    {companies.length}
+                  </span>
+                )}
+              </div>
+              <div className="pl-0 text-2xs text-muted-foreground">{row.region}</div>
+            </div>
+          </div>
+        </td>
+        <td className="px-2 py-2 text-right tabular-nums text-foreground/90">{row.capexPerW}</td>
+        <td className="px-2 py-2 text-right tabular-nums text-foreground/90">{row.aspPerW}</td>
+        <td className="px-2 py-2 text-right tabular-nums text-foreground/90">
+          {row.ebitdaMarginPct}%
+        </td>
+        <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">
+          {row.utilizationPct}%
+        </td>
+        <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">{row.lifeYears}y</td>
+        <td className="px-2 py-2 text-right tabular-nums text-foreground/90">
+          {row.ebitdaPerWYr > 0 ? row.ebitdaPerWYr : "—"}
+        </td>
+        <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">
+          {row.paybackYears != null ? `${row.paybackYears}y` : "—"}
+        </td>
+        <td
+          className="px-2 py-2 text-right font-semibold tabular-nums"
+          style={{ color: row.irrPct != null ? irrColor(row.irrPct) : undefined }}
+        >
+          {fmtPct(row.irrPct, row.offChart)}
+        </td>
+      </tr>
+      {open && <CompanyRows companies={companies} />}
+    </>
   );
 }
 
 export function StageIrr({
   rows,
+  companies,
   assumptions,
 }: {
   rows: StageIrrRow[];
+  companies: CompanyValueCapture[];
   assumptions: string[];
 }) {
+  // Group companies under their stage (matched on the stage name).
+  const byStage = React.useMemo(() => {
+    const m = new Map<string, CompanyValueCapture[]>();
+    for (const c of companies) {
+      const arr = m.get(c.stageName) ?? [];
+      arr.push(c);
+      m.set(c.stageName, arr);
+    }
+    return m;
+  }, [companies]);
+
+  // Collapsed by default — each stage is a summary row; click to reveal its
+  // companies' IRRs.
+  const [open, setOpen] = React.useState<Set<string>>(() => new Set());
+  const toggle = (stage: string) =>
+    setOpen((prev) => {
+      const next = new Set(prev);
+      if (next.has(stage)) next.delete(stage);
+      else next.add(stage);
+      return next;
+    });
+
   const lossStages = rows.filter((r) => r.irrPct == null && !r.offChart).map((r) => r.stage);
+
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-3">
+    <div className="flex min-h-0 flex-1 flex-col gap-2">
       <p className="flex shrink-0 flex-wrap items-center gap-x-2 gap-y-1 text-2xs leading-snug text-muted-foreground">
         <AnalysisTag />
         <span>
-          Greenfield project IRR = solve <span className="font-medium text-foreground/80">CapEx = Σ EBITDA / (1+r)ᵗ</span>{" "}
-          over asset life. CapEx &amp; price are sourced FACT; the IRR is our read.
+          Greenfield IRR = solve{" "}
+          <span className="font-medium text-foreground/80">CapEx = Σ EBITDA / (1+r)ᵗ</span> over asset
+          life. Expand a stage for each company&apos;s IRR at its own margin.
           {lossStages.length > 0 && (
             <> Loss-making upstream ({lossStages.join(", ")}) returns no positive IRR.</>
           )}
         </span>
       </p>
-      <div className="flex min-h-0 basis-2/5 flex-col">
-        <StageIrrBars rows={rows} />
-      </div>
-      <div className="flex min-h-0 flex-1 flex-col">
-        <StageIrrTable rows={rows} />
+      <div className="min-h-0 flex-1 overflow-auto">
+        <table className="w-full border-collapse text-sm">
+          <thead className="sticky top-0 z-10 bg-card">
+            <tr className="border-b border-border text-left text-2xs uppercase tracking-wide text-muted-foreground">
+              <th className="px-2 py-2 font-semibold">Stage · company</th>
+              <th className="px-2 py-2 text-right font-semibold">CapEx ₹/W</th>
+              <th className="px-2 py-2 text-right font-semibold">Price ₹/W</th>
+              <th className="px-2 py-2 text-right font-semibold">Margin</th>
+              <th className="px-2 py-2 text-right font-semibold">Util</th>
+              <th className="px-2 py-2 text-right font-semibold">Life</th>
+              <th className="px-2 py-2 text-right font-semibold">EBITDA ₹/W/yr</th>
+              <th className="px-2 py-2 text-right font-semibold">Payback</th>
+              <th className="px-2 py-2 text-right font-semibold">
+                IRR <span className="font-normal normal-case">· Munshot</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <StageRow
+                key={`${r.stage}-${r.region}`}
+                row={r}
+                companies={byStage.get(r.stage) ?? []}
+                open={open.has(r.stage)}
+                onToggle={() => toggle(r.stage)}
+              />
+            ))}
+          </tbody>
+        </table>
       </div>
       <p className="shrink-0 border-t border-border pt-1.5 text-[10px] leading-snug text-muted-foreground">
         Assumptions · {assumptions.join(" · ")}
@@ -132,17 +234,24 @@ export function StageIrr({
 
 // ─────────────────────── Company value-capture (side panel) ─────────────────
 
-/** Ranked "who captures value" list — greenfield IRR at each maker's margin. */
-export function CompanyValueCaptureList({ rows }: { rows: CompanyValueCapture[] }) {
-  const maxIrr = Math.max(1, ...rows.map((r) => r.irrPct ?? 0));
+/** Ranked cross-stage "who captures value" leaderboard (top players). */
+export function CompanyValueCaptureList({
+  rows,
+  limit = 12,
+}: {
+  rows: CompanyValueCapture[];
+  limit?: number;
+}) {
+  const shown = rows.slice(0, limit);
+  const maxIrr = Math.max(1, ...shown.map((r) => r.irrPct ?? 0));
   return (
     <div className="flex flex-col gap-2.5">
       <p className="text-2xs leading-snug text-muted-foreground">
-        Greenfield IRR at each maker&apos;s <span className="font-medium text-foreground/80">own EBITDA margin</span>{" "}
-        (FACT), on that stage&apos;s CapEx model. Cell-line makers read on cell economics.
+        Greenfield IRR at each player&apos;s <span className="font-medium text-foreground/80">own EBITDA margin</span>{" "}
+        (FACT), on that stage&apos;s CapEx model — ranked across the chain.
       </p>
       <ul className="flex flex-col gap-2">
-        {rows.map((r) => {
+        {shown.map((r) => {
           const color = irrColor(r.irrPct);
           const w = r.offChart ? 100 : Math.max(4, ((r.irrPct ?? 0) / maxIrr) * 100);
           return (
@@ -173,9 +282,7 @@ export function CompanyValueCaptureList({ rows }: { rows: CompanyValueCapture[] 
       </ul>
       <Link
         href="/companies"
-        className={cn(
-          "inline-flex shrink-0 items-center gap-1 self-start rounded-md text-2xs font-medium text-brand outline-none hover:underline focus-visible:ring-2 focus-visible:ring-brand",
-        )}
+        className="inline-flex shrink-0 items-center gap-1 self-start rounded-md text-2xs font-medium text-brand outline-none hover:underline focus-visible:ring-2 focus-visible:ring-brand"
       >
         All companies
         <ArrowUpRight className="h-3 w-3" aria-hidden />
