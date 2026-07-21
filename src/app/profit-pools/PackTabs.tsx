@@ -63,29 +63,11 @@ export function PriceStack({
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-2.5">
-      <div className="flex shrink-0 flex-wrap items-start justify-between gap-x-3 gap-y-1">
-        <p className="min-w-0 flex-1 text-2xs leading-snug text-muted-foreground">
-          {isM ? (
-            <>
-              Monthly survey track, {windowLabel} · China spot (RMB ÷ 7.2) · module =
-              FOB China.{" "}
-              <span className="font-medium text-foreground/80">
-                Poly&apos;s H2&apos;25 supply-cut rally (~$4.9 → $7.2) unwound to
-                the cash-cost floor by Jul &apos;26; module FOB spiked ~30% in
-                early &apos;26 on export-rebate pre-buying.
-              </span>{" "}
-              Est. months interpolated between published quotes.
-            </>
-          ) : (
-            <>
-              Global PV price stack, native units, {windowLabel}.{" "}
-              <span className="font-medium text-foreground/80">
-                Polysilicon −88% peak→trough ($36→$5/kg); modules roughly halved
-                ($0.26→$0.10/W); 2025 a partial recovery.
-              </span>{" "}
-              Dots are annual; est. years reconstructed from monthly data.
-            </>
-          )}
+      <div className="flex shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-1">
+        <p className="min-w-0 flex-1 text-sm font-medium text-foreground/80">
+          {isM
+            ? `Chinese spot prices · ${windowLabel}`
+            : `Global benchmark prices · ${windowLabel}`}
         </p>
         <FrequencyToggle<"monthly" | "annual">
           options={[

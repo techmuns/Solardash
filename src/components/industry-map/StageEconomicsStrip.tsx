@@ -23,29 +23,19 @@ export const ECON_CHAIN: { stage: string; label: string; nodeId?: string }[] = [
   { stage: "O&M", label: "O&M" },
 ];
 
-const REGION_ABBR: Record<string, string> = {
-  China: "CN",
-  India: "IN",
-  US: "US",
-  Global: "Global",
-};
-
 const fmtMargin = (v: number) => `${v > 0 ? "+" : ""}${v}%`;
 
-/** One per-stage economics chip: representative margin, direction, geo split. */
+/** One per-stage economics chip: representative margin, direction, region. */
 function EconChip({
   label,
   rep,
-  regions,
   onOpen,
 }: {
   label: string;
   rep: StageEconomicsRow;
-  regions: StageEconomicsRow[];
   onOpen?: () => void;
 }) {
   const d = DIRECTION_CLASS[rep.directionClass];
-  const split = regions.length > 1;
   const body = (
     <>
       <span className="flex items-center justify-between gap-1.5">
@@ -63,22 +53,8 @@ function EconChip({
         </span>
         <span className="text-2xs leading-none text-muted-foreground">{rep.metric}</span>
       </span>
-      <span className="mt-1 block truncate text-2xs leading-none tabular-nums">
-        {split ? (
-          regions
-            .slice()
-            .sort((a, b) => (a.repMargin ?? 0) - (b.repMargin ?? 0))
-            .map((r, i) => (
-              <span key={r.region}>
-                {i > 0 && <span className="text-muted-foreground/60"> · </span>}
-                <span style={{ color: DIRECTION_CLASS[r.directionClass].color }}>
-                  {REGION_ABBR[r.region] ?? r.region} {fmtMargin(r.repMargin as number)}
-                </span>
-              </span>
-            ))
-        ) : (
-          <span className="text-muted-foreground">{rep.region}</span>
-        )}
+      <span className="mt-1 block truncate text-2xs leading-none text-muted-foreground">
+        {rep.region}
       </span>
     </>
   );
@@ -118,11 +94,7 @@ export function StageEconomicsStrip({
     const stageRows = rows.filter((r) => r.stage === link.stage);
     const rep = stageRows.find((r) => r.rep) ?? stageRows[0];
     if (!rep) return null;
-    return {
-      link,
-      rep,
-      regions: stageRows.filter((r) => r.repMargin != null),
-    };
+    return { link, rep };
   }).filter((c): c is NonNullable<typeof c> => c != null);
   if (chips.length === 0) return null;
 
@@ -148,12 +120,11 @@ export function StageEconomicsStrip({
         </Link>
       </div>
       <div className="scrollbar-thin flex gap-2 overflow-x-auto pb-0.5">
-        {chips.map(({ link, rep, regions }) => (
+        {chips.map(({ link, rep }) => (
           <EconChip
             key={link.stage}
             label={link.label}
             rep={rep}
-            regions={regions}
             onOpen={link.nodeId ? () => onOpenStage(link.nodeId as string) : undefined}
           />
         ))}

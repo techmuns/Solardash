@@ -3,9 +3,10 @@ import {
   getManufacturingSnapshot,
   getPriceHistorySnapshot,
   getStageEconomicsSnapshot,
+  getStageIrrSnapshot,
   getTendersSnapshot,
 } from "@/data";
-import { getProfitPools } from "@/data/profit-pools";
+import { getProfitPools, getCompanyValueCapture } from "@/data/profit-pools";
 import { formatDate } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
@@ -18,6 +19,7 @@ import {
   PriceStack,
   StageEconomicsTable,
 } from "./PackTabs";
+import { StageIrr, CompanyValueCaptureList } from "./ValueCapture";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -77,6 +79,8 @@ export default function ProfitPoolsPage() {
   // ── Pack-fed benchmark datasets (sourced; cited per series/row) ────────
   const price = getPriceHistorySnapshot();
   const eco = getStageEconomicsSnapshot();
+  const irr = getStageIrrSnapshot();
+  const valueCapture = getCompanyValueCapture();
   const priceMeta = snapshotMeta(price, {
     section: "profit-pools",
     dataset: "price-history",
@@ -84,6 +88,10 @@ export default function ProfitPoolsPage() {
   const ecoMeta = snapshotMeta(eco, {
     section: "profit-pools",
     dataset: "stage-economics",
+  });
+  const irrMeta = snapshotMeta(irr, {
+    section: "profit-pools",
+    dataset: "value-chain-irr",
   });
   // Attach the render-time India aggregates as sparklines where a stage's
   // margin trajectory exists in our filings data (Module / IPP) — quarterly,
@@ -170,8 +178,7 @@ export default function ProfitPoolsPage() {
       id: "price-stack",
       label: "Price stack",
       title: "PV price stack over time",
-      subtitle:
-        "Native units · polysilicon to module · monthly survey track Jan 24 → Jul 26 + annual arc 2019 → 2025",
+      subtitle: "Polysilicon → module · native units",
       source: "InfoLink · EnergyTrend · Silicon Industry Branch · OPIS · Bernreuter · SMM",
       body: (
         <PriceStack
@@ -230,6 +237,48 @@ export default function ProfitPoolsPage() {
           confidence: r.confidence,
         })),
         meta: ecoMeta,
+      },
+    },
+    {
+      id: "value-capture",
+      label: "Value capture",
+      title: "Who captures the value — IRR across the chain",
+      subtitle:
+        "Greenfield project IRR per stage from CapEx + EBITDA over asset life · and each maker's IRR at its own margin",
+      source: "CEEW · CareEdge · CRISIL · ICRA · Mercom · company filings",
+      body: <StageIrr rows={irr.data.rows} assumptions={irr.data.assumptions} />,
+      side: {
+        title: "Company value capture",
+        node: <CompanyValueCaptureList rows={valueCapture.rows} />,
+      },
+      exportData: {
+        columns: [
+          { key: "stage", label: "Stage" },
+          { key: "region", label: "Region" },
+          { key: "capexPerW", label: "CapEx (₹/W)" },
+          { key: "aspPerW", label: "Revenue (₹/W/yr)" },
+          { key: "ebitdaMarginPct", label: "EBITDA margin (%)" },
+          { key: "utilizationPct", label: "Utilisation (%)" },
+          { key: "lifeYears", label: "Life (yrs)" },
+          { key: "ebitdaPerWYr", label: "EBITDA (₹/W/yr)" },
+          { key: "paybackYears", label: "Payback (yrs)" },
+          { key: "irrPct", label: "IRR % (analysis)" },
+          { key: "source", label: "Source" },
+        ],
+        rows: irr.data.rows.map((r) => ({
+          stage: r.stage,
+          region: r.region,
+          capexPerW: r.capexPerW,
+          aspPerW: r.aspPerW,
+          ebitdaMarginPct: r.ebitdaMarginPct,
+          utilizationPct: r.utilizationPct,
+          lifeYears: r.lifeYears,
+          ebitdaPerWYr: r.ebitdaPerWYr,
+          paybackYears: r.paybackYears,
+          irrPct: r.offChart ? "off-chart" : r.irrPct,
+          source: r.source,
+        })),
+        meta: irrMeta,
       },
     },
   ];

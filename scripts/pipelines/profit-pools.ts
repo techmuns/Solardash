@@ -1,12 +1,18 @@
 import { definePipeline } from "../lib/pipeline";
 import { readManualCsv, writeSnapshot } from "../lib/io";
+import { projectIrr, paybackYears } from "../../src/lib/finance";
 import type { Confidence, Series, SeriesPoint, SourceRef } from "../../src/data/types/core";
 import type {
   DirectionClass,
   PriceHistoryData,
   StageEconomicsData,
   StageEconomicsRow,
+  StageIrrData,
+  StageIrrRow,
 } from "../../src/data/types/profit-pools";
+
+const round1 = (n: number) => Math.round(n * 10) / 10;
+const round2 = (n: number) => Math.round(n * 100) / 100;
 
 // Vintage for the sourced benchmark pack (compiled early 2026).
 const PP_AS_OF = "2026-03-31";
@@ -217,6 +223,70 @@ export const profitPoolsPipeline = definePipeline({
         "BESS has no clean EBITDA yet — auction tariffs have fallen ~86% against a ~36% cost decline, so volume is exploding but margin is unproven (low confidence).",
       ],
       data: { rows },
+    });
+
+    // ── DATASET 3 — greenfield project IRR per stage (CapEx + EBITDA → IRR) ──
+    const irrInput = readManualCsv("profit-pools/value-chain-irr.csv");
+    const irrRows: StageIrrRow[] = irrInput.map((r) => {
+      const capexPerW = Number(r.capex_per_w);
+      const aspPerW = Number(r.asp_per_w);
+      const ebitdaMarginPct = Number(r.ebitda_margin_pct);
+      const utilizationPct = Number(r.utilization_pct);
+      const lifeYears = Number(r.life_years);
+      const ebitdaPerWYr = aspPerW * (ebitdaMarginPct / 100) * (utilizationPct / 100);
+      const payback = paybackYears(capexPerW, ebitdaPerWYr);
+      const irr = projectIrr(capexPerW, ebitdaPerWYr, lifeYears);
+      // Positive cash that recovers capital but whose IRR sits above the search
+      // ceiling ⇒ "off the chart" rather than loss-making.
+      const recovers = ebitdaPerWYr > 0 && ebitdaPerWYr * lifeYears > capexPerW;
+      const offChart = irr === null && recovers;
+      return {
+        stage: r.stage,
+        region: r.region,
+        ...(r.node_id?.trim() ? { nodeId: r.node_id.trim() } : {}),
+        capexPerW: round2(capexPerW),
+        aspPerW: round2(aspPerW),
+        ebitdaMarginPct,
+        utilizationPct,
+        lifeYears,
+        ebitdaPerWYr: round2(ebitdaPerWYr),
+        paybackYears: payback == null ? null : round1(payback),
+        irrPct: irr == null ? null : round1(irr * 100),
+        ...(offChart ? { offChart: true } : {}),
+        source: r.source,
+        confidence: r.confidence,
+        ...(r.note?.trim() ? { note: r.note.trim() } : {}),
+      };
+    });
+
+    const irrSrcMap = new Map<string, SourceRef>();
+    for (const r of irrInput) {
+      const conf = mapConf(r.confidence?.includes("low") ? "low" : r.confidence);
+      for (const name of (r.source ?? "").split("·").map((s) => s.trim()).filter(Boolean)) {
+        if (!irrSrcMap.has(name)) irrSrcMap.set(name, { name, asOf: PP_AS_OF, confidence: conf });
+      }
+    }
+    const irrSources = [...irrSrcMap.values()].sort((a, b) => a.name.localeCompare(b.name));
+
+    writeSnapshot<StageIrrData>("profit-pools", "value-chain-irr", {
+      asOf: PP_AS_OF,
+      cadence: "adhoc",
+      coverage: "Solar value chain · greenfield project IRR per stage (India where built)",
+      sources: irrSources,
+      notes: [
+        "IRR is Munshot ANALYSIS: a pre-tax, unlevered project IRR solved from a single CapEx outflow and a level annual EBITDA cash flow over the asset life. Inputs (CapEx intensity, representative price, EBITDA margin, utilisation, life) are sourced FACT / assumptions, cited per row.",
+        "All per-Watt figures are ₹ per Watt of annual output capacity for that stage. Annual EBITDA/W = price/W × EBITDA margin × utilisation. Generation uses annual revenue/W = tariff × CUF × 8,760 h.",
+        "This is a stylised steady-state model — it ignores leverage, tax, ramp, working capital and terminal value, so it captures the relative value-capture gradient across the chain, not a bankable return. Loss-making stages (poly, wafer) show no IRR.",
+      ],
+      data: {
+        rows: irrRows,
+        assumptions: [
+          "Pre-tax, unlevered project IRR · level annual EBITDA as the cash proxy · single upfront CapEx.",
+          "Per Watt of annual output capacity · EBITDA/W = price/W × margin × utilisation.",
+          "Manufacturing life ~10–15 yrs · generation 25-yr PPA · steady-state utilisation (India module lines run ~40–50%).",
+          "Ignores leverage, tax, ramp & working capital — a relative value-capture read, not a bankable return.",
+        ],
+      },
     });
   },
 });

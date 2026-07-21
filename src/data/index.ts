@@ -7,7 +7,11 @@ import type { ManufacturingData } from "./types/manufacturing";
 import type { CapacityData, DemandData } from "./types/power";
 import type { CompaniesData, CompanyDetail } from "./types/companies";
 import type { PolicyData } from "./types/policy";
-import type { PriceHistoryData, StageEconomicsData } from "./types/profit-pools";
+import type {
+  PriceHistoryData,
+  StageEconomicsData,
+  StageIrrData,
+} from "./types/profit-pools";
 import type { WhatsNewData } from "./types/whats-new";
 import overviewSummary from "./snapshots/overview/summary.json";
 import tendersAwards from "./snapshots/tenders/awards.json";
@@ -18,6 +22,7 @@ import demandPower from "./snapshots/demand/power-demand.json";
 import policyPolicy from "./snapshots/policy/policy.json";
 import priceHistory from "./snapshots/profit-pools/price-history.json";
 import stageEconomics from "./snapshots/profit-pools/stage-economics.json";
+import valueChainIrr from "./snapshots/profit-pools/value-chain-irr.json";
 import referenceGlossary from "./snapshots/reference/glossary.json";
 import whatsNewMilestones from "./snapshots/whats-new/milestones.json";
 import companiesRegistry from "./snapshots/companies/registry.json";
@@ -255,6 +260,14 @@ export function getStageEconomicsSnapshot(): Snapshot<StageEconomicsData> {
   );
 }
 
+/** Greenfield project IRR per value-chain stage (CapEx + EBITDA → IRR). */
+export function getStageIrrSnapshot(): Snapshot<StageIrrData> {
+  return assertSnapshot(
+    valueChainIrr as unknown as Snapshot<StageIrrData>,
+    "profit-pools/value-chain-irr",
+  );
+}
+
 /** Listed-company screener registry (all companies). */
 export function getCompaniesSnapshot(): Snapshot<CompaniesData> {
   return assertSnapshot(
@@ -326,6 +339,7 @@ export function getProvenance(): ProvenanceRow[] {
     getPolicySnapshot(),
     getPriceHistorySnapshot(),
     getStageEconomicsSnapshot(),
+    getStageIrrSnapshot(),
     getReferenceSnapshot(),
   ];
   return snapshots.map((s) => ({

@@ -1,6 +1,8 @@
-import { getCompaniesSnapshot, getCompanyDetail } from "./index";
+import { getCompaniesSnapshot, getCompanyDetail, getStageIrrSnapshot } from "./index";
+import { projectIrr, paybackYears } from "@/lib/finance";
 import type { CompanyType } from "./types/companies";
 import type { Series } from "./types/core";
+import type { StageIrrRow } from "./types/profit-pools";
 
 /**
  * Profit Pools — a render-time selector (like `getWhatsNewFeed`) that derives
@@ -178,4 +180,105 @@ export function getProfitPools(): ProfitPools {
     revenuePoolFy26,
     asOf: snap.updatedAt,
   };
+}
+
+// ---------------------------------------------------------------------------
+// Company value-capture — greenfield IRR at each maker's disclosed margin
+// ---------------------------------------------------------------------------
+
+/**
+ * One tracked manufacturer's value-capture read: the greenfield project IRR you
+ * would earn building that stage's plant AT THE COMPANY'S disclosed EBITDA
+ * margin (the FACT), holding the stage's CapEx, price, utilisation and asset
+ * life at their representative (modelled) values. It isolates margin — the one
+ * lever that varies company-to-company — as the driver of who captures value.
+ */
+export interface CompanyValueCapture {
+  slug: string;
+  name: string;
+  /** Which manufacturing stage's economics apply (cell vs module). */
+  stageKey: "cell" | "module";
+  stageLabel: string;
+  /** Disclosed company EBITDA margin (%) — FACT. */
+  ebitdaMarginPct: number;
+  /** Stage CapEx, ₹/W of annual capacity (model). */
+  capexPerW: number;
+  /** Stage representative price, ₹/W (model). */
+  aspPerW: number;
+  utilizationPct: number;
+  lifeYears: number;
+  /** Annual EBITDA cash at the company's margin, ₹/W. */
+  ebitdaPerWYr: number;
+  paybackYears: number | null;
+  /** Greenfield IRR at the company's margin (%) — Munshot analysis. */
+  irrPct: number | null;
+  offChart?: boolean;
+}
+
+const round1c = (n: number) => Math.round(n * 10) / 10;
+const round2c = (n: number) => Math.round(n * 100) / 100;
+
+/**
+ * Value-capture across the listed cell/module makers: apply each stage's
+ * greenfield model at the company's own EBITDA margin. A maker running a cell
+ * line (has `cellGw`) is read on cell economics — the scarce, protected profit
+ * centre; a module-only maker on module economics. IPPs/EPCs are excluded (the
+ * IRR gradient there is a stage-level, not margin-driven, story).
+ */
+export function getCompanyValueCapture(): {
+  rows: CompanyValueCapture[];
+  asOf: string;
+} {
+  const irr = getStageIrrSnapshot();
+  const byNode = new Map<string, StageIrrRow>();
+  for (const r of irr.data.rows) if (r.nodeId) byNode.set(r.nodeId, r);
+  const cellModel = byNode.get("cell");
+  const moduleModel = byNode.get("modules");
+
+  const registry = getCompaniesSnapshot().data.companies;
+  const rows: CompanyValueCapture[] = [];
+
+  for (const c of registry) {
+    if (c.type !== "manufacturer" && c.type !== "integrated") continue;
+    if (c.ebitdaMarginPct == null || c.ebitdaMarginPct <= 0) continue;
+
+    // Cell-line makers are read on cell economics; module-only on module.
+    const onCell = (c.cellGw ?? 0) > 0;
+    const model = onCell ? cellModel : moduleModel;
+    if (!model) continue;
+    // Skip a maker with no relevant capacity at all.
+    if (!onCell && !((c.moduleGw ?? 0) > 0)) continue;
+
+    const ebitdaPerWYr =
+      model.aspPerW * (c.ebitdaMarginPct / 100) * (model.utilizationPct / 100);
+    const payback = paybackYears(model.capexPerW, ebitdaPerWYr);
+    const irrFrac = projectIrr(model.capexPerW, ebitdaPerWYr, model.lifeYears);
+    const recovers = ebitdaPerWYr > 0 && ebitdaPerWYr * model.lifeYears > model.capexPerW;
+
+    rows.push({
+      slug: c.slug,
+      name: c.name,
+      stageKey: onCell ? "cell" : "module",
+      stageLabel: onCell ? "Cell" : "Module",
+      ebitdaMarginPct: c.ebitdaMarginPct,
+      capexPerW: model.capexPerW,
+      aspPerW: model.aspPerW,
+      utilizationPct: model.utilizationPct,
+      lifeYears: model.lifeYears,
+      ebitdaPerWYr: round2c(ebitdaPerWYr),
+      paybackYears: payback == null ? null : round1c(payback),
+      irrPct: irrFrac == null ? null : round1c(irrFrac * 100),
+      ...(irrFrac == null && recovers ? { offChart: true } : {}),
+    });
+  }
+
+  // Best value-capture first (off-chart at the top, then by IRR, then margin).
+  rows.sort(
+    (a, b) =>
+      Number(b.offChart ?? false) - Number(a.offChart ?? false) ||
+      (b.irrPct ?? -999) - (a.irrPct ?? -999) ||
+      b.ebitdaMarginPct - a.ebitdaMarginPct,
+  );
+
+  return { rows, asOf: getStageIrrSnapshot().updatedAt };
 }

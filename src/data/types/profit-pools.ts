@@ -68,3 +68,49 @@ export interface StageEconomicsRow {
 export interface StageEconomicsData {
   rows: StageEconomicsRow[];
 }
+
+// ---------------------------------------------------------------------------
+// value-chain-irr — greenfield project IRR per stage (CapEx + EBITDA → IRR)
+// ---------------------------------------------------------------------------
+
+/**
+ * One value-chain stage's greenfield project economics. The IRR is a
+ * pre-tax, unlevered project IRR solved from a single CapEx outflow and a level
+ * annual EBITDA cash flow over the asset life — Munshot ANALYSIS built on
+ * sourced CapEx / price / margin assumptions (each cited). All per-Watt figures
+ * are ₹ per Watt of annual output capacity for that stage.
+ */
+export interface StageIrrRow {
+  stage: string;
+  region: string;
+  /** Value-chain map node id, where the stage maps to one. */
+  nodeId?: string;
+  /** Greenfield CapEx, ₹ per W of annual capacity (sourced). */
+  capexPerW: number;
+  /** Representative annual revenue, ₹ per W of capacity (price × output). */
+  aspPerW: number;
+  /** Representative EBITDA margin (%). */
+  ebitdaMarginPct: number;
+  /** Steady-state utilisation (%). */
+  utilizationPct: number;
+  /** Asset / plant life (years). */
+  lifeYears: number;
+  /** Derived: annual EBITDA cash, ₹ per W of capacity. */
+  ebitdaPerWYr: number;
+  /** Derived: undiscounted payback (years); null when EBITDA ≤ 0. */
+  paybackYears: number | null;
+  /** Derived pre-tax project IRR (%); null when loss-making or off-chart. */
+  irrPct: number | null;
+  /** True when the IRR is above the model ceiling (shown as ">Nx"). */
+  offChart?: boolean;
+  /** Cited source(s) for the CapEx / price FACTs. */
+  source: string;
+  confidence: string;
+  note?: string;
+}
+
+export interface StageIrrData {
+  rows: StageIrrRow[];
+  /** Model assumptions, shown beside the chart for transparency. */
+  assumptions: string[];
+}

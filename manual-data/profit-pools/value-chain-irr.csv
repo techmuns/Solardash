@@ -1,0 +1,6 @@
+stage,region,node_id,capex_per_w,asp_per_w,ebitda_margin_pct,utilization_pct,life_years,source,confidence,note
+Polysilicon,Global,poly,2.6,1.1,4,55,15,PV-Tech · Procurement Resource · Bernreuter,medium,"Global commodity, no India base; ~2.6 g/W poly at ~$5/kg. Prices at/below cash cost 2024-25 -> capital never recovered."
+Wafer / Ingot,Global,wafer,6.0,1.7,-9,60,10,PV-Tech · ITRPV,medium,"Global (China ~97%); duopoly ran below cash cost through the 2024-25 glut, so annual EBITDA is negative -> no positive IRR."
+Cell,India,cell,5.95,6.5,36,65,10,CEEW · CareEdge · Premier Energies FY25,medium,"TOPCon line ~Rs 595 cr/GW; India DCR-cell scarcity premium (cell ~$0.06/W + premium). The protected profit centre."
+Module,India,modules,7.0,9.5,20,62,10,CareEdge · CRISIL · pv-magazine,medium,"Modelled at an INTEGRATED cell+module line (~Rs 700 cr/GW) — the real cost of an ALMM List-II-compliant maker. Pure assembly is capex-light but its returns are competed away at ~40-45% utilisation."
+IPP / Generation,India,ipp,42,5.47,88,100,25,ICRA · Mercom · Oxford Sustainable Finance,high,"Rs 4.2 cr/MW; annual revenue/W = tariff Rs 2.6/kWh x 24% CUF x 8,760 h. 25-yr PPA. Matches the ~9-11% unlevered project-IRR benchmark."
