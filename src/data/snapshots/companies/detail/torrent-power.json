@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-20",
+  "asOf": "2026-07-21",
   "cadence": "quarterly",
   "coverage": "Torrent Power",
   "data": {
@@ -45,7 +45,7 @@
         "revenue": 28966
       }
     ],
-    "cmp": 1433,
+    "cmp": 1436,
     "concall": {
       "date": "2026-05-13",
       "guidance": [
@@ -67,7 +67,7 @@
     "ebitdaMarginPct": 19.1,
     "evEbitdaX": 15.46,
     "hasDetail": true,
-    "marketCapCr": 72269,
+    "marketCapCr": 72272,
     "name": "Torrent Power",
     "orderBookGw": 8.6,
     "patFy26Cr": 2469,
@@ -135,9 +135,9 @@
     "tickerNse": "TORNTPOWER",
     "type": "utility",
     "valuation": {
-      "asOf": "2026-07-20",
+      "asOf": "2026-07-21",
       "evEbitdaX": 15.46,
-      "pbX": 3.78,
+      "pbX": 3.79,
       "peX": 31.6
     }
   },
@@ -148,10 +148,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-20",
+      "asOf": "2026-07-21",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-20"
+  "updatedAt": "2026-07-21"
 }
