@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-21",
+  "asOf": "2026-07-22",
   "cadence": "quarterly",
   "coverage": "SJVN",
   "data": {
@@ -45,7 +45,7 @@
         "revenue": 4528
       }
     ],
-    "cmp": 68.6,
+    "cmp": 68.7,
     "concall": {
       "date": "2026-05-15",
       "guidance": [
@@ -134,7 +134,7 @@
     "tickerNse": "SJVN",
     "type": "utility",
     "valuation": {
-      "asOf": "2026-07-21",
+      "asOf": "2026-07-22",
       "evEbitdaX": 17.99,
       "pbX": 1.9,
       "peX": 42
@@ -147,10 +147,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-21",
+      "asOf": "2026-07-22",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-21"
+  "updatedAt": "2026-07-22"
 }

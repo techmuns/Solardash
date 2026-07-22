@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-21",
+  "asOf": "2026-07-22",
   "cadence": "quarterly",
   "coverage": "Indowind Energy",
   "data": {
@@ -26,7 +26,7 @@
         "revenue": 40.8
       }
     ],
-    "cmp": 9.22,
+    "cmp": 9.27,
     "concall": {
       "guidance": [
         "Add ~5.1 MW via acquisition and deploy fresh capital into wind capacity"
@@ -95,9 +95,9 @@
     "tickerNse": "INDOWIND",
     "type": "wind",
     "valuation": {
-      "asOf": "2026-07-21",
+      "asOf": "2026-07-22",
       "evEbitdaX": 10.48,
-      "pbX": 0.48
+      "pbX": 0.49
     }
   },
   "dataset": "detail/indowind-energy",
@@ -107,10 +107,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-21",
+      "asOf": "2026-07-22",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-21"
+  "updatedAt": "2026-07-22"
 }

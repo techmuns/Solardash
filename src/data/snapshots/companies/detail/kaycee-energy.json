@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-21",
+  "asOf": "2026-07-22",
   "cadence": "quarterly",
   "coverage": "Kay Cee Energy & Infra",
   "data": {
@@ -34,7 +34,7 @@
       }
     ],
     "board": "NSE SME",
-    "cmp": 90.8,
+    "cmp": 92.4,
     "concall": {
       "date": "2026-05-16",
       "guidance": [
@@ -52,13 +52,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 19.5,
-    "evEbitdaX": 5.81,
+    "evEbitdaX": 5.88,
     "hasDetail": true,
-    "marketCapCr": 111,
+    "marketCapCr": 113,
     "name": "Kay Cee Energy & Infra",
     "orderBookCr": 537,
     "patFy26Cr": 18.8,
-    "peX": 5.91,
+    "peX": 6.01,
     "quarterly": [
       {
         "ebitda": 16.1,
@@ -90,10 +90,10 @@
     "tickerNse": "KCEIL",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-07-21",
-      "evEbitdaX": 5.81,
-      "pbX": 1.08,
-      "peX": 5.91
+      "asOf": "2026-07-22",
+      "evEbitdaX": 5.88,
+      "pbX": 1.1,
+      "peX": 6.01
     }
   },
   "dataset": "detail/kaycee-energy",
@@ -103,10 +103,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-21",
+      "asOf": "2026-07-22",
       "confidence": "high",
       "name": "NSE Emerge (SME)"
     }
   ],
-  "updatedAt": "2026-07-21"
+  "updatedAt": "2026-07-22"
 }
