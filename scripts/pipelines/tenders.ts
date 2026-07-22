@@ -24,6 +24,16 @@ const WINDOW_QUARTERS = 4;
 /** `Q1FY27` → `Q1 FY27`. */
 const fmtQuarter = (q: string) => q.replace(/^(Q[1-4])(FY\d{2})$/, "$1 $2");
 
+const MONTH_NAMES = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+/** ISO date `2026-07-16` → `Jul 26`. */
+const monthLabel = (iso: string) => {
+  const [y, m] = iso.split("-");
+  return `${MONTH_NAMES[Number(m) - 1] ?? "?"} ${y.slice(2)}`;
+};
+
 // Stack / display order for tender types (mirrors ENERGY_ORDER subset).
 const TYPE_ORDER: TenderType[] = [
   "solar",
@@ -126,6 +136,20 @@ export const tendersPipeline = definePipeline({
         period: q,
         value: records
           .filter((r) => r.tenderType === type && r.period === q)
+          .reduce((s, r) => s + r.capacityMw, 0),
+      })),
+    }));
+
+    // --- awardsByMonth: MW per type per calendar month (finer-grained view) ---
+    const monthKeys = [...new Set(records.map((r) => r.date.slice(0, 7)))].sort();
+    const awardsByMonth: Series[] = presentTypes.map((type) => ({
+      key: type,
+      label: TYPE_LABELS[type],
+      unit: "MW",
+      points: monthKeys.map((mk) => ({
+        period: monthLabel(`${mk}-01`),
+        value: records
+          .filter((r) => r.tenderType === type && r.date.slice(0, 7) === mk)
           .reduce((s, r) => s + r.capacityMw, 0),
       })),
     }));
@@ -387,6 +411,7 @@ export const tendersPipeline = definePipeline({
       window,
       kpis,
       awardsByQuarter,
+      awardsByMonth,
       tariffByType,
       tariffHistory,
       agencySplit,

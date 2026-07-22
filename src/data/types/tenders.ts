@@ -96,6 +96,8 @@ export interface TendersData {
   kpis: TenderKpi[];
   /** MW awarded per quarter, one Series per tender type (stacked). */
   awardsByQuarter: Series[];
+  /** MW awarded per calendar month, one Series per tender type (stacked). */
+  awardsByMonth: Series[];
   /** Capacity-weighted avg ₹/unit per quarter, one Series per type (excl. BESS). */
   tariffByType: Series[];
   /** Lowest discovered solar tariff by calendar year, ₹/kWh (long-run trend). */

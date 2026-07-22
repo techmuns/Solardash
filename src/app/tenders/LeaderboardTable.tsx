@@ -1,35 +1,43 @@
 "use client";
 
 import * as React from "react";
-import { Search, X } from "lucide-react";
+import { ChevronRight, Search, X } from "lucide-react";
 import { DataTable, type Column } from "@/components/ui/DataTable";
 import { cn, formatNumber } from "@/lib/utils";
 import type { ExportMeta } from "@/lib/export";
-import type { DeveloperStanding } from "@/data/types/tenders";
-import { LISTED_DEVELOPERS, isListedDeveloper } from "./listed-developers";
+import type { AwardRecord, DeveloperStanding } from "@/data/types/tenders";
+import { isListedDeveloper, listedInfo } from "./listed-developers";
+import { DeveloperDetailDialog } from "./DeveloperDetailDialog";
 
 export function LeaderboardTable({
   rows,
+  awards = [],
   exportMeta,
 }: {
   rows: DeveloperStanding[];
+  /** Award records, for the per-developer detail popup. */
+  awards?: AwardRecord[];
   exportMeta?: ExportMeta;
 }) {
   const [listedOnly, setListedOnly] = React.useState(false);
   const [query, setQuery] = React.useState("");
+  const [openDev, setOpenDev] = React.useState<string | null>(null);
 
   const listedCount = React.useMemo(
     () => rows.filter((r) => isListedDeveloper(r.developer)).length,
     [rows],
   );
   const q = query.trim().toLowerCase();
-  const data = rows.filter(
-    (r) =>
-      (!listedOnly || isListedDeveloper(r.developer)) &&
+  const data = rows.filter((r) => {
+    const info = listedInfo(r.developer);
+    return (
+      (!listedOnly || Boolean(info)) &&
       (!q ||
         r.developer.toLowerCase().includes(q) ||
-        (LISTED_DEVELOPERS[r.developer] ?? "").toLowerCase().includes(q)),
-  );
+        (info?.parent ?? "").toLowerCase().includes(q) ||
+        (info?.ticker ?? "").toLowerCase().includes(q))
+    );
+  });
 
   const maxMw = Math.max(1, ...rows.map((r) => r.mw));
 
@@ -39,19 +47,26 @@ export function LeaderboardTable({
       header: "Developer",
       sortable: true,
       render: (r) => {
-        const ticker = LISTED_DEVELOPERS[r.developer];
+        const info = listedInfo(r.developer);
         return (
-          <span className="inline-flex items-center gap-1.5">
-            {r.developer}
-            {ticker && (
-              <span
-                className="rounded bg-positive/10 px-1.5 py-0.5 text-[10px] font-semibold tabular-nums tracking-wide text-positive"
-                title={`Listed · NSE: ${ticker}`}
-              >
-                {ticker}
+          <div className="flex min-w-0 flex-col">
+            <span className="inline-flex items-center gap-1.5">
+              <span className="truncate">{r.developer}</span>
+              {info && (
+                <span
+                  className="shrink-0 rounded bg-positive/10 px-1.5 py-0.5 text-[10px] font-semibold tabular-nums tracking-wide text-positive"
+                  title={`Listed · NSE: ${info.ticker}`}
+                >
+                  {info.ticker}
+                </span>
+              )}
+            </span>
+            {info?.subsidiary && (
+              <span className="text-2xs text-muted-foreground">
+                ↳ subsidiary of {info.parent}
               </span>
             )}
-          </span>
+          </div>
         );
       },
     },
@@ -91,6 +106,16 @@ export function LeaderboardTable({
         ) : (
           <span className="text-muted-foreground/50">—</span>
         ),
+    },
+    {
+      key: "__detail",
+      header: <span className="sr-only">Detail</span>,
+      align: "right",
+      exportExclude: true,
+      headerClassName: "w-8",
+      render: () => (
+        <ChevronRight className="ml-auto h-3.5 w-3.5 text-muted-foreground/60" aria-hidden />
+      ),
     },
   ];
 
@@ -155,12 +180,18 @@ export function LeaderboardTable({
           columns={columns}
           data={data}
           getRowKey={(r) => r.developer}
+          onRowClick={(r) => setOpenDev(r.developer)}
           dense
           emptyMessage="No developer standings."
           exportable={Boolean(exportMeta)}
           exportMeta={exportMeta}
         />
       </div>
+      <DeveloperDetailDialog
+        developer={openDev}
+        awards={awards}
+        onClose={() => setOpenDev(null)}
+      />
     </div>
   );
 }

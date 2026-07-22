@@ -58,7 +58,8 @@ function historyTitle(t: CommissioningTranche): string {
           t.currentTarget,
         )} (${slipLabel(t.slipQuarters)})`
       : "";
-  return `${head}\n\nGuidance history:\n${lines.join("\n")}${slip}`;
+  const why = t.sourceNote ? `\n\nWhy ${STATUS[t.status].label.toLowerCase()}: ${t.sourceNote}` : "";
+  return `${head}\n\nGuidance history:\n${lines.join("\n")}${slip}${why}`;
 }
 
 export function CommissioningTimeline({
@@ -284,6 +285,19 @@ export function CommissioningTimeline({
                     <div className="truncate text-2xs text-muted-foreground">
                       {t.project}
                     </div>
+                    {/* Why the status is delayed / at-risk — surfaced, not hidden */}
+                    {(t.status === "at-risk" || t.status === "delayed") && t.sourceNote && (
+                      <div
+                        className="mt-0.5 line-clamp-2 text-[10px] leading-tight"
+                        style={{ color: s.color }}
+                        title={t.sourceNote}
+                      >
+                        <span className="font-semibold">
+                          {t.status === "at-risk" ? "⚠ At risk: " : "Delay: "}
+                        </span>
+                        {t.sourceNote}
+                      </div>
+                    )}
                   </div>
 
                   {/* Track */}

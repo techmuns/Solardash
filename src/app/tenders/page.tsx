@@ -2,7 +2,7 @@ import { getTendersSnapshot } from "@/data";
 import { formatDate, formatNumber } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
-import { FillBarSeries, FillLineSeries } from "@/components/charts/FillCharts";
+import { FillLineSeries } from "@/components/charts/FillCharts";
 import {
   SectionCanvas,
   RankList,
@@ -10,7 +10,7 @@ import {
 } from "@/components/sections/SectionCanvas";
 import type { AwardRecord } from "@/data/types/tenders";
 import { LeaderboardTable } from "./LeaderboardTable";
-import { AwardsTooltip } from "./AwardsTooltip";
+import { AwardsChart } from "./AwardsChart";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -39,10 +39,17 @@ export default function TendersPage() {
   const winRange = `${fmtQ(win.firstQuarter)} – ${fmtQ(win.lastQuarter)}`;
   const winLabel = `${win.label} · ${winRange}`;
 
-  // Atomic awards grouped by quarter — powers the Awards-by-quarter hover card
-  // (the detail that used to live in the separate Award-log tab).
+  // Atomic awards grouped by quarter and by month — powers the Awards hover card
+  // in each frequency view.
   const awardsByPeriod: Record<string, AwardRecord[]> = {};
   for (const a of d.recentAwards) (awardsByPeriod[a.period] ??= []).push(a);
+  const monthPeriods = d.awardsByMonth[0]?.points.map((p) => p.period) ?? [];
+  const awardsByMonthPeriod: Record<string, AwardRecord[]> = {};
+  for (const a of d.recentAwards) {
+    const [y, m] = a.date.split("-");
+    const label = `${["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][Number(m) - 1]} ${y.slice(2)}`;
+    (awardsByMonthPeriod[label] ??= []).push(a);
+  }
 
   // Every tender type's capacity-weighted ₹/kWh trend (≥2 points), not just
   // solar — each line runs to the latest quarter that type was auctioned.
@@ -54,16 +61,18 @@ export default function TendersPage() {
   const tabs: CanvasTab[] = [
     {
       id: "awards",
-      label: "Awards by quarter",
-      title: "Awarded MW by quarter",
-      subtitle: "Stacked by tender type · hover a quarter for its individual awards",
+      label: "Awarded MW",
+      title: "Awarded MW over time",
+      subtitle:
+        "Stacked by tender type · toggle Quarterly / Monthly · hover a bar for its individual awards",
       body: (
-        <FillBarSeries
-          series={d.awardsByQuarter}
-          stacked
-          unit="MW"
-          periodOrder={quarters}
-          tooltipContent={<AwardsTooltip awardsByPeriod={awardsByPeriod} />}
+        <AwardsChart
+          quarterly={d.awardsByQuarter}
+          quarterPeriods={quarters}
+          quarterAwards={awardsByPeriod}
+          monthly={d.awardsByMonth}
+          monthPeriods={monthPeriods}
+          monthAwards={awardsByMonthPeriod}
         />
       ),
       side: { title: `Top winners · ${win.label.startsWith("TTM") ? "TTM" : winRange}`, node: <RankList rows={topWinners} /> },
@@ -95,8 +104,8 @@ export default function TendersPage() {
       id: "leaderboard",
       label: "Leaderboard",
       title: "Top developers by MW won",
-      subtitle: `${winLabel} · sortable · search · toggle listed-only · winners where disclosed`,
-      body: <LeaderboardTable rows={d.developerLeaderboard} />,
+      subtitle: `${winLabel} · click a row for its auctions · sortable · search · listed parent shown`,
+      body: <LeaderboardTable rows={d.developerLeaderboard} awards={d.recentAwards} />,
       exportData: {
         columns: [
           { key: "developer", label: "Developer" },

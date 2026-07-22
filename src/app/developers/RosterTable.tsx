@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ExternalLink } from "lucide-react";
 import { DataTable, type Column } from "@/components/ui/DataTable";
 import { CompareTray } from "@/components/compare/CompareTray";
 import {
@@ -10,21 +11,9 @@ import {
 } from "@/components/compare/CompareDialog";
 import { useCompareSelection } from "@/components/compare/useCompareSelection";
 import { MIX_SEGMENTS, MixBar } from "@/components/compare/MixBar";
-import { categoricalColor, energyColor } from "@/lib/colors";
+import { categoricalColor } from "@/lib/colors";
 import type { ExportMeta } from "@/lib/export";
 import type { Developer } from "@/data/types/developers";
-import type { TenderType } from "@/data/types/tenders";
-import { TENDER_TYPE_LABELS } from "@/lib/tender-types";
-
-function primaryTech(mix: Developer["mix"]): TenderType {
-  const entries: [TenderType, number][] = [
-    ["solar", mix.solar],
-    ["wind", mix.wind],
-    ["hybrid", mix.hybrid],
-    ["fdre", mix.fdre],
-  ];
-  return entries.reduce((best, e) => (e[1] > best[1] ? e : best), entries[0])[0];
-}
 
 const oneDp = (v: number) => v.toFixed(1);
 
@@ -152,49 +141,62 @@ export function RosterTable({
     },
     {
       key: "targetGw",
-      header: "Target",
+      header: "Target FY30",
       align: "right",
       sortable: true,
       accessor: (r) => r.targetGw,
-      render: (r) => (
-        <span className="whitespace-nowrap">
-          {r.targetGw.toFixed(0)}{" "}
-          <span className="text-muted-foreground">{r.targetYear}</span>
-        </span>
-      ),
-    },
-    {
-      key: "tech",
-      header: "Primary",
-      sortable: true,
-      accessor: (r) => TENDER_TYPE_LABELS[primaryTech(r.mix)],
-      exportValue: (r) => TENDER_TYPE_LABELS[primaryTech(r.mix)],
       render: (r) => {
-        const t = primaryTech(r.mix);
-        return (
-          <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
-            <span
-              className="h-2 w-2 rounded-[2px]"
-              style={{ background: energyColor(t) }}
-              aria-hidden
-            />
-            {TENDER_TYPE_LABELS[t]}
+        const label = (
+          <span className="whitespace-nowrap tabular-nums">
+            {r.targetGw.toFixed(0)}{" "}
+            <span className="text-muted-foreground">{r.targetYear}</span>
           </span>
+        );
+        // Surface where the (company-guided) target comes from — clickable to source.
+        return r.sourceUrl ? (
+          <a
+            href={r.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`Target guidance — ${r.source ?? "company"}`}
+            className="inline-flex items-center gap-1 hover:text-brand"
+          >
+            {label}
+            <ExternalLink className="h-3 w-3 shrink-0 text-muted-foreground/60" aria-hidden />
+          </a>
+        ) : (
+          <span title={r.source ? `Target guidance — ${r.source}` : undefined}>{label}</span>
         );
       },
     },
     {
+      // PPA-signed is FORWARD offtake from the PPA tracker (recent auction wins
+      // that secure pipeline / UC capacity) — operational GW is contracted by
+      // definition. Shown against the forward book so "signed against what" is clear.
       key: "ppaSignedGw",
-      header: "PPA-signed",
+      header: "PPA-signed (fwd)",
       align: "right",
       sortable: true,
       accessor: (r) => r.ppaSignedGw ?? -1,
-      render: (r) =>
-        r.ppaSignedGw != null ? (
-          `${r.ppaSignedGw.toFixed(1)} GW`
+      render: (r) => {
+        const fwd = r.underConstructionGw + r.pipelineGw;
+        return r.ppaSignedGw != null ? (
+          <span
+            className="whitespace-nowrap tabular-nums"
+            title={`${r.ppaSignedGw.toFixed(1)} GW of forward capacity (under-construction + pipeline = ${fwd.toFixed(1)} GW) has a signed PPA, per the PPA tracker. Operational capacity is already contracted.`}
+          >
+            {r.ppaSignedGw.toFixed(1)}
+            <span className="text-muted-foreground"> / {fwd.toFixed(1)}</span>
+          </span>
         ) : (
-          <span className="text-muted-foreground/50">—</span>
-        ),
+          <span
+            className="text-muted-foreground/50"
+            title="No forward PPA signing in the tracker (operational capacity is contracted separately)."
+          >
+            —
+          </span>
+        );
+      },
     },
   ];
 

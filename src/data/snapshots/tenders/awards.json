@@ -30,6 +30,477 @@
       }
     ],
     "asOfPeriod": "Q2FY27",
+    "awardsByMonth": [
+      {
+        "key": "solar",
+        "label": "Solar",
+        "points": [
+          {
+            "period": "Jul 24",
+            "value": 0
+          },
+          {
+            "period": "Nov 24",
+            "value": 1200
+          },
+          {
+            "period": "Dec 24",
+            "value": 720
+          },
+          {
+            "period": "Feb 25",
+            "value": 0
+          },
+          {
+            "period": "May 25",
+            "value": 0
+          },
+          {
+            "period": "Jun 25",
+            "value": 2366
+          },
+          {
+            "period": "Aug 25",
+            "value": 1785
+          },
+          {
+            "period": "Sep 25",
+            "value": 0
+          },
+          {
+            "period": "Oct 25",
+            "value": 0
+          },
+          {
+            "period": "Dec 25",
+            "value": 1200
+          },
+          {
+            "period": "Feb 26",
+            "value": 0
+          },
+          {
+            "period": "Mar 26",
+            "value": 625
+          },
+          {
+            "period": "May 26",
+            "value": 0
+          },
+          {
+            "period": "Jun 26",
+            "value": 0
+          },
+          {
+            "period": "Jul 26",
+            "value": 1200
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "solar-bess",
+        "label": "Solar + BESS",
+        "points": [
+          {
+            "period": "Jul 24",
+            "value": 1200
+          },
+          {
+            "period": "Nov 24",
+            "value": 0
+          },
+          {
+            "period": "Dec 24",
+            "value": 0
+          },
+          {
+            "period": "Feb 25",
+            "value": 0
+          },
+          {
+            "period": "May 25",
+            "value": 0
+          },
+          {
+            "period": "Jun 25",
+            "value": 0
+          },
+          {
+            "period": "Aug 25",
+            "value": 0
+          },
+          {
+            "period": "Sep 25",
+            "value": 0
+          },
+          {
+            "period": "Oct 25",
+            "value": 2000
+          },
+          {
+            "period": "Dec 25",
+            "value": 0
+          },
+          {
+            "period": "Feb 26",
+            "value": 1200
+          },
+          {
+            "period": "Mar 26",
+            "value": 0
+          },
+          {
+            "period": "May 26",
+            "value": 10
+          },
+          {
+            "period": "Jun 26",
+            "value": 1200
+          },
+          {
+            "period": "Jul 26",
+            "value": 0
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "bess",
+        "label": "BESS",
+        "points": [
+          {
+            "period": "Jul 24",
+            "value": 0
+          },
+          {
+            "period": "Nov 24",
+            "value": 0
+          },
+          {
+            "period": "Dec 24",
+            "value": 0
+          },
+          {
+            "period": "Feb 25",
+            "value": 0
+          },
+          {
+            "period": "May 25",
+            "value": 0
+          },
+          {
+            "period": "Jun 25",
+            "value": 0
+          },
+          {
+            "period": "Aug 25",
+            "value": 0
+          },
+          {
+            "period": "Sep 25",
+            "value": 0
+          },
+          {
+            "period": "Oct 25",
+            "value": 0
+          },
+          {
+            "period": "Dec 25",
+            "value": 0
+          },
+          {
+            "period": "Feb 26",
+            "value": 0
+          },
+          {
+            "period": "Mar 26",
+            "value": 125
+          },
+          {
+            "period": "May 26",
+            "value": 500
+          },
+          {
+            "period": "Jun 26",
+            "value": 0
+          },
+          {
+            "period": "Jul 26",
+            "value": 0
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "wind",
+        "label": "Wind",
+        "points": [
+          {
+            "period": "Jul 24",
+            "value": 0
+          },
+          {
+            "period": "Nov 24",
+            "value": 0
+          },
+          {
+            "period": "Dec 24",
+            "value": 0
+          },
+          {
+            "period": "Feb 25",
+            "value": 0
+          },
+          {
+            "period": "May 25",
+            "value": 0
+          },
+          {
+            "period": "Jun 25",
+            "value": 0
+          },
+          {
+            "period": "Aug 25",
+            "value": 0
+          },
+          {
+            "period": "Sep 25",
+            "value": 0
+          },
+          {
+            "period": "Oct 25",
+            "value": 0
+          },
+          {
+            "period": "Dec 25",
+            "value": 0
+          },
+          {
+            "period": "Feb 26",
+            "value": 1200
+          },
+          {
+            "period": "Mar 26",
+            "value": 0
+          },
+          {
+            "period": "May 26",
+            "value": 0
+          },
+          {
+            "period": "Jun 26",
+            "value": 0
+          },
+          {
+            "period": "Jul 26",
+            "value": 1745
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "hybrid",
+        "label": "Hybrid",
+        "points": [
+          {
+            "period": "Jul 24",
+            "value": 0
+          },
+          {
+            "period": "Nov 24",
+            "value": 0
+          },
+          {
+            "period": "Dec 24",
+            "value": 0
+          },
+          {
+            "period": "Feb 25",
+            "value": 0
+          },
+          {
+            "period": "May 25",
+            "value": 0
+          },
+          {
+            "period": "Jun 25",
+            "value": 0
+          },
+          {
+            "period": "Aug 25",
+            "value": 0
+          },
+          {
+            "period": "Sep 25",
+            "value": 1800
+          },
+          {
+            "period": "Oct 25",
+            "value": 0
+          },
+          {
+            "period": "Dec 25",
+            "value": 0
+          },
+          {
+            "period": "Feb 26",
+            "value": 0
+          },
+          {
+            "period": "Mar 26",
+            "value": 0
+          },
+          {
+            "period": "May 26",
+            "value": 0
+          },
+          {
+            "period": "Jun 26",
+            "value": 0
+          },
+          {
+            "period": "Jul 26",
+            "value": 0
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "fdre",
+        "label": "FDRE",
+        "points": [
+          {
+            "period": "Jul 24",
+            "value": 0
+          },
+          {
+            "period": "Nov 24",
+            "value": 0
+          },
+          {
+            "period": "Dec 24",
+            "value": 0
+          },
+          {
+            "period": "Feb 25",
+            "value": 630
+          },
+          {
+            "period": "May 25",
+            "value": 0
+          },
+          {
+            "period": "Jun 25",
+            "value": 0
+          },
+          {
+            "period": "Aug 25",
+            "value": 0
+          },
+          {
+            "period": "Sep 25",
+            "value": 0
+          },
+          {
+            "period": "Oct 25",
+            "value": 1200
+          },
+          {
+            "period": "Dec 25",
+            "value": 0
+          },
+          {
+            "period": "Feb 26",
+            "value": 0
+          },
+          {
+            "period": "Mar 26",
+            "value": 0
+          },
+          {
+            "period": "May 26",
+            "value": 0
+          },
+          {
+            "period": "Jun 26",
+            "value": 0
+          },
+          {
+            "period": "Jul 26",
+            "value": 0
+          }
+        ],
+        "unit": "MW"
+      },
+      {
+        "key": "rtc",
+        "label": "RTC",
+        "points": [
+          {
+            "period": "Jul 24",
+            "value": 0
+          },
+          {
+            "period": "Nov 24",
+            "value": 0
+          },
+          {
+            "period": "Dec 24",
+            "value": 0
+          },
+          {
+            "period": "Feb 25",
+            "value": 0
+          },
+          {
+            "period": "May 25",
+            "value": 540
+          },
+          {
+            "period": "Jun 25",
+            "value": 0
+          },
+          {
+            "period": "Aug 25",
+            "value": 0
+          },
+          {
+            "period": "Sep 25",
+            "value": 0
+          },
+          {
+            "period": "Oct 25",
+            "value": 0
+          },
+          {
+            "period": "Dec 25",
+            "value": 0
+          },
+          {
+            "period": "Feb 26",
+            "value": 0
+          },
+          {
+            "period": "Mar 26",
+            "value": 0
+          },
+          {
+            "period": "May 26",
+            "value": 0
+          },
+          {
+            "period": "Jun 26",
+            "value": 0
+          },
+          {
+            "period": "Jul 26",
+            "value": 0
+          }
+        ],
+        "unit": "MW"
+      }
+    ],
     "awardsByQuarter": [
       {
         "key": "solar",

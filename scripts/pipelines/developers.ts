@@ -96,6 +96,8 @@ export const developersPipeline = definePipeline({
             bessGwh: n0(r.bess_gwh),
           },
           ...(signed && signed > 0 ? { ppaSignedGw: round1(signed) } : {}),
+          ...(r.source?.trim() ? { source: r.source.trim() } : {}),
+          ...(r.source_url?.trim() ? { sourceUrl: r.source_url.trim() } : {}),
           confidence: r.confidence as Confidence,
           ...(r.note ? { sourceNote: r.note } : {}),
         };

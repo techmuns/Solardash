@@ -1644,6 +1644,8 @@
         "name": "Adani Green",
         "operationalGw": 19.3,
         "pipelineGw": 18.7,
+        "source": "Company FY26",
+        "sourceUrl": "https://www.pv-magazine-india.com/2026/04/24/adani-greens-operational-re-capacity-grows-35-yoy-to-19-3-gw/",
         "targetGw": 50,
         "targetYear": "FY30",
         "underConstructionGw": 12
@@ -1661,6 +1663,7 @@
         "operationalGw": 12.6,
         "pipelineGw": 5.4,
         "ppaSignedGw": 0.3,
+        "source": "Investor Presentation",
         "targetGw": 21,
         "targetYear": "FY30",
         "underConstructionGw": 3
@@ -1677,6 +1680,8 @@
         "name": "NTPC Green",
         "operationalGw": 10.1,
         "pipelineGw": 10,
+        "source": "Company FY26",
+        "sourceUrl": "https://renewablewatch.in/2026/04/01/ntpc-green-energy-limited-surpasses-10-gw-installed-capacity/",
         "targetGw": 45,
         "targetYear": "FY30",
         "underConstructionGw": 7
@@ -1693,6 +1698,7 @@
         "name": "Greenko",
         "operationalGw": 7.5,
         "pipelineGw": 4.5,
+        "source": "Company",
         "targetGw": 15,
         "targetYear": "FY30",
         "underConstructionGw": 3
@@ -1709,6 +1715,7 @@
         "name": "Avaada",
         "operationalGw": 7.2,
         "pipelineGw": 12.3,
+        "source": "Company May 2026",
         "targetGw": 30,
         "targetYear": "FY30",
         "underConstructionGw": 10.5
@@ -1726,6 +1733,7 @@
         "operationalGw": 7,
         "pipelineGw": 5,
         "ppaSignedGw": 0.2,
+        "source": "Company",
         "targetGw": 20,
         "targetYear": "FY30",
         "underConstructionGw": 6
@@ -1742,6 +1750,7 @@
         "name": "Tata Power RE",
         "operationalGw": 7,
         "pipelineGw": 5.9,
+        "source": "Company",
         "targetGw": 23,
         "targetYear": "FY30",
         "underConstructionGw": 10.1
@@ -1759,6 +1768,7 @@
         "operationalGw": 3.5,
         "pipelineGw": 2,
         "ppaSignedGw": 0.1,
+        "source": "Investor Presentation",
         "targetGw": 7,
         "targetYear": "FY30",
         "underConstructionGw": 1.5
@@ -1775,6 +1785,7 @@
         "name": "Juniper Green",
         "operationalGw": 3,
         "pipelineGw": 2,
+        "source": "Investor Presentation",
         "targetGw": 7,
         "targetYear": "FY30",
         "underConstructionGw": 2
@@ -1792,6 +1803,7 @@
         "operationalGw": 3,
         "pipelineGw": 5,
         "ppaSignedGw": 0.6,
+        "source": "Company",
         "targetGw": 17,
         "targetYear": "FY30",
         "underConstructionGw": 3
@@ -1809,6 +1821,7 @@
         "operationalGw": 2.9,
         "pipelineGw": 3.1,
         "ppaSignedGw": 0.6,
+        "source": "Company",
         "targetGw": 10,
         "targetYear": "FY30",
         "underConstructionGw": 4

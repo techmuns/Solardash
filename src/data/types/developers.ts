@@ -17,8 +17,11 @@ export interface Developer {
     fdre: number;
     bessGwh: number;
   };
-  /** GW under signed PPAs (derived from the PPA tracker). */
+  /** GW under signed PPAs (derived from the PPA tracker — forward offtake). */
   ppaSignedGw?: number;
+  /** Cited source for the capacity / FY30-target figures. */
+  source?: string;
+  sourceUrl?: string;
   confidence: Confidence;
   sourceNote?: string;
 }

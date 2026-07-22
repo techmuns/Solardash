@@ -34,15 +34,6 @@ export default function DevelopersPage() {
     title: "Portfolio mix",
     node: (
       <div className="flex flex-col gap-3">
-        <div className="flex h-3 w-full overflow-hidden rounded-full">
-          {mix.map((m) => (
-            <div
-              key={m.key}
-              title={`${TENDER_TYPE_LABELS[m.key]} · ${Math.round(m.share * 100)}%`}
-              style={{ width: `${m.share * 100}%`, background: energyColor(m.key) }}
-            />
-          ))}
-        </div>
         <div className="flex flex-col gap-1.5">
           {mix.map((m) => (
             <div key={m.key} className="flex items-center gap-2 text-xs">
@@ -96,7 +87,7 @@ export default function DevelopersPage() {
       label: "Leaderboard",
       title: "IPP roster",
       subtitle:
-        "Operational · under-construction · pipeline · FY30 target (GW) · sortable",
+        "Operational · under-construction · pipeline · company-guided FY30 target (linked) · forward PPA coverage · sortable",
       body: (
         <div className="min-h-0 flex-1 overflow-auto">
           <RosterTable rows={d.roster} />

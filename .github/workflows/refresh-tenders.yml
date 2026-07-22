@@ -4,14 +4,16 @@ name: Refresh RE auction feed
 # outcomes are published in results PDFs and trade press (Mercom, pv-magazine,
 # SolarQuarter, Renewable Watch), not a clean API, so a human appends the latest
 # concluded auctions to manual-data/tenders/auctions.csv. This Action rebuilds
-# the tenders snapshot from that feed on a monthly cron (and on demand) and
-# commits only if the rendered data changed. The KPIs / mix / leaderboard use a
-# trailing-4-quarter (TTM) window that rolls forward automatically, so adding a
-# new quarter's rows is all that's needed to surface the latest data.
+# the tenders snapshot from that feed twice a month (and on demand) and commits
+# only if the rendered data changed. Both the quarterly and calendar-month award
+# views and the trailing-4-quarter (TTM) window roll forward automatically, so
+# adding the latest auction rows is all that's needed to surface fresh data.
 
 on:
   schedule:
-    - cron: '0 6 4 * *'      # 4th of each month, 06:00 UTC
+    # Twice a month: mid-month and month-end, 06:00 UTC. The 28th is the last day
+    # every month is guaranteed to have, so it stands in for the month-end run.
+    - cron: '0 6 15,28 * *'
   workflow_dispatch: {}
 
 permissions:
