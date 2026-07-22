@@ -15,6 +15,7 @@
         "rep": true,
         "repMargin": 4,
         "source": "Daqo · Wacker · BNEF",
+        "sourceUrl": "https://www.bernreuter.com/polysilicon/price-trend/",
         "stage": "Polysilicon",
         "trend": [
           74,
@@ -34,6 +35,7 @@
         "rep": true,
         "repMargin": -9,
         "source": "TCL · LONGi",
+        "sourceUrl": "https://www.pv-tech.org/tag/wafer/",
         "stage": "Wafer / Ingot",
         "trend": [
           25,
@@ -51,6 +53,7 @@
         "rep": false,
         "repMargin": -2,
         "source": "pv-magazine · PV-Tech",
+        "sourceUrl": "https://www.pv-tech.org/tag/solar-cell/",
         "stage": "Cell"
       },
       {
@@ -64,6 +67,7 @@
         "rep": true,
         "repMargin": 36,
         "source": "Company FY25",
+        "sourceUrl": "https://www.pv-magazine-india.com/2025/08/22/premier-energies-begins-production-at-1-2-gw-n-type-g12r-solar-cell-line-unveils-620-w-dcr-topcon-module/",
         "stage": "Cell"
       },
       {
@@ -90,6 +94,7 @@
         "rep": true,
         "repMargin": 18,
         "source": "Company · IEEFA",
+        "sourceUrl": "https://www.pv-magazine-india.com/2026/05/25/dcr-module-premiums-more-than-offset-input-cost-pressures-grew-solar-ceo/",
         "stage": "Module"
       },
       {
@@ -103,6 +108,7 @@
         "rep": false,
         "repMargin": 41,
         "source": "First Solar",
+        "sourceUrl": "https://investor.firstsolar.com/",
         "stage": "Module"
       },
       {
@@ -142,6 +148,7 @@
         "rep": true,
         "repMargin": 88,
         "source": "Company · CRISIL · ICRA",
+        "sourceUrl": "https://www.icra.in/Rating/GetRatingMethodologyFile/607~Solar%20Power%20Producers",
         "stage": "IPP / Generation"
       },
       {
@@ -155,6 +162,7 @@
         "rep": false,
         "repMargin": null,
         "source": "Mercom · IEEFA-JMK · BNEF",
+        "sourceUrl": "https://ieefa.org/sites/default/files/2026-05/Viability%20of%20standalone%20battery%20energy%20storage%20tariffs%20discovered%20in%202025.pdf",
         "stage": "BESS"
       },
       {

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ExternalLink } from "lucide-react";
 import { LineSeriesChart } from "@/components/charts/LineSeriesChart";
 import { FillCategoryBar } from "@/components/charts/FillCharts";
 import { FrequencyToggle } from "@/components/charts/FrequencyToggle";
@@ -106,12 +107,12 @@ export function StageEconomicsTable({ rows }: { rows: StageEconomicsRow[] }) {
   return (
     <div className="flex min-h-0 flex-1 flex-col">
       <p className="mb-2 flex shrink-0 flex-wrap items-center gap-x-2 gap-y-1 text-2xs text-muted-foreground">
-        <span className="font-medium text-foreground/80">Margins = FACT</span>{" "}
-        (filings / agencies, cited per row) ·
+        <span className="font-medium text-foreground/80">Margin range = FACT</span>{" "}
+        (filings / agencies — cited &amp; linked per row) ·
         <AnalysisTag />
-        <span>sets the direction read. China squeezed vs India / US expanding —</span>
-        <span className="font-medium text-foreground/80">
-          trade policy, not technology, sets the module margin.
+        <span>
+          picks the <span className="font-medium text-foreground/80">rep.</span> value (a
+          representative point from that range, used in the bar) and the direction read.
         </span>
       </p>
       <div className="min-h-0 flex-1 overflow-auto">
@@ -119,7 +120,9 @@ export function StageEconomicsTable({ rows }: { rows: StageEconomicsRow[] }) {
           <thead className="sticky top-0 z-10 bg-card">
             <tr className="border-b border-border text-left text-2xs uppercase tracking-wide text-muted-foreground">
               <th className="px-2 py-2 font-semibold">Stage</th>
-              <th className="px-2 py-2 font-semibold">Margin</th>
+              <th className="px-2 py-2 font-semibold">
+                Margin <span className="font-normal normal-case">· FACT → rep.</span>
+              </th>
               <th className="px-2 py-2 font-semibold">Trend</th>
               <th className="px-2 py-2 font-semibold">
                 Direction <span className="font-normal normal-case">· Munshot</span>
@@ -143,6 +146,16 @@ export function StageEconomicsTable({ rows }: { rows: StageEconomicsRow[] }) {
                 <td className="px-2 py-2 tabular-nums text-foreground/90">
                   <span className="text-2xs text-muted-foreground">{r.metric} </span>
                   {r.marginText}
+                  {r.rep && r.repMargin != null && (
+                    <div
+                      className="text-2xs font-medium"
+                      style={{ color: DCLASS[r.directionClass].color }}
+                      title="Munshot representative — the point from this range used in the bar chart"
+                    >
+                      → rep. {r.repMargin > 0 ? "+" : ""}
+                      {r.repMargin}%
+                    </div>
+                  )}
                 </td>
                 <td className="px-2 py-2">
                   {r.trend && r.trend.length > 1 ? (
@@ -165,7 +178,20 @@ export function StageEconomicsTable({ rows }: { rows: StageEconomicsRow[] }) {
                   {r.rationale}
                 </td>
                 <td className="px-2 py-2">
-                  <div className="text-xs text-foreground/80">{r.source}</div>
+                  {r.sourceUrl ? (
+                    <a
+                      href={r.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-start gap-1 text-xs text-foreground/80 hover:text-brand"
+                      title="Open cited source"
+                    >
+                      <span>{r.source}</span>
+                      <ExternalLink className="mt-0.5 h-3 w-3 shrink-0 text-muted-foreground/60" aria-hidden />
+                    </a>
+                  ) : (
+                    <div className="text-xs text-foreground/80">{r.source}</div>
+                  )}
                   <div
                     className={cn(
                       "text-2xs",
@@ -203,9 +229,10 @@ export function MarginByStage({ rows }: { rows: StageEconomicsRow[] }) {
     <div className="flex min-h-0 flex-1 flex-col">
       <FillCategoryBar data={data} unit="%" categoryWidth={128} showValues />
       <p className="mt-1 shrink-0 text-2xs leading-snug text-muted-foreground">
-        <AnalysisTag /> Representative EBITDA / gross margin per stage (India figure
-        where bifurcated). The profitability gradient runs from generation &
-        protected manufacturing down to the globally-squeezed commodity midstream.
+        <AnalysisTag /> Each bar is the <span className="font-medium text-foreground/80">representative</span>{" "}
+        EBITDA / gross margin — a Munshot pick from that stage&apos;s sourced range in the
+        table (India figure where bifurcated), not a separate number. The gradient runs from
+        generation &amp; protected manufacturing down to the globally-squeezed commodity midstream.
       </p>
     </div>
   );

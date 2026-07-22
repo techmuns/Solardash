@@ -66,6 +66,19 @@ export interface TypeMixEntry {
   share: number;
 }
 
+/** The trailing window that the KPIs / mix / leaderboard are computed over. */
+export interface TenderWindow {
+  /** Short label, e.g. `TTM · trailing 4 quarters`. */
+  label: string;
+  /** Fiscal quarters in the window, chronological (e.g. `Q2FY26`…`Q1FY27`). */
+  quarters: string[];
+  firstQuarter: string;
+  lastQuarter: string;
+  /** ISO date span actually covered by the window's auctions. */
+  startDate: string;
+  endDate: string;
+}
+
 export interface DeveloperStanding {
   developer: string;
   mw: number;
@@ -78,6 +91,8 @@ export interface DeveloperStanding {
 export interface TendersData {
   /** Latest period covered, e.g. `Q3FY26`. */
   asOfPeriod: string;
+  /** The trailing window KPIs / mix / leaderboard are computed over. */
+  window: TenderWindow;
   kpis: TenderKpi[];
   /** MW awarded per quarter, one Series per tender type (stacked). */
   awardsByQuarter: Series[];
@@ -87,9 +102,9 @@ export interface TendersData {
   tariffHistory: Series[];
   /** Total MW awarded per agency (whole feed). */
   agencySplit: AgencySplit[];
-  /** MW + share per type over the trailing window (FY26-to-date). */
+  /** MW + share per type over the trailing window. */
   typeMix: TypeMixEntry[];
-  /** Developer standings over FY26-to-date. */
+  /** Developer standings over the trailing window. */
   developerLeaderboard: DeveloperStanding[];
   /** Atomic award records, most-recent first. */
   recentAwards: AwardRecord[];

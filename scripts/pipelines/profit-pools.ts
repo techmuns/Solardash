@@ -203,6 +203,7 @@ export const profitPoolsPipeline = definePipeline({
         directionClass: r.direction_class as DirectionClass,
         rationale: r.rationale,
         source: r.source,
+        ...(r.source_url?.trim() ? { sourceUrl: r.source_url.trim() } : {}),
         confidence: r.confidence,
         ...(trendRaw
           ? { trend: trendRaw.split(";").map((n) => Number(n.trim())) }

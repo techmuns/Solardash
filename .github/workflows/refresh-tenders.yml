@@ -1,0 +1,46 @@
+name: Refresh RE auction feed
+
+# The tenders/auction results are a MAINTAINED feed: SECI/NTPC/SJVN auction
+# outcomes are published in results PDFs and trade press (Mercom, pv-magazine,
+# SolarQuarter, Renewable Watch), not a clean API, so a human appends the latest
+# concluded auctions to manual-data/tenders/auctions.csv. This Action rebuilds
+# the tenders snapshot from that feed on a monthly cron (and on demand) and
+# commits only if the rendered data changed. The KPIs / mix / leaderboard use a
+# trailing-4-quarter (TTM) window that rolls forward automatically, so adding a
+# new quarter's rows is all that's needed to surface the latest data.
+
+on:
+  schedule:
+    - cron: '0 6 4 * *'      # 4th of each month, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-tenders
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Rebuild tenders snapshot
+        run: npx tsx scripts/run.ts tenders
+      - name: Commit & push if changed
+        run: |
+          git config user.name "solardash-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add manual-data/tenders src/data/snapshots/tenders
+          if git diff --cached --quiet; then
+            echo "No tenders changes."
+          else
+            git commit -m "chore(data): refresh RE auction feed"
+            git push
+          fi

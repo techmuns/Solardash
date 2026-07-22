@@ -19,6 +19,9 @@ export const metadata = {
     "Central & state solar / renewable auction results — awarded capacity, winning tariffs, the tender-type mix, and the developer leaderboard, in a single focused canvas.",
 };
 
+/** `Q1FY27` → `Q1 FY27`. */
+const fmtQ = (q: string) => q.replace(/^(Q[1-4])(FY\d{2})$/, "$1 $2");
+
 export default function TendersPage() {
   const snapshot = getTendersSnapshot();
   const d = snapshot.data;
@@ -31,21 +34,22 @@ export default function TendersPage() {
     .slice(0, 5)
     .map((w) => ({ label: w.developer, value: formatNumber(w.mw) }));
 
+  // The trailing window (TTM) covered by KPIs / mix / leaderboard, clearly stated.
+  const win = d.window;
+  const winRange = `${fmtQ(win.firstQuarter)} – ${fmtQ(win.lastQuarter)}`;
+  const winLabel = `${win.label} · ${winRange}`;
+
   // Atomic awards grouped by quarter — powers the Awards-by-quarter hover card
   // (the detail that used to live in the separate Award-log tab).
   const awardsByPeriod: Record<string, AwardRecord[]> = {};
   for (const a of d.recentAwards) (awardsByPeriod[a.period] ??= []).push(a);
 
-  // Recent quarterly solar-family tariff (capacity-weighted per quarter) for the
-  // tariff tab: pure solar + solar-plus-storage, for denser coverage than solar
-  // alone.
-  const solarFamilyTariffQ = d.tariffByType.filter(
-    (s) => s.key === "solar" || s.key === "solar-bess",
+  // Every tender type's capacity-weighted ₹/kWh trend (≥2 points), not just
+  // solar — each line runs to the latest quarter that type was auctioned.
+  const tariffSeries = d.tariffByType.filter((s) => s.points.length >= 2);
+  const tariffPeriods = quarters.filter((q) =>
+    tariffSeries.some((s) => s.points.some((p) => p.period === q)),
   );
-  const famPeriods = new Set(
-    solarFamilyTariffQ.flatMap((s) => s.points.map((p) => p.period)),
-  );
-  const tariffQuarters = quarters.filter((q) => famPeriods.has(q));
 
   const tabs: CanvasTab[] = [
     {
@@ -62,7 +66,7 @@ export default function TendersPage() {
           tooltipContent={<AwardsTooltip awardsByPeriod={awardsByPeriod} />}
         />
       ),
-      side: { title: "Top winners · FY26", node: <RankList rows={topWinners} /> },
+      side: { title: `Top winners · ${win.label.startsWith("TTM") ? "TTM" : winRange}`, node: <RankList rows={topWinners} /> },
       exportData: {
         ...seriesToExport(d.awardsByQuarter, quarters, "Quarter"),
         meta: meta("awards-by-quarter"),
@@ -71,19 +75,19 @@ export default function TendersPage() {
     {
       id: "tariff",
       label: "Tariff trend",
-      title: "Solar tariff trend",
+      title: "Winning tariff trend by tender type",
       subtitle:
-        "Capacity-weighted solar & solar-plus-storage ₹/kWh · by quarter",
+        "Capacity-weighted ₹/kWh per quarter · every tender type · each point averages that quarter's underlying auctions",
       source: "Mercom / SECI (maintained)",
       body: (
         <FillLineSeries
-          series={solarFamilyTariffQ}
+          series={tariffSeries}
           unit="₹/kWh"
-          periodOrder={tariffQuarters}
+          periodOrder={tariffPeriods}
         />
       ),
       exportData: {
-        ...seriesToExport(solarFamilyTariffQ, tariffQuarters, "Quarter"),
+        ...seriesToExport(tariffSeries, tariffPeriods, "Quarter"),
         meta: meta("tariff-history"),
       },
     },
@@ -91,7 +95,7 @@ export default function TendersPage() {
       id: "leaderboard",
       label: "Leaderboard",
       title: "Top developers by MW won",
-      subtitle: "FY26-to-date · sortable · toggle listed-only · winners where disclosed",
+      subtitle: `${winLabel} · sortable · search · toggle listed-only · winners where disclosed`,
       body: <LeaderboardTable rows={d.developerLeaderboard} />,
       exportData: {
         columns: [

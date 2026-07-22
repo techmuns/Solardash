@@ -59,6 +59,8 @@ export interface StageEconomicsRow {
   rationale: string;
   /** Cited source(s) for the margin FACT. */
   source: string;
+  /** Link to the cited source, where a canonical page exists. */
+  sourceUrl?: string;
   /** Free-text confidence flag (e.g. "high", "medium", "high demand · low margin"). */
   confidence: string;
   /** A margin trajectory for a sparkline, where one exists (poly / wafer). */

@@ -13,9 +13,16 @@ import type {
   DeveloperStanding,
   TenderKpi,
   TenderType,
+  TenderWindow,
   TendersData,
   TypeMixEntry,
 } from "../../src/data/types/tenders";
+
+/** Number of trailing fiscal quarters the KPIs / mix / leaderboard cover. */
+const WINDOW_QUARTERS = 4;
+
+/** `Q1FY27` → `Q1 FY27`. */
+const fmtQuarter = (q: string) => q.replace(/^(Q[1-4])(FY\d{2})$/, "$1 $2");
 
 // Stack / display order for tender types (mirrors ENERGY_ORDER subset).
 const TYPE_ORDER: TenderType[] = [
@@ -38,10 +45,6 @@ const TYPE_LABELS: Record<TenderType, string> = {
   rtc: "RTC",
   peak: "Peak Power",
 };
-
-// FY26 window = Apr 2025 – Mar 2026.
-const FY26_START = "2025-04-01";
-const FY26_END = "2026-03-31";
 
 const round2 = (n: number) => Math.round(n * 100) / 100;
 
@@ -156,13 +159,31 @@ export const tendersPipeline = definePipeline({
       .map(([agency, mw]) => ({ agency, mw }))
       .sort((a, b) => b.mw - a.mw || a.agency.localeCompare(b.agency));
 
-    // --- FY26-to-date window for mix / leaderboard / KPIs ---
-    const fy26 = records.filter(
-      (r) => r.date >= FY26_START && r.date <= FY26_END,
-    );
+    // --- Trailing-window (TTM: last 4 quarters) for mix / leaderboard / KPIs ---
+    // Rolls forward automatically as new quarters land, so the window is always
+    // the most recent full year of auctions rather than a hardcoded FY.
+    const windowQuarters = quarters.slice(-WINDOW_QUARTERS);
+    const windowSet = new Set(windowQuarters);
+    const fy26 = records.filter((r) => windowSet.has(r.period));
     const fy26Total = fy26.reduce((s, r) => s + r.capacityMw, 0);
+    const windowDates = fy26.map((r) => r.date).sort();
+    const window: TenderWindow = {
+      label:
+        windowQuarters.length >= WINDOW_QUARTERS
+          ? "TTM · trailing 4 quarters"
+          : `${windowQuarters.length} quarter${windowQuarters.length === 1 ? "" : "s"} to date`,
+      quarters: windowQuarters,
+      firstQuarter: windowQuarters[0] ?? "",
+      lastQuarter: windowQuarters[windowQuarters.length - 1] ?? "",
+      startDate: windowDates[0] ?? "",
+      endDate: windowDates[windowDates.length - 1] ?? "",
+    };
+    const windowRange =
+      windowQuarters.length > 0
+        ? `${fmtQuarter(window.firstQuarter)} – ${fmtQuarter(window.lastQuarter)}`
+        : "—";
 
-    // --- typeMix (FY26-to-date) ---
+    // --- typeMix (trailing window) ---
     const typeMixMap = new Map<TenderType, number>();
     for (const r of fy26) {
       typeMixMap.set(r.tenderType, (typeMixMap.get(r.tenderType) ?? 0) + r.capacityMw);
@@ -227,18 +248,18 @@ export const tendersPipeline = definePipeline({
     const kpis: TenderKpi[] = [
       {
         key: "awarded_fy26",
-        label: "Awarded (FY26-to-date)",
+        label: "Awarded (TTM)",
         value: round2(fy26Total / 1000),
         unit: "GW",
         confidence: "medium",
-        hint: "Apr 2025 – Mar 2026",
+        hint: windowRange,
       },
       {
         key: "auctions_fy26",
         label: "Auctions concluded",
         value: fy26.length,
         confidence: "high",
-        hint: "FY26-to-date",
+        hint: `TTM · ${windowRange}`,
       },
       {
         key: "lowest_tariff",
@@ -264,7 +285,7 @@ export const tendersPipeline = definePipeline({
         value: leadingType ? TYPE_LABELS[leadingType.type] : "—",
         confidence: "high",
         hint: leadingType
-          ? `${Math.round(leadingType.share * 100)}% of FY26 MW`
+          ? `${Math.round(leadingType.share * 100)}% of TTM MW`
           : undefined,
       },
       {
@@ -316,7 +337,9 @@ export const tendersPipeline = definePipeline({
         ex.asOf = r.date;
       }
     }
-    // Tariff history carries no per-row date — stamp it with the feed vintage.
+    // Tariff history carries no per-row date — stamp it with the feed vintage
+    // (the latest auction date in the maintained feed).
+    const feedVintage = records.reduce((m, r) => (r.date > m ? r.date : m), "");
     for (const r of thRows) {
       const conf = r.confidence as Confidence;
       const url = r.source_url?.trim() || undefined;
@@ -327,10 +350,10 @@ export const tendersPipeline = definePipeline({
           name: r.source,
           ...(url ? { url } : {}),
           confidence: conf,
-          asOf: FY26_END,
+          asOf: feedVintage,
         });
-      } else if (FY26_END > ex.asOf) {
-        ex.asOf = FY26_END;
+      } else if (feedVintage > ex.asOf) {
+        ex.asOf = feedVintage;
       }
     }
     const sources: SourceRef[] = [...srcMap.values()]
@@ -361,6 +384,7 @@ export const tendersPipeline = definePipeline({
 
     const data: TendersData = {
       asOfPeriod: quarters[quarters.length - 1] ?? "",
+      window,
       kpis,
       awardsByQuarter,
       tariffByType,
@@ -380,7 +404,8 @@ export const tendersPipeline = definePipeline({
         "Curated set of major Indian RE auctions (SECI/NTPC/SJVN); not every auction in the market — figures sourced from SECI results and trade press. Capacities are awarded MW.",
         "Winners are listed where publicly disclosed (some auctions' winner splits are not yet public); per-row confidence is honoured.",
         "Standalone BESS (capacity charge, ₹/MW/month) is excluded from ₹/unit tariff aggregations.",
-        "KPIs, type-mix and leaderboard cover FY26-to-date (Apr 2025 – Mar 2026); awardsByQuarter & agencySplit cover the whole feed.",
+        `KPIs, type-mix and leaderboard cover the trailing 4 quarters (TTM): ${windowRange} (${window.startDate} – ${window.endDate}). This window rolls forward automatically as new quarters land. awardsByQuarter, tariffByType & agencySplit cover the whole feed.`,
+        "Each tariff-trend point is the capacity-weighted average of that quarter's underlying auctions (listed individually under Awards by quarter / recent awards).",
       ],
       data,
     });

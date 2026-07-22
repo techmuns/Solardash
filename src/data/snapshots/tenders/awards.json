@@ -1,23 +1,35 @@
 {
-  "asOf": "2026-03-31",
+  "asOf": "2026-07-16",
   "cadence": "quarterly",
   "coverage": "India · central & state RE auctions (maintained feed)",
   "data": {
     "agencySplit": [
       {
         "agency": "SECI",
-        "mw": 15246
+        "mw": 17951
+      },
+      {
+        "agency": "NHPC",
+        "mw": 1200
       },
       {
         "agency": "SJVN",
         "mw": 1200
       },
       {
+        "agency": "GUVNL",
+        "mw": 875
+      },
+      {
         "agency": "NTPC",
         "mw": 720
+      },
+      {
+        "agency": "PSPCL",
+        "mw": 500
       }
     ],
-    "asOfPeriod": "Q4FY26",
+    "asOfPeriod": "Q2FY27",
     "awardsByQuarter": [
       {
         "key": "solar",
@@ -49,7 +61,15 @@
           },
           {
             "period": "Q4FY26",
+            "value": 625
+          },
+          {
+            "period": "Q1FY27",
             "value": 0
+          },
+          {
+            "period": "Q2FY27",
+            "value": 1200
           }
         ],
         "unit": "MW"
@@ -85,6 +105,14 @@
           {
             "period": "Q4FY26",
             "value": 1200
+          },
+          {
+            "period": "Q1FY27",
+            "value": 1210
+          },
+          {
+            "period": "Q2FY27",
+            "value": 0
           }
         ],
         "unit": "MW"
@@ -120,6 +148,14 @@
           {
             "period": "Q4FY26",
             "value": 125
+          },
+          {
+            "period": "Q1FY27",
+            "value": 500
+          },
+          {
+            "period": "Q2FY27",
+            "value": 0
           }
         ],
         "unit": "MW"
@@ -155,6 +191,14 @@
           {
             "period": "Q4FY26",
             "value": 1200
+          },
+          {
+            "period": "Q1FY27",
+            "value": 0
+          },
+          {
+            "period": "Q2FY27",
+            "value": 1745
           }
         ],
         "unit": "MW"
@@ -189,6 +233,14 @@
           },
           {
             "period": "Q4FY26",
+            "value": 0
+          },
+          {
+            "period": "Q1FY27",
+            "value": 0
+          },
+          {
+            "period": "Q2FY27",
             "value": 0
           }
         ],
@@ -225,6 +277,14 @@
           {
             "period": "Q4FY26",
             "value": 0
+          },
+          {
+            "period": "Q1FY27",
+            "value": 0
+          },
+          {
+            "period": "Q2FY27",
+            "value": 0
           }
         ],
         "unit": "MW"
@@ -260,12 +320,32 @@
           {
             "period": "Q4FY26",
             "value": 0
+          },
+          {
+            "period": "Q1FY27",
+            "value": 0
+          },
+          {
+            "period": "Q2FY27",
+            "value": 0
           }
         ],
         "unit": "MW"
       }
     ],
     "developerLeaderboard": [
+      {
+        "auctions": 5,
+        "avgTariffRs": 2.96,
+        "developer": "NLC India Renewables",
+        "mw": 1800
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 2.73,
+        "developer": "Coal India",
+        "mw": 600
+      },
       {
         "auctions": 1,
         "avgTariffRs": 3.12,
@@ -283,6 +363,12 @@
         "avgTariffRs": 2.86,
         "developer": "Shivalaya Construction",
         "mw": 600
+      },
+      {
+        "auctions": 2,
+        "avgTariffRs": 3.72,
+        "developer": "Purvah Green",
+        "mw": 425
       },
       {
         "auctions": 1,
@@ -304,6 +390,12 @@
       },
       {
         "auctions": 1,
+        "avgTariffRs": 3.12,
+        "developer": "RPIL Power Three",
+        "mw": 300
+      },
+      {
+        "auctions": 1,
         "avgTariffRs": 2.86,
         "developer": "SAEL",
         "mw": 300
@@ -316,14 +408,55 @@
       },
       {
         "auctions": 1,
-        "avgTariffRs": 3.67,
-        "developer": "Purvah Green",
+        "avgTariffRs": 2.34,
+        "developer": "Welspun",
+        "mw": 300
+      },
+      {
+        "auctions": 1,
+        "developer": "Rama Reflection",
         "mw": 250
+      },
+      {
+        "auctions": 2,
+        "avgTariffRs": 2.86,
+        "developer": "Stockwell Solar",
+        "mw": 230
+      },
+      {
+        "auctions": 2,
+        "avgTariffRs": 4.97,
+        "developer": "Adyant Enersol",
+        "mw": 210
       },
       {
         "auctions": 1,
         "avgTariffRs": 3.12,
         "developer": "Engie",
+        "mw": 200
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.12,
+        "developer": "Engie Energy India",
+        "mw": 200
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.78,
+        "developer": "Ganeko Four",
+        "mw": 200
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.78,
+        "developer": "Gentari",
+        "mw": 200
+      },
+      {
+        "auctions": 2,
+        "avgTariffRs": 3.12,
+        "developer": "Oriana Power",
         "mw": 200
       },
       {
@@ -352,15 +485,27 @@
       },
       {
         "auctions": 1,
-        "avgTariffRs": 5.06,
-        "developer": "Jindal India Power",
+        "avgTariffRs": 2.86,
+        "developer": "MB Power",
+        "mw": 150
+      },
+      {
+        "auctions": 2,
+        "avgTariffRs": 3.69,
+        "developer": "Powerica",
         "mw": 150
       },
       {
         "auctions": 1,
-        "avgTariffRs": 2.86,
-        "developer": "MB Power",
+        "avgTariffRs": 3.78,
+        "developer": "Torrent Green",
         "mw": 150
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.78,
+        "developer": "Halvad Renewables",
+        "mw": 130
       },
       {
         "auctions": 1,
@@ -370,32 +515,13 @@
       },
       {
         "auctions": 1,
-        "avgTariffRs": 5.06,
-        "developer": "ABC Cleantech",
-        "mw": 120
-      },
-      {
-        "auctions": 1,
-        "avgTariffRs": 5.06,
-        "developer": "Hero Solar",
-        "mw": 120
-      },
-      {
-        "auctions": 1,
-        "avgTariffRs": 6.27,
-        "developer": "Adyant Enersol",
-        "mw": 100
-      },
-      {
-        "auctions": 1,
         "avgTariffRs": 2.86,
         "developer": "Banyan Insolation",
         "mw": 100
       },
       {
         "auctions": 1,
-        "avgTariffRs": 5.06,
-        "developer": "Hexa Climate",
+        "developer": "Ceigall India",
         "mw": 100
       },
       {
@@ -406,20 +532,62 @@
       },
       {
         "auctions": 1,
-        "avgTariffRs": 3.12,
-        "developer": "Oriana Power",
+        "avgTariffRs": 2.34,
+        "developer": "Megodyna",
+        "mw": 100
+      },
+      {
+        "auctions": 2,
+        "avgTariffRs": 3.73,
+        "developer": "Opera Energy",
         "mw": 100
       },
       {
         "auctions": 1,
-        "avgTariffRs": 2.86,
-        "developer": "Stockwell Solar",
+        "avgTariffRs": 2.34,
+        "developer": "Sunsure",
+        "mw": 100
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.78,
+        "developer": "Reflex Green",
         "mw": 80
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.78,
+        "developer": "Atiriwal",
+        "mw": 50
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.78,
+        "developer": "Ayana",
+        "mw": 50
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.51,
+        "developer": "Cu-Built",
+        "mw": 50
       },
       {
         "auctions": 1,
         "avgTariffRs": 2.86,
         "developer": "GH2 Solar",
+        "mw": 50
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 3.51,
+        "developer": "Juniper Green",
+        "mw": 50
+      },
+      {
+        "auctions": 1,
+        "avgTariffRs": 2.34,
+        "developer": "Krishna Choprindia",
         "mw": 50
       },
       {
@@ -430,46 +598,40 @@
       },
       {
         "auctions": 1,
-        "avgTariffRs": 3.67,
-        "developer": "Opera Energy",
-        "mw": 50
-      },
-      {
-        "auctions": 1,
         "avgTariffRs": 2.86,
         "developer": "Oswal Cables",
         "mw": 50
       },
       {
         "auctions": 1,
-        "avgTariffRs": 5.06,
-        "developer": "Sembcorp Green Infra",
-        "mw": 50
+        "avgTariffRs": 2.6,
+        "developer": "BNC Power Projects",
+        "mw": 10
       }
     ],
     "kpis": [
       {
         "confidence": "medium",
-        "hint": "Apr 2025 – Mar 2026",
+        "hint": "Q3 FY26 – Q2 FY27",
         "key": "awarded_fy26",
-        "label": "Awarded (FY26-to-date)",
+        "label": "Awarded (TTM)",
         "unit": "GW",
-        "value": 13.42
+        "value": 12.21
       },
       {
         "confidence": "high",
-        "hint": "FY26-to-date",
+        "hint": "TTM · Q3 FY26 – Q2 FY27",
         "key": "auctions_fy26",
         "label": "Auctions concluded",
-        "value": 10
+        "value": 13
       },
       {
-        "confidence": "medium",
-        "hint": "SECI · Solar",
+        "confidence": "high",
+        "hint": "GUVNL · Solar",
         "key": "lowest_tariff",
         "label": "Lowest tariff",
         "unit": "Rs/kWh",
-        "value": 2.17
+        "value": 2.34
       },
       {
         "confidence": "medium",
@@ -477,24 +639,263 @@
         "key": "avg_tariff",
         "label": "Avg tariff (cap-wtd)",
         "unit": "Rs/kWh",
-        "value": 3.21
+        "value": 3.41
       },
       {
         "confidence": "high",
-        "hint": "40% of FY26 MW",
+        "hint": "36% of TTM MW",
         "key": "leading_type",
         "label": "Leading type by MW",
-        "value": "Solar"
+        "value": "Solar + BESS"
       },
       {
         "confidence": "high",
-        "hint": "600 MW",
+        "hint": "1800 MW",
         "key": "top_developer",
         "label": "Top developer by MW",
-        "value": "NLC India"
+        "value": "NLC India Renewables"
       }
     ],
     "recentAwards": [
+      {
+        "agency": "SECI",
+        "capacityMw": 1495,
+        "confidence": "high",
+        "date": "2026-07-16",
+        "id": "T-22",
+        "period": "Q2FY27",
+        "sourceNote": "2 GW tendered, 1495 MW awarded (undersubscribed); L1 3.78 Gentari, rest 3.85",
+        "sourceUrl": "https://renewablewatch.in/2026/07/16/seci-announces-winners-of-2-gw-wind-auction/",
+        "state": "Pan-India",
+        "status": "awarded",
+        "tariffRs": 3.78,
+        "tenderType": "wind",
+        "winners": [
+          {
+            "developer": "Gentari",
+            "mw": 200
+          },
+          {
+            "developer": "Ganeko Four",
+            "mw": 200
+          },
+          {
+            "developer": "NLC India Renewables",
+            "mw": 200
+          },
+          {
+            "developer": "Purvah Green",
+            "mw": 175
+          },
+          {
+            "developer": "Torrent Green",
+            "mw": 150
+          },
+          {
+            "developer": "Halvad Renewables",
+            "mw": 130
+          },
+          {
+            "developer": "Adyant Enersol",
+            "mw": 110
+          },
+          {
+            "developer": "Powerica",
+            "mw": 100
+          },
+          {
+            "developer": "Reflex Green",
+            "mw": 80
+          },
+          {
+            "developer": "Opera Energy",
+            "mw": 50
+          },
+          {
+            "developer": "Ayana",
+            "mw": 50
+          },
+          {
+            "developer": "Atiriwal",
+            "mw": 50
+          }
+        ]
+      },
+      {
+        "agency": "GUVNL",
+        "capacityMw": 250,
+        "confidence": "high",
+        "date": "2026-07-13",
+        "id": "T-21",
+        "period": "Q2FY27",
+        "sourceNote": "Phase-XI wind; L1 3.51",
+        "sourceUrl": "https://renewablewatch.in/2026/07/13/guvnl-announces-winners-of-250-mw-wind-auction/",
+        "state": "Gujarat",
+        "status": "awarded",
+        "tariffRs": 3.51,
+        "tenderType": "wind",
+        "winners": [
+          {
+            "developer": "NLC India Renewables",
+            "mw": 100
+          },
+          {
+            "developer": "Juniper Green",
+            "mw": 50
+          },
+          {
+            "developer": "Powerica",
+            "mw": 50
+          },
+          {
+            "developer": "Cu-Built",
+            "mw": 50
+          }
+        ]
+      },
+      {
+        "agency": "NHPC",
+        "capacityMw": 1200,
+        "confidence": "medium",
+        "date": "2026-07-02",
+        "id": "T-20",
+        "period": "Q2FY27",
+        "sourceNote": "Jalaun Solar Park (BSUL) UP; pure solar 2.73; date approx (late-Jun/early-Jul)",
+        "sourceUrl": "https://solarquarter.com/2026/07/02/nhpc-awards-1-2-gw-jalaun-solar-park-project-at-%E2%82%B92-73-kwh-to-coal-india-and-nlc-india-renewables/",
+        "state": "Uttar Pradesh",
+        "status": "awarded",
+        "tariffRs": 2.73,
+        "tenderType": "solar",
+        "winners": [
+          {
+            "developer": "Coal India",
+            "mw": 600
+          },
+          {
+            "developer": "NLC India Renewables",
+            "mw": 600
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 1200,
+        "confidence": "high",
+        "date": "2026-06-04",
+        "id": "T-19",
+        "period": "Q1FY27",
+        "sourceNote": "ISTS Tranche-XXI Solar+BESS; L1 3.12; storage-linked tariffs firming (Tranche-XX Oct25 was 2.86)",
+        "sourceUrl": "https://www.psuconnect.in/psu-news/nlc-india-emerges-top-winner-as-seci-discovers-3-12-kwh-tariff-in-1200-mw-solar-bess-auction",
+        "state": "Pan-India",
+        "status": "awarded",
+        "storageMwh": 3600,
+        "tariffRs": 3.12,
+        "tenderType": "solar-bess",
+        "winners": [
+          {
+            "developer": "NLC India Renewables",
+            "mw": 600
+          },
+          {
+            "developer": "Engie Energy India",
+            "mw": 200
+          },
+          {
+            "developer": "RPIL Power Three",
+            "mw": 300
+          },
+          {
+            "developer": "Oriana Power",
+            "mw": 100
+          }
+        ]
+      },
+      {
+        "agency": "PSPCL",
+        "capacityMw": 500,
+        "confidence": "high",
+        "date": "2026-05-18",
+        "id": "T-18",
+        "period": "Q1FY27",
+        "sourceNote": "Standalone BESS — CAPACITY CHARGE (not Rs/kWh): L1 Rs3.35 lakh/MW/mo (Stockwell), others Rs3.44 lakh; 12-yr BESPA",
+        "sourceUrl": "https://renewablewatch.in/2026/05/18/pspcl-announces-results-of-1-gwh-bess-auction/",
+        "state": "Punjab",
+        "status": "awarded",
+        "storageMwh": 1000,
+        "tenderType": "bess",
+        "winners": [
+          {
+            "developer": "Stockwell Solar",
+            "mw": 150
+          },
+          {
+            "developer": "Rama Reflection",
+            "mw": 250
+          },
+          {
+            "developer": "Ceigall India",
+            "mw": 100
+          }
+        ]
+      },
+      {
+        "agency": "SECI",
+        "capacityMw": 10,
+        "confidence": "high",
+        "date": "2026-05-15",
+        "id": "T-17",
+        "period": "Q1FY27",
+        "sourceNote": "10 MW solar + 10 MW/20 MWh BESS; 25-yr PPA",
+        "sourceUrl": "https://renewablewatch.in/2026/05/18/seci-announces-results-of-10-mw-solar-plus-storage-auction/",
+        "state": "Odisha",
+        "status": "awarded",
+        "storageMwh": 20,
+        "tariffRs": 2.6,
+        "tenderType": "solar-bess",
+        "winners": [
+          {
+            "developer": "BNC Power Projects",
+            "mw": 10
+          }
+        ]
+      },
+      {
+        "agency": "GUVNL",
+        "capacityMw": 625,
+        "ceilingRs": 2.6,
+        "confidence": "high",
+        "date": "2026-03-18",
+        "id": "T-15",
+        "period": "Q4FY26",
+        "sourceNote": "GUVNL record-low solar; L1 2.34 (range 2.34-2.60); 23 bidders; pure-solar Q4FY26 back-fill",
+        "sourceUrl": "https://energetica-india.net/news/welspun-and-nlc-india-achieve-inr-234unit-discovered-tariff-in-guvnl-625-mw-solar-auction",
+        "state": "Gujarat",
+        "status": "awarded",
+        "tariffRs": 2.34,
+        "tenderType": "solar",
+        "winners": [
+          {
+            "developer": "Welspun",
+            "mw": 300
+          },
+          {
+            "developer": "NLC India Renewables",
+            "mw": 300
+          },
+          {
+            "developer": "Megodyna",
+            "mw": 100
+          },
+          {
+            "developer": "Sunsure",
+            "mw": 100
+          },
+          {
+            "developer": "Krishna Choprindia",
+            "mw": 50
+          }
+        ]
+      },
       {
         "agency": "SECI",
         "capacityMw": 125,
@@ -914,6 +1315,14 @@
           {
             "period": "Q3FY26",
             "value": 2.54
+          },
+          {
+            "period": "Q4FY26",
+            "value": 2.34
+          },
+          {
+            "period": "Q2FY27",
+            "value": 2.73
           }
         ],
         "unit": "Rs/kWh"
@@ -933,6 +1342,10 @@
           {
             "period": "Q4FY26",
             "value": 3.12
+          },
+          {
+            "period": "Q1FY27",
+            "value": 3.12
           }
         ],
         "unit": "Rs/kWh"
@@ -944,6 +1357,10 @@
           {
             "period": "Q4FY26",
             "value": 3.67
+          },
+          {
+            "period": "Q2FY27",
+            "value": 3.74
           }
         ],
         "unit": "Rs/kWh"
@@ -1034,7 +1451,7 @@
           },
           {
             "period": "2026",
-            "value": 2.42
+            "value": 2.34
           }
         ],
         "unit": "Rs/kWh"
@@ -1042,69 +1459,79 @@
     ],
     "typeMix": [
       {
-        "mw": 5351,
-        "share": 0.4,
-        "type": "solar"
-      },
-      {
-        "mw": 3200,
-        "share": 0.24,
+        "mw": 4410,
+        "share": 0.36,
         "type": "solar-bess"
       },
       {
-        "mw": 1800,
-        "share": 0.13,
-        "type": "hybrid"
+        "mw": 3025,
+        "share": 0.25,
+        "type": "solar"
       },
       {
-        "mw": 1200,
-        "share": 0.09,
-        "type": "fdre"
-      },
-      {
-        "mw": 1200,
-        "share": 0.09,
+        "mw": 2945,
+        "share": 0.24,
         "type": "wind"
       },
       {
-        "mw": 540,
-        "share": 0.04,
-        "type": "rtc"
+        "mw": 1200,
+        "share": 0.1,
+        "type": "fdre"
       },
       {
-        "mw": 125,
-        "share": 0.01,
+        "mw": 625,
+        "share": 0.05,
         "type": "bess"
       }
-    ]
+    ],
+    "window": {
+      "endDate": "2026-07-16",
+      "firstQuarter": "Q3FY26",
+      "label": "TTM · trailing 4 quarters",
+      "lastQuarter": "Q2FY27",
+      "quarters": [
+        "Q3FY26",
+        "Q4FY26",
+        "Q1FY27",
+        "Q2FY27"
+      ],
+      "startDate": "2025-10-16"
+    }
   },
   "dataset": "awards",
   "notes": [
     "Curated set of major Indian RE auctions (SECI/NTPC/SJVN); not every auction in the market — figures sourced from SECI results and trade press. Capacities are awarded MW.",
     "Winners are listed where publicly disclosed (some auctions' winner splits are not yet public); per-row confidence is honoured.",
     "Standalone BESS (capacity charge, ₹/MW/month) is excluded from ₹/unit tariff aggregations.",
-    "KPIs, type-mix and leaderboard cover FY26-to-date (Apr 2025 – Mar 2026); awardsByQuarter & agencySplit cover the whole feed."
+    "KPIs, type-mix and leaderboard cover the trailing 4 quarters (TTM): Q3 FY26 – Q2 FY27 (2025-10-16 – 2026-07-16). This window rolls forward automatically as new quarters land. awardsByQuarter, tariffByType & agencySplit cover the whole feed.",
+    "Each tariff-trend point is the capacity-weighted average of that quarter's underlying auctions (listed individually under Awards by quarter / recent awards)."
   ],
   "section": "tenders",
   "sources": [
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-07-16",
+      "confidence": "high",
+      "name": "GUVNL / Energetica",
+      "url": "https://energetica-india.net/news/welspun-and-nlc-india-achieve-inr-234unit-discovered-tariff-in-guvnl-625-mw-solar-auction"
+    },
+    {
+      "asOf": "2026-07-16",
       "confidence": "high",
       "name": "Mercom"
     },
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-07-16",
       "confidence": "medium",
       "name": "Mercom"
     },
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-07-16",
       "confidence": "high",
       "name": "Mercom (Bhadla)",
       "url": "https://www.mercomindia.com/new-solar-tariff-record"
     },
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-07-16",
       "confidence": "high",
       "name": "Mercom (Gujarat — all-time low)",
       "url": "https://www.mercomindia.com/india-record-lowest-solar-tariff"
@@ -1116,12 +1543,48 @@
       "url": "https://www.pv-magazine.com/2024/12/24/bharat-petroleum-wins-150-mw-of-solar-in-ntpc-auction-with-inr-2-55-kwh-bid/"
     },
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-04",
+      "confidence": "high",
+      "name": "PSU Connect / SolarQuarter / Mercom",
+      "url": "https://www.psuconnect.in/psu-news/nlc-india-emerges-top-winner-as-seci-discovers-3-12-kwh-tariff-in-1200-mw-solar-bess-auction"
+    },
+    {
+      "asOf": "2026-07-16",
       "confidence": "medium",
       "name": "Renewable Watch"
     },
     {
-      "asOf": "2026-03-31",
+      "asOf": "2026-05-18",
+      "confidence": "high",
+      "name": "Renewable Watch",
+      "url": "https://renewablewatch.in/2026/05/18/pspcl-announces-results-of-1-gwh-bess-auction/"
+    },
+    {
+      "asOf": "2026-07-13",
+      "confidence": "high",
+      "name": "Renewable Watch",
+      "url": "https://renewablewatch.in/2026/07/13/guvnl-announces-winners-of-250-mw-wind-auction/"
+    },
+    {
+      "asOf": "2026-07-16",
+      "confidence": "high",
+      "name": "Renewable Watch",
+      "url": "https://renewablewatch.in/2026/07/16/seci-announces-winners-of-2-gw-wind-auction/"
+    },
+    {
+      "asOf": "2026-03-18",
+      "confidence": "high",
+      "name": "Renewable Watch / Energetica",
+      "url": "https://energetica-india.net/news/welspun-and-nlc-india-achieve-inr-234unit-discovered-tariff-in-guvnl-625-mw-solar-auction"
+    },
+    {
+      "asOf": "2026-05-15",
+      "confidence": "high",
+      "name": "Renewable Watch / Mercom",
+      "url": "https://renewablewatch.in/2026/05/18/seci-announces-results-of-10-mw-solar-plus-storage-auction/"
+    },
+    {
+      "asOf": "2026-07-16",
       "confidence": "high",
       "name": "SECI"
     },
@@ -1199,7 +1662,13 @@
       "confidence": "high",
       "name": "SJVN / Mercom",
       "url": "https://www.mercomindia.com/daily-news-sjvns-1-2-gw-solar-auction-winners-announced"
+    },
+    {
+      "asOf": "2026-07-02",
+      "confidence": "medium",
+      "name": "SolarQuarter",
+      "url": "https://solarquarter.com/2026/07/02/nhpc-awards-1-2-gw-jalaun-solar-park-project-at-%E2%82%B92-73-kwh-to-coal-india-and-nlc-india-renewables/"
     }
   ],
-  "updatedAt": "2026-03-31"
+  "updatedAt": "2026-07-16"
 }
