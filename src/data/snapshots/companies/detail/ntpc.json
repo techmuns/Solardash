@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-23",
+  "asOf": "2026-07-24",
   "cadence": "quarterly",
   "coverage": "NTPC",
   "data": {
@@ -45,7 +45,7 @@
         "revenue": 187385
       }
     ],
-    "cmp": 349,
+    "cmp": 347,
     "concall": {
       "date": "2026-05-25",
       "guidance": [
@@ -65,13 +65,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 28.2,
-    "evEbitdaX": 11.53,
+    "evEbitdaX": 11.5,
     "hasDetail": true,
-    "marketCapCr": 337978,
+    "marketCapCr": 336523,
     "name": "NTPC",
     "orderBookGw": 32,
     "patFy26Cr": 27546,
-    "peX": 12.5,
+    "peX": 12.4,
     "quarterly": [
       {
         "ebitda": 13340,
@@ -135,10 +135,10 @@
     "tickerNse": "NTPC",
     "type": "utility",
     "valuation": {
-      "asOf": "2026-07-23",
-      "evEbitdaX": 11.53,
-      "pbX": 1.66,
-      "peX": 12.5
+      "asOf": "2026-07-24",
+      "evEbitdaX": 11.5,
+      "pbX": 1.65,
+      "peX": 12.4
     }
   },
   "dataset": "detail/ntpc",
@@ -148,10 +148,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-23",
+      "asOf": "2026-07-24",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-23"
+  "updatedAt": "2026-07-24"
 }

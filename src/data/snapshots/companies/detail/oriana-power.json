@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-23",
+  "asOf": "2026-07-24",
   "cadence": "quarterly",
   "coverage": "Oriana Power",
   "data": {
@@ -46,7 +46,7 @@
       }
     ],
     "board": "NSE SME",
-    "cmp": 1417,
+    "cmp": 1398,
     "concall": {
       "date": "2026-05-28",
       "guidance": [
@@ -66,13 +66,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 21.9,
-    "evEbitdaX": 8.52,
+    "evEbitdaX": 8.42,
     "hasDetail": true,
-    "marketCapCr": 2880,
+    "marketCapCr": 2841,
     "name": "Oriana Power",
     "orderBookCr": 7000,
     "patFy26Cr": 252,
-    "peX": 11.4,
+    "peX": 11.3,
     "quarterly": [
       {
         "ebitda": 75,
@@ -120,10 +120,10 @@
     "tickerNse": "ORIANA",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-07-23",
-      "evEbitdaX": 8.52,
-      "pbX": 3.77,
-      "peX": 11.4
+      "asOf": "2026-07-24",
+      "evEbitdaX": 8.42,
+      "pbX": 3.72,
+      "peX": 11.3
     }
   },
   "dataset": "detail/oriana-power",
@@ -133,10 +133,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-23",
+      "asOf": "2026-07-24",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-23"
+  "updatedAt": "2026-07-24"
 }
