@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-24",
+  "asOf": "2026-07-27",
   "cadence": "quarterly",
   "coverage": "Adani Green Energy",
   "data": {
@@ -93,7 +93,7 @@
         "revenue": 12928
       }
     ],
-    "cmp": 1395,
+    "cmp": 1400,
     "concall": {
       "guidance": [
         "50 GW by 2030; 28 GW PPAs signed; ~21 GW Khavda plus 10 GW Rajasthan sites secured.",
@@ -112,9 +112,9 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 83,
-    "evEbitdaX": 28.46,
+    "evEbitdaX": 28.54,
     "hasDetail": true,
-    "marketCapCr": 229773,
+    "marketCapCr": 230696,
     "name": "Adani Green Energy",
     "orderBookGw": 28,
     "patFy26Cr": 1987,
@@ -238,9 +238,9 @@
     "tickerNse": "ADANIGREEN",
     "type": "ipp",
     "valuation": {
-      "asOf": "2026-07-24",
-      "evEbitdaX": 28.46,
-      "pbX": 11.53,
+      "asOf": "2026-07-27",
+      "evEbitdaX": 28.54,
+      "pbX": 11.57,
       "peX": 119
     }
   },
@@ -251,10 +251,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-24",
+      "asOf": "2026-07-27",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-07-24"
+  "updatedAt": "2026-07-27"
 }
