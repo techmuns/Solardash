@@ -11,7 +11,7 @@ import {
   type CanvasTab,
 } from "@/components/sections/SectionCanvas";
 import type { Series } from "@/data/types/core";
-import { PliScatter } from "./PliScatter";
+import { PliTable } from "./PliTable";
 import { CapacityBuildout } from "./CapacityBuildout";
 
 export const dynamic = "force-static";
@@ -162,7 +162,7 @@ export default function ManufacturingPage() {
       subtitle:
         "Cumulative GW · Tranche I (2021) → Tranche II (2023) — Reliance & Shirdi Sai/Indosol are the only firms to win both",
       source: "PIB / SECI / IREDA",
-      body: <PliScatter series={m.pliHistory} />,
+      body: <PliTable series={m.pliHistory} />,
       side: {
         title: "Cumulative PLI · GW (×2 = both tranches)",
         node: <RankList rows={pliRankRows} />,
