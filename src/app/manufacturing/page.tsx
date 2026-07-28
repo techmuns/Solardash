@@ -157,8 +157,9 @@ export default function ManufacturingPage() {
         "Cumulative GW · Tranche I (2021) → Tranche II (2023) — Reliance & Shirdi Sai/Indosol are the only firms to win both",
       source: "PIB / SECI / IREDA",
       body: (
-        <FillLineSeries
+        <FillBarSeries
           series={m.pliHistory}
+          stacked
           unit="GW"
           periodOrder={pliPeriods}
         />

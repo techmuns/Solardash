@@ -1,50 +1,35 @@
 import {
   getCompaniesSnapshot,
-  getManufacturingSnapshot,
   getPriceHistorySnapshot,
   getStageEconomicsSnapshot,
   getStageIrrConfigSnapshot,
-  getTendersSnapshot,
 } from "@/data";
 import { getProfitPools, getValueChainIrr } from "@/data/profit-pools";
 import { formatDate } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
 import { SectionCanvas, type CanvasTab } from "@/components/sections/SectionCanvas";
-import { Constituents, Scorecard, type ScorecardClaim } from "./parts";
+import { Constituents } from "./parts";
 import { StageMarginsBody } from "./StageMarginsBody";
-import {
-  MarginByStage,
-  MarginContrast,
-  PriceStack,
-  StageEconomicsTable,
-} from "./PackTabs";
+import { MarginContrast, PriceStack, StageEconomicsTable } from "./PackTabs";
 import { StageIrr, CompanyValueCaptureList } from "./ValueCapture";
 
 export const dynamic = "force-static";
 export const metadata = {
   title: "Profit Pools",
   description:
-    "Where value is shifting across India's solar value chain — stage profitability over time and a value-migration scorecard, evidenced from listed-company filings, tenders and capacity data.",
+    "Where value sits across India's solar value chain — stage profitability over time, the PV price stack, per-stage economics with the China vs India/US split, and value-capture IRR, evidenced from listed filings and sourced benchmark packs.",
 };
-
-/** Firm-power & storage contract types (vs pure solar/wind). */
-const FIRM_KEYS = new Set(["solar-bess", "bess", "fdre", "hybrid", "rtc"]);
 
 export default function ProfitPoolsPage() {
   const pools = getProfitPools();
-  const tenders = getTendersSnapshot().data;
-  const mfg = getManufacturingSnapshot().data;
   const companiesSnap = getCompaniesSnapshot();
   const asOf = formatDate(pools.asOf);
   const meta = (dataset: string) =>
     snapshotMeta(companiesSnap, { section: "profit-pools", dataset });
 
-  // ── KPI trends (sparkline-stat, all real) ──────────────────────────────
-  const mfgTrend =
-    pools.marginByStage.find((s) => s.key === "manufacturing")?.points.map((p) => p.value) ??
-    [];
-  // Higher-frequency (quarterly) trajectories for the stage-economics sparklines.
+  // Higher-frequency (quarterly) stage-margin trajectories, attached as
+  // sparklines in the stage-economics FACT table where our filings support them.
   const mfgTrendQ =
     pools.marginByStageQuarterly
       .find((s) => s.key === "manufacturing")
@@ -53,28 +38,6 @@ export default function ProfitPoolsPage() {
     pools.marginByStageQuarterly
       .find((s) => s.key === "generation")
       ?.points.map((p) => p.value) ?? [];
-  const tariffHist = tenders.tariffHistory[0];
-  const tariffTrend = tariffHist?.points.map((p) => p.value) ?? [];
-
-  // ── Scorecard claims (only what our committed data evidences) ──────────
-  const cellTrend =
-    mfg.capacityHistory.find((s) => s.key === "cell")?.points.map((p) => p.value) ?? [];
-
-  // Firm/storage share of awarded MW per quarter; show the denser FY26 window.
-  const quarters = tenders.awardsByQuarter[0]?.points.map((p) => p.period) ?? [];
-  const firmShare = quarters.map((_, i) => {
-    let tot = 0,
-      firm = 0;
-    for (const s of tenders.awardsByQuarter) {
-      const v = s.points[i]?.value ?? 0;
-      tot += v;
-      if (FIRM_KEYS.has(s.key)) firm += v;
-    }
-    return tot ? Math.round((firm / tot) * 100) : 0;
-  });
-  const firmShareFy26 = quarters
-    .map((p, i) => (p.includes("FY26") ? firmShare[i] : null))
-    .filter((v): v is number => v != null);
 
   // ── Pack-fed benchmark datasets (sourced; cited per series/row) ────────
   const price = getPriceHistorySnapshot();
@@ -102,42 +65,6 @@ export default function ProfitPoolsPage() {
       return { ...r, trend: ippTrendQ };
     return r;
   });
-
-  const claims: ScorecardClaim[] = [
-    {
-      title: "Domestic cell pool emerging",
-      direction: "expanding",
-      detail: "Cell capacity 3 → 50 GW (FY21→FY26) as new lines ramp.",
-      trend: cellTrend,
-      href: "/manufacturing",
-      hrefLabel: "Cell build-out",
-    },
-    {
-      title: "Manufacturing margins re-rating",
-      direction: "expanding",
-      detail: "Listed module/cell pool EBITDA margin ~4% → 22% since the FY22 trough.",
-      trend: mfgTrend,
-      href: "/companies",
-      hrefLabel: "Company filings",
-    },
-    {
-      title: "Firm power & storage rising",
-      direction: "shifting",
-      detail: "FDRE · hybrid · BESS share of awarded MW, FY26: 19% → 73% (Q1→Q3), 52% Q4.",
-      trend: firmShareFy26,
-      href: "/tenders",
-      hrefLabel: "Tender mix shift",
-    },
-    {
-      title: "Merchant solar tariffs structurally low",
-      direction: "squeezed",
-      detail: "Lowest solar tariff ₹4.34 (2016) → ~₹2.2–2.5/kWh — thin merchant margins.",
-      trend: tariffTrend,
-      href: "/tenders",
-      hrefLabel: "Tariff history",
-    },
-  ];
-  const pending = ["Poly-to-module price collapse", "BESS project economics", "EPC margins"];
 
   const tabs: CanvasTab[] = [
     {
@@ -167,14 +94,6 @@ export default function ProfitPoolsPage() {
       },
     },
     {
-      id: "migration",
-      label: "Value migration",
-      title: "Value-migration scorecard",
-      subtitle: "Where value is shifting — each claim linked to a real trend",
-      source: "Filings · tenders · capacity data",
-      body: <Scorecard claims={claims} pending={pending} />,
-    },
-    {
       id: "price-stack",
       label: "Price stack",
       title: "PV price stack over time",
@@ -202,16 +121,11 @@ export default function ProfitPoolsPage() {
       label: "Stage economics",
       title: "Per-stage economics across the chain",
       subtitle:
-        "Representative margin per stage (bars) + the FACT table with value-shift direction and the China vs India/US split",
+        "The FACT table — per-stage margin range with value-shift direction and the China vs India/US split",
       source: "Company filings · CRISIL · BNEF · Mercom · IEEFA · Wood Mackenzie",
       body: (
-        <div className="flex min-h-0 flex-1 flex-col gap-3">
-          <div className="flex min-h-0 basis-2/5 flex-col">
-            <MarginByStage rows={ecoRows} />
-          </div>
-          <div className="flex min-h-0 flex-1 flex-col">
-            <StageEconomicsTable rows={ecoRows} />
-          </div>
+        <div className="flex min-h-0 flex-1 flex-col">
+          <StageEconomicsTable rows={ecoRows} />
         </div>
       ),
       side: { title: "Geographic contrast", node: <MarginContrast rows={ecoRows} /> },
