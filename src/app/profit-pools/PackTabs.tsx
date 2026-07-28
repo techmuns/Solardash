@@ -106,15 +106,6 @@ function DirText({ row }: { row: StageEconomicsRow }) {
 export function StageEconomicsTable({ rows }: { rows: StageEconomicsRow[] }) {
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      <p className="mb-2 flex shrink-0 flex-wrap items-center gap-x-2 gap-y-1 text-2xs text-muted-foreground">
-        <span className="font-medium text-foreground/80">Margin range = FACT</span>{" "}
-        (filings / agencies — cited &amp; linked per row) ·
-        <AnalysisTag />
-        <span>
-          picks the <span className="font-medium text-foreground/80">rep.</span> value (a
-          representative point from that range, used in the bar) and the direction read.
-        </span>
-      </p>
       <div className="min-h-0 flex-1 overflow-auto">
         <table className="w-full border-collapse text-sm">
           <thead className="sticky top-0 z-10 bg-card">

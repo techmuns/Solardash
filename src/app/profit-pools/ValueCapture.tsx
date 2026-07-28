@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowUpRight, ChevronRight, FlaskConical, X } from "lucide-react";
+import { ArrowUpRight, Calculator, ChevronRight, FlaskConical, X } from "lucide-react";
 import { AnalysisTag } from "@/components/ui/AnalysisTag";
 import { Dialog } from "@/components/ui/Dialog";
 import { cn, formatDate } from "@/lib/utils";
@@ -89,11 +89,13 @@ function StageRow({
   companies,
   open,
   onToggle,
+  onShowCalc,
 }: {
   row: StageIrrType;
   companies: CompanyValueCapture[];
   open: boolean;
   onToggle: () => void;
+  onShowCalc: () => void;
 }) {
   const expandable = companies.length > 0;
   return (
@@ -116,14 +118,29 @@ function StageRow({
               )}
               aria-hidden
             />
-            <div>
-              <div className="font-medium text-foreground">
-                {row.stage}
-                {expandable && (
-                  <span className="ml-1.5 text-2xs font-normal text-muted-foreground">
-                    {companies.length}
-                  </span>
-                )}
+            <div className="min-w-0">
+              <div className="flex items-center gap-1.5">
+                <span className="font-medium text-foreground">
+                  {row.stage}
+                  {expandable && (
+                    <span className="ml-1.5 text-2xs font-normal text-muted-foreground">
+                      {companies.length}
+                    </span>
+                  )}
+                </span>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onShowCalc();
+                  }}
+                  title={`Show how ${row.stage} IRR is calculated`}
+                  aria-label={`Show how ${row.stage} IRR is calculated`}
+                  className="inline-flex shrink-0 items-center gap-1 rounded-md border border-border bg-card px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground transition-colors hover:border-brand/40 hover:bg-brand/10 hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                >
+                  <Calculator className="h-3 w-3" aria-hidden />
+                  IRR calc
+                </button>
               </div>
               <div className="pl-0 text-2xs text-muted-foreground">{row.region}</div>
             </div>
@@ -153,6 +170,178 @@ function StageRow({
       </tr>
       {open && <CompanyRows companies={companies} />}
     </>
+  );
+}
+
+// ──────────────────── Per-stage IRR calculation dialog ─────────────────────
+
+/** One line of the worked calculation: label, the substituted maths, result. */
+function CalcStep({
+  n,
+  label,
+  formula,
+  result,
+  note,
+}: {
+  n: number;
+  label: string;
+  formula: string;
+  result: string;
+  note?: string;
+}) {
+  return (
+    <div className="flex gap-3 border-b border-border/60 py-2.5 last:border-b-0">
+      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-muted text-[10px] font-semibold tabular-nums text-muted-foreground">
+        {n}
+      </span>
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+          <span className="text-xs font-semibold text-foreground">{label}</span>
+          <span className="shrink-0 font-mono text-xs font-semibold tabular-nums text-brand">
+            {result}
+          </span>
+        </div>
+        <div className="mt-0.5 break-words font-mono text-[11px] leading-relaxed text-muted-foreground">
+          {formula}
+        </div>
+        {note && (
+          <p className="mt-1 text-2xs leading-snug text-muted-foreground/80">{note}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/** The worked, step-by-step IRR calculation for one value-chain stage. */
+function StageCalcDialog({
+  row,
+  onClose,
+}: {
+  row: StageIrrType | null;
+  onClose: () => void;
+}) {
+  if (!row) return null;
+  const marginFrac = row.ebitdaMarginPct / 100;
+  const grossPerW = row.aspPerW * marginFrac;
+  const lifetime = row.ebitdaPerWYr * row.lifeYears;
+  const recovers = lifetime > row.capexPerW;
+
+  return (
+    <Dialog
+      open={Boolean(row)}
+      onClose={onClose}
+      ariaLabel={`${row.stage} — IRR calculation`}
+      className="max-w-xl"
+    >
+      <div className="flex items-start justify-between gap-3 border-b border-border px-5 py-4">
+        <div className="min-w-0">
+          <h2 className="text-base font-bold tracking-tight text-foreground">
+            {row.stage} — IRR calculation
+          </h2>
+          <p className="mt-0.5 text-2xs text-muted-foreground">
+            {row.region} · greenfield 1 W of capacity · every input shown
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="-mr-1.5 -mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-brand"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      </div>
+
+      <div className="min-h-0 overflow-y-auto px-5 py-4">
+        {/* Inputs */}
+        <h3 className="text-2xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+          Inputs
+        </h3>
+        <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
+          {[
+            { k: "CapEx", v: `₹${row.capexPerW}/W` },
+            { k: "Price (revenue)", v: `₹${row.aspPerW}/W` },
+            { k: "EBITDA margin", v: `${row.ebitdaMarginPct}%` },
+            { k: "Utilisation", v: `${row.utilizationPct}%` },
+            { k: "Asset life", v: `${row.lifeYears} years` },
+            { k: "Salvage value", v: "₹0 (assumed)" },
+          ].map((i) => (
+            <div key={i.k} className="rounded-lg border border-border bg-card px-2.5 py-1.5">
+              <div className="text-sm font-semibold tabular-nums text-foreground">{i.v}</div>
+              <div className="text-2xs text-muted-foreground">{i.k}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Worked steps */}
+        <h3 className="mt-4 text-2xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+          Step by step
+        </h3>
+        <div className="mt-1">
+          <CalcStep
+            n={1}
+            label="EBITDA per W at full output"
+            formula={`₹${row.aspPerW}/W price × ${row.ebitdaMarginPct}% margin = ₹${grossPerW.toFixed(2)}/W`}
+            result={`₹${grossPerW.toFixed(2)}/W`}
+            note="The margin is FACT — from filings for India stages, agency benchmarks elsewhere."
+          />
+          <CalcStep
+            n={2}
+            label="Annual EBITDA per W (de-rated for utilisation)"
+            formula={`₹${grossPerW.toFixed(2)}/W × ${row.utilizationPct}% utilisation = ₹${row.ebitdaPerWYr}/W/yr`}
+            result={`₹${row.ebitdaPerWYr}/W/yr`}
+            note="A plant only runs part of the year; utilisation converts nameplate to real annual output."
+          />
+          <CalcStep
+            n={3}
+            label="Payback (undiscounted)"
+            formula={`₹${row.capexPerW}/W CapEx ÷ ₹${row.ebitdaPerWYr}/W/yr = ${
+              row.paybackYears != null ? `${row.paybackYears} years` : "never recovers"
+            }`}
+            result={row.paybackYears != null ? `${row.paybackYears}y` : "—"}
+            note="How long the cash flow takes to return the capital, ignoring the time value of money."
+          />
+          <CalcStep
+            n={4}
+            label="Lifetime cash vs capital"
+            formula={`₹${row.ebitdaPerWYr}/W/yr × ${row.lifeYears}y = ₹${lifetime.toFixed(2)}/W ${
+              recovers ? ">" : "≤"
+            } ₹${row.capexPerW}/W CapEx`}
+            result={recovers ? "Recovers" : "Never recovers"}
+            note={
+              recovers
+                ? "Total cash over the asset's life exceeds the capital, so a positive IRR exists."
+                : "Total cash over the asset's life never repays the capital — the IRR is undefined, shown as “—”."
+            }
+          />
+          <CalcStep
+            n={5}
+            label="IRR — the discount rate where NPV = 0"
+            formula={`solve r in:  −₹${row.capexPerW} + Σ(t=1…${row.lifeYears}) ₹${row.ebitdaPerWYr} ÷ (1+r)^t = 0`}
+            result={row.offChart ? "off-chart" : row.irrPct != null ? `${row.irrPct}%` : "—"}
+            note="Solved numerically by bisection on a level annual cash flow. “off-chart” means the IRR exceeds the 300% search ceiling (near-zero CapEx relative to cash)."
+          />
+        </div>
+
+        {/* Source */}
+        <div className="mt-4 rounded-lg border border-border bg-muted/30 px-3 py-2.5">
+          <div className="text-2xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Source &amp; confidence
+          </div>
+          <p className="mt-1 text-xs leading-snug text-foreground/90">
+            {row.source} · <span className="text-muted-foreground">{row.confidence}</span>
+          </p>
+          {row.note && (
+            <p className="mt-1 text-2xs leading-snug text-muted-foreground">{row.note}</p>
+          )}
+          <p className="mt-1.5 text-2xs leading-snug text-muted-foreground">
+            CapEx, utilisation and life are the stage&apos;s sourced model inputs; the
+            price is derived from the freshest price / tariff feed. The IRR itself
+            is Munshot analysis, not a reported figure.
+          </p>
+        </div>
+      </div>
+    </Dialog>
   );
 }
 
@@ -314,6 +503,8 @@ export function StageIrr({
   freshness: IrrFreshness;
 }) {
   const [methodOpen, setMethodOpen] = React.useState(false);
+  // The stage whose worked IRR calculation is open (null = closed).
+  const [calcRow, setCalcRow] = React.useState<StageIrrType | null>(null);
   // Group companies under their stage (matched on the stage name).
   const byStage = React.useMemo(() => {
     const m = new Map<string, CompanyValueCapture[]>();
@@ -339,10 +530,7 @@ export function StageIrr({
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-2">
       <div className="flex shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-1">
-        <span className="flex items-center gap-2 text-2xs text-muted-foreground">
-          <AnalysisTag />
-          Expand a stage for each company&apos;s IRR.
-        </span>
+        <AnalysisTag />
         <button
           type="button"
           onClick={() => setMethodOpen(true)}
@@ -377,6 +565,7 @@ export function StageIrr({
                 companies={byStage.get(r.stage) ?? []}
                 open={open.has(r.stage)}
                 onToggle={() => toggle(r.stage)}
+                onShowCalc={() => setCalcRow(r)}
               />
             ))}
           </tbody>
@@ -389,6 +578,7 @@ export function StageIrr({
         sources={sources}
         freshness={freshness}
       />
+      <StageCalcDialog row={calcRow} onClose={() => setCalcRow(null)} />
     </div>
   );
 }

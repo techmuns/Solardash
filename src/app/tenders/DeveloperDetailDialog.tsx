@@ -54,14 +54,16 @@ export function DeveloperDetailDialog({
         <>
           <div className="flex items-start justify-between gap-3 border-b border-border px-5 py-4">
             <div className="min-w-0">
-              <h2 className="text-base font-bold tracking-tight text-foreground">{developer}</h2>
+              <h2 className="text-base font-bold tracking-tight text-foreground">
+                {listing?.subsidiary ? listing.parent : developer}
+              </h2>
               <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-2xs text-muted-foreground">
                 {listing ? (
                   <span className="inline-flex items-center gap-1.5">
                     {listing.subsidiary ? (
                       <>
-                        <span>Subsidiary of listed</span>
-                        <span className="font-medium text-foreground/80">{listing.parent}</span>
+                        <span>via</span>
+                        <span className="font-medium text-foreground/80">{developer}</span>
                       </>
                     ) : (
                       <span className="font-medium text-foreground/80">Listed</span>

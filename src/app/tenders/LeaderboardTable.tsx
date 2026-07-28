@@ -48,10 +48,13 @@ export function LeaderboardTable({
       sortable: true,
       render: (r) => {
         const info = listedInfo(r.developer);
+        // Lead with the name people recognise — the listed parent — and put the
+        // bidding entity underneath, since subsidiary names are easily confused.
+        const headline = info?.subsidiary ? info.parent : r.developer;
         return (
           <div className="flex min-w-0 flex-col">
             <span className="inline-flex items-center gap-1.5">
-              <span className="truncate">{r.developer}</span>
+              <span className="truncate">{headline}</span>
               {info && (
                 <span
                   className="shrink-0 rounded bg-positive/10 px-1.5 py-0.5 text-[10px] font-semibold tabular-nums tracking-wide text-positive"
@@ -62,8 +65,8 @@ export function LeaderboardTable({
               )}
             </span>
             {info?.subsidiary && (
-              <span className="text-2xs text-muted-foreground">
-                ↳ subsidiary of {info.parent}
+              <span className="truncate text-2xs text-muted-foreground">
+                via {r.developer}
               </span>
             )}
           </div>
