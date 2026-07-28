@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-27",
+  "asOf": "2026-07-28",
   "cadence": "quarterly",
   "coverage": "Indowind Energy",
   "data": {
@@ -43,9 +43,9 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 36.6,
-    "evEbitdaX": 10.48,
+    "evEbitdaX": 10.42,
     "hasDetail": true,
-    "marketCapCr": 147,
+    "marketCapCr": 146,
     "name": "Indowind Energy",
     "patFy26Cr": 0.01,
     "quarterly": [
@@ -95,8 +95,8 @@
     "tickerNse": "INDOWIND",
     "type": "wind",
     "valuation": {
-      "asOf": "2026-07-27",
-      "evEbitdaX": 10.48,
+      "asOf": "2026-07-28",
+      "evEbitdaX": 10.42,
       "pbX": 0.48
     }
   },
@@ -107,10 +107,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-27",
+      "asOf": "2026-07-28",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-27"
+  "updatedAt": "2026-07-28"
 }
