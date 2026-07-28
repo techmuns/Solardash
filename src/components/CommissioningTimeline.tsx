@@ -260,6 +260,21 @@ export function CommissioningTimeline({
               const origPct = centre(fyQuarterIndex(t.originalTarget));
               const slipped = t.slipQuarters > 0;
               const labelLeft = curPct > 72; // flip capacity pill to avoid the right edge
+              // Delay / at-risk reason, shown inline beside the current-target
+              // dot (where the tranche is guided to go live) — not in the label.
+              const reasonNode =
+                (t.status === "delayed" || t.status === "at-risk") && t.sourceNote ? (
+                  <span
+                    className="max-w-[260px] shrink truncate text-[10px] leading-tight"
+                    style={{ color: s.color }}
+                    title={t.sourceNote}
+                  >
+                    <span className="font-semibold">
+                      {t.status === "at-risk" ? "⚠ At risk: " : "Delay: "}
+                    </span>
+                    {t.sourceNote}
+                  </span>
+                ) : null;
               return (
                 <div
                   key={t.id}
@@ -285,19 +300,6 @@ export function CommissioningTimeline({
                     <div className="truncate text-2xs text-muted-foreground">
                       {t.project}
                     </div>
-                    {/* Why the status is delayed / at-risk — surfaced, not hidden */}
-                    {(t.status === "at-risk" || t.status === "delayed") && t.sourceNote && (
-                      <div
-                        className="mt-0.5 line-clamp-2 text-[10px] leading-tight"
-                        style={{ color: s.color }}
-                        title={t.sourceNote}
-                      >
-                        <span className="font-semibold">
-                          {t.status === "at-risk" ? "⚠ At risk: " : "Delay: "}
-                        </span>
-                        {t.sourceNote}
-                      </div>
-                    )}
                   </div>
 
                   {/* Track */}
@@ -334,14 +336,15 @@ export function CommissioningTimeline({
                       />
                     )}
 
-                    {/* current marker + capacity/slip pill */}
+                    {/* current marker + capacity/slip pill + inline reason */}
                     <div
-                      className="absolute top-1/2 flex -translate-y-1/2 items-center gap-1"
+                      className="absolute top-1/2 flex -translate-y-1/2 items-center gap-1.5"
                       style={{
                         left: `${curPct}%`,
                         transform: `translate(${labelLeft ? "-100%" : "0"}, -50%)`,
                       }}
                     >
+                      {labelLeft && reasonNode}
                       {labelLeft && (
                         <SlipTag slip={t.slipQuarters} color={s.color} flip />
                       )}
@@ -352,6 +355,7 @@ export function CommissioningTimeline({
                       {!labelLeft && (
                         <SlipTag slip={t.slipQuarters} color={s.color} />
                       )}
+                      {!labelLeft && reasonNode}
                     </div>
                   </div>
                 </div>

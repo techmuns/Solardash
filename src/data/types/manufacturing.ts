@@ -77,6 +77,15 @@ export interface ManufacturingData {
   /** Cell & module nameplate capacity, annual (~5yr) — the build-out trend. */
   capacityHistory: Series[];
   /**
+   * Cell & module nameplate capacity by fiscal QUARTER, split into actuals and
+   * a forward projection per management guidance. Four series — `module` /
+   * `cell` (actual, solid) and `module-projected` / `cell-projected` (dashed) —
+   * the projected pair repeats the last actual point so the lines join.
+   */
+  capacityQuarterly: Series[];
+  /** Series keys in `capacityQuarterly` that are projections (drawn dashed). */
+  capacityProjectedKeys: string[];
+  /**
    * Cell-fab commissioning guidance with revision history & slippage, tracked
    * from maker concalls — drives the cell-commissioning timeline (same shape as
    * the IPP commissioning pipeline).

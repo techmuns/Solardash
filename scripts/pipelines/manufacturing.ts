@@ -204,6 +204,42 @@ export const manufacturingPipeline = definePipeline({
       });
     }
 
+    // --- Cell & module nameplate capacity, QUARTERLY (actual + projection) ---
+    // Actuals run to the latest reported quarter; the projected pair repeats
+    // that last actual point so the dashed guidance line joins the solid one.
+    const cqRows = readManualCsv("manufacturing/capacity-quarterly.csv");
+    const lastActualIdx = cqRows.reduce(
+      (last, r, i) => (r.kind === "actual" ? i : last),
+      -1,
+    );
+    const quarterlySeries = (
+      col: "module_gw" | "cell_gw",
+      key: string,
+      label: string,
+      color: string,
+      projected: boolean,
+    ): Series => ({
+      key,
+      label,
+      unit: "GW",
+      color,
+      points: cqRows.map((r, i) => {
+        const inSegment = projected ? i >= lastActualIdx : i <= lastActualIdx;
+        return {
+          period: r.period,
+          value: inSegment ? Number(r[col]) : (null as unknown as number),
+          ...(projected && i > lastActualIdx ? { modelled: true } : {}),
+        };
+      }),
+    });
+    const capacityQuarterly: Series[] = [
+      quarterlySeries("module_gw", "module", "Module", "#2563EB", false),
+      quarterlySeries("cell_gw", "cell", "Cell", "#F59E0B", false),
+      quarterlySeries("module_gw", "module-projected", "Module (guided)", "#2563EB", true),
+      quarterlySeries("cell_gw", "cell-projected", "Cell (guided)", "#F59E0B", true),
+    ];
+    const capacityProjectedKeys = ["module-projected", "cell-projected"];
+
     // --- Cell & module nameplate capacity, annual (~5yr build-out trend) ---
     const capacityHistory: Series[] = [
       {
@@ -277,6 +313,7 @@ export const manufacturingPipeline = definePipeline({
       ...almmRows,
       ...pliRows,
       ...chRows,
+      ...cqRows,
       ...cellCommRows,
     ]) {
       addSrc(r.source, r.confidence, r.source_url);
@@ -298,6 +335,8 @@ export const manufacturingPipeline = definePipeline({
       pliAwardees,
       pliHistory,
       capacityHistory,
+      capacityQuarterly,
+      capacityProjectedKeys,
       cellCommissioning,
     };
 

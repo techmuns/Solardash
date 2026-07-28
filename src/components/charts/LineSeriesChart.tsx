@@ -27,6 +27,11 @@ export interface LineSeriesChartProps {
   xInterval?: number | "preserveStart" | "preserveEnd" | "preserveStartEnd";
   /** Show the series legend (default true; off for single-series small-multiples). */
   showLegend?: boolean;
+  /**
+   * Series keys drawn as a dashed line — used for forward projections
+   * (management guidance) so they read distinctly from actuals.
+   */
+  dashedKeys?: string[];
 }
 
 /** Generic line chart over our typed Series, coloured via ENERGY_COLORS. */
@@ -37,9 +42,11 @@ export function LineSeriesChart({
   periodOrder,
   xInterval,
   showLegend = true,
+  dashedKeys,
 }: LineSeriesChartProps) {
   const theme = useChartTheme();
   const rows = seriesToRows(series, periodOrder);
+  const dashed = new Set(dashedKeys ?? []);
 
   return (
     <ChartContainer height={height}>
@@ -77,19 +84,28 @@ export function LineSeriesChart({
         {showLegend && (
           <Legend wrapperStyle={{ fontSize: 12, color: theme.tick, paddingTop: 8 }} />
         )}
-        {series.map((s) => (
-          <Line
-            key={s.key}
-            type="monotone"
-            dataKey={s.key}
-            name={s.label}
-            stroke={s.color ?? energyColor(s.key)}
-            strokeWidth={2}
-            dot={{ r: 2.5, strokeWidth: 0, fill: s.color ?? energyColor(s.key) }}
-            activeDot={{ r: 4 }}
-            connectNulls
-          />
-        ))}
+        {series.map((s) => {
+          const isDashed = dashed.has(s.key);
+          const color = s.color ?? energyColor(s.key);
+          return (
+            <Line
+              key={s.key}
+              type="monotone"
+              dataKey={s.key}
+              name={s.label}
+              stroke={color}
+              strokeWidth={2}
+              {...(isDashed ? { strokeDasharray: "5 4" } : {})}
+              dot={
+                isDashed
+                  ? { r: 2.5, strokeWidth: 1.5, stroke: color, fill: "transparent" }
+                  : { r: 2.5, strokeWidth: 0, fill: color }
+              }
+              activeDot={{ r: 4 }}
+              connectNulls
+            />
+          );
+        })}
       </LineChart>
     </ChartContainer>
   );

@@ -3,7 +3,7 @@ import { formatDate } from "@/lib/utils";
 import { fyQuarter, formatFyQuarter } from "@/lib/fiscal";
 import { snapshotMeta } from "@/lib/export";
 import { seriesToExport } from "@/components/charts/series";
-import { FillBarSeries, FillLineSeries } from "@/components/charts/FillCharts";
+import { FillBarSeries } from "@/components/charts/FillCharts";
 import { CommissioningTimeline } from "@/components/CommissioningTimeline";
 import {
   SectionCanvas,
@@ -11,6 +11,8 @@ import {
   type CanvasTab,
 } from "@/components/sections/SectionCanvas";
 import type { Series } from "@/data/types/core";
+import { PliScatter } from "./PliScatter";
+import { CapacityBuildout } from "./CapacityBuildout";
 
 export const dynamic = "force-static";
 export const metadata = {
@@ -39,6 +41,7 @@ export default function ManufacturingPage() {
     .map((p) => ({ label: p.player, value: `${p.nameplateGw}` }));
 
   const chYears = m.capacityHistory[0]?.points.map((p) => p.period) ?? [];
+  const cqPeriods = m.capacityQuarterly[0]?.points.map((p) => p.period) ?? [];
 
   // Cell-fab commissioning timeline (mirrors the IPP commissioning tab).
   const nowPeriod = fyQuarter(snap.updatedAt);
@@ -73,13 +76,16 @@ export default function ManufacturingPage() {
       id: "buildout",
       label: "Capacity build-out",
       title: "Cell vs module capacity over time",
-      subtitle: "Nameplate GW · FY21 → FY26 — cell catching up to module",
-      source: "JMK Research / Mercom",
+      subtitle:
+        "Nameplate GW · quarterly actuals with the guided projection dashed (to FY28) · toggle Annual for the FY21 → FY26 arc",
+      source: "JMK Research / Mercom · management guidance",
       body: (
-        <FillLineSeries
-          series={m.capacityHistory}
-          unit="GW"
-          periodOrder={chYears}
+        <CapacityBuildout
+          annual={m.capacityHistory}
+          annualPeriods={chYears}
+          quarterly={m.capacityQuarterly}
+          quarterPeriods={cqPeriods}
+          projectedKeys={m.capacityProjectedKeys}
         />
       ),
       exportData: {
@@ -156,14 +162,7 @@ export default function ManufacturingPage() {
       subtitle:
         "Cumulative GW · Tranche I (2021) → Tranche II (2023) — Reliance & Shirdi Sai/Indosol are the only firms to win both",
       source: "PIB / SECI / IREDA",
-      body: (
-        <FillBarSeries
-          series={m.pliHistory}
-          stacked
-          unit="GW"
-          periodOrder={pliPeriods}
-        />
-      ),
+      body: <PliScatter series={m.pliHistory} />,
       side: {
         title: "Cumulative PLI · GW (×2 = both tranches)",
         node: <RankList rows={pliRankRows} />,

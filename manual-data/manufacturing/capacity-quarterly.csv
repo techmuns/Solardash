@@ -1,0 +1,17 @@
+period,module_gw,cell_gw,kind,confidence,source,source_url
+Q1 FY25,56,7.5,actual,modelled,JMK Research / Mercom (interpolated between FY24 & FY25 anchors),https://jmkresearch.com/
+Q2 FY25,62,11,actual,modelled,JMK Research / Mercom (interpolated between FY24 & FY25 anchors),https://jmkresearch.com/
+Q3 FY25,68,15,actual,modelled,JMK Research / Mercom (interpolated between FY24 & FY25 anchors),https://jmkresearch.com/
+Q4 FY25,74,19,actual,high,SolarQuarter — module 74 GW at Mar 2025,https://solarquarter.com/2025/04/02/india-adds-record-25-gw-re-in-fy25-solar-capacity-crosses-100-gw-module-manufacturing-hits-74-gw/
+Q1 FY26,83,26,actual,modelled,JMK Research / ALMM (interpolated between FY25 & FY26 anchors),https://jmkresearch.com/
+Q2 FY26,92,34,actual,modelled,JMK Research / ALMM (interpolated between FY25 & FY26 anchors),https://jmkresearch.com/
+Q3 FY26,101,42,actual,medium,Mercom — cumulative module ~100 GW / cell ~42 GW,https://www.mercomindia.com/
+Q4 FY26,110,50,actual,medium,JMK Research / ALMM (nameplate early 2026),https://jmkresearch.com/
+Q1 FY27,120,56,projected,modelled,Management guidance (Waaree/Premier/Adani/ReNew concalls) — ramp to FY28,https://jmkresearch.com/
+Q2 FY27,131,62,projected,modelled,Management guidance (Waaree/Premier/Adani/ReNew concalls) — ramp to FY28,https://jmkresearch.com/
+Q3 FY27,142,68,projected,modelled,Management guidance (Waaree/Premier/Adani/ReNew concalls) — ramp to FY28,https://jmkresearch.com/
+Q4 FY27,155,74,projected,modelled,Management guidance (Waaree/Premier/Adani/ReNew concalls) — ramp to FY28,https://jmkresearch.com/
+Q1 FY28,168,79,projected,modelled,Management guidance — trajectory to the FY28 supply-demand outlook,https://jmkresearch.com/
+Q2 FY28,182,84,projected,modelled,Management guidance — trajectory to the FY28 supply-demand outlook,https://jmkresearch.com/
+Q3 FY28,196,89,projected,modelled,Management guidance — trajectory to the FY28 supply-demand outlook,https://jmkresearch.com/
+Q4 FY28,210,95,projected,medium,Mercom / JMK FY28 outlook — module 210 GW; cell guided ~95 GW,https://www.mercomindia.com/
