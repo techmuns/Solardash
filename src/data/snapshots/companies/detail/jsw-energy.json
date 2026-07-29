@@ -125,7 +125,6 @@
     "hasDetail": true,
     "marketCapCr": 99796,
     "name": "JSW Energy",
-    "orderBookGw": 12.5,
     "patFy26Cr": 2762,
     "peX": 49.8,
     "quarterly": [
@@ -246,6 +245,7 @@
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "JSWENERGY",
     "type": "ipp",
+    "ucPipelineGw": 12.5,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 17.41,

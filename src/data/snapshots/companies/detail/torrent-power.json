@@ -69,7 +69,6 @@
     "hasDetail": true,
     "marketCapCr": 72129,
     "name": "Torrent Power",
-    "orderBookGw": 8.6,
     "patFy26Cr": 2469,
     "peX": 31.5,
     "quarterly": [
@@ -134,6 +133,7 @@
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "TORNTPOWER",
     "type": "utility",
+    "ucPipelineGw": 8.6,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 15.44,

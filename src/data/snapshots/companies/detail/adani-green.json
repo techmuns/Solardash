@@ -116,7 +116,6 @@
     "hasDetail": true,
     "marketCapCr": 226907,
     "name": "Adani Green Energy",
-    "orderBookGw": 28,
     "patFy26Cr": 1987,
     "peX": 117,
     "quarterly": [
@@ -237,6 +236,7 @@
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "ADANIGREEN",
     "type": "ipp",
+    "ucPipelineGw": 28,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 28.22,

@@ -21,8 +21,18 @@ export interface CompanyIdentity {
   marketCapCr?: number;
   moduleGw?: number;
   cellGw?: number;
+  /** Contracted-but-unexecuted revenue backlog, ₹ crore (EPC / manufacturers). */
   orderBookCr?: number;
+  /**
+   * Contracted-but-unexecuted order book in GW — only for players who SELL to
+   * customers (manufacturers, EPC, wind OEM / O&M).
+   */
   orderBookGw?: number;
+  /**
+   * Under-construction + pipeline capacity, GW — the right term for IPPs and
+   * utilities, which own their assets and so have no customer order book.
+   */
+  ucPipelineGw?: number;
   technology?: string;
   revenueFy26Cr?: number;
   ebitdaMarginPct?: number;

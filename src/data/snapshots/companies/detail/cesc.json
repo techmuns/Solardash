@@ -69,7 +69,6 @@
     "hasDetail": true,
     "marketCapCr": 21726,
     "name": "CESC",
-    "orderBookGw": 3.2,
     "patFy26Cr": 1618,
     "peX": 14.1,
     "quarterly": [
@@ -134,6 +133,7 @@
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "CESC",
     "type": "utility",
+    "ucPipelineGw": 3.2,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 12.59,

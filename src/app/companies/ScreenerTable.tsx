@@ -23,11 +23,9 @@ const cr = (v?: number) => (v == null ? dash : formatNumber(Math.round(v)));
 const x = (v?: number) => (v == null ? dash : v.toFixed(1));
 const pct = (v?: number) => (v == null ? dash : `${v.toFixed(1)}%`);
 
-function orderBook(c: CompanyIdentity): React.ReactNode {
-  if (c.orderBookCr != null) return `₹${formatNumber(c.orderBookCr)} cr`;
-  if (c.orderBookGw != null) return `${gw(c.orderBookGw)} GW`;
-  return dash;
-}
+const crOrDash = (v?: number) =>
+  v == null ? dash : `₹${formatNumber(Math.round(v))} cr`;
+const gwOrDash = (v?: number) => (v == null ? dash : `${gw(v)} GW`);
 
 const ALL_COMPANIES = "__all__";
 
@@ -200,14 +198,34 @@ export function ScreenerTable({
     { key: "moduleGw", header: "Module GW", align: "right", sortable: true, accessor: (r) => r.moduleGw ?? -1, render: (r) => gw(r.moduleGw) },
     { key: "cellGw", header: "Cell GW", align: "right", sortable: true, accessor: (r) => r.cellGw ?? -1, render: (r) => gw(r.cellGw) },
     {
-      key: "orderBook",
-      header: "Order book",
-      exportLabel: "Order book (₹cr/GW)",
+      key: "orderBookCr",
+      header: "Order book ₹",
+      exportLabel: "Order book (₹cr)",
       align: "right",
       sortable: true,
       accessor: (r) => r.orderBookCr ?? -1,
-      exportValue: (r) => r.orderBookCr ?? r.orderBookGw ?? null,
-      render: (r) => <span className="whitespace-nowrap">{orderBook(r)}</span>,
+      exportValue: (r) => r.orderBookCr ?? null,
+      render: (r) => <span className="whitespace-nowrap">{crOrDash(r.orderBookCr)}</span>,
+    },
+    {
+      key: "orderBookGw",
+      header: "Order book GW",
+      exportLabel: "Order book (GW)",
+      align: "right",
+      sortable: true,
+      accessor: (r) => r.orderBookGw ?? -1,
+      exportValue: (r) => r.orderBookGw ?? null,
+      render: (r) => <span className="whitespace-nowrap">{gwOrDash(r.orderBookGw)}</span>,
+    },
+    {
+      key: "ucPipelineGw",
+      header: "UC + pipeline GW",
+      exportLabel: "Under-construction + pipeline (GW)",
+      align: "right",
+      sortable: true,
+      accessor: (r) => r.ucPipelineGw ?? -1,
+      exportValue: (r) => r.ucPipelineGw ?? null,
+      render: (r) => <span className="whitespace-nowrap">{gwOrDash(r.ucPipelineGw)}</span>,
     },
     { key: "revenueFy26Cr", header: "Rev FY26", align: "right", sortable: true, accessor: (r) => r.revenueFy26Cr ?? -1, render: (r) => cr(r.revenueFy26Cr) },
     { key: "ebitdaMarginPct", header: "EBITDA %", align: "right", sortable: true, accessor: (r) => r.ebitdaMarginPct ?? -1, render: (r) => pct(r.ebitdaMarginPct) },

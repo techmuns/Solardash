@@ -127,7 +127,6 @@
     "marketCapCr": 118690,
     "moduleGw": 4.3,
     "name": "Tata Power",
-    "orderBookGw": 5.1,
     "patFy26Cr": 5118,
     "peX": 30.3,
     "quarterly": [
@@ -248,6 +247,7 @@
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "TATAPOWER",
     "type": "ipp",
+    "ucPipelineGw": 5.1,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 15.2,

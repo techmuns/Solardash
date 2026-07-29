@@ -85,7 +85,6 @@
     "hasDetail": true,
     "marketCapCr": 25154,
     "name": "ACME Solar Holdings",
-    "orderBookGw": 5.08,
     "patFy26Cr": 498,
     "peX": 50.6,
     "quarterly": [
@@ -198,6 +197,7 @@
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "ACMESOLAR",
     "type": "ipp",
+    "ucPipelineGw": 5.08,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 25.29,

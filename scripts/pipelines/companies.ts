@@ -52,6 +52,7 @@ function parseIdentity(r: Record<string, string>): CompanyIdentity {
     | "cellGw"
     | "orderBookCr"
     | "orderBookGw"
+    | "ucPipelineGw"
     | "revenueFy26Cr"
     | "ebitdaMarginPct"
     | "patFy26Cr"
@@ -68,6 +69,7 @@ function parseIdentity(r: Record<string, string>): CompanyIdentity {
   set("cellGw", r.cell_gw);
   set("orderBookCr", r.order_book_cr);
   set("orderBookGw", r.order_book_gw);
+  set("ucPipelineGw", r.uc_pipeline_gw);
   set("revenueFy26Cr", r.revenue_fy26_cr);
   set("ebitdaMarginPct", r.ebitda_margin_pct);
   set("patFy26Cr", r.pat_fy26_cr);

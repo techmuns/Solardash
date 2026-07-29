@@ -12,14 +12,14 @@
         "evEbitdaX": 11.6,
         "marketCapCr": 333465,
         "name": "NTPC",
-        "orderBookGw": 32,
         "patFy26Cr": 27546,
         "peX": 12,
         "revenueFy26Cr": 187385,
         "slug": "ntpc",
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "NTPC",
-        "type": "utility"
+        "type": "utility",
+        "ucPipelineGw": 32
       },
       {
         "cellGw": 4.3,
@@ -30,14 +30,14 @@
         "marketCapCr": 118690,
         "moduleGw": 4.3,
         "name": "Tata Power",
-        "orderBookGw": 5.1,
         "patFy26Cr": 5118,
         "peX": 30.3,
         "revenueFy26Cr": 62429,
         "slug": "tata-power",
         "sourceNote": "Company filings (aggregated)",
         "tickerNse": "TATAPOWER",
-        "type": "ipp"
+        "type": "ipp",
+        "ucPipelineGw": 5.1
       },
       {
         "cmp": 1432,
@@ -46,14 +46,14 @@
         "evEbitdaX": 15.44,
         "marketCapCr": 72129,
         "name": "Torrent Power",
-        "orderBookGw": 8.6,
         "patFy26Cr": 2469,
         "peX": 31.5,
         "revenueFy26Cr": 28966,
         "slug": "torrent-power",
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "TORNTPOWER",
-        "type": "utility"
+        "type": "utility",
+        "ucPipelineGw": 8.6
       },
       {
         "cellGw": 5.4,
@@ -82,14 +82,14 @@
         "evEbitdaX": 17.41,
         "marketCapCr": 99796,
         "name": "JSW Energy",
-        "orderBookGw": 12.5,
         "patFy26Cr": 2762,
         "peX": 49.8,
         "revenueFy26Cr": 18901,
         "slug": "jsw-energy",
         "sourceNote": "Company filings (aggregated)",
         "tickerNse": "JSWENERGY",
-        "type": "ipp"
+        "type": "ipp",
+        "ucPipelineGw": 12.5
       },
       {
         "cmp": 164,
@@ -98,14 +98,14 @@
         "evEbitdaX": 12.59,
         "marketCapCr": 21726,
         "name": "CESC",
-        "orderBookGw": 3.2,
         "patFy26Cr": 1618,
         "peX": 14.1,
         "revenueFy26Cr": 18570,
         "slug": "cesc",
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "CESC",
-        "type": "utility"
+        "type": "utility",
+        "ucPipelineGw": 3.2
       },
       {
         "cmp": 299,
@@ -114,14 +114,14 @@
         "evEbitdaX": 12.41,
         "marketCapCr": 41460,
         "name": "NLC India",
-        "orderBookGw": 2,
         "patFy26Cr": 3769,
         "peX": 11.8,
         "revenueFy26Cr": 17490,
         "slug": "nlc-india",
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "NLCINDIA",
-        "type": "utility"
+        "type": "utility",
+        "ucPipelineGw": 2
       },
       {
         "cmp": 48,
@@ -146,13 +146,13 @@
         "ebitdaMarginPct": 65.4,
         "marketCapCr": 15600,
         "name": "ReNew Energy Global",
-        "orderBookGw": 2.4,
         "patFy26Cr": 1039,
         "peX": 15,
         "revenueFy26Cr": 15064,
         "slug": "renew-energy",
         "sourceNote": "Nasdaq: RNW (take-private ongoing)",
-        "type": "ipp"
+        "type": "ipp",
+        "ucPipelineGw": 2.4
       },
       {
         "cmp": 1378,
@@ -161,14 +161,14 @@
         "evEbitdaX": 28.22,
         "marketCapCr": 226907,
         "name": "Adani Green Energy",
-        "orderBookGw": 28,
         "patFy26Cr": 1987,
         "peX": 117,
         "revenueFy26Cr": 12928,
         "slug": "adani-green",
         "sourceNote": "Company filings (aggregated)",
         "tickerNse": "ADANIGREEN",
-        "type": "ipp"
+        "type": "ipp",
+        "ucPipelineGw": 28
       },
       {
         "cmp": 78.3,
@@ -282,14 +282,14 @@
         "evEbitdaX": 17.87,
         "marketCapCr": 26581,
         "name": "SJVN",
-        "orderBookGw": 5,
         "patFy26Cr": 642,
         "peX": 41.4,
         "revenueFy26Cr": 4528,
         "slug": "sjvn",
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "SJVN",
-        "type": "utility"
+        "type": "utility",
+        "ucPipelineGw": 5
       },
       {
         "cmp": 75.9,
@@ -330,14 +330,14 @@
         "evEbitdaX": 38.72,
         "marketCapCr": 77783,
         "name": "NTPC Green Energy",
-        "orderBookGw": 17,
         "patFy26Cr": 521,
         "peX": 128,
         "revenueFy26Cr": 2858,
         "slug": "ntpc-green",
         "sourceNote": "Company filings (aggregated)",
         "tickerNse": "NTPCGREEN",
-        "type": "ipp"
+        "type": "ipp",
+        "ucPipelineGw": 17
       },
       {
         "cmp": 315,
@@ -377,14 +377,14 @@
         "evEbitdaX": 13.42,
         "marketCapCr": 7655,
         "name": "KPI Green Energy",
-        "orderBookGw": 4.64,
         "patFy26Cr": 509,
         "peX": 16.1,
         "revenueFy26Cr": 2696,
         "slug": "kpi-green",
         "sourceNote": "Market data (mid-2026) + company filings",
         "tickerNse": "KPIGREEN",
-        "type": "ipp"
+        "type": "ipp",
+        "ucPipelineGw": 4.64
       },
       {
         "board": "NSE SME",
@@ -442,14 +442,14 @@
         "evEbitdaX": 25.29,
         "marketCapCr": 25154,
         "name": "ACME Solar Holdings",
-        "orderBookGw": 5.08,
         "patFy26Cr": 498,
         "peX": 50.6,
         "revenueFy26Cr": 2023,
         "slug": "acme-solar",
         "sourceNote": "Company filings (aggregated)",
         "tickerNse": "ACMESOLAR",
-        "type": "ipp"
+        "type": "ipp",
+        "ucPipelineGw": 5.08
       },
       {
         "board": "NSE SME",

@@ -68,7 +68,6 @@
     "hasDetail": true,
     "marketCapCr": 26581,
     "name": "SJVN",
-    "orderBookGw": 5,
     "patFy26Cr": 642,
     "peX": 41.4,
     "quarterly": [
@@ -133,6 +132,7 @@
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "SJVN",
     "type": "utility",
+    "ucPipelineGw": 5,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 17.87,

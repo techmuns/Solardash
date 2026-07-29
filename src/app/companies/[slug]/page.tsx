@@ -232,10 +232,12 @@ function RichDetail({
 
   const headlineKpis = present([
     o?.orderBookGw != null
-      ? { label: "Order book", value: o.orderBookGw.toFixed(2), unit: "GW", hint: "vs installed capacity" }
+      ? { label: "Order book", value: o.orderBookGw.toFixed(2), unit: "GW", hint: "contracted, unexecuted" }
       : c.orderBookCr != null
         ? { label: "Order book", value: `₹${formatNumber(c.orderBookCr)}`, unit: "cr" }
-        : null,
+        : c.ucPipelineGw != null
+          ? { label: "UC + pipeline", value: String(c.ucPipelineGw), unit: "GW", hint: "own capacity, not an order book" }
+          : null,
     c.revenueFy26Cr != null && { label: "Revenue FY26E", value: formatNumber(c.revenueFy26Cr), unit: "₹ cr" },
     c.ebitdaMarginPct != null && { label: "EBITDA margin", value: String(c.ebitdaMarginPct), unit: "%" },
     (v?.peX ?? c.peX) != null && { label: "P/E", value: (v?.peX ?? c.peX ?? 0).toFixed(1), unit: "×" },
@@ -375,7 +377,9 @@ function HeadlineOnly({ c }: { c: CompanyDetail }) {
       ? { label: "Order book", value: `₹${formatNumber(c.orderBookCr)}`, unit: "cr" }
       : c.orderBookGw != null
         ? { label: "Order book", value: String(c.orderBookGw), unit: "GW" }
-        : null,
+        : c.ucPipelineGw != null
+          ? { label: "UC + pipeline", value: String(c.ucPipelineGw), unit: "GW" }
+          : null,
     c.revenueFy26Cr != null && { label: "Revenue FY26", value: formatNumber(c.revenueFy26Cr), unit: "₹ cr" },
     c.ebitdaMarginPct != null && { label: "EBITDA margin", value: String(c.ebitdaMarginPct), unit: "%" },
     c.peX != null && { label: "P/E", value: c.peX.toFixed(1), unit: "×" },

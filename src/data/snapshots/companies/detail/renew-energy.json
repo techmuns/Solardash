@@ -57,7 +57,6 @@
     "hasDetail": true,
     "marketCapCr": 15600,
     "name": "ReNew Energy Global",
-    "orderBookGw": 2.4,
     "patFy26Cr": 1039,
     "peX": 15,
     "quarterly": [
@@ -102,6 +101,7 @@
     "slug": "renew-energy",
     "sourceNote": "Nasdaq: RNW (take-private ongoing)",
     "type": "ipp",
+    "ucPipelineGw": 2.4,
     "valuation": {
       "asOf": "2026-03-31",
       "peX": 15

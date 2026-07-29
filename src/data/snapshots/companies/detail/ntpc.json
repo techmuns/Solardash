@@ -69,7 +69,6 @@
     "hasDetail": true,
     "marketCapCr": 333465,
     "name": "NTPC",
-    "orderBookGw": 32,
     "patFy26Cr": 27546,
     "peX": 12,
     "quarterly": [
@@ -134,6 +133,7 @@
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "NTPC",
     "type": "utility",
+    "ucPipelineGw": 32,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 11.6,

@@ -69,7 +69,6 @@
     "hasDetail": true,
     "marketCapCr": 7655,
     "name": "KPI Green Energy",
-    "orderBookGw": 4.64,
     "patFy26Cr": 509,
     "peX": 16.1,
     "quarterly": [
@@ -134,6 +133,7 @@
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "KPIGREEN",
     "type": "ipp",
+    "ucPipelineGw": 4.64,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 13.42,

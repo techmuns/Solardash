@@ -60,7 +60,6 @@
     "hasDetail": true,
     "marketCapCr": 77783,
     "name": "NTPC Green Energy",
-    "orderBookGw": 17,
     "patFy26Cr": 521,
     "peX": 128,
     "quarterly": [
@@ -157,6 +156,7 @@
     "sourceNote": "Company filings (aggregated)",
     "tickerNse": "NTPCGREEN",
     "type": "ipp",
+    "ucPipelineGw": 17,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 38.72,

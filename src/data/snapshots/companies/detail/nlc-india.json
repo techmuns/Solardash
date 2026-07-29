@@ -68,7 +68,6 @@
     "hasDetail": true,
     "marketCapCr": 41460,
     "name": "NLC India",
-    "orderBookGw": 2,
     "patFy26Cr": 3769,
     "peX": 11.8,
     "quarterly": [
@@ -133,6 +132,7 @@
     "sourceNote": "Market data (mid-2026) + company filings",
     "tickerNse": "NLCINDIA",
     "type": "utility",
+    "ucPipelineGw": 2,
     "valuation": {
       "asOf": "2026-07-28",
       "evEbitdaX": 12.41,
