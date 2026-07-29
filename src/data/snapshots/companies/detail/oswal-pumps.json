@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-28",
+  "asOf": "2026-07-29",
   "cadence": "quarterly",
   "coverage": "Oswal Pumps",
   "data": {
@@ -42,7 +42,7 @@
         "revenue": 2064
       }
     ],
-    "cmp": 345,
+    "cmp": 344,
     "concall": {
       "date": "2026-05-18",
       "guidance": [
@@ -64,7 +64,7 @@
     "ebitdaMarginPct": 24.9,
     "evEbitdaX": 8.09,
     "hasDetail": true,
-    "marketCapCr": 3922,
+    "marketCapCr": 3920,
     "name": "Oswal Pumps",
     "patFy26Cr": 376,
     "peX": 10.4,
@@ -131,9 +131,9 @@
     "tickerNse": "OSWALPUMPS",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-07-28",
+      "asOf": "2026-07-29",
       "evEbitdaX": 8.09,
-      "pbX": 2.33,
+      "pbX": 2.32,
       "peX": 10.4
     }
   },
@@ -144,10 +144,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-28",
+      "asOf": "2026-07-29",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-28"
+  "updatedAt": "2026-07-29"
 }
