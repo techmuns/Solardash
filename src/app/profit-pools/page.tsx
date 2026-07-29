@@ -97,7 +97,6 @@ export default function ProfitPoolsPage() {
       id: "price-stack",
       label: "Price stack",
       title: "PV price stack over time",
-      subtitle: "Polysilicon → module · native units",
       source: "InfoLink · EnergyTrend · Silicon Industry Branch · OPIS · Bernreuter · SMM",
       body: (
         <PriceStack

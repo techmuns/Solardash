@@ -29,7 +29,13 @@ const fmtPct = (v: number | null, off?: boolean) =>
 
 // ─────────────────────── Expandable per-stage company rows ──────────────────
 
-function CompanyRows({ companies }: { companies: CompanyValueCapture[] }) {
+function CompanyRows({
+  companies,
+  onShowCalc,
+}: {
+  companies: CompanyValueCapture[];
+  onShowCalc: (c: CompanyValueCapture) => void;
+}) {
   if (companies.length === 0) {
     return (
       <tr className="bg-muted/20">
@@ -44,12 +50,27 @@ function CompanyRows({ companies }: { companies: CompanyValueCapture[] }) {
       {companies.map((c) => (
         <tr key={c.slug} className="bg-muted/20 text-xs">
           <td className="py-1.5 pl-8 pr-2">
-            <Link
-              href={`/companies/${c.slug}`}
-              className="text-foreground/90 outline-none hover:text-brand focus-visible:ring-2 focus-visible:ring-brand"
-            >
-              {c.name}
-            </Link>
+            <span className="flex items-center gap-1.5">
+              <Link
+                href={`/companies/${c.slug}`}
+                className="min-w-0 truncate text-foreground/90 outline-none hover:text-brand focus-visible:ring-2 focus-visible:ring-brand"
+              >
+                {c.name}
+              </Link>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onShowCalc(c);
+                }}
+                title={`Show how ${c.name}'s IRR is calculated`}
+                aria-label={`Show how ${c.name}'s IRR is calculated`}
+                className="inline-flex shrink-0 items-center gap-1 rounded-md border border-border bg-card px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground transition-colors hover:border-brand/40 hover:bg-brand/10 hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              >
+                <Calculator className="h-3 w-3" aria-hidden />
+                IRR calc
+              </button>
+            </span>
           </td>
           <td className="px-2 py-1.5 text-right tabular-nums text-muted-foreground/50">
             {c.capexPerW}
@@ -90,12 +111,14 @@ function StageRow({
   open,
   onToggle,
   onShowCalc,
+  onShowCompanyCalc,
 }: {
   row: StageIrrType;
   companies: CompanyValueCapture[];
   open: boolean;
   onToggle: () => void;
   onShowCalc: () => void;
+  onShowCompanyCalc: (c: CompanyValueCapture) => void;
 }) {
   const expandable = companies.length > 0;
   return (
@@ -168,7 +191,7 @@ function StageRow({
           {fmtPct(row.irrPct, row.offChart)}
         </td>
       </tr>
-      {open && <CompanyRows companies={companies} />}
+      {open && <CompanyRows companies={companies} onShowCalc={onShowCompanyCalc} />}
     </>
   );
 }
@@ -212,15 +235,86 @@ function CalcStep({
   );
 }
 
-/** The worked, step-by-step IRR calculation for one value-chain stage. */
-function StageCalcDialog({
-  row,
+/**
+ * What the calculation dialog renders — either a value-chain stage (the
+ * benchmark model) or one company at its own disclosed EBITDA margin.
+ */
+export interface IrrCalcSubject {
+  title: string;
+  subtitle: string;
+  capexPerW: number;
+  aspPerW: number;
+  ebitdaMarginPct: number;
+  utilizationPct: number;
+  lifeYears: number;
+  ebitdaPerWYr: number;
+  paybackYears: number | null;
+  irrPct: number | null;
+  offChart?: boolean;
+  /** Where the margin figure comes from (differs for a stage vs a company). */
+  marginNote: string;
+  source?: string;
+  confidence?: string;
+  note?: string;
+  /** Closing provenance line. */
+  footer: string;
+}
+
+/** Normalise a stage row into the dialog's subject shape. */
+function stageSubject(row: StageIrrType): IrrCalcSubject {
+  return {
+    title: row.stage,
+    subtitle: `${row.region} · greenfield 1 W of capacity · every input shown`,
+    capexPerW: row.capexPerW,
+    aspPerW: row.aspPerW,
+    ebitdaMarginPct: row.ebitdaMarginPct,
+    utilizationPct: row.utilizationPct,
+    lifeYears: row.lifeYears,
+    ebitdaPerWYr: row.ebitdaPerWYr,
+    paybackYears: row.paybackYears,
+    irrPct: row.irrPct,
+    offChart: row.offChart,
+    marginNote:
+      "The margin is FACT — from filings for India stages, agency benchmarks elsewhere.",
+    source: row.source,
+    confidence: row.confidence,
+    note: row.note,
+    footer:
+      "CapEx, utilisation and life are the stage's sourced model inputs; the price is derived from the freshest price / tariff feed. The IRR itself is Munshot analysis, not a reported figure.",
+  };
+}
+
+/** Normalise a company row into the dialog's subject shape. */
+function companySubject(c: CompanyValueCapture): IrrCalcSubject {
+  return {
+    title: c.name,
+    subtitle: `${c.stageLabel} · at its own EBITDA margin · greenfield 1 W of capacity`,
+    capexPerW: c.capexPerW,
+    aspPerW: c.aspPerW,
+    ebitdaMarginPct: c.ebitdaMarginPct,
+    utilizationPct: c.utilizationPct,
+    lifeYears: c.lifeYears,
+    ebitdaPerWYr: c.ebitdaPerWYr,
+    paybackYears: c.paybackYears,
+    irrPct: c.irrPct,
+    offChart: c.offChart,
+    marginNote: `${c.ebitdaMarginPct}% is ${c.name}'s own disclosed EBITDA margin (FACT, from its filings) — the only input that differs from the ${c.stageLabel} benchmark.`,
+    source: "Company filings",
+    confidence: "high",
+    footer: `Margin is the company's own reported figure; CapEx, price, utilisation and life are held at the ${c.stageLabel} stage model, so this isolates what that margin alone is worth. The IRR is Munshot analysis, not a reported figure.`,
+  };
+}
+
+/** The worked, step-by-step IRR calculation for a stage or a company. */
+function IrrCalcDialog({
+  subject,
   onClose,
 }: {
-  row: StageIrrType | null;
+  subject: IrrCalcSubject | null;
   onClose: () => void;
 }) {
-  if (!row) return null;
+  if (!subject) return null;
+  const row = subject;
   const marginFrac = row.ebitdaMarginPct / 100;
   const grossPerW = row.aspPerW * marginFrac;
   const lifetime = row.ebitdaPerWYr * row.lifeYears;
@@ -228,19 +322,17 @@ function StageCalcDialog({
 
   return (
     <Dialog
-      open={Boolean(row)}
+      open={Boolean(subject)}
       onClose={onClose}
-      ariaLabel={`${row.stage} — IRR calculation`}
+      ariaLabel={`${row.title} — IRR calculation`}
       className="max-w-xl"
     >
       <div className="flex items-start justify-between gap-3 border-b border-border px-5 py-4">
         <div className="min-w-0">
           <h2 className="text-base font-bold tracking-tight text-foreground">
-            {row.stage} — IRR calculation
+            {row.title} — IRR calculation
           </h2>
-          <p className="mt-0.5 text-2xs text-muted-foreground">
-            {row.region} · greenfield 1 W of capacity · every input shown
-          </p>
+          <p className="mt-0.5 text-2xs text-muted-foreground">{row.subtitle}</p>
         </div>
         <button
           type="button"
@@ -283,7 +375,7 @@ function StageCalcDialog({
             label="EBITDA per W at full output"
             formula={`₹${row.aspPerW}/W price × ${row.ebitdaMarginPct}% margin = ₹${grossPerW.toFixed(2)}/W`}
             result={`₹${grossPerW.toFixed(2)}/W`}
-            note="The margin is FACT — from filings for India stages, agency benchmarks elsewhere."
+            note={row.marginNote}
           />
           <CalcStep
             n={2}
@@ -335,9 +427,7 @@ function StageCalcDialog({
             <p className="mt-1 text-2xs leading-snug text-muted-foreground">{row.note}</p>
           )}
           <p className="mt-1.5 text-2xs leading-snug text-muted-foreground">
-            CapEx, utilisation and life are the stage&apos;s sourced model inputs; the
-            price is derived from the freshest price / tariff feed. The IRR itself
-            is Munshot analysis, not a reported figure.
+            {row.footer}
           </p>
         </div>
       </div>
@@ -503,8 +593,8 @@ export function StageIrr({
   freshness: IrrFreshness;
 }) {
   const [methodOpen, setMethodOpen] = React.useState(false);
-  // The stage whose worked IRR calculation is open (null = closed).
-  const [calcRow, setCalcRow] = React.useState<StageIrrType | null>(null);
+  // The stage or company whose worked IRR calculation is open (null = closed).
+  const [calcSubject, setCalcSubject] = React.useState<IrrCalcSubject | null>(null);
   // Group companies under their stage (matched on the stage name).
   const byStage = React.useMemo(() => {
     const m = new Map<string, CompanyValueCapture[]>();
@@ -565,7 +655,8 @@ export function StageIrr({
                 companies={byStage.get(r.stage) ?? []}
                 open={open.has(r.stage)}
                 onToggle={() => toggle(r.stage)}
-                onShowCalc={() => setCalcRow(r)}
+                onShowCalc={() => setCalcSubject(stageSubject(r))}
+                onShowCompanyCalc={(c) => setCalcSubject(companySubject(c))}
               />
             ))}
           </tbody>
@@ -578,7 +669,7 @@ export function StageIrr({
         sources={sources}
         freshness={freshness}
       />
-      <StageCalcDialog row={calcRow} onClose={() => setCalcRow(null)} />
+      <IrrCalcDialog subject={calcSubject} onClose={() => setCalcSubject(null)} />
     </div>
   );
 }

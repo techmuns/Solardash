@@ -3,7 +3,6 @@
 import * as React from "react";
 import { FillLineSeries } from "@/components/charts/FillCharts";
 import { FrequencyToggle } from "@/components/charts/FrequencyToggle";
-import { AnalysisTag } from "@/components/ui/AnalysisTag";
 import type { Series } from "@/data/types/core";
 
 type Freq = "quarterly" | "annual";
@@ -49,25 +48,6 @@ export function StageMarginsBody({
         unit="%"
         periodOrder={isQ ? quarterPeriods : annualPeriods}
       />
-      <p className="mt-1 shrink-0 text-2xs leading-snug text-muted-foreground">
-        <AnalysisTag />{" "}
-        {isQ ? (
-          <>
-            The quarterly read sharpens the same migration: the manufacturing
-            pool re-rates ~13% → ~24% EBITDA across FY24 → FY26 with only mild
-            quarter noise, and the generation pool steps up in FY26 partly on
-            mix as pure-play IPPs enter the pool. Constituents vary by quarter
-            as names list and start reporting.
-          </>
-        ) : (
-          <>
-            Manufacturing pool margin tripled off its FY22 trough (~4% → 22%)
-            as ALMM/DCR protection and scale took hold; IPP margins stayed
-            structurally high on long-tenor PPAs — value is migrating into
-            protected domestic manufacturing.
-          </>
-        )}
-      </p>
     </div>
   );
 }
