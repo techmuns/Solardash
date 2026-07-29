@@ -15,8 +15,10 @@ import { cn, formatDate, formatNumber } from "@/lib/utils";
 import { snapshotMeta } from "@/lib/export";
 import type { Snapshot } from "@/data/types/core";
 import type { CompanyDetail, Concall } from "@/data/types/companies";
+import { getCompanyOperating } from "@/data/company-links";
 import { RatingBadge, TYPE_LABELS, TypeBadge, upsidePct } from "../company-ui";
 import { FinancialsCharts } from "./FinancialsCharts";
+import { OperatingMetrics } from "./OperatingMetrics";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -325,6 +327,10 @@ function RichDetail({
           )}
         </section>
       )}
+
+      {/* Cross-section operating metrics — capacity, auctions, offtake,
+          manufacturing, returns and policy exposure, all in one place. */}
+      <OperatingMetrics op={getCompanyOperating(c.slug, c.name)} name={c.name} />
 
       {/* Operating & mix */}
       <section className="space-y-3">

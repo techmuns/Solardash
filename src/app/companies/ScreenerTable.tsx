@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { DataTable, type Column } from "@/components/ui/DataTable";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
+import { Select, type SelectOption } from "@/components/ui/Select";
 import { LineSeriesChart } from "@/components/charts/LineSeriesChart";
 import { CompareTray } from "@/components/compare/CompareTray";
 import { CompareDialog, type CompareEntity } from "@/components/compare/CompareDialog";
@@ -28,6 +29,8 @@ function orderBook(c: CompanyIdentity): React.ReactNode {
   return dash;
 }
 
+const ALL_COMPANIES = "__all__";
+
 export function ScreenerTable({
   companies,
   details,
@@ -40,17 +43,44 @@ export function ScreenerTable({
 }) {
   const [type, setType] = React.useState<string>("all");
   const [board, setBoard] = React.useState<string>("all");
+  const [company, setCompany] = React.useState<string>(ALL_COMPANIES);
   const sel = useCompareSelection(4);
   const [dialogOpen, setDialogOpen] = React.useState(false);
 
   const isSme = (c: CompanyIdentity) => Boolean(c.board?.includes("SME"));
   const smeCount = companies.filter(isSme).length;
-  const filtered = companies.filter((c) => {
-    const typeOk = type === "all" || c.type === type;
-    const boardOk =
-      board === "all" || (board === "sme" ? isSme(c) : !isSme(c));
-    return typeOk && boardOk;
-  });
+
+  // Company picker options follow the type / listing filters, so the dropdown
+  // only ever offers names the table can actually show.
+  const inFilters = React.useCallback(
+    (c: CompanyIdentity) =>
+      (type === "all" || c.type === type) &&
+      (board === "all" || (board === "sme" ? isSme(c) : !isSme(c))),
+    [type, board],
+  );
+  const companyOptions: SelectOption[] = React.useMemo(() => {
+    const names = companies
+      .filter(inFilters)
+      .map((c) => ({ value: c.slug, label: c.name, hint: c.tickerNse ?? c.tickerBse ?? undefined }))
+      .sort((a, b) => a.label.localeCompare(b.label));
+    return [
+      { value: ALL_COMPANIES, label: "All companies", hint: String(names.length) },
+      ...names,
+    ];
+  }, [companies, inFilters]);
+
+  // If the chosen company falls outside the current filters, fall back to all
+  // without mutating state mid-render.
+  const effectiveCompany =
+    company !== ALL_COMPANIES &&
+    !companies.some((c) => c.slug === company && inFilters(c))
+      ? ALL_COMPANIES
+      : company;
+
+  const filtered = companies.filter(
+    (c) =>
+      inFilters(c) && (effectiveCompany === ALL_COMPANIES || c.slug === effectiveCompany),
+  );
 
   const detailBySlug = React.useMemo(
     () => new Map(details.map((d) => [d.slug, d])),
@@ -198,8 +228,15 @@ export function ScreenerTable({
             <TabsTrigger value="utility">Utility / PSU</TabsTrigger>
           </TabsList>
         </Tabs>
-        {/* Listing-board filter: mainboard vs SME */}
-        <div className="flex items-center gap-2">
+        {/* Company picker + listing-board filter */}
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <Select
+            options={companyOptions}
+            value={effectiveCompany}
+            onChange={setCompany}
+            ariaLabel="Filter by company"
+            className="min-w-[11rem]"
+          />
           <span className="text-2xs font-medium uppercase tracking-wide text-muted-foreground">
             Listing
           </span>
