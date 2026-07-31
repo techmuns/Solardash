@@ -6,7 +6,11 @@ import { ArrowUpRight, Calculator, ChevronRight, FlaskConical, X } from "lucide-
 import { AnalysisTag } from "@/components/ui/AnalysisTag";
 import { Dialog } from "@/components/ui/Dialog";
 import { cn, formatDate } from "@/lib/utils";
-import type { CompanyValueCapture, StageIrr as StageIrrType } from "@/data/profit-pools";
+import type {
+  CompanyValueCapture,
+  InputProvenance,
+  StageIrr as StageIrrType,
+} from "@/data/profit-pools";
 
 /** As-of dates of the live-derived metric sources. */
 export interface IrrFreshness {
@@ -258,6 +262,8 @@ export interface IrrCalcSubject {
   note?: string;
   /** Closing provenance line. */
   footer: string;
+  /** Per-input "calculated vs sourced" trail. */
+  provenance: InputProvenance[];
 }
 
 /** Normalise a stage row into the dialog's subject shape. */
@@ -274,6 +280,7 @@ function stageSubject(row: StageIrrType): IrrCalcSubject {
     paybackYears: row.paybackYears,
     irrPct: row.irrPct,
     offChart: row.offChart,
+    provenance: row.provenance,
     marginNote:
       "The margin is FACT — from filings for India stages, agency benchmarks elsewhere.",
     source: row.source,
@@ -298,6 +305,7 @@ function companySubject(c: CompanyValueCapture): IrrCalcSubject {
     paybackYears: c.paybackYears,
     irrPct: c.irrPct,
     offChart: c.offChart,
+    provenance: c.provenance,
     marginNote: `${c.ebitdaMarginPct}% is ${c.name}'s own disclosed EBITDA margin (FACT, from its filings) — the only input that differs from the ${c.stageLabel} benchmark.`,
     source: "Company filings",
     confidence: "high",
@@ -345,22 +353,51 @@ function IrrCalcDialog({
       </div>
 
       <div className="min-h-0 overflow-y-auto px-5 py-4">
-        {/* Inputs */}
+        {/* Inputs — each one stated as calculated (with the formula) or sourced */}
         <h3 className="text-2xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-          Inputs
+          Inputs — where each number comes from
         </h3>
-        <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
-          {[
-            { k: "CapEx", v: `₹${row.capexPerW}/W` },
-            { k: "Price (revenue)", v: `₹${row.aspPerW}/W` },
-            { k: "EBITDA margin", v: `${row.ebitdaMarginPct}%` },
-            { k: "Utilisation", v: `${row.utilizationPct}%` },
-            { k: "Asset life", v: `${row.lifeYears} years` },
-            { k: "Salvage value", v: "₹0 (assumed)" },
-          ].map((i) => (
-            <div key={i.k} className="rounded-lg border border-border bg-card px-2.5 py-1.5">
-              <div className="text-sm font-semibold tabular-nums text-foreground">{i.v}</div>
-              <div className="text-2xs text-muted-foreground">{i.k}</div>
+        <div className="mt-2 flex flex-col gap-1.5">
+          {row.provenance.map((p) => (
+            <div key={p.label} className="rounded-lg border border-border bg-card px-3 py-2">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-xs font-semibold text-foreground">{p.label}</span>
+                  <span
+                    className={cn(
+                      "rounded px-1.5 py-px text-[9px] font-bold uppercase tracking-wide",
+                      p.kind === "calculated"
+                        ? "bg-brand/15 text-brand"
+                        : "bg-muted text-muted-foreground",
+                    )}
+                  >
+                    {p.kind}
+                  </span>
+                </span>
+                <span className="shrink-0 font-mono text-xs font-semibold tabular-nums text-foreground">
+                  {p.value}
+                </span>
+              </div>
+              {p.formula && (
+                <div className="mt-1 break-words font-mono text-[11px] leading-relaxed text-brand">
+                  {p.formula}
+                </div>
+              )}
+              {p.inputsFrom && (
+                <p className="mt-0.5 text-2xs leading-snug text-muted-foreground">
+                  <span className="font-medium text-foreground/70">Each term: </span>
+                  {p.inputsFrom}
+                </p>
+              )}
+              {p.source && (
+                <p className="mt-0.5 text-2xs leading-snug text-muted-foreground">
+                  <span className="font-medium text-foreground/70">Source: </span>
+                  {p.source}
+                </p>
+              )}
+              {p.note && (
+                <p className="mt-0.5 text-2xs leading-snug text-muted-foreground/80">{p.note}</p>
+              )}
             </div>
           ))}
         </div>

@@ -204,6 +204,27 @@ export function getProfitPools(): ProfitPools {
 export type ValueCaptureStage = "cell" | "module" | "generation";
 
 /** One value-chain stage's greenfield IRR (computed from live + config inputs). */
+/**
+ * Provenance of a single model input — states plainly whether the number is
+ * CALCULATED (with the formula, substituted with the actual values) or SOURCED
+ * (with the exact source it was taken from).
+ */
+export interface InputProvenance {
+  /** The input's label, e.g. `Price (revenue)`. */
+  label: string;
+  /** Formatted value as shown, e.g. `₹6.36/W`. */
+  value: string;
+  kind: "calculated" | "sourced";
+  /** Substituted arithmetic — calculated inputs only. */
+  formula?: string;
+  /** Where each term of the formula comes from — calculated inputs only. */
+  inputsFrom?: string;
+  /** The exact source — sourced inputs only. */
+  source?: string;
+  /** Extra context (unit conversion, the feed file, a caveat). */
+  note?: string;
+}
+
 export interface StageIrr {
   stage: string;
   region: string;
@@ -221,6 +242,8 @@ export interface StageIrr {
   source: string;
   confidence: string;
   note?: string;
+  /** Per-input "calculated vs sourced" trail for the IRR-calculation dialog. */
+  provenance: InputProvenance[];
 }
 
 /**
@@ -245,6 +268,8 @@ export interface CompanyValueCapture {
   paybackYears: number | null;
   irrPct: number | null;
   offChart?: boolean;
+  /** Per-input "calculated vs sourced" trail for the IRR-calculation dialog. */
+  provenance: InputProvenance[];
 }
 
 const round1c = (n: number) => Math.round(n * 10) / 10;
@@ -301,6 +326,132 @@ function derivePricePerW(
     default:
       return cfg.priceFallbackPerW;
   }
+}
+
+/**
+ * Explain how the price/W was reached — the same branch `derivePricePerW`
+ * takes, written out with the live inputs substituted, so the number on screen
+ * can be reproduced by hand.
+ */
+function priceProvenance(
+  cfg: StageIrrConfigRow,
+  fx: number,
+  priceSeries: Series[],
+  latestSolarTariff: number | null,
+  resultPerW: number,
+): InputProvenance {
+  const p = cfg.priceParam ?? 0;
+  const base = {
+    label: "Price (revenue)",
+    value: `₹${resultPerW}/W`,
+  };
+  const spot = (key: string, unit: string) => {
+    const s = priceSeries.find((x) => x.key === key);
+    const last = s?.points[s.points.length - 1];
+    return last ? { v: last.value, period: last.period, unit } : null;
+  };
+
+  switch (cfg.priceMode) {
+    case "stack:cell":
+    case "stack:module": {
+      const key = cfg.priceMode === "stack:cell" ? "cell" : "module";
+      const q = spot(key, "$/W");
+      if (!q)
+        return { ...base, kind: "sourced", source: `Fallback price (live ${key} spot unavailable)` };
+      return {
+        ...base,
+        kind: "calculated",
+        formula: `$${q.v}/W China ${key} spot × ₹${fx}/$ × ${p || 1} India premium = ₹${resultPerW}/W`,
+        inputsFrom: `${key} spot = latest point of the monthly PV price stack (${q.period}); FX = ₹${fx}/$ (model constant); premium ${p || 1}× from the stage config`,
+      };
+    }
+    case "stack:poly": {
+      const q = spot("poly", "$/kg");
+      if (!q) return { ...base, kind: "sourced", source: "Fallback price (live poly spot unavailable)" };
+      return {
+        ...base,
+        kind: "calculated",
+        formula: `$${q.v}/kg poly × ${p} g/W ÷ 1,000 × ₹${fx}/$ = ₹${resultPerW}/W`,
+        inputsFrom: `poly spot = latest point of the monthly PV price stack (${q.period}); ${p} g/W silicon intensity from the stage config; ÷1,000 converts g→kg`,
+      };
+    }
+    case "stack:wafer": {
+      const q = spot("wafer", "$/pc");
+      if (!q) return { ...base, kind: "sourced", source: "Fallback price (live wafer spot unavailable)" };
+      return {
+        ...base,
+        kind: "calculated",
+        formula: `$${q.v}/piece wafer ÷ ${p} W/piece × ₹${fx}/$ = ₹${resultPerW}/W`,
+        inputsFrom: `wafer spot = latest point of the monthly PV price stack (${q.period}); ${p} W/piece from the stage config`,
+      };
+    }
+    case "tariff": {
+      if (latestSolarTariff == null)
+        return { ...base, kind: "sourced", source: "Fallback price (no awarded solar tariff available)" };
+      return {
+        ...base,
+        kind: "calculated",
+        formula: `₹${latestSolarTariff}/kWh tariff × ${p}% CUF × 8,760 h ÷ 1,000 = ₹${resultPerW}/W/yr`,
+        inputsFrom: `tariff = latest capacity-weighted awarded solar tariff from the auction feed; ${p}% CUF from the stage config; 8,760 = hours in a year; ÷1,000 converts Wh→kWh`,
+        note: "This stage's price is an ANNUAL revenue per watt (a plant sells power every year), not a one-off sale price.",
+      };
+    }
+    default:
+      return {
+        ...base,
+        kind: "sourced",
+        source: `${cfg.source} — fixed price of ₹${cfg.priceFallbackPerW}/W`,
+      };
+  }
+}
+
+/** The full "calculated vs sourced" trail for one stage's five inputs. */
+function stageProvenance(
+  cfg: StageIrrConfigRow,
+  fx: number,
+  priceSeries: Series[],
+  latestSolarTariff: number | null,
+  aspPerW: number,
+): InputProvenance[] {
+  const feed = "manual-data/profit-pools/value-chain-irr.csv";
+  return [
+    {
+      label: "CapEx",
+      value: `₹${cfg.capexPerW}/W`,
+      kind: "sourced",
+      source: cfg.source,
+      note: `${cfg.note ? cfg.note + " " : ""}Maintained in ${feed}.`,
+    },
+    priceProvenance(cfg, fx, priceSeries, latestSolarTariff, aspPerW),
+    {
+      label: "EBITDA margin",
+      value: `${cfg.ebitdaMarginPct}%`,
+      kind: "sourced",
+      source: cfg.source,
+      note: `Representative pure-stage margin for ${cfg.stage} (${cfg.region}) — a FACT from filings / agency benchmarks, not derived here.`,
+    },
+    {
+      label: "Utilisation",
+      value: `${cfg.utilizationPct}%`,
+      kind: "sourced",
+      source: cfg.source,
+      note: `Assumed steady-state operating rate. Maintained in ${feed}.`,
+    },
+    {
+      label: "Asset life",
+      value: `${cfg.lifeYears} years`,
+      kind: "sourced",
+      source: cfg.source,
+      note: `Economic life used for the cash-flow horizon. Maintained in ${feed}.`,
+    },
+    {
+      label: "Salvage value",
+      value: "₹0",
+      kind: "sourced",
+      source: "Model assumption",
+      note: "No terminal value is credited — a deliberately conservative choice, so the IRR rests only on operating cash flow.",
+    },
+  ];
 }
 
 /** Solve payback + IRR for a per-W CapEx / annual-EBITDA / life triple. */
@@ -372,6 +523,7 @@ export function getValueChainIrr(): ValueChainIrr {
       source: cfg.source,
       confidence: cfg.confidence,
       ...(cfg.note ? { note: cfg.note } : {}),
+      provenance: stageProvenance(cfg, fx, priceSeries, latestSolarTariff, aspPerW),
     };
   });
 
@@ -419,6 +571,18 @@ export function getValueChainIrr(): ValueChainIrr {
       paybackYears: pb,
       irrPct,
       ...(offChart ? { offChart: true } : {}),
+      // Same stage model, but the margin is this company's own reported figure.
+      provenance: stageProvenance(cfg, fx, priceSeries, latestSolarTariff, aspPerW).map((row) =>
+        row.label === "EBITDA margin"
+          ? {
+              label: "EBITDA margin",
+              value: `${c.ebitdaMarginPct}%`,
+              kind: "sourced" as const,
+              source: `${c.name} company filings (registry: ebitda_margin_pct)`,
+              note: "The company's own reported EBITDA margin — the only input that differs from the stage benchmark.",
+            }
+          : row,
+      ),
     });
   }
   companies.sort(
