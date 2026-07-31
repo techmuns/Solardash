@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-30",
+  "asOf": "2026-07-31",
   "cadence": "quarterly",
   "coverage": "K2 Infragen",
   "data": {
@@ -34,7 +34,7 @@
       }
     ],
     "board": "NSE SME",
-    "cmp": 53.8,
+    "cmp": 54,
     "concall": {
       "date": "2026-05-27",
       "guidance": [
@@ -52,13 +52,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 12.4,
-    "evEbitdaX": 7.51,
+    "evEbitdaX": 7.53,
     "hasDetail": true,
-    "marketCapCr": 67.8,
+    "marketCapCr": 68.2,
     "name": "K2 Infragen",
     "orderBookCr": 424,
     "patFy26Cr": 13.3,
-    "peX": 5.1,
+    "peX": 5.13,
     "quarterly": [
       {
         "ebitda": 14,
@@ -90,10 +90,10 @@
     "tickerNse": "K2INFRA",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-07-30",
-      "evEbitdaX": 7.51,
+      "asOf": "2026-07-31",
+      "evEbitdaX": 7.53,
       "pbX": 0.76,
-      "peX": 5.1
+      "peX": 5.13
     }
   },
   "dataset": "detail/k2-infragen",
@@ -103,10 +103,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-30",
+      "asOf": "2026-07-31",
       "confidence": "high",
       "name": "NSE Emerge (SME)"
     }
   ],
-  "updatedAt": "2026-07-30"
+  "updatedAt": "2026-07-31"
 }
