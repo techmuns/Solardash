@@ -100,14 +100,6 @@
   ],
   "quarterly": [
     {
-      "period": "Q4FY23",
-      "revenue": 12454,
-      "ebitda": 1928,
-      "ebitdaMarginPct": 15,
-      "pat": 939,
-      "patMarginPct": 7.54
-    },
-    {
       "period": "Q1FY24",
       "revenue": 15213,
       "ebitda": 2713,
@@ -202,21 +194,30 @@
       "ebitdaMarginPct": 17,
       "pat": 1416,
       "patMarginPct": 9.5
+    },
+    {
+      "period": "Q1FY27",
+      "revenue": 19051,
+      "ebitda": 3860,
+      "ebitdaMarginPct": 20,
+      "pat": 1401,
+      "patMarginPct": 7.35
     }
   ],
   "valuation": {
-    "peX": 31.4,
-    "pbX": 3.05,
-    "cmp": 378
+    "peX": 31.1,
+    "pbX": 3.07,
+    "cmp": 381,
+    "marketCapCr": 121647
   },
   "rocePct": 10.5,
   "roePct": 10.2,
   "shareholding": {
     "promoterPct": 46.86,
-    "fiiPct": 10.04,
-    "diiPct": 17.98,
-    "publicPct": 24.81,
-    "asOf": "2026-03-31"
+    "fiiPct": 10.03,
+    "diiPct": 18.12,
+    "publicPct": 24.66,
+    "asOf": "2026-06-30"
   },
-  "asOf": "2026-03-31"
+  "asOf": "2026-06-30"
 }

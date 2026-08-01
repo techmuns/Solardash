@@ -5,30 +5,34 @@
   "data": {
     "annual": [
       {
-        "ebitda": 1,
-        "ebitdaMarginPct": 4,
+        "ebitda": 2,
+        "ebitdaMarginPct": 4.2,
+        "epsRs": 7.12,
         "pat": 1,
         "period": "FY23",
-        "revenue": 34
+        "revenue": 52
       },
       {
         "ebitda": 11,
-        "ebitdaMarginPct": 14,
-        "pat": 8,
+        "ebitdaMarginPct": 13,
+        "epsRs": 79.28,
+        "pat": 10,
         "period": "FY24",
-        "revenue": 76
+        "revenue": 90
       },
       {
-        "ebitda": 10,
-        "ebitdaMarginPct": 12,
+        "ebitda": 9,
+        "ebitdaMarginPct": 11,
+        "epsRs": 6.68,
         "pat": 7,
         "period": "FY25",
-        "revenue": 80
+        "revenue": 84
       },
       {
-        "ebitda": 15.99,
+        "ebitda": 16,
         "ebitdaMarginPct": 13,
-        "pat": 13.6,
+        "epsRs": 9.5,
+        "pat": 14,
         "period": "FY26",
         "revenue": 123
       }
@@ -56,22 +60,32 @@
     "hasDetail": true,
     "marketCapCr": 243,
     "name": "GRE Renew Enertech",
-    "patFy26Cr": 13.6,
+    "patFy26Cr": 14,
     "peX": 17.9,
     "quarterly": [
       {
+        "ebitda": 5,
+        "ebitdaMarginPct": 11,
         "pat": 4,
         "patMarginPct": 9.09,
-        "period": "H1FY26",
+        "period": "Q4FY25",
         "revenue": 44
       },
       {
-        "ebitda": 10,
-        "ebitdaMarginPct": 13.5,
-        "pat": 8,
-        "patMarginPct": 10.81,
-        "period": "H2FY26",
-        "revenue": 74
+        "ebitda": 6,
+        "ebitdaMarginPct": 13,
+        "pat": 4,
+        "patMarginPct": 9.09,
+        "period": "Q2FY26",
+        "revenue": 44
+      },
+      {
+        "ebitda": 11,
+        "ebitdaMarginPct": 13,
+        "pat": 10,
+        "patMarginPct": 12.66,
+        "period": "Q4FY26",
+        "revenue": 79
       }
     ],
     "revenueFy26Cr": 123,

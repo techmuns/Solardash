@@ -5,8 +5,65 @@
   "data": {
     "annual": [
       {
+        "ebitda": 5,
+        "ebitdaMarginPct": 18,
+        "epsRs": 1.51,
+        "pat": 3,
+        "period": "FY15",
+        "revenue": 27
+      },
+      {
+        "ebitda": 10,
+        "ebitdaMarginPct": 23,
+        "epsRs": 0.78,
+        "pat": 5,
+        "period": "FY16",
+        "revenue": 41
+      },
+      {
+        "ebitda": 29,
+        "ebitdaMarginPct": 26,
+        "epsRs": 2.53,
+        "pat": 17,
+        "period": "FY17",
+        "revenue": 111
+      },
+      {
+        "ebitda": 10,
+        "ebitdaMarginPct": 17,
+        "epsRs": 0.28,
+        "pat": 2,
+        "period": "FY18",
+        "revenue": 60
+      },
+      {
+        "ebitda": 33,
+        "ebitdaMarginPct": 21,
+        "epsRs": 2.92,
+        "pat": 19,
+        "period": "FY19",
+        "revenue": 158
+      },
+      {
+        "ebitda": 11,
+        "ebitdaMarginPct": 14,
+        "epsRs": 0.17,
+        "pat": 1,
+        "period": "FY20",
+        "revenue": 75
+      },
+      {
+        "ebitda": 18,
+        "ebitdaMarginPct": 25,
+        "epsRs": 0.91,
+        "pat": 6,
+        "period": "FY21",
+        "revenue": 72
+      },
+      {
         "ebitda": 34,
-        "ebitdaMarginPct": 13.6,
+        "ebitdaMarginPct": 14,
+        "epsRs": 2.74,
         "pat": 18,
         "period": "FY22",
         "revenue": 250
@@ -14,6 +71,7 @@
       {
         "ebitda": 70,
         "ebitdaMarginPct": 16,
+        "epsRs": 6.58,
         "pat": 44,
         "period": "FY23",
         "revenue": 438
@@ -21,20 +79,23 @@
       {
         "ebitda": 85,
         "ebitdaMarginPct": 18,
+        "epsRs": 8.74,
         "pat": 58,
         "period": "FY24",
         "revenue": 471
       },
       {
         "ebitda": 176,
-        "ebitdaMarginPct": 18.8,
+        "ebitdaMarginPct": 19,
+        "epsRs": 17.29,
         "pat": 115,
         "period": "FY25",
         "revenue": 936
       },
       {
-        "ebitda": 320.36,
-        "ebitdaMarginPct": 21.4,
+        "ebitda": 320,
+        "ebitdaMarginPct": 21,
+        "epsRs": 26.84,
         "pat": 181,
         "period": "FY26",
         "revenue": 1497
@@ -58,7 +119,7 @@
       "source": "Q4 FY26 earnings call (12 May 2026, Share India Securities); SolarQuarter results release"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 21.4,
+    "ebitdaMarginPct": 21,
     "evEbitdaX": 7.88,
     "hasDetail": true,
     "marketCapCr": 2080,
@@ -69,7 +130,72 @@
     "peX": 11.5,
     "quarterly": [
       {
+        "ebitda": 23,
+        "ebitdaMarginPct": 15,
+        "pat": 15,
+        "patMarginPct": 10.14,
+        "period": "Q4FY23",
+        "revenue": 148
+      },
+      {
+        "ebitda": 21,
+        "ebitdaMarginPct": 19,
+        "pat": 15,
+        "patMarginPct": 13.27,
+        "period": "Q1FY24",
+        "revenue": 113
+      },
+      {
+        "ebitda": 16,
+        "ebitdaMarginPct": 23,
+        "pat": 8,
+        "patMarginPct": 11.43,
+        "period": "Q2FY24",
+        "revenue": 70
+      },
+      {
+        "ebitda": 17,
+        "ebitdaMarginPct": 21,
+        "pat": 9,
+        "patMarginPct": 10.98,
+        "period": "Q3FY24",
+        "revenue": 82
+      },
+      {
+        "ebitda": 30,
+        "ebitdaMarginPct": 15,
+        "pat": 25,
+        "patMarginPct": 12.08,
+        "period": "Q4FY24",
+        "revenue": 207
+      },
+      {
+        "ebitda": 22,
+        "ebitdaMarginPct": 18,
+        "pat": 18,
+        "patMarginPct": 14.17,
+        "period": "Q1FY25",
+        "revenue": 127
+      },
+      {
+        "ebitda": 40,
+        "ebitdaMarginPct": 20,
+        "pat": 25,
+        "patMarginPct": 12.56,
+        "period": "Q2FY25",
+        "revenue": 199
+      },
+      {
+        "ebitda": 43,
+        "ebitdaMarginPct": 20,
+        "pat": 26,
+        "patMarginPct": 12.26,
+        "period": "Q3FY25",
+        "revenue": 212
+      },
+      {
         "ebitda": 70,
+        "ebitdaMarginPct": 18,
         "pat": 46,
         "patMarginPct": 11.47,
         "period": "Q4FY25",
@@ -77,6 +203,7 @@
       },
       {
         "ebitda": 48,
+        "ebitdaMarginPct": 22,
         "pat": 25,
         "patMarginPct": 11.42,
         "period": "Q1FY26",
@@ -84,6 +211,7 @@
       },
       {
         "ebitda": 66,
+        "ebitdaMarginPct": 22,
         "pat": 36,
         "patMarginPct": 11.96,
         "period": "Q2FY26",
@@ -91,6 +219,7 @@
       },
       {
         "ebitda": 75,
+        "ebitdaMarginPct": 22,
         "pat": 41,
         "patMarginPct": 11.88,
         "period": "Q3FY26",
@@ -98,6 +227,7 @@
       },
       {
         "ebitda": 131,
+        "ebitdaMarginPct": 21,
         "pat": 79,
         "patMarginPct": 12.5,
         "period": "Q4FY26",
@@ -107,10 +237,10 @@
     "revenueFy26Cr": 1497,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 1,
-      "fiiPct": 0.7,
-      "promoterPct": 45.4,
-      "publicPct": 52.9
+      "diiPct": 1.03,
+      "fiiPct": 0.53,
+      "promoterPct": 45.31,
+      "publicPct": 53.14
     },
     "slug": "kp-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

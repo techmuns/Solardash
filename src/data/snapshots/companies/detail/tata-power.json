@@ -131,14 +131,6 @@
     "peX": 31.1,
     "quarterly": [
       {
-        "ebitda": 1928,
-        "ebitdaMarginPct": 15,
-        "pat": 939,
-        "patMarginPct": 7.54,
-        "period": "Q4FY23",
-        "revenue": 12454
-      },
-      {
         "ebitda": 2713,
         "ebitdaMarginPct": 18,
         "pat": 1141,
@@ -233,15 +225,23 @@
         "patMarginPct": 9.5,
         "period": "Q4FY26",
         "revenue": 14900
+      },
+      {
+        "ebitda": 3860,
+        "ebitdaMarginPct": 20,
+        "pat": 1401,
+        "patMarginPct": 7.35,
+        "period": "Q1FY27",
+        "revenue": 19051
       }
     ],
     "revenueFy26Cr": 62429,
     "shareholding": {
-      "asOf": "2026-03-31",
-      "diiPct": 17.98,
-      "fiiPct": 10.04,
+      "asOf": "2026-06-30",
+      "diiPct": 18.12,
+      "fiiPct": 10.03,
       "promoterPct": 46.86,
-      "publicPct": 24.81
+      "publicPct": 24.66
     },
     "slug": "tata-power",
     "sourceNote": "Company filings (aggregated)",

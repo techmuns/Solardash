@@ -2,43 +2,87 @@
   "slug": "emmvee-photovoltaic",
   "annual": [
     {
+      "period": "FY20",
+      "revenue": 555,
+      "ebitda": 105,
+      "ebitdaMarginPct": 19,
+      "pat": 14,
+      "epsRs": 12.61
+    },
+    {
+      "period": "FY21",
+      "revenue": 424,
+      "ebitda": 113,
+      "ebitdaMarginPct": 27,
+      "pat": 9,
+      "epsRs": 8.63
+    },
+    {
       "period": "FY22",
       "revenue": 555,
       "ebitda": 104,
-      "ebitdaMarginPct": 18.7,
-      "pat": 13
+      "ebitdaMarginPct": 19,
+      "pat": 13,
+      "epsRs": 12.62
     },
     {
       "period": "FY23",
       "revenue": 618,
       "ebitda": 56,
-      "ebitdaMarginPct": 9.1,
-      "pat": 9
+      "ebitdaMarginPct": 9,
+      "pat": 9,
+      "epsRs": 8.28
     },
     {
       "period": "FY24",
       "revenue": 952,
       "ebitda": 120,
-      "ebitdaMarginPct": 12.6,
-      "pat": 29
+      "ebitdaMarginPct": 13,
+      "pat": 29,
+      "epsRs": 26.78
     },
     {
       "period": "FY25",
       "revenue": 2336,
       "ebitda": 722,
-      "ebitdaMarginPct": 30.9,
-      "pat": 369
+      "ebitdaMarginPct": 31,
+      "pat": 369,
+      "epsRs": 68.39
     },
     {
       "period": "FY26",
       "revenue": 5050,
-      "ebitda": 1732.15,
-      "ebitdaMarginPct": 34.3,
+      "ebitda": 1734,
+      "ebitdaMarginPct": 34,
       "pat": 1082,
       "epsRs": 15.62
     }
   ],
   "quarterly": [
+    {
+      "period": "Q2FY25",
+      "revenue": 402,
+      "ebitda": 93,
+      "ebitdaMarginPct": 23,
+      "pat": 35,
+      "patMarginPct": 8.71
+    },
+    {
+      "period": "Q3FY25",
+      "revenue": 528,
+      "ebitda": 202,
+      "ebitdaMarginPct": 38,
+      "pat": 99,
+      "patMarginPct": 18.75
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 1072,
+      "ebitda": 361,
+      "ebitdaMarginPct": 34,
+      "pat": 207,
+      "patMarginPct": 19.31
+    },
     {
       "period": "Q1FY26",
       "revenue": 1028,
@@ -51,7 +95,7 @@
       "period": "Q2FY26",
       "revenue": 1131,
       "ebitda": 399,
-      "ebitdaMarginPct": 35.3,
+      "ebitdaMarginPct": 35,
       "pat": 238,
       "patMarginPct": 21.04
     },
@@ -59,7 +103,7 @@
       "period": "Q3FY26",
       "revenue": 1152,
       "ebitda": 413,
-      "ebitdaMarginPct": 35.9,
+      "ebitdaMarginPct": 36,
       "pat": 264,
       "patMarginPct": 22.92
     },
@@ -67,26 +111,33 @@
       "period": "Q4FY26",
       "revenue": 1739,
       "ebitda": 571,
-      "ebitdaMarginPct": 32.8,
+      "ebitdaMarginPct": 33,
       "pat": 392,
       "patMarginPct": 22.54
+    },
+    {
+      "period": "Q1FY27",
+      "revenue": 1556,
+      "ebitda": 548,
+      "ebitdaMarginPct": 35,
+      "pat": 380,
+      "patMarginPct": 24.42
     }
   ],
   "valuation": {
-    "peX": 21,
-    "pbX": 6.1,
-    "evEbitdaX": 13.3,
-    "cmp": 328,
-    "marketCapCr": 22725
+    "peX": 17.3,
+    "pbX": 5.96,
+    "cmp": 318,
+    "marketCapCr": 21989
   },
   "rocePct": 44.8,
   "roePct": 51.1,
   "shareholding": {
     "promoterPct": 80.03,
-    "fiiPct": 2.45,
-    "diiPct": 12.28,
-    "publicPct": 5.24,
-    "asOf": "2026-03-31"
+    "fiiPct": 2.92,
+    "diiPct": 9.8,
+    "publicPct": 7.24,
+    "asOf": "2026-06-30"
   },
-  "asOf": "2026-03-31"
+  "asOf": "2026-06-30"
 }

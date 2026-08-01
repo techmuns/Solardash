@@ -6,7 +6,7 @@
     "annual": [
       {
         "ebitda": 11,
-        "ebitdaMarginPct": 6.8,
+        "ebitdaMarginPct": 7,
         "epsRs": 2.71,
         "pat": 3,
         "period": "FY23",
@@ -14,7 +14,7 @@
       },
       {
         "ebitda": 28,
-        "ebitdaMarginPct": 7.7,
+        "ebitdaMarginPct": 8,
         "epsRs": 8.73,
         "pat": 9,
         "period": "FY24",
@@ -29,12 +29,12 @@
         "revenue": 662
       },
       {
-        "ebitda": 184.79,
-        "ebitdaMarginPct": 11.4,
+        "ebitda": 184,
+        "ebitdaMarginPct": 11,
         "epsRs": 88.88,
         "pat": 98,
         "period": "FY26",
-        "revenue": 1621
+        "revenue": 1618
       }
     ],
     "cellGw": 1,
@@ -57,7 +57,7 @@
       "source": "Q4 FY26 earnings call (ScanX / SolarQuarter)"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 11.4,
+    "ebitdaMarginPct": 11,
     "evEbitdaX": 7.19,
     "hasDetail": true,
     "marketCapCr": 984,
@@ -68,8 +68,32 @@
     "peX": 10.3,
     "quarterly": [
       {
+        "ebitda": 14,
+        "ebitdaMarginPct": 11,
+        "pat": 9,
+        "patMarginPct": 6.82,
+        "period": "Q2FY25",
+        "revenue": 132
+      },
+      {
+        "ebitda": 24,
+        "ebitdaMarginPct": 18,
+        "pat": 14,
+        "patMarginPct": 10.37,
+        "period": "Q3FY25",
+        "revenue": 135
+      },
+      {
+        "ebitda": 28,
+        "ebitdaMarginPct": 11,
+        "pat": 15,
+        "patMarginPct": 5.91,
+        "period": "Q4FY25",
+        "revenue": 254
+      },
+      {
         "ebitda": 41,
-        "ebitdaMarginPct": 15.8,
+        "ebitdaMarginPct": 16,
         "pat": 25,
         "patMarginPct": 9.62,
         "period": "Q1FY26",
@@ -77,7 +101,7 @@
       },
       {
         "ebitda": 19,
-        "ebitdaMarginPct": 12.3,
+        "ebitdaMarginPct": 12,
         "pat": 6,
         "patMarginPct": 3.87,
         "period": "Q2FY26",
@@ -85,7 +109,7 @@
       },
       {
         "ebitda": 26,
-        "ebitdaMarginPct": 8.2,
+        "ebitdaMarginPct": 8,
         "pat": 9,
         "patMarginPct": 2.83,
         "period": "Q3FY26",
@@ -93,20 +117,20 @@
       },
       {
         "ebitda": 98,
-        "ebitdaMarginPct": 11.1,
+        "ebitdaMarginPct": 11,
         "pat": 59,
         "patMarginPct": 6.66,
         "period": "Q4FY26",
         "revenue": 886
       }
     ],
-    "revenueFy26Cr": 1621,
+    "revenueFy26Cr": 1618,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 0.81,
-      "fiiPct": 0.13,
+      "diiPct": 0.51,
+      "fiiPct": 0.07,
       "promoterPct": 66.15,
-      "publicPct": 32.91
+      "publicPct": 33.26
     },
     "slug": "solex-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

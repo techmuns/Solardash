@@ -5,30 +5,18 @@
   "data": {
     "annual": [
       {
-        "ebitda": 10,
-        "ebitdaMarginPct": 17,
-        "pat": 6,
-        "period": "FY23",
-        "revenue": 61
-      },
-      {
-        "ebitda": 13,
-        "ebitdaMarginPct": 20,
-        "pat": 7,
-        "period": "FY24",
-        "revenue": 64
-      },
-      {
         "ebitda": 27,
         "ebitdaMarginPct": 18,
+        "epsRs": 15.57,
         "pat": 17,
         "period": "FY25",
         "revenue": 153
       },
       {
-        "ebitda": 31.98,
-        "ebitdaMarginPct": 19.5,
-        "pat": 18.8,
+        "ebitda": 32,
+        "ebitdaMarginPct": 19,
+        "epsRs": 15.36,
+        "pat": 19,
         "period": "FY26",
         "revenue": 164
       }
@@ -51,30 +39,38 @@
       "source": "H2 & FY26 results + earnings call, 16 May 2026"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 19.5,
+    "ebitdaMarginPct": 19,
     "evEbitdaX": 5.69,
     "hasDetail": true,
     "marketCapCr": 107,
     "name": "Kay Cee Energy & Infra",
     "orderBookCr": 537,
-    "patFy26Cr": 18.8,
+    "patFy26Cr": 19,
     "peX": 5.69,
     "quarterly": [
       {
-        "ebitda": 16.1,
-        "ebitdaMarginPct": 19.2,
-        "pat": 9.2,
-        "patMarginPct": 10.95,
-        "period": "H1FY26",
-        "revenue": 84
+        "ebitda": 19,
+        "ebitdaMarginPct": 17,
+        "pat": 12,
+        "patMarginPct": 10.43,
+        "period": "Q4FY25",
+        "revenue": 115
       },
       {
-        "ebitda": 17,
-        "ebitdaMarginPct": 20.8,
-        "pat": 9.6,
-        "patMarginPct": 11.76,
-        "period": "H2FY26",
-        "revenue": 81.6
+        "ebitda": 15,
+        "ebitdaMarginPct": 18,
+        "pat": 9,
+        "patMarginPct": 10.84,
+        "period": "Q2FY26",
+        "revenue": 83
+      },
+      {
+        "ebitda": 16,
+        "ebitdaMarginPct": 20,
+        "pat": 10,
+        "patMarginPct": 12.35,
+        "period": "Q4FY26",
+        "revenue": 81
       }
     ],
     "revenueFy26Cr": 164,

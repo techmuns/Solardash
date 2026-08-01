@@ -66,11 +66,11 @@
         "epsRs": 6.15,
         "pat": 973,
         "period": "FY23",
-        "revenue": 7776
+        "revenue": 7792
       },
       {
-        "ebitda": 7339,
-        "ebitdaMarginPct": 80,
+        "ebitda": 7318,
+        "ebitdaMarginPct": 79,
         "epsRs": 6.94,
         "pat": 1260,
         "period": "FY24",
@@ -119,14 +119,6 @@
     "patFy26Cr": 1987,
     "peX": 117,
     "quarterly": [
-      {
-        "ebitda": 2264,
-        "ebitdaMarginPct": 87,
-        "pat": 507,
-        "patMarginPct": 19.52,
-        "period": "Q4FY23",
-        "revenue": 2598
-      },
       {
         "ebitda": 2081,
         "ebitdaMarginPct": 96,
@@ -222,15 +214,23 @@
         "patMarginPct": 14.68,
         "period": "Q4FY26",
         "revenue": 3502
+      },
+      {
+        "ebitda": 3985,
+        "ebitdaMarginPct": 90,
+        "pat": 983,
+        "patMarginPct": 22.18,
+        "period": "Q1FY27",
+        "revenue": 4431
       }
     ],
     "revenueFy26Cr": 12928,
     "shareholding": {
-      "asOf": "2026-03-31",
-      "diiPct": 4.56,
-      "fiiPct": 11.1,
-      "promoterPct": 62.44,
-      "publicPct": 21.92
+      "asOf": "2026-06-30",
+      "diiPct": 4.82,
+      "fiiPct": 11.84,
+      "promoterPct": 62.43,
+      "publicPct": 20.9
     },
     "slug": "adani-green",
     "sourceNote": "Company filings (aggregated)",

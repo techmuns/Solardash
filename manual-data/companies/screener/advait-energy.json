@@ -2,10 +2,34 @@
   "slug": "advait-energy",
   "annual": [
     {
+      "period": "FY19",
+      "revenue": 28,
+      "ebitda": 4,
+      "ebitdaMarginPct": 14,
+      "pat": 2,
+      "epsRs": 2.8
+    },
+    {
+      "period": "FY20",
+      "revenue": 45,
+      "ebitda": 4,
+      "ebitdaMarginPct": 10,
+      "pat": 1,
+      "epsRs": 0.72
+    },
+    {
+      "period": "FY21",
+      "revenue": 66,
+      "ebitda": 5,
+      "ebitdaMarginPct": 7,
+      "pat": 5,
+      "epsRs": 4.68
+    },
+    {
       "period": "FY22",
       "revenue": 79,
       "ebitda": 10,
-      "ebitdaMarginPct": 12.7,
+      "ebitdaMarginPct": 13,
       "pat": 5,
       "epsRs": 5.22
     },
@@ -13,7 +37,7 @@
       "period": "FY23",
       "revenue": 104,
       "ebitda": 17,
-      "ebitdaMarginPct": 16.3,
+      "ebitdaMarginPct": 16,
       "pat": 8,
       "epsRs": 8.27
     },
@@ -21,7 +45,7 @@
       "period": "FY24",
       "revenue": 209,
       "ebitda": 36,
-      "ebitdaMarginPct": 17.2,
+      "ebitdaMarginPct": 17,
       "pat": 22,
       "epsRs": 21.45
     },
@@ -36,18 +60,74 @@
     {
       "period": "FY26",
       "revenue": 715,
-      "ebitda": 83.66,
-      "ebitdaMarginPct": 11.7,
+      "ebitda": 84,
+      "ebitdaMarginPct": 12,
       "pat": 55,
       "epsRs": 47.26
     }
   ],
   "quarterly": [
     {
+      "period": "Q4FY23",
+      "revenue": 41,
+      "ebitda": 6,
+      "ebitdaMarginPct": 15,
+      "pat": 4,
+      "patMarginPct": 9.76
+    },
+    {
+      "period": "Q1FY24",
+      "revenue": 27,
+      "ebitda": 4,
+      "ebitdaMarginPct": 13,
+      "pat": 1,
+      "patMarginPct": 3.7
+    },
+    {
+      "period": "Q2FY24",
+      "revenue": 49,
+      "ebitda": 9,
+      "ebitdaMarginPct": 18,
+      "pat": 6,
+      "patMarginPct": 12.24
+    },
+    {
+      "period": "Q3FY24",
+      "revenue": 73,
+      "ebitda": 12,
+      "ebitdaMarginPct": 17,
+      "pat": 8,
+      "patMarginPct": 10.96
+    },
+    {
+      "period": "Q4FY24",
+      "revenue": 60,
+      "ebitda": 11,
+      "ebitdaMarginPct": 19,
+      "pat": 7,
+      "patMarginPct": 11.67
+    },
+    {
+      "period": "Q1FY25",
+      "revenue": 60,
+      "ebitda": 8,
+      "ebitdaMarginPct": 13,
+      "pat": 5,
+      "patMarginPct": 8.33
+    },
+    {
+      "period": "Q2FY25",
+      "revenue": 46,
+      "ebitda": 9,
+      "ebitdaMarginPct": 18,
+      "pat": 4,
+      "patMarginPct": 8.7
+    },
+    {
       "period": "Q3FY25",
       "revenue": 98,
       "ebitda": 15,
-      "ebitdaMarginPct": 15.3,
+      "ebitdaMarginPct": 16,
       "pat": 10,
       "patMarginPct": 10.2
     },
@@ -55,7 +135,7 @@
       "period": "Q4FY25",
       "revenue": 193,
       "ebitda": 19,
-      "ebitdaMarginPct": 9.8,
+      "ebitdaMarginPct": 10,
       "pat": 13,
       "patMarginPct": 6.74
     },
@@ -63,7 +143,7 @@
       "period": "Q1FY26",
       "revenue": 118,
       "ebitda": 14,
-      "ebitdaMarginPct": 11.9,
+      "ebitdaMarginPct": 12,
       "pat": 9,
       "patMarginPct": 7.63
     },
@@ -71,7 +151,7 @@
       "period": "Q2FY26",
       "revenue": 157,
       "ebitda": 17,
-      "ebitdaMarginPct": 10.8,
+      "ebitdaMarginPct": 11,
       "pat": 10,
       "patMarginPct": 6.37
     },
@@ -79,7 +159,7 @@
       "period": "Q3FY26",
       "revenue": 211,
       "ebitda": 24,
-      "ebitdaMarginPct": 11.4,
+      "ebitdaMarginPct": 11,
       "pat": 17,
       "patMarginPct": 8.06
     },
@@ -87,25 +167,24 @@
       "period": "Q4FY26",
       "revenue": 228,
       "ebitda": 29,
-      "ebitdaMarginPct": 12.7,
+      "ebitdaMarginPct": 13,
       "pat": 19,
       "patMarginPct": 8.33
     }
   ],
   "valuation": {
-    "peX": 44.9,
-    "pbX": 8.37,
-    "evEbitdaX": 28.6,
-    "cmp": 2127,
-    "marketCapCr": 2324
+    "peX": 48.9,
+    "pbX": 9.1,
+    "cmp": 2311,
+    "marketCapCr": 2528
   },
   "rocePct": 27.9,
   "roePct": 21.5,
   "shareholding": {
-    "promoterPct": 66.8,
-    "fiiPct": 0.21,
-    "diiPct": 0.13,
-    "publicPct": 32.84,
+    "promoterPct": 66.52,
+    "fiiPct": 0.68,
+    "diiPct": 0.04,
+    "publicPct": 32.77,
     "asOf": "2026-03-31"
   },
   "asOf": "2026-03-31"

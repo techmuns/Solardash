@@ -2,58 +2,51 @@
   "slug": "ujaas-energy",
   "annual": [
     {
-      "period": "FY25",
-      "revenue": 26.94,
-      "ebitda": 11.83,
-      "ebitdaMarginPct": 43.9,
-      "pat": 8.85
+      "period": "FY15",
+      "revenue": 111,
+      "ebitda": 43,
+      "ebitdaMarginPct": 39,
+      "pat": 12,
+      "epsRs": 0.09
     },
     {
-      "period": "FY26",
-      "revenue": 16.6,
-      "ebitda": 5.44,
-      "ebitdaMarginPct": 32.8,
-      "pat": 3.2
+      "period": "FY16",
+      "revenue": 277,
+      "ebitda": 63,
+      "ebitdaMarginPct": 23,
+      "pat": 20,
+      "epsRs": 0.16
+    },
+    {
+      "period": "FY17",
+      "revenue": 486,
+      "ebitda": 72,
+      "ebitdaMarginPct": 15,
+      "pat": 36,
+      "epsRs": 0.29
+    },
+    {
+      "period": "FY18",
+      "revenue": 334,
+      "ebitda": 41,
+      "ebitdaMarginPct": 12,
+      "pat": 17,
+      "epsRs": 0.13
     }
   ],
-  "quarterly": [
-    {
-      "period": "Q1FY26",
-      "revenue": 2.65,
-      "pat": 2.49,
-      "patMarginPct": 93.96
-    },
-    {
-      "period": "Q2FY26",
-      "revenue": 4.86,
-      "pat": 0.1,
-      "patMarginPct": 2.06
-    },
-    {
-      "period": "Q3FY26",
-      "revenue": 3.49,
-      "pat": 0.16,
-      "patMarginPct": 4.58
-    },
-    {
-      "period": "Q4FY26",
-      "revenue": 5.64,
-      "pat": 0.42,
-      "patMarginPct": 7.45
-    }
-  ],
+  "quarterly": [],
   "valuation": {
-    "peX": 540,
-    "pbX": 19.2,
-    "cmp": 128,
-    "marketCapCr": 1707
+    "peX": 123,
+    "pbX": 90.06,
+    "cmp": 154,
+    "marketCapCr": 2051
   },
+  "rocePct": 10.6,
+  "roePct": 8.03,
   "shareholding": {
     "promoterPct": 74.96,
-    "fiiPct": 0,
-    "diiPct": 0,
-    "publicPct": 25.03,
-    "asOf": "2026-03-31"
+    "publicPct": 25.04,
+    "asOf": "2018-03-31"
   },
-  "asOf": "2026-03-31"
+  "asOf": "2018-03-31"
 }

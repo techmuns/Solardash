@@ -5,15 +5,71 @@
   "data": {
     "annual": [
       {
-        "ebitda": 902,
-        "ebitdaMarginPct": 13.7,
+        "ebitda": -5749,
+        "ebitdaMarginPct": -29,
+        "epsRs": -19.95,
+        "pat": -9133,
+        "period": "FY15",
+        "revenue": 19954
+      },
+      {
+        "ebitda": -283,
+        "ebitdaMarginPct": -3,
+        "epsRs": 0.94,
+        "pat": 583,
+        "period": "FY16",
+        "revenue": 9483
+      },
+      {
+        "ebitda": 2479,
+        "ebitdaMarginPct": 20,
+        "epsRs": 1.38,
+        "pat": 852,
+        "period": "FY17",
+        "revenue": 12714
+      },
+      {
+        "ebitda": 977,
+        "ebitdaMarginPct": 12,
+        "epsRs": -0.57,
+        "pat": -384,
+        "period": "FY18",
+        "revenue": 8116
+      },
+      {
+        "ebitda": -23,
+        "ebitdaMarginPct": -0.5,
+        "epsRs": -2.32,
+        "pat": -1537,
+        "period": "FY19",
+        "revenue": 5025
+      },
+      {
+        "ebitda": -856,
+        "ebitdaMarginPct": -29,
+        "epsRs": -4.01,
+        "pat": -2692,
+        "period": "FY20",
+        "revenue": 2973
+      },
+      {
+        "ebitda": 537,
+        "ebitdaMarginPct": 16,
+        "epsRs": 0.1,
+        "pat": 104,
+        "period": "FY21",
+        "revenue": 3346
+      },
+      {
+        "ebitda": 900,
+        "ebitdaMarginPct": 14,
         "epsRs": -0.17,
         "pat": -177,
         "period": "FY22",
         "revenue": 6582
       },
       {
-        "ebitda": 836,
+        "ebitda": 833,
         "ebitdaMarginPct": 14,
         "epsRs": 2.28,
         "pat": 2887,
@@ -21,24 +77,24 @@
         "revenue": 5971
       },
       {
-        "ebitda": 1038,
-        "ebitdaMarginPct": 15.9,
+        "ebitda": 1037,
+        "ebitdaMarginPct": 16,
         "epsRs": 0.49,
         "pat": 660,
         "period": "FY24",
         "revenue": 6529
       },
       {
-        "ebitda": 1862,
-        "ebitdaMarginPct": 17.1,
+        "ebitda": 1863,
+        "ebitdaMarginPct": 17,
         "epsRs": 1.53,
         "pat": 2072,
         "period": "FY25",
         "revenue": 10890
       },
       {
-        "ebitda": 3028.49,
-        "ebitdaMarginPct": 18.1,
+        "ebitda": 3022,
+        "ebitdaMarginPct": 18,
         "epsRs": 2.33,
         "pat": 3163,
         "period": "FY26",
@@ -64,7 +120,7 @@
       "source": "Suzlon Q4 FY26 results/concall, ~May 25 2026; Yahoo Finance, DSIJ, Angel One, sahi.com"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 18.1,
+    "ebitdaMarginPct": 18,
     "evEbitdaX": 21.86,
     "hasDetail": true,
     "marketCapCr": 65427,
@@ -74,61 +130,117 @@
     "peX": 20.8,
     "quarterly": [
       {
+        "ebitda": 199,
+        "ebitdaMarginPct": 15,
+        "pat": 101,
+        "patMarginPct": 7.48,
+        "period": "Q1FY24",
+        "revenue": 1351
+      },
+      {
+        "ebitda": 225,
+        "ebitdaMarginPct": 16,
+        "pat": 102,
+        "patMarginPct": 7.18,
+        "period": "Q2FY24",
+        "revenue": 1421
+      },
+      {
+        "ebitda": 248,
+        "ebitdaMarginPct": 16,
+        "pat": 203,
+        "patMarginPct": 13.01,
+        "period": "Q3FY24",
+        "revenue": 1560
+      },
+      {
+        "ebitda": 357,
+        "ebitdaMarginPct": 16,
+        "pat": 254,
+        "patMarginPct": 11.57,
+        "period": "Q4FY24",
+        "revenue": 2196
+      },
+      {
+        "ebitda": 370,
+        "ebitdaMarginPct": 18,
+        "pat": 302,
+        "patMarginPct": 14.94,
+        "period": "Q1FY25",
+        "revenue": 2022
+      },
+      {
+        "ebitda": 294,
+        "ebitdaMarginPct": 14,
+        "pat": 201,
+        "patMarginPct": 9.56,
+        "period": "Q2FY25",
+        "revenue": 2103
+      },
+      {
         "ebitda": 500,
-        "ebitdaMarginPct": 16.8,
+        "ebitdaMarginPct": 17,
         "pat": 388,
         "patMarginPct": 13.04,
         "period": "Q3FY25",
         "revenue": 2975
       },
       {
-        "ebitda": 694,
-        "ebitdaMarginPct": 18.3,
+        "ebitda": 693,
+        "ebitdaMarginPct": 18,
         "pat": 1181,
         "patMarginPct": 31.16,
         "period": "Q4FY25",
         "revenue": 3790
       },
       {
-        "ebitda": 598,
-        "ebitdaMarginPct": 19.1,
+        "ebitda": 599,
+        "ebitdaMarginPct": 19,
         "pat": 324,
         "patMarginPct": 10.34,
         "period": "Q1FY26",
         "revenue": 3132
       },
       {
-        "ebitda": 720,
-        "ebitdaMarginPct": 18.6,
+        "ebitda": 721,
+        "ebitdaMarginPct": 19,
         "pat": 1279,
         "patMarginPct": 33.04,
         "period": "Q2FY26",
         "revenue": 3871
       },
       {
-        "ebitda": 737,
-        "ebitdaMarginPct": 17.4,
+        "ebitda": 738,
+        "ebitdaMarginPct": 17,
         "pat": 445,
         "patMarginPct": 10.51,
         "period": "Q3FY26",
         "revenue": 4236
       },
       {
-        "ebitda": 961,
-        "ebitdaMarginPct": 17.5,
+        "ebitda": 964,
+        "ebitdaMarginPct": 18,
         "pat": 1114,
         "patMarginPct": 20.28,
         "period": "Q4FY26",
         "revenue": 5493
+      },
+      {
+        "ebitda": 595,
+        "ebitdaMarginPct": 16,
+        "pat": 305,
+        "patMarginPct": 7.97,
+        "period": "Q1FY27",
+        "revenue": 3829
       }
     ],
     "revenueFy26Cr": 16732,
     "shareholding": {
-      "asOf": "2026-03-31",
-      "diiPct": 9.18,
-      "fiiPct": 23.85,
-      "promoterPct": 11.73,
-      "publicPct": 55.23
+      "asOf": "2026-06-30",
+      "diiPct": 11.12,
+      "fiiPct": 24.15,
+      "promoterPct": 11.7,
+      "publicPct": 53.02
     },
     "slug": "suzlon-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

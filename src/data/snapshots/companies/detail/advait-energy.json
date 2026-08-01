@@ -5,8 +5,32 @@
   "data": {
     "annual": [
       {
+        "ebitda": 4,
+        "ebitdaMarginPct": 14,
+        "epsRs": 2.8,
+        "pat": 2,
+        "period": "FY19",
+        "revenue": 28
+      },
+      {
+        "ebitda": 4,
+        "ebitdaMarginPct": 10,
+        "epsRs": 0.72,
+        "pat": 1,
+        "period": "FY20",
+        "revenue": 45
+      },
+      {
+        "ebitda": 5,
+        "ebitdaMarginPct": 7,
+        "epsRs": 4.68,
+        "pat": 5,
+        "period": "FY21",
+        "revenue": 66
+      },
+      {
         "ebitda": 10,
-        "ebitdaMarginPct": 12.7,
+        "ebitdaMarginPct": 13,
         "epsRs": 5.22,
         "pat": 5,
         "period": "FY22",
@@ -14,7 +38,7 @@
       },
       {
         "ebitda": 17,
-        "ebitdaMarginPct": 16.3,
+        "ebitdaMarginPct": 16,
         "epsRs": 8.27,
         "pat": 8,
         "period": "FY23",
@@ -22,7 +46,7 @@
       },
       {
         "ebitda": 36,
-        "ebitdaMarginPct": 17.2,
+        "ebitdaMarginPct": 17,
         "epsRs": 21.45,
         "pat": 22,
         "period": "FY24",
@@ -37,8 +61,8 @@
         "revenue": 399
       },
       {
-        "ebitda": 83.66,
-        "ebitdaMarginPct": 11.7,
+        "ebitda": 84,
+        "ebitdaMarginPct": 12,
         "epsRs": 47.26,
         "pat": 55,
         "period": "FY26",
@@ -65,7 +89,7 @@
       "source": "Q4/FY26 earnings call 01-Jun-2026; Yahoo Finance, gurufocus.com transcript, whalesbook, concall.in"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 11.7,
+    "ebitdaMarginPct": 12,
     "evEbitdaX": 31.2,
     "hasDetail": true,
     "marketCapCr": 2526,
@@ -75,8 +99,64 @@
     "peX": 48.8,
     "quarterly": [
       {
+        "ebitda": 6,
+        "ebitdaMarginPct": 15,
+        "pat": 4,
+        "patMarginPct": 9.76,
+        "period": "Q4FY23",
+        "revenue": 41
+      },
+      {
+        "ebitda": 4,
+        "ebitdaMarginPct": 13,
+        "pat": 1,
+        "patMarginPct": 3.7,
+        "period": "Q1FY24",
+        "revenue": 27
+      },
+      {
+        "ebitda": 9,
+        "ebitdaMarginPct": 18,
+        "pat": 6,
+        "patMarginPct": 12.24,
+        "period": "Q2FY24",
+        "revenue": 49
+      },
+      {
+        "ebitda": 12,
+        "ebitdaMarginPct": 17,
+        "pat": 8,
+        "patMarginPct": 10.96,
+        "period": "Q3FY24",
+        "revenue": 73
+      },
+      {
+        "ebitda": 11,
+        "ebitdaMarginPct": 19,
+        "pat": 7,
+        "patMarginPct": 11.67,
+        "period": "Q4FY24",
+        "revenue": 60
+      },
+      {
+        "ebitda": 8,
+        "ebitdaMarginPct": 13,
+        "pat": 5,
+        "patMarginPct": 8.33,
+        "period": "Q1FY25",
+        "revenue": 60
+      },
+      {
+        "ebitda": 9,
+        "ebitdaMarginPct": 18,
+        "pat": 4,
+        "patMarginPct": 8.7,
+        "period": "Q2FY25",
+        "revenue": 46
+      },
+      {
         "ebitda": 15,
-        "ebitdaMarginPct": 15.3,
+        "ebitdaMarginPct": 16,
         "pat": 10,
         "patMarginPct": 10.2,
         "period": "Q3FY25",
@@ -84,7 +164,7 @@
       },
       {
         "ebitda": 19,
-        "ebitdaMarginPct": 9.8,
+        "ebitdaMarginPct": 10,
         "pat": 13,
         "patMarginPct": 6.74,
         "period": "Q4FY25",
@@ -92,7 +172,7 @@
       },
       {
         "ebitda": 14,
-        "ebitdaMarginPct": 11.9,
+        "ebitdaMarginPct": 12,
         "pat": 9,
         "patMarginPct": 7.63,
         "period": "Q1FY26",
@@ -100,7 +180,7 @@
       },
       {
         "ebitda": 17,
-        "ebitdaMarginPct": 10.8,
+        "ebitdaMarginPct": 11,
         "pat": 10,
         "patMarginPct": 6.37,
         "period": "Q2FY26",
@@ -108,7 +188,7 @@
       },
       {
         "ebitda": 24,
-        "ebitdaMarginPct": 11.4,
+        "ebitdaMarginPct": 11,
         "pat": 17,
         "patMarginPct": 8.06,
         "period": "Q3FY26",
@@ -116,7 +196,7 @@
       },
       {
         "ebitda": 29,
-        "ebitdaMarginPct": 12.7,
+        "ebitdaMarginPct": 13,
         "pat": 19,
         "patMarginPct": 8.33,
         "period": "Q4FY26",
@@ -126,10 +206,10 @@
     "revenueFy26Cr": 715,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 0.13,
-      "fiiPct": 0.21,
-      "promoterPct": 66.8,
-      "publicPct": 32.84
+      "diiPct": 0.04,
+      "fiiPct": 0.68,
+      "promoterPct": 66.52,
+      "publicPct": 32.77
     },
     "slug": "advait-energy",
     "sourceNote": "Market data (mid-2026)",

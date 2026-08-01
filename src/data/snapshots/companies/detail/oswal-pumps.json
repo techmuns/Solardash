@@ -6,36 +6,39 @@
     "annual": [
       {
         "ebitda": 39,
-        "ebitdaMarginPct": 10.8,
+        "ebitdaMarginPct": 11,
+        "epsRs": 28.93,
         "pat": 17,
         "period": "FY22",
         "revenue": 360
       },
       {
         "ebitda": 58,
-        "ebitdaMarginPct": 15.1,
+        "ebitdaMarginPct": 15,
+        "epsRs": 58.44,
         "pat": 34,
         "period": "FY23",
         "revenue": 385
       },
       {
         "ebitda": 153,
-        "ebitdaMarginPct": 20.2,
+        "ebitdaMarginPct": 20,
+        "epsRs": 166.9,
         "pat": 98,
         "period": "FY24",
         "revenue": 759
       },
       {
         "ebitda": 420,
-        "ebitdaMarginPct": 29.4,
+        "ebitdaMarginPct": 29,
         "epsRs": 28.21,
         "pat": 281,
         "period": "FY25",
         "revenue": 1430
       },
       {
-        "ebitda": 513.94,
-        "ebitdaMarginPct": 24.9,
+        "ebitda": 514,
+        "ebitdaMarginPct": 25,
         "epsRs": 33.01,
         "pat": 376,
         "period": "FY26",
@@ -61,7 +64,7 @@
       "source": "Oswal Pumps Q4 FY26 concall, May 18 2026; ScanX, Construction World, SaurEnergy, GuruFocus, TradeBrains"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 24.9,
+    "ebitdaMarginPct": 25,
     "evEbitdaX": 7.79,
     "hasDetail": true,
     "marketCapCr": 3767,
@@ -70,8 +73,32 @@
     "peX": 9.99,
     "quarterly": [
       {
+        "ebitda": 45,
+        "ebitdaMarginPct": 20,
+        "pat": 29,
+        "patMarginPct": 12.61,
+        "period": "Q4FY24",
+        "revenue": 230
+      },
+      {
+        "ebitda": 101,
+        "ebitdaMarginPct": 27,
+        "pat": 71,
+        "patMarginPct": 18.88,
+        "period": "Q1FY25",
+        "revenue": 376
+      },
+      {
+        "ebitda": 101,
+        "ebitdaMarginPct": 33,
+        "pat": 66,
+        "patMarginPct": 21.29,
+        "period": "Q2FY25",
+        "revenue": 310
+      },
+      {
         "ebitda": 118,
-        "ebitdaMarginPct": 31.1,
+        "ebitdaMarginPct": 31,
         "pat": 80,
         "patMarginPct": 21.05,
         "period": "Q3FY25",
@@ -79,7 +106,7 @@
       },
       {
         "ebitda": 99,
-        "ebitdaMarginPct": 27.1,
+        "ebitdaMarginPct": 27,
         "pat": 64,
         "patMarginPct": 17.53,
         "period": "Q4FY25",
@@ -87,7 +114,7 @@
       },
       {
         "ebitda": 141,
-        "ebitdaMarginPct": 27.4,
+        "ebitdaMarginPct": 27,
         "pat": 95,
         "patMarginPct": 18.48,
         "period": "Q1FY26",
@@ -95,7 +122,7 @@
       },
       {
         "ebitda": 128,
-        "ebitdaMarginPct": 23.7,
+        "ebitdaMarginPct": 24,
         "pat": 98,
         "patMarginPct": 18.15,
         "period": "Q2FY26",
@@ -103,7 +130,7 @@
       },
       {
         "ebitda": 127,
-        "ebitdaMarginPct": 25.3,
+        "ebitdaMarginPct": 25,
         "pat": 92,
         "patMarginPct": 18.36,
         "period": "Q3FY26",
@@ -111,7 +138,7 @@
       },
       {
         "ebitda": 118,
-        "ebitdaMarginPct": 23.1,
+        "ebitdaMarginPct": 23,
         "pat": 93,
         "patMarginPct": 18.24,
         "period": "Q4FY26",
@@ -121,10 +148,10 @@
     "revenueFy26Cr": 2064,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 6.6,
-      "fiiPct": 0.85,
-      "promoterPct": 75.67,
-      "publicPct": 16.88
+      "diiPct": 5.47,
+      "fiiPct": 0.1,
+      "promoterPct": 75.65,
+      "publicPct": 18.78
     },
     "slug": "oswal-pumps",
     "sourceNote": "Market data (mid-2026) + company filings",

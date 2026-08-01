@@ -61,17 +61,18 @@
     }
   ],
   "valuation": {
-    "peX": 14.7,
-    "pbX": 7.1,
-    "cmp": 103
+    "peX": 13.8,
+    "pbX": 6.67,
+    "cmp": 96.7,
+    "marketCapCr": 4198
   },
   "rocePct": 63.2,
   "roePct": 66.9,
   "shareholding": {
     "promoterPct": 29.72,
-    "fiiPct": 4.12,
-    "diiPct": 0.32,
-    "publicPct": 65.85,
+    "fiiPct": 3.74,
+    "diiPct": 0.43,
+    "publicPct": 66.12,
     "asOf": "2026-03-31"
   },
   "asOf": "2026-03-31"

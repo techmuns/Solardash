@@ -6,36 +6,39 @@
     "annual": [
       {
         "ebitda": 2,
-        "ebitdaMarginPct": 7.1,
+        "ebitdaMarginPct": 8,
+        "epsRs": 68.75,
         "pat": 2,
         "period": "FY22",
         "revenue": 28
       },
       {
         "ebitda": 21,
-        "ebitdaMarginPct": 9.1,
+        "ebitdaMarginPct": 9,
+        "epsRs": 463.75,
         "pat": 15,
         "period": "FY23",
         "revenue": 232
       },
       {
         "ebitda": 69,
-        "ebitdaMarginPct": 13.8,
+        "ebitdaMarginPct": 14,
+        "epsRs": 1615.31,
         "pat": 52,
         "period": "FY24",
         "revenue": 501
       },
       {
         "ebitda": 107,
-        "ebitdaMarginPct": 19.6,
+        "ebitdaMarginPct": 20,
         "epsRs": 10.39,
         "pat": 77,
         "period": "FY25",
         "revenue": 545
       },
       {
-        "ebitda": 147.23,
-        "ebitdaMarginPct": 10.7,
+        "ebitda": 147,
+        "ebitdaMarginPct": 11,
         "epsRs": 13.9,
         "pat": 120,
         "period": "FY26",
@@ -61,7 +64,7 @@
       "source": "Q4/FY26 earnings call (audio 26-May-2026); financepulse.ai, worldsolar.in transcript, screener.in, ICICIdirect"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 10.7,
+    "ebitdaMarginPct": 11,
     "evEbitdaX": 12.8,
     "hasDetail": true,
     "marketCapCr": 1627,
@@ -72,8 +75,24 @@
     "peX": 13.5,
     "quarterly": [
       {
+        "ebitda": 5,
+        "ebitdaMarginPct": 23,
+        "pat": 3,
+        "patMarginPct": 13.04,
+        "period": "Q1FY25",
+        "revenue": 23
+      },
+      {
+        "ebitda": 30,
+        "ebitdaMarginPct": 21,
+        "pat": 22,
+        "patMarginPct": 15.49,
+        "period": "Q2FY25",
+        "revenue": 142
+      },
+      {
         "ebitda": 59,
-        "ebitdaMarginPct": 28.9,
+        "ebitdaMarginPct": 29,
         "pat": 43,
         "patMarginPct": 21.08,
         "period": "Q3FY25",
@@ -81,7 +100,7 @@
       },
       {
         "ebitda": 13,
-        "ebitdaMarginPct": 7.4,
+        "ebitdaMarginPct": 7,
         "pat": 9,
         "patMarginPct": 5.11,
         "period": "Q4FY25",
@@ -89,7 +108,7 @@
       },
       {
         "ebitda": 9,
-        "ebitdaMarginPct": 13.2,
+        "ebitdaMarginPct": 13,
         "pat": 13,
         "patMarginPct": 19.12,
         "period": "Q1FY26",
@@ -97,7 +116,7 @@
       },
       {
         "ebitda": 15,
-        "ebitdaMarginPct": 10.9,
+        "ebitdaMarginPct": 11,
         "pat": 9,
         "patMarginPct": 6.52,
         "period": "Q2FY26",
@@ -105,7 +124,7 @@
       },
       {
         "ebitda": 65,
-        "ebitdaMarginPct": 11.2,
+        "ebitdaMarginPct": 11,
         "pat": 49,
         "patMarginPct": 8.48,
         "period": "Q3FY26",
@@ -113,7 +132,7 @@
       },
       {
         "ebitda": 58,
-        "ebitdaMarginPct": 9.8,
+        "ebitdaMarginPct": 10,
         "pat": 49,
         "patMarginPct": 8.28,
         "period": "Q4FY26",
@@ -123,10 +142,10 @@
     "revenueFy26Cr": 1376,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 11.41,
-      "fiiPct": 1.23,
+      "diiPct": 9.25,
+      "fiiPct": 0.77,
       "promoterPct": 65.77,
-      "publicPct": 21.59
+      "publicPct": 24.2
     },
     "slug": "solarworld-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

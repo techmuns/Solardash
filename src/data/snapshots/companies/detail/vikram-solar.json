@@ -22,7 +22,7 @@
       },
       {
         "ebitda": 59,
-        "ebitdaMarginPct": 3,
+        "ebitdaMarginPct": 3.4,
         "epsRs": -2.43,
         "pat": -63,
         "period": "FY22",
@@ -45,20 +45,20 @@
         "revenue": 2511
       },
       {
-        "ebitda": 492,
+        "ebitda": 491,
         "ebitdaMarginPct": 14,
-        "epsRs": 4.42,
-        "pat": 140,
+        "epsRs": 4.39,
+        "pat": 139,
         "period": "FY25",
-        "revenue": 3423
+        "revenue": 3415
       },
       {
-        "ebitda": 917,
+        "ebitda": 916,
         "ebitdaMarginPct": 19,
-        "epsRs": 12.98,
-        "pat": 470,
+        "epsRs": 12.95,
+        "pat": 469,
         "period": "FY26",
-        "revenue": 4802
+        "revenue": 4803
       }
     ],
     "cellGw": 0,
@@ -88,7 +88,7 @@
     "moduleGw": 9.5,
     "name": "Vikram Solar",
     "orderBookGw": 10.34,
-    "patFy26Cr": 470,
+    "patFy26Cr": 469,
     "peX": 13.6,
     "quarterly": [
       {
@@ -156,13 +156,13 @@
         "revenue": 1453
       }
     ],
-    "revenueFy26Cr": 4802,
+    "revenueFy26Cr": 4803,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 4.8,
-      "fiiPct": 2.94,
+      "diiPct": 4.04,
+      "fiiPct": 3.37,
       "promoterPct": 63.01,
-      "publicPct": 29.25
+      "publicPct": 29.6
     },
     "slug": "vikram-solar",
     "sourceNote": "Company filings (aggregated)",

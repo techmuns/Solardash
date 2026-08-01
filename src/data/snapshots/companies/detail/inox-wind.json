@@ -5,6 +5,62 @@
   "data": {
     "annual": [
       {
+        "ebitda": 425,
+        "ebitdaMarginPct": 16,
+        "epsRs": 3.14,
+        "pat": 296,
+        "period": "FY15",
+        "revenue": 2709
+      },
+      {
+        "ebitda": 734,
+        "ebitdaMarginPct": 17,
+        "epsRs": 4.88,
+        "pat": 461,
+        "period": "FY16",
+        "revenue": 4445
+      },
+      {
+        "ebitda": 542,
+        "ebitdaMarginPct": 16,
+        "epsRs": 3.21,
+        "pat": 303,
+        "period": "FY17",
+        "revenue": 3405
+      },
+      {
+        "ebitda": -83,
+        "ebitdaMarginPct": -18,
+        "epsRs": -1.99,
+        "pat": -188,
+        "period": "FY18",
+        "revenue": 465
+      },
+      {
+        "ebitda": 149,
+        "ebitdaMarginPct": 10,
+        "epsRs": -0.42,
+        "pat": -40,
+        "period": "FY19",
+        "revenue": 1436
+      },
+      {
+        "ebitda": -116,
+        "ebitdaMarginPct": -15,
+        "epsRs": -2.96,
+        "pat": -279,
+        "period": "FY20",
+        "revenue": 760
+      },
+      {
+        "ebitda": -191,
+        "ebitdaMarginPct": -27,
+        "epsRs": -3.24,
+        "pat": -307,
+        "period": "FY21",
+        "revenue": 711
+      },
+      {
         "ebitda": -300,
         "ebitdaMarginPct": -48,
         "epsRs": -5.08,
@@ -14,7 +70,7 @@
       },
       {
         "ebitda": -261,
-        "ebitdaMarginPct": -35.4,
+        "ebitdaMarginPct": -35,
         "epsRs": -4.81,
         "pat": -671,
         "period": "FY23",
@@ -29,16 +85,16 @@
         "revenue": 1746
       },
       {
-        "ebitda": 758,
-        "ebitdaMarginPct": 21.3,
+        "ebitda": 757,
+        "ebitdaMarginPct": 21,
         "epsRs": 3.23,
         "pat": 438,
         "period": "FY25",
         "revenue": 3557
       },
       {
-        "ebitda": 892.59,
-        "ebitdaMarginPct": 20.3,
+        "ebitda": 891,
+        "ebitdaMarginPct": 20,
         "epsRs": 2.34,
         "pat": 449,
         "period": "FY26",
@@ -63,7 +119,7 @@
       "source": "Inox Wind Q4 FY26 concall, ~May 2026; Quartr, Yahoo, SaurEnergy, Power Peak Digest, TradeBrains"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 20.3,
+    "ebitdaMarginPct": 20,
     "evEbitdaX": 16.93,
     "hasDetail": true,
     "marketCapCr": 13501,
@@ -73,8 +129,64 @@
     "peX": 33.3,
     "quarterly": [
       {
+        "ebitda": -27,
+        "ebitdaMarginPct": -14,
+        "pat": -119,
+        "patMarginPct": -62.3,
+        "period": "Q4FY23",
+        "revenue": 191
+      },
+      {
+        "ebitda": 31,
+        "ebitdaMarginPct": 9,
+        "pat": -65,
+        "patMarginPct": -18.62,
+        "period": "Q1FY24",
+        "revenue": 349
+      },
+      {
+        "ebitda": 48,
+        "ebitdaMarginPct": 13,
+        "pat": -27,
+        "patMarginPct": -7.28,
+        "period": "Q2FY24",
+        "revenue": 371
+      },
+      {
+        "ebitda": 93,
+        "ebitdaMarginPct": 18,
+        "pat": 2,
+        "patMarginPct": 0.4,
+        "period": "Q3FY24",
+        "revenue": 503
+      },
+      {
+        "ebitda": 99,
+        "ebitdaMarginPct": 19,
+        "pat": 33,
+        "patMarginPct": 6.25,
+        "period": "Q4FY24",
+        "revenue": 528
+      },
+      {
+        "ebitda": 135,
+        "ebitdaMarginPct": 21,
+        "pat": 42,
+        "patMarginPct": 6.56,
+        "period": "Q1FY25",
+        "revenue": 640
+      },
+      {
+        "ebitda": 166,
+        "ebitdaMarginPct": 23,
+        "pat": 84,
+        "patMarginPct": 11.46,
+        "period": "Q2FY25",
+        "revenue": 733
+      },
+      {
         "ebitda": 204,
-        "ebitdaMarginPct": 22.4,
+        "ebitdaMarginPct": 22,
         "pat": 110,
         "patMarginPct": 12.07,
         "period": "Q3FY25",
@@ -82,7 +194,7 @@
       },
       {
         "ebitda": 254,
-        "ebitdaMarginPct": 19.9,
+        "ebitdaMarginPct": 20,
         "pat": 190,
         "patMarginPct": 14.9,
         "period": "Q4FY25",
@@ -90,7 +202,7 @@
       },
       {
         "ebitda": 184,
-        "ebitdaMarginPct": 22.3,
+        "ebitdaMarginPct": 22,
         "pat": 97,
         "patMarginPct": 11.74,
         "period": "Q1FY26",
@@ -98,7 +210,7 @@
       },
       {
         "ebitda": 228,
-        "ebitdaMarginPct": 20.4,
+        "ebitdaMarginPct": 20,
         "pat": 121,
         "patMarginPct": 10.81,
         "period": "Q2FY26",
@@ -106,7 +218,7 @@
       },
       {
         "ebitda": 282,
-        "ebitdaMarginPct": 23.4,
+        "ebitdaMarginPct": 23,
         "pat": 127,
         "patMarginPct": 10.52,
         "period": "Q3FY26",
@@ -114,7 +226,7 @@
       },
       {
         "ebitda": 200,
-        "ebitdaMarginPct": 16.1,
+        "ebitdaMarginPct": 16,
         "pat": 106,
         "patMarginPct": 8.52,
         "period": "Q4FY26",
@@ -124,10 +236,10 @@
     "revenueFy26Cr": 4397,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 10.96,
-      "fiiPct": 14.6,
+      "diiPct": 10.02,
+      "fiiPct": 14.53,
       "promoterPct": 44.18,
-      "publicPct": 30.25
+      "publicPct": 31.28
     },
     "slug": "inox-wind",
     "sourceNote": "Market data (mid-2026) + company filings",

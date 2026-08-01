@@ -5,36 +5,25 @@
   "data": {
     "annual": [
       {
-        "ebitda": 5.1,
-        "ebitdaMarginPct": 3.1,
-        "pat": 2.1,
-        "period": "FY22",
-        "revenue": 167.4
-      },
-      {
-        "ebitda": 6.1,
-        "ebitdaMarginPct": 6.2,
-        "pat": 1.7,
-        "period": "FY23",
-        "revenue": 98.8
-      },
-      {
-        "ebitda": 24.6,
-        "ebitdaMarginPct": 13.9,
-        "pat": 15.7,
+        "ebitda": 24,
+        "ebitdaMarginPct": 14,
+        "epsRs": 52.47,
+        "pat": 16,
         "period": "FY24",
-        "revenue": 177.4
+        "revenue": 177
       },
       {
-        "ebitda": 26.9,
-        "ebitdaMarginPct": 11.7,
-        "pat": 18.6,
+        "ebitda": 26,
+        "ebitdaMarginPct": 11,
+        "epsRs": 8.92,
+        "pat": 19,
         "period": "FY25",
-        "revenue": 230.1
+        "revenue": 230
       },
       {
-        "ebitda": 30.18,
-        "ebitdaMarginPct": 8.2,
+        "ebitda": 30,
+        "ebitdaMarginPct": 8,
+        "epsRs": 9.8,
         "pat": 20,
         "period": "FY26",
         "revenue": 368
@@ -58,7 +47,7 @@
       "source": "FY26 results / investor call, 2 Jun 2026"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 8.2,
+    "ebitdaMarginPct": 8,
     "evEbitdaX": 17.2,
     "hasDetail": true,
     "marketCapCr": 359,
@@ -69,30 +58,34 @@
     "quarterly": [
       {
         "ebitda": 12,
-        "pat": 7.6,
-        "patMarginPct": 9.23,
-        "period": "H1FY25",
-        "revenue": 82.3
+        "ebitdaMarginPct": 14,
+        "pat": 8,
+        "patMarginPct": 9.76,
+        "period": "Q2FY25",
+        "revenue": 82
       },
       {
         "ebitda": 14,
+        "ebitdaMarginPct": 10,
         "pat": 11,
-        "patMarginPct": 7.44,
-        "period": "H2FY25",
-        "revenue": 147.8
+        "patMarginPct": 7.43,
+        "period": "Q4FY25",
+        "revenue": 148
       },
       {
         "ebitda": 13,
+        "ebitdaMarginPct": 12,
         "pat": 9,
         "patMarginPct": 7.69,
-        "period": "H1FY26",
+        "period": "Q2FY26",
         "revenue": 117
       },
       {
         "ebitda": 17,
+        "ebitdaMarginPct": 7,
         "pat": 11,
         "patMarginPct": 4.38,
-        "period": "H2FY26",
+        "period": "Q4FY26",
         "revenue": 251
       }
     ],
@@ -101,8 +94,8 @@
       "asOf": "2026-03-31",
       "diiPct": 1.7,
       "fiiPct": 0,
-      "promoterPct": 58.6,
-      "publicPct": 39.7
+      "promoterPct": 58.58,
+      "publicPct": 39.72
     },
     "slug": "solarium-green",
     "sourceNote": "BSE SME (maintained)",

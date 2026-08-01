@@ -2,10 +2,42 @@
   "slug": "waaree-renewable",
   "annual": [
     {
+      "period": "FY18",
+      "revenue": 2,
+      "ebitda": 0,
+      "ebitdaMarginPct": 25,
+      "pat": 0,
+      "epsRs": 0.02
+    },
+    {
+      "period": "FY19",
+      "revenue": 7,
+      "ebitda": 3,
+      "ebitdaMarginPct": 45,
+      "pat": -2,
+      "epsRs": -0.38
+    },
+    {
+      "period": "FY20",
+      "revenue": 6,
+      "ebitda": 1,
+      "ebitdaMarginPct": 15,
+      "pat": -3,
+      "epsRs": -0.31
+    },
+    {
+      "period": "FY21",
+      "revenue": 13,
+      "ebitda": 7,
+      "ebitdaMarginPct": 54,
+      "pat": -2,
+      "epsRs": -0.23
+    },
+    {
       "period": "FY22",
       "revenue": 162,
       "ebitda": 24,
-      "ebitdaMarginPct": 14.8,
+      "ebitdaMarginPct": 15,
       "pat": 9,
       "epsRs": 0.83
     },
@@ -13,7 +45,7 @@
       "period": "FY23",
       "revenue": 351,
       "ebitda": 84,
-      "ebitdaMarginPct": 23.9,
+      "ebitdaMarginPct": 24,
       "pat": 55,
       "epsRs": 5.32
     },
@@ -21,7 +53,7 @@
       "period": "FY24",
       "revenue": 876,
       "ebitda": 207,
-      "ebitdaMarginPct": 23.6,
+      "ebitdaMarginPct": 24,
       "pat": 145,
       "epsRs": 13.95
     },
@@ -29,20 +61,68 @@
       "period": "FY25",
       "revenue": 1598,
       "ebitda": 311,
-      "ebitdaMarginPct": 19.5,
+      "ebitdaMarginPct": 19,
       "pat": 229,
       "epsRs": 21.98
     },
     {
       "period": "FY26",
       "revenue": 3331,
-      "ebitda": 639.55,
-      "ebitdaMarginPct": 19.2,
+      "ebitda": 641,
+      "ebitdaMarginPct": 19,
       "pat": 479,
       "epsRs": 45.88
     }
   ],
   "quarterly": [
+    {
+      "period": "Q1FY24",
+      "revenue": 129,
+      "ebitda": 13,
+      "ebitdaMarginPct": 10,
+      "pat": 9,
+      "patMarginPct": 6.98
+    },
+    {
+      "period": "Q2FY24",
+      "revenue": 150,
+      "ebitda": 31,
+      "ebitdaMarginPct": 20,
+      "pat": 21,
+      "patMarginPct": 14
+    },
+    {
+      "period": "Q3FY24",
+      "revenue": 324,
+      "ebitda": 88,
+      "ebitdaMarginPct": 27,
+      "pat": 64,
+      "patMarginPct": 19.75
+    },
+    {
+      "period": "Q4FY24",
+      "revenue": 273,
+      "ebitda": 75,
+      "ebitdaMarginPct": 28,
+      "pat": 51,
+      "patMarginPct": 18.68
+    },
+    {
+      "period": "Q1FY25",
+      "revenue": 236,
+      "ebitda": 41,
+      "ebitdaMarginPct": 17,
+      "pat": 28,
+      "patMarginPct": 11.86
+    },
+    {
+      "period": "Q2FY25",
+      "revenue": 524,
+      "ebitda": 72,
+      "ebitdaMarginPct": 14,
+      "pat": 54,
+      "patMarginPct": 10.31
+    },
     {
       "period": "Q3FY25",
       "revenue": 360,
@@ -55,7 +135,7 @@
       "period": "Q4FY25",
       "revenue": 477,
       "ebitda": 126,
-      "ebitdaMarginPct": 26.4,
+      "ebitdaMarginPct": 27,
       "pat": 94,
       "patMarginPct": 19.71
     },
@@ -63,7 +143,7 @@
       "period": "Q1FY26",
       "revenue": 603,
       "ebitda": 118,
-      "ebitdaMarginPct": 19.6,
+      "ebitdaMarginPct": 19,
       "pat": 86,
       "patMarginPct": 14.26
     },
@@ -71,7 +151,7 @@
       "period": "Q2FY26",
       "revenue": 775,
       "ebitda": 158,
-      "ebitdaMarginPct": 20.4,
+      "ebitdaMarginPct": 20,
       "pat": 116,
       "patMarginPct": 14.97
     },
@@ -79,7 +159,7 @@
       "period": "Q3FY26",
       "revenue": 851,
       "ebitda": 159,
-      "ebitdaMarginPct": 18.7,
+      "ebitdaMarginPct": 19,
       "pat": 120,
       "patMarginPct": 14.1
     },
@@ -87,26 +167,33 @@
       "period": "Q4FY26",
       "revenue": 1102,
       "ebitda": 207,
-      "ebitdaMarginPct": 18.8,
+      "ebitdaMarginPct": 19,
       "pat": 156,
       "patMarginPct": 14.16
+    },
+    {
+      "period": "Q1FY27",
+      "revenue": 924,
+      "ebitda": 173,
+      "ebitdaMarginPct": 19,
+      "pat": 119,
+      "patMarginPct": 12.88
     }
   ],
   "valuation": {
-    "peX": 22,
-    "pbX": 11.3,
-    "evEbitdaX": 16.7,
-    "cmp": 1011,
-    "marketCapCr": 10545
+    "peX": 18.8,
+    "pbX": 10.2,
+    "cmp": 913,
+    "marketCapCr": 9529
   },
   "rocePct": 83.6,
   "roePct": 68.9,
   "shareholding": {
     "promoterPct": 74.32,
-    "fiiPct": 1.85,
+    "fiiPct": 1.98,
     "diiPct": 0.09,
-    "publicPct": 23.73,
-    "asOf": "2026-03-31"
+    "publicPct": 23.61,
+    "asOf": "2026-06-30"
   },
-  "asOf": "2026-03-31"
+  "asOf": "2026-06-30"
 }

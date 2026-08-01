@@ -2,40 +2,130 @@
   "slug": "gensol-engineering",
   "annual": [
     {
+      "period": "FY17",
+      "revenue": 62,
+      "ebitda": 2,
+      "ebitdaMarginPct": 2.7,
+      "pat": 1
+    },
+    {
+      "period": "FY18",
+      "revenue": 69,
+      "ebitda": 7,
+      "ebitdaMarginPct": 10,
+      "pat": 5
+    },
+    {
+      "period": "FY19",
+      "revenue": 83,
+      "ebitda": 9,
+      "ebitdaMarginPct": 11,
+      "pat": 7,
+      "epsRs": 2.73
+    },
+    {
+      "period": "FY20",
+      "revenue": 82,
+      "ebitda": 4,
+      "ebitdaMarginPct": 5,
+      "pat": 2,
+      "epsRs": 0.67
+    },
+    {
+      "period": "FY21",
+      "revenue": 64,
+      "ebitda": 6,
+      "ebitdaMarginPct": 10,
+      "pat": 3,
+      "epsRs": 0.97
+    },
+    {
       "period": "FY22",
       "revenue": 160,
       "ebitda": 19,
-      "ebitdaMarginPct": 11.9,
-      "pat": 11
+      "ebitdaMarginPct": 12,
+      "pat": 11,
+      "epsRs": 3.38
     },
     {
       "period": "FY23",
       "revenue": 398,
       "ebitda": 78,
-      "ebitdaMarginPct": 19.6,
-      "pat": 23
+      "ebitdaMarginPct": 20,
+      "pat": 23,
+      "epsRs": 6.37
     },
     {
       "period": "FY24",
       "revenue": 963,
       "ebitda": 230,
-      "ebitdaMarginPct": 23.9,
-      "pat": 53
-    },
-    {
-      "period": "FY26",
-      "revenue": 963,
-      "ebitda": 230.16,
-      "ebitdaMarginPct": 23.9,
-      "pat": 53
+      "ebitdaMarginPct": 24,
+      "pat": 53,
+      "epsRs": 15.72
     }
   ],
   "quarterly": [
     {
+      "period": "Q3FY22",
+      "revenue": 34,
+      "ebitda": 4,
+      "ebitdaMarginPct": 11,
+      "pat": 2,
+      "patMarginPct": 5.88
+    },
+    {
+      "period": "Q4FY22",
+      "revenue": 127,
+      "ebitda": 15,
+      "ebitdaMarginPct": 12,
+      "pat": 9,
+      "patMarginPct": 7.09
+    },
+    {
+      "period": "Q1FY23",
+      "revenue": 102,
+      "ebitda": 15,
+      "ebitdaMarginPct": 15,
+      "pat": 10,
+      "patMarginPct": 9.8
+    },
+    {
+      "period": "Q2FY23",
+      "revenue": 81,
+      "ebitda": 17,
+      "ebitdaMarginPct": 21,
+      "pat": 8,
+      "patMarginPct": 9.88
+    },
+    {
+      "period": "Q3FY23",
+      "revenue": 51,
+      "ebitda": 15,
+      "ebitdaMarginPct": 30,
+      "pat": -2,
+      "patMarginPct": -3.92
+    },
+    {
+      "period": "Q4FY23",
+      "revenue": 164,
+      "ebitda": 29,
+      "ebitdaMarginPct": 18,
+      "pat": 7,
+      "patMarginPct": 4.27
+    },
+    {
+      "period": "Q1FY24",
+      "revenue": 145,
+      "ebitda": 37,
+      "ebitdaMarginPct": 25,
+      "pat": 10,
+      "patMarginPct": 6.9
+    },
+    {
       "period": "Q2FY24",
       "revenue": 305,
       "ebitda": 47,
-      "ebitdaMarginPct": 15.4,
+      "ebitdaMarginPct": 15,
       "pat": 18,
       "patMarginPct": 5.9
     },
@@ -43,7 +133,7 @@
       "period": "Q3FY24",
       "revenue": 220,
       "ebitda": 63,
-      "ebitdaMarginPct": 28.6,
+      "ebitdaMarginPct": 29,
       "pat": 12,
       "patMarginPct": 5.45
     },
@@ -51,7 +141,7 @@
       "period": "Q4FY24",
       "revenue": 399,
       "ebitda": 79,
-      "ebitdaMarginPct": 19.8,
+      "ebitdaMarginPct": 20,
       "pat": 20,
       "patMarginPct": 5.01
     },
@@ -59,7 +149,7 @@
       "period": "Q1FY25",
       "revenue": 362,
       "ebitda": 75,
-      "ebitdaMarginPct": 20.7,
+      "ebitdaMarginPct": 21,
       "pat": 27,
       "patMarginPct": 7.46
     },
@@ -67,7 +157,7 @@
       "period": "Q2FY25",
       "revenue": 346,
       "ebitda": 107,
-      "ebitdaMarginPct": 30.9,
+      "ebitdaMarginPct": 31,
       "pat": 23,
       "patMarginPct": 6.65
     },
@@ -81,19 +171,19 @@
     }
   ],
   "valuation": {
-    "pbX": 0.13,
-    "evEbitdaX": 6.3,
-    "cmp": 20.3,
-    "marketCapCr": 78
+    "peX": 0.65,
+    "pbX": 0.11,
+    "cmp": 17.4,
+    "marketCapCr": 67
   },
   "rocePct": 14.3,
   "roePct": 22.4,
   "shareholding": {
-    "promoterPct": 35.9,
-    "fiiPct": 4.9,
-    "diiPct": 0.1,
-    "publicPct": 57.8,
-    "asOf": "2026-03-31"
+    "promoterPct": 35.88,
+    "fiiPct": 4.88,
+    "diiPct": 0.14,
+    "publicPct": 57.75,
+    "asOf": "2024-12-31"
   },
-  "asOf": "2026-03-31"
+  "asOf": "2024-12-31"
 }

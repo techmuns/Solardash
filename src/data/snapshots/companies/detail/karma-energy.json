@@ -5,25 +5,100 @@
   "data": {
     "annual": [
       {
-        "ebitda": 3.21,
-        "ebitdaMarginPct": 25.99,
-        "pat": 0.12,
-        "period": "FY24",
-        "revenue": 12.35
+        "ebitda": 10.43,
+        "ebitdaMarginPct": 60.85,
+        "epsRs": 0.5,
+        "pat": 0.52,
+        "period": "FY11",
+        "revenue": 17.14
       },
       {
-        "ebitda": 0.45,
-        "ebitdaMarginPct": 5.17,
-        "pat": 1.4,
-        "period": "FY25",
-        "revenue": 8.7
+        "ebitda": 16.63,
+        "ebitdaMarginPct": 61.84,
+        "epsRs": 0.32,
+        "pat": 0.43,
+        "period": "FY12",
+        "revenue": 26.89
       },
       {
-        "ebitda": -2.87,
-        "ebitdaMarginPct": -29.3,
-        "pat": 1.05,
-        "period": "FY26",
-        "revenue": 9.8
+        "ebitda": 16.79,
+        "ebitdaMarginPct": 52.95,
+        "epsRs": -0.86,
+        "pat": -2.42,
+        "period": "FY13",
+        "revenue": 31.71
+      },
+      {
+        "ebitda": 13.6,
+        "ebitdaMarginPct": 43.22,
+        "epsRs": -1.18,
+        "pat": -4.1,
+        "period": "FY14",
+        "revenue": 31.47
+      },
+      {
+        "ebitda": 6.1,
+        "ebitdaMarginPct": 31.38,
+        "epsRs": -4.03,
+        "pat": -6.51,
+        "period": "FY15",
+        "revenue": 19.44
+      },
+      {
+        "ebitda": 6.7,
+        "ebitdaMarginPct": 35.3,
+        "epsRs": -3.93,
+        "pat": -7.59,
+        "period": "FY16",
+        "revenue": 18.98
+      },
+      {
+        "ebitda": 13.23,
+        "ebitdaMarginPct": 40.56,
+        "epsRs": -0.07,
+        "pat": -2.1,
+        "period": "FY17",
+        "revenue": 32.62
+      },
+      {
+        "ebitda": 11.91,
+        "ebitdaMarginPct": 29.55,
+        "epsRs": -2.11,
+        "pat": -3.71,
+        "period": "FY18",
+        "revenue": 40.3
+      },
+      {
+        "ebitda": 6.24,
+        "ebitdaMarginPct": 17.98,
+        "epsRs": -8.63,
+        "pat": -11.52,
+        "period": "FY19",
+        "revenue": 34.7
+      },
+      {
+        "ebitda": 12.98,
+        "ebitdaMarginPct": 30.99,
+        "epsRs": -0.24,
+        "pat": 0.16,
+        "period": "FY20",
+        "revenue": 41.88
+      },
+      {
+        "ebitda": -1.26,
+        "ebitdaMarginPct": -4.98,
+        "epsRs": -11.47,
+        "pat": -13.27,
+        "period": "FY21",
+        "revenue": 25.28
+      },
+      {
+        "ebitda": 8.25,
+        "ebitdaMarginPct": 26.06,
+        "epsRs": -1.4,
+        "pat": -1.62,
+        "period": "FY22",
+        "revenue": 31.66
       }
     ],
     "board": "NSE",
@@ -42,51 +117,123 @@
       "source": "BSE / Screener Q4 FY26 (Mar 2026) result filing — no concall held"
     },
     "confidence": "medium",
-    "ebitdaMarginPct": -29.3,
+    "ebitdaMarginPct": 26.06,
     "evEbitdaX": 7.69,
     "hasDetail": true,
     "marketCapCr": 44.6,
     "name": "Karma Energy",
-    "patFy26Cr": 1.05,
+    "patFy26Cr": -1.62,
     "quarterly": [
       {
-        "ebitda": -0.09,
-        "ebitdaMarginPct": -2.94,
-        "pat": 0.61,
-        "patMarginPct": 19.93,
-        "period": "Q1FY26",
-        "revenue": 3.06
+        "ebitda": -0.39,
+        "ebitdaMarginPct": -6.59,
+        "pat": -4.69,
+        "patMarginPct": -79.22,
+        "period": "Q4FY19",
+        "revenue": 5.92
       },
       {
-        "ebitda": 1.59,
-        "ebitdaMarginPct": 34.42,
-        "pat": 1.05,
+        "ebitda": 2.82,
+        "ebitdaMarginPct": 30.06,
+        "pat": -0.55,
+        "patMarginPct": -5.86,
+        "period": "Q1FY20",
+        "revenue": 9.38
+      },
+      {
+        "ebitda": 6.86,
+        "ebitdaMarginPct": 36.7,
+        "pat": 3.04,
+        "patMarginPct": 16.27,
+        "period": "Q2FY20",
+        "revenue": 18.69
+      },
+      {
+        "ebitda": 1.45,
+        "ebitdaMarginPct": 18.76,
+        "pat": -1.39,
+        "patMarginPct": -17.98,
+        "period": "Q3FY20",
+        "revenue": 7.73
+      },
+      {
+        "ebitda": 1.86,
+        "ebitdaMarginPct": 30.59,
+        "pat": -0.94,
+        "patMarginPct": -15.46,
+        "period": "Q4FY20",
+        "revenue": 6.08
+      },
+      {
+        "ebitda": 0.23,
+        "ebitdaMarginPct": 3.25,
+        "pat": -2.81,
+        "patMarginPct": -39.69,
+        "period": "Q1FY21",
+        "revenue": 7.08
+      },
+      {
+        "ebitda": 2.32,
+        "ebitdaMarginPct": 20.44,
+        "pat": -0.6,
+        "patMarginPct": -5.29,
+        "period": "Q2FY21",
+        "revenue": 11.35
+      },
+      {
+        "ebitda": -1.01,
+        "ebitdaMarginPct": -22.9,
+        "pat": -2.96,
+        "patMarginPct": -67.12,
+        "period": "Q3FY21",
+        "revenue": 4.41
+      },
+      {
+        "ebitda": -2.82,
+        "ebitdaMarginPct": -115.57,
+        "pat": -6.92,
+        "patMarginPct": -283.61,
+        "period": "Q4FY21",
+        "revenue": 2.44
+      },
+      {
+        "ebitda": 0.75,
+        "ebitdaMarginPct": 10.46,
+        "pat": -1.8,
+        "patMarginPct": -25.1,
+        "period": "Q1FY22",
+        "revenue": 7.17
+      },
+      {
+        "ebitda": 3.13,
+        "ebitdaMarginPct": 25.18,
+        "pat": 0.6,
+        "patMarginPct": 4.83,
+        "period": "Q2FY22",
+        "revenue": 12.43
+      },
+      {
+        "ebitda": 5.12,
+        "ebitdaMarginPct": 51.05,
+        "pat": 2.28,
         "patMarginPct": 22.73,
-        "period": "Q2FY26",
-        "revenue": 4.62
+        "period": "Q3FY22",
+        "revenue": 10.03
       },
       {
-        "ebitda": -1.92,
-        "ebitdaMarginPct": -160,
-        "pat": 0.22,
-        "patMarginPct": 18.33,
-        "period": "Q3FY26",
-        "revenue": 1.2
-      },
-      {
-        "ebitda": -2.44,
-        "ebitdaMarginPct": -277.27,
-        "pat": -0.82,
-        "patMarginPct": -93.18,
-        "period": "Q4FY26",
-        "revenue": 0.88
+        "ebitda": -0.75,
+        "ebitdaMarginPct": -36.95,
+        "pat": -2.7,
+        "patMarginPct": -133,
+        "period": "Q4FY22",
+        "revenue": 2.03
       }
     ],
-    "revenueFy26Cr": 9.8,
+    "revenueFy26Cr": 31.66,
     "shareholding": {
-      "asOf": "2026-03-31",
+      "asOf": "2022-03-31",
       "promoterPct": 74.7,
-      "publicPct": 25.32
+      "publicPct": 25.3
     },
     "slug": "karma-energy",
     "sourceNote": "Market data (mid-2026)",

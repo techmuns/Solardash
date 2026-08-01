@@ -5,40 +5,96 @@
   "data": {
     "annual": [
       {
-        "ebitda": 1793,
-        "ebitdaMarginPct": 74.2,
+        "ebitda": 2443,
+        "ebitdaMarginPct": 87,
+        "epsRs": 4.05,
+        "pat": 1677,
+        "period": "FY15",
+        "revenue": 2816
+      },
+      {
+        "ebitda": 2063,
+        "ebitdaMarginPct": 83,
+        "epsRs": 3.41,
+        "pat": 1411,
+        "period": "FY16",
+        "revenue": 2494
+      },
+      {
+        "ebitda": 2199,
+        "ebitdaMarginPct": 82,
+        "epsRs": 3.73,
+        "pat": 1545,
+        "period": "FY17",
+        "revenue": 2679
+      },
+      {
+        "ebitda": 1705,
+        "ebitdaMarginPct": 76,
+        "epsRs": 3.12,
+        "pat": 1225,
+        "period": "FY18",
+        "revenue": 2228
+      },
+      {
+        "ebitda": 2039,
+        "ebitdaMarginPct": 77,
+        "epsRs": 3.47,
+        "pat": 1367,
+        "period": "FY19",
+        "revenue": 2645
+      },
+      {
+        "ebitda": 2112,
+        "ebitdaMarginPct": 78,
+        "epsRs": 3.99,
+        "pat": 1567,
+        "period": "FY20",
+        "revenue": 2703
+      },
+      {
+        "ebitda": 1867,
+        "ebitdaMarginPct": 75,
+        "epsRs": 4.19,
+        "pat": 1646,
+        "period": "FY21",
+        "revenue": 2485
+      },
+      {
+        "ebitda": 1794,
+        "ebitdaMarginPct": 74,
         "epsRs": 2.52,
         "pat": 990,
         "period": "FY22",
         "revenue": 2417
       },
       {
-        "ebitda": 2274,
-        "ebitdaMarginPct": 77.4,
+        "ebitda": 2273,
+        "ebitdaMarginPct": 77,
         "epsRs": 3.46,
         "pat": 1359,
         "period": "FY23",
         "revenue": 2938
       },
       {
-        "ebitda": 1844,
-        "ebitdaMarginPct": 71.5,
+        "ebitda": 1843,
+        "ebitdaMarginPct": 71,
         "epsRs": 2.32,
         "pat": 911,
         "period": "FY24",
         "revenue": 2579
       },
       {
-        "ebitda": 2224,
-        "ebitdaMarginPct": 72.4,
+        "ebitda": 2223,
+        "ebitdaMarginPct": 72,
         "epsRs": 2.09,
         "pat": 818,
         "period": "FY25",
         "revenue": 3072
       },
       {
-        "ebitda": 3291.86,
-        "ebitdaMarginPct": 72.7,
+        "ebitda": 3293,
+        "ebitdaMarginPct": 73,
         "epsRs": 1.63,
         "pat": 642,
         "period": "FY26",
@@ -63,7 +119,7 @@
       "source": "Q4 FY26 earnings call, May 15 2026"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 72.7,
+    "ebitdaMarginPct": 73,
     "evEbitdaX": 17.46,
     "hasDetail": true,
     "marketCapCr": 26966,
@@ -72,8 +128,56 @@
     "peX": 42.2,
     "quarterly": [
       {
+        "ebitda": 483,
+        "ebitdaMarginPct": 72,
+        "pat": 272,
+        "patMarginPct": 40.3,
+        "period": "Q1FY24",
+        "revenue": 675
+      },
+      {
+        "ebitda": 706,
+        "ebitdaMarginPct": 80,
+        "pat": 440,
+        "patMarginPct": 50.11,
+        "period": "Q2FY24",
+        "revenue": 878
+      },
+      {
+        "ebitda": 368,
+        "ebitdaMarginPct": 68,
+        "pat": 139,
+        "patMarginPct": 25.6,
+        "period": "Q3FY24",
+        "revenue": 543
+      },
+      {
+        "ebitda": 227,
+        "ebitdaMarginPct": 47,
+        "pat": 61,
+        "patMarginPct": 12.63,
+        "period": "Q4FY24",
+        "revenue": 483
+      },
+      {
+        "ebitda": 646,
+        "ebitdaMarginPct": 74,
+        "pat": 357,
+        "patMarginPct": 41.03,
+        "period": "Q1FY25",
+        "revenue": 870
+      },
+      {
+        "ebitda": 828,
+        "ebitdaMarginPct": 81,
+        "pat": 440,
+        "patMarginPct": 42.88,
+        "period": "Q2FY25",
+        "revenue": 1026
+      },
+      {
         "ebitda": 464,
-        "ebitdaMarginPct": 69.2,
+        "ebitdaMarginPct": 69,
         "pat": 149,
         "patMarginPct": 22.21,
         "period": "Q3FY25",
@@ -81,7 +185,7 @@
       },
       {
         "ebitda": 241,
-        "ebitdaMarginPct": 47.8,
+        "ebitdaMarginPct": 48,
         "pat": -128,
         "patMarginPct": -25.4,
         "period": "Q4FY25",
@@ -89,7 +193,7 @@
       },
       {
         "ebitda": 707,
-        "ebitdaMarginPct": 77.1,
+        "ebitdaMarginPct": 77,
         "pat": 228,
         "patMarginPct": 24.86,
         "period": "Q1FY26",
@@ -97,7 +201,7 @@
       },
       {
         "ebitda": 860,
-        "ebitdaMarginPct": 83.3,
+        "ebitdaMarginPct": 83,
         "pat": 308,
         "patMarginPct": 29.84,
         "period": "Q2FY26",
@@ -105,7 +209,7 @@
       },
       {
         "ebitda": 773,
-        "ebitdaMarginPct": 71.4,
+        "ebitdaMarginPct": 71,
         "pat": 224,
         "patMarginPct": 20.7,
         "period": "Q3FY26",
@@ -113,20 +217,28 @@
       },
       {
         "ebitda": 910,
-        "ebitdaMarginPct": 60.8,
+        "ebitdaMarginPct": 61,
         "pat": -118,
         "patMarginPct": -7.89,
         "period": "Q4FY26",
         "revenue": 1496
+      },
+      {
+        "ebitda": 850,
+        "ebitdaMarginPct": 61,
+        "pat": 225,
+        "patMarginPct": 16.14,
+        "period": "Q1FY27",
+        "revenue": 1394
       }
     ],
     "revenueFy26Cr": 4528,
     "shareholding": {
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-30",
       "diiPct": 3.74,
-      "fiiPct": 2.75,
+      "fiiPct": 2.79,
       "promoterPct": 81.85,
-      "publicPct": 11.65
+      "publicPct": 11.62
     },
     "slug": "sjvn",
     "sourceNote": "Market data (mid-2026) + company filings",

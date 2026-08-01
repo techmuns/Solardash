@@ -5,8 +5,81 @@
   "data": {
     "annual": [
       {
+        "ebitda": 9.08,
+        "ebitdaMarginPct": 45.29,
+        "epsRs": 0.01,
+        "pat": 0.23,
+        "period": "FY15",
+        "revenue": 20.05
+      },
+      {
+        "ebitda": 7.4,
+        "ebitdaMarginPct": 43.84,
+        "epsRs": 0.04,
+        "pat": 0.77,
+        "period": "FY16",
+        "revenue": 16.88
+      },
+      {
+        "ebitda": 14.53,
+        "ebitdaMarginPct": 55.84,
+        "epsRs": -0.11,
+        "pat": -1.99,
+        "period": "FY17",
+        "revenue": 26.02
+      },
+      {
+        "ebitda": 10.71,
+        "ebitdaMarginPct": 40.94,
+        "epsRs": -1.11,
+        "pat": -20.98,
+        "period": "FY18",
+        "revenue": 26.16
+      },
+      {
+        "ebitda": 6.15,
+        "ebitdaMarginPct": 27.99,
+        "epsRs": -0.65,
+        "pat": -12.26,
+        "period": "FY19",
+        "revenue": 21.97
+      },
+      {
+        "ebitda": 8.34,
+        "ebitdaMarginPct": 40.37,
+        "epsRs": 0,
+        "pat": 0.06,
+        "period": "FY20",
+        "revenue": 20.66
+      },
+      {
+        "ebitda": 9.57,
+        "ebitdaMarginPct": 53.29,
+        "epsRs": 0.01,
+        "pat": 0.22,
+        "period": "FY21",
+        "revenue": 17.96
+      },
+      {
+        "ebitda": 6.54,
+        "ebitdaMarginPct": 26.63,
+        "epsRs": 0.01,
+        "pat": 0.13,
+        "period": "FY22",
+        "revenue": 24.56
+      },
+      {
+        "ebitda": 13.99,
+        "ebitdaMarginPct": 41.2,
+        "epsRs": -1.2,
+        "pat": -19.26,
+        "period": "FY23",
+        "revenue": 33.96
+      },
+      {
         "ebitda": 15.84,
         "ebitdaMarginPct": 40.81,
+        "epsRs": 0.45,
         "pat": 7.27,
         "period": "FY24",
         "revenue": 38.81
@@ -14,16 +87,18 @@
       {
         "ebitda": 10.55,
         "ebitdaMarginPct": 31.48,
+        "epsRs": 0.08,
         "pat": 1.27,
         "period": "FY25",
         "revenue": 33.51
       },
       {
         "ebitda": 14.93,
-        "ebitdaMarginPct": 36.6,
+        "ebitdaMarginPct": 36.64,
+        "epsRs": 0,
         "pat": 0.01,
         "period": "FY26",
-        "revenue": 40.8
+        "revenue": 40.75
       }
     ],
     "cmp": 9.18,
@@ -42,13 +117,85 @@
       "source": "FY26 results (~May 2026); Q3 FY26 concall (Feb 2026); company press releases"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 36.6,
+    "ebitdaMarginPct": 36.64,
     "evEbitdaX": 10.42,
     "hasDetail": true,
     "marketCapCr": 146,
     "name": "Indowind Energy",
     "patFy26Cr": 0.01,
     "quarterly": [
+      {
+        "ebitda": 0.24,
+        "ebitdaMarginPct": 5.32,
+        "pat": -24.93,
+        "patMarginPct": -552.77,
+        "period": "Q4FY23",
+        "revenue": 4.51
+      },
+      {
+        "ebitda": 5.81,
+        "ebitdaMarginPct": 76.15,
+        "pat": 1.75,
+        "patMarginPct": 22.94,
+        "period": "Q1FY24",
+        "revenue": 7.63
+      },
+      {
+        "ebitda": 10.27,
+        "ebitdaMarginPct": 57.34,
+        "pat": 4.96,
+        "patMarginPct": 27.69,
+        "period": "Q2FY24",
+        "revenue": 17.91
+      },
+      {
+        "ebitda": 0.73,
+        "ebitdaMarginPct": 7.5,
+        "pat": -0.07,
+        "patMarginPct": -0.72,
+        "period": "Q3FY24",
+        "revenue": 9.73
+      },
+      {
+        "ebitda": -0.95,
+        "ebitdaMarginPct": -21.4,
+        "pat": 0.63,
+        "patMarginPct": 14.19,
+        "period": "Q4FY24",
+        "revenue": 4.44
+      },
+      {
+        "ebitda": 2.9,
+        "ebitdaMarginPct": 39.46,
+        "pat": 1.69,
+        "patMarginPct": 22.99,
+        "period": "Q1FY25",
+        "revenue": 7.35
+      },
+      {
+        "ebitda": 8.99,
+        "ebitdaMarginPct": 56.86,
+        "pat": 4.42,
+        "patMarginPct": 27.96,
+        "period": "Q2FY25",
+        "revenue": 15.81
+      },
+      {
+        "ebitda": 0.76,
+        "ebitdaMarginPct": 13.67,
+        "pat": -0.07,
+        "patMarginPct": -1.26,
+        "period": "Q3FY25",
+        "revenue": 5.56
+      },
+      {
+        "ebitda": -0.29,
+        "ebitdaMarginPct": -4.37,
+        "pat": -4.34,
+        "patMarginPct": -65.46,
+        "period": "Q4FY25",
+        "revenue": 6.63
+      },
       {
         "ebitda": 5.2,
         "ebitdaMarginPct": 45.06,
@@ -82,13 +229,12 @@
         "revenue": 5.27
       }
     ],
-    "revenueFy26Cr": 40.8,
+    "revenueFy26Cr": 40.75,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 0,
-      "fiiPct": 0,
+      "fiiPct": 0.02,
       "promoterPct": 48.2,
-      "publicPct": 51.79
+      "publicPct": 51.78
     },
     "slug": "indowind-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

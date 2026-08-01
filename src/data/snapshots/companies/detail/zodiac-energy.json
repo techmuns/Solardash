@@ -5,40 +5,16 @@
   "data": {
     "annual": [
       {
-        "ebitda": 9,
-        "ebitdaMarginPct": 6.3,
-        "epsRs": 3.73,
-        "pat": 5,
-        "period": "FY22",
-        "revenue": 143
-      },
-      {
-        "ebitda": 8,
-        "ebitdaMarginPct": 5.8,
-        "epsRs": 2.18,
-        "pat": 3,
-        "period": "FY23",
-        "revenue": 138
-      },
-      {
-        "ebitda": 19,
-        "ebitdaMarginPct": 8.6,
-        "epsRs": 7.5,
-        "pat": 11,
-        "period": "FY24",
-        "revenue": 220
-      },
-      {
         "ebitda": 37,
-        "ebitdaMarginPct": 9.1,
+        "ebitdaMarginPct": 9,
         "epsRs": 13.23,
         "pat": 20,
         "period": "FY25",
         "revenue": 408
       },
       {
-        "ebitda": 56.03,
-        "ebitdaMarginPct": 10.3,
+        "ebitda": 56,
+        "ebitdaMarginPct": 10,
         "epsRs": 13.93,
         "pat": 21,
         "period": "FY26",
@@ -63,7 +39,7 @@
       "source": "Q4/FY26 audited results 25-May-2026 (results filing/press); univest.in, scanx.trade, screener.in. NOTE: latest concall transcript on screener is May-2025 (Q4 FY25); a formal Q4 FY26 analyst concall transcript could not be confirmed publicly."
     },
     "confidence": "high",
-    "ebitdaMarginPct": 10.3,
+    "ebitdaMarginPct": 10,
     "evEbitdaX": 11.11,
     "hasDetail": true,
     "marketCapCr": 379,
@@ -72,8 +48,24 @@
     "peX": 18,
     "quarterly": [
       {
+        "ebitda": 4,
+        "ebitdaMarginPct": 5,
+        "pat": 2,
+        "patMarginPct": 2.53,
+        "period": "Q1FY25",
+        "revenue": 79
+      },
+      {
+        "ebitda": 5,
+        "ebitdaMarginPct": 9,
+        "pat": 2,
+        "patMarginPct": 3.77,
+        "period": "Q2FY25",
+        "revenue": 53
+      },
+      {
         "ebitda": 10,
-        "ebitdaMarginPct": 9.6,
+        "ebitdaMarginPct": 10,
         "pat": 6,
         "patMarginPct": 5.77,
         "period": "Q3FY25",
@@ -81,7 +73,7 @@
       },
       {
         "ebitda": 18,
-        "ebitdaMarginPct": 10.5,
+        "ebitdaMarginPct": 10,
         "pat": 9,
         "patMarginPct": 5.26,
         "period": "Q4FY25",
@@ -89,7 +81,7 @@
       },
       {
         "ebitda": 10,
-        "ebitdaMarginPct": 10.2,
+        "ebitdaMarginPct": 10,
         "pat": 3,
         "patMarginPct": 3.06,
         "period": "Q1FY26",
@@ -97,7 +89,7 @@
       },
       {
         "ebitda": 10,
-        "ebitdaMarginPct": 10.3,
+        "ebitdaMarginPct": 11,
         "pat": 3,
         "patMarginPct": 3.09,
         "period": "Q2FY26",
@@ -105,7 +97,7 @@
       },
       {
         "ebitda": 14,
-        "ebitdaMarginPct": 10.1,
+        "ebitdaMarginPct": 10,
         "pat": 5,
         "patMarginPct": 3.62,
         "period": "Q3FY26",
@@ -113,7 +105,7 @@
       },
       {
         "ebitda": 22,
-        "ebitdaMarginPct": 10.4,
+        "ebitdaMarginPct": 10,
         "pat": 11,
         "patMarginPct": 5.21,
         "period": "Q4FY26",
@@ -124,9 +116,9 @@
     "shareholding": {
       "asOf": "2026-03-31",
       "diiPct": 0.2,
-      "fiiPct": 0.15,
+      "fiiPct": 0.14,
       "promoterPct": 69.97,
-      "publicPct": 29.68
+      "publicPct": 29.7
     },
     "slug": "zodiac-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

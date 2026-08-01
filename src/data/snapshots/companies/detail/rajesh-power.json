@@ -5,42 +5,18 @@
   "data": {
     "annual": [
       {
-        "ebitda": 11,
-        "ebitdaMarginPct": 7.5,
-        "epsRs": 2.27,
-        "pat": 3,
-        "period": "FY22",
-        "revenue": 147
-      },
-      {
-        "ebitda": 14,
-        "ebitdaMarginPct": 6.8,
-        "epsRs": 4.44,
-        "pat": 7,
-        "period": "FY23",
-        "revenue": 207
-      },
-      {
-        "ebitda": 35,
-        "ebitdaMarginPct": 12.3,
-        "epsRs": 17.1,
-        "pat": 26,
-        "period": "FY24",
-        "revenue": 285
-      },
-      {
-        "ebitda": 125,
-        "ebitdaMarginPct": 11.7,
-        "epsRs": 48.48,
-        "pat": 87,
+        "ebitda": 134,
+        "ebitdaMarginPct": 12,
+        "epsRs": 51.85,
+        "pat": 93,
         "period": "FY25",
-        "revenue": 1072
+        "revenue": 1107
       },
       {
-        "ebitda": 196.99,
-        "ebitdaMarginPct": 12.1,
-        "epsRs": 76.38,
-        "pat": 143.2,
+        "ebitda": 197,
+        "ebitdaMarginPct": 12,
+        "epsRs": 79.52,
+        "pat": 143,
         "period": "FY26",
         "revenue": 1628
       }
@@ -64,45 +40,45 @@
       "source": "Q4/FY26 earnings call, 23 Apr 2026"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 12.1,
+    "ebitdaMarginPct": 12,
     "evEbitdaX": 8.51,
     "hasDetail": true,
     "marketCapCr": 1549,
     "name": "Rajesh Power Services",
     "orderBookCr": 3326,
-    "patFy26Cr": 143.2,
+    "patFy26Cr": 143,
     "peX": 10.8,
     "quarterly": [
       {
         "ebitda": 37,
-        "ebitdaMarginPct": 11.8,
-        "pat": 26,
-        "patMarginPct": 8.31,
-        "period": "H1FY25",
+        "ebitdaMarginPct": 12,
+        "pat": 30,
+        "patMarginPct": 9.58,
+        "period": "Q2FY25",
         "revenue": 313
       },
       {
         "ebitda": 87,
-        "ebitdaMarginPct": 11.5,
-        "pat": 60,
-        "patMarginPct": 7.91,
-        "period": "H2FY25",
+        "ebitdaMarginPct": 11,
+        "pat": 67,
+        "patMarginPct": 8.83,
+        "period": "Q4FY25",
         "revenue": 759
       },
       {
         "ebitda": 84,
-        "ebitdaMarginPct": 13.2,
-        "pat": 58,
-        "patMarginPct": 9.09,
-        "period": "H1FY26",
+        "ebitdaMarginPct": 13,
+        "pat": 59,
+        "patMarginPct": 9.25,
+        "period": "Q2FY26",
         "revenue": 638
       },
       {
         "ebitda": 113,
-        "ebitdaMarginPct": 11.4,
-        "pat": 79,
-        "patMarginPct": 7.98,
-        "period": "H2FY26",
+        "ebitdaMarginPct": 11,
+        "pat": 84,
+        "patMarginPct": 8.48,
+        "period": "Q4FY26",
         "revenue": 990
       }
     ],

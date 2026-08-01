@@ -2,28 +2,175 @@
   "slug": "urja-global",
   "annual": [
     {
+      "period": "FY15",
+      "revenue": 120.8,
+      "ebitda": 0.53,
+      "ebitdaMarginPct": 0.44,
+      "pat": -1.51,
+      "epsRs": -0.02
+    },
+    {
+      "period": "FY16",
+      "revenue": 127.92,
+      "ebitda": 2.7,
+      "ebitdaMarginPct": 2.11,
+      "pat": 1.06,
+      "epsRs": 0.02
+    },
+    {
+      "period": "FY17",
+      "revenue": 128.32,
+      "ebitda": 1.99,
+      "ebitdaMarginPct": 1.55,
+      "pat": 1.04,
+      "epsRs": 0.02
+    },
+    {
+      "period": "FY18",
+      "revenue": 133.25,
+      "ebitda": -0.61,
+      "ebitdaMarginPct": -0.46,
+      "pat": -0.87,
+      "epsRs": -0.02
+    },
+    {
+      "period": "FY19",
+      "revenue": 136.38,
+      "ebitda": -0.47,
+      "ebitdaMarginPct": -0.34,
+      "pat": 0.01,
+      "epsRs": 0
+    },
+    {
+      "period": "FY20",
+      "revenue": 163.56,
+      "ebitda": 1.14,
+      "ebitdaMarginPct": 0.7,
+      "pat": 1.12,
+      "epsRs": 0.02
+    },
+    {
+      "period": "FY21",
+      "revenue": 148.46,
+      "ebitda": -0.19,
+      "ebitdaMarginPct": -0.13,
+      "pat": 1.73,
+      "epsRs": 0.03
+    },
+    {
+      "period": "FY22",
+      "revenue": 72.97,
+      "ebitda": 0.5,
+      "ebitdaMarginPct": 0.69,
+      "pat": 0.77,
+      "epsRs": 0.01
+    },
+    {
+      "period": "FY23",
+      "revenue": 39.58,
+      "ebitda": 1.69,
+      "ebitdaMarginPct": 4.27,
+      "pat": 1.53,
+      "epsRs": 0.03
+    },
+    {
       "period": "FY24",
       "revenue": 44.47,
       "ebitda": 2.55,
       "ebitdaMarginPct": 5.73,
-      "pat": 2.04
+      "pat": 2.04,
+      "epsRs": 0.04
     },
     {
       "period": "FY25",
       "revenue": 67.25,
       "ebitda": 2.04,
       "ebitdaMarginPct": 3.03,
-      "pat": 1.38
+      "pat": 1.38,
+      "epsRs": 0.02
     },
     {
       "period": "FY26",
       "revenue": 66.7,
       "ebitda": 2.13,
-      "ebitdaMarginPct": 3.2,
-      "pat": 1.3
+      "ebitdaMarginPct": 3.19,
+      "pat": 1.35,
+      "epsRs": 0.03
     }
   ],
   "quarterly": [
+    {
+      "period": "Q4FY23",
+      "revenue": 10.64,
+      "ebitda": 0.09,
+      "ebitdaMarginPct": 0.85,
+      "pat": 0.09,
+      "patMarginPct": 0.85
+    },
+    {
+      "period": "Q1FY24",
+      "revenue": 9.67,
+      "ebitda": 0.46,
+      "ebitdaMarginPct": 4.76,
+      "pat": 0.54,
+      "patMarginPct": 5.58
+    },
+    {
+      "period": "Q2FY24",
+      "revenue": 10.96,
+      "ebitda": 0.78,
+      "ebitdaMarginPct": 7.12,
+      "pat": 0.9,
+      "patMarginPct": 8.21
+    },
+    {
+      "period": "Q3FY24",
+      "revenue": 10.96,
+      "ebitda": 0.78,
+      "ebitdaMarginPct": 7.12,
+      "pat": 0.9,
+      "patMarginPct": 8.21
+    },
+    {
+      "period": "Q4FY24",
+      "revenue": 13.02,
+      "ebitda": 0.21,
+      "ebitdaMarginPct": 1.61,
+      "pat": 0.46,
+      "patMarginPct": 3.53
+    },
+    {
+      "period": "Q1FY25",
+      "revenue": 10.38,
+      "ebitda": 0.4,
+      "ebitdaMarginPct": 3.85,
+      "pat": 0.33,
+      "patMarginPct": 3.18
+    },
+    {
+      "period": "Q2FY25",
+      "revenue": 19.49,
+      "ebitda": 0.35,
+      "ebitdaMarginPct": 1.8,
+      "pat": 0.36,
+      "patMarginPct": 1.85
+    },
+    {
+      "period": "Q3FY25",
+      "revenue": 20.2,
+      "ebitda": 0.33,
+      "ebitdaMarginPct": 1.63,
+      "pat": 0.53,
+      "patMarginPct": 2.62
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 17.18,
+      "ebitda": 0.72,
+      "ebitdaMarginPct": 4.19,
+      "pat": 0.81,
+      "patMarginPct": 4.71
+    },
     {
       "period": "Q1FY26",
       "revenue": 19.01,
@@ -58,16 +205,17 @@
     }
   ],
   "valuation": {
-    "peX": 377,
-    "pbX": 2.86,
-    "cmp": 9.6,
-    "marketCapCr": 505
+    "peX": 356,
+    "pbX": 2.71,
+    "cmp": 9.09,
+    "marketCapCr": 478
   },
+  "rocePct": 1.27,
+  "roePct": 0.76,
   "shareholding": {
-    "promoterPct": 18.35,
-    "fiiPct": 0.1,
-    "diiPct": 0,
-    "publicPct": 81.54,
+    "promoterPct": 17.37,
+    "fiiPct": 0.02,
+    "publicPct": 82.61,
     "asOf": "2026-03-31"
   },
   "asOf": "2026-03-31"

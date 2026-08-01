@@ -2,28 +2,175 @@
   "slug": "indowind-energy",
   "annual": [
     {
+      "period": "FY15",
+      "revenue": 20.05,
+      "ebitda": 9.08,
+      "ebitdaMarginPct": 45.29,
+      "pat": 0.23,
+      "epsRs": 0.01
+    },
+    {
+      "period": "FY16",
+      "revenue": 16.88,
+      "ebitda": 7.4,
+      "ebitdaMarginPct": 43.84,
+      "pat": 0.77,
+      "epsRs": 0.04
+    },
+    {
+      "period": "FY17",
+      "revenue": 26.02,
+      "ebitda": 14.53,
+      "ebitdaMarginPct": 55.84,
+      "pat": -1.99,
+      "epsRs": -0.11
+    },
+    {
+      "period": "FY18",
+      "revenue": 26.16,
+      "ebitda": 10.71,
+      "ebitdaMarginPct": 40.94,
+      "pat": -20.98,
+      "epsRs": -1.11
+    },
+    {
+      "period": "FY19",
+      "revenue": 21.97,
+      "ebitda": 6.15,
+      "ebitdaMarginPct": 27.99,
+      "pat": -12.26,
+      "epsRs": -0.65
+    },
+    {
+      "period": "FY20",
+      "revenue": 20.66,
+      "ebitda": 8.34,
+      "ebitdaMarginPct": 40.37,
+      "pat": 0.06,
+      "epsRs": 0
+    },
+    {
+      "period": "FY21",
+      "revenue": 17.96,
+      "ebitda": 9.57,
+      "ebitdaMarginPct": 53.29,
+      "pat": 0.22,
+      "epsRs": 0.01
+    },
+    {
+      "period": "FY22",
+      "revenue": 24.56,
+      "ebitda": 6.54,
+      "ebitdaMarginPct": 26.63,
+      "pat": 0.13,
+      "epsRs": 0.01
+    },
+    {
+      "period": "FY23",
+      "revenue": 33.96,
+      "ebitda": 13.99,
+      "ebitdaMarginPct": 41.2,
+      "pat": -19.26,
+      "epsRs": -1.2
+    },
+    {
       "period": "FY24",
       "revenue": 38.81,
       "ebitda": 15.84,
       "ebitdaMarginPct": 40.81,
-      "pat": 7.27
+      "pat": 7.27,
+      "epsRs": 0.45
     },
     {
       "period": "FY25",
       "revenue": 33.51,
       "ebitda": 10.55,
       "ebitdaMarginPct": 31.48,
-      "pat": 1.27
+      "pat": 1.27,
+      "epsRs": 0.08
     },
     {
       "period": "FY26",
-      "revenue": 40.8,
+      "revenue": 40.75,
       "ebitda": 14.93,
-      "ebitdaMarginPct": 36.6,
-      "pat": 0.01
+      "ebitdaMarginPct": 36.64,
+      "pat": 0.01,
+      "epsRs": 0
     }
   ],
   "quarterly": [
+    {
+      "period": "Q4FY23",
+      "revenue": 4.51,
+      "ebitda": 0.24,
+      "ebitdaMarginPct": 5.32,
+      "pat": -24.93,
+      "patMarginPct": -552.77
+    },
+    {
+      "period": "Q1FY24",
+      "revenue": 7.63,
+      "ebitda": 5.81,
+      "ebitdaMarginPct": 76.15,
+      "pat": 1.75,
+      "patMarginPct": 22.94
+    },
+    {
+      "period": "Q2FY24",
+      "revenue": 17.91,
+      "ebitda": 10.27,
+      "ebitdaMarginPct": 57.34,
+      "pat": 4.96,
+      "patMarginPct": 27.69
+    },
+    {
+      "period": "Q3FY24",
+      "revenue": 9.73,
+      "ebitda": 0.73,
+      "ebitdaMarginPct": 7.5,
+      "pat": -0.07,
+      "patMarginPct": -0.72
+    },
+    {
+      "period": "Q4FY24",
+      "revenue": 4.44,
+      "ebitda": -0.95,
+      "ebitdaMarginPct": -21.4,
+      "pat": 0.63,
+      "patMarginPct": 14.19
+    },
+    {
+      "period": "Q1FY25",
+      "revenue": 7.35,
+      "ebitda": 2.9,
+      "ebitdaMarginPct": 39.46,
+      "pat": 1.69,
+      "patMarginPct": 22.99
+    },
+    {
+      "period": "Q2FY25",
+      "revenue": 15.81,
+      "ebitda": 8.99,
+      "ebitdaMarginPct": 56.86,
+      "pat": 4.42,
+      "patMarginPct": 27.96
+    },
+    {
+      "period": "Q3FY25",
+      "revenue": 5.56,
+      "ebitda": 0.76,
+      "ebitdaMarginPct": 13.67,
+      "pat": -0.07,
+      "patMarginPct": -1.26
+    },
+    {
+      "period": "Q4FY25",
+      "revenue": 6.63,
+      "ebitda": -0.29,
+      "ebitdaMarginPct": -4.37,
+      "pat": -4.34,
+      "patMarginPct": -65.46
+    },
     {
       "period": "Q1FY26",
       "revenue": 11.54,
@@ -58,15 +205,16 @@
     }
   ],
   "valuation": {
-    "pbX": 0.49,
-    "cmp": 9.41,
+    "pbX": 0.48,
+    "cmp": 9.18,
     "marketCapCr": 148
   },
+  "rocePct": 2.22,
+  "roePct": 0,
   "shareholding": {
     "promoterPct": 48.2,
-    "fiiPct": 0,
-    "diiPct": 0,
-    "publicPct": 51.79,
+    "fiiPct": 0.02,
+    "publicPct": 51.78,
     "asOf": "2026-03-31"
   },
   "asOf": "2026-03-31"

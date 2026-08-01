@@ -5,22 +5,57 @@
   "data": {
     "annual": [
       {
+        "ebitda": 15,
+        "ebitdaMarginPct": 4.2,
+        "epsRs": -5664,
+        "pat": -57,
+        "period": "FY18",
+        "revenue": 368
+      },
+      {
         "ebitda": 82,
-        "ebitdaMarginPct": 47.7,
+        "ebitdaMarginPct": 50,
+        "epsRs": -9.13,
+        "pat": -53,
+        "period": "FY19",
+        "revenue": 164
+      },
+      {
+        "ebitda": 88,
+        "ebitdaMarginPct": 53,
+        "epsRs": -4.52,
+        "pat": -52,
+        "period": "FY20",
+        "revenue": 165
+      },
+      {
+        "ebitda": 63,
+        "ebitdaMarginPct": 37,
+        "epsRs": -11.94,
+        "pat": -154,
+        "period": "FY21",
+        "revenue": 172
+      },
+      {
+        "ebitda": 82,
+        "ebitdaMarginPct": 48,
+        "epsRs": -3.97,
         "pat": -93,
         "period": "FY22",
         "revenue": 172
       },
       {
         "ebitda": 57,
-        "ebitdaMarginPct": 22.4,
+        "ebitdaMarginPct": 23,
+        "epsRs": -0.66,
         "pat": -20,
         "period": "FY23",
         "revenue": 254
       },
       {
         "ebitda": 75,
-        "ebitdaMarginPct": 33.5,
+        "ebitdaMarginPct": 33,
+        "epsRs": 0.95,
         "pat": 28,
         "period": "FY24",
         "revenue": 224
@@ -28,13 +63,15 @@
       {
         "ebitda": 52,
         "ebitdaMarginPct": 22,
+        "epsRs": 0.54,
         "pat": 22,
         "period": "FY25",
         "revenue": 236
       },
       {
-        "ebitda": 23.04,
-        "ebitdaMarginPct": 8.2,
+        "ebitda": 23,
+        "ebitdaMarginPct": 8,
+        "epsRs": 2.55,
         "pat": 103,
         "period": "FY26",
         "revenue": 281
@@ -59,7 +96,7 @@
       "source": "Inox Green Q4 FY26 analyst call, May 29 2026; Yahoo/GuruFocus, Business Standard, InvestyWise"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 8.2,
+    "ebitdaMarginPct": 8,
     "evEbitdaX": 300.57,
     "hasDetail": true,
     "marketCapCr": 6825,
@@ -70,6 +107,79 @@
     "quarterly": [
       {
         "ebitda": 6,
+        "ebitdaMarginPct": 11,
+        "pat": -2,
+        "patMarginPct": -3.51,
+        "period": "Q4FY23",
+        "revenue": 57
+      },
+      {
+        "ebitda": 23,
+        "ebitdaMarginPct": 40,
+        "pat": 3,
+        "patMarginPct": 5.26,
+        "period": "Q1FY24",
+        "revenue": 57
+      },
+      {
+        "ebitda": 13,
+        "ebitdaMarginPct": 27,
+        "pat": 6,
+        "patMarginPct": 12.77,
+        "period": "Q2FY24",
+        "revenue": 47
+      },
+      {
+        "ebitda": 20,
+        "ebitdaMarginPct": 33,
+        "pat": -1,
+        "patMarginPct": -1.67,
+        "period": "Q3FY24",
+        "revenue": 60
+      },
+      {
+        "ebitda": 12,
+        "ebitdaMarginPct": 22,
+        "pat": 21,
+        "patMarginPct": 40.38,
+        "period": "Q4FY24",
+        "revenue": 52
+      },
+      {
+        "ebitda": 17,
+        "ebitdaMarginPct": 33,
+        "pat": 4,
+        "patMarginPct": 7.84,
+        "period": "Q1FY25",
+        "revenue": 51
+      },
+      {
+        "ebitda": 19,
+        "ebitdaMarginPct": 34,
+        "pat": 6,
+        "patMarginPct": 10.91,
+        "period": "Q2FY25",
+        "revenue": 55
+      },
+      {
+        "ebitda": 16,
+        "ebitdaMarginPct": 26,
+        "pat": 5,
+        "patMarginPct": 8.2,
+        "period": "Q3FY25",
+        "revenue": 61
+      },
+      {
+        "ebitda": -3,
+        "ebitdaMarginPct": -4.6,
+        "pat": 6,
+        "patMarginPct": 9.23,
+        "period": "Q4FY25",
+        "revenue": 65
+      },
+      {
+        "ebitda": 6,
+        "ebitdaMarginPct": 11,
         "pat": 22,
         "patMarginPct": 39.29,
         "period": "Q1FY26",
@@ -77,6 +187,7 @@
       },
       {
         "ebitda": 9,
+        "ebitdaMarginPct": 10,
         "pat": 28,
         "patMarginPct": 32.56,
         "period": "Q2FY26",
@@ -84,6 +195,7 @@
       },
       {
         "ebitda": 19,
+        "ebitdaMarginPct": 24,
         "pat": 25,
         "patMarginPct": 32.05,
         "period": "Q3FY26",
@@ -91,6 +203,7 @@
       },
       {
         "ebitda": -3,
+        "ebitdaMarginPct": -4.1,
         "pat": 28,
         "patMarginPct": 40.58,
         "period": "Q4FY26",
@@ -100,10 +213,10 @@
     "revenueFy26Cr": 281,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 1.5,
-      "fiiPct": 8.7,
-      "promoterPct": 56.1,
-      "publicPct": 33.7
+      "diiPct": 1.87,
+      "fiiPct": 7.86,
+      "promoterPct": 56.12,
+      "publicPct": 34.17
     },
     "slug": "inox-green",
     "sourceNote": "Market data (mid-2026) + company filings",

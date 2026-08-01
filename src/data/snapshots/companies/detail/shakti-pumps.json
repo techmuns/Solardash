@@ -5,8 +5,64 @@
   "data": {
     "annual": [
       {
+        "ebitda": 47,
+        "ebitdaMarginPct": 16,
+        "epsRs": 2.61,
+        "pat": 26,
+        "period": "FY15",
+        "revenue": 297
+      },
+      {
+        "ebitda": 20,
+        "ebitdaMarginPct": 8,
+        "epsRs": 0.11,
+        "pat": 1,
+        "period": "FY16",
+        "revenue": 264
+      },
+      {
+        "ebitda": 60,
+        "ebitdaMarginPct": 14,
+        "epsRs": 1.96,
+        "pat": 22,
+        "period": "FY17",
+        "revenue": 428
+      },
+      {
+        "ebitda": 78,
+        "ebitdaMarginPct": 18,
+        "epsRs": 3.16,
+        "pat": 35,
+        "period": "FY18",
+        "revenue": 435
+      },
+      {
+        "ebitda": 89,
+        "ebitdaMarginPct": 16,
+        "epsRs": 4.09,
+        "pat": 45,
+        "period": "FY19",
+        "revenue": 544
+      },
+      {
+        "ebitda": 12,
+        "ebitdaMarginPct": 3.2,
+        "epsRs": -1.28,
+        "pat": -14,
+        "period": "FY20",
+        "revenue": 383
+      },
+      {
+        "ebitda": 142,
+        "ebitdaMarginPct": 15,
+        "epsRs": 6.85,
+        "pat": 76,
+        "period": "FY21",
+        "revenue": 930
+      },
+      {
         "ebitda": 110,
-        "ebitdaMarginPct": 9.3,
+        "ebitdaMarginPct": 9,
         "epsRs": 5.88,
         "pat": 65,
         "period": "FY22",
@@ -14,7 +70,7 @@
       },
       {
         "ebitda": 67,
-        "ebitdaMarginPct": 6.9,
+        "ebitdaMarginPct": 7,
         "epsRs": 2.19,
         "pat": 24,
         "period": "FY23",
@@ -22,7 +78,7 @@
       },
       {
         "ebitda": 225,
-        "ebitdaMarginPct": 16.4,
+        "ebitdaMarginPct": 16,
         "epsRs": 11.79,
         "pat": 142,
         "period": "FY24",
@@ -37,8 +93,8 @@
         "revenue": 2516
       },
       {
-        "ebitda": 420.89,
-        "ebitdaMarginPct": 15.6,
+        "ebitda": 422,
+        "ebitdaMarginPct": 16,
         "epsRs": 20.87,
         "pat": 258,
         "period": "FY26",
@@ -64,7 +120,7 @@
       "source": "Shakti Pumps Q4 FY26 concall, May 11 2026; Whalesbook, InvestyWise, ScanX, company update"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 15.6,
+    "ebitdaMarginPct": 16,
     "evEbitdaX": 19.17,
     "hasDetail": true,
     "marketCapCr": 6417,
@@ -74,8 +130,56 @@
     "peX": 30.2,
     "quarterly": [
       {
+        "ebitda": 8,
+        "ebitdaMarginPct": 7,
+        "pat": 1,
+        "patMarginPct": 0.88,
+        "period": "Q1FY24",
+        "revenue": 113
+      },
+      {
+        "ebitda": 15,
+        "ebitdaMarginPct": 10,
+        "pat": 6,
+        "patMarginPct": 3.92,
+        "period": "Q2FY24",
+        "revenue": 153
+      },
+      {
+        "ebitda": 71,
+        "ebitdaMarginPct": 14,
+        "pat": 45,
+        "patMarginPct": 9.07,
+        "period": "Q3FY24",
+        "revenue": 496
+      },
+      {
+        "ebitda": 131,
+        "ebitdaMarginPct": 21,
+        "pat": 90,
+        "patMarginPct": 14.78,
+        "period": "Q4FY24",
+        "revenue": 609
+      },
+      {
+        "ebitda": 136,
+        "ebitdaMarginPct": 24,
+        "pat": 93,
+        "patMarginPct": 16.37,
+        "period": "Q1FY25",
+        "revenue": 568
+      },
+      {
+        "ebitda": 149,
+        "ebitdaMarginPct": 23,
+        "pat": 101,
+        "patMarginPct": 15.91,
+        "period": "Q2FY25",
+        "revenue": 635
+      },
+      {
         "ebitda": 154,
-        "ebitdaMarginPct": 23.7,
+        "ebitdaMarginPct": 24,
         "pat": 104,
         "patMarginPct": 16.02,
         "period": "Q3FY25",
@@ -83,7 +187,7 @@
       },
       {
         "ebitda": 164,
-        "ebitdaMarginPct": 24.7,
+        "ebitdaMarginPct": 25,
         "pat": 110,
         "patMarginPct": 16.54,
         "period": "Q4FY25",
@@ -91,7 +195,7 @@
       },
       {
         "ebitda": 144,
-        "ebitdaMarginPct": 23.2,
+        "ebitdaMarginPct": 23,
         "pat": 97,
         "patMarginPct": 15.59,
         "period": "Q1FY26",
@@ -99,7 +203,7 @@
       },
       {
         "ebitda": 136,
-        "ebitdaMarginPct": 20.4,
+        "ebitdaMarginPct": 20,
         "pat": 91,
         "patMarginPct": 13.66,
         "period": "Q2FY26",
@@ -107,7 +211,7 @@
       },
       {
         "ebitda": 59,
-        "ebitdaMarginPct": 10.7,
+        "ebitdaMarginPct": 11,
         "pat": 32,
         "patMarginPct": 5.81,
         "period": "Q3FY26",
@@ -115,20 +219,28 @@
       },
       {
         "ebitda": 83,
-        "ebitdaMarginPct": 9.7,
+        "ebitdaMarginPct": 10,
         "pat": 38,
         "patMarginPct": 4.43,
         "period": "Q4FY26",
         "revenue": 858
+      },
+      {
+        "ebitda": 83,
+        "ebitdaMarginPct": 10,
+        "pat": 52,
+        "patMarginPct": 6.05,
+        "period": "Q1FY27",
+        "revenue": 859
       }
     ],
     "revenueFy26Cr": 2698,
     "shareholding": {
-      "asOf": "2026-03-31",
-      "diiPct": 4.97,
-      "fiiPct": 4.83,
+      "asOf": "2026-06-30",
+      "diiPct": 2.39,
+      "fiiPct": 5.08,
       "promoterPct": 50.36,
-      "publicPct": 39.84
+      "publicPct": 42.15
     },
     "slug": "shakti-pumps",
     "sourceNote": "Market data (mid-2026) + company filings",

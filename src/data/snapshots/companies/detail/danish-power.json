@@ -5,39 +5,25 @@
   "data": {
     "annual": [
       {
-        "ebitda": 10,
-        "ebitdaMarginPct": 6.7,
-        "pat": 6,
-        "period": "FY22",
-        "revenue": 149
-      },
-      {
-        "ebitda": 16,
-        "ebitdaMarginPct": 8.5,
-        "pat": 9,
-        "period": "FY23",
-        "revenue": 188
-      },
-      {
         "ebitda": 55,
-        "ebitdaMarginPct": 16.6,
+        "ebitdaMarginPct": 17,
         "pat": 38,
         "period": "FY24",
         "revenue": 332
       },
       {
-        "ebitda": 81,
-        "ebitdaMarginPct": 19.1,
-        "epsRs": 29.63,
+        "ebitda": 83,
+        "ebitdaMarginPct": 19,
+        "epsRs": 29.25,
         "pat": 58,
         "period": "FY25",
-        "revenue": 425
+        "revenue": 427
       },
       {
-        "ebitda": 90.13,
-        "ebitdaMarginPct": 17.3,
-        "epsRs": 35.55,
-        "pat": 70,
+        "ebitda": 92,
+        "ebitdaMarginPct": 18,
+        "epsRs": 35.03,
+        "pat": 69,
         "period": "FY26",
         "revenue": 521
       }
@@ -60,45 +46,45 @@
       "source": "H2 & FY26 concall, 11 May 2026"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 17.3,
+    "ebitdaMarginPct": 18,
     "evEbitdaX": 17.46,
     "hasDetail": true,
     "marketCapCr": 1604,
     "name": "Danish Power",
     "orderBookCr": 500,
-    "patFy26Cr": 70,
+    "patFy26Cr": 69,
     "peX": 23.2,
     "quarterly": [
       {
-        "ebitda": 30,
-        "ebitdaMarginPct": 18.4,
-        "pat": 21,
-        "patMarginPct": 12.88,
-        "period": "H1FY25",
-        "revenue": 163
+        "ebitda": 31,
+        "ebitdaMarginPct": 19,
+        "pat": 20,
+        "patMarginPct": 12.2,
+        "period": "Q2FY25",
+        "revenue": 164
       },
       {
         "ebitda": 51,
-        "ebitdaMarginPct": 19.5,
-        "pat": 38,
-        "patMarginPct": 14.56,
-        "period": "H2FY25",
-        "revenue": 261
+        "ebitdaMarginPct": 20,
+        "pat": 35,
+        "patMarginPct": 13.36,
+        "period": "Q4FY25",
+        "revenue": 262
       },
       {
-        "ebitda": 36,
-        "ebitdaMarginPct": 17.1,
+        "ebitda": 37,
+        "ebitdaMarginPct": 18,
         "pat": 29,
-        "patMarginPct": 13.74,
-        "period": "H1FY26",
-        "revenue": 211
+        "patMarginPct": 13.68,
+        "period": "Q2FY26",
+        "revenue": 212
       },
       {
-        "ebitda": 54,
-        "ebitdaMarginPct": 17.4,
-        "pat": 41,
-        "patMarginPct": 13.23,
-        "period": "H2FY26",
+        "ebitda": 55,
+        "ebitdaMarginPct": 18,
+        "pat": 40,
+        "patMarginPct": 12.9,
+        "period": "Q4FY26",
         "revenue": 310
       }
     ],

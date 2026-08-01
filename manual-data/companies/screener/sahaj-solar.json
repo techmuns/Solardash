@@ -2,6 +2,14 @@
   "slug": "sahaj-solar",
   "annual": [
     {
+      "period": "FY21",
+      "revenue": 62,
+      "ebitda": 3,
+      "ebitdaMarginPct": 5,
+      "pat": 1,
+      "epsRs": 0.58
+    },
+    {
       "period": "FY22",
       "revenue": 67,
       "ebitda": 4,
@@ -13,7 +21,7 @@
       "period": "FY23",
       "revenue": 185,
       "ebitda": 11,
-      "ebitdaMarginPct": 5.9,
+      "ebitdaMarginPct": 6,
       "pat": 6,
       "epsRs": 4.04
     },
@@ -21,7 +29,7 @@
       "period": "FY24",
       "revenue": 201,
       "ebitda": 24,
-      "ebitdaMarginPct": 11.9,
+      "ebitdaMarginPct": 12,
       "pat": 13,
       "epsRs": 8.17
     },
@@ -29,59 +37,74 @@
       "period": "FY25",
       "revenue": 330,
       "ebitda": 42,
-      "ebitdaMarginPct": 12.7,
+      "ebitdaMarginPct": 13,
       "pat": 28,
       "epsRs": 12.52
     },
     {
       "period": "FY26",
       "revenue": 419,
-      "ebitda": 51.96,
-      "ebitdaMarginPct": 12.4,
+      "ebitda": 52,
+      "ebitdaMarginPct": 12,
       "pat": 30,
       "epsRs": 13.46
     }
   ],
   "quarterly": [
     {
-      "period": "H1FY25",
+      "period": "Q2FY24",
+      "revenue": 61,
+      "ebitda": 4,
+      "ebitdaMarginPct": 7,
+      "pat": 2,
+      "patMarginPct": 3.28
+    },
+    {
+      "period": "Q4FY24",
+      "revenue": 140,
+      "ebitda": 20,
+      "ebitdaMarginPct": 14,
+      "pat": 12,
+      "patMarginPct": 8.57
+    },
+    {
+      "period": "Q2FY25",
       "revenue": 98,
       "ebitda": 8,
-      "ebitdaMarginPct": 8.2,
+      "ebitdaMarginPct": 9,
       "pat": 5,
       "patMarginPct": 5.1
     },
     {
-      "period": "H2FY25",
+      "period": "Q4FY25",
       "revenue": 232,
       "ebitda": 34,
-      "ebitdaMarginPct": 14.7,
+      "ebitdaMarginPct": 15,
       "pat": 23,
       "patMarginPct": 9.91
     },
     {
-      "period": "H1FY26",
+      "period": "Q2FY26",
       "revenue": 111,
       "ebitda": 11,
-      "ebitdaMarginPct": 9.9,
+      "ebitdaMarginPct": 10,
       "pat": 5,
       "patMarginPct": 4.5
     },
     {
-      "period": "H2FY26",
+      "period": "Q4FY26",
       "revenue": 308,
       "ebitda": 41,
-      "ebitdaMarginPct": 13.3,
+      "ebitdaMarginPct": 13,
       "pat": 25,
       "patMarginPct": 8.12
     }
   ],
   "valuation": {
-    "peX": 9.2,
-    "pbX": 2,
-    "evEbitdaX": 8.6,
-    "cmp": 124,
-    "marketCapCr": 273
+    "peX": 8.53,
+    "pbX": 1.83,
+    "cmp": 115,
+    "marketCapCr": 252
   },
   "rocePct": 21.6,
   "roePct": 24,

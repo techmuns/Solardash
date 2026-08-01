@@ -5,32 +5,28 @@
   "data": {
     "annual": [
       {
-        "ebitda": 1.25,
-        "ebitdaMarginPct": 7.22,
-        "pat": 0.74,
-        "period": "FY23",
-        "revenue": 17.32
-      },
-      {
-        "ebitda": 1.93,
-        "ebitdaMarginPct": 11.03,
-        "pat": 1.04,
+        "ebitda": 1.97,
+        "ebitdaMarginPct": 11.45,
+        "epsRs": 4.61,
+        "pat": 1.07,
         "period": "FY24",
-        "revenue": 17.49
+        "revenue": 17.21
       },
       {
-        "ebitda": 3.3,
-        "ebitdaMarginPct": 11.85,
-        "pat": 1.34,
+        "ebitda": 3.77,
+        "ebitdaMarginPct": 11.3,
+        "epsRs": 7.16,
+        "pat": 1.66,
         "period": "FY25",
-        "revenue": 27.84
+        "revenue": 33.37
       },
       {
-        "ebitda": 7.69,
-        "ebitdaMarginPct": 10.7,
-        "pat": 4.8,
+        "ebitda": 8.17,
+        "ebitdaMarginPct": 11.01,
+        "epsRs": 16.52,
+        "pat": 3.83,
         "period": "FY26",
-        "revenue": 71.9
+        "revenue": 74.23
       }
     ],
     "board": "NSE SME",
@@ -50,32 +46,56 @@
       "source": "FY2025-26 results press release, 11 Jun 2026 (no concall held)"
     },
     "confidence": "medium",
-    "ebitdaMarginPct": 10.7,
+    "ebitdaMarginPct": 11.01,
     "evEbitdaX": 9.76,
     "hasDetail": true,
     "marketCapCr": 52.5,
     "name": "Sungarner Energies",
-    "patFy26Cr": 4.8,
+    "patFy26Cr": 3.83,
     "peX": 13.7,
     "quarterly": [
       {
-        "ebitda": 2.62,
-        "ebitdaMarginPct": 11.18,
-        "pat": 1.3,
-        "patMarginPct": 5.55,
-        "period": "H1FY26",
-        "revenue": 23.43
+        "ebitda": 1.44,
+        "ebitdaMarginPct": 14.13,
+        "pat": 0.83,
+        "patMarginPct": 8.15,
+        "period": "Q4FY24",
+        "revenue": 10.19
       },
       {
-        "ebitda": 5.06,
-        "ebitdaMarginPct": 10.45,
-        "pat": 3.45,
-        "patMarginPct": 7.12,
-        "period": "H2FY26",
-        "revenue": 48.43
+        "ebitda": 1.55,
+        "ebitdaMarginPct": 13.23,
+        "pat": 0.88,
+        "patMarginPct": 7.51,
+        "period": "Q2FY25",
+        "revenue": 11.72
+      },
+      {
+        "ebitda": 2.2,
+        "ebitdaMarginPct": 10.11,
+        "pat": 0.84,
+        "patMarginPct": 3.86,
+        "period": "Q4FY25",
+        "revenue": 21.77
+      },
+      {
+        "ebitda": 2.61,
+        "ebitdaMarginPct": 10.33,
+        "pat": 1.02,
+        "patMarginPct": 4.04,
+        "period": "Q2FY26",
+        "revenue": 25.27
+      },
+      {
+        "ebitda": 5.58,
+        "ebitdaMarginPct": 11.4,
+        "pat": 2.81,
+        "patMarginPct": 5.74,
+        "period": "Q4FY26",
+        "revenue": 48.95
       }
     ],
-    "revenueFy26Cr": 71.9,
+    "revenueFy26Cr": 74.23,
     "shareholding": {
       "asOf": "2026-03-31",
       "promoterPct": 62,

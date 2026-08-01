@@ -2,10 +2,74 @@
   "slug": "ravindra-energy",
   "annual": [
     {
+      "period": "FY15",
+      "revenue": 555,
+      "ebitda": 15,
+      "ebitdaMarginPct": 2.8,
+      "pat": 8,
+      "epsRs": 0.57
+    },
+    {
+      "period": "FY16",
+      "revenue": 493,
+      "ebitda": -4,
+      "ebitdaMarginPct": -0.8,
+      "pat": -9,
+      "epsRs": -0.66
+    },
+    {
+      "period": "FY17",
+      "revenue": 621,
+      "ebitda": 4,
+      "ebitdaMarginPct": 0.7,
+      "pat": -2,
+      "epsRs": -0.13
+    },
+    {
+      "period": "FY18",
+      "revenue": 417,
+      "ebitda": -30,
+      "ebitdaMarginPct": -7,
+      "pat": -140,
+      "epsRs": -10.3
+    },
+    {
+      "period": "FY19",
+      "revenue": 518,
+      "ebitda": -200,
+      "ebitdaMarginPct": -39,
+      "pat": -213,
+      "epsRs": -16.05
+    },
+    {
+      "period": "FY20",
+      "revenue": 719,
+      "ebitda": 26,
+      "ebitdaMarginPct": 3.6,
+      "pat": 6,
+      "epsRs": 0.44
+    },
+    {
+      "period": "FY21",
+      "revenue": 304,
+      "ebitda": 15,
+      "ebitdaMarginPct": 4.9,
+      "pat": 7,
+      "epsRs": 0.4
+    },
+    {
+      "period": "FY22",
+      "revenue": 765,
+      "ebitda": -6,
+      "ebitdaMarginPct": -0.8,
+      "pat": 37,
+      "epsRs": 2.19
+    },
+    {
       "period": "FY23",
       "revenue": 253,
       "ebitda": 14,
-      "ebitdaMarginPct": 5.5,
+      "ebitdaMarginPct": 6,
       "pat": 17,
       "epsRs": 1.02
     },
@@ -21,25 +85,81 @@
       "period": "FY25",
       "revenue": 250,
       "ebitda": 43,
-      "ebitdaMarginPct": 17.2,
+      "ebitdaMarginPct": 17,
       "pat": 22,
       "epsRs": 1.09
     },
     {
       "period": "FY26",
       "revenue": 543,
-      "ebitda": 130.86,
-      "ebitdaMarginPct": 24.1,
+      "ebitda": 131,
+      "ebitdaMarginPct": 24,
       "pat": 81,
       "epsRs": 4.07
     }
   ],
   "quarterly": [
     {
+      "period": "Q4FY23",
+      "revenue": 114,
+      "ebitda": 3,
+      "ebitdaMarginPct": 2.4,
+      "pat": 9,
+      "patMarginPct": 7.89
+    },
+    {
+      "period": "Q1FY24",
+      "revenue": 58,
+      "ebitda": 11,
+      "ebitdaMarginPct": 19,
+      "pat": 3,
+      "patMarginPct": 5.17
+    },
+    {
+      "period": "Q2FY24",
+      "revenue": 27,
+      "ebitda": 6,
+      "ebitdaMarginPct": 24,
+      "pat": 9,
+      "patMarginPct": 33.33
+    },
+    {
+      "period": "Q3FY24",
+      "revenue": 16,
+      "ebitda": 7,
+      "ebitdaMarginPct": 45,
+      "pat": 0,
+      "patMarginPct": 0
+    },
+    {
+      "period": "Q4FY24",
+      "revenue": 30,
+      "ebitda": 9,
+      "ebitdaMarginPct": 28,
+      "pat": -63,
+      "patMarginPct": -210
+    },
+    {
+      "period": "Q1FY25",
+      "revenue": 23,
+      "ebitda": 7,
+      "ebitdaMarginPct": 32,
+      "pat": 6,
+      "patMarginPct": 26.09
+    },
+    {
+      "period": "Q2FY25",
+      "revenue": 16,
+      "ebitda": 1,
+      "ebitdaMarginPct": 3.8,
+      "pat": 1,
+      "patMarginPct": 6.25
+    },
+    {
       "period": "Q3FY25",
       "revenue": 53,
       "ebitda": 7,
-      "ebitdaMarginPct": 13.2,
+      "ebitdaMarginPct": 13,
       "pat": 2,
       "patMarginPct": 3.77
     },
@@ -55,7 +175,7 @@
       "period": "Q1FY26",
       "revenue": 163,
       "ebitda": 28,
-      "ebitdaMarginPct": 17.2,
+      "ebitdaMarginPct": 17,
       "pat": 23,
       "patMarginPct": 14.11
     },
@@ -63,7 +183,7 @@
       "period": "Q2FY26",
       "revenue": 120,
       "ebitda": 37,
-      "ebitdaMarginPct": 30.8,
+      "ebitdaMarginPct": 31,
       "pat": 31,
       "patMarginPct": 25.83
     },
@@ -71,7 +191,7 @@
       "period": "Q3FY26",
       "revenue": 127,
       "ebitda": 32,
-      "ebitdaMarginPct": 25.2,
+      "ebitdaMarginPct": 25,
       "pat": 15,
       "patMarginPct": 11.81
     },
@@ -79,25 +199,24 @@
       "period": "Q4FY26",
       "revenue": 133,
       "ebitda": 34,
-      "ebitdaMarginPct": 25.6,
+      "ebitdaMarginPct": 25,
       "pat": 13,
       "patMarginPct": 9.77
     }
   ],
   "valuation": {
-    "peX": 45.3,
-    "pbX": 8.59,
-    "evEbitdaX": 31.4,
-    "cmp": 183,
-    "marketCapCr": 3654
+    "peX": 41.4,
+    "pbX": 7.89,
+    "cmp": 168,
+    "marketCapCr": 3335
   },
   "rocePct": 15.9,
   "roePct": 21.2,
   "shareholding": {
     "promoterPct": 58.26,
-    "fiiPct": 3.32,
-    "diiPct": 3.01,
-    "publicPct": 35.42,
+    "fiiPct": 3.27,
+    "diiPct": 2.99,
+    "publicPct": 35.49,
     "asOf": "2026-03-31"
   },
   "asOf": "2026-03-31"

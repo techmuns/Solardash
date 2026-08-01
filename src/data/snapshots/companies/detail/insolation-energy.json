@@ -117,10 +117,10 @@
     "revenueFy26Cr": 2146,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 0.74,
-      "fiiPct": 1.09,
+      "diiPct": 1.27,
+      "fiiPct": 0.84,
       "promoterPct": 66.12,
-      "publicPct": 32.05
+      "publicPct": 31.75
     },
     "slug": "insolation-energy",
     "sourceNote": "Company filings (aggregated)",

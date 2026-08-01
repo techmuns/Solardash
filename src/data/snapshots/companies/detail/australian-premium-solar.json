@@ -21,8 +21,8 @@
         "revenue": 439
       },
       {
-        "ebitda": 94.87,
-        "ebitdaMarginPct": 13.4,
+        "ebitda": 95,
+        "ebitdaMarginPct": 13,
         "epsRs": 28.71,
         "pat": 58,
         "period": "FY26",
@@ -48,7 +48,7 @@
       "source": "APS H2 FY26 earnings call (GuruFocus call highlights) + H2/FY26 results release, ~27-May-2026"
     },
     "confidence": "medium",
-    "ebitdaMarginPct": 13.4,
+    "ebitdaMarginPct": 13,
     "evEbitdaX": 6.22,
     "hasDetail": true,
     "marketCapCr": 546,
@@ -58,45 +58,61 @@
     "peX": 9.44,
     "quarterly": [
       {
+        "ebitda": 4,
+        "ebitdaMarginPct": 5,
+        "pat": 3,
+        "patMarginPct": 3.7,
+        "period": "Q2FY24",
+        "revenue": 81
+      },
+      {
+        "ebitda": 5,
+        "ebitdaMarginPct": 6,
+        "pat": 6,
+        "patMarginPct": 8,
+        "period": "Q4FY24",
+        "revenue": 75
+      },
+      {
         "ebitda": 19,
-        "ebitdaMarginPct": 11.6,
+        "ebitdaMarginPct": 12,
         "pat": 13,
         "patMarginPct": 7.93,
-        "period": "H1FY25",
+        "period": "Q2FY25",
         "revenue": 164
       },
       {
         "ebitda": 38,
-        "ebitdaMarginPct": 13.8,
+        "ebitdaMarginPct": 14,
         "pat": 27,
         "patMarginPct": 9.82,
-        "period": "H2FY25",
+        "period": "Q4FY25",
         "revenue": 275
       },
       {
         "ebitda": 43,
-        "ebitdaMarginPct": 14.2,
+        "ebitdaMarginPct": 14,
         "pat": 29,
         "patMarginPct": 9.6,
-        "period": "H1FY26",
+        "period": "Q2FY26",
         "revenue": 302
       },
       {
         "ebitda": 52,
-        "ebitdaMarginPct": 12.8,
+        "ebitdaMarginPct": 13,
         "pat": 29,
         "patMarginPct": 7.16,
-        "period": "H2FY26",
+        "period": "Q4FY26",
         "revenue": 405
       }
     ],
     "revenueFy26Cr": 708,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 0.46,
+      "diiPct": 0.47,
       "fiiPct": 0,
       "promoterPct": 72.62,
-      "publicPct": 26.93
+      "publicPct": 26.91
     },
     "slug": "australian-premium-solar",
     "sourceNote": "Market data (mid-2026) + company filings",

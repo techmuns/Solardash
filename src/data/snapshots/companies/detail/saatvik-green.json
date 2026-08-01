@@ -6,7 +6,7 @@
     "annual": [
       {
         "ebitda": 15,
-        "ebitdaMarginPct": 2,
+        "ebitdaMarginPct": 2.5,
         "epsRs": 14.05,
         "pat": 5,
         "period": "FY23",
@@ -142,10 +142,10 @@
     "revenueFy26Cr": 4548,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 10.52,
-      "fiiPct": 0.03,
+      "diiPct": 10.97,
+      "fiiPct": 0.19,
       "promoterPct": 75.99,
-      "publicPct": 13.46
+      "publicPct": 12.84
     },
     "slug": "saatvik-green",
     "sourceNote": "Company filings (aggregated)",

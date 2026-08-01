@@ -5,8 +5,40 @@
   "data": {
     "annual": [
       {
+        "ebitda": 0,
+        "ebitdaMarginPct": 25,
+        "epsRs": 0.02,
+        "pat": 0,
+        "period": "FY18",
+        "revenue": 2
+      },
+      {
+        "ebitda": 3,
+        "ebitdaMarginPct": 45,
+        "epsRs": -0.38,
+        "pat": -2,
+        "period": "FY19",
+        "revenue": 7
+      },
+      {
+        "ebitda": 1,
+        "ebitdaMarginPct": 15,
+        "epsRs": -0.31,
+        "pat": -3,
+        "period": "FY20",
+        "revenue": 6
+      },
+      {
+        "ebitda": 7,
+        "ebitdaMarginPct": 54,
+        "epsRs": -0.23,
+        "pat": -2,
+        "period": "FY21",
+        "revenue": 13
+      },
+      {
         "ebitda": 24,
-        "ebitdaMarginPct": 14.8,
+        "ebitdaMarginPct": 15,
         "epsRs": 0.83,
         "pat": 9,
         "period": "FY22",
@@ -14,7 +46,7 @@
       },
       {
         "ebitda": 84,
-        "ebitdaMarginPct": 23.9,
+        "ebitdaMarginPct": 24,
         "epsRs": 5.32,
         "pat": 55,
         "period": "FY23",
@@ -22,7 +54,7 @@
       },
       {
         "ebitda": 207,
-        "ebitdaMarginPct": 23.6,
+        "ebitdaMarginPct": 24,
         "epsRs": 13.95,
         "pat": 145,
         "period": "FY24",
@@ -30,15 +62,15 @@
       },
       {
         "ebitda": 311,
-        "ebitdaMarginPct": 19.5,
+        "ebitdaMarginPct": 19,
         "epsRs": 21.98,
         "pat": 229,
         "period": "FY25",
         "revenue": 1598
       },
       {
-        "ebitda": 639.55,
-        "ebitdaMarginPct": 19.2,
+        "ebitda": 641,
+        "ebitdaMarginPct": 19,
         "epsRs": 45.88,
         "pat": 479,
         "period": "FY26",
@@ -64,7 +96,7 @@
       "source": "Waaree Renewable Q4 FY26 results/concall, ~Apr 16 2026; ScanX, Mercom India, sahi.com, InvestyWise"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 19.2,
+    "ebitdaMarginPct": 19,
     "evEbitdaX": 13.88,
     "hasDetail": true,
     "marketCapCr": 9527,
@@ -73,6 +105,54 @@
     "patFy26Cr": 479,
     "peX": 18.8,
     "quarterly": [
+      {
+        "ebitda": 13,
+        "ebitdaMarginPct": 10,
+        "pat": 9,
+        "patMarginPct": 6.98,
+        "period": "Q1FY24",
+        "revenue": 129
+      },
+      {
+        "ebitda": 31,
+        "ebitdaMarginPct": 20,
+        "pat": 21,
+        "patMarginPct": 14,
+        "period": "Q2FY24",
+        "revenue": 150
+      },
+      {
+        "ebitda": 88,
+        "ebitdaMarginPct": 27,
+        "pat": 64,
+        "patMarginPct": 19.75,
+        "period": "Q3FY24",
+        "revenue": 324
+      },
+      {
+        "ebitda": 75,
+        "ebitdaMarginPct": 28,
+        "pat": 51,
+        "patMarginPct": 18.68,
+        "period": "Q4FY24",
+        "revenue": 273
+      },
+      {
+        "ebitda": 41,
+        "ebitdaMarginPct": 17,
+        "pat": 28,
+        "patMarginPct": 11.86,
+        "period": "Q1FY25",
+        "revenue": 236
+      },
+      {
+        "ebitda": 72,
+        "ebitdaMarginPct": 14,
+        "pat": 54,
+        "patMarginPct": 10.31,
+        "period": "Q2FY25",
+        "revenue": 524
+      },
       {
         "ebitda": 72,
         "ebitdaMarginPct": 20,
@@ -83,7 +163,7 @@
       },
       {
         "ebitda": 126,
-        "ebitdaMarginPct": 26.4,
+        "ebitdaMarginPct": 27,
         "pat": 94,
         "patMarginPct": 19.71,
         "period": "Q4FY25",
@@ -91,7 +171,7 @@
       },
       {
         "ebitda": 118,
-        "ebitdaMarginPct": 19.6,
+        "ebitdaMarginPct": 19,
         "pat": 86,
         "patMarginPct": 14.26,
         "period": "Q1FY26",
@@ -99,7 +179,7 @@
       },
       {
         "ebitda": 158,
-        "ebitdaMarginPct": 20.4,
+        "ebitdaMarginPct": 20,
         "pat": 116,
         "patMarginPct": 14.97,
         "period": "Q2FY26",
@@ -107,7 +187,7 @@
       },
       {
         "ebitda": 159,
-        "ebitdaMarginPct": 18.7,
+        "ebitdaMarginPct": 19,
         "pat": 120,
         "patMarginPct": 14.1,
         "period": "Q3FY26",
@@ -115,20 +195,28 @@
       },
       {
         "ebitda": 207,
-        "ebitdaMarginPct": 18.8,
+        "ebitdaMarginPct": 19,
         "pat": 156,
         "patMarginPct": 14.16,
         "period": "Q4FY26",
         "revenue": 1102
+      },
+      {
+        "ebitda": 173,
+        "ebitdaMarginPct": 19,
+        "pat": 119,
+        "patMarginPct": 12.88,
+        "period": "Q1FY27",
+        "revenue": 924
       }
     ],
     "revenueFy26Cr": 3331,
     "shareholding": {
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-30",
       "diiPct": 0.09,
-      "fiiPct": 1.85,
+      "fiiPct": 1.98,
       "promoterPct": 74.32,
-      "publicPct": 23.73
+      "publicPct": 23.61
     },
     "slug": "waaree-renewable",
     "sourceNote": "Market data (mid-2026) + company filings",
