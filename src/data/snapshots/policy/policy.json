@@ -9,7 +9,7 @@
         "hint": "policy toolkit",
         "key": "active_schemes",
         "label": "Active schemes",
-        "value": 19
+        "value": 22
       },
       {
         "confidence": "medium",
@@ -119,6 +119,18 @@
         "scheme": "ALMM List-III (Wafers & Ingots)",
         "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2241551",
         "status": "Announced",
+        "target": ""
+      },
+      {
+        "announced": "Jul 2025",
+        "category": "Manufacturing",
+        "companiesAffected": "medium",
+        "confidence": "MNRE",
+        "highlights": "Approved List of Models and Maufacturers ( ALMM-Wind)",
+        "keyMetric": "",
+        "scheme": "Approved List of Models and Maufacturers ( ALMM-Wind)",
+        "sourceUrl": "https://mnre.gov.in/en/document/1wind-turbine-models-included-in-the-rlmm-i-e-renamed-as-approved-list-of-models-and-manufacturer-almm-wind-as-per-amendment-to-rlmm-procedure-dated-31-07-2025-as-on-03-03-2026/",
+        "status": "Active",
         "target": ""
       },
       {
@@ -354,6 +366,28 @@
         "sourceUrl": "https://mnre.gov.in/en/approved-list-of-models-and-manufacturers-almm/",
         "status": "Active",
         "target": ""
+      },
+      {
+        "category": "Manufacturing",
+        "companiesAffected": "medium",
+        "confidence": "MNRE",
+        "highlights": "Approved List of Models and Manufacturer for Wind Turbine Components ( ALMM-WTC)",
+        "keyMetric": "",
+        "scheme": "Approved List of Models and Manufacturer for Wind Turbine Components ( ALMM-WTC)",
+        "sourceUrl": "https://mnre.gov.in/en/document/approved-list-of-models-and-manufacturer-for-wind-turbine-components-almm-wtc/",
+        "status": "Active",
+        "target": ""
+      },
+      {
+        "category": "Storage",
+        "companiesAffected": "medium",
+        "confidence": "MNRE",
+        "highlights": "Viability Gap Funding (VGF) Scheme for development of Battery Energy Storage Systems (BESS) supported through Power System Development Fund (PSDF)",
+        "keyMetric": "",
+        "scheme": "Viability Gap Funding (VGF) Scheme for development of Battery Energy Storage Systems (BE…",
+        "sourceUrl": "https://mnre.gov.in/en/document/viability-gap-funding-vgf-scheme-for-development-of-battery-energy-storage-systems-bess-supported-through-power-system-development-fund-psdf/",
+        "status": "Active",
+        "target": ""
       }
     ]
   },
@@ -365,6 +399,11 @@
   ],
   "section": "policy",
   "sources": [
+    {
+      "asOf": "2026-03-31",
+      "confidence": "MNRE",
+      "name": "auto-ingested"
+    },
     {
       "asOf": "2026-03-31",
       "confidence": "medium",
