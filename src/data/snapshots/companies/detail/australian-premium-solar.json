@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-31",
+  "asOf": "2026-08-03",
   "cadence": "quarterly",
   "coverage": "Australian Premium Solar (India)",
   "data": {
@@ -30,7 +30,7 @@
       }
     ],
     "board": "NSE SME",
-    "cmp": 271,
+    "cmp": 266,
     "concall": {
       "date": "2026-05-27",
       "guidance": [
@@ -49,13 +49,13 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 13,
-    "evEbitdaX": 6.22,
+    "evEbitdaX": 6.12,
     "hasDetail": true,
-    "marketCapCr": 546,
+    "marketCapCr": 536,
     "moduleGw": 0.8,
     "name": "Australian Premium Solar (India)",
     "patFy26Cr": 58,
-    "peX": 9.44,
+    "peX": 9.27,
     "quarterly": [
       {
         "ebitda": 4,
@@ -119,10 +119,10 @@
     "tickerNse": "APS",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-07-31",
-      "evEbitdaX": 6.22,
-      "pbX": 3.33,
-      "peX": 9.44
+      "asOf": "2026-08-03",
+      "evEbitdaX": 6.12,
+      "pbX": 3.27,
+      "peX": 9.27
     }
   },
   "dataset": "detail/australian-premium-solar",
@@ -132,10 +132,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-07-31",
+      "asOf": "2026-08-03",
       "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-07-31"
+  "updatedAt": "2026-08-03"
 }
