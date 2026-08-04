@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-03",
+  "asOf": "2026-08-04",
   "cadence": "quarterly",
   "coverage": "Inox Green Energy Services",
   "data": {
@@ -77,7 +77,7 @@
         "revenue": 281
       }
     ],
-    "cmp": 174,
+    "cmp": 178,
     "concall": {
       "date": "2026-05-29",
       "guidance": [
@@ -97,13 +97,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 8,
-    "evEbitdaX": 310.65,
+    "evEbitdaX": 315.78,
     "hasDetail": true,
-    "marketCapCr": 7057,
+    "marketCapCr": 7175,
     "name": "Inox Green Energy Services",
     "orderBookGw": 3.1,
     "patFy26Cr": 103,
-    "peX": 68.3,
+    "peX": 69.5,
     "quarterly": [
       {
         "ebitda": 6,
@@ -223,10 +223,10 @@
     "tickerNse": "INOXGREEN",
     "type": "wind",
     "valuation": {
-      "asOf": "2026-08-03",
-      "evEbitdaX": 310.65,
-      "pbX": 4.09,
-      "peX": 68.3
+      "asOf": "2026-08-04",
+      "evEbitdaX": 315.78,
+      "pbX": 4.19,
+      "peX": 69.5
     }
   },
   "dataset": "detail/inox-green",
@@ -236,10 +236,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-03",
+      "asOf": "2026-08-04",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-08-03"
+  "updatedAt": "2026-08-04"
 }

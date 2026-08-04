@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-03",
+  "asOf": "2026-08-04",
   "cadence": "quarterly",
   "coverage": "Gensol Engineering",
   "data": {
@@ -67,15 +67,15 @@
         "revenue": 963
       }
     ],
-    "cmp": 18.3,
+    "cmp": 18.2,
     "confidence": "medium",
     "ebitdaMarginPct": 24,
     "evEbitdaX": 4.37,
     "hasDetail": true,
-    "marketCapCr": 70.4,
+    "marketCapCr": 70.2,
     "name": "Gensol Engineering",
     "patFy26Cr": 53,
-    "peX": 0.69,
+    "peX": 0.68,
     "quarterly": [
       {
         "ebitda": 4,
@@ -195,10 +195,10 @@
     "tickerNse": "GENSOL",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-08-03",
+      "asOf": "2026-08-04",
       "evEbitdaX": 4.37,
       "pbX": 0.12,
-      "peX": 0.69
+      "peX": 0.68
     }
   },
   "dataset": "detail/gensol-engineering",
@@ -208,10 +208,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-03",
+      "asOf": "2026-08-04",
       "confidence": "medium",
       "name": "Distressed (2025 governance/insolvency issues)"
     }
   ],
-  "updatedAt": "2026-08-03"
+  "updatedAt": "2026-08-04"
 }
