@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-05",
+  "asOf": "2026-08-06",
   "cadence": "quarterly",
   "coverage": "Tata Power",
   "data": {
@@ -102,7 +102,7 @@
       }
     ],
     "cellGw": 4.3,
-    "cmp": 383,
+    "cmp": 379,
     "concall": {
       "date": "2026-05-12",
       "guidance": [
@@ -122,13 +122,13 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 21,
-    "evEbitdaX": 15.47,
+    "evEbitdaX": 15.46,
     "hasDetail": true,
-    "marketCapCr": 122060,
+    "marketCapCr": 121931,
     "moduleGw": 4.3,
     "name": "Tata Power",
     "patFy26Cr": 5118,
-    "peX": 31.2,
+    "peX": 31.1,
     "quarterly": [
       {
         "ebitda": 2713,
@@ -249,10 +249,10 @@
     "type": "ipp",
     "ucPipelineGw": 5.1,
     "valuation": {
-      "asOf": "2026-08-05",
-      "evEbitdaX": 15.47,
-      "pbX": 3.09,
-      "peX": 31.2
+      "asOf": "2026-08-06",
+      "evEbitdaX": 15.46,
+      "pbX": 3.06,
+      "peX": 31.1
     }
   },
   "dataset": "detail/tata-power",
@@ -262,10 +262,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-05",
+      "asOf": "2026-08-06",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-08-05"
+  "updatedAt": "2026-08-06"
 }

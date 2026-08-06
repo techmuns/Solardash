@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-05",
+  "asOf": "2026-08-06",
   "cadence": "quarterly",
   "coverage": "Solarium Green Energy",
   "data": {
@@ -101,7 +101,7 @@
     "sourceNote": "BSE SME (maintained)",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-08-05",
+      "asOf": "2026-08-06",
       "evEbitdaX": 17.13,
       "pbX": 2.2,
       "peX": 19.6
@@ -114,10 +114,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-05",
+      "asOf": "2026-08-06",
       "confidence": "high",
       "name": "BSE SME (maintained)"
     }
   ],
-  "updatedAt": "2026-08-05"
+  "updatedAt": "2026-08-06"
 }
