@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-06",
+  "asOf": "2026-08-07",
   "cadence": "quarterly",
   "coverage": "Adani Green Energy",
   "data": {
@@ -112,12 +112,12 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 83,
-    "evEbitdaX": 28.13,
+    "evEbitdaX": 28.12,
     "hasDetail": true,
-    "marketCapCr": 225910,
+    "marketCapCr": 225729,
     "name": "Adani Green Energy",
     "patFy26Cr": 1987,
-    "peX": 117,
+    "peX": 116,
     "quarterly": [
       {
         "ebitda": 2081,
@@ -238,10 +238,10 @@
     "type": "ipp",
     "ucPipelineGw": 28,
     "valuation": {
-      "asOf": "2026-08-06",
-      "evEbitdaX": 28.13,
+      "asOf": "2026-08-07",
+      "evEbitdaX": 28.12,
       "pbX": 11.34,
-      "peX": 117
+      "peX": 116
     }
   },
   "dataset": "detail/adani-green",
@@ -251,10 +251,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-06",
+      "asOf": "2026-08-07",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-08-06"
+  "updatedAt": "2026-08-07"
 }
