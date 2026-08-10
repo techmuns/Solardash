@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-07",
+  "asOf": "2026-08-10",
   "cadence": "quarterly",
   "coverage": "NTPC Green Energy",
   "data": {
@@ -37,7 +37,7 @@
         "revenue": 2858
       }
     ],
-    "cmp": 91.5,
+    "cmp": 91.9,
     "concall": {
       "date": "2026-05-22",
       "guidance": [
@@ -56,12 +56,12 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 87,
-    "evEbitdaX": 38.48,
+    "evEbitdaX": 38.59,
     "hasDetail": true,
-    "marketCapCr": 77118,
+    "marketCapCr": 77421,
     "name": "NTPC Green Energy",
     "patFy26Cr": 521,
-    "peX": 127,
+    "peX": 128,
     "quarterly": [
       {
         "ebitda": 395,
@@ -166,10 +166,10 @@
     "type": "ipp",
     "ucPipelineGw": 17,
     "valuation": {
-      "asOf": "2026-08-07",
-      "evEbitdaX": 38.48,
-      "pbX": 4.07,
-      "peX": 127
+      "asOf": "2026-08-10",
+      "evEbitdaX": 38.59,
+      "pbX": 4.08,
+      "peX": 128
     }
   },
   "dataset": "detail/ntpc-green",
@@ -179,10 +179,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-07",
+      "asOf": "2026-08-10",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-08-07"
+  "updatedAt": "2026-08-10"
 }
