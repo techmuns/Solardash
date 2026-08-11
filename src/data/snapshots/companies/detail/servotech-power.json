@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-10",
+  "asOf": "2026-08-11",
   "cadence": "quarterly",
   "coverage": "Servotech Renewable Power",
   "data": {
@@ -54,7 +54,7 @@
       }
     ],
     "board": "NSE",
-    "cmp": 85.1,
+    "cmp": 83.4,
     "concall": {
       "date": "2026-05-07",
       "guidance": [
@@ -74,13 +74,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 10,
-    "evEbitdaX": 27.7,
+    "evEbitdaX": 27.19,
     "hasDetail": true,
-    "marketCapCr": 1922,
+    "marketCapCr": 1883,
     "moduleGw": 0.6,
     "name": "Servotech Renewable Power",
     "patFy26Cr": 32,
-    "peX": 51.3,
+    "peX": 50.3,
     "quarterly": [
       {
         "ebitda": 6.88,
@@ -199,10 +199,10 @@
     "tickerNse": "SERVOTECH",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-08-10",
-      "evEbitdaX": 27.7,
-      "pbX": 6.65,
-      "peX": 51.3
+      "asOf": "2026-08-11",
+      "evEbitdaX": 27.19,
+      "pbX": 6.52,
+      "peX": 50.3
     }
   },
   "dataset": "detail/servotech-power",
@@ -212,10 +212,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-10",
+      "asOf": "2026-08-11",
       "confidence": "high",
       "name": "Market data (mid-2026)"
     }
   ],
-  "updatedAt": "2026-08-10"
+  "updatedAt": "2026-08-11"
 }

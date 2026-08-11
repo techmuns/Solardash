@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-10",
+  "asOf": "2026-08-11",
   "cadence": "quarterly",
   "coverage": "CESC",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 18570
       }
     ],
-    "cmp": 165,
+    "cmp": 161,
     "concall": {
       "date": "2026-05-06",
       "guidance": [
@@ -121,12 +121,12 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 19,
-    "evEbitdaX": 12.61,
+    "evEbitdaX": 12.48,
     "hasDetail": true,
-    "marketCapCr": 21802,
+    "marketCapCr": 21347,
     "name": "CESC",
     "patFy26Cr": 1618,
-    "peX": 14.1,
+    "peX": 13.8,
     "quarterly": [
       {
         "ebitda": 513,
@@ -247,10 +247,10 @@
     "type": "utility",
     "ucPipelineGw": 3.2,
     "valuation": {
-      "asOf": "2026-08-10",
-      "evEbitdaX": 12.61,
-      "pbX": 1.75,
-      "peX": 14.1
+      "asOf": "2026-08-11",
+      "evEbitdaX": 12.48,
+      "pbX": 1.7,
+      "peX": 13.8
     }
   },
   "dataset": "detail/cesc",
@@ -260,10 +260,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-10",
+      "asOf": "2026-08-11",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-08-10"
+  "updatedAt": "2026-08-11"
 }
