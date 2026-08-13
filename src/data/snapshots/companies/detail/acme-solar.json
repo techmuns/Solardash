@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-12",
+  "asOf": "2026-08-13",
   "cadence": "quarterly",
   "coverage": "ACME Solar Holdings",
   "data": {
@@ -61,7 +61,7 @@
         "revenue": 2023
       }
     ],
-    "cmp": 373,
+    "cmp": 374,
     "concall": {
       "date": "2026-05-08",
       "guidance": [
@@ -81,12 +81,12 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 88,
-    "evEbitdaX": 22.46,
+    "evEbitdaX": 22.55,
     "hasDetail": true,
-    "marketCapCr": 26331,
+    "marketCapCr": 26508,
     "name": "ACME Solar Holdings",
     "patFy26Cr": 498,
-    "peX": 44.2,
+    "peX": 44.5,
     "quarterly": [
       {
         "ebitda": 322,
@@ -207,10 +207,10 @@
     "type": "ipp",
     "ucPipelineGw": 5.08,
     "valuation": {
-      "asOf": "2026-08-12",
-      "evEbitdaX": 22.46,
-      "pbX": 4.47,
-      "peX": 44.2
+      "asOf": "2026-08-13",
+      "evEbitdaX": 22.55,
+      "pbX": 4.48,
+      "peX": 44.5
     }
   },
   "dataset": "detail/acme-solar",
@@ -220,10 +220,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-12",
+      "asOf": "2026-08-13",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-08-12"
+  "updatedAt": "2026-08-13"
 }
