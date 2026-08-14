@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-13",
+  "asOf": "2026-08-14",
   "cadence": "quarterly",
   "coverage": "Solex Energy",
   "data": {
@@ -38,7 +38,7 @@
       }
     ],
     "cellGw": 1,
-    "cmp": 884,
+    "cmp": 880,
     "concall": {
       "date": "2026-05-18",
       "guidance": [
@@ -58,14 +58,14 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 11,
-    "evEbitdaX": 7.03,
+    "evEbitdaX": 7,
     "hasDetail": true,
-    "marketCapCr": 955,
+    "marketCapCr": 949,
     "moduleGw": 4,
     "name": "Solex Energy",
     "orderBookCr": 3400,
     "patFy26Cr": 98,
-    "peX": 9.97,
+    "peX": 9.92,
     "quarterly": [
       {
         "ebitda": 14,
@@ -137,10 +137,10 @@
     "tickerNse": "SOLEX",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-08-13",
-      "evEbitdaX": 7.03,
-      "pbX": 3.78,
-      "peX": 9.97
+      "asOf": "2026-08-14",
+      "evEbitdaX": 7,
+      "pbX": 3.76,
+      "peX": 9.92
     }
   },
   "dataset": "detail/solex-energy",
@@ -150,10 +150,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-13",
+      "asOf": "2026-08-14",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-08-13"
+  "updatedAt": "2026-08-14"
 }
