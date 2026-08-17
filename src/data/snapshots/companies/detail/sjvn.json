@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-14",
+  "asOf": "2026-08-17",
   "cadence": "quarterly",
   "coverage": "SJVN",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 4528
       }
     ],
-    "cmp": 67.2,
+    "cmp": 66.6,
     "concall": {
       "date": "2026-05-15",
       "guidance": [
@@ -120,12 +120,12 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 73,
-    "evEbitdaX": 17.3,
+    "evEbitdaX": 17.22,
     "hasDetail": true,
-    "marketCapCr": 26420,
+    "marketCapCr": 26161,
     "name": "SJVN",
     "patFy26Cr": 642,
-    "peX": 41.3,
+    "peX": 40.9,
     "quarterly": [
       {
         "ebitda": 483,
@@ -246,10 +246,10 @@
     "type": "utility",
     "ucPipelineGw": 5,
     "valuation": {
-      "asOf": "2026-08-14",
-      "evEbitdaX": 17.3,
-      "pbX": 1.86,
-      "peX": 41.3
+      "asOf": "2026-08-17",
+      "evEbitdaX": 17.22,
+      "pbX": 1.84,
+      "peX": 40.9
     }
   },
   "dataset": "detail/sjvn",
@@ -259,10 +259,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-14",
+      "asOf": "2026-08-17",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-08-14"
+  "updatedAt": "2026-08-17"
 }
