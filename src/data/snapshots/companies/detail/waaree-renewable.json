@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-17",
+  "asOf": "2026-08-18",
   "cadence": "quarterly",
   "coverage": "Waaree Renewable Technologies",
   "data": {
@@ -77,7 +77,7 @@
         "revenue": 3331
       }
     ],
-    "cmp": 897,
+    "cmp": 890,
     "concall": {
       "date": "2026-04-16",
       "guidance": [
@@ -97,13 +97,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 19,
-    "evEbitdaX": 13.63,
+    "evEbitdaX": 13.54,
     "hasDetail": true,
-    "marketCapCr": 9354,
+    "marketCapCr": 9290,
     "name": "Waaree Renewable Technologies",
     "orderBookGw": 2.83,
     "patFy26Cr": 479,
-    "peX": 18.4,
+    "peX": 18.3,
     "quarterly": [
       {
         "ebitda": 13,
@@ -223,10 +223,10 @@
     "tickerNse": "WAAREERTL",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-08-17",
-      "evEbitdaX": 13.63,
-      "pbX": 10.02,
-      "peX": 18.4
+      "asOf": "2026-08-18",
+      "evEbitdaX": 13.54,
+      "pbX": 9.94,
+      "peX": 18.3
     }
   },
   "dataset": "detail/waaree-renewable",
@@ -236,10 +236,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-17",
+      "asOf": "2026-08-18",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-08-17"
+  "updatedAt": "2026-08-18"
 }

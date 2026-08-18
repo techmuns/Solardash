@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-17",
+  "asOf": "2026-08-18",
   "cadence": "quarterly",
   "coverage": "Sahaj Solar",
   "data": {
@@ -145,7 +145,7 @@
     "tickerNse": "SAHAJSOLAR",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-08-17",
+      "asOf": "2026-08-18",
       "evEbitdaX": 7.83,
       "pbX": 1.67,
       "peX": 7.82
@@ -158,10 +158,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-17",
+      "asOf": "2026-08-18",
       "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-08-17"
+  "updatedAt": "2026-08-18"
 }
