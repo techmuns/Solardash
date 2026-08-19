@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-18",
+  "asOf": "2026-08-19",
   "cadence": "quarterly",
   "coverage": "Swelect Energy Systems",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 657
       }
     ],
-    "cmp": 624,
+    "cmp": 607,
     "concall": {
       "date": "2026-05-07",
       "guidance": [
@@ -121,13 +121,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 23,
-    "evEbitdaX": 12.59,
+    "evEbitdaX": 12.46,
     "hasDetail": true,
-    "marketCapCr": 940,
+    "marketCapCr": 921,
     "moduleGw": 1,
     "name": "Swelect Energy Systems",
     "patFy26Cr": 58,
-    "peX": 21.9,
+    "peX": 21.4,
     "quarterly": [
       {
         "ebitda": 12,
@@ -247,10 +247,10 @@
     "tickerNse": "SWELECTES",
     "type": "integrated",
     "valuation": {
-      "asOf": "2026-08-18",
-      "evEbitdaX": 12.59,
-      "pbX": 1.03,
-      "peX": 21.9
+      "asOf": "2026-08-19",
+      "evEbitdaX": 12.46,
+      "pbX": 1,
+      "peX": 21.4
     }
   },
   "dataset": "detail/swelect-energy",
@@ -260,10 +260,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-18",
+      "asOf": "2026-08-19",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-08-18"
+  "updatedAt": "2026-08-19"
 }
