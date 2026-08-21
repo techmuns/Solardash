@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-20",
+  "asOf": "2026-08-21",
   "cadence": "quarterly",
   "coverage": "NLC India",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 17490
       }
     ],
-    "cmp": 272,
+    "cmp": 270,
     "concall": {
       "date": "2026-05-27",
       "guidance": [
@@ -120,9 +120,9 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 32,
-    "evEbitdaX": 10.92,
+    "evEbitdaX": 10.9,
     "hasDetail": true,
-    "marketCapCr": 37514,
+    "marketCapCr": 37418,
     "name": "NLC India",
     "patFy26Cr": 3769,
     "peX": 11.7,
@@ -246,9 +246,9 @@
     "type": "utility",
     "ucPipelineGw": 2,
     "valuation": {
-      "asOf": "2026-08-20",
-      "evEbitdaX": 10.92,
-      "pbX": 1.75,
+      "asOf": "2026-08-21",
+      "evEbitdaX": 10.9,
+      "pbX": 1.74,
       "peX": 11.7
     }
   },
@@ -259,10 +259,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-20",
+      "asOf": "2026-08-21",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-08-20"
+  "updatedAt": "2026-08-21"
 }

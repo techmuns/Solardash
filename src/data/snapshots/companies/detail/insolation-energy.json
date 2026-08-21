@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-20",
+  "asOf": "2026-08-21",
   "cadence": "quarterly",
   "coverage": "Insolation Energy",
   "data": {
@@ -45,7 +45,7 @@
         "revenue": 2146
       }
     ],
-    "cmp": 93.4,
+    "cmp": 93.8,
     "concall": {
       "date": "2026-05-25",
       "guidance": [
@@ -127,9 +127,9 @@
     "tickerNse": "INSOLATION",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-08-20",
+      "asOf": "2026-08-21",
       "evEbitdaX": 9.75,
-      "pbX": 2.55,
+      "pbX": 2.56,
       "peX": 10.6
     }
   },
@@ -140,10 +140,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-20",
+      "asOf": "2026-08-21",
       "confidence": "modelled",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-08-20"
+  "updatedAt": "2026-08-21"
 }
