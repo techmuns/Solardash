@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-25",
+  "asOf": "2026-08-26",
   "cadence": "quarterly",
   "coverage": "Inox Wind",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 4397
       }
     ],
-    "cmp": 73.7,
+    "cmp": 73.2,
     "concall": {
       "guidance": [
         "FY27 revenue growth guided ~75% on 3.1 GW book and group synergies.",
@@ -120,13 +120,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 20,
-    "evEbitdaX": 16.59,
+    "evEbitdaX": 16.57,
     "hasDetail": true,
-    "marketCapCr": 12701,
+    "marketCapCr": 12683,
     "name": "Inox Wind",
     "orderBookGw": 3.1,
     "patFy26Cr": 449,
-    "peX": 36.9,
+    "peX": 36.8,
     "quarterly": [
       {
         "ebitda": -27,
@@ -246,10 +246,10 @@
     "tickerNse": "INOXWIND",
     "type": "wind",
     "valuation": {
-      "asOf": "2026-08-25",
-      "evEbitdaX": 16.59,
-      "pbX": 2,
-      "peX": 36.9
+      "asOf": "2026-08-26",
+      "evEbitdaX": 16.57,
+      "pbX": 1.98,
+      "peX": 36.8
     }
   },
   "dataset": "detail/inox-wind",
@@ -259,10 +259,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-25",
+      "asOf": "2026-08-26",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-08-25"
+  "updatedAt": "2026-08-26"
 }
