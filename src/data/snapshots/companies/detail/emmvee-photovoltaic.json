@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-26",
+  "asOf": "2026-08-27",
   "cadence": "quarterly",
   "coverage": "Emmvee Photovoltaic Power",
   "data": {
@@ -62,7 +62,7 @@
       }
     ],
     "cellGw": 2.94,
-    "cmp": 333,
+    "cmp": 327,
     "concall": {
       "date": "2026-04-29",
       "guidance": [
@@ -82,14 +82,14 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 34,
-    "evEbitdaX": 12.11,
+    "evEbitdaX": 11.92,
     "hasDetail": true,
-    "marketCapCr": 23038,
+    "marketCapCr": 22660,
     "moduleGw": 10.3,
     "name": "Emmvee Photovoltaic Power",
     "orderBookGw": 9.4,
     "patFy26Cr": 1082,
-    "peX": 18.1,
+    "peX": 17.8,
     "quarterly": [
       {
         "ebitda": 93,
@@ -169,10 +169,10 @@
     "tickerNse": "EMMVEE",
     "type": "integrated",
     "valuation": {
-      "asOf": "2026-08-26",
-      "evEbitdaX": 12.11,
-      "pbX": 6.24,
-      "peX": 18.1
+      "asOf": "2026-08-27",
+      "evEbitdaX": 11.92,
+      "pbX": 6.12,
+      "peX": 17.8
     }
   },
   "dataset": "detail/emmvee-photovoltaic",
@@ -182,10 +182,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-08-26",
+      "asOf": "2026-08-27",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-08-26"
+  "updatedAt": "2026-08-27"
 }
