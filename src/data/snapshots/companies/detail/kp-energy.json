@@ -130,14 +130,6 @@
     "peX": 9.11,
     "quarterly": [
       {
-        "ebitda": 23,
-        "ebitdaMarginPct": 15,
-        "pat": 15,
-        "patMarginPct": 10.14,
-        "period": "Q4FY23",
-        "revenue": 148
-      },
-      {
         "ebitda": 21,
         "ebitdaMarginPct": 19,
         "pat": 15,
@@ -205,9 +197,9 @@
         "ebitda": 48,
         "ebitdaMarginPct": 22,
         "pat": 25,
-        "patMarginPct": 11.42,
+        "patMarginPct": 11.36,
         "period": "Q1FY26",
-        "revenue": 219
+        "revenue": 220
       },
       {
         "ebitda": 66,
@@ -232,11 +224,19 @@
         "patMarginPct": 12.5,
         "period": "Q4FY26",
         "revenue": 632
+      },
+      {
+        "ebitda": 60,
+        "ebitdaMarginPct": 12,
+        "pat": 26,
+        "patMarginPct": 5.01,
+        "period": "Q1FY27",
+        "revenue": 519
       }
     ],
     "revenueFy26Cr": 1497,
     "shareholding": {
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-30",
       "diiPct": 1.03,
       "fiiPct": 0.53,
       "promoterPct": 45.31,

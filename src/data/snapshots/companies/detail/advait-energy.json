@@ -99,14 +99,6 @@
     "peX": 41,
     "quarterly": [
       {
-        "ebitda": 6,
-        "ebitdaMarginPct": 15,
-        "pat": 4,
-        "patMarginPct": 9.76,
-        "period": "Q4FY23",
-        "revenue": 41
-      },
-      {
         "ebitda": 4,
         "ebitdaMarginPct": 13,
         "pat": 1,
@@ -201,15 +193,23 @@
         "patMarginPct": 8.33,
         "period": "Q4FY26",
         "revenue": 228
+      },
+      {
+        "ebitda": 25,
+        "ebitdaMarginPct": 14,
+        "pat": 15,
+        "patMarginPct": 8.38,
+        "period": "Q1FY27",
+        "revenue": 179
       }
     ],
     "revenueFy26Cr": 715,
     "shareholding": {
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-30",
       "diiPct": 0.04,
       "fiiPct": 0.68,
-      "promoterPct": 66.52,
-      "publicPct": 32.77
+      "promoterPct": 66.76,
+      "publicPct": 32.51
     },
     "slug": "advait-energy",
     "sourceNote": "Market data (mid-2026)",

@@ -220,10 +220,10 @@
     "revenueFy26Cr": 1556,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 2.62,
-      "fiiPct": 6.14,
-      "promoterPct": 58.78,
-      "publicPct": 32.46
+      "diiPct": 3.33,
+      "fiiPct": 5.62,
+      "promoterPct": 56.01,
+      "publicPct": 35.04
     },
     "slug": "borosil-renewables",
     "sourceNote": "Market data (mid-2026) + company filings",

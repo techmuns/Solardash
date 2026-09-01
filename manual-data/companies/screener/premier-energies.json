@@ -154,13 +154,21 @@
       "ebitdaMarginPct": 30,
       "pat": 457,
       "patMarginPct": 20.49
+    },
+    {
+      "period": "Q1FY27",
+      "revenue": 2463,
+      "ebitda": 714,
+      "ebitdaMarginPct": 29,
+      "pat": 472,
+      "patMarginPct": 19.16
     }
   ],
   "valuation": {
-    "peX": 30.7,
-    "pbX": 10.75,
-    "cmp": 1022,
-    "marketCapCr": 46403
+    "peX": 27.6,
+    "pbX": 10.66,
+    "cmp": 1014,
+    "marketCapCr": 46028
   },
   "rocePct": 33.3,
   "roePct": 42.4,
@@ -169,7 +177,7 @@
     "fiiPct": 7.92,
     "diiPct": 17.97,
     "publicPct": 15.07,
-    "asOf": "2026-03-31"
+    "asOf": "2026-06-30"
   },
-  "asOf": "2026-03-31"
+  "asOf": "2026-06-30"
 }

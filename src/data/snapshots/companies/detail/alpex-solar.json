@@ -166,11 +166,19 @@
         "patMarginPct": 7.89,
         "period": "Q4FY26",
         "revenue": 672
+      },
+      {
+        "ebitda": 75,
+        "ebitdaMarginPct": 15,
+        "pat": 40,
+        "patMarginPct": 7.95,
+        "period": "Q1FY27",
+        "revenue": 503
       }
     ],
     "revenueFy26Cr": 2223,
     "shareholding": {
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-30",
       "diiPct": 0.4,
       "fiiPct": 3.13,
       "promoterPct": 65.9,

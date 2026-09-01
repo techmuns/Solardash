@@ -87,24 +87,24 @@
       {
         "ebitda": 2.04,
         "ebitdaMarginPct": 3.03,
-        "epsRs": 0.02,
+        "epsRs": 0.03,
         "pat": 1.38,
         "period": "FY25",
         "revenue": 67.25
       },
       {
-        "ebitda": 2.13,
-        "ebitdaMarginPct": 3.19,
+        "ebitda": 2.21,
+        "ebitdaMarginPct": 3.31,
         "epsRs": 0.03,
         "pat": 1.35,
         "period": "FY26",
-        "revenue": 66.7
+        "revenue": 66.67
       }
     ],
     "board": "NSE",
     "cmp": 9.16,
     "confidence": "high",
-    "ebitdaMarginPct": 3.19,
+    "ebitdaMarginPct": 3.31,
     "evEbitdaX": 238.46,
     "hasDetail": true,
     "marketCapCr": 482,
@@ -112,14 +112,6 @@
     "patFy26Cr": 1.35,
     "peX": 339,
     "quarterly": [
-      {
-        "ebitda": 0.09,
-        "ebitdaMarginPct": 0.85,
-        "pat": 0.09,
-        "patMarginPct": 0.85,
-        "period": "Q4FY23",
-        "revenue": 10.64
-      },
       {
         "ebitda": 0.46,
         "ebitdaMarginPct": 4.76,
@@ -215,11 +207,19 @@
         "patMarginPct": 2.05,
         "period": "Q4FY26",
         "revenue": 17.58
+      },
+      {
+        "ebitda": 0.55,
+        "ebitdaMarginPct": 3.94,
+        "pat": 0.43,
+        "patMarginPct": 3.08,
+        "period": "Q1FY27",
+        "revenue": 13.96
       }
     ],
-    "revenueFy26Cr": 66.7,
+    "revenueFy26Cr": 66.67,
     "shareholding": {
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-30",
       "fiiPct": 0.02,
       "promoterPct": 17.37,
       "publicPct": 82.61

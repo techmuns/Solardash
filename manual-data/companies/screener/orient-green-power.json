@@ -205,10 +205,10 @@
     }
   ],
   "valuation": {
-    "peX": 21.8,
-    "pbX": 1.01,
-    "cmp": 9.95,
-    "marketCapCr": 1167
+    "peX": 20.1,
+    "pbX": 0.93,
+    "cmp": 9.16,
+    "marketCapCr": 1075
   },
   "rocePct": 7.19,
   "roePct": 5.27,

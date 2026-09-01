@@ -93,12 +93,12 @@
         "revenue": 188138
       },
       {
-        "ebitda": 52816,
-        "ebitdaMarginPct": 28,
+        "ebitda": 55438,
+        "ebitdaMarginPct": 30,
         "epsRs": 27.9,
         "pat": 27546,
         "period": "FY26",
-        "revenue": 187379
+        "revenue": 187385
       }
     ],
     "cmp": 327,
@@ -120,7 +120,7 @@
       "source": "Q4 FY26 earnings call, May 2026"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 28,
+    "ebitdaMarginPct": 30,
     "evEbitdaX": 11.26,
     "hasDetail": true,
     "marketCapCr": 316080,
@@ -233,7 +233,7 @@
         "revenue": 50741
       }
     ],
-    "revenueFy26Cr": 187379,
+    "revenueFy26Cr": 187385,
     "shareholding": {
       "asOf": "2026-06-30",
       "diiPct": 29.44,

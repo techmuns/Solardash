@@ -29,8 +29,8 @@
         "revenue": 2210
       },
       {
-        "ebitda": 2475,
-        "ebitdaMarginPct": 87,
+        "ebitda": 2461,
+        "ebitdaMarginPct": 86,
         "epsRs": 0.62,
         "pat": 521,
         "period": "FY26",
@@ -55,7 +55,7 @@
       "source": "Q4 FY26 earnings call, May 22 2026"
     },
     "confidence": "medium",
-    "ebitdaMarginPct": 87,
+    "ebitdaMarginPct": 86,
     "evEbitdaX": 37.89,
     "hasDetail": true,
     "marketCapCr": 75441,

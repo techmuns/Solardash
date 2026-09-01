@@ -187,12 +187,20 @@
         "patMarginPct": 20.49,
         "period": "Q4FY26",
         "revenue": 2230
+      },
+      {
+        "ebitda": 714,
+        "ebitdaMarginPct": 29,
+        "pat": 472,
+        "patMarginPct": 19.16,
+        "period": "Q1FY27",
+        "revenue": 2463
       }
     ],
     "rating": "BUY",
     "revenueFy26Cr": 7824,
     "shareholding": {
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-30",
       "diiPct": 17.97,
       "fiiPct": 7.92,
       "promoterPct": 58.48,

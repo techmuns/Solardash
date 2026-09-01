@@ -85,16 +85,16 @@
         "revenue": 9631
       },
       {
-        "ebitda": 5423,
-        "ebitdaMarginPct": 52,
+        "ebitda": 5523,
+        "ebitdaMarginPct": 53,
         "epsRs": 2.99,
         "pat": 3412,
         "period": "FY25",
         "revenue": 10380
       },
       {
-        "ebitda": 5236,
-        "ebitdaMarginPct": 45,
+        "ebitda": 4097,
+        "ebitdaMarginPct": 35,
         "epsRs": 3.75,
         "pat": 4220,
         "period": "FY26",
@@ -119,7 +119,7 @@
       "source": "Q4 FY26 earnings call, May 18 2026"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 45,
+    "ebitdaMarginPct": 35,
     "evEbitdaX": 24.65,
     "hasDetail": true,
     "marketCapCr": 76523,
@@ -127,14 +127,6 @@
     "patFy26Cr": 4220,
     "peX": 20.2,
     "quarterly": [
-      {
-        "ebitda": 888,
-        "ebitdaMarginPct": 44,
-        "pat": 745,
-        "patMarginPct": 36.72,
-        "period": "Q4FY23",
-        "revenue": 2029
-      },
       {
         "ebitda": 1505,
         "ebitdaMarginPct": 55,
@@ -230,11 +222,19 @@
         "patMarginPct": 55.01,
         "period": "Q4FY26",
         "revenue": 2816
+      },
+      {
+        "ebitda": 2352,
+        "ebitdaMarginPct": 62,
+        "pat": 1178,
+        "patMarginPct": 30.93,
+        "period": "Q1FY27",
+        "revenue": 3808
       }
     ],
     "revenueFy26Cr": 11615,
     "shareholding": {
-      "asOf": "2026-03-31",
+      "asOf": "2026-06-30",
       "diiPct": 14.54,
       "fiiPct": 12.29,
       "promoterPct": 61.39,
