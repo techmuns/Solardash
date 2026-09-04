@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-03",
+  "asOf": "2026-09-04",
   "cadence": "quarterly",
   "coverage": "Sahaj Solar",
   "data": {
@@ -54,7 +54,7 @@
       }
     ],
     "board": "NSE SME",
-    "cmp": 99.4,
+    "cmp": 100,
     "concall": {
       "date": "2026-05-18",
       "guidance": [
@@ -74,14 +74,14 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 12,
-    "evEbitdaX": 7.58,
+    "evEbitdaX": 7.62,
     "hasDetail": true,
-    "marketCapCr": 218,
+    "marketCapCr": 220,
     "moduleGw": 0.85,
     "name": "Sahaj Solar",
     "orderBookCr": 402,
     "patFy26Cr": 30,
-    "peX": 7.39,
+    "peX": 7.43,
     "quarterly": [
       {
         "ebitda": 4,
@@ -145,10 +145,10 @@
     "tickerNse": "SAHAJSOLAR",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-09-03",
-      "evEbitdaX": 7.58,
-      "pbX": 1.58,
-      "peX": 7.39
+      "asOf": "2026-09-04",
+      "evEbitdaX": 7.62,
+      "pbX": 1.59,
+      "peX": 7.43
     }
   },
   "dataset": "detail/sahaj-solar",
@@ -158,10 +158,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-03",
+      "asOf": "2026-09-04",
       "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-09-03"
+  "updatedAt": "2026-09-04"
 }
