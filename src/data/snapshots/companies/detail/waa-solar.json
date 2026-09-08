@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-07",
+  "asOf": "2026-09-08",
   "cadence": "quarterly",
   "coverage": "Waa Solar",
   "data": {
@@ -102,7 +102,7 @@
       }
     ],
     "board": "BSE SME",
-    "cmp": 47,
+    "cmp": 46.6,
     "concall": {
       "date": "2026-05-19",
       "guidance": [
@@ -120,12 +120,12 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 55.78,
-    "evEbitdaX": 15.53,
+    "evEbitdaX": 15.49,
     "hasDetail": true,
-    "marketCapCr": 62.4,
+    "marketCapCr": 61.8,
     "name": "Waa Solar",
     "patFy26Cr": 0.65,
-    "peX": 95.9,
+    "peX": 95,
     "quarterly": [
       {
         "ebitda": 1.75,
@@ -242,10 +242,10 @@
     "sourceNote": "BSE SME (maintained)",
     "type": "ipp",
     "valuation": {
-      "asOf": "2026-09-07",
-      "evEbitdaX": 15.53,
+      "asOf": "2026-09-08",
+      "evEbitdaX": 15.49,
       "pbX": 0.34,
-      "peX": 95.9
+      "peX": 95
     }
   },
   "dataset": "detail/waa-solar",
@@ -255,10 +255,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-07",
+      "asOf": "2026-09-08",
       "confidence": "high",
       "name": "BSE SME (maintained)"
     }
   ],
-  "updatedAt": "2026-09-07"
+  "updatedAt": "2026-09-08"
 }

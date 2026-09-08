@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-07",
+  "asOf": "2026-09-08",
   "cadence": "quarterly",
   "coverage": "Karma Energy",
   "data": {
@@ -102,7 +102,7 @@
       }
     ],
     "board": "NSE",
-    "cmp": 37.3,
+    "cmp": 37.2,
     "concall": {
       "guidance": [
         "No forward guidance issued; no concall held and no disclosed expansion"
@@ -118,9 +118,9 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 26.06,
-    "evEbitdaX": 7.37,
+    "evEbitdaX": 7.59,
     "hasDetail": true,
-    "marketCapCr": 42,
+    "marketCapCr": 43.8,
     "name": "Karma Energy",
     "patFy26Cr": -1.62,
     "quarterly": [
@@ -240,8 +240,8 @@
     "tickerNse": "KARMAENG",
     "type": "wind",
     "valuation": {
-      "asOf": "2026-09-07",
-      "evEbitdaX": 7.37,
+      "asOf": "2026-09-08",
+      "evEbitdaX": 7.59,
       "pbX": 1.43
     }
   },
@@ -252,10 +252,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-07",
+      "asOf": "2026-09-08",
       "confidence": "medium",
       "name": "Market data (mid-2026)"
     }
   ],
-  "updatedAt": "2026-09-07"
+  "updatedAt": "2026-09-08"
 }

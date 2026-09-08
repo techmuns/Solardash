@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-07",
+  "asOf": "2026-09-08",
   "cadence": "quarterly",
   "coverage": "Madhav Infra Projects",
   "data": {
@@ -101,7 +101,7 @@
       }
     ],
     "board": "BSE",
-    "cmp": 7.91,
+    "cmp": 8.03,
     "concall": {
       "guidance": [
         "Grow solar EPC share; execute MP feeder-solarisation and PM-KUSUM PPAs"
@@ -118,13 +118,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 13,
-    "evEbitdaX": 6.63,
+    "evEbitdaX": 6.68,
     "hasDetail": true,
-    "marketCapCr": 213,
+    "marketCapCr": 216,
     "name": "Madhav Infra Projects",
     "orderBookCr": 1120,
     "patFy26Cr": 27,
-    "peX": 8.12,
+    "peX": 8.27,
     "quarterly": [
       {
         "ebitda": 18.79,
@@ -243,10 +243,10 @@
     "tickerNse": "MADHAVIPL",
     "type": "ipp",
     "valuation": {
-      "asOf": "2026-09-07",
-      "evEbitdaX": 6.63,
-      "pbX": 0.89,
-      "peX": 8.12
+      "asOf": "2026-09-08",
+      "evEbitdaX": 6.68,
+      "pbX": 0.9,
+      "peX": 8.27
     }
   },
   "dataset": "detail/madhav-infra",
@@ -256,10 +256,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-07",
+      "asOf": "2026-09-08",
       "confidence": "high",
       "name": "Market data (mid-2026)"
     }
   ],
-  "updatedAt": "2026-09-07"
+  "updatedAt": "2026-09-08"
 }

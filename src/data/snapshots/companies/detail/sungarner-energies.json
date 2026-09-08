@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-07",
+  "asOf": "2026-09-08",
   "cadence": "quarterly",
   "coverage": "Sungarner Energies",
   "data": {
@@ -30,7 +30,7 @@
       }
     ],
     "board": "NSE SME",
-    "cmp": 333,
+    "cmp": 326,
     "concall": {
       "date": "2026-06-11",
       "guidance": [
@@ -47,12 +47,12 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 11.01,
-    "evEbitdaX": 12.79,
+    "evEbitdaX": 12.58,
     "hasDetail": true,
-    "marketCapCr": 77.2,
+    "marketCapCr": 75.5,
     "name": "Sungarner Energies",
     "patFy26Cr": 3.83,
-    "peX": 20.2,
+    "peX": 19.7,
     "quarterly": [
       {
         "ebitda": 1.44,
@@ -106,10 +106,10 @@
     "tickerNse": "SEL",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-09-07",
-      "evEbitdaX": 12.79,
-      "pbX": 5.12,
-      "peX": 20.2
+      "asOf": "2026-09-08",
+      "evEbitdaX": 12.58,
+      "pbX": 5.02,
+      "peX": 19.7
     }
   },
   "dataset": "detail/sungarner-energies",
@@ -119,10 +119,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-07",
+      "asOf": "2026-09-08",
       "confidence": "medium",
       "name": "NSE Emerge (SME)"
     }
   ],
-  "updatedAt": "2026-09-07"
+  "updatedAt": "2026-09-08"
 }
