@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-08",
+  "asOf": "2026-09-09",
   "cadence": "quarterly",
   "coverage": "SolarWorld Energy Solutions",
   "data": {
@@ -45,7 +45,7 @@
         "revenue": 1376
       }
     ],
-    "cmp": 148,
+    "cmp": 146,
     "concall": {
       "date": "2026-05-26",
       "guidance": [
@@ -65,14 +65,14 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 11,
-    "evEbitdaX": 10.35,
+    "evEbitdaX": 10.18,
     "hasDetail": true,
-    "marketCapCr": 1287,
+    "marketCapCr": 1262,
     "moduleGw": 1.552,
     "name": "SolarWorld Energy Solutions",
     "orderBookCr": 2813,
     "patFy26Cr": 120,
-    "peX": 11,
+    "peX": 10.8,
     "quarterly": [
       {
         "ebitda": 5.16,
@@ -160,10 +160,10 @@
     "tickerNse": "SOLARWORLD",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-09-08",
-      "evEbitdaX": 10.35,
-      "pbX": 1.51,
-      "peX": 11
+      "asOf": "2026-09-09",
+      "evEbitdaX": 10.18,
+      "pbX": 1.49,
+      "peX": 10.8
     }
   },
   "dataset": "detail/solarworld-energy",
@@ -173,10 +173,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-08",
+      "asOf": "2026-09-09",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-09-08"
+  "updatedAt": "2026-09-09"
 }

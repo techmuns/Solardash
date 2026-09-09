@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-08",
+  "asOf": "2026-09-09",
   "cadence": "quarterly",
   "coverage": "Danish Power",
   "data": {
@@ -29,7 +29,7 @@
       }
     ],
     "board": "NSE SME",
-    "cmp": 851,
+    "cmp": 874,
     "concall": {
       "date": "2026-05-11",
       "guidance": [
@@ -47,13 +47,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 18,
-    "evEbitdaX": 18.24,
+    "evEbitdaX": 18.72,
     "hasDetail": true,
-    "marketCapCr": 1676,
+    "marketCapCr": 1720,
     "name": "Danish Power",
     "orderBookCr": 500,
     "patFy26Cr": 69,
-    "peX": 24.3,
+    "peX": 24.9,
     "quarterly": [
       {
         "ebitda": 31,
@@ -101,10 +101,10 @@
     "tickerNse": "DANISH",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-09-08",
-      "evEbitdaX": 18.24,
-      "pbX": 3.64,
-      "peX": 24.3
+      "asOf": "2026-09-09",
+      "evEbitdaX": 18.72,
+      "pbX": 3.74,
+      "peX": 24.9
     }
   },
   "dataset": "detail/danish-power",
@@ -114,10 +114,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-08",
+      "asOf": "2026-09-09",
       "confidence": "high",
       "name": "NSE Emerge (SME)"
     }
   ],
-  "updatedAt": "2026-09-08"
+  "updatedAt": "2026-09-09"
 }

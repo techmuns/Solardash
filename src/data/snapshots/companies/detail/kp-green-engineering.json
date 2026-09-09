@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-08",
+  "asOf": "2026-09-09",
   "cadence": "quarterly",
   "coverage": "KP Green Engineering",
   "data": {
@@ -46,7 +46,7 @@
       }
     ],
     "board": "BSE SME",
-    "cmp": 280,
+    "cmp": 275,
     "concall": {
       "date": "2026-05-13",
       "guidance": [
@@ -64,13 +64,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 20,
-    "evEbitdaX": 7.13,
+    "evEbitdaX": 7.04,
     "hasDetail": true,
-    "marketCapCr": 1399,
+    "marketCapCr": 1376,
     "name": "KP Green Engineering",
     "orderBookCr": 1831,
     "patFy26Cr": 136,
-    "peX": 10.3,
+    "peX": 10.1,
     "quarterly": [
       {
         "ebitda": 9,
@@ -141,10 +141,10 @@
     "sourceNote": "BSE SME (maintained)",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-09-08",
-      "evEbitdaX": 7.13,
-      "pbX": 3.06,
-      "peX": 10.3
+      "asOf": "2026-09-09",
+      "evEbitdaX": 7.04,
+      "pbX": 3.01,
+      "peX": 10.1
     }
   },
   "dataset": "detail/kp-green-engineering",
@@ -154,10 +154,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-08",
+      "asOf": "2026-09-09",
       "confidence": "high",
       "name": "BSE SME (maintained)"
     }
   ],
-  "updatedAt": "2026-09-08"
+  "updatedAt": "2026-09-09"
 }
