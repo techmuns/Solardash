@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-09",
+  "asOf": "2026-09-10",
   "cadence": "quarterly",
   "coverage": "Ujaas Energy",
   "data": {
@@ -37,15 +37,15 @@
         "revenue": 334
       }
     ],
-    "cmp": 207,
+    "cmp": 197,
     "confidence": "medium",
     "ebitdaMarginPct": 12,
-    "evEbitdaX": 70.27,
+    "evEbitdaX": 66.9,
     "hasDetail": true,
-    "marketCapCr": 2743,
+    "marketCapCr": 2605,
     "name": "Ujaas Energy",
     "patFy26Cr": 17,
-    "peX": 165,
+    "peX": 157,
     "revenueFy26Cr": 334,
     "shareholding": {
       "asOf": "2018-03-31",
@@ -57,10 +57,10 @@
     "tickerNse": "UEL",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-09-09",
-      "evEbitdaX": 70.27,
-      "pbX": 121.05,
-      "peX": 165
+      "asOf": "2026-09-10",
+      "evEbitdaX": 66.9,
+      "pbX": 115.2,
+      "peX": 157
     }
   },
   "dataset": "detail/ujaas-energy",
@@ -70,10 +70,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-09",
+      "asOf": "2026-09-10",
       "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-09-09"
+  "updatedAt": "2026-09-10"
 }
