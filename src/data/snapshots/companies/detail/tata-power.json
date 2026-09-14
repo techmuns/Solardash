@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-11",
+  "asOf": "2026-09-14",
   "cadence": "quarterly",
   "coverage": "Tata Power",
   "data": {
@@ -249,7 +249,7 @@
     "type": "ipp",
     "ucPipelineGw": 5.1,
     "valuation": {
-      "asOf": "2026-09-11",
+      "asOf": "2026-09-14",
       "evEbitdaX": 15.03,
       "pbX": 2.94,
       "peX": 29.8
@@ -262,10 +262,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-11",
+      "asOf": "2026-09-14",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-09-11"
+  "updatedAt": "2026-09-14"
 }

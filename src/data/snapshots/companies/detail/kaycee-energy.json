@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-11",
+  "asOf": "2026-09-14",
   "cadence": "quarterly",
   "coverage": "Kay Cee Energy & Infra",
   "data": {
@@ -86,7 +86,7 @@
     "tickerNse": "KCEIL",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-09-11",
+      "asOf": "2026-09-14",
       "evEbitdaX": 5.25,
       "pbX": 0.9,
       "peX": 4.95
@@ -99,10 +99,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-11",
+      "asOf": "2026-09-14",
       "confidence": "high",
       "name": "NSE Emerge (SME)"
     }
   ],
-  "updatedAt": "2026-09-11"
+  "updatedAt": "2026-09-14"
 }

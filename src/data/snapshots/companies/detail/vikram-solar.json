@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-11",
+  "asOf": "2026-09-14",
   "cadence": "quarterly",
   "coverage": "Vikram Solar",
   "data": {
@@ -84,7 +84,7 @@
     "ebitdaMarginPct": 19,
     "evEbitdaX": 8.33,
     "hasDetail": true,
-    "marketCapCr": 6050,
+    "marketCapCr": 6046,
     "moduleGw": 9.5,
     "name": "Vikram Solar",
     "orderBookGw": 10.34,
@@ -177,7 +177,7 @@
     "tickerNse": "VIKRAMSOLR",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-09-11",
+      "asOf": "2026-09-14",
       "evEbitdaX": 8.33,
       "pbX": 1.91,
       "peX": 16.8
@@ -190,10 +190,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-11",
+      "asOf": "2026-09-14",
       "confidence": "high",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-09-11"
+  "updatedAt": "2026-09-14"
 }

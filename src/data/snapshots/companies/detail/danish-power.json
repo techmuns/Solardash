@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-11",
+  "asOf": "2026-09-14",
   "cadence": "quarterly",
   "coverage": "Danish Power",
   "data": {
@@ -101,7 +101,7 @@
     "tickerNse": "DANISH",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-09-11",
+      "asOf": "2026-09-14",
       "evEbitdaX": 21.37,
       "pbX": 4.26,
       "peX": 28.5
@@ -114,10 +114,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-11",
+      "asOf": "2026-09-14",
       "confidence": "high",
       "name": "NSE Emerge (SME)"
     }
   ],
-  "updatedAt": "2026-09-11"
+  "updatedAt": "2026-09-14"
 }
