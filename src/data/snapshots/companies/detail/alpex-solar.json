@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-14",
+  "asOf": "2026-09-15",
   "cadence": "quarterly",
   "coverage": "Alpex Solar",
   "data": {
@@ -58,7 +58,7 @@
       }
     ],
     "board": "NSE SME",
-    "cmp": 934,
+    "cmp": 906,
     "concall": {
       "date": "2026-05-25",
       "guidance": [
@@ -78,14 +78,14 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 14,
-    "evEbitdaX": 8.83,
+    "evEbitdaX": 8.62,
     "hasDetail": true,
-    "marketCapCr": 2386,
+    "marketCapCr": 2315,
     "moduleGw": 2.4,
     "name": "Alpex Solar",
     "orderBookCr": 1900,
     "patFy26Cr": 202,
-    "peX": 11.9,
+    "peX": 11.5,
     "quarterly": [
       {
         "ebitda": 8,
@@ -189,10 +189,10 @@
     "tickerNse": "ALPEXSOLAR",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-09-14",
-      "evEbitdaX": 8.83,
-      "pbX": 4.25,
-      "peX": 11.9
+      "asOf": "2026-09-15",
+      "evEbitdaX": 8.62,
+      "pbX": 4.12,
+      "peX": 11.5
     }
   },
   "dataset": "detail/alpex-solar",
@@ -202,10 +202,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-14",
+      "asOf": "2026-09-15",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-09-14"
+  "updatedAt": "2026-09-15"
 }
