@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-18",
+  "asOf": "2026-09-21",
   "cadence": "quarterly",
   "coverage": "NTPC",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 187385
       }
     ],
-    "cmp": 324,
+    "cmp": 326,
     "concall": {
       "date": "2026-05-25",
       "guidance": [
@@ -121,12 +121,12 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 30,
-    "evEbitdaX": 11.23,
+    "evEbitdaX": 11.27,
     "hasDetail": true,
-    "marketCapCr": 314071,
+    "marketCapCr": 316157,
     "name": "NTPC",
     "patFy26Cr": 27546,
-    "peX": 11.3,
+    "peX": 11.4,
     "quarterly": [
       {
         "ebitda": 12411,
@@ -247,10 +247,10 @@
     "type": "utility",
     "ucPipelineGw": 32,
     "valuation": {
-      "asOf": "2026-09-18",
-      "evEbitdaX": 11.23,
-      "pbX": 1.54,
-      "peX": 11.3
+      "asOf": "2026-09-21",
+      "evEbitdaX": 11.27,
+      "pbX": 1.55,
+      "peX": 11.4
     }
   },
   "dataset": "detail/ntpc",
@@ -260,10 +260,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-18",
+      "asOf": "2026-09-21",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-09-18"
+  "updatedAt": "2026-09-21"
 }
