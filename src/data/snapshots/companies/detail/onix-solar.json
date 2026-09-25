@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-24",
+  "asOf": "2026-09-25",
   "cadence": "quarterly",
   "coverage": "Onix Solar Energy",
   "data": {
@@ -15,16 +15,16 @@
     ],
     "board": "BSE",
     "cellGw": 1.2,
-    "cmp": 322,
+    "cmp": 338,
     "confidence": "medium",
     "ebitdaMarginPct": 22,
-    "evEbitdaX": 26.51,
+    "evEbitdaX": 27.77,
     "hasDetail": true,
-    "marketCapCr": 1189,
+    "marketCapCr": 1248,
     "moduleGw": 1.2,
     "name": "Onix Solar Energy",
     "patFy26Cr": 53,
-    "peX": 26.3,
+    "peX": 27.6,
     "quarterly": [
       {
         "ebitda": 7,
@@ -62,10 +62,10 @@
     "sourceNote": "Market data (mid-2026)",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-09-24",
-      "evEbitdaX": 26.51,
-      "pbX": 1.53,
-      "peX": 26.3
+      "asOf": "2026-09-25",
+      "evEbitdaX": 27.77,
+      "pbX": 1.61,
+      "peX": 27.6
     }
   },
   "dataset": "detail/onix-solar",
@@ -75,10 +75,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-24",
+      "asOf": "2026-09-25",
       "confidence": "medium",
       "name": "Market data (mid-2026)"
     }
   ],
-  "updatedAt": "2026-09-24"
+  "updatedAt": "2026-09-25"
 }

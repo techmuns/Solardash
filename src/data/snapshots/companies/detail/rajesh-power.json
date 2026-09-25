@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-24",
+  "asOf": "2026-09-25",
   "cadence": "quarterly",
   "coverage": "Rajesh Power Services",
   "data": {
@@ -22,7 +22,7 @@
       }
     ],
     "board": "BSE SME",
-    "cmp": 756,
+    "cmp": 747,
     "concall": {
       "date": "2026-04-23",
       "guidance": [
@@ -41,13 +41,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 12,
-    "evEbitdaX": 7.55,
+    "evEbitdaX": 7.48,
     "hasDetail": true,
-    "marketCapCr": 1361,
+    "marketCapCr": 1346,
     "name": "Rajesh Power Services",
     "orderBookCr": 3326,
     "patFy26Cr": 143,
-    "peX": 9.47,
+    "peX": 9.37,
     "quarterly": [
       {
         "ebitda": 37,
@@ -94,10 +94,10 @@
     "sourceNote": "BSE SME (maintained)",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-09-24",
-      "evEbitdaX": 7.55,
-      "pbX": 3.35,
-      "peX": 9.47
+      "asOf": "2026-09-25",
+      "evEbitdaX": 7.48,
+      "pbX": 3.31,
+      "peX": 9.37
     }
   },
   "dataset": "detail/rajesh-power",
@@ -107,10 +107,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-09-24",
+      "asOf": "2026-09-25",
       "confidence": "high",
       "name": "BSE SME (maintained)"
     }
   ],
-  "updatedAt": "2026-09-24"
+  "updatedAt": "2026-09-25"
 }
