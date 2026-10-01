@@ -7,7 +7,7 @@
       {
         "ebitda": 2,
         "ebitdaMarginPct": 9,
-        "epsRs": 21.35,
+        "epsRs": 4.16,
         "pat": 1,
         "period": "FY20",
         "revenue": 21
@@ -15,7 +15,7 @@
       {
         "ebitda": 3,
         "ebitdaMarginPct": 10,
-        "epsRs": 2.35,
+        "epsRs": 0.47,
         "pat": 1,
         "period": "FY21",
         "revenue": 34
@@ -23,7 +23,7 @@
       {
         "ebitda": 12,
         "ebitdaMarginPct": 10,
-        "epsRs": 11.3,
+        "epsRs": 2.26,
         "pat": 7,
         "period": "FY22",
         "revenue": 124
@@ -31,7 +31,7 @@
       {
         "ebitda": 19,
         "ebitdaMarginPct": 14,
-        "epsRs": 15.74,
+        "epsRs": 3.14,
         "pat": 11,
         "period": "FY23",
         "revenue": 135
@@ -39,7 +39,7 @@
       {
         "ebitda": 81,
         "ebitdaMarginPct": 21,
-        "epsRs": 28.33,
+        "epsRs": 5.67,
         "pat": 54,
         "period": "FY24",
         "revenue": 383
@@ -47,15 +47,15 @@
       {
         "ebitda": 235,
         "ebitdaMarginPct": 24,
-        "epsRs": 78.03,
+        "epsRs": 15.61,
         "pat": 159,
         "period": "FY25",
         "revenue": 987
       },
       {
-        "ebitda": 398,
+        "ebitda": 399,
         "ebitdaMarginPct": 22,
-        "epsRs": 124.19,
+        "epsRs": 24.84,
         "pat": 252,
         "period": "FY26",
         "revenue": 1814

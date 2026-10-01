@@ -93,12 +93,12 @@
         "revenue": 15322
       },
       {
-        "ebitda": 5588,
+        "ebitda": 5558,
         "ebitdaMarginPct": 32,
         "epsRs": 25.4,
         "pat": 3769,
         "period": "FY26",
-        "revenue": 17490
+        "revenue": 17519
       }
     ],
     "cmp": 262,
@@ -232,7 +232,7 @@
         "revenue": 4717
       }
     ],
-    "revenueFy26Cr": 17490,
+    "revenueFy26Cr": 17519,
     "shareholding": {
       "asOf": "2026-06-30",
       "diiPct": 12.94,

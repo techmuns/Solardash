@@ -5,25 +5,33 @@
   "data": {
     "annual": [
       {
-        "ebitda": 54,
-        "ebitdaMarginPct": 22,
-        "epsRs": 14.24,
-        "pat": 53,
+        "ebitda": 1,
+        "ebitdaMarginPct": 3.8,
+        "epsRs": 4.14,
+        "pat": 1,
+        "period": "FY25",
+        "revenue": 29
+      },
+      {
+        "ebitda": 47,
+        "ebitdaMarginPct": 28,
+        "epsRs": 8.53,
+        "pat": 31,
         "period": "FY26",
-        "revenue": 241
+        "revenue": 165
       }
     ],
     "board": "BSE",
     "cellGw": 1.2,
     "cmp": 343,
     "confidence": "medium",
-    "ebitdaMarginPct": 22,
+    "ebitdaMarginPct": 28,
     "evEbitdaX": 28.06,
     "hasDetail": true,
     "marketCapCr": 1262,
     "moduleGw": 1.2,
     "name": "Onix Solar Energy",
-    "patFy26Cr": 53,
+    "patFy26Cr": 31,
     "peX": 27.9,
     "quarterly": [
       {
@@ -51,7 +59,7 @@
         "revenue": 95
       }
     ],
-    "revenueFy26Cr": 241,
+    "revenueFy26Cr": 165,
     "shareholding": {
       "asOf": "2026-06-30",
       "diiPct": 0.77,

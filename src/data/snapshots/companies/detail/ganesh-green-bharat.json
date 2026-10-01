@@ -37,12 +37,12 @@
         "revenue": 318
       },
       {
-        "ebitda": 114,
-        "ebitdaMarginPct": 11,
+        "ebitda": 111,
+        "ebitdaMarginPct": 10,
         "epsRs": 30.31,
         "pat": 75,
         "period": "FY26",
-        "revenue": 1068
+        "revenue": 1064
       }
     ],
     "board": "NSE SME",
@@ -65,7 +65,7 @@
       "source": "FY26 earnings call 29-May-2026; NSE press release, saurenergy.com, scanx.trade, SolarQuarter"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 11,
+    "ebitdaMarginPct": 10,
     "evEbitdaX": 5.44,
     "hasDetail": true,
     "marketCapCr": 552,
@@ -123,7 +123,7 @@
         "revenue": 725
       }
     ],
-    "revenueFy26Cr": 1068,
+    "revenueFy26Cr": 1064,
     "shareholding": {
       "asOf": "2026-03-31",
       "diiPct": 0.76,

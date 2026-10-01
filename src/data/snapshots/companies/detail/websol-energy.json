@@ -6,19 +6,19 @@
     "annual": [
       {
         "ebitda": 253,
-        "ebitdaMarginPct": 44,
+        "ebitdaMarginPct": 49,
         "epsRs": 3.67,
         "pat": 155,
         "period": "FY25",
-        "revenue": 575
+        "revenue": 521
       },
       {
         "ebitda": 429,
-        "ebitdaMarginPct": 41,
+        "ebitdaMarginPct": 44,
         "epsRs": 6.98,
         "pat": 303,
         "period": "FY26",
-        "revenue": 1049
+        "revenue": 974
       }
     ],
     "cellGw": 1.2,
@@ -41,7 +41,7 @@
       "source": "Q4 FY26 earnings call (Sovrenn / SaurEnergy)"
     },
     "confidence": "medium",
-    "ebitdaMarginPct": 41,
+    "ebitdaMarginPct": 44,
     "evEbitdaX": 7.08,
     "hasDetail": true,
     "marketCapCr": 3062,
@@ -108,7 +108,7 @@
         "revenue": 373
       }
     ],
-    "revenueFy26Cr": 1049,
+    "revenueFy26Cr": 974,
     "shareholding": {
       "asOf": "2026-06-30",
       "diiPct": 0.43,

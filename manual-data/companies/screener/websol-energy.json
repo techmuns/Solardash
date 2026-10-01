@@ -3,17 +3,17 @@
   "annual": [
     {
       "period": "FY25",
-      "revenue": 575,
+      "revenue": 521,
       "ebitda": 253,
-      "ebitdaMarginPct": 44,
+      "ebitdaMarginPct": 49,
       "pat": 155,
       "epsRs": 3.67
     },
     {
       "period": "FY26",
-      "revenue": 1049,
+      "revenue": 974,
       "ebitda": 429,
-      "ebitdaMarginPct": 41,
+      "ebitdaMarginPct": 44,
       "pat": 303,
       "epsRs": 6.98
     }
@@ -77,10 +77,10 @@
     }
   ],
   "valuation": {
-    "peX": 10.2,
-    "pbX": 5.11,
-    "cmp": 74.1,
-    "marketCapCr": 3217
+    "peX": 9.51,
+    "pbX": 4.74,
+    "cmp": 68.7,
+    "marketCapCr": 2986
   },
   "rocePct": 63.2,
   "roePct": 66.9,

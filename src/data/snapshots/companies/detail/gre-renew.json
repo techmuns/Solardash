@@ -21,20 +21,20 @@
         "revenue": 90
       },
       {
-        "ebitda": 9,
-        "ebitdaMarginPct": 11,
-        "epsRs": 6.68,
+        "ebitda": 10,
+        "ebitdaMarginPct": 12,
+        "epsRs": 6.65,
         "pat": 7,
         "period": "FY25",
-        "revenue": 84
+        "revenue": 80
       },
       {
         "ebitda": 16,
         "ebitdaMarginPct": 13,
-        "epsRs": 9.5,
-        "pat": 14,
+        "epsRs": 8.45,
+        "pat": 12,
         "period": "FY26",
-        "revenue": 123
+        "revenue": 115
       }
     ],
     "board": "BSE SME",
@@ -60,7 +60,7 @@
     "hasDetail": true,
     "marketCapCr": 330,
     "name": "GRE Renew Enertech",
-    "patFy26Cr": 14,
+    "patFy26Cr": 12,
     "peX": 27.3,
     "quarterly": [
       {
@@ -88,7 +88,7 @@
         "revenue": 79
       }
     ],
-    "revenueFy26Cr": 123,
+    "revenueFy26Cr": 115,
     "shareholding": {
       "asOf": "2026-03-31",
       "diiPct": 8.79,

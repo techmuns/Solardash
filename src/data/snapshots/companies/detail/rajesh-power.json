@@ -5,12 +5,12 @@
   "data": {
     "annual": [
       {
-        "ebitda": 134,
+        "ebitda": 124,
         "ebitdaMarginPct": 12,
-        "epsRs": 51.85,
-        "pat": 93,
+        "epsRs": 53.66,
+        "pat": 97,
         "period": "FY25",
-        "revenue": 1107
+        "revenue": 1072
       },
       {
         "ebitda": 197,

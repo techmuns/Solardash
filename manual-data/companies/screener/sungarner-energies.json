@@ -19,9 +19,9 @@
     },
     {
       "period": "FY26",
-      "revenue": 74.23,
-      "ebitda": 8.17,
-      "ebitdaMarginPct": 11.01,
+      "revenue": 74.19,
+      "ebitda": 8.21,
+      "ebitdaMarginPct": 11.07,
       "pat": 3.83,
       "epsRs": 16.52
     }
@@ -69,12 +69,12 @@
     }
   ],
   "valuation": {
-    "peX": 18.5,
-    "pbX": 4.69,
-    "cmp": 305,
-    "marketCapCr": 70.7
+    "peX": 18.8,
+    "pbX": 4.77,
+    "cmp": 310,
+    "marketCapCr": 71.9
   },
-  "rocePct": 23.4,
+  "rocePct": 23.6,
   "roePct": 29.1,
   "shareholding": {
     "promoterPct": 62,

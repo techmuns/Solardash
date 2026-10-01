@@ -23,7 +23,7 @@
       "ebitda": 95,
       "ebitdaMarginPct": 13,
       "pat": 58,
-      "epsRs": 28.71
+      "epsRs": 28.8
     }
   ],
   "quarterly": [
@@ -77,13 +77,13 @@
     }
   ],
   "valuation": {
-    "peX": 8.75,
-    "pbX": 3.07,
-    "cmp": 250,
-    "marketCapCr": 504
+    "peX": 7.87,
+    "pbX": 2.79,
+    "cmp": 227,
+    "marketCapCr": 457
   },
-  "rocePct": 56.5,
-  "roePct": 45.9,
+  "rocePct": 56.6,
+  "roePct": 46,
   "shareholding": {
     "promoterPct": 72.62,
     "fiiPct": 0,

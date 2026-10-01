@@ -83,19 +83,19 @@
     },
     {
       "period": "FY25",
-      "revenue": 250,
-      "ebitda": 43,
-      "ebitdaMarginPct": 17,
+      "revenue": 284,
+      "ebitda": 42,
+      "ebitdaMarginPct": 15,
       "pat": 22,
-      "epsRs": 1.09
+      "epsRs": 1.08
     },
     {
       "period": "FY26",
-      "revenue": 543,
-      "ebitda": 131,
-      "ebitdaMarginPct": 24,
-      "pat": 81,
-      "epsRs": 4.07
+      "revenue": 564,
+      "ebitda": 129,
+      "ebitdaMarginPct": 23,
+      "pat": 71,
+      "epsRs": 3.59
     }
   ],
   "quarterly": [
@@ -205,13 +205,13 @@
     }
   ],
   "valuation": {
-    "peX": 51.2,
-    "pbX": 7.23,
-    "cmp": 154,
-    "marketCapCr": 3058
+    "peX": 49.5,
+    "pbX": 7.2,
+    "cmp": 149,
+    "marketCapCr": 2953
   },
-  "rocePct": 15.9,
-  "roePct": 21.2,
+  "rocePct": 14.4,
+  "roePct": 19.1,
   "shareholding": {
     "promoterPct": 58.26,
     "fiiPct": 3.27,

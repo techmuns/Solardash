@@ -165,13 +165,13 @@
     }
   ],
   "valuation": {
-    "peX": 18.5,
-    "pbX": 5.15,
-    "cmp": 2585,
-    "marketCapCr": 74358
+    "peX": 16.8,
+    "pbX": 4.66,
+    "cmp": 2340,
+    "marketCapCr": 67435
   },
-  "rocePct": 38.8,
-  "roePct": 32.8,
+  "rocePct": 38.4,
+  "roePct": 32.5,
   "shareholding": {
     "promoterPct": 64.12,
     "fiiPct": 8.57,
