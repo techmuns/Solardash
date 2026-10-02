@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-01",
+  "asOf": "2026-10-02",
   "cadence": "quarterly",
   "coverage": "Madhav Infra Projects",
   "data": {
@@ -124,7 +124,7 @@
     "name": "Madhav Infra Projects",
     "orderBookCr": 1120,
     "patFy26Cr": 27,
-    "peX": 7.53,
+    "peX": 7.52,
     "quarterly": [
       {
         "ebitda": 18.79,
@@ -243,10 +243,10 @@
     "tickerNse": "MADHAVIPL",
     "type": "ipp",
     "valuation": {
-      "asOf": "2026-10-01",
+      "asOf": "2026-10-02",
       "evEbitdaX": 6.35,
       "pbX": 0.82,
-      "peX": 7.53
+      "peX": 7.52
     }
   },
   "dataset": "detail/madhav-infra",
@@ -256,10 +256,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-01",
+      "asOf": "2026-10-02",
       "confidence": "high",
       "name": "Market data (mid-2026)"
     }
   ],
-  "updatedAt": "2026-10-01"
+  "updatedAt": "2026-10-02"
 }
