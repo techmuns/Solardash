@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-02",
+  "asOf": "2026-10-05",
   "cadence": "quarterly",
   "coverage": "Borosil Renewables",
   "data": {
@@ -85,7 +85,7 @@
         "revenue": 1556
       }
     ],
-    "cmp": 450,
+    "cmp": 443,
     "concall": {
       "date": "2026-05-13",
       "guidance": [
@@ -105,12 +105,12 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 28,
-    "evEbitdaX": 13.45,
+    "evEbitdaX": 13.23,
     "hasDetail": true,
-    "marketCapCr": 6617,
+    "marketCapCr": 6507,
     "name": "Borosil Renewables",
     "patFy26Cr": 127,
-    "peX": 17.8,
+    "peX": 17.5,
     "quarterly": [
       {
         "ebitda": 26,
@@ -230,10 +230,10 @@
     "tickerNse": "BORORENEW",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-10-02",
-      "evEbitdaX": 13.45,
-      "pbX": 4.17,
-      "peX": 17.8
+      "asOf": "2026-10-05",
+      "evEbitdaX": 13.23,
+      "pbX": 4.1,
+      "peX": 17.5
     }
   },
   "dataset": "detail/borosil-renewables",
@@ -243,10 +243,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-02",
+      "asOf": "2026-10-05",
       "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-10-02"
+  "updatedAt": "2026-10-05"
 }
