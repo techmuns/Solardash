@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-05",
+  "asOf": "2026-10-06",
   "cadence": "quarterly",
   "coverage": "GRE Renew Enertech",
   "data": {
@@ -38,7 +38,7 @@
       }
     ],
     "board": "BSE SME",
-    "cmp": 235,
+    "cmp": 229,
     "concall": {
       "date": "2026-05-23",
       "guidance": [
@@ -56,12 +56,12 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 13,
-    "evEbitdaX": 21.13,
+    "evEbitdaX": 20.56,
     "hasDetail": true,
-    "marketCapCr": 336,
+    "marketCapCr": 327,
     "name": "GRE Renew Enertech",
     "patFy26Cr": 12,
-    "peX": 27.8,
+    "peX": 27.1,
     "quarterly": [
       {
         "ebitda": 5,
@@ -100,10 +100,10 @@
     "sourceNote": "BSE SME (maintained)",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-10-05",
-      "evEbitdaX": 21.13,
-      "pbX": 4.89,
-      "peX": 27.8
+      "asOf": "2026-10-06",
+      "evEbitdaX": 20.56,
+      "pbX": 4.76,
+      "peX": 27.1
     }
   },
   "dataset": "detail/gre-renew",
@@ -113,10 +113,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-05",
+      "asOf": "2026-10-06",
       "confidence": "medium",
       "name": "BSE SME (maintained)"
     }
   ],
-  "updatedAt": "2026-10-05"
+  "updatedAt": "2026-10-06"
 }
