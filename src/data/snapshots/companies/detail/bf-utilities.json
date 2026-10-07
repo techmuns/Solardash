@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-06",
+  "asOf": "2026-10-07",
   "cadence": "quarterly",
   "coverage": "BF Utilities",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 837
       }
     ],
-    "cmp": 499,
+    "cmp": 496,
     "concall": {
       "date": "2026-05-28",
       "guidance": [
@@ -119,9 +119,9 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 74,
-    "evEbitdaX": 4.54,
+    "evEbitdaX": 4.53,
     "hasDetail": true,
-    "marketCapCr": 1877,
+    "marketCapCr": 1872,
     "name": "BF Utilities",
     "patFy26Cr": 338,
     "peX": 12.3,
@@ -244,9 +244,9 @@
     "tickerNse": "BFUTILITIE",
     "type": "wind",
     "valuation": {
-      "asOf": "2026-10-06",
-      "evEbitdaX": 4.54,
-      "pbX": 9.33,
+      "asOf": "2026-10-07",
+      "evEbitdaX": 4.53,
+      "pbX": 9.27,
       "peX": 12.3
     }
   },
@@ -257,10 +257,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-06",
+      "asOf": "2026-10-07",
       "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-10-06"
+  "updatedAt": "2026-10-07"
 }
