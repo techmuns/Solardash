@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-07",
+  "asOf": "2026-10-08",
   "cadence": "quarterly",
   "coverage": "NHPC",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 11615
       }
     ],
-    "cmp": 72.5,
+    "cmp": 71.6,
     "concall": {
       "date": "2026-05-18",
       "guidance": [
@@ -120,12 +120,12 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 35,
-    "evEbitdaX": 23.93,
+    "evEbitdaX": 23.78,
     "hasDetail": true,
-    "marketCapCr": 72737,
+    "marketCapCr": 71993,
     "name": "NHPC",
     "patFy26Cr": 4220,
-    "peX": 19.2,
+    "peX": 19,
     "quarterly": [
       {
         "ebitda": 1505,
@@ -245,10 +245,10 @@
     "tickerNse": "NHPC",
     "type": "utility",
     "valuation": {
-      "asOf": "2026-10-07",
-      "evEbitdaX": 23.93,
-      "pbX": 1.76,
-      "peX": 19.2
+      "asOf": "2026-10-08",
+      "evEbitdaX": 23.78,
+      "pbX": 1.74,
+      "peX": 19
     }
   },
   "dataset": "detail/nhpc",
@@ -258,10 +258,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-07",
+      "asOf": "2026-10-08",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-10-07"
+  "updatedAt": "2026-10-08"
 }

@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-07",
+  "asOf": "2026-10-08",
   "cadence": "quarterly",
   "coverage": "Suzlon Energy",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 16732
       }
     ],
-    "cmp": 38.3,
+    "cmp": 36.4,
     "concall": {
       "date": "2026-05-25",
       "guidance": [
@@ -121,13 +121,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 18,
-    "evEbitdaX": 17.51,
+    "evEbitdaX": 16.63,
     "hasDetail": true,
-    "marketCapCr": 52307,
+    "marketCapCr": 49663,
     "name": "Suzlon Energy",
     "orderBookGw": 5.9,
     "patFy26Cr": 3163,
-    "peX": 16.6,
+    "peX": 15.8,
     "quarterly": [
       {
         "ebitda": 199,
@@ -247,10 +247,10 @@
     "tickerNse": "SUZLON",
     "type": "wind",
     "valuation": {
-      "asOf": "2026-10-07",
-      "evEbitdaX": 17.51,
-      "pbX": 5.5,
-      "peX": 16.6
+      "asOf": "2026-10-08",
+      "evEbitdaX": 16.63,
+      "pbX": 5.23,
+      "peX": 15.8
     }
   },
   "dataset": "detail/suzlon-energy",
@@ -260,10 +260,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-07",
+      "asOf": "2026-10-08",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-10-07"
+  "updatedAt": "2026-10-08"
 }
