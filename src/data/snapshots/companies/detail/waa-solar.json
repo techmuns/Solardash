@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-08",
+  "asOf": "2026-10-09",
   "cadence": "quarterly",
   "coverage": "Waa Solar",
   "data": {
@@ -242,7 +242,7 @@
     "sourceNote": "BSE SME (maintained)",
     "type": "ipp",
     "valuation": {
-      "asOf": "2026-10-08",
+      "asOf": "2026-10-09",
       "evEbitdaX": 15.31,
       "pbX": 0.32,
       "peX": 128
@@ -255,10 +255,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-08",
+      "asOf": "2026-10-09",
       "confidence": "high",
       "name": "BSE SME (maintained)"
     }
   ],
-  "updatedAt": "2026-10-08"
+  "updatedAt": "2026-10-09"
 }

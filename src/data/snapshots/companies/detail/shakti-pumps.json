@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-08",
+  "asOf": "2026-10-09",
   "cadence": "quarterly",
   "coverage": "Shakti Pumps (India)",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 2698
       }
     ],
-    "cmp": 427,
+    "cmp": 419,
     "concall": {
       "date": "2026-05-11",
       "guidance": [
@@ -121,13 +121,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 16,
-    "evEbitdaX": 15.96,
+    "evEbitdaX": 15.76,
     "hasDetail": true,
-    "marketCapCr": 5255,
+    "marketCapCr": 5184,
     "name": "Shakti Pumps (India)",
     "orderBookCr": 1500,
     "patFy26Cr": 258,
-    "peX": 24.8,
+    "peX": 24.4,
     "quarterly": [
       {
         "ebitda": 8,
@@ -247,10 +247,10 @@
     "tickerNse": "SHAKTIPUMP",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-10-08",
-      "evEbitdaX": 15.96,
-      "pbX": 3.09,
-      "peX": 24.8
+      "asOf": "2026-10-09",
+      "evEbitdaX": 15.76,
+      "pbX": 3.04,
+      "peX": 24.4
     }
   },
   "dataset": "detail/shakti-pumps",
@@ -260,10 +260,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-08",
+      "asOf": "2026-10-09",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-10-08"
+  "updatedAt": "2026-10-09"
 }
