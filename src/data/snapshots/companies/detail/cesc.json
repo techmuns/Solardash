@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-12",
+  "asOf": "2026-10-13",
   "cadence": "quarterly",
   "coverage": "CESC",
   "data": {
@@ -121,9 +121,9 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 20,
-    "evEbitdaX": 11.42,
+    "evEbitdaX": 11.43,
     "hasDetail": true,
-    "marketCapCr": 18064,
+    "marketCapCr": 18090,
     "name": "CESC",
     "patFy26Cr": 1618,
     "peX": 11.6,
@@ -247,8 +247,8 @@
     "type": "utility",
     "ucPipelineGw": 3.2,
     "valuation": {
-      "asOf": "2026-10-12",
-      "evEbitdaX": 11.42,
+      "asOf": "2026-10-13",
+      "evEbitdaX": 11.43,
       "pbX": 1.44,
       "peX": 11.6
     }
@@ -260,10 +260,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-12",
+      "asOf": "2026-10-13",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-10-12"
+  "updatedAt": "2026-10-13"
 }

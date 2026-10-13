@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-12",
+  "asOf": "2026-10-13",
   "cadence": "quarterly",
   "coverage": "KPI Green Energy",
   "data": {
@@ -69,7 +69,7 @@
         "revenue": 2696
       }
     ],
-    "cmp": 323,
+    "cmp": 327,
     "concall": {
       "date": "2026-05-12",
       "guidance": [
@@ -89,12 +89,12 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 36,
-    "evEbitdaX": 11.62,
+    "evEbitdaX": 11.68,
     "hasDetail": true,
-    "marketCapCr": 6395,
+    "marketCapCr": 6459,
     "name": "KPI Green Energy",
     "patFy26Cr": 509,
-    "peX": 14,
+    "peX": 14.2,
     "quarterly": [
       {
         "ebitda": 69,
@@ -215,10 +215,10 @@
     "type": "ipp",
     "ucPipelineGw": 4.64,
     "valuation": {
-      "asOf": "2026-10-12",
-      "evEbitdaX": 11.62,
-      "pbX": 2.1,
-      "peX": 14
+      "asOf": "2026-10-13",
+      "evEbitdaX": 11.68,
+      "pbX": 2.12,
+      "peX": 14.2
     }
   },
   "dataset": "detail/kpi-green",
@@ -228,10 +228,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-12",
+      "asOf": "2026-10-13",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-10-12"
+  "updatedAt": "2026-10-13"
 }
