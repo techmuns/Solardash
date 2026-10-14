@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-13",
+  "asOf": "2026-10-14",
   "cadence": "quarterly",
   "coverage": "JSW Energy",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 18901
       }
     ],
-    "cmp": 460,
+    "cmp": 490,
     "concall": {
       "date": "2026-05-11",
       "guidance": [
@@ -121,12 +121,12 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 53,
-    "evEbitdaX": 15.89,
+    "evEbitdaX": 16.45,
     "hasDetail": true,
-    "marketCapCr": 84360,
+    "marketCapCr": 89993,
     "name": "JSW Energy",
     "patFy26Cr": 2762,
-    "peX": 42,
+    "peX": 44.9,
     "quarterly": [
       {
         "ebitda": 1222,
@@ -247,10 +247,10 @@
     "type": "ipp",
     "ucPipelineGw": 12.5,
     "valuation": {
-      "asOf": "2026-10-13",
-      "evEbitdaX": 15.89,
-      "pbX": 2.63,
-      "peX": 42
+      "asOf": "2026-10-14",
+      "evEbitdaX": 16.45,
+      "pbX": 2.8,
+      "peX": 44.9
     }
   },
   "dataset": "detail/jsw-energy",
@@ -260,10 +260,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-13",
+      "asOf": "2026-10-14",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-10-13"
+  "updatedAt": "2026-10-14"
 }

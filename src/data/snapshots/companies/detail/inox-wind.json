@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-13",
+  "asOf": "2026-10-14",
   "cadence": "quarterly",
   "coverage": "Inox Wind",
   "data": {
@@ -120,9 +120,9 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 20,
-    "evEbitdaX": 15.84,
+    "evEbitdaX": 15.86,
     "hasDetail": true,
-    "marketCapCr": 12055,
+    "marketCapCr": 12065,
     "name": "Inox Wind",
     "orderBookGw": 3.1,
     "patFy26Cr": 449,
@@ -246,8 +246,8 @@
     "tickerNse": "INOXWIND",
     "type": "wind",
     "valuation": {
-      "asOf": "2026-10-13",
-      "evEbitdaX": 15.84,
+      "asOf": "2026-10-14",
+      "evEbitdaX": 15.86,
       "pbX": 1.89,
       "peX": 35
     }
@@ -259,10 +259,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-13",
+      "asOf": "2026-10-14",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-10-13"
+  "updatedAt": "2026-10-14"
 }
