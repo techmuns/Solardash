@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-15",
+  "asOf": "2026-10-16",
   "cadence": "quarterly",
   "coverage": "Solarium Green Energy",
   "data": {
@@ -30,7 +30,7 @@
       }
     ],
     "board": "BSE SME",
-    "cmp": 118,
+    "cmp": 117,
     "concall": {
       "date": "2026-06-02",
       "guidance": [
@@ -48,9 +48,9 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 8,
-    "evEbitdaX": 13,
+    "evEbitdaX": 12.97,
     "hasDetail": true,
-    "marketCapCr": 246,
+    "marketCapCr": 245,
     "name": "Solarium Green Energy",
     "orderBookCr": 300,
     "patFy26Cr": 20,
@@ -101,9 +101,9 @@
     "sourceNote": "BSE SME (maintained)",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-10-15",
-      "evEbitdaX": 13,
-      "pbX": 1.51,
+      "asOf": "2026-10-16",
+      "evEbitdaX": 12.97,
+      "pbX": 1.5,
       "peX": 14.4
     }
   },
@@ -114,10 +114,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-15",
+      "asOf": "2026-10-16",
       "confidence": "high",
       "name": "BSE SME (maintained)"
     }
   ],
-  "updatedAt": "2026-10-15"
+  "updatedAt": "2026-10-16"
 }
