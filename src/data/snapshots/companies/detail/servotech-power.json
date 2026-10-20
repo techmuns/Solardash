@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-19",
+  "asOf": "2026-10-20",
   "cadence": "quarterly",
   "coverage": "Servotech Renewable Power",
   "data": {
@@ -199,7 +199,7 @@
     "tickerNse": "SERVOTECH",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "evEbitdaX": 22.82,
       "pbX": 5.34,
       "peX": 41.3
@@ -212,10 +212,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "confidence": "high",
       "name": "Market data (mid-2026)"
     }
   ],
-  "updatedAt": "2026-10-19"
+  "updatedAt": "2026-10-20"
 }

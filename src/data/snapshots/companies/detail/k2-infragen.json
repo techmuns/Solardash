@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-19",
+  "asOf": "2026-10-20",
   "cadence": "quarterly",
   "coverage": "K2 Infragen",
   "data": {
@@ -150,7 +150,7 @@
     "tickerNse": "K2INFRA",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "evEbitdaX": 6.82,
       "pbX": 0.58,
       "peX": 3.9
@@ -163,10 +163,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "confidence": "high",
       "name": "NSE Emerge (SME)"
     }
   ],
-  "updatedAt": "2026-10-19"
+  "updatedAt": "2026-10-20"
 }

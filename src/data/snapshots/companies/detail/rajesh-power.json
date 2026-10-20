@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-19",
+  "asOf": "2026-10-20",
   "cadence": "quarterly",
   "coverage": "Rajesh Power Services",
   "data": {
@@ -94,7 +94,7 @@
     "sourceNote": "BSE SME (maintained)",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "evEbitdaX": 8.16,
       "pbX": 3.64,
       "peX": 10.3
@@ -107,10 +107,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "confidence": "high",
       "name": "BSE SME (maintained)"
     }
   ],
-  "updatedAt": "2026-10-19"
+  "updatedAt": "2026-10-20"
 }

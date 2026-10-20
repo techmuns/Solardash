@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-19",
+  "asOf": "2026-10-20",
   "cadence": "quarterly",
   "coverage": "Premier Energies",
   "data": {
@@ -82,15 +82,15 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 30,
-    "evEbitdaX": 17.44,
+    "evEbitdaX": 17.51,
     "hasDetail": true,
-    "marketCapCr": 40632,
+    "marketCapCr": 40810,
     "moduleGw": 5,
     "name": "Premier Energies",
     "orderBookCr": 13720,
     "orderBookGw": 9.4,
     "patFy26Cr": 1510,
-    "peX": 24.4,
+    "peX": 24.5,
     "quarterly": [
       {
         "ebitda": 71,
@@ -212,10 +212,10 @@
     "tickerNse": "PREMIERENE",
     "type": "integrated",
     "valuation": {
-      "asOf": "2026-10-19",
-      "evEbitdaX": 17.44,
+      "asOf": "2026-10-20",
+      "evEbitdaX": 17.51,
       "pbX": 9.45,
-      "peX": 24.4
+      "peX": 24.5
     }
   },
   "dataset": "detail/premier-energies",
@@ -225,10 +225,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-10-19"
+  "updatedAt": "2026-10-20"
 }
