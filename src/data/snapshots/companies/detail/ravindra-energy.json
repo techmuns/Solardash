@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-20",
+  "asOf": "2026-10-21",
   "cadence": "quarterly",
   "coverage": "Ravindra Energy",
   "data": {
@@ -102,7 +102,7 @@
       }
     ],
     "board": "NSE",
-    "cmp": 140,
+    "cmp": 137,
     "concall": {
       "date": "2026-04-29",
       "guidance": [
@@ -122,12 +122,12 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 23,
-    "evEbitdaX": 23.69,
+    "evEbitdaX": 23.34,
     "hasDetail": true,
-    "marketCapCr": 2782,
+    "marketCapCr": 2733,
     "name": "Ravindra Energy",
     "patFy26Cr": 71,
-    "peX": 46.6,
+    "peX": 45.8,
     "quarterly": [
       {
         "ebitda": 10.84,
@@ -247,10 +247,10 @@
     "tickerNse": "RELTD",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-10-20",
-      "evEbitdaX": 23.69,
-      "pbX": 6.76,
-      "peX": 46.6
+      "asOf": "2026-10-21",
+      "evEbitdaX": 23.34,
+      "pbX": 6.62,
+      "peX": 45.8
     }
   },
   "dataset": "detail/ravindra-energy",
@@ -260,10 +260,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-20",
+      "asOf": "2026-10-21",
       "confidence": "medium",
       "name": "Market data (mid-2026)"
     }
   ],
-  "updatedAt": "2026-10-20"
+  "updatedAt": "2026-10-21"
 }
