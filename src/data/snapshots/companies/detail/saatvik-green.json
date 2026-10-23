@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-22",
+  "asOf": "2026-10-23",
   "cadence": "quarterly",
   "coverage": "Saatvik Green Energy",
   "data": {
@@ -37,7 +37,7 @@
         "revenue": 4548
       }
     ],
-    "cmp": 364,
+    "cmp": 352,
     "concall": {
       "date": "2026-05-21",
       "guidance": [
@@ -57,14 +57,14 @@
     },
     "confidence": "modelled",
     "ebitdaMarginPct": 12,
-    "evEbitdaX": 13.8,
+    "evEbitdaX": 13.51,
     "hasDetail": true,
-    "marketCapCr": 4593,
+    "marketCapCr": 4477,
     "moduleGw": 3.8,
     "name": "Saatvik Green Energy",
     "orderBookGw": 5.89,
     "patFy26Cr": 357,
-    "peX": 18.5,
+    "peX": 18,
     "quarterly": [
       {
         "ebitda": 20.94,
@@ -160,10 +160,10 @@
     "tickerNse": "SAATVIK",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-10-22",
-      "evEbitdaX": 13.8,
-      "pbX": 3.4,
-      "peX": 18.5
+      "asOf": "2026-10-23",
+      "evEbitdaX": 13.51,
+      "pbX": 3.29,
+      "peX": 18
     }
   },
   "dataset": "detail/saatvik-green",
@@ -173,10 +173,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-22",
+      "asOf": "2026-10-23",
       "confidence": "modelled",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-10-22"
+  "updatedAt": "2026-10-23"
 }
