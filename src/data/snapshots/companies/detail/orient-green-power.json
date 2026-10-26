@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-23",
+  "asOf": "2026-10-26",
   "cadence": "quarterly",
   "coverage": "Orient Green Power",
   "data": {
@@ -101,7 +101,7 @@
         "revenue": 293
       }
     ],
-    "cmp": 7.83,
+    "cmp": 7.82,
     "concall": {
       "date": "2026-05-13",
       "guidance": [
@@ -121,9 +121,9 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 62,
-    "evEbitdaX": 8.1,
+    "evEbitdaX": 8.08,
     "hasDetail": true,
-    "marketCapCr": 917,
+    "marketCapCr": 915,
     "name": "Orient Green Power",
     "patFy26Cr": 72,
     "peX": 17.1,
@@ -246,8 +246,8 @@
     "tickerNse": "GREENPOWER",
     "type": "wind",
     "valuation": {
-      "asOf": "2026-10-23",
-      "evEbitdaX": 8.1,
+      "asOf": "2026-10-26",
+      "evEbitdaX": 8.08,
       "pbX": 0.8,
       "peX": 17.1
     }
@@ -259,10 +259,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-23",
+      "asOf": "2026-10-26",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-10-23"
+  "updatedAt": "2026-10-26"
 }
