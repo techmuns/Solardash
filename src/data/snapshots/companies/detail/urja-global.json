@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-26",
+  "asOf": "2026-10-27",
   "cadence": "quarterly",
   "coverage": "Urja Global",
   "data": {
@@ -102,15 +102,15 @@
       }
     ],
     "board": "NSE",
-    "cmp": 7.77,
+    "cmp": 8.06,
     "confidence": "high",
     "ebitdaMarginPct": 3.31,
-    "evEbitdaX": 220.99,
+    "evEbitdaX": 229.72,
     "hasDetail": true,
-    "marketCapCr": 446,
+    "marketCapCr": 464,
     "name": "Urja Global",
     "patFy26Cr": 1.35,
-    "peX": 314,
+    "peX": 327,
     "quarterly": [
       {
         "ebitda": 0.46,
@@ -229,10 +229,10 @@
     "tickerNse": "URJA",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-10-26",
-      "evEbitdaX": 220.99,
-      "pbX": 2.53,
-      "peX": 314
+      "asOf": "2026-10-27",
+      "evEbitdaX": 229.72,
+      "pbX": 2.63,
+      "peX": 327
     }
   },
   "dataset": "detail/urja-global",
@@ -242,10 +242,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-27",
       "confidence": "high",
       "name": "Market data (mid-2026)"
     }
   ],
-  "updatedAt": "2026-10-26"
+  "updatedAt": "2026-10-27"
 }
