@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-28",
+  "asOf": "2026-10-29",
   "cadence": "quarterly",
   "coverage": "Sterling & Wilson Renewable Energy",
   "data": {
@@ -99,7 +99,7 @@
     "ebitdaMarginPct": 4.2,
     "evEbitdaX": 12.38,
     "hasDetail": true,
-    "marketCapCr": 3364,
+    "marketCapCr": 3365,
     "name": "Sterling & Wilson Renewable Energy",
     "orderBookCr": 11813,
     "patFy26Cr": -296,
@@ -223,7 +223,7 @@
     "tickerNse": "SWSOLAR",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "evEbitdaX": 12.38,
       "pbX": 4.65,
       "peX": 14.6
@@ -236,10 +236,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-10-28"
+  "updatedAt": "2026-10-29"
 }
