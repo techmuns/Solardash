@@ -29,17 +29,17 @@
         "revenue": 737
       },
       {
-        "ebitda": 161,
+        "ebitda": 163,
         "ebitdaMarginPct": 12,
-        "epsRs": 5.73,
+        "epsRs": 5.7,
         "pat": 126,
         "period": "FY25",
         "revenue": 1334
       },
       {
-        "ebitda": 287,
-        "ebitdaMarginPct": 13,
-        "epsRs": 9.08,
+        "ebitda": 290,
+        "ebitdaMarginPct": 14,
+        "epsRs": 9.1,
         "pat": 201,
         "period": "FY26",
         "revenue": 2146
@@ -64,7 +64,7 @@
       "source": "Q4 FY26 earnings call (Mercom / SaurEnergy)"
     },
     "confidence": "modelled",
-    "ebitdaMarginPct": 13,
+    "ebitdaMarginPct": 14,
     "evEbitdaX": 7.97,
     "hasDetail": true,
     "marketCapCr": 1528,
@@ -133,10 +133,10 @@
     "revenueFy26Cr": 2146,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 1.27,
-      "fiiPct": 0.84,
-      "promoterPct": 66.12,
-      "publicPct": 31.75
+      "diiPct": 1.7,
+      "fiiPct": 0.91,
+      "promoterPct": 66.09,
+      "publicPct": 31.31
     },
     "slug": "insolation-energy",
     "sourceNote": "Company filings (aggregated)",

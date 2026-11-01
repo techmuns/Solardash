@@ -7,7 +7,7 @@
       {
         "ebitda": 542,
         "ebitdaMarginPct": 8,
-        "epsRs": 281.98,
+        "epsRs": 28.19,
         "pat": 451,
         "period": "FY18",
         "revenue": 6872
@@ -106,14 +106,6 @@
     "peX": 13.8,
     "quarterly": [
       {
-        "ebitda": -37,
-        "ebitdaMarginPct": -7,
-        "pat": -95,
-        "patMarginPct": -18.45,
-        "period": "Q1FY24",
-        "revenue": 515
-      },
-      {
         "ebitda": 1,
         "ebitdaMarginPct": 0.2,
         "pat": -55,
@@ -208,15 +200,23 @@
         "patMarginPct": 3.33,
         "period": "Q1FY27",
         "revenue": 1590
+      },
+      {
+        "ebitda": 56,
+        "ebitdaMarginPct": 3.7,
+        "pat": 17,
+        "patMarginPct": 1.11,
+        "period": "Q2FY27",
+        "revenue": 1528
       }
     ],
     "revenueFy26Cr": 7548,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 4.8,
-      "fiiPct": 5.07,
+      "asOf": "2026-09-30",
+      "diiPct": 5.32,
+      "fiiPct": 3.75,
       "promoterPct": 45.73,
-      "publicPct": 44.41
+      "publicPct": 45.21
     },
     "slug": "sterling-wilson-re",
     "sourceNote": "Market data (mid-2026) + company filings",

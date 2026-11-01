@@ -234,10 +234,10 @@
     "revenueFy26Cr": 837,
     "shareholding": {
       "asOf": "2025-12-31",
-      "diiPct": 0.06,
-      "fiiPct": 1.61,
+      "diiPct": 0.02,
+      "fiiPct": 1.38,
       "promoterPct": 56.73,
-      "publicPct": 41.59
+      "publicPct": 41.88
     },
     "slug": "bf-utilities",
     "sourceNote": "Market data (mid-2026) + company filings",

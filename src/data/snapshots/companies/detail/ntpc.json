@@ -129,14 +129,6 @@
     "peX": 11.1,
     "quarterly": [
       {
-        "ebitda": 12411,
-        "ebitdaMarginPct": 29,
-        "pat": 4907,
-        "patMarginPct": 11.39,
-        "period": "Q1FY24",
-        "revenue": 43075
-      },
-      {
         "ebitda": 12680,
         "ebitdaMarginPct": 28,
         "pat": 4726,
@@ -201,12 +193,12 @@
         "revenue": 47064
       },
       {
-        "ebitda": 12816,
+        "ebitda": 12814,
         "ebitdaMarginPct": 29,
         "pat": 5225,
         "patMarginPct": 11.67,
         "period": "Q2FY26",
-        "revenue": 44786
+        "revenue": 44784
       },
       {
         "ebitda": 14570,
@@ -231,15 +223,23 @@
         "patMarginPct": 13.59,
         "period": "Q1FY27",
         "revenue": 50741
+      },
+      {
+        "ebitda": 15627,
+        "ebitdaMarginPct": 29,
+        "pat": 7351,
+        "patMarginPct": 13.55,
+        "period": "Q2FY27",
+        "revenue": 54270
       }
     ],
     "revenueFy26Cr": 187385,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 29.44,
-      "fiiPct": 16.3,
+      "asOf": "2026-09-30",
+      "diiPct": 29.86,
+      "fiiPct": 15.79,
       "promoterPct": 51.1,
-      "publicPct": 3.14
+      "publicPct": 3.23
     },
     "slug": "ntpc",
     "sourceNote": "Market data (mid-2026) + company filings",

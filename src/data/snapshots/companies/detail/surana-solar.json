@@ -52,9 +52,9 @@
     "shareholding": {
       "asOf": "2025-06-30",
       "diiPct": 0.04,
-      "fiiPct": 0.15,
-      "promoterPct": 45.75,
-      "publicPct": 54.07
+      "fiiPct": 0,
+      "promoterPct": 46.39,
+      "publicPct": 53.59
     },
     "slug": "surana-solar",
     "sourceNote": "Market data (mid-2026) + company filings",

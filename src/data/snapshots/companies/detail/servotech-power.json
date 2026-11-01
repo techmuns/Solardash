@@ -190,9 +190,9 @@
     "revenueFy26Cr": 672,
     "shareholding": {
       "asOf": "2026-06-30",
-      "fiiPct": 0.05,
+      "fiiPct": 0.25,
       "promoterPct": 58.61,
-      "publicPct": 41.34
+      "publicPct": 41.14
     },
     "slug": "servotech-power",
     "sourceNote": "Market data (mid-2026)",

@@ -7,7 +7,7 @@
       {
         "ebitda": 94,
         "ebitdaMarginPct": 10,
-        "epsRs": 1.5,
+        "epsRs": 1.18,
         "pat": 45,
         "period": "FY20",
         "revenue": 947
@@ -15,7 +15,7 @@
       {
         "ebitda": 54,
         "ebitdaMarginPct": 8,
-        "epsRs": 0.94,
+        "epsRs": 0.74,
         "pat": 26,
         "period": "FY21",
         "revenue": 701
@@ -23,7 +23,7 @@
       {
         "ebitda": 30,
         "ebitdaMarginPct": 4,
-        "epsRs": -0.55,
+        "epsRs": -0.43,
         "pat": -14,
         "period": "FY22",
         "revenue": 743
@@ -31,7 +31,7 @@
       {
         "ebitda": 78,
         "ebitdaMarginPct": 5,
-        "epsRs": -0.49,
+        "epsRs": -0.38,
         "pat": -13,
         "period": "FY23",
         "revenue": 1429
@@ -39,7 +39,7 @@
       {
         "ebitda": 478,
         "ebitdaMarginPct": 15,
-        "epsRs": 8.78,
+        "epsRs": 6.92,
         "pat": 231,
         "period": "FY24",
         "revenue": 3144
@@ -201,10 +201,10 @@
     "revenueFy26Cr": 7824,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 17.97,
-      "fiiPct": 7.92,
+      "diiPct": 18.88,
+      "fiiPct": 7.12,
       "promoterPct": 58.48,
-      "publicPct": 15.07
+      "publicPct": 14.99
     },
     "slug": "premier-energies",
     "sourceNote": "Company filings (aggregated)",

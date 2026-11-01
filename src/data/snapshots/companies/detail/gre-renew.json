@@ -7,7 +7,7 @@
       {
         "ebitda": 2,
         "ebitdaMarginPct": 4.2,
-        "epsRs": 7.12,
+        "epsRs": 0.89,
         "pat": 1,
         "period": "FY23",
         "revenue": 52
@@ -15,7 +15,7 @@
       {
         "ebitda": 11,
         "ebitdaMarginPct": 13,
-        "epsRs": 79.28,
+        "epsRs": 9.91,
         "pat": 10,
         "period": "FY24",
         "revenue": 90
@@ -91,10 +91,10 @@
     "revenueFy26Cr": 115,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 8.79,
-      "fiiPct": 0.38,
+      "diiPct": 5.72,
+      "fiiPct": 0,
       "promoterPct": 69.99,
-      "publicPct": 20.85
+      "publicPct": 24.29
     },
     "slug": "gre-renew",
     "sourceNote": "BSE SME (maintained)",

@@ -48,10 +48,10 @@
     {
       "period": "FY26",
       "revenue": 2223,
-      "ebitda": 319,
-      "ebitdaMarginPct": 14,
+      "ebitda": 328,
+      "ebitdaMarginPct": 15,
       "pat": 202,
-      "epsRs": 78.89
+      "epsRs": 78.87
     }
   ],
   "quarterly": [
@@ -145,18 +145,18 @@
     }
   ],
   "valuation": {
-    "peX": 10.5,
-    "pbX": 3.74,
-    "cmp": 823,
-    "marketCapCr": 2103
+    "peX": 8.4,
+    "pbX": 3,
+    "cmp": 660,
+    "marketCapCr": 1687
   },
-  "rocePct": 43.5,
-  "roePct": 52,
+  "rocePct": 44.8,
+  "roePct": 52.8,
   "shareholding": {
     "promoterPct": 65.9,
-    "fiiPct": 3.13,
-    "diiPct": 0.4,
-    "publicPct": 30.58,
+    "fiiPct": 3.28,
+    "diiPct": 0.39,
+    "publicPct": 30.43,
     "asOf": "2026-06-30"
   },
   "asOf": "2026-06-30"

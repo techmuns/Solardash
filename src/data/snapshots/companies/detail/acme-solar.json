@@ -7,7 +7,7 @@
       {
         "ebitda": 1649,
         "ebitdaMarginPct": 93,
-        "epsRs": 8.2,
+        "epsRs": 1.64,
         "pat": 86,
         "period": "FY20",
         "revenue": 1777
@@ -15,7 +15,7 @@
       {
         "ebitda": 1553,
         "ebitdaMarginPct": 92,
-        "epsRs": 1.46,
+        "epsRs": 0.29,
         "pat": 15,
         "period": "FY21",
         "revenue": 1692
@@ -23,7 +23,7 @@
       {
         "ebitda": 1240,
         "ebitdaMarginPct": 83,
-        "epsRs": 5.94,
+        "epsRs": 1.19,
         "pat": 62,
         "period": "FY22",
         "revenue": 1488
@@ -31,7 +31,7 @@
       {
         "ebitda": 1173,
         "ebitdaMarginPct": 91,
-        "epsRs": -0.3,
+        "epsRs": -0.06,
         "pat": -3,
         "period": "FY23",
         "revenue": 1295
@@ -39,7 +39,7 @@
       {
         "ebitda": 1094,
         "ebitdaMarginPct": 83,
-        "epsRs": 66.81,
+        "epsRs": 13.36,
         "pat": 698,
         "period": "FY24",
         "revenue": 1319
@@ -88,14 +88,6 @@
     "patFy26Cr": 498,
     "peX": 38.1,
     "quarterly": [
-      {
-        "ebitda": 322,
-        "ebitdaMarginPct": 87,
-        "pat": 82,
-        "patMarginPct": 22.22,
-        "period": "Q1FY24",
-        "revenue": 369
-      },
       {
         "ebitda": 290,
         "ebitdaMarginPct": 90,
@@ -191,15 +183,23 @@
         "patMarginPct": 27.39,
         "period": "Q1FY27",
         "revenue": 858
+      },
+      {
+        "ebitda": 753,
+        "ebitdaMarginPct": 85,
+        "pat": 269,
+        "patMarginPct": 30.33,
+        "period": "Q2FY27",
+        "revenue": 887
       }
     ],
     "revenueFy26Cr": 2023,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 19.1,
-      "fiiPct": 4.39,
+      "asOf": "2026-09-30",
+      "diiPct": 17.46,
+      "fiiPct": 6.44,
       "promoterPct": 71.4,
-      "publicPct": 4.92
+      "publicPct": 4.57
     },
     "slug": "acme-solar",
     "sourceNote": "Company filings (aggregated)",

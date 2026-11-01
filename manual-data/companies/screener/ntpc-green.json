@@ -122,22 +122,30 @@
       "ebitdaMarginPct": 89,
       "pat": 305,
       "patMarginPct": 27.55
+    },
+    {
+      "period": "Q2FY27",
+      "revenue": 938,
+      "ebitda": 830,
+      "ebitdaMarginPct": 88,
+      "pat": 138,
+      "patMarginPct": 14.71
     }
   ],
   "valuation": {
-    "peX": 126,
-    "pbX": 4.05,
-    "cmp": 91.1,
-    "marketCapCr": 76714
+    "peX": 106,
+    "pbX": 3.58,
+    "cmp": 82.4,
+    "marketCapCr": 69467
   },
   "rocePct": 3.56,
   "roePct": 2.79,
   "shareholding": {
     "promoterPct": 89.01,
-    "fiiPct": 1.67,
-    "diiPct": 5.21,
+    "fiiPct": 1.58,
+    "diiPct": 5.29,
     "publicPct": 4.12,
-    "asOf": "2026-06-30"
+    "asOf": "2026-09-30"
   },
-  "asOf": "2026-06-30"
+  "asOf": "2026-09-30"
 }

@@ -92,14 +92,6 @@
     "peX": 17,
     "quarterly": [
       {
-        "ebitda": 468,
-        "ebitdaMarginPct": 14,
-        "pat": 338,
-        "patMarginPct": 10.16,
-        "period": "Q1FY24",
-        "revenue": 3328
-      },
-      {
         "ebitda": 517,
         "ebitdaMarginPct": 15,
         "pat": 320,
@@ -194,16 +186,24 @@
         "patMarginPct": 11.25,
         "period": "Q1FY27",
         "revenue": 7932
+      },
+      {
+        "ebitda": 1335,
+        "ebitdaMarginPct": 18,
+        "pat": 754,
+        "patMarginPct": 10.03,
+        "period": "Q2FY27",
+        "revenue": 7518
       }
     ],
     "rating": "BUY",
     "revenueFy26Cr": 26537,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 4.08,
+      "asOf": "2026-09-30",
+      "diiPct": 4.09,
       "fiiPct": 8.57,
       "promoterPct": 64.12,
-      "publicPct": 23.23
+      "publicPct": 23.22
     },
     "slug": "waaree-energies",
     "sourceNote": "Company filings (aggregated)",

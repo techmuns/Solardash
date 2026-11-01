@@ -236,10 +236,10 @@
     "revenueFy26Cr": 18570,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 26.14,
-      "fiiPct": 11.46,
+      "diiPct": 24.93,
+      "fiiPct": 11.49,
       "promoterPct": 52.11,
-      "publicPct": 10.26
+      "publicPct": 11.45
     },
     "slug": "cesc",
     "sourceNote": "Market data (mid-2026) + company filings",

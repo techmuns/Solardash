@@ -7,7 +7,7 @@
       {
         "ebitda": 2,
         "ebitdaMarginPct": 9,
-        "epsRs": 4.16,
+        "epsRs": 2.08,
         "pat": 1,
         "period": "FY20",
         "revenue": 21
@@ -15,7 +15,7 @@
       {
         "ebitda": 3,
         "ebitdaMarginPct": 10,
-        "epsRs": 0.47,
+        "epsRs": 0.23,
         "pat": 1,
         "period": "FY21",
         "revenue": 34
@@ -23,7 +23,7 @@
       {
         "ebitda": 12,
         "ebitdaMarginPct": 10,
-        "epsRs": 2.26,
+        "epsRs": 1.13,
         "pat": 7,
         "period": "FY22",
         "revenue": 124
@@ -31,7 +31,7 @@
       {
         "ebitda": 19,
         "ebitdaMarginPct": 14,
-        "epsRs": 3.14,
+        "epsRs": 1.57,
         "pat": 11,
         "period": "FY23",
         "revenue": 135
@@ -142,10 +142,10 @@
     "revenueFy26Cr": 1814,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 0.32,
-      "fiiPct": 0.32,
+      "diiPct": 0.72,
+      "fiiPct": 0.31,
       "promoterPct": 57.98,
-      "publicPct": 41.38
+      "publicPct": 40.99
     },
     "slug": "oriana-power",
     "sourceNote": "Market data (mid-2026) + company filings",

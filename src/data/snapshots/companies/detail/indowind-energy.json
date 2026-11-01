@@ -85,20 +85,20 @@
         "revenue": 38.81
       },
       {
-        "ebitda": 10.55,
-        "ebitdaMarginPct": 31.48,
-        "epsRs": 0.08,
-        "pat": 1.27,
+        "ebitda": 12.05,
+        "ebitdaMarginPct": 34.42,
+        "epsRs": 0.11,
+        "pat": 1.7,
         "period": "FY25",
-        "revenue": 33.51
+        "revenue": 35.01
       },
       {
-        "ebitda": 14.93,
-        "ebitdaMarginPct": 36.64,
+        "ebitda": 12.07,
+        "ebitdaMarginPct": 29.93,
         "epsRs": 0,
         "pat": 0.01,
         "period": "FY26",
-        "revenue": 40.75
+        "revenue": 40.33
       }
     ],
     "cmp": 7.97,
@@ -117,7 +117,7 @@
       "source": "FY26 results (~May 2026); Q3 FY26 concall (Feb 2026); company press releases"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 36.64,
+    "ebitdaMarginPct": 29.93,
     "evEbitdaX": 11.24,
     "hasDetail": true,
     "marketCapCr": 129,
@@ -229,12 +229,12 @@
         "revenue": 8.44
       }
     ],
-    "revenueFy26Cr": 40.75,
+    "revenueFy26Cr": 40.33,
     "shareholding": {
       "asOf": "2026-06-30",
       "fiiPct": 0.02,
-      "promoterPct": 48.2,
-      "publicPct": 51.78
+      "promoterPct": 48.76,
+      "publicPct": 51.22
     },
     "slug": "indowind-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

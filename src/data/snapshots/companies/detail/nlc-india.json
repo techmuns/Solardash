@@ -235,10 +235,10 @@
     "revenueFy26Cr": 17519,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 12.94,
-      "fiiPct": 4.62,
+      "diiPct": 13.64,
+      "fiiPct": 4.61,
       "promoterPct": 69.47,
-      "publicPct": 8.66
+      "publicPct": 7.98
     },
     "slug": "nlc-india",
     "sourceNote": "Market data (mid-2026) + company filings",

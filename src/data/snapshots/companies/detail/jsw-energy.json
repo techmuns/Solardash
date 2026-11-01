@@ -129,14 +129,6 @@
     "peX": 38.9,
     "quarterly": [
       {
-        "ebitda": 1222,
-        "ebitdaMarginPct": 42,
-        "pat": 290,
-        "patMarginPct": 9.9,
-        "period": "Q1FY24",
-        "revenue": 2928
-      },
-      {
         "ebitda": 1880,
         "ebitdaMarginPct": 58,
         "pat": 857,
@@ -231,15 +223,23 @@
         "patMarginPct": 10.24,
         "period": "Q1FY27",
         "revenue": 5207
+      },
+      {
+        "ebitda": 3617,
+        "ebitdaMarginPct": 57,
+        "pat": 1141,
+        "patMarginPct": 17.92,
+        "period": "Q2FY27",
+        "revenue": 6368
       }
     ],
     "revenueFy26Cr": 18901,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 16.16,
-      "fiiPct": 11.41,
+      "asOf": "2026-09-30",
+      "diiPct": 16.68,
+      "fiiPct": 10.91,
       "promoterPct": 66.53,
-      "publicPct": 5.82
+      "publicPct": 5.83
     },
     "slug": "jsw-energy",
     "sourceNote": "Company filings (aggregated)",

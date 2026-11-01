@@ -111,10 +111,10 @@
     "revenueFy26Cr": 974,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 0.43,
-      "fiiPct": 3.74,
+      "diiPct": 0.21,
+      "fiiPct": 4.17,
       "promoterPct": 29.72,
-      "publicPct": 66.12
+      "publicPct": 65.91
     },
     "slug": "websol-energy",
     "sourceNote": "Company filings (aggregated)",

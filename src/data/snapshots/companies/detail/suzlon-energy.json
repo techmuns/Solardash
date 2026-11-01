@@ -130,14 +130,6 @@
     "peX": 20.5,
     "quarterly": [
       {
-        "ebitda": 199,
-        "ebitdaMarginPct": 15,
-        "pat": 101,
-        "patMarginPct": 7.48,
-        "period": "Q1FY24",
-        "revenue": 1351
-      },
-      {
         "ebitda": 225,
         "ebitdaMarginPct": 16,
         "pat": 102,
@@ -232,15 +224,23 @@
         "patMarginPct": 7.97,
         "period": "Q1FY27",
         "revenue": 3829
+      },
+      {
+        "ebitda": 720,
+        "ebitdaMarginPct": 15,
+        "pat": 394,
+        "patMarginPct": 8.08,
+        "period": "Q2FY27",
+        "revenue": 4876
       }
     ],
     "revenueFy26Cr": 16732,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 11.12,
-      "fiiPct": 24.15,
+      "asOf": "2026-09-30",
+      "diiPct": 10.24,
+      "fiiPct": 23.63,
       "promoterPct": 11.7,
-      "publicPct": 53.02
+      "publicPct": 54.44
     },
     "slug": "suzlon-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

@@ -7,7 +7,7 @@
       {
         "ebitda": 9,
         "ebitdaMarginPct": 9,
-        "epsRs": 43.42,
+        "epsRs": 2.89,
         "pat": 5,
         "period": "FY22",
         "revenue": 106
@@ -15,7 +15,7 @@
       {
         "ebitda": 14,
         "ebitdaMarginPct": 15,
-        "epsRs": 68,
+        "epsRs": 4.53,
         "pat": 8,
         "period": "FY23",
         "revenue": 90
@@ -128,8 +128,8 @@
       "asOf": "2026-03-31",
       "diiPct": 0.76,
       "fiiPct": 0,
-      "promoterPct": 73.42,
-      "publicPct": 25.82
+      "promoterPct": 73.45,
+      "publicPct": 25.79
     },
     "slug": "ganesh-green-bharat",
     "sourceNote": "Market data (mid-2026) + company filings",

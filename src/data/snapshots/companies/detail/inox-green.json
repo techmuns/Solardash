@@ -61,12 +61,12 @@
         "revenue": 224
       },
       {
-        "ebitda": 52,
-        "ebitdaMarginPct": 22,
+        "ebitda": 37,
+        "ebitdaMarginPct": 17,
         "epsRs": 0.54,
         "pat": 22,
         "period": "FY25",
-        "revenue": 236
+        "revenue": 220
       },
       {
         "ebitda": 23,
@@ -213,10 +213,10 @@
     "revenueFy26Cr": 281,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 1.87,
-      "fiiPct": 7.86,
-      "promoterPct": 56.12,
-      "publicPct": 34.17
+      "diiPct": 1.93,
+      "fiiPct": 8.17,
+      "promoterPct": 53.7,
+      "publicPct": 36.18
     },
     "slug": "inox-green",
     "sourceNote": "Market data (mid-2026) + company filings",

@@ -88,12 +88,12 @@
         "revenue": 98.05
       },
       {
-        "ebitda": 10.3,
-        "ebitdaMarginPct": 10.64,
+        "ebitda": 10.29,
+        "ebitdaMarginPct": 10.63,
         "pat": 2.66,
         "patMarginPct": 2.75,
         "period": "Q2FY26",
-        "revenue": 96.78
+        "revenue": 96.77
       },
       {
         "ebitda": 13.7,
@@ -118,15 +118,23 @@
         "patMarginPct": 4.94,
         "period": "Q1FY27",
         "revenue": 141.81
+      },
+      {
+        "ebitda": 19.24,
+        "ebitdaMarginPct": 11.58,
+        "pat": 9.17,
+        "patMarginPct": 5.52,
+        "period": "Q2FY27",
+        "revenue": 166.22
       }
     ],
     "revenueFy26Cr": 544,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 0.2,
-      "fiiPct": 0.14,
-      "promoterPct": 69.97,
-      "publicPct": 29.7
+      "asOf": "2026-09-30",
+      "diiPct": 0.19,
+      "fiiPct": 0.2,
+      "promoterPct": 69.83,
+      "publicPct": 29.77
     },
     "slug": "zodiac-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

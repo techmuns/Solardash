@@ -7,7 +7,7 @@
       "ebitda": 9,
       "ebitdaMarginPct": 9,
       "pat": 5,
-      "epsRs": 43.42
+      "epsRs": 2.89
     },
     {
       "period": "FY23",
@@ -15,7 +15,7 @@
       "ebitda": 14,
       "ebitdaMarginPct": 15,
       "pat": 8,
-      "epsRs": 68
+      "epsRs": 4.53
     },
     {
       "period": "FY24",
@@ -93,18 +93,18 @@
     }
   ],
   "valuation": {
-    "peX": 7.17,
-    "pbX": 1.92,
-    "cmp": 217,
-    "marketCapCr": 539
+    "peX": 6.64,
+    "pbX": 1.78,
+    "cmp": 201,
+    "marketCapCr": 499
   },
   "rocePct": 35.8,
   "roePct": 31,
   "shareholding": {
-    "promoterPct": 73.42,
+    "promoterPct": 73.45,
     "fiiPct": 0,
     "diiPct": 0.76,
-    "publicPct": 25.82,
+    "publicPct": 25.79,
     "asOf": "2026-03-31"
   },
   "asOf": "2026-03-31"

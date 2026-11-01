@@ -35,36 +35,52 @@
     "peX": 36.9,
     "quarterly": [
       {
-        "ebitda": 7,
-        "ebitdaMarginPct": 7,
-        "pat": 7,
-        "patMarginPct": 6.8,
+        "ebitda": 7.15,
+        "ebitdaMarginPct": 6.92,
+        "pat": 7.13,
+        "patMarginPct": 6.9,
         "period": "Q1FY26",
-        "revenue": 103
+        "revenue": 103.33
       },
       {
-        "ebitda": 30,
-        "ebitdaMarginPct": 39,
-        "pat": 28,
-        "patMarginPct": 36.36,
+        "ebitda": -0.6,
+        "ebitdaMarginPct": -1.38,
+        "pat": -0.74,
+        "patMarginPct": -1.71,
+        "period": "Q2FY26",
+        "revenue": 43.37
+      },
+      {
+        "ebitda": 29.65,
+        "ebitdaMarginPct": 38.67,
+        "pat": 28.1,
+        "patMarginPct": 36.65,
         "period": "Q4FY26",
-        "revenue": 77
+        "revenue": 76.68
       },
       {
-        "ebitda": 28,
-        "ebitdaMarginPct": 30,
-        "pat": 21,
+        "ebitda": 28.1,
+        "ebitdaMarginPct": 29.73,
+        "pat": 20.9,
         "patMarginPct": 22.11,
         "period": "Q1FY27",
-        "revenue": 95
+        "revenue": 94.51
+      },
+      {
+        "ebitda": 2.24,
+        "ebitdaMarginPct": 6.91,
+        "pat": 1.49,
+        "patMarginPct": 4.6,
+        "period": "Q2FY27",
+        "revenue": 32.42
       }
     ],
     "revenueFy26Cr": 165,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 0.77,
-      "promoterPct": 50.22,
-      "publicPct": 49
+      "asOf": "2026-09-30",
+      "diiPct": 0.7,
+      "promoterPct": 53.15,
+      "publicPct": 46.15
     },
     "slug": "onix-solar",
     "sourceNote": "Market data (mid-2026)",

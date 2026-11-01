@@ -238,9 +238,9 @@
     "shareholding": {
       "asOf": "2026-06-30",
       "diiPct": 0,
-      "fiiPct": 0.58,
+      "fiiPct": 0.07,
       "promoterPct": 56.36,
-      "publicPct": 43.06
+      "publicPct": 43.58
     },
     "slug": "swelect-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

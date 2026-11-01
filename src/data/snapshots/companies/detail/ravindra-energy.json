@@ -237,10 +237,10 @@
     "revenueFy26Cr": 564,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 2.99,
-      "fiiPct": 3.27,
-      "promoterPct": 58.26,
-      "publicPct": 35.49
+      "diiPct": 3,
+      "fiiPct": 3.18,
+      "promoterPct": 58.25,
+      "publicPct": 35.59
     },
     "slug": "ravindra-energy",
     "sourceNote": "Market data (mid-2026)",

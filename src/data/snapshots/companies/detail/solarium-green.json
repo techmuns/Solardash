@@ -7,7 +7,7 @@
       {
         "ebitda": 24,
         "ebitdaMarginPct": 14,
-        "epsRs": 52.47,
+        "epsRs": 10.49,
         "pat": 16,
         "period": "FY24",
         "revenue": 177
@@ -92,10 +92,10 @@
     "revenueFy26Cr": 368,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 1.7,
+      "diiPct": 1.66,
       "fiiPct": 0,
       "promoterPct": 58.58,
-      "publicPct": 39.72
+      "publicPct": 39.77
     },
     "slug": "solarium-green",
     "sourceNote": "BSE SME (maintained)",

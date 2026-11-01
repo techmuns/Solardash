@@ -7,7 +7,7 @@
       {
         "ebitda": 2,
         "ebitdaMarginPct": 8,
-        "epsRs": 68.75,
+        "epsRs": 0.36,
         "pat": 2,
         "period": "FY22",
         "revenue": 28
@@ -15,7 +15,7 @@
       {
         "ebitda": 21,
         "ebitdaMarginPct": 9,
-        "epsRs": 463.75,
+        "epsRs": 2.45,
         "pat": 15,
         "period": "FY23",
         "revenue": 232
@@ -23,7 +23,7 @@
       {
         "ebitda": 69,
         "ebitdaMarginPct": 14,
-        "epsRs": 1615.31,
+        "epsRs": 8.53,
         "pat": 52,
         "period": "FY24",
         "revenue": 501
@@ -150,10 +150,10 @@
     "revenueFy26Cr": 1376,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 9.25,
-      "fiiPct": 0.77,
-      "promoterPct": 65.77,
-      "publicPct": 24.2
+      "diiPct": 7.22,
+      "fiiPct": 0.08,
+      "promoterPct": 65.89,
+      "publicPct": 26.81
     },
     "slug": "solarworld-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

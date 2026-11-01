@@ -135,10 +135,10 @@
     "revenueFy26Cr": 1618,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 0.51,
-      "fiiPct": 0.07,
+      "diiPct": 0.28,
+      "fiiPct": 0.32,
       "promoterPct": 66.15,
-      "publicPct": 33.26
+      "publicPct": 33.24
     },
     "slug": "solex-energy",
     "sourceNote": "Market data (mid-2026) + company filings",

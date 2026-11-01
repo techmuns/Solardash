@@ -5,15 +5,40 @@
   "data": {
     "annual": [
       {
+        "ebitda": 19,
+        "ebitdaMarginPct": 9,
+        "epsRs": 1.46,
+        "pat": 11,
+        "period": "FY19",
+        "revenue": 224
+      },
+      {
+        "ebitda": 18,
+        "ebitdaMarginPct": 8,
+        "epsRs": 1.3,
+        "pat": 10,
+        "period": "FY20",
+        "revenue": 229
+      },
+      {
+        "ebitda": 16,
+        "ebitdaMarginPct": 6,
+        "epsRs": 1.18,
+        "pat": 9,
+        "period": "FY21",
+        "revenue": 287
+      },
+      {
         "ebitda": 20,
         "ebitdaMarginPct": 6,
+        "epsRs": 1.3,
         "pat": 10,
         "period": "FY22",
         "revenue": 334
       },
       {
         "ebitda": 31,
-        "ebitdaMarginPct": 8.4,
+        "ebitdaMarginPct": 8,
         "epsRs": 2.25,
         "pat": 18,
         "period": "FY23",
@@ -21,7 +46,7 @@
       },
       {
         "ebitda": 68,
-        "ebitdaMarginPct": 8.5,
+        "ebitdaMarginPct": 9,
         "epsRs": 4.14,
         "pat": 46,
         "period": "FY24",
@@ -29,15 +54,15 @@
       },
       {
         "ebitda": 175,
-        "ebitdaMarginPct": 11.1,
-        "epsRs": 10.17,
-        "pat": 115,
+        "ebitdaMarginPct": 11,
+        "epsRs": 9.97,
+        "pat": 113,
         "period": "FY25",
         "revenue": 1571
       },
       {
-        "ebitda": 326.95,
-        "ebitdaMarginPct": 11.5,
+        "ebitda": 335,
+        "ebitdaMarginPct": 12,
         "epsRs": 18.23,
         "pat": 211,
         "period": "FY26",
@@ -63,7 +88,7 @@
       "source": "Q4/FY26 post-earnings concall 28-Apr-2026; scanx.trade, ConstructionWorld, screener.in"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 11.5,
+    "ebitdaMarginPct": 12,
     "evEbitdaX": 9.93,
     "hasDetail": true,
     "marketCapCr": 3055,
@@ -74,7 +99,7 @@
     "quarterly": [
       {
         "ebitda": 38,
-        "ebitdaMarginPct": 10.1,
+        "ebitdaMarginPct": 10,
         "pat": 25,
         "patMarginPct": 6.65,
         "period": "Q3FY25",
@@ -82,15 +107,23 @@
       },
       {
         "ebitda": 82,
-        "ebitdaMarginPct": 11.5,
+        "ebitdaMarginPct": 11,
         "pat": 56,
         "patMarginPct": 7.84,
         "period": "Q4FY25",
         "revenue": 714
       },
       {
+        "ebitda": 65,
+        "ebitdaMarginPct": 12,
+        "pat": 42,
+        "patMarginPct": 7.53,
+        "period": "Q1FY26",
+        "revenue": 558
+      },
+      {
         "ebitda": 78,
-        "ebitdaMarginPct": 11.8,
+        "ebitdaMarginPct": 12,
         "pat": 52,
         "patMarginPct": 7.89,
         "period": "Q2FY26",
@@ -98,7 +131,7 @@
       },
       {
         "ebitda": 85,
-        "ebitdaMarginPct": 11.9,
+        "ebitdaMarginPct": 12,
         "pat": 54,
         "patMarginPct": 7.58,
         "period": "Q3FY26",
@@ -106,20 +139,28 @@
       },
       {
         "ebitda": 96,
-        "ebitdaMarginPct": 10.5,
+        "ebitdaMarginPct": 11,
         "pat": 63,
         "patMarginPct": 6.89,
         "period": "Q4FY26",
         "revenue": 914
+      },
+      {
+        "ebitda": 78,
+        "ebitdaMarginPct": 11,
+        "pat": 54,
+        "patMarginPct": 7.8,
+        "period": "Q1FY27",
+        "revenue": 692
       }
     ],
     "revenueFy26Cr": 2843,
     "shareholding": {
-      "asOf": "2026-03-31",
-      "diiPct": 0.14,
-      "fiiPct": 0.58,
-      "promoterPct": 61.57,
-      "publicPct": 37.72
+      "asOf": "2026-06-30",
+      "diiPct": 0.16,
+      "fiiPct": 0.44,
+      "promoterPct": 61.52,
+      "publicPct": 37.88
     },
     "slug": "bondada-engineering",
     "sourceNote": "Market data (mid-2026) + company filings",

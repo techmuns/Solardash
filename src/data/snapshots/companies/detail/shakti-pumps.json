@@ -130,14 +130,6 @@
     "peX": 27.2,
     "quarterly": [
       {
-        "ebitda": 8,
-        "ebitdaMarginPct": 7,
-        "pat": 1,
-        "patMarginPct": 0.88,
-        "period": "Q1FY24",
-        "revenue": 113
-      },
-      {
         "ebitda": 15,
         "ebitdaMarginPct": 10,
         "pat": 6,
@@ -232,15 +224,23 @@
         "patMarginPct": 6.05,
         "period": "Q1FY27",
         "revenue": 859
+      },
+      {
+        "ebitda": 64,
+        "ebitdaMarginPct": 9,
+        "pat": 39,
+        "patMarginPct": 5.23,
+        "period": "Q2FY27",
+        "revenue": 746
       }
     ],
     "revenueFy26Cr": 2698,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 2.39,
-      "fiiPct": 5.08,
-      "promoterPct": 50.36,
-      "publicPct": 42.15
+      "asOf": "2026-09-30",
+      "diiPct": 1.76,
+      "fiiPct": 5.28,
+      "promoterPct": 50.4,
+      "publicPct": 42.55
     },
     "slug": "shakti-pumps",
     "sourceNote": "Market data (mid-2026) + company filings",

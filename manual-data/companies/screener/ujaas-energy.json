@@ -36,16 +36,16 @@
   ],
   "quarterly": [],
   "valuation": {
-    "peX": 148,
-    "pbX": 108.19,
-    "cmp": 185,
-    "marketCapCr": 2464
+    "peX": 150,
+    "pbX": 108.77,
+    "cmp": 186,
+    "marketCapCr": 2485
   },
   "rocePct": 10.6,
   "roePct": 8.03,
   "shareholding": {
     "promoterPct": 74.96,
-    "publicPct": 25.04,
+    "publicPct": 25.03,
     "asOf": "2018-03-31"
   },
   "asOf": "2018-03-31"

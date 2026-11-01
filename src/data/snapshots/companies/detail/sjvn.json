@@ -128,14 +128,6 @@
     "peX": 21.2,
     "quarterly": [
       {
-        "ebitda": 483,
-        "ebitdaMarginPct": 72,
-        "pat": 272,
-        "patMarginPct": 40.3,
-        "period": "Q1FY24",
-        "revenue": 675
-      },
-      {
         "ebitda": 706,
         "ebitdaMarginPct": 80,
         "pat": 440,
@@ -230,15 +222,23 @@
         "patMarginPct": 16.14,
         "period": "Q1FY27",
         "revenue": 1394
+      },
+      {
+        "ebitda": 1585,
+        "ebitdaMarginPct": 71,
+        "pat": 658,
+        "patMarginPct": 29.32,
+        "period": "Q2FY27",
+        "revenue": 2244
       }
     ],
     "revenueFy26Cr": 4528,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 3.74,
-      "fiiPct": 2.79,
+      "asOf": "2026-09-30",
+      "diiPct": 3.79,
+      "fiiPct": 2.65,
       "promoterPct": 81.85,
-      "publicPct": 11.62
+      "publicPct": 11.7
     },
     "slug": "sjvn",
     "sourceNote": "Market data (mid-2026) + company filings",

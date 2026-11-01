@@ -7,7 +7,7 @@
       {
         "ebitda": 3,
         "ebitdaMarginPct": 5,
-        "epsRs": 0.58,
+        "epsRs": 0.38,
         "pat": 1,
         "period": "FY21",
         "revenue": 62
@@ -15,7 +15,7 @@
       {
         "ebitda": 4,
         "ebitdaMarginPct": 6,
-        "epsRs": 0.98,
+        "epsRs": 0.65,
         "pat": 1,
         "period": "FY22",
         "revenue": 67
@@ -135,10 +135,10 @@
     "revenueFy26Cr": 419,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 1.12,
+      "diiPct": 0.99,
       "fiiPct": 0.01,
       "promoterPct": 71.28,
-      "publicPct": 27.59
+      "publicPct": 27.72
     },
     "slug": "sahaj-solar",
     "sourceNote": "Market data (mid-2026) + company filings",

@@ -236,10 +236,10 @@
     "revenueFy26Cr": 4397,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 10.02,
-      "fiiPct": 14.53,
+      "diiPct": 9.8,
+      "fiiPct": 12.17,
       "promoterPct": 44.18,
-      "publicPct": 31.28
+      "publicPct": 33.86
     },
     "slug": "inox-wind",
     "sourceNote": "Market data (mid-2026) + company filings",

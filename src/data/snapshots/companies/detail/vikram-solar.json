@@ -7,7 +7,7 @@
       {
         "ebitda": 140,
         "ebitdaMarginPct": 9,
-        "epsRs": 8.06,
+        "epsRs": 0.73,
         "pat": 22,
         "period": "FY20",
         "revenue": 1640
@@ -15,7 +15,7 @@
       {
         "ebitda": 177,
         "ebitdaMarginPct": 11,
-        "epsRs": 16.23,
+        "epsRs": 1.48,
         "pat": 38,
         "period": "FY21",
         "revenue": 1610
@@ -167,10 +167,10 @@
     "revenueFy26Cr": 4803,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 4.04,
-      "fiiPct": 3.37,
+      "diiPct": 3.65,
+      "fiiPct": 3.1,
       "promoterPct": 63.01,
-      "publicPct": 29.6
+      "publicPct": 30.21
     },
     "slug": "vikram-solar",
     "sourceNote": "Company filings (aggregated)",

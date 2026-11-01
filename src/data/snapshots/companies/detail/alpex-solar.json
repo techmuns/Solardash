@@ -49,9 +49,9 @@
         "revenue": 780
       },
       {
-        "ebitda": 319,
-        "ebitdaMarginPct": 14,
-        "epsRs": 78.89,
+        "ebitda": 328,
+        "ebitdaMarginPct": 15,
+        "epsRs": 78.87,
         "pat": 202,
         "period": "FY26",
         "revenue": 2223
@@ -77,7 +77,7 @@
       "source": "Alpex Solar Q4 & FY26 Investors/Analysts Meet transcript, NSE filing dated 28-May-2026"
     },
     "confidence": "high",
-    "ebitdaMarginPct": 14,
+    "ebitdaMarginPct": 15,
     "evEbitdaX": 6.72,
     "hasDetail": true,
     "marketCapCr": 1687,
@@ -179,10 +179,10 @@
     "revenueFy26Cr": 2223,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 0.4,
-      "fiiPct": 3.13,
+      "diiPct": 0.39,
+      "fiiPct": 3.28,
       "promoterPct": 65.9,
-      "publicPct": 30.58
+      "publicPct": 30.43
     },
     "slug": "alpex-solar",
     "sourceNote": "Market data (mid-2026) + company filings",

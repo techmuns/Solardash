@@ -236,10 +236,10 @@
     "revenueFy26Cr": 28966,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 22.69,
-      "fiiPct": 8.53,
+      "diiPct": 22.81,
+      "fiiPct": 8.36,
       "promoterPct": 51.09,
-      "publicPct": 9.37
+      "publicPct": 9.4
     },
     "slug": "torrent-power",
     "sourceNote": "Market data (mid-2026) + company filings",

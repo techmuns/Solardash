@@ -106,14 +106,6 @@
     "peX": 15.6,
     "quarterly": [
       {
-        "ebitda": 13,
-        "ebitdaMarginPct": 10,
-        "pat": 9,
-        "patMarginPct": 6.98,
-        "period": "Q1FY24",
-        "revenue": 129
-      },
-      {
         "ebitda": 31,
         "ebitdaMarginPct": 20,
         "pat": 21,
@@ -208,15 +200,23 @@
         "patMarginPct": 12.88,
         "period": "Q1FY27",
         "revenue": 924
+      },
+      {
+        "ebitda": 160,
+        "ebitdaMarginPct": 15,
+        "pat": 81,
+        "patMarginPct": 7.66,
+        "period": "Q2FY27",
+        "revenue": 1058
       }
     ],
     "revenueFy26Cr": 3331,
     "shareholding": {
-      "asOf": "2026-06-30",
+      "asOf": "2026-09-30",
       "diiPct": 0.09,
-      "fiiPct": 1.98,
-      "promoterPct": 74.32,
-      "publicPct": 23.61
+      "fiiPct": 2.02,
+      "promoterPct": 74.3,
+      "publicPct": 23.58
     },
     "slug": "waaree-renewable",
     "sourceNote": "Market data (mid-2026) + company filings",

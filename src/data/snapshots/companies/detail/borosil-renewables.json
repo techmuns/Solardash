@@ -113,14 +113,6 @@
     "peX": 13.8,
     "quarterly": [
       {
-        "ebitda": 26,
-        "ebitdaMarginPct": 7,
-        "pat": -12,
-        "patMarginPct": -3.39,
-        "period": "Q1FY24",
-        "revenue": 354
-      },
-      {
         "ebitda": 32,
         "ebitdaMarginPct": 8,
         "pat": 30,
@@ -215,15 +207,23 @@
         "patMarginPct": 21.43,
         "period": "Q1FY27",
         "revenue": 406
+      },
+      {
+        "ebitda": 105,
+        "ebitdaMarginPct": 26,
+        "pat": 69,
+        "patMarginPct": 17.38,
+        "period": "Q2FY27",
+        "revenue": 397
       }
     ],
     "revenueFy26Cr": 1556,
     "shareholding": {
-      "asOf": "2026-06-30",
-      "diiPct": 3.33,
-      "fiiPct": 5.62,
+      "asOf": "2026-09-30",
+      "diiPct": 2.24,
+      "fiiPct": 5.88,
       "promoterPct": 56.01,
-      "publicPct": 35.04
+      "publicPct": 35.86
     },
     "slug": "borosil-renewables",
     "sourceNote": "Market data (mid-2026) + company filings",

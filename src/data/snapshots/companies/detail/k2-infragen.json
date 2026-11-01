@@ -7,7 +7,7 @@
       {
         "ebitda": 2,
         "ebitdaMarginPct": 7,
-        "epsRs": 1.64,
+        "epsRs": 0.42,
         "pat": 0,
         "period": "FY21",
         "revenue": 35
@@ -15,7 +15,7 @@
       {
         "ebitda": 0,
         "ebitdaMarginPct": 0.6,
-        "epsRs": -14.44,
+        "epsRs": -3.7,
         "pat": -3,
         "period": "FY22",
         "revenue": 37
@@ -23,7 +23,7 @@
       {
         "ebitda": 19,
         "ebitdaMarginPct": 26,
-        "epsRs": 50.53,
+        "epsRs": 12.89,
         "pat": 11,
         "period": "FY23",
         "revenue": 75
@@ -142,8 +142,8 @@
       "asOf": "2026-03-31",
       "diiPct": 0,
       "fiiPct": 0.85,
-      "promoterPct": 40.7,
-      "publicPct": 58.45
+      "promoterPct": 40.94,
+      "publicPct": 58.22
     },
     "slug": "k2-infragen",
     "sourceNote": "NSE Emerge (SME)",

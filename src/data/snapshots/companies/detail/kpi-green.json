@@ -53,7 +53,7 @@
         "revenue": 1024
       },
       {
-        "ebitda": 564,
+        "ebitda": 561,
         "ebitdaMarginPct": 32,
         "epsRs": 16.23,
         "pat": 325,
@@ -204,10 +204,10 @@
     "revenueFy26Cr": 2696,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 0.67,
-      "fiiPct": 8.16,
+      "diiPct": 0.59,
+      "fiiPct": 7.32,
       "promoterPct": 49.41,
-      "publicPct": 41.75
+      "publicPct": 42.67
     },
     "slug": "kpi-green",
     "sourceNote": "Market data (mid-2026) + company filings",

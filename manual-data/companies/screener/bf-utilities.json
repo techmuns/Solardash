@@ -205,18 +205,18 @@
     }
   ],
   "valuation": {
-    "peX": 12.6,
-    "pbX": 9.53,
-    "cmp": 510,
-    "marketCapCr": 1917
+    "peX": 10.6,
+    "pbX": 8,
+    "cmp": 428,
+    "marketCapCr": 1612
   },
   "rocePct": 29.9,
   "roePct": 113,
   "shareholding": {
     "promoterPct": 56.73,
-    "fiiPct": 1.61,
-    "diiPct": 0.06,
-    "publicPct": 41.59,
+    "fiiPct": 1.38,
+    "diiPct": 0.02,
+    "publicPct": 41.88,
     "asOf": "2025-12-31"
   },
   "asOf": "2025-12-31"

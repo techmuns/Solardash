@@ -235,10 +235,10 @@
     "revenueFy26Cr": 11615,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 14.54,
-      "fiiPct": 12.29,
+      "diiPct": 14.26,
+      "fiiPct": 13.17,
       "promoterPct": 61.39,
-      "publicPct": 10.64
+      "publicPct": 10.04
     },
     "slug": "nhpc",
     "sourceNote": "Market data (mid-2026) + company filings",

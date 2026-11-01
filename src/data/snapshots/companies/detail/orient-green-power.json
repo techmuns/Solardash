@@ -236,10 +236,10 @@
     "revenueFy26Cr": 293,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 1.17,
-      "fiiPct": 0.64,
+      "diiPct": 1.07,
+      "fiiPct": 0.52,
       "promoterPct": 24.38,
-      "publicPct": 73.81
+      "publicPct": 74.01
     },
     "slug": "orient-green-power",
     "sourceNote": "Market data (mid-2026) + company filings",

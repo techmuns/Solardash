@@ -91,10 +91,10 @@
     "revenueFy26Cr": 521,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 4.01,
-      "fiiPct": 0.27,
+      "diiPct": 4.34,
+      "fiiPct": 0.22,
       "promoterPct": 73.62,
-      "publicPct": 22.11
+      "publicPct": 21.81
     },
     "slug": "danish-power",
     "sourceNote": "NSE Emerge (SME)",

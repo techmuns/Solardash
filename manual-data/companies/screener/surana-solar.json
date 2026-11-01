@@ -37,16 +37,16 @@
     }
   ],
   "valuation": {
-    "pbX": 2.12,
-    "cmp": 24.2,
-    "marketCapCr": 120
+    "pbX": 1.89,
+    "cmp": 21.5,
+    "marketCapCr": 106
   },
   "roePct": -0.2,
   "shareholding": {
-    "promoterPct": 45.75,
-    "fiiPct": 0.15,
+    "promoterPct": 46.39,
+    "fiiPct": 0,
     "diiPct": 0.04,
-    "publicPct": 54.07,
+    "publicPct": 53.59,
     "asOf": "2025-06-30"
   },
   "asOf": "2025-06-30"

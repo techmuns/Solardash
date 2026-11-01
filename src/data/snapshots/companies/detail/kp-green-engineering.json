@@ -7,7 +7,7 @@
       {
         "ebitda": 9,
         "ebitdaMarginPct": 12,
-        "epsRs": 39.2,
+        "epsRs": 1.23,
         "pat": 4,
         "period": "FY22",
         "revenue": 78
@@ -15,7 +15,7 @@
       {
         "ebitda": 21,
         "ebitdaMarginPct": 18,
-        "epsRs": 108.21,
+        "epsRs": 3.39,
         "pat": 12,
         "period": "FY23",
         "revenue": 114
@@ -132,10 +132,10 @@
     "revenueFy26Cr": 1246,
     "shareholding": {
       "asOf": "2026-03-31",
-      "diiPct": 0.13,
-      "fiiPct": 0.35,
+      "diiPct": 0.54,
+      "fiiPct": 0.78,
       "promoterPct": 66.61,
-      "publicPct": 32.92
+      "publicPct": 32.07
     },
     "slug": "kp-green-engineering",
     "sourceNote": "BSE SME (maintained)",

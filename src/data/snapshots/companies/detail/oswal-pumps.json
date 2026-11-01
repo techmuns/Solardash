@@ -7,7 +7,7 @@
       {
         "ebitda": 39,
         "ebitdaMarginPct": 11,
-        "epsRs": 28.93,
+        "epsRs": 1.7,
         "pat": 17,
         "period": "FY22",
         "revenue": 360
@@ -15,7 +15,7 @@
       {
         "ebitda": 58,
         "ebitdaMarginPct": 15,
-        "epsRs": 58.44,
+        "epsRs": 3.44,
         "pat": 34,
         "period": "FY23",
         "revenue": 385
@@ -23,7 +23,7 @@
       {
         "ebitda": 153,
         "ebitdaMarginPct": 20,
-        "epsRs": 166.9,
+        "epsRs": 9.82,
         "pat": 98,
         "period": "FY24",
         "revenue": 759
@@ -156,10 +156,10 @@
     "revenueFy26Cr": 2064,
     "shareholding": {
       "asOf": "2026-06-30",
-      "diiPct": 5.47,
-      "fiiPct": 0.1,
+      "diiPct": 1.96,
+      "fiiPct": 0.07,
       "promoterPct": 75.65,
-      "publicPct": 18.78
+      "publicPct": 22.31
     },
     "slug": "oswal-pumps",
     "sourceNote": "Market data (mid-2026) + company filings",
