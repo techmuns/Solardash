@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-02",
+  "asOf": "2026-11-03",
   "cadence": "quarterly",
   "coverage": "Bondada Engineering",
   "data": {
@@ -89,9 +89,9 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 12,
-    "evEbitdaX": 9.82,
+    "evEbitdaX": 9.8,
     "hasDetail": true,
-    "marketCapCr": 3016,
+    "marketCapCr": 3011,
     "name": "Bondada Engineering",
     "orderBookCr": 7147,
     "patFy26Cr": 211,
@@ -167,8 +167,8 @@
     "tickerNse": "BONDADA",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-11-02",
-      "evEbitdaX": 9.82,
+      "asOf": "2026-11-03",
+      "evEbitdaX": 9.8,
       "pbX": 4.34,
       "peX": 13.8
     }
@@ -180,10 +180,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-11-02",
+      "asOf": "2026-11-03",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-11-02"
+  "updatedAt": "2026-11-03"
 }

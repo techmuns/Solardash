@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-02",
+  "asOf": "2026-11-03",
   "cadence": "quarterly",
   "coverage": "Waaree Energies",
   "data": {
@@ -62,7 +62,7 @@
       }
     ],
     "cellGw": 5.4,
-    "cmp": 2324,
+    "cmp": 2318,
     "concall": {
       "date": "2026-04-30",
       "guidance": [
@@ -82,9 +82,9 @@
     },
     "confidence": "medium",
     "ebitdaMarginPct": 22,
-    "evEbitdaX": 11.49,
+    "evEbitdaX": 11.46,
     "hasDetail": true,
-    "marketCapCr": 66850,
+    "marketCapCr": 66706,
     "moduleGw": 15,
     "name": "Waaree Energies",
     "orderBookCr": 53000,
@@ -211,9 +211,9 @@
     "tickerNse": "WAAREEENER",
     "type": "integrated",
     "valuation": {
-      "asOf": "2026-11-02",
-      "evEbitdaX": 11.49,
-      "pbX": 4.17,
+      "asOf": "2026-11-03",
+      "evEbitdaX": 11.46,
+      "pbX": 4.16,
       "peX": 17.1
     }
   },
@@ -224,10 +224,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-11-02",
+      "asOf": "2026-11-03",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-11-02"
+  "updatedAt": "2026-11-03"
 }
