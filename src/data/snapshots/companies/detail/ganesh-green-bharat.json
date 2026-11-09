@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-06",
+  "asOf": "2026-11-09",
   "cadence": "quarterly",
   "coverage": "Ganesh Green Bharat",
   "data": {
@@ -46,7 +46,7 @@
       }
     ],
     "board": "NSE SME",
-    "cmp": 178,
+    "cmp": 171,
     "concall": {
       "date": "2026-05-29",
       "guidance": [
@@ -66,13 +66,13 @@
     },
     "confidence": "high",
     "ebitdaMarginPct": 10,
-    "evEbitdaX": 4.44,
+    "evEbitdaX": 5.9,
     "hasDetail": true,
-    "marketCapCr": 441,
+    "marketCapCr": 424,
     "name": "Ganesh Green Bharat",
     "orderBookCr": 2210,
     "patFy26Cr": 75,
-    "peX": 5.86,
+    "peX": 7.63,
     "quarterly": [
       {
         "ebitda": 13,
@@ -136,10 +136,10 @@
     "tickerNse": "GANR",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-11-06",
-      "evEbitdaX": 4.44,
-      "pbX": 1.58,
-      "peX": 5.86
+      "asOf": "2026-11-09",
+      "evEbitdaX": 5.9,
+      "pbX": 1.45,
+      "peX": 7.63
     }
   },
   "dataset": "detail/ganesh-green-bharat",
@@ -149,10 +149,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-11-06",
+      "asOf": "2026-11-09",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-11-06"
+  "updatedAt": "2026-11-09"
 }
