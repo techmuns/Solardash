@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-09",
+  "asOf": "2026-11-10",
   "cadence": "quarterly",
   "coverage": "ACME Solar Holdings",
   "data": {
@@ -207,7 +207,7 @@
     "type": "ipp",
     "ucPipelineGw": 5.08,
     "valuation": {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "evEbitdaX": 23.39,
       "pbX": 3.45,
       "peX": 38.3
@@ -220,10 +220,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-11-09"
+  "updatedAt": "2026-11-10"
 }

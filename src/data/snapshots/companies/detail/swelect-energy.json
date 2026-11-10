@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-09",
+  "asOf": "2026-11-10",
   "cadence": "quarterly",
   "coverage": "Swelect Energy Systems",
   "data": {
@@ -247,7 +247,7 @@
     "tickerNse": "SWELECTES",
     "type": "integrated",
     "valuation": {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "evEbitdaX": 12.49,
       "pbX": 1,
       "peX": 21.5
@@ -260,10 +260,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     }
   ],
-  "updatedAt": "2026-11-09"
+  "updatedAt": "2026-11-10"
 }

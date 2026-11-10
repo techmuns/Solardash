@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-09",
+  "asOf": "2026-11-10",
   "cadence": "quarterly",
   "coverage": "Websol Energy Systems",
   "data": {
@@ -121,7 +121,7 @@
     "tickerNse": "WEBELSOLAR",
     "type": "manufacturer",
     "valuation": {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "evEbitdaX": 6.2,
       "pbX": 4.02,
       "peX": 8.99
@@ -134,10 +134,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     }
   ],
-  "updatedAt": "2026-11-09"
+  "updatedAt": "2026-11-10"
 }

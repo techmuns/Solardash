@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-09",
+  "asOf": "2026-11-10",
   "cadence": "quarterly",
   "coverage": "Ravindra Energy",
   "data": {
@@ -247,7 +247,7 @@
     "tickerNse": "RELTD",
     "type": "epc",
     "valuation": {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "evEbitdaX": 22.36,
       "pbX": 4.29,
       "peX": 56.8
@@ -260,10 +260,10 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "medium",
       "name": "Market data (mid-2026)"
     }
   ],
-  "updatedAt": "2026-11-09"
+  "updatedAt": "2026-11-10"
 }

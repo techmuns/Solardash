@@ -1,9 +1,9 @@
 {
-  "asOf": "2026-11-09",
+  "asOf": "2026-11-10",
   "cadence": "quarterly",
   "coverage": "India · listed solar & renewable companies",
   "data": {
-    "asOf": "2026-11-09",
+    "asOf": "2026-11-10",
     "companies": [
       {
         "cmp": 329,
@@ -1048,75 +1048,75 @@
   "section": "companies",
   "sources": [
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "high",
       "name": "BSE SME (maintained)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "medium",
       "name": "BSE SME (maintained)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "high",
       "name": "Company filings (aggregated)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "medium",
       "name": "Company filings (aggregated)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "modelled",
       "name": "Company filings (aggregated)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "medium",
       "name": "Distressed (2025 governance/insolvency issues)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "high",
       "name": "Market data (mid-2026)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "medium",
       "name": "Market data (mid-2026)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "modelled",
       "name": "Market data (mid-2026)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "high",
       "name": "Market data (mid-2026) + company filings"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "medium",
       "name": "Market data (mid-2026) + company filings"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "high",
       "name": "Nasdaq: RNW (take-private ongoing)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "high",
       "name": "NSE Emerge (SME)"
     },
     {
-      "asOf": "2026-11-09",
+      "asOf": "2026-11-10",
       "confidence": "medium",
       "name": "NSE Emerge (SME)"
     }
   ],
-  "updatedAt": "2026-11-09"
+  "updatedAt": "2026-11-10"
 }
